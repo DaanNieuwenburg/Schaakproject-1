@@ -8,7 +8,6 @@ namespace Schaakproject
 {
     public class Spel
     {
-        public object speltest{ get; set; }
         public string speleraanzet { get; set; }
 
         private void Start()

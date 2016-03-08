@@ -5,7 +5,7 @@ using System.Text;
 
 public abstract class Schaakstuk
 {
-	private string Kleur{ get; set; }
+	private string _kleur{ get; set; }
 
 	public abstract void Verplaats();
 

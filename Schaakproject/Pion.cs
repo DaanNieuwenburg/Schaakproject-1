@@ -7,11 +7,7 @@ namespace Schaakproject
 {
     public class Pion : Schaakstuk
     {
-        private bool Eerstezet
-        {
-            get;
-            set;
-        }
+        private bool Eerstezet{ get; set; }
 
         public override void Verplaats()
         {

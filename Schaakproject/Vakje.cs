@@ -5,10 +5,6 @@ using System.Text;
 
 public class Vakje
 {
-	private string Kleur
-	{
-		get;
-		set;
-	}
+	private string _kleur{ get; set; }
 }
 
