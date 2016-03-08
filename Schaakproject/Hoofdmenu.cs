@@ -19,8 +19,13 @@ namespace Schaakproject
 
         private void herstartButton_MouseClick(object sender, MouseEventArgs e)
         {
-            Spel spel = new Spel();
-            spel.Herstart();
+            HerstartMelding Warning = new HerstartMelding();
+            Warning.ShowDialog();
+            if (Warning.Sure == true)
+            {
+                Spel spel = new Spel();
+                spel.Herstart();
+            }
         }
 
         private void startButton_Click(object sender, EventArgs e)

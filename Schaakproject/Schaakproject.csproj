@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Computer.cs" />
     <Compile Include="Dame.cs" />
+    <Compile Include="HerstartMelding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HerstartMelding.Designer.cs">
+      <DependentUpon>HerstartMelding.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hoofdmenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     <Compile Include="Speler.cs" />
     <Compile Include="Toren.cs" />
     <Compile Include="Vakje.cs" />
+    <EmbeddedResource Include="HerstartMelding.resx">
+      <DependentUpon>HerstartMelding.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hoofdmenu.resx">
       <DependentUpon>Hoofdmenu.cs</DependentUpon>
     </EmbeddedResource>
