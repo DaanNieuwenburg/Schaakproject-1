@@ -117,6 +117,24 @@
   <ItemGroup>
     <None Include="Resources\start click klad 2 .png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button 2 klad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button 2 klad click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button 1 klad click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button 1 klad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button 3 klad click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button 3 klad.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

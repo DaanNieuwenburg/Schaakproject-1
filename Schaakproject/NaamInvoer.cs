@@ -25,11 +25,6 @@ namespace Schaakproject
             Spel spel = new Spel();
         }
 
-        private void NaamInvoer_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btModeMultiplayer_Click(object sender, EventArgs e)
         {
             lblSpeler1Naam.Visible = true;
@@ -57,6 +52,41 @@ namespace Schaakproject
             txtSpeler1Naam.Visible = false;
             lblNotImplented.Visible = true;
             btnBegin.Visible = true;
+        }
+
+        private void btModeComputer_MouseEnter(object sender, EventArgs e)
+        {
+            this.btModeComputer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_2_klad_click);
+        }
+
+        private void btModeComputer_MouseLeave(object sender, EventArgs e)
+        {
+            this.btModeComputer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_2_klad);
+
+        }
+
+        private void btModeMultiplayer_MouseLeave(object sender, EventArgs e)
+        {
+            this.btModeMultiplayer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_1_klad);
+
+        }
+
+        private void btModeMultiplayer_MouseEnter(object sender, EventArgs e)
+        {
+            this.btModeMultiplayer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_1_klad_click);
+
+        }
+
+        private void btModeRealMulti_MouseEnter(object sender, EventArgs e)
+        {
+            this.btModeRealMulti.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_3_klad_click);
+
+        }
+
+        private void btModeRealMulti_MouseLeave(object sender, EventArgs e)
+        {
+            this.btModeRealMulti.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_3_klad);
+
         }
     }
 }
