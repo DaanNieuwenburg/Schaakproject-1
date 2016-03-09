@@ -62,6 +62,8 @@
             this.startButton.TabStop = false;
             this.startButton.UseVisualStyleBackColor = false;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            this.startButton.MouseEnter += new System.EventHandler(this.startButton_MouseEnter_1);
+            this.startButton.MouseLeave += new System.EventHandler(this.startButton_MouseLeave);
             // 
             // pbLogo
             // 

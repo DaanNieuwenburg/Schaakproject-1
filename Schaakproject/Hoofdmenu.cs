@@ -49,10 +49,14 @@ namespace Schaakproject
             BackgroundImageLayout = ImageLayout.Stretch;
             startButton.BackgroundImageLayout = ImageLayout.Stretch;
         }
-
-        private void startButton_MouseEnter(object sender, EventArgs e)
+        private void startButton_MouseLeave(object sender, EventArgs e)
         {
+            this.startButton.BackgroundImage = (System.Drawing.Image)(Properties.Resources.start_klad_2_);
+        }
 
+        private void startButton_MouseEnter_1(object sender, EventArgs e)
+        {
+            this.startButton.BackgroundImage = (System.Drawing.Image)(Properties.Resources.start_click_klad_2_);
         }
     }
 }
