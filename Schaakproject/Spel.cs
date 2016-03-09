@@ -8,16 +8,20 @@ namespace Schaakproject
 {
     public class Spel
     {
+        public Spel()
+        {
+            Start();
+        }
         public string speleraanzet { get; set; }
 
-        private void Start()
+        public void Start()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public void Herstart()
+        public static void Herstart()
         {
-            throw new System.NotImplementedException();
+            Spel spel = new Spel();
         }
 
         public static void VeranderSpeler()

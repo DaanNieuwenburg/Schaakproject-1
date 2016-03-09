@@ -22,6 +22,7 @@ namespace Schaakproject
             DialogResult = DialogResult.Yes;
             Speler speler1 = new Speler(txtSpeler1Naam.Text, "wit");
             Speler speler2 = new Speler(txtSpeler2Naam.Text, "zwart");
+            Spel spel = new Spel();
         }
 
         private void NaamInvoer_Load(object sender, EventArgs e)

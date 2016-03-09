@@ -23,8 +23,7 @@ namespace Schaakproject
             Warning.ShowDialog();
             if (Warning.Sure == true)
             {
-                Spel spel = new Spel();
-                spel.Herstart();
+                Spel.Herstart();
             }
         }
 
@@ -34,6 +33,12 @@ namespace Schaakproject
             naaminvoerdialog.ShowDialog();
             lblTmpSpeler1.Text = naaminvoerdialog.txtSpeler1Naam.Text;
             lblTmpSpeler2.Text = naaminvoerdialog.txtSpeler2Naam.Text;
+            
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
