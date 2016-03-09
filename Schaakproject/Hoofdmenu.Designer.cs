@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hoofdmenu));
             this.herstartButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
-            this.lblTmpSpeler1 = new System.Windows.Forms.Label();
-            this.lblTmpSpeler2 = new System.Windows.Forms.Label();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // herstartButton
             // 
-            this.herstartButton.Location = new System.Drawing.Point(440, 422);
+            this.herstartButton.Location = new System.Drawing.Point(467, 124);
             this.herstartButton.Name = "herstartButton";
             this.herstartButton.Size = new System.Drawing.Size(75, 23);
             this.herstartButton.TabIndex = 0;
@@ -46,7 +49,7 @@
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(217, 12);
+            this.startButton.Location = new System.Drawing.Point(467, 95);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(75, 23);
             this.startButton.TabIndex = 1;
@@ -54,37 +57,40 @@
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
-            // lblTmpSpeler1
+            // pbLogo
             // 
-            this.lblTmpSpeler1.AutoSize = true;
-            this.lblTmpSpeler1.Location = new System.Drawing.Point(241, 125);
-            this.lblTmpSpeler1.Name = "lblTmpSpeler1";
-            this.lblTmpSpeler1.Size = new System.Drawing.Size(37, 13);
-            this.lblTmpSpeler1.TabIndex = 2;
-            this.lblTmpSpeler1.Text = "TEMP";
+            this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
+            this.pbLogo.Location = new System.Drawing.Point(445, 12);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(118, 29);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 4;
+            this.pbLogo.TabStop = false;
             // 
-            // lblTmpSpeler2
+            // pictureBox1
             // 
-            this.lblTmpSpeler2.AutoSize = true;
-            this.lblTmpSpeler2.Location = new System.Drawing.Point(241, 162);
-            this.lblTmpSpeler2.Name = "lblTmpSpeler2";
-            this.lblTmpSpeler2.Size = new System.Drawing.Size(37, 13);
-            this.lblTmpSpeler2.TabIndex = 3;
-            this.lblTmpSpeler2.Text = "TEMP";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(406, 433);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // Hoofdmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 457);
-            this.Controls.Add(this.lblTmpSpeler2);
-            this.Controls.Add(this.lblTmpSpeler1);
+            this.ClientSize = new System.Drawing.Size(579, 423);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.herstartButton);
             this.Name = "Hoofdmenu";
             this.Text = "Schaakspel";
+            this.Load += new System.EventHandler(this.Hoofdmenu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -92,8 +98,8 @@
 
         private System.Windows.Forms.Button herstartButton;
         private System.Windows.Forms.Button startButton;
-        public System.Windows.Forms.Label lblTmpSpeler1;
-        public System.Windows.Forms.Label lblTmpSpeler2;
+        private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
