@@ -47,6 +47,12 @@ namespace Schaakproject
         private void Hoofdmenu_Load(object sender, EventArgs e)
         {
             BackgroundImageLayout = ImageLayout.Stretch;
+            startButton.BackgroundImageLayout = ImageLayout.Stretch;
+        }
+
+        private void startButton_MouseEnter(object sender, EventArgs e)
+        {
+
         }
     }
 }
