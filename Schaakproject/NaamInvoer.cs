@@ -52,6 +52,8 @@ namespace Schaakproject
             txtSpeler1Naam.Visible = false;
             lblNotImplented.Visible = true;
             btnBegin.Visible = true;
+
+            
         }
 
         private void btModeComputer_MouseEnter(object sender, EventArgs e)
@@ -86,6 +88,23 @@ namespace Schaakproject
         private void btModeRealMulti_MouseLeave(object sender, EventArgs e)
         {
             this.btModeRealMulti.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_3_klad);
+
+        }
+
+        private void btnBegin_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnBegin.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_begin_click);
+
+        }
+
+        private void btnBegin_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnBegin.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_begin);
+
+        }
+
+        private void btModeComputer_KeyPress(object sender, KeyPressEventArgs e)
+        {
 
         }
     }

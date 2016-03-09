@@ -61,14 +61,23 @@
             // 
             // btnBegin
             // 
-            this.btnBegin.Location = new System.Drawing.Point(222, 257);
+            this.btnBegin.BackColor = System.Drawing.Color.Transparent;
+            this.btnBegin.BackgroundImage = global::Schaakproject.Properties.Resources.button_begin;
+            this.btnBegin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBegin.FlatAppearance.BorderSize = 0;
+            this.btnBegin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnBegin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnBegin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBegin.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBegin.Location = new System.Drawing.Point(151, 227);
             this.btnBegin.Name = "btnBegin";
-            this.btnBegin.Size = new System.Drawing.Size(75, 23);
+            this.btnBegin.Size = new System.Drawing.Size(200, 78);
             this.btnBegin.TabIndex = 2;
-            this.btnBegin.Text = "Begin";
-            this.btnBegin.UseVisualStyleBackColor = true;
+            this.btnBegin.UseVisualStyleBackColor = false;
             this.btnBegin.Visible = false;
             this.btnBegin.Click += new System.EventHandler(this.btnNaamSubmit_Click);
+            this.btnBegin.MouseEnter += new System.EventHandler(this.btnBegin_MouseEnter);
+            this.btnBegin.MouseLeave += new System.EventHandler(this.btnBegin_MouseLeave);
             // 
             // txtSpeler2Naam
             // 
@@ -122,6 +131,7 @@
             this.btModeComputer.TabIndex = 6;
             this.btModeComputer.UseVisualStyleBackColor = false;
             this.btModeComputer.Click += new System.EventHandler(this.btModeComputer_Click);
+            this.btModeComputer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btModeComputer_KeyPress);
             this.btModeComputer.MouseEnter += new System.EventHandler(this.btModeComputer_MouseEnter);
             this.btModeComputer.MouseLeave += new System.EventHandler(this.btModeComputer_MouseLeave);
             // 
@@ -160,7 +170,7 @@
             this.lblNotImplented.AutoSize = true;
             this.lblNotImplented.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotImplented.ForeColor = System.Drawing.Color.Red;
-            this.lblNotImplented.Location = new System.Drawing.Point(206, 260);
+            this.lblNotImplented.Location = new System.Drawing.Point(373, 249);
             this.lblNotImplented.Name = "lblNotImplented";
             this.lblNotImplented.Size = new System.Drawing.Size(108, 16);
             this.lblNotImplented.TabIndex = 9;
@@ -174,6 +184,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(514, 317);
+            this.Controls.Add(this.txtSpeler1Naam);
             this.Controls.Add(this.lblNotImplented);
             this.Controls.Add(this.lbTitel);
             this.Controls.Add(this.btModeRealMulti);
@@ -183,7 +194,6 @@
             this.Controls.Add(this.txtSpeler2Naam);
             this.Controls.Add(this.btnBegin);
             this.Controls.Add(this.lblSpeler1Naam);
-            this.Controls.Add(this.txtSpeler1Naam);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NaamInvoer";
             this.Text = "Voer je naam in";
