@@ -324,6 +324,16 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="b455cfa3-3924-4f46-a77f-ca91106869b4"
+            name="Speler"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -429,6 +439,26 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="4c66e6aa-4cf6-4981-a230-8fcf5561619d"
+            name="schaakarray"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="ab49c02d-db34-44c0-979e-cc5a84739335"
+                LastKnownName="ModelingProject1::Vakje[,]"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="a0f04208-282e-44ef-ae0d-bf0241e8cfab"
@@ -610,6 +640,14 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
+          <operation
+            Id="f0db06ba-ea72-438d-b8fc-1dcff10cf546"
+            name="Schaakbord"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -719,8 +757,7 @@
         <ownedAttributesInternal>
           <property
             Id="1743bfe8-11c1-4513-a13a-35075ac0020d"
-            name="_kleur"
-            visibility="Private"
+            name="kleur"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -790,6 +827,24 @@
               <undefinedTypeMoniker
                 Id="9ae72030-5b19-4f74-b8af-7fbbca35c802"
                 LastKnownName="string"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="0652ffec-c7a4-4ed3-ab26-10dfb9f5b1fe"
+            name="afbeelding"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="a269f9f6-9587-4bbc-96dc-aad7e04fe4dc"
+                LastKnownName="Image"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -1160,7 +1215,61 @@
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="977dbdb2-59b1-40db-925d-a0ba7da1eba4"
+            name="schaakstuk"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="5707d178-3d72-4f4a-9f04-b079d5842eb3"
+                LastKnownName="Schaakstuk"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="51b81a10-4416-4e96-86c5-c4a92d3f7fe1"
+            name="pbox"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="b9c0570d-425c-4b7c-90e2-3a85bcd31e4f"
+                LastKnownName="PictureBox"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="6a53e2ed-961c-45dc-964a-ea1e214b5428"
+            name="Vakje"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ccc43f56-3e30-477c-a0f8-c9c5129677f0"
+            name="Update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1421,6 +1530,23 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
+          <operation
+            Id="f6cc81af-14ea-407e-8632-78fc0861affc"
+            name="Pion"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="1a96baf1-7fc5-452f-a939-6214bc4b009d"
+            name="Promoveert"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1682,6 +1808,14 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
+          <operation
+            Id="dc48ebdd-d7c4-44ae-9cb4-15d6e093e3ba"
+            name="Toren"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1805,6 +1939,14 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
+          <operation
+            Id="ea75400b-3a17-420b-9861-05ef2d461c58"
+            name="Loper"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1928,6 +2070,14 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
+          <operation
+            Id="82c70c0b-78c3-4874-9875-a62bb048576a"
+            name="Paard"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -2051,6 +2201,14 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
+          <operation
+            Id="bc0ac576-8e5b-4ae2-be59-0413f712023a"
+            name="Dame"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -2388,6 +2546,14 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
+          <operation
+            Id="a5341f25-81cc-4b8b-bb88-4b06e84d6edd"
+            name="Koning"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -2535,7 +2701,7 @@
         <ownedAttributesInternal>
           <property
             Id="5d633e13-3f77-479b-b4cd-16a15edc2df1"
-            name="Speleraanzet : string"
+            name="speleraanzet : string"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -2607,7 +2773,6 @@
           <operation
             Id="be559f79-e6b6-4b25-9d8c-43b37a70a029"
             name="Start"
-            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -2782,6 +2947,14 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
+          <operation
+            Id="3e8c5b50-bd8c-4ca3-9f7d-dd54cf973084"
+            name="Spel"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -3056,6 +3229,14 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
+          <operation
+            Id="fa8326a6-d047-460f-bdcc-ab4552c2d4df"
+            name="Mens"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -3180,6 +3361,14 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
+          <operation
+            Id="3c23148e-05da-44c3-8301-75848aeafe7f"
+            name="Computer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -4130,6 +4319,58 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="6ada15fd-d026-43a1-b82f-fd571415cee7"
+            name="NaamInvoer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="3a563959-5578-4f77-aa6e-852e0c648534"
+            name="btModeMultiplayer_Click"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="843e6fa7-9d3b-4151-b706-2c15876c73ae"
+            name="btModeComputer_Click"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="482d8a04-2a70-44eb-a06b-e87dd3e69b4b"
+            name="btModeRealMulti_Click"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="32dcffad-76f5-44d9-9535-035c2b5c9c0f"
+            name="btModeComputer_MouseEnter"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="01abba03-1a26-4a30-acf0-ac87325f6323"
+            name="btModel"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -4140,6 +4381,58 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="ab49c02d-db34-44c0-979e-cc5a84739335"
+        name="ModelingProject1::Vakje[,]" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="b9c0570d-425c-4b7c-90e2-3a85bcd31e4f"
+        name="PictureBox" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="a269f9f6-9587-4bbc-96dc-aad7e04fe4dc"
+        name="Image" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6271abbd-aea2-4387-b1fc-afec89f99a34"
+        name="SpeelBord"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="668ea117-60f9-467e-8ea2-ee64a83ea82b"
+            name="SpeelBord"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ba6d8599-b023-426d-8501-66e0d98a38bd"
+            name="SpeelBord_FormClosed"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="a560b73a-4415-4e52-9860-1f7a3b7f24e1"
+            name="SpeelBord_Load"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

@@ -7,9 +7,9 @@ namespace Schaakproject
 {
     public class Koning : Schaakstuk
     {
-        private bool Staatschaak { get; set; }
+        private bool _staatschaak { get; set; }
 
-        private bool Eerstezet { get; set; }
+        private bool _eersteZet { get; set; }
 
         public Koning(string kleur)
         {

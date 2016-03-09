@@ -7,7 +7,7 @@ namespace Schaakproject
 {
     public class Toren : Schaakstuk
     {
-        private bool Eerstezet{get; set; }
+        private bool _eersteZet{get; set; }
         public Toren(string kleur)
         {
             this.kleur = kleur;
