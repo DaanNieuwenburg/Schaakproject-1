@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Computer.cs" />
     <Compile Include="Dame.cs" />
+    <Compile Include="FormRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegister.Designer.cs">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="HerstartMelding.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,12 @@
     </Compile>
     <Compile Include="Koning.cs" />
     <Compile Include="Loper.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mens.cs" />
     <Compile Include="NaamInvoer.cs">
       <SubType>Form</SubType>
@@ -79,11 +91,17 @@
     <Compile Include="Speler.cs" />
     <Compile Include="Toren.cs" />
     <Compile Include="Vakje.cs" />
+    <EmbeddedResource Include="FormRegister.resx">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HerstartMelding.resx">
       <DependentUpon>HerstartMelding.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hoofdmenu.resx">
       <DependentUpon>Hoofdmenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NaamInvoer.resx">
       <DependentUpon>NaamInvoer.cs</DependentUpon>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginProject;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,8 +53,9 @@ namespace Schaakproject
             txtSpeler1Naam.Visible = false;
             lblNotImplented.Visible = true;
             btnBegin.Visible = true;
-
-            
+            MainForm Login = new MainForm();
+            FormRegister Register = new FormRegister();
+            Login.Show();
         }
 
         private void btModeComputer_MouseEnter(object sender, EventArgs e)
