@@ -9,6 +9,19 @@ namespace Schaakproject
     {
         private bool Eerstezet{ get; set; }
 
+        public Pion(string kleur)
+        {
+            this.kleur = kleur;
+            if (kleur == "wit")
+            {
+                afbeelding = Properties.Resources.PionWit;
+            }
+            else
+            {
+                afbeelding = Properties.Resources.PionZwart;
+            }
+        }
+
         public override void Verplaats()
         {
             throw new System.NotImplementedException();

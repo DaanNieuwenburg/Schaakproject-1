@@ -11,6 +11,19 @@ namespace Schaakproject
 
         private bool Eerstezet { get; set; }
 
+        public Koning(string kleur)
+        {
+            this.kleur = kleur;
+            if (kleur == "wit")
+            {
+                afbeelding = Properties.Resources.KoningWit;
+            }
+            else
+            {
+                afbeelding = Properties.Resources.KoningZwart;
+            }
+        }
+
         public override void Verplaats()
         {
             throw new System.NotImplementedException();

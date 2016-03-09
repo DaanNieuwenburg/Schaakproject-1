@@ -16,7 +16,8 @@ namespace Schaakproject
 
         public void Start()
         {
-            throw new NotImplementedException();
+            SpeelBord speelbord = new SpeelBord();
+            speelbord.Show();
         }
 
         public static void Herstart()

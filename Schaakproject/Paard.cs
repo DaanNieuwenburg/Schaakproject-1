@@ -7,6 +7,19 @@ namespace Schaakproject
 {
     public class Paard : Schaakstuk
     {
+        public Paard(string kleur)
+        {
+            this.kleur = kleur;
+            if (kleur == "wit")
+            {
+                afbeelding = Properties.Resources.PaardWit;
+            }
+            else
+            {
+                afbeelding = Properties.Resources.PaardZwart;
+            }
+        }
+
         public override void Verplaats()
         {
             throw new System.NotImplementedException();

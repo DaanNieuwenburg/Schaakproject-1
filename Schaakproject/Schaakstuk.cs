@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 public abstract class Schaakstuk
 {
-	private string _kleur{ get; set; }
+	public string kleur{ get; set; }
+
+    public Image afbeelding { get; set; }
 
 	public abstract void Verplaats();
 

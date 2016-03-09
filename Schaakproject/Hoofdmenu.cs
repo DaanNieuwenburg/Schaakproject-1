@@ -31,7 +31,7 @@ namespace Schaakproject
         {
             NaamInvoer naaminvoerdialog = new NaamInvoer();
             naaminvoerdialog.ShowDialog();
-            
+            Hide(); // verberg huidig formulier
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -43,6 +43,7 @@ namespace Schaakproject
         {
 
         }
+
 
         private void Hoofdmenu_Load(object sender, EventArgs e)
         {
