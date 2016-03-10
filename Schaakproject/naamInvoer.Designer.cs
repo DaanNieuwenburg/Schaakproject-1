@@ -170,7 +170,7 @@
             this.lblNotImplented.AutoSize = true;
             this.lblNotImplented.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotImplented.ForeColor = System.Drawing.Color.Red;
-            this.lblNotImplented.Location = new System.Drawing.Point(373, 249);
+            this.lblNotImplented.Location = new System.Drawing.Point(382, 258);
             this.lblNotImplented.Name = "lblNotImplented";
             this.lblNotImplented.Size = new System.Drawing.Size(108, 16);
             this.lblNotImplented.TabIndex = 9;
