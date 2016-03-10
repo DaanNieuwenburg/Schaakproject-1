@@ -8,11 +8,9 @@ namespace Schaakproject
     public class Schaakbord
     {
         public Vakje[,] schaakarray = new Vakje[8, 8];
+
         public Schaakbord()
         {
-
-
-
             bool kleurvakje = false; //zwart of wit
             string kleurstuk = "zwart";
 
@@ -21,13 +19,13 @@ namespace Schaakproject
             {
                 for (int y = 0; y < 8; y++)
                 {
-
                     schaakarray[x, y] = new Vakje(kleurvakje);
 
                     kleurvakje = !kleurvakje;
                 }
                 kleurvakje = !kleurvakje;
             }
+
             //voeg schaakstukken aan vakjes toe
             for (int x = 0; x < 8; x++)
             {
@@ -69,8 +67,8 @@ namespace Schaakproject
                         schaakarray[x, y].schaakstuk = new Pion(kleurstuk, schaakarray[x, y]);
                     }
                 }
-
             }
+
             // Geef buren aan de vakjes
             for (int x = 0; x < 8; x++)
             {
@@ -111,7 +109,6 @@ namespace Schaakproject
                     }
                 }
             }
-
         }
 
         private void CheckRemise()

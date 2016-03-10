@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Schaakproject
 {
     public class Vakje
     {
-        private string _kleur { get; set; }
+        private Color _kleur { get; set; }
         public Schaakstuk schaakstuk { get; set; }
         public SpecialPB pbox { get; set; }
         public Vakje buurNoord { get; set; }
@@ -22,14 +23,13 @@ namespace Schaakproject
 
         public Vakje(bool Kleur)
         {
-            this.pbox = pbox;
             if (Kleur == false)
             {
-                _kleur = "wit";
+                _kleur = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             }
             else
             {
-                _kleur = "zwart";
+                _kleur = Color.SaddleBrown;
             }
         }
 
@@ -38,6 +38,7 @@ namespace Schaakproject
             if (this.schaakstuk != null)
             {
                 pbox.Image = schaakstuk.afbeelding;
+                pbox.BackColor = _kleur;
             }
         }
     }

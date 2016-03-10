@@ -26,13 +26,8 @@ namespace Schaakproject
             }
             else
             {
-                if (selected != null)
-                {
-                    DeselecteerStuk();
-                }
-
                 this.selected = pictures;
-                pictures.BackColor = Color.Aqua;
+                pictures.BackColor = Color.HotPink;
             }
         }
 

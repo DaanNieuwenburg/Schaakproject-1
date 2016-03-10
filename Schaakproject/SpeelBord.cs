@@ -17,6 +17,7 @@ namespace Schaakproject
         private string _speler2Naam { get; set; }
         Mens mens = new Mens();
         Schaakbord schaakbord = new Schaakbord();
+
         public SpeelBord(string SpelMode, string Speler1, string Speler2)
         {
             _SpelMode = SpelMode;
