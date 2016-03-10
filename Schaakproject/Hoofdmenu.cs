@@ -15,6 +15,7 @@ namespace Schaakproject
         public Hoofdmenu()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
 

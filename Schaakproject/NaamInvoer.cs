@@ -23,6 +23,7 @@ namespace Schaakproject
         {
             //lblNotImplented.Visible = true;
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void btnNaamSubmit_Click(object sender, EventArgs e)
