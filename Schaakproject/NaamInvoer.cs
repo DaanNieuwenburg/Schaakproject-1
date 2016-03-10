@@ -21,6 +21,7 @@ namespace Schaakproject
         private string Speler2 { get; set; }
         public NaamInvoer()
         {
+            //lblNotImplented.Visible = true;
             InitializeComponent();
         }
 
@@ -33,12 +34,16 @@ namespace Schaakproject
             Speler2 = txtSpeler2Naam.Text;
             Spel spel = new Spel(Mode, Speler1, Speler2);
 
-
-            // sluit hoofdmenu
         }
 
         private void btModeMultiplayer_Click(object sender, EventArgs e)
         {
+            // Maak mode buttons niet zichtbaar
+            btModeComputer.Visible = false;
+            btModeMultiplayer.Visible = false;
+            btModeRealMulti.Visible = false;
+            lbTitel.Text = "Multiplayer";
+            
             lblSpeler1Naam.Visible = true;
             lblSpeler2Naam.Visible = true;
             txtSpeler1Naam.Visible = true;
@@ -51,6 +56,11 @@ namespace Schaakproject
 
         private void btModeComputer_Click(object sender, EventArgs e)
         {
+            btModeComputer.Visible = false;
+            btModeMultiplayer.Visible = false;
+            btModeRealMulti.Visible = false;
+            lbTitel.Text = "Computer";
+
             lblSpeler1Naam.Visible = true;
             lblSpeler2Naam.Visible = false;
             txtSpeler1Naam.Visible = true;
@@ -58,19 +68,26 @@ namespace Schaakproject
             lblNotImplented.Visible = true;
             btnBegin.Visible = true;
             Mode = "SinglePlayer";
-            
+            lblDontPress.Visible = true;
+
         }
 
         private void btModeRealMulti_Click(object sender, EventArgs e)
         {
+            btModeComputer.Visible = false;
+            btModeMultiplayer.Visible = false;
+            btModeRealMulti.Visible = false;
+            lbTitel.Text = "ONLINE";
+
             lblSpeler1Naam.Visible = false;
             lblSpeler2Naam.Visible = false;
             txtSpeler1Naam.Visible = false;
             lblNotImplented.Visible = true;
             btnBegin.Visible = true;
             MainForm Login = new MainForm();
-            FormRegister Register = new FormRegister();
+            //FormRegister Register = new FormRegister();
             Login.Show();
+            lblDontPress.Visible = true;
         }
 
         private void btModeComputer_MouseEnter(object sender, EventArgs e)
@@ -123,6 +140,23 @@ namespace Schaakproject
         private void btModeComputer_KeyPress(object sender, KeyPressEventArgs e)
         {
 
+        }
+
+        private void pbTerug_Click(object sender, EventArgs e)
+        {
+            // Maak mode buttons niet zichtbaar
+            btModeComputer.Visible = true;
+            btModeMultiplayer.Visible = true;
+            btModeRealMulti.Visible = true;
+            lbTitel.Text = "Selecteer een schaakmodus";
+
+            lblSpeler1Naam.Visible = false;
+            lblSpeler2Naam.Visible = false;
+            txtSpeler1Naam.Visible = false;
+            txtSpeler2Naam.Visible = false;
+            lblNotImplented.Visible = false;
+            btnBegin.Visible = false;
+            lblDontPress.Visible = false;
         }
     }
 }

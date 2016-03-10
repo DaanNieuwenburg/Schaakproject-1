@@ -39,11 +39,14 @@
             this.btModeRealMulti = new System.Windows.Forms.Button();
             this.lbTitel = new System.Windows.Forms.Label();
             this.lblNotImplented = new System.Windows.Forms.Label();
+            this.pbTerug = new System.Windows.Forms.PictureBox();
+            this.lblDontPress = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTerug)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSpeler1Naam
             // 
-            this.txtSpeler1Naam.Location = new System.Drawing.Point(82, 213);
+            this.txtSpeler1Naam.Location = new System.Drawing.Point(205, 87);
             this.txtSpeler1Naam.Name = "txtSpeler1Naam";
             this.txtSpeler1Naam.Size = new System.Drawing.Size(100, 20);
             this.txtSpeler1Naam.TabIndex = 0;
@@ -52,7 +55,9 @@
             // lblSpeler1Naam
             // 
             this.lblSpeler1Naam.AutoSize = true;
-            this.lblSpeler1Naam.Location = new System.Drawing.Point(88, 197);
+            this.lblSpeler1Naam.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpeler1Naam.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblSpeler1Naam.Location = new System.Drawing.Point(213, 71);
             this.lblSpeler1Naam.Name = "lblSpeler1Naam";
             this.lblSpeler1Naam.Size = new System.Drawing.Size(83, 13);
             this.lblSpeler1Naam.TabIndex = 1;
@@ -69,7 +74,7 @@
             this.btnBegin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnBegin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBegin.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBegin.Location = new System.Drawing.Point(151, 227);
+            this.btnBegin.Location = new System.Drawing.Point(158, 365);
             this.btnBegin.Name = "btnBegin";
             this.btnBegin.Size = new System.Drawing.Size(200, 78);
             this.btnBegin.TabIndex = 2;
@@ -81,7 +86,7 @@
             // 
             // txtSpeler2Naam
             // 
-            this.txtSpeler2Naam.Location = new System.Drawing.Point(342, 213);
+            this.txtSpeler2Naam.Location = new System.Drawing.Point(205, 174);
             this.txtSpeler2Naam.Name = "txtSpeler2Naam";
             this.txtSpeler2Naam.Size = new System.Drawing.Size(100, 20);
             this.txtSpeler2Naam.TabIndex = 3;
@@ -90,7 +95,9 @@
             // lblSpeler2Naam
             // 
             this.lblSpeler2Naam.AutoSize = true;
-            this.lblSpeler2Naam.Location = new System.Drawing.Point(339, 197);
+            this.lblSpeler2Naam.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpeler2Naam.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblSpeler2Naam.Location = new System.Drawing.Point(202, 140);
             this.lblSpeler2Naam.Name = "lblSpeler2Naam";
             this.lblSpeler2Naam.Size = new System.Drawing.Size(110, 13);
             this.lblSpeler2Naam.TabIndex = 4;
@@ -108,7 +115,7 @@
             this.btModeMultiplayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btModeMultiplayer.Location = new System.Drawing.Point(185, 87);
             this.btModeMultiplayer.Name = "btModeMultiplayer";
-            this.btModeMultiplayer.Size = new System.Drawing.Size(150, 63);
+            this.btModeMultiplayer.Size = new System.Drawing.Size(150, 66);
             this.btModeMultiplayer.TabIndex = 5;
             this.btModeMultiplayer.UseVisualStyleBackColor = false;
             this.btModeMultiplayer.Click += new System.EventHandler(this.btModeMultiplayer_Click);
@@ -155,27 +162,51 @@
             // 
             // lbTitel
             // 
-            this.lbTitel.AutoSize = true;
             this.lbTitel.BackColor = System.Drawing.Color.Transparent;
             this.lbTitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitel.ForeColor = System.Drawing.Color.White;
-            this.lbTitel.Location = new System.Drawing.Point(147, 9);
+            this.lbTitel.Location = new System.Drawing.Point(12, 9);
             this.lbTitel.Name = "lbTitel";
-            this.lbTitel.Size = new System.Drawing.Size(227, 20);
+            this.lbTitel.Size = new System.Drawing.Size(490, 20);
             this.lbTitel.TabIndex = 8;
             this.lbTitel.Text = "Selecteer een schaakmode";
+            this.lbTitel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblNotImplented
             // 
             this.lblNotImplented.AutoSize = true;
             this.lblNotImplented.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotImplented.ForeColor = System.Drawing.Color.Red;
-            this.lblNotImplented.Location = new System.Drawing.Point(382, 258);
+            this.lblNotImplented.Location = new System.Drawing.Point(204, 175);
             this.lblNotImplented.Name = "lblNotImplented";
             this.lblNotImplented.Size = new System.Drawing.Size(108, 16);
             this.lblNotImplented.TabIndex = 9;
             this.lblNotImplented.Text = "Not implented.";
             this.lblNotImplented.Visible = false;
+            // 
+            // pbTerug
+            // 
+            this.pbTerug.BackColor = System.Drawing.Color.Transparent;
+            this.pbTerug.Image = global::Schaakproject.Properties.Resources.backIcon;
+            this.pbTerug.Location = new System.Drawing.Point(118, 7);
+            this.pbTerug.Name = "pbTerug";
+            this.pbTerug.Size = new System.Drawing.Size(23, 24);
+            this.pbTerug.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbTerug.TabIndex = 10;
+            this.pbTerug.TabStop = false;
+            this.pbTerug.Click += new System.EventHandler(this.pbTerug_Click);
+            // 
+            // lblDontPress
+            // 
+            this.lblDontPress.AutoSize = true;
+            this.lblDontPress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDontPress.ForeColor = System.Drawing.Color.Red;
+            this.lblDontPress.Location = new System.Drawing.Point(155, 396);
+            this.lblDontPress.Name = "lblDontPress";
+            this.lblDontPress.Size = new System.Drawing.Size(227, 16);
+            this.lblDontPress.TabIndex = 11;
+            this.lblDontPress.Text = "Don\'t press the goddamn button";
+            this.lblDontPress.Visible = false;
             // 
             // NaamInvoer
             // 
@@ -183,10 +214,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(514, 317);
+            this.ClientSize = new System.Drawing.Size(514, 455);
+            this.Controls.Add(this.lblDontPress);
             this.Controls.Add(this.txtSpeler1Naam);
             this.Controls.Add(this.lblNotImplented);
-            this.Controls.Add(this.lbTitel);
             this.Controls.Add(this.btModeRealMulti);
             this.Controls.Add(this.btModeComputer);
             this.Controls.Add(this.btModeMultiplayer);
@@ -194,9 +225,12 @@
             this.Controls.Add(this.txtSpeler2Naam);
             this.Controls.Add(this.btnBegin);
             this.Controls.Add(this.lblSpeler1Naam);
+            this.Controls.Add(this.pbTerug);
+            this.Controls.Add(this.lbTitel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NaamInvoer";
             this.Text = "Voer je naam in";
+            ((System.ComponentModel.ISupportInitialize)(this.pbTerug)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +247,7 @@
         private System.Windows.Forms.Button btModeRealMulti;
         private System.Windows.Forms.Label lbTitel;
         private System.Windows.Forms.Label lblNotImplented;
+        private System.Windows.Forms.PictureBox pbTerug;
+        private System.Windows.Forms.Label lblDontPress;
     }
 }
