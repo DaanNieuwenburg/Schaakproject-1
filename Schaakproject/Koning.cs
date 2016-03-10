@@ -11,9 +11,10 @@ namespace Schaakproject
 
         private bool _eersteZet { get; set; }
 
-        public Koning(string kleur)
+        public Koning(string kleur, Vakje vakje)
         {
             this.kleur = kleur;
+            this.vakje = vakje;
             if (kleur == "wit")
             {
                 afbeelding = Properties.Resources.KoningWit;

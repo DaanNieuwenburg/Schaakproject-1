@@ -9,8 +9,9 @@ namespace Schaakproject
     {
         private bool _eersteZet{ get; set; }
 
-        public Pion(string kleur)
+        public Pion(string kleur, Vakje vakje)
         {
+            this.vakje = vakje;
             this.kleur = kleur;
             if (kleur == "wit")
             {

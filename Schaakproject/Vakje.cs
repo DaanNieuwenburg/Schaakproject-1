@@ -9,6 +9,14 @@ public class Vakje
 	private string _kleur{ get; set; }
     public Schaakstuk schaakstuk { get; set; }
     public PictureBox pbox { get; set; }
+    public Vakje buurNoord { get; set; }
+    public Vakje buurZuid { get; set; }
+    public Vakje buurOost { get; set; }
+    public Vakje buurWest { get; set; }
+    public Vakje buurNoordoost { get; set; }
+    public Vakje buurZuidoost { get; set; }
+    public Vakje buurNoordwest { get; set; }
+    public Vakje buurZuidwest { get; set; }
 
     public Vakje(bool Kleur)
     {

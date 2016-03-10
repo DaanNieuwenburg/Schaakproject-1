@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace Schaakproject
 {
     public class Mens : Speler
     {
+        private SpecialPB selected { get; set; }
+
         public Mens()
             : base("test", "test")
         {
@@ -14,21 +17,37 @@ namespace Schaakproject
         }
 
         public bool heeftGeselecteerd = false;
-        private void SelecteerStuk()
+
+        public void SelecteerStuk(SpecialPB pictures)
         {
-            throw new System.NotImplementedException();
+            if (pictures == selected)
+            {
+                DeselecteerStuk();
+            }
+            else
+            {
+                if (selected != null)
+                {
+                    DeselecteerStuk();
+                }
+
+                this.selected = pictures;
+                pictures.BackColor = Color.Aqua;
+            }
         }
 
         private void DeselecteerStuk()
         {
-            throw new System.NotImplementedException();
+            selected.vakje.update();
+            selected = null;
+
         }
 
         private void SelecteerVakje()
         {
-            Spel.VeranderSpeler();
-            heeftGeselecteerd = true;
+            throw new System.NotImplementedException();
         }
+
     }
 }
 

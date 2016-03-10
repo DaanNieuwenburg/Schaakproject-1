@@ -136,16 +136,6 @@ namespace Schaakproject
 
         }
 
-        private void btModeComputer_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void pbTerug_Click(object sender, EventArgs e)
-        {
-      
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (lbTitel.Text == "Selecteer een schaakmode")

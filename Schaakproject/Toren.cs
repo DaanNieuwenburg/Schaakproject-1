@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace Schaakproject
 {
     public class Toren : Schaakstuk
     {
         private bool _eersteZet{get; set; }
-        public Toren(string kleur)
+        public Toren(string kleur, Vakje vakje)
         {
             this.kleur = kleur;
+            this.vakje = vakje;
             if (kleur == "wit")
             {
                 afbeelding = Properties.Resources.TorenWit;

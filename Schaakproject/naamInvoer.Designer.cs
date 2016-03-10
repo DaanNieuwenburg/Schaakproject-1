@@ -137,7 +137,6 @@
             this.btModeComputer.TabIndex = 6;
             this.btModeComputer.UseVisualStyleBackColor = false;
             this.btModeComputer.Click += new System.EventHandler(this.btModeComputer_Click);
-            this.btModeComputer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btModeComputer_KeyPress);
             this.btModeComputer.MouseEnter += new System.EventHandler(this.btModeComputer_MouseEnter);
             this.btModeComputer.MouseLeave += new System.EventHandler(this.btModeComputer_MouseLeave);
             // 
@@ -200,6 +199,9 @@
             this.btTerug.BackColor = System.Drawing.Color.Transparent;
             this.btTerug.BackgroundImage = global::Schaakproject.Properties.Resources.backIcon;
             this.btTerug.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btTerug.FlatAppearance.BorderSize = 0;
+            this.btTerug.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btTerug.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btTerug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btTerug.Location = new System.Drawing.Point(94, 9);
             this.btTerug.Name = "btTerug";
@@ -209,9 +211,6 @@
             this.btTerug.Click += new System.EventHandler(this.button1_Click);
             this.btTerug.MouseEnter += new System.EventHandler(this.btTerug_MouseEnter);
             this.btTerug.MouseLeave += new System.EventHandler(this.btTerug_MouseLeave);
-            this.btTerug.FlatAppearance.BorderSize = 0;
-            this.btTerug.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btTerug.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             // 
             // NaamInvoer
             // 
