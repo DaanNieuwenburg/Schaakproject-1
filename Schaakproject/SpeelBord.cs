@@ -13,14 +13,16 @@ namespace Schaakproject
     public partial class SpeelBord : Form
     {
         private string _SpelMode { get; set; }
-        private string _Player1 { get; set; }
-        private string _Player2 { get; set; }
-        public SpeelBord(string SpelMode, string _Speler1, string _Speler2)
+        private string _speler1Naam { get; set; }
+        private string _speler2Naam { get; set; }
+        public SpeelBord(string SpelMode, string Speler1, string Speler2)
         {
             _SpelMode = SpelMode;
-            _Player1 = _Speler1;
-            _Player2 = _Speler2;
+            _speler1Naam = Speler1;
+            _speler2Naam = Speler2;
             InitializeComponent();
+
+            this.CenterToScreen();
             Schaakbord schaakbord = new Schaakbord();
             PictureBox[,] pictures = new PictureBox[8, 8];
             bool zwartwit = false;
@@ -60,20 +62,20 @@ namespace Schaakproject
         {
             if (_SpelMode.Equals("SinglePlayer"))
             {
-                lblPlayer1.Text = _Player1;
+                lblPlayer1.Text = _speler1Naam;
                 lblPlayer2.Text = "COMP";
             }
             else if (_SpelMode.Equals("MultiPlayer"))
             {
-                Console.WriteLine(_Player1);
-                lblPlayer1.Text = "P1: " + _Player1;
-                lblPlayer2.Text = "P2: " + _Player2;
+                Console.WriteLine(_speler1Naam);
+                lblPlayer1.Text = "P1: "+_speler1Naam;
+                lblPlayer2.Text = "P2: "+_speler2Naam;
             }
         }
 
         private void SpeelBord_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();  // sluit applicatie af
+           Application.Exit();  // sluit applicatie af
         }
 
         private void btHerstart_Click(object sender, EventArgs e)
@@ -83,8 +85,8 @@ namespace Schaakproject
             if (Warning.Sure == true)
             {
                 this.Hide();
-                Spel.Herstart(_SpelMode, _Player1, _Player2);
+                Spel.Herstart(_SpelMode, _speler1Naam, _speler2Naam);
+            }
             }
         }
-    }
 }

@@ -21,6 +21,7 @@ namespace Schaakproject
         private string Speler2 { get; set; }
         public NaamInvoer()
         {
+            //lblNotImplented.Visible = true;
             InitializeComponent();
         }
 
@@ -33,12 +34,16 @@ namespace Schaakproject
             Speler2 = txtSpeler2Naam.Text;
             Spel spel = new Spel(Mode, Speler1, Speler2);
 
-
-            // sluit hoofdmenu
         }
 
         private void btModeMultiplayer_Click(object sender, EventArgs e)
         {
+            // Maak mode buttons niet zichtbaar
+            btModeComputer.Visible = false;
+            btModeMultiplayer.Visible = false;
+            btModeRealMulti.Visible = false;
+            lbTitel.Text = "Multiplayer";
+            
             lblSpeler1Naam.Visible = true;
             lblSpeler2Naam.Visible = true;
             txtSpeler1Naam.Visible = true;
@@ -50,6 +55,11 @@ namespace Schaakproject
 
         private void btModeComputer_Click(object sender, EventArgs e)
         {
+            btModeComputer.Visible = false;
+            btModeMultiplayer.Visible = false;
+            btModeRealMulti.Visible = false;
+            lbTitel.Text = "Computer";
+
             lblSpeler1Naam.Visible = true;
             lblSpeler2Naam.Visible = false;
             txtSpeler1Naam.Visible = true;
@@ -57,11 +67,17 @@ namespace Schaakproject
             lblNotImplented.Visible = true;
             btnBegin.Visible = true;
             Mode = "SinglePlayer";
+            lblDontPress.Visible = true;
             
         }
 
         private void btModeRealMulti_Click(object sender, EventArgs e)
         {
+            btModeComputer.Visible = false;
+            btModeMultiplayer.Visible = false;
+            btModeRealMulti.Visible = false;
+            lbTitel.Text = "ONLINE";
+
             lblSpeler1Naam.Visible = false;
             lblSpeler2Naam.Visible = false;
             txtSpeler1Naam.Visible = false;
@@ -69,58 +85,90 @@ namespace Schaakproject
             btnBegin.Visible = true;
             MainForm Login = new MainForm();
             Login.Show();
+            lblDontPress.Visible = true;
         }
 
         private void btModeComputer_MouseEnter(object sender, EventArgs e)
         {
-            this.btModeComputer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_2_klad_click);
+            this.btModeComputer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button2KladClick);
         }
 
         private void btModeComputer_MouseLeave(object sender, EventArgs e)
         {
-            this.btModeComputer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_2_klad);
+            this.btModeComputer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button2Klad);
 
         }
 
         private void btModeMultiplayer_MouseLeave(object sender, EventArgs e)
         {
-            this.btModeMultiplayer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_1_klad);
+            this.btModeMultiplayer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button1Klad);
 
         }
 
         private void btModeMultiplayer_MouseEnter(object sender, EventArgs e)
         {
-            this.btModeMultiplayer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_1_klad_click);
+            this.btModeMultiplayer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button1KladClick);
 
         }
 
         private void btModeRealMulti_MouseEnter(object sender, EventArgs e)
         {
-            this.btModeRealMulti.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_3_klad_click);
+            this.btModeRealMulti.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button3KladClick);
 
         }
 
         private void btModeRealMulti_MouseLeave(object sender, EventArgs e)
         {
-            this.btModeRealMulti.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_3_klad);
+            this.btModeRealMulti.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button3Klad);
 
         }
 
         private void btnBegin_MouseEnter(object sender, EventArgs e)
         {
-            this.btnBegin.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_begin_click);
+            this.btnBegin.BackgroundImage = (System.Drawing.Image)(Properties.Resources.buttonBeginClick);
 
         }
 
         private void btnBegin_MouseLeave(object sender, EventArgs e)
         {
-            this.btnBegin.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_begin);
+            this.btnBegin.BackgroundImage = (System.Drawing.Image)(Properties.Resources.buttonBegin);
 
         }
 
         private void btModeComputer_KeyPress(object sender, KeyPressEventArgs e)
         {
 
+        }
+
+        private void pbTerug_Click(object sender, EventArgs e)
+        {
+      
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Maak mode buttons niet zichtbaar
+            btModeComputer.Visible = true;
+            btModeMultiplayer.Visible = true;
+            btModeRealMulti.Visible = true;
+            lbTitel.Text = "Selecteer een schaakmodus";
+            lblSpeler1Naam.Visible = false;
+            lblSpeler2Naam.Visible = false;
+            txtSpeler1Naam.Visible = false;
+            txtSpeler2Naam.Visible = false;
+            lblNotImplented.Visible = false;
+            btnBegin.Visible = false;
+            lblDontPress.Visible = false;
+        }
+
+        private void btTerug_MouseEnter(object sender, EventArgs e)
+        {
+            this.btTerug.BackgroundImage = (System.Drawing.Image)(Properties.Resources.backIcon_click);
+        }
+
+        private void btTerug_MouseLeave(object sender, EventArgs e)
+        {
+            this.btTerug.BackgroundImage = (System.Drawing.Image)(Properties.Resources.backIcon);
         }
     }
 }
