@@ -28,10 +28,10 @@ namespace Schaakproject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            StreamReader userfile = new StreamReader(@"C:\Users\daan1\Documents\Visual Studio 2015\Projects\LoginProject\Login\username.txt");
+            StreamReader userfile = new StreamReader(@"C:\Users\daan1\Source\Repos\Schaakproject\Login\username.txt");
             username = userfile.ReadLine();
             userfile.Close();
-            StreamReader passfile = new StreamReader(@"C:\Users\daan1\Documents\Visual Studio 2015\Projects\LoginProject\Login\password.txt");
+            StreamReader passfile = new StreamReader(@"C:\Users\daan1\Source\Repos\Schaakproject\Login\password.txt");
             password = passfile.ReadLine();
             passfile.Close();
             if (txtUsername.Text == username && txtPassword.Text == password)

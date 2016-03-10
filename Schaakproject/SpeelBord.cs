@@ -63,17 +63,17 @@ namespace Schaakproject
                 lblPlayer1.Text = _Player1;
                 lblPlayer2.Text = "COMP";
             }
-            else if(_SpelMode.Equals("MultiPlayer"))
+            else if (_SpelMode.Equals("MultiPlayer"))
             {
                 Console.WriteLine(_Player1);
-                lblPlayer1.Text = "P1: "+_Player1;
-                lblPlayer2.Text = "P2: "+_Player2;
+                lblPlayer1.Text = "P1: " + _Player1;
+                lblPlayer2.Text = "P2: " + _Player2;
             }
         }
 
         private void SpeelBord_FormClosed(object sender, FormClosedEventArgs e)
         {
-           Application.Exit();  // sluit applicatie af
+            Application.Exit();  // sluit applicatie af
         }
 
         private void btHerstart_Click(object sender, EventArgs e)
@@ -81,9 +81,10 @@ namespace Schaakproject
             HerstartMelding Warning = new HerstartMelding();
             Warning.ShowDialog();
             if (Warning.Sure == true)
-
+            {
                 this.Hide();
                 Spel.Herstart(_SpelMode, _Player1, _Player2);
             }
         }
+    }
 }

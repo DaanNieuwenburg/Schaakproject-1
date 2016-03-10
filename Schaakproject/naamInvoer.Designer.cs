@@ -43,7 +43,7 @@
             // 
             // txtSpeler1Naam
             // 
-            this.txtSpeler1Naam.Location = new System.Drawing.Point(82, 213);
+            this.txtSpeler1Naam.Location = new System.Drawing.Point(102, 213);
             this.txtSpeler1Naam.Name = "txtSpeler1Naam";
             this.txtSpeler1Naam.Size = new System.Drawing.Size(100, 20);
             this.txtSpeler1Naam.TabIndex = 0;
@@ -52,7 +52,10 @@
             // lblSpeler1Naam
             // 
             this.lblSpeler1Naam.AutoSize = true;
-            this.lblSpeler1Naam.Location = new System.Drawing.Point(88, 197);
+            this.lblSpeler1Naam.BackColor = System.Drawing.SystemColors.Control;
+            this.lblSpeler1Naam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSpeler1Naam.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSpeler1Naam.Location = new System.Drawing.Point(108, 197);
             this.lblSpeler1Naam.Name = "lblSpeler1Naam";
             this.lblSpeler1Naam.Size = new System.Drawing.Size(83, 13);
             this.lblSpeler1Naam.TabIndex = 1;
@@ -90,7 +93,9 @@
             // lblSpeler2Naam
             // 
             this.lblSpeler2Naam.AutoSize = true;
-            this.lblSpeler2Naam.Location = new System.Drawing.Point(339, 197);
+            this.lblSpeler2Naam.BackColor = System.Drawing.SystemColors.ControlText;
+            this.lblSpeler2Naam.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblSpeler2Naam.Location = new System.Drawing.Point(341, 197);
             this.lblSpeler2Naam.Name = "lblSpeler2Naam";
             this.lblSpeler2Naam.Size = new System.Drawing.Size(110, 13);
             this.lblSpeler2Naam.TabIndex = 4;

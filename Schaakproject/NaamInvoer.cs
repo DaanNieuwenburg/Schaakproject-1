@@ -68,7 +68,6 @@ namespace Schaakproject
             lblNotImplented.Visible = true;
             btnBegin.Visible = true;
             MainForm Login = new MainForm();
-            FormRegister Register = new FormRegister();
             Login.Show();
         }
 

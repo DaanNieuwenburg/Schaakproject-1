@@ -39,7 +39,7 @@
             this.btnYes.Location = new System.Drawing.Point(37, 59);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(75, 23);
-            this.btnYes.TabIndex = 0;
+            this.btnYes.TabIndex = 1;
             this.btnYes.Text = "Yes";
             this.btnYes.UseVisualStyleBackColor = true;
             this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
@@ -49,7 +49,7 @@
             this.btnNo.Location = new System.Drawing.Point(143, 60);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(75, 23);
-            this.btnNo.TabIndex = 1;
+            this.btnNo.TabIndex = 0;
             this.btnNo.Text = "No";
             this.btnNo.UseVisualStyleBackColor = true;
             this.btnNo.Click += new System.EventHandler(this.btnNo_Click);

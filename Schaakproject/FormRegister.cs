@@ -22,9 +22,9 @@ namespace LoginProject
         public FormRegister()
         {
             InitializeComponent();
-            userfile = new StreamWriter(@"C:\Users\daan1\Documents\Visual Studio 2015\Projects\LoginProject\Login\username.txt", true);
+            userfile = new StreamWriter(@"C:\Users\daan1\Source\Repos\Schaakproject\Login\username.txt", true);
             // file nog veranderen naar de projectfolder. Werkt nu nog niet.
-            passfile = new StreamWriter(@"C:\Users\daan1\Documents\Visual Studio 2015\Projects\LoginProject\Login\password.txt", true);
+            passfile = new StreamWriter(@"C:\Users\daan1\Source\Repos\Schaakproject\Login\password.txt", true);
             // file nog veranderen naar de projectfolder. Werkt nu nog niet.
         }
         private void button1_Click(object sender, EventArgs e)
