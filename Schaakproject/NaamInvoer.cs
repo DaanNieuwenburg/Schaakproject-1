@@ -58,7 +58,7 @@ namespace Schaakproject
             btModeComputer.Visible = false;
             btModeMultiplayer.Visible = false;
             btModeRealMulti.Visible = false;
-            lbTitel.Text = "Computer";
+            lbTitel.Text = "Single Player";
 
             lblSpeler1Naam.Visible = true;
             lblSpeler2Naam.Visible = false;
@@ -76,7 +76,7 @@ namespace Schaakproject
             btModeComputer.Visible = false;
             btModeMultiplayer.Visible = false;
             btModeRealMulti.Visible = false;
-            lbTitel.Text = "ONLINE";
+            lbTitel.Text = "Online";
 
             lblSpeler1Naam.Visible = false;
             lblSpeler2Naam.Visible = false;
