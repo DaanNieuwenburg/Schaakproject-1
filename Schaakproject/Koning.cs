@@ -7,9 +7,22 @@ namespace Schaakproject
 {
     public class Koning : Schaakstuk
     {
-        private bool Staatschaak { get; set; }
+        private bool _staatschaak { get; set; }
 
-        private bool Eerstezet { get; set; }
+        private bool _eersteZet { get; set; }
+
+        public Koning(string kleur)
+        {
+            this.kleur = kleur;
+            if (kleur == "wit")
+            {
+                afbeelding = Properties.Resources.KoningWit;
+            }
+            else
+            {
+                afbeelding = Properties.Resources.KoningZwart;
+            }
+        }
 
         public override void Verplaats()
         {

@@ -7,7 +7,19 @@ namespace Schaakproject
 {
     public class Toren : Schaakstuk
     {
-        private bool Eerstezet{get; set; }
+        private bool _eersteZet{get; set; }
+        public Toren(string kleur)
+        {
+            this.kleur = kleur;
+            if (kleur == "wit")
+            {
+                afbeelding = Properties.Resources.TorenWit;
+            }
+            else
+            {
+                afbeelding = Properties.Resources.TorenZwart;
+            }
+        }
 
         public override void Verplaats()
         {

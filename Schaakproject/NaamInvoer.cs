@@ -13,6 +13,7 @@ namespace Schaakproject
 {
     public partial class NaamInvoer : Form
     {
+
         public NaamInvoer()
         {
             InitializeComponent();
@@ -24,6 +25,8 @@ namespace Schaakproject
             Speler speler1 = new Speler(txtSpeler1Naam.Text, "wit");
             Speler speler2 = new Speler(txtSpeler2Naam.Text, "zwart");
             Spel spel = new Spel();
+
+            // sluit hoofdmenu
         }
 
         private void btModeMultiplayer_Click(object sender, EventArgs e)

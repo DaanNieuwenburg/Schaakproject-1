@@ -7,7 +7,20 @@ namespace Schaakproject
 {
     public class Pion : Schaakstuk
     {
-        private bool Eerstezet{ get; set; }
+        private bool _eersteZet{ get; set; }
+
+        public Pion(string kleur)
+        {
+            this.kleur = kleur;
+            if (kleur == "wit")
+            {
+                afbeelding = Properties.Resources.PionWit;
+            }
+            else
+            {
+                afbeelding = Properties.Resources.PionZwart;
+            }
+        }
 
         public override void Verplaats()
         {

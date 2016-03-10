@@ -62,7 +62,7 @@
             // btnBegin
             // 
             this.btnBegin.BackColor = System.Drawing.Color.Transparent;
-            this.btnBegin.BackgroundImage = global::Schaakproject.Properties.Resources.button_begin;
+            this.btnBegin.BackgroundImage = global::Schaakproject.Properties.Resources.button_begin1;
             this.btnBegin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBegin.FlatAppearance.BorderSize = 0;
             this.btnBegin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
