@@ -46,7 +46,6 @@ namespace Schaakproject
             btnBegin.Visible = true;
             lblNotImplented.Visible = false;
             Mode = "MultiPlayer";
-            
         }
 
         private void btModeComputer_Click(object sender, EventArgs e)

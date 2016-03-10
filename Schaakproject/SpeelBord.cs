@@ -66,8 +66,8 @@ namespace Schaakproject
             else if(_SpelMode.Equals("MultiPlayer"))
             {
                 Console.WriteLine(_Player1);
-                lblPlayer1.Text = _Player1;
-                lblPlayer2.Text = _Player2;
+                lblPlayer1.Text = "P1: "+_Player1;
+                lblPlayer2.Text = "P2: "+_Player2;
             }
         }
 
