@@ -75,5 +75,15 @@ namespace Schaakproject
         {
            Application.Exit();  // sluit applicatie af
         }
-    }
+
+        private void btHerstart_Click(object sender, EventArgs e)
+        {
+            HerstartMelding Warning = new HerstartMelding();
+            Warning.ShowDialog();
+            if (Warning.Sure == true)
+
+                this.Hide();
+                Spel.Herstart(_SpelMode, _Player1, _Player2);
+            }
+        }
 }

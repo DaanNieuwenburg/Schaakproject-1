@@ -29,21 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hoofdmenu));
-            this.herstartButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // herstartButton
-            // 
-            this.herstartButton.Location = new System.Drawing.Point(613, 209);
-            this.herstartButton.Name = "herstartButton";
-            this.herstartButton.Size = new System.Drawing.Size(75, 23);
-            this.herstartButton.TabIndex = 0;
-            this.herstartButton.Text = "Herstart";
-            this.herstartButton.UseVisualStyleBackColor = true;
-            this.herstartButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.herstartButton_MouseClick);
             // 
             // startButton
             // 
@@ -83,7 +72,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(716, 446);
             this.Controls.Add(this.pbLogo);
-            this.Controls.Add(this.herstartButton);
             this.Controls.Add(this.startButton);
             this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -96,7 +84,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button herstartButton;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.PictureBox pbLogo;
     }
