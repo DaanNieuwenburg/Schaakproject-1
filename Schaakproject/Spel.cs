@@ -28,9 +28,10 @@ namespace Schaakproject
             speelbord.Show();
         }
 
-        public static void Herstart()
+        public static void Herstart(string spelMode, string speler1Naam, string speler2Naam)
         {
-            //Spel spel = new Spel();
+            Spel spel = new Spel(spelMode, speler1Naam, speler2Naam);
+
         }
 
         public static void VeranderSpeler()

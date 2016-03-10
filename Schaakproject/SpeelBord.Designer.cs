@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SpeelBord));
             this.lblPlayer1 = new System.Windows.Forms.Label();
             this.lblPlayer2 = new System.Windows.Forms.Label();
+            this.btHerstart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblPlayer1
@@ -51,11 +52,22 @@
             this.lblPlayer2.TabIndex = 1;
             this.lblPlayer2.Text = "Player 2";
             // 
+            // btHerstart
+            // 
+            this.btHerstart.Location = new System.Drawing.Point(651, 505);
+            this.btHerstart.Name = "btHerstart";
+            this.btHerstart.Size = new System.Drawing.Size(75, 23);
+            this.btHerstart.TabIndex = 2;
+            this.btHerstart.Text = "Herstart";
+            this.btHerstart.UseVisualStyleBackColor = true;
+            this.btHerstart.Click += new System.EventHandler(this.btHerstart_Click);
+            // 
             // SpeelBord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 540);
+            this.Controls.Add(this.btHerstart);
             this.Controls.Add(this.lblPlayer2);
             this.Controls.Add(this.lblPlayer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -72,5 +84,6 @@
 
         private System.Windows.Forms.Label lblPlayer1;
         private System.Windows.Forms.Label lblPlayer2;
+        private System.Windows.Forms.Button btHerstart;
     }
 }

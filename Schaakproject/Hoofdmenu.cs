@@ -17,15 +17,6 @@ namespace Schaakproject
             InitializeComponent();
         }
 
-        private void herstartButton_MouseClick(object sender, MouseEventArgs e)
-        {
-            HerstartMelding Warning = new HerstartMelding();
-            Warning.ShowDialog();
-            if (Warning.Sure == true)
-            {
-                Spel.Herstart();
-            }
-        }
 
         private void startButton_Click(object sender, EventArgs e)
         {
@@ -33,17 +24,6 @@ namespace Schaakproject
             naaminvoerdialog.ShowDialog();
             Hide(); // verberg huidig formulier
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void Hoofdmenu_Load(object sender, EventArgs e)
         {
