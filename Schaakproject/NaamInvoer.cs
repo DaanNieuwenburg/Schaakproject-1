@@ -92,48 +92,48 @@ namespace Schaakproject
 
         private void btModeComputer_MouseEnter(object sender, EventArgs e)
         {
-            this.btModeComputer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_2_klad_click);
+            this.btModeComputer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button2KladClick);
         }
 
         private void btModeComputer_MouseLeave(object sender, EventArgs e)
         {
-            this.btModeComputer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_2_klad);
+            this.btModeComputer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button2Klad);
 
         }
 
         private void btModeMultiplayer_MouseLeave(object sender, EventArgs e)
         {
-            this.btModeMultiplayer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_1_klad);
+            this.btModeMultiplayer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button1Klad);
 
         }
 
         private void btModeMultiplayer_MouseEnter(object sender, EventArgs e)
         {
-            this.btModeMultiplayer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_1_klad_click);
+            this.btModeMultiplayer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button1KladClick);
 
         }
 
         private void btModeRealMulti_MouseEnter(object sender, EventArgs e)
         {
-            this.btModeRealMulti.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_3_klad_click);
+            this.btModeRealMulti.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button3KladClick);
 
         }
 
         private void btModeRealMulti_MouseLeave(object sender, EventArgs e)
         {
-            this.btModeRealMulti.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_3_klad);
+            this.btModeRealMulti.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button3Klad);
 
         }
 
         private void btnBegin_MouseEnter(object sender, EventArgs e)
         {
-            this.btnBegin.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_begin_click);
+            this.btnBegin.BackgroundImage = (System.Drawing.Image)(Properties.Resources.buttonBeginClick);
 
         }
 
         private void btnBegin_MouseLeave(object sender, EventArgs e)
         {
-            this.btnBegin.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_begin);
+            this.btnBegin.BackgroundImage = (System.Drawing.Image)(Properties.Resources.buttonBegin);
 
         }
 

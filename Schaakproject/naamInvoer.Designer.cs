@@ -67,7 +67,7 @@
             // btnBegin
             // 
             this.btnBegin.BackColor = System.Drawing.Color.Transparent;
-            this.btnBegin.BackgroundImage = global::Schaakproject.Properties.Resources.button_begin1;
+            this.btnBegin.BackgroundImage = global::Schaakproject.Properties.Resources.buttonBegin1;
             this.btnBegin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBegin.FlatAppearance.BorderSize = 0;
             this.btnBegin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -107,7 +107,7 @@
             // btModeMultiplayer
             // 
             this.btModeMultiplayer.BackColor = System.Drawing.Color.Transparent;
-            this.btModeMultiplayer.BackgroundImage = global::Schaakproject.Properties.Resources.button_1_klad;
+            this.btModeMultiplayer.BackgroundImage = global::Schaakproject.Properties.Resources.button1Klad;
             this.btModeMultiplayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btModeMultiplayer.FlatAppearance.BorderSize = 0;
             this.btModeMultiplayer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -125,7 +125,7 @@
             // btModeComputer
             // 
             this.btModeComputer.BackColor = System.Drawing.Color.Transparent;
-            this.btModeComputer.BackgroundImage = global::Schaakproject.Properties.Resources.button_2_klad;
+            this.btModeComputer.BackgroundImage = global::Schaakproject.Properties.Resources.button2Klad;
             this.btModeComputer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btModeComputer.FlatAppearance.BorderSize = 0;
             this.btModeComputer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -145,7 +145,7 @@
             // btModeRealMulti
             // 
             this.btModeRealMulti.BackColor = System.Drawing.Color.Transparent;
-            this.btModeRealMulti.BackgroundImage = global::Schaakproject.Properties.Resources.button_3_klad;
+            this.btModeRealMulti.BackgroundImage = global::Schaakproject.Properties.Resources.button3Klad;
             this.btModeRealMulti.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btModeRealMulti.FlatAppearance.BorderSize = 0;
             this.btModeRealMulti.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;

@@ -73,9 +73,9 @@ namespace Schaakproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap button_1_klad {
+        internal static System.Drawing.Bitmap button1Klad {
             get {
-                object obj = ResourceManager.GetObject("button 1 klad", resourceCulture);
+                object obj = ResourceManager.GetObject("button1Klad", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Schaakproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap button_1_klad_click {
+        internal static System.Drawing.Bitmap button1KladClick {
             get {
-                object obj = ResourceManager.GetObject("button 1 klad click", resourceCulture);
+                object obj = ResourceManager.GetObject("button1KladClick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Schaakproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap button_2_klad {
+        internal static System.Drawing.Bitmap button2Klad {
             get {
-                object obj = ResourceManager.GetObject("button 2 klad", resourceCulture);
+                object obj = ResourceManager.GetObject("button2Klad", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace Schaakproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap button_2_klad_click {
+        internal static System.Drawing.Bitmap button2KladClick {
             get {
-                object obj = ResourceManager.GetObject("button 2 klad click", resourceCulture);
+                object obj = ResourceManager.GetObject("button2KladClick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace Schaakproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap button_3_klad {
+        internal static System.Drawing.Bitmap button3Klad {
             get {
-                object obj = ResourceManager.GetObject("button 3 klad", resourceCulture);
+                object obj = ResourceManager.GetObject("button3Klad", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace Schaakproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap button_3_klad_click {
+        internal static System.Drawing.Bitmap button3KladClick {
             get {
-                object obj = ResourceManager.GetObject("button 3 klad click", resourceCulture);
+                object obj = ResourceManager.GetObject("button3KladClick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace Schaakproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap button_begin {
+        internal static System.Drawing.Bitmap buttonBegin {
             get {
-                object obj = ResourceManager.GetObject("button begin", resourceCulture);
+                object obj = ResourceManager.GetObject("buttonBegin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace Schaakproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap button_begin_click {
+        internal static System.Drawing.Bitmap buttonBegin1 {
             get {
-                object obj = ResourceManager.GetObject("button begin click", resourceCulture);
+                object obj = ResourceManager.GetObject("buttonBegin1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace Schaakproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap button_begin1 {
+        internal static System.Drawing.Bitmap buttonBeginClick {
             get {
-                object obj = ResourceManager.GetObject("button begin1", resourceCulture);
+                object obj = ResourceManager.GetObject("buttonBeginClick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

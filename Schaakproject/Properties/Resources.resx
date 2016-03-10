@@ -133,22 +133,22 @@
   <data name="start klad 2 " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\start klad 2 .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button 1 klad click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="button1KladClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button 1 klad click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button 1 klad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="button1Klad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button 1 klad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button begin click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="buttonBeginClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button begin click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button 3 klad click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="button3KladClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button 3 klad click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button begin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="buttonBegin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button begin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button 2 klad click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="button2KladClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button 2 klad click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LoperWit" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -169,10 +169,10 @@
   <data name="LoperZwart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoperZwart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button 2 klad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="button2Klad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button 2 klad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button 3 klad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="button3Klad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button 3 klad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="start click klad 2 " type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -184,7 +184,7 @@
   <data name="KoningWit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KoningWit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button begin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="buttonBegin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button begin1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="backIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
