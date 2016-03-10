@@ -23,9 +23,9 @@ namespace LoginProject
         {
             InitializeComponent();
             userfile = new StreamWriter(@"C:\Users\daan1\Documents\Visual Studio 2015\Projects\LoginProject\Login\username.txt", true);
-
+            // file nog veranderen naar de projectfolder. Werkt nu nog niet.
             passfile = new StreamWriter(@"C:\Users\daan1\Documents\Visual Studio 2015\Projects\LoginProject\Login\password.txt", true);
-
+            // file nog veranderen naar de projectfolder. Werkt nu nog niet.
         }
         private void button1_Click(object sender, EventArgs e)
         {

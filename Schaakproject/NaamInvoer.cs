@@ -13,7 +13,12 @@ namespace Schaakproject
 {
     public partial class NaamInvoer : Form
     {
-
+        public string Mode
+        {
+            get; set;
+        }
+        private string Speler1 { get; set; }
+        private string Speler2 { get; set; }
         public NaamInvoer()
         {
             InitializeComponent();
@@ -24,7 +29,10 @@ namespace Schaakproject
             DialogResult = DialogResult.Yes;
             Speler speler1 = new Speler(txtSpeler1Naam.Text, "wit");
             Speler speler2 = new Speler(txtSpeler2Naam.Text, "zwart");
-            Spel spel = new Spel();
+            Speler1 = txtSpeler1Naam.Text;
+            Speler2 = txtSpeler2Naam.Text;
+            Spel spel = new Spel(Mode, Speler1, Speler2);
+
 
             // sluit hoofdmenu
         }
@@ -37,6 +45,8 @@ namespace Schaakproject
             txtSpeler2Naam.Visible = true;
             btnBegin.Visible = true;
             lblNotImplented.Visible = false;
+            Mode = "MultiPlayer";
+            
         }
 
         private void btModeComputer_Click(object sender, EventArgs e)
@@ -47,6 +57,8 @@ namespace Schaakproject
             txtSpeler2Naam.Visible = false;
             lblNotImplented.Visible = true;
             btnBegin.Visible = true;
+            Mode = "SinglePlayer";
+            
         }
 
         private void btModeRealMulti_Click(object sender, EventArgs e)
