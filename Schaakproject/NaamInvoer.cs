@@ -147,18 +147,28 @@ namespace Schaakproject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Maak mode buttons niet zichtbaar
-            btModeComputer.Visible = true;
-            btModeMultiplayer.Visible = true;
-            btModeRealMulti.Visible = true;
-            lbTitel.Text = "Selecteer een schaakmodus";
-            lblSpeler1Naam.Visible = false;
-            lblSpeler2Naam.Visible = false;
-            txtSpeler1Naam.Visible = false;
-            txtSpeler2Naam.Visible = false;
-            lblNotImplented.Visible = false;
-            btnBegin.Visible = false;
-            lblDontPress.Visible = false;
+            if (lbTitel.Text == "Selecteer een schaakmode")
+            {
+                this.Visible = false;
+                Hoofdmenu hoofdmenu = new Hoofdmenu();
+                hoofdmenu.Show();
+            }
+            else
+            {
+                // Maak mode buttons niet zichtbaar
+                btModeComputer.Visible = true;
+                btModeMultiplayer.Visible = true;
+                btModeRealMulti.Visible = true;
+                lbTitel.Text = "Selecteer een schaakmode";
+
+                lblSpeler1Naam.Visible = false;
+                lblSpeler2Naam.Visible = false;
+                txtSpeler1Naam.Visible = false;
+                txtSpeler2Naam.Visible = false;
+                lblNotImplented.Visible = false;
+                btnBegin.Visible = false;
+                lblDontPress.Visible = false;
+            }
         }
 
         private void btTerug_MouseEnter(object sender, EventArgs e)
