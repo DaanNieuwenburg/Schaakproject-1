@@ -20,9 +20,9 @@ namespace Schaakproject
 
         private void startButton_Click(object sender, EventArgs e)
         {
+            this.Hide();
             NaamInvoer naaminvoerdialog = new NaamInvoer();
             naaminvoerdialog.ShowDialog();
-            Hide(); // verberg huidig formulier
         }
 
         private void Hoofdmenu_Load(object sender, EventArgs e)
