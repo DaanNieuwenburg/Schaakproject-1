@@ -79,6 +79,7 @@ namespace Schaakproject
                     if (x != 0)
                     {
                         schaakarray[x, y].buurNoord = schaakarray[x - 1, y];
+                        Console.WriteLine(schaakarray[x, y].buurNoord);
                     }
                     if (x != 7)
                     {

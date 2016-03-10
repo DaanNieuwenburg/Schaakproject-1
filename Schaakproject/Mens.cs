@@ -40,7 +40,6 @@ namespace Schaakproject
         {
             selected.vakje.update();
             selected = null;
-
         }
 
         private void SelecteerVakje()
