@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="59986595-ab6f-432c-b6ad-b93a9a30056e" name="SchaakKlasseDiagram" linkedPackageId="b1492d3f-3f34-46c2-94ce-5dad21715151" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="59986595-ab6f-432c-b6ad-b93a9a30056e" name="SchaakKlasseDiagram" linkedPackageId="b1492d3f-3f34-46c2-94ce-5dad21715151" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <appliedStereotypesInternal>
     <stereotypeInstance Id="0e47286b-506a-466d-9996-b72b74750277" name="namespace" profile="CSharpProfile">
       <elementDefinition Id="dc5a29c7-9d7d-4d56-8303-f2da8848217f" />
@@ -1907,6 +1907,22 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="043cb824-712a-4f91-9a8d-e42ae2ec9649" />
           </association>
+          <association Id="19692f6a-2c42-490e-836f-bb15a26b2469" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e8bbaa92-33dc-4905-9b8d-29760f45a334" LastKnownName="SpeelBord" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="be6e2f93-1f35-4457-94f6-7e5ce38a27af" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="89f9c88e-e586-4825-aed9-7d21cfe853c9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="56fa76fb-97fd-454b-8e13-381f959c0047" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0cc89c40-f064-4a32-9fae-81e85388b3c2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="801fcd99-009f-4b5a-aff5-2cc35641d7fb" />
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property Id="381ce8d6-4658-40e1-87fb-5172e6a3caba" name="speleraanzet : string" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -2448,6 +2464,12 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="db30f26a-1951-424b-9a99-a9e05b14b63a" name="Hoofdmenu" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="a4a87c7c-590c-446b-a9be-a8dbcf265510" />
+        <suppliersInternal>
+          <dependency Id="bbfcb3bf-27d7-4871-a377-71383fbcddfa" name="&lt;&lt;partial&gt;&gt;">
+            <classMoniker Id="f9a424aa-877b-4745-834a-07bfc5ceeb60" LastKnownName="Form" />
+            <elementDefinition Id="e0ae7e99-97a2-445a-8c21-ff9f16246263" />
+          </dependency>
+        </suppliersInternal>
         <ownedOperationsInternal>
           <operation Id="fd6c5132-5a71-40f1-84a8-93acb1c561f9" name="herstartButton_MouseClick" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="96d02552-79ac-4d52-ba46-ec0d42002464" />
@@ -2461,6 +2483,12 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="eba856a1-4831-424f-8d34-8f90166ec848" name="HerstartMelding" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="e6f6630e-351b-4d02-861c-3c7ba152c646" />
+        <suppliersInternal>
+          <dependency Id="5313dcf7-9898-45aa-ac19-c373eaca49d9" name="&lt;&lt;partial&gt;&gt;">
+            <classMoniker Id="f9a424aa-877b-4745-834a-07bfc5ceeb60" LastKnownName="Form" />
+            <elementDefinition Id="ae80c9e3-609d-42e8-86c5-b27c72a3663e" />
+          </dependency>
+        </suppliersInternal>
         <ownedOperationsInternal>
           <operation Id="3146e540-a80f-4b29-9534-27f86fee4be2" name="btnYes_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="82570281-a505-4677-b4af-f149d9c7ec0e" />
@@ -2474,6 +2502,16 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="5b26815a-c64d-40c8-9f37-092891fa89e9" name="NaamInvoer" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="76552e21-9212-42fa-b282-c9a3cc183ed2" />
+        <suppliersInternal>
+          <dependency Id="3fa59c0f-df17-46fb-bc4e-1ecc9f0f41a3" name="&lt;&lt;partial&gt;&gt;">
+            <classMoniker Id="f9a424aa-877b-4745-834a-07bfc5ceeb60" LastKnownName="Form" />
+            <elementDefinition Id="77a15c9d-ad9b-482a-bd26-ead9bf771b9b" />
+          </dependency>
+          <dependency Id="002999e0-0d76-4527-a012-1374e9dc76d3">
+            <classMoniker Id="3cd200af-8073-42a4-89e3-2a0a11819561" LastKnownName="Spel" />
+            <elementDefinition Id="a63df85d-5112-4164-97a4-ebbfa40484c8" />
+          </dependency>
+        </suppliersInternal>
         <ownedOperationsInternal>
           <operation Id="73d37b42-4cf5-4d72-9e3f-20ff709ea908" name="btnNaamSubmit_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="0ce47abf-fbd4-4d05-a738-c861a6b750a6" />
@@ -2530,6 +2568,12 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="e8bbaa92-33dc-4905-9b8d-29760f45a334" name="SpeelBord" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="6271abbd-aea2-4387-b1fc-afec89f99a34" />
+        <suppliersInternal>
+          <dependency Id="f71b31a5-1e84-40bc-9cdc-f838eb60a1d9" name="&lt;&lt;partial&gt;&gt;">
+            <classMoniker Id="f9a424aa-877b-4745-834a-07bfc5ceeb60" LastKnownName="Form" />
+            <elementDefinition Id="23689868-6012-42ea-abbd-c8479dc73584" />
+          </dependency>
+        </suppliersInternal>
         <ownedOperationsInternal>
           <operation Id="b406b7d2-bea5-4f53-bb74-490d38543bbc" name="SpeelBord" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="668ea117-60f9-467e-8ea2-ee64a83ea82b" />
@@ -2541,6 +2585,11 @@
             <elementDefinition Id="a560b73a-4415-4e52-9860-1f7a3b7f24e1" />
           </operation>
         </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="56d80fe1-6c3b-4861-a5f8-0b54d241589f" name="PictureBox" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1a902f58-e42b-486f-ba0a-644078b75b4d" />
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>
