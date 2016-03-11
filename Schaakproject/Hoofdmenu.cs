@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Resources;
 
 namespace Schaakproject
 {
@@ -43,19 +44,20 @@ namespace Schaakproject
 
         private void btnafsluiten_MouseEnter(object sender, EventArgs e)
         {
-            this.btnafsluiten.BackgroundImage = (System.Drawing.Image)(Properties.Resources.afsluiten_click);
+            this.btnafsluiten.BackgroundImage = (Image)(Properties.Resources.afsluiten_click);
         }
 
         private void btnafsluiten_MouseLeave(object sender, EventArgs e)
         {
-            this.btnafsluiten.BackgroundImage = (System.Drawing.Image)(Properties.Resources.afsluiten);
+            this.btnafsluiten.BackgroundImage = (Image)(Properties.Resources.afsluiten);
+
         }
 
         private void btnafsluiten_Click(object sender, EventArgs e)
         {
-            Afsluitmeldig Warning = new Afsluitmeldig();
-            Warning.ShowDialog();
-            if (Warning.Sure == true)
+            Afsluiten_Warning _afsluiten = new Afsluiten_Warning();
+            _afsluiten.ShowDialog();
+            if (_afsluiten.Sure == true)
             {
                 Application.Exit();
             }

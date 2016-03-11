@@ -25,9 +25,49 @@ namespace Schaakproject
             }
         }
 
-        public override void Verplaats()
+        public override void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler)
         {
-            throw new System.NotImplementedException();
+            bool gevonden = false;
+            if (selected.vakje.buurNoord == pictures.vakje)
+            {
+                gevonden = true;
+            }
+            else if (selected.vakje.buurOost == pictures.vakje)
+            {
+                gevonden = true;
+            }
+            else if (selected.vakje.buurZuid == pictures.vakje)
+            {
+                gevonden = true;
+            }
+            else if (selected.vakje.buurWest == pictures.vakje)
+            {
+                gevonden = true;
+            }
+            else if (selected.vakje.buurNoordoost == pictures.vakje)
+            {
+                gevonden = true;
+            }
+            else if (selected.vakje.buurNoordwest == pictures.vakje)
+            {
+                gevonden = true;
+            }
+            else if (selected.vakje.buurZuidoost == pictures.vakje)
+            {
+                gevonden = true;
+            }
+            else if (selected.vakje.buurZuidwest == pictures.vakje)
+            {
+                gevonden = true;
+            }
+
+            if (gevonden == true)
+            {
+                pictures.vakje.schaakstuk = this;
+                selected.vakje.schaakstuk = null;
+                this.vakje = pictures.vakje;
+                speler.validezet = true;
+            }
         }
 
         private void Rokeren()

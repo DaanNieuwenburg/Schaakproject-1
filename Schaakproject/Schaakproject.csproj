@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Afsluitmeldig.cs">
+    <Compile Include="Afsluiten_Warning.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Afsluitmeldig.Designer.cs">
-      <DependentUpon>Afsluitmeldig.cs</DependentUpon>
+    <Compile Include="Afsluiten_Warning.Designer.cs">
+      <DependentUpon>Afsluiten_Warning.cs</DependentUpon>
     </Compile>
     <Compile Include="Computer.cs" />
     <Compile Include="Dame.cs" />
@@ -106,8 +106,8 @@
     <Compile Include="Speler.cs" />
     <Compile Include="Toren.cs" />
     <Compile Include="Vakje.cs" />
-    <EmbeddedResource Include="Afsluitmeldig.resx">
-      <DependentUpon>Afsluitmeldig.cs</DependentUpon>
+    <EmbeddedResource Include="Afsluiten_Warning.resx">
+      <DependentUpon>Afsluiten_Warning.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegister.resx">
       <DependentUpon>FormRegister.cs</DependentUpon>

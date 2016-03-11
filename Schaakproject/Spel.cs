@@ -9,22 +9,25 @@ namespace Schaakproject
     public class Spel
     {
         private string _SpelMode { get; set;}
-        private string _Speler1 { get; set; }
-        private string _Speler2 { get; set; }
+        private Mens _Speler1 { get; set; }
+        private Mens _Speler2 { get; set; }
+        public bool speler1aanzet { get; set; }
 
         public Spel(string Mode, string Speler1, string Speler2)
         {
             _SpelMode = Mode;
-            _Speler1 = Speler1;
-            _Speler2 = Speler2;
+            Mens speler1 = new Mens(Speler1, "wit");
+            Mens speler2 = new Mens(Speler2, "zwart");
+            _Speler1 = speler1;
+            _Speler2 = speler2;
+            speler1aanzet = true;
             Start();
             
         }
-        public string speleraanzet { get; set; }
 
         public void Start()
         {
-            SpeelBord speelbord = new SpeelBord(_SpelMode, _Speler1, _Speler2);
+            SpeelBord speelbord = new SpeelBord(this, _SpelMode, _Speler1, _Speler2);
             speelbord.Show();
         }
 
@@ -34,14 +37,9 @@ namespace Schaakproject
 
         }
 
-        public static void VeranderSpeler()
+        public void VeranderSpeler()
         {
-            /*
-            if(heeftGeselecteerd == true)
-            {
-                speleraanzet = " "/* andere speler ;
-                heeftGeselecteerd = false;
-            }*/
+            speler1aanzet = !speler1aanzet;
         }
     }
 }

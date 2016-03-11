@@ -56,7 +56,7 @@
             // btnafsluiten
             // 
             this.btnafsluiten.BackColor = System.Drawing.Color.Transparent;
-            this.btnafsluiten.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnafsluiten.BackgroundImage")));
+            this.btnafsluiten.BackgroundImage = global::Schaakproject.Properties.Resources.afsluiten;
             this.btnafsluiten.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnafsluiten.FlatAppearance.BorderSize = 0;
             this.btnafsluiten.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;

@@ -10,25 +10,26 @@ using System.Windows.Forms;
 
 namespace Schaakproject
 {
-    
-    public partial class Afsluitmeldig : Form
+    public partial class Afsluiten_Warning : Form
     {
         public bool Sure;
-        public Afsluitmeldig()
+        public Afsluiten_Warning()
         {
             InitializeComponent();
+            DialogResult = DialogResult.Yes;
+        }
+
+
+        private void btnNo_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Yes;
+            Sure = false;
         }
 
         private void btnYes_Click(object sender, EventArgs e)
         {
-            Sure = true;
             DialogResult = DialogResult.Yes;
-        }
-
-        private void btnNo_Click(object sender, EventArgs e)
-        {
-            Sure = false;
-            DialogResult = DialogResult.Yes;        
+            Sure = true;
         }
     }
 }

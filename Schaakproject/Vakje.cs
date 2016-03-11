@@ -40,6 +40,11 @@ namespace Schaakproject
                 pbox.Image = schaakstuk.afbeelding;
                 pbox.BackColor = _kleur;
             }
+            else
+            {
+                pbox.Image = null;
+                pbox.BackColor = _kleur;
+            }
         }
     }
 }
