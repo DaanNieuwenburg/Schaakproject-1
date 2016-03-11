@@ -23,36 +23,93 @@ namespace Schaakproject
             }
         }
 
-        public override void Verplaats(SpecialPB pictures, SpecialPB selected)
+        public override void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler)
         {
-            if (_eersteZet == false)
+            if (kleur == "wit")
             {
-                if (selected.vakje.buurNoord.buurNoord == pictures.vakje && selected.vakje.buurNoord.schaakstuk == null)
+                if (_eersteZet == false)
+                {
+                    // Twee stappen vooruit
+                    if (selected.vakje.buurNoord.buurNoord == pictures.vakje && selected.vakje.buurNoord.buurNoord.schaakstuk == null && selected.vakje.buurNoord.schaakstuk == null)
+                    {
+                        pictures.vakje.schaakstuk = this;
+                        selected.vakje.schaakstuk = null;
+                        _eersteZet = true;
+                        speler.validezet = true;
+                    }
+                }
+
+                // Iets anders
+                if (selected.vakje.buurNoordoost == pictures.vakje && kleur == "wit" && pictures.vakje.schaakstuk != null)
                 {
                     pictures.vakje.schaakstuk = this;
                     selected.vakje.schaakstuk = null;
                     _eersteZet = true;
+                    speler.validezet = true;
                 }
-                else if (selected.vakje.buurZuid.buurZuid == pictures.vakje && selected.vakje.buurZuid.schaakstuk == null)
+
+                // Pion naar voren na eerste zet
+                else if (selected.vakje.buurNoord == pictures.vakje && pictures.vakje.schaakstuk == null)
                 {
                     pictures.vakje.schaakstuk = this;
                     selected.vakje.schaakstuk = null;
                     _eersteZet = true;
+                    speler.validezet = true;
+                }
+
+                // Iets anders
+                else if (selected.vakje.buurNoordoost == pictures.vakje && pictures.vakje.schaakstuk != null)
+                {
+                    pictures.vakje.schaakstuk = this;
+                    selected.vakje.schaakstuk = null;
+                    _eersteZet = true;
+                    speler.validezet = true;
                 }
             }
-            if (selected.vakje.buurNoord == pictures.vakje)
+
+            else if (kleur == "zwart")
             {
-                pictures.vakje.schaakstuk = this;
-                selected.vakje.schaakstuk = null;
-                _eersteZet = true;
+                if (_eersteZet == false)
+                {
+                    // Twee stappen vooruit
+                    if (selected.vakje.buurZuid.buurZuid == pictures.vakje && selected.vakje.buurZuid.buurZuid.schaakstuk == null && selected.vakje.buurZuid.schaakstuk == null)
+                    {
+                        pictures.vakje.schaakstuk = this;
+                        selected.vakje.schaakstuk = null;
+                        _eersteZet = true;
+                        speler.validezet = true;
+                    }
+                }
+
+                // Iets anders
+                if (selected.vakje.buurZuidoost == pictures.vakje && kleur == "zwart" && pictures.vakje.schaakstuk != null)
+                {
+                    pictures.vakje.schaakstuk = this;
+                    selected.vakje.schaakstuk = null;
+                    _eersteZet = true;
+                    speler.validezet = true;
+                }
+
+                // Pion naar voren na eerste zet
+                else if (selected.vakje.buurZuid == pictures.vakje && pictures.vakje.schaakstuk == null)
+                {
+                    pictures.vakje.schaakstuk = this;
+                    selected.vakje.schaakstuk = null;
+                    this.vakje = pictures.vakje;
+                    _eersteZet = true;
+                    speler.validezet = true;
+                }
+
+                // Iets anders
+                else if (selected.vakje.buurZuidoost == pictures.vakje && pictures.vakje.schaakstuk != null)
+                {
+                    pictures.vakje.schaakstuk = this;
+                    selected.vakje.schaakstuk = null;
+                    _eersteZet = true;
+                    speler.validezet = true;
+                }
             }
-            else if (selected.vakje.buurZuid == pictures.vakje)
-            {
-                pictures.vakje.schaakstuk = this;
-                selected.vakje.schaakstuk = null;
-                this.vakje = pictures.vakje;
-                _eersteZet = true;
-            }
+
         }
 
         private void EnPassant()

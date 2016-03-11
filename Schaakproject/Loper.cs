@@ -21,7 +21,7 @@ namespace Schaakproject
             }
         }
 
-        public override void Verplaats(SpecialPB pictures, SpecialPB selected)
+        public override void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler)
         {
             bool mogelijk = false;
             bool mogelijkloop = false;
@@ -100,6 +100,7 @@ namespace Schaakproject
                 pictures.vakje.schaakstuk = this;
                 selected.vakje.schaakstuk = null;
                 this.vakje = pictures.vakje;
+                speler.validezet = true;
             }
         }
     }

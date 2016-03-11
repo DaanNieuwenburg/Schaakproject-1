@@ -9,30 +9,31 @@ namespace Schaakproject
     public class Mens : Speler
     {
         private SpecialPB selected { get; set; }
-
-        public Mens()
-            : base("test", "test")
+        public bool validezet { get; set; }
+        public Mens(string naam, string kleur)
         {
-
+            Naam = naam;
+            Kleur = kleur;
         }
-
-        public bool heeftGeselecteerd = false;
 
         public void SelecteerStuk(SpecialPB pictures)
         {
-            if (pictures == selected)
+            if (pictures.vakje.schaakstuk.kleur == this.Kleur)
             {
-                DeselecteerStuk();
-            }
-            else
-            {
-                if(selected != null)
+                if (pictures == selected)
                 {
                     DeselecteerStuk();
                 }
+                else
+                {
+                    if (selected != null)
+                    {
+                        DeselecteerStuk();
+                    }
 
-                this.selected = pictures;
-                pictures.BackColor = Color.HotPink;
+                    this.selected = pictures;
+                    pictures.BackColor = Color.HotPink;
+                }
             }
         }
 
@@ -42,18 +43,23 @@ namespace Schaakproject
             selected = null;
         }
 
-        public void SelecteerVakje(SpecialPB pictures)
+        public void SelecteerVakje(SpecialPB pictures, Spel spel)
         {
-            if(selected != null)
+            if (selected != null)
             {
                 SpecialPB clicked = pictures;
                 pictures.BackColor = Color.AliceBlue;
-                selected.vakje.schaakstuk.Verplaats(pictures, selected);
+                selected.vakje.schaakstuk.Verplaats(pictures, selected, this);
                 selected.vakje.update();
                 pictures.vakje.update();
                 selected = null;
+                if (validezet == true)
+                {
+                    spel.VeranderSpeler();
+                }
+                validezet = false;
             }
-    
+
         }
 
     }

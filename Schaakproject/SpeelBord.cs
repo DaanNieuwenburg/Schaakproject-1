@@ -13,18 +13,22 @@ namespace Schaakproject
     public partial class SpeelBord : Form
     {
         private string _SpelMode { get; set; }
-        private string _speler1Naam { get; set; }
-        private string _speler2Naam { get; set; }
-        Mens mens = new Mens();
+        private Mens _speler1 { get; set; }
+        private Mens _speler2 { get; set; }
+        private Spel _spel { get; set; }
         Schaakbord schaakbord = new Schaakbord();
 
-        public SpeelBord(string SpelMode, string Speler1, string Speler2)
+        public SpeelBord(Spel spel, string SpelMode, Mens Speler1, Mens Speler2)
         {
             _SpelMode = SpelMode;
-            _speler1Naam = Speler1;
-            _speler2Naam = Speler2;
             InitializeComponent();
-
+            Console.WriteLine("SP " + Speler1.Naam);
+            Console.WriteLine("SP " + Speler2.Naam);
+            _speler1 = Speler1;
+            _speler2 = Speler2;
+            _spel = spel;
+            Console.WriteLine("PRIVATE " + _speler1.Naam);
+            Console.WriteLine("PRIVATE " + _speler2.Naam);
             this.CenterToScreen();
 
 
@@ -42,7 +46,7 @@ namespace Schaakproject
                     {
                         pictures.BackColor = Color.SaddleBrown;
                     }
-                    pictures.Location = new Point(12 + 54 * y, 12 + 54 * x);
+                    pictures.Location = new Point(12 + 54 * y, 50 + 54 * x);
                     pictures.Size = new Size(54, 54);
                     pictures.SizeMode = PictureBoxSizeMode.CenterImage;
                     pictures.TabIndex = 0;
@@ -59,34 +63,49 @@ namespace Schaakproject
                 }
                 zwartwit = !zwartwit;
             }
+
+            if (_SpelMode.Equals("SinglePlayer"))
+            {
+                lblPlayer1.Text = _speler1.Naam;
+                lblPlayer2.Text = "COMP";
+            }
+            else if (_SpelMode.Equals("MultiPlayer"))
+            {
+                lblPlayer1.Text = "P1: " + _speler1.Naam;
+                lblPlayer2.Text = "P2: " + _speler2.Naam;
+            }
             InitializeComponent();
         }
 
         private void select(SpecialPB pictures)
         {
-            if (pictures.vakje.schaakstuk != null)
+            if (_spel.speler1aanzet == true)
             {
-                mens.SelecteerStuk(pictures);
+                if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
+                {
+                    _speler1.SelecteerStuk(pictures);
+                }
+                else
+                {
+                    _speler1.SelecteerVakje(pictures, _spel);
+                }
             }
-            else
+            else 
             {
-                mens.SelecteerVakje(pictures);
+                if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
+                {
+                    _speler2.SelecteerStuk(pictures);
+                }
+                else
+                {
+                    _speler2.SelecteerVakje(pictures, _spel);
+                }
             }
+
         }
 
         private void SpeelBord_Load(object sender, EventArgs e)
         {
-            if (_SpelMode.Equals("SinglePlayer"))
-            {
-                lblPlayer1.Text = _speler1Naam;
-                lblPlayer2.Text = "COMP";
-            }
-            else if (_SpelMode.Equals("MultiPlayer"))
-            {
-                Console.WriteLine(_speler1Naam);
-                lblPlayer1.Text = "P1: "+_speler1Naam;
-                lblPlayer2.Text = "P2: "+_speler2Naam;
-            }
         }
 
         private void SpeelBord_FormClosed(object sender, FormClosedEventArgs e)
@@ -101,7 +120,7 @@ namespace Schaakproject
             if (Warning.Sure == true)
             {
                 this.Hide();
-                Spel.Herstart(_SpelMode, _speler1Naam, _speler2Naam);
+                Spel.Herstart(_SpelMode, _speler1.Naam, _speler2.Naam);
             }
             }
         }

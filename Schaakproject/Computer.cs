@@ -8,7 +8,6 @@ namespace Schaakproject
     public class Computer : Speler
     {
         public Computer()
-            : base ("test", "test")
         {
 
         }

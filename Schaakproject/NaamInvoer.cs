@@ -29,8 +29,6 @@ namespace Schaakproject
         private void btnNaamSubmit_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Yes;
-            Speler speler1 = new Speler(txtSpeler1Naam.Text, "wit");
-            Speler speler2 = new Speler(txtSpeler2Naam.Text, "zwart");
             Speler1 = txtSpeler1Naam.Text;
             Speler2 = txtSpeler2Naam.Text;
             Spel spel = new Spel(Mode, Speler1, Speler2);
