@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hoofdmenu));
             this.startButton = new System.Windows.Forms.Button();
-            this.btnafsluiten = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // startButton
@@ -53,31 +52,12 @@
             this.startButton.MouseEnter += new System.EventHandler(this.startButton_MouseEnter_1);
             this.startButton.MouseLeave += new System.EventHandler(this.startButton_MouseLeave);
             // 
-            // btnafsluiten
-            // 
-            this.btnafsluiten.BackColor = System.Drawing.Color.Transparent;
-            this.btnafsluiten.BackgroundImage = global::Schaakproject.Properties.Resources.afsluiten;
-            this.btnafsluiten.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnafsluiten.FlatAppearance.BorderSize = 0;
-            this.btnafsluiten.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnafsluiten.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnafsluiten.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnafsluiten.Location = new System.Drawing.Point(226, 361);
-            this.btnafsluiten.Name = "btnafsluiten";
-            this.btnafsluiten.Size = new System.Drawing.Size(235, 62);
-            this.btnafsluiten.TabIndex = 2;
-            this.btnafsluiten.UseVisualStyleBackColor = false;
-            this.btnafsluiten.Click += new System.EventHandler(this.btnafsluiten_Click);
-            this.btnafsluiten.MouseEnter += new System.EventHandler(this.btnafsluiten_MouseEnter);
-            this.btnafsluiten.MouseLeave += new System.EventHandler(this.btnafsluiten_MouseLeave);
-            // 
             // Hoofdmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(716, 446);
-            this.Controls.Add(this.btnafsluiten);
             this.Controls.Add(this.startButton);
             this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -90,7 +70,6 @@
 
         #endregion
         private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.Button btnafsluiten;
     }
 }
 

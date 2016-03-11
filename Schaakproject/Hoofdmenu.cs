@@ -40,25 +40,5 @@ namespace Schaakproject
         {
             this.startButton.BackgroundImage = (System.Drawing.Image)(Properties.Resources.start_click_klad_2_);
         }
-
-        private void btnafsluiten_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnafsluiten.BackgroundImage = (System.Drawing.Image)(Properties.Resources.afsluiten_click);
-        }
-
-        private void btnafsluiten_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnafsluiten.BackgroundImage = (System.Drawing.Image)(Properties.Resources.afsluiten);
-        }
-
-        private void btnafsluiten_Click(object sender, EventArgs e)
-        {
-            Afsluitmeldig Warning = new Afsluitmeldig();
-            Warning.ShowDialog();
-            if (Warning.Sure == true)
-            {
-                Application.Exit();
-            }
-        }
     }
 }
