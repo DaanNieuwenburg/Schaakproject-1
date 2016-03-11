@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Afsluitmeldig));
             this.label1 = new System.Windows.Forms.Label();
             this.btnNo = new System.Windows.Forms.Button();
             this.btnYes = new System.Windows.Forms.Button();
@@ -70,8 +71,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Afsluitmeldig";
-            this.Text = "Afsluitmeldig";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Afsluiten";
             this.ResumeLayout(false);
             this.PerformLayout();
 
