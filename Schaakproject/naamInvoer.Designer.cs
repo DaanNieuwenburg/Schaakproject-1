@@ -38,7 +38,6 @@
             this.btModeComputer = new System.Windows.Forms.Button();
             this.btModeRealMulti = new System.Windows.Forms.Button();
             this.lbTitel = new System.Windows.Forms.Label();
-            this.lblNotImplented = new System.Windows.Forms.Label();
             this.lblDontPress = new System.Windows.Forms.Label();
             this.btTerug = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -171,18 +170,6 @@
             this.lbTitel.Text = "Selecteer een schaakmode";
             this.lbTitel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lblNotImplented
-            // 
-            this.lblNotImplented.AutoSize = true;
-            this.lblNotImplented.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotImplented.ForeColor = System.Drawing.Color.Red;
-            this.lblNotImplented.Location = new System.Drawing.Point(204, 175);
-            this.lblNotImplented.Name = "lblNotImplented";
-            this.lblNotImplented.Size = new System.Drawing.Size(108, 16);
-            this.lblNotImplented.TabIndex = 9;
-            this.lblNotImplented.Text = "Not implented.";
-            this.lblNotImplented.Visible = false;
-            // 
             // lblDontPress
             // 
             this.lblDontPress.AutoSize = true;
@@ -200,6 +187,9 @@
             this.btTerug.BackColor = System.Drawing.Color.Transparent;
             this.btTerug.BackgroundImage = global::Schaakproject.Properties.Resources.backIcon;
             this.btTerug.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btTerug.FlatAppearance.BorderSize = 0;
+            this.btTerug.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btTerug.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btTerug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btTerug.Location = new System.Drawing.Point(94, 9);
             this.btTerug.Name = "btTerug";
@@ -209,9 +199,6 @@
             this.btTerug.Click += new System.EventHandler(this.button1_Click);
             this.btTerug.MouseEnter += new System.EventHandler(this.btTerug_MouseEnter);
             this.btTerug.MouseLeave += new System.EventHandler(this.btTerug_MouseLeave);
-            this.btTerug.FlatAppearance.BorderSize = 0;
-            this.btTerug.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btTerug.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             // 
             // NaamInvoer
             // 
@@ -223,7 +210,6 @@
             this.Controls.Add(this.btTerug);
             this.Controls.Add(this.lblDontPress);
             this.Controls.Add(this.txtSpeler1Naam);
-            this.Controls.Add(this.lblNotImplented);
             this.Controls.Add(this.btModeRealMulti);
             this.Controls.Add(this.btModeComputer);
             this.Controls.Add(this.btModeMultiplayer);
@@ -250,7 +236,6 @@
         private System.Windows.Forms.Button btModeComputer;
         private System.Windows.Forms.Button btModeRealMulti;
         private System.Windows.Forms.Label lbTitel;
-        private System.Windows.Forms.Label lblNotImplented;
         private System.Windows.Forms.Label lblDontPress;
         private System.Windows.Forms.Button btTerug;
     }
