@@ -12,7 +12,7 @@ namespace Schaakproject
         public Image afbeelding { get; set; }
         public Vakje vakje { get; set; }
 
-        public abstract void Verplaats();
+        public abstract void Verplaats(SpecialPB pictures, SpecialPB selected);
 
         private void Slaan()
         {

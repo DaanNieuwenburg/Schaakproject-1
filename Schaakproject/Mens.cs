@@ -26,6 +26,11 @@ namespace Schaakproject
             }
             else
             {
+                if(selected != null)
+                {
+                    DeselecteerStuk();
+                }
+
                 this.selected = pictures;
                 pictures.BackColor = Color.HotPink;
             }
@@ -37,9 +42,18 @@ namespace Schaakproject
             selected = null;
         }
 
-        private void SelecteerVakje()
+        public void SelecteerVakje(SpecialPB pictures)
         {
-            throw new System.NotImplementedException();
+            if(selected != null)
+            {
+                SpecialPB clicked = pictures;
+                pictures.BackColor = Color.AliceBlue;
+                selected.vakje.schaakstuk.Verplaats(pictures, selected);
+                selected.vakje.update();
+                pictures.vakje.update();
+                selected = null;
+            }
+    
         }
 
     }

@@ -21,9 +21,61 @@ namespace Schaakproject
             }
         }
 
-        public override void Verplaats()
+        public override void Verplaats(SpecialPB pictures, SpecialPB selected)
         {
-            throw new System.NotImplementedException();
+            bool gevonden = false;
+            if (selected.vakje.buurNoord != null && selected.vakje.buurNoord.buurNoord != null)
+            {
+                if (selected.vakje.buurNoord.buurNoord.buurOost == pictures.vakje)
+                {
+                    gevonden = true;
+                }
+                else if (selected.vakje.buurNoord.buurNoord.buurWest == pictures.vakje)
+                {
+                    gevonden = true;
+                }
+            }
+            if (selected.vakje.buurOost != null && selected.vakje.buurOost.buurOost != null)
+            {
+                if (selected.vakje.buurOost.buurOost.buurNoord == pictures.vakje)
+                {
+                    gevonden = true;
+                }
+                else if (selected.vakje.buurOost.buurOost.buurZuid == pictures.vakje)
+                {
+                    gevonden = true;
+                }
+            }
+            if (selected.vakje.buurZuid != null && selected.vakje.buurZuid.buurZuid != null)
+            {
+                if (selected.vakje.buurZuid.buurZuid.buurOost == pictures.vakje)
+                {
+                    gevonden = true;
+                }
+                else if (selected.vakje.buurZuid.buurZuid.buurWest == pictures.vakje)
+                {
+                    gevonden = true;
+                }
+            }
+            if (selected.vakje.buurWest != null && selected.vakje.buurWest.buurWest != null)
+            {
+                if (selected.vakje.buurWest.buurWest.buurZuid == pictures.vakje)
+                {
+                    gevonden = true;
+                }
+
+                else if (selected.vakje.buurWest.buurWest.buurNoord == pictures.vakje)
+                {
+                    gevonden = true;
+                }
+            }
+
+            if (gevonden == true)
+            {
+                pictures.vakje.schaakstuk = this;
+                selected.vakje.schaakstuk = null;
+                this.vakje = pictures.vakje;
+            }
         }
     }
 }

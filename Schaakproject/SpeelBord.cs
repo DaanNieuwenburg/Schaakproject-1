@@ -68,6 +68,10 @@ namespace Schaakproject
             {
                 mens.SelecteerStuk(pictures);
             }
+            else
+            {
+                mens.SelecteerVakje(pictures);
+            }
         }
 
         private void SpeelBord_Load(object sender, EventArgs e)
