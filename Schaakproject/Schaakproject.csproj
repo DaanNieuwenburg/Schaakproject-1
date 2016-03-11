@@ -87,6 +87,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Schaakbord.cs" />
     <Compile Include="Schaakstuk.cs" />
+    <Compile Include="SpecialPB.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SpeelBord.cs">
       <SubType>Form</SubType>
     </Compile>

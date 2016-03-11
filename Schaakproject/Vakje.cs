@@ -3,31 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
 
-public class Vakje
+namespace Schaakproject
 {
-	private string _kleur{ get; set; }
-    public Schaakstuk schaakstuk { get; set; }
-    public PictureBox pbox { get; set; }
-
-    public Vakje(bool Kleur)
+    public class Vakje
     {
-        this.pbox = pbox;
-        if (Kleur == false)
-        {
-            _kleur = "wit";
-        }
-        else
-        {
-            _kleur = "zwart";
-        }
-    }
+        private Color _kleur { get; set; }
+        public Schaakstuk schaakstuk { get; set; }
+        public SpecialPB pbox { get; set; }
+        public Vakje buurNoord { get; set; }
+        public Vakje buurZuid { get; set; }
+        public Vakje buurOost { get; set; }
+        public Vakje buurWest { get; set; }
+        public Vakje buurNoordoost { get; set; }
+        public Vakje buurZuidoost { get; set; }
+        public Vakje buurNoordwest { get; set; }
+        public Vakje buurZuidwest { get; set; }
 
-    public void update()
-    {
-        if (this.schaakstuk != null)
+        public Vakje(bool Kleur)
         {
-            pbox.Image = schaakstuk.afbeelding;
+            if (Kleur == false)
+            {
+                _kleur = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            }
+            else
+            {
+                _kleur = Color.SaddleBrown;
+            }
+        }
+
+        public void update()
+        {
+            if (this.schaakstuk != null)
+            {
+                pbox.Image = schaakstuk.afbeelding;
+                pbox.BackColor = _kleur;
+            }
         }
     }
 }

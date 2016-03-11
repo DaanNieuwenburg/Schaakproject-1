@@ -23,6 +23,7 @@ namespace Schaakproject
         {
             //lblNotImplented.Visible = true;
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void btnNaamSubmit_Click(object sender, EventArgs e)
@@ -130,16 +131,6 @@ namespace Schaakproject
         {
             this.btnBegin.BackgroundImage = (System.Drawing.Image)(Properties.Resources.buttonBegin);
 
-        }
-
-        private void btModeComputer_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void pbTerug_Click(object sender, EventArgs e)
-        {
-      
         }
 
         private void button1_Click(object sender, EventArgs e)

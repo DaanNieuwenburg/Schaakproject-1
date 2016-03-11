@@ -136,7 +136,6 @@
             this.btModeComputer.TabIndex = 6;
             this.btModeComputer.UseVisualStyleBackColor = false;
             this.btModeComputer.Click += new System.EventHandler(this.btModeComputer_Click);
-            this.btModeComputer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btModeComputer_KeyPress);
             this.btModeComputer.MouseEnter += new System.EventHandler(this.btModeComputer_MouseEnter);
             this.btModeComputer.MouseLeave += new System.EventHandler(this.btModeComputer_MouseLeave);
             // 

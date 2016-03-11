@@ -4,18 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-public abstract class Schaakstuk
+namespace Schaakproject
 {
-	public string kleur{ get; set; }
+    public abstract class Schaakstuk
+    {
+        public string kleur { get; set; }
+        public Image afbeelding { get; set; }
+        public Vakje vakje { get; set; }
 
-    public Image afbeelding { get; set; }
+        public abstract void Verplaats();
 
-	public abstract void Verplaats();
-
-	private void Slaan()
-	{
-		throw new System.NotImplementedException();
-	}
-
+        private void Slaan()
+        {
+            throw new System.NotImplementedException();
+        }
+    }
 }
 

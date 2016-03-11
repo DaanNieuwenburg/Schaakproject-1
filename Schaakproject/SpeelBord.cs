@@ -15,6 +15,9 @@ namespace Schaakproject
         private string _SpelMode { get; set; }
         private string _speler1Naam { get; set; }
         private string _speler2Naam { get; set; }
+        Mens mens = new Mens();
+        Schaakbord schaakbord = new Schaakbord();
+
         public SpeelBord(string SpelMode, string Speler1, string Speler2)
         {
             _SpelMode = SpelMode;
@@ -23,39 +26,48 @@ namespace Schaakproject
             InitializeComponent();
 
             this.CenterToScreen();
-            Schaakbord schaakbord = new Schaakbord();
-            PictureBox[,] pictures = new PictureBox[8, 8];
+
+
             bool zwartwit = false;
             for (int x = 0; x < 8; x++)
             {
                 for (int y = 0; y < 8; y++)
                 {
-                    pictures[x, y] = new PictureBox();
+                    SpecialPB pictures = new SpecialPB();
                     if (zwartwit == false)
                     {
-                        pictures[x, y].BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+                        pictures.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
                     }
                     else
                     {
-                        pictures[x, y].BackColor = System.Drawing.Color.SaddleBrown;
+                        pictures.BackColor = Color.SaddleBrown;
                     }
-                    pictures[x, y].Location = new System.Drawing.Point(90 + 54 * y, 50 + 54 * x);
-                    pictures[x, y].Size = new System.Drawing.Size(54, 54);
-                    pictures[x, y].TabIndex = 0;
-                    pictures[x, y].TabStop = false;
-                    pictures[x, y].SizeMode = PictureBoxSizeMode.CenterImage;
-                    this.Controls.Add(pictures[x, y]);
-                    schaakbord.schaakarray[x, y].pbox = pictures[x, y];
+                    pictures.Location = new Point(12 + 54 * y, 12 + 54 * x);
+                    pictures.Size = new Size(54, 54);
+                    pictures.SizeMode = PictureBoxSizeMode.CenterImage;
+                    pictures.TabIndex = 0;
+                    pictures.TabStop = false;
+
+                    this.Controls.Add(pictures);
+                    pictures.vakje = schaakbord.schaakarray[x, y];
+                    schaakbord.schaakarray[x, y].pbox = pictures;
                     schaakbord.schaakarray[x, y].update();
+
+                    pictures.Click += new EventHandler((o, a) => select(pictures));
+
                     zwartwit = !zwartwit;
                 }
                 zwartwit = !zwartwit;
             }
+            InitializeComponent();
         }
 
-        private void SpeelBord_Click(object sender, EventArgs e)
+        private void select(SpecialPB pictures)
         {
-            Console.WriteLine("TEST");
+            if (pictures.vakje.schaakstuk != null)
+            {
+                mens.SelecteerStuk(pictures);
+            }
         }
 
         private void SpeelBord_Load(object sender, EventArgs e)

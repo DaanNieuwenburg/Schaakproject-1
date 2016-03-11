@@ -7,9 +7,10 @@ namespace Schaakproject
 {
     public class Loper : Schaakstuk
     {
-        public Loper(string kleur)
+        public Loper(string kleur, Vakje vakje)
         {
             this.kleur = kleur;
+            this.vakje = vakje;
             if (kleur == "wit")
             {
                 afbeelding = Properties.Resources.LoperWit;

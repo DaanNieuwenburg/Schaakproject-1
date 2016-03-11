@@ -7,8 +7,9 @@ namespace Schaakproject
 {
     public class Paard : Schaakstuk
     {
-        public Paard(string kleur)
+        public Paard(string kleur, Vakje vakje)
         {
+            this.vakje = vakje;
             this.kleur = kleur;
             if (kleur == "wit")
             {
