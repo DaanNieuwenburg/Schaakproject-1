@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Afsluitmeldig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Afsluitmeldig.Designer.cs">
+      <DependentUpon>Afsluitmeldig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Computer.cs" />
     <Compile Include="Dame.cs" />
     <Compile Include="FormRegister.cs">
@@ -100,6 +106,9 @@
     <Compile Include="Speler.cs" />
     <Compile Include="Toren.cs" />
     <Compile Include="Vakje.cs" />
+    <EmbeddedResource Include="Afsluitmeldig.resx">
+      <DependentUpon>Afsluitmeldig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRegister.resx">
       <DependentUpon>FormRegister.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +227,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\backIcon click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\afsluiten click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\afsluiten.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

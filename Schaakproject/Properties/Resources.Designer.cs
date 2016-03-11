@@ -63,6 +63,26 @@ namespace Schaakproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap afsluiten {
+            get {
+                object obj = ResourceManager.GetObject("afsluiten", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap afsluiten_click {
+            get {
+                object obj = ResourceManager.GetObject("afsluiten click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backIcon {
             get {
                 object obj = ResourceManager.GetObject("backIcon", resourceCulture);
