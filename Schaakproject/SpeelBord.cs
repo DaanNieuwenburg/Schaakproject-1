@@ -30,7 +30,8 @@ namespace Schaakproject
             Console.WriteLine("PRIVATE " + _speler1.Naam);
             Console.WriteLine("PRIVATE " + _speler2.Naam);
             this.CenterToScreen();
-
+            lblaantal1.Text = schaakbord.aantal1.ToString();
+            lblaantal2.Text = schaakbord.aantal2.ToString();
 
             bool zwartwit = false;
             for (int x = 0; x < 8; x++)
@@ -56,14 +57,13 @@ namespace Schaakproject
                     pictures.vakje = schaakbord.schaakarray[x, y];
                     schaakbord.schaakarray[x, y].pbox = pictures;
                     schaakbord.schaakarray[x, y].update();
-
+                    
                     pictures.Click += new EventHandler((o, a) => select(pictures));
 
                     zwartwit = !zwartwit;
                 }
                 zwartwit = !zwartwit;
             }
-
             if (_SpelMode.Equals("SinglePlayer"))
             {
                 lblPlayer1.Text = _speler1.Naam;

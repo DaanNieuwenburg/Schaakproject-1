@@ -8,11 +8,13 @@ namespace Schaakproject
     public class Schaakbord
     {
         public Vakje[,] schaakarray = new Vakje[8, 8];
-
+        public int aantal1;
+        public int aantal2;
+        public string kleurstuk { get; set; }
         public Schaakbord()
         {
             bool kleurvakje = false; //zwart of wit
-            string kleurstuk = "zwart";
+            kleurstuk = "zwart";
 
             //vul het array met vakjes
             for (int x = 0; x < 8; x++)
@@ -37,37 +39,89 @@ namespace Schaakproject
                 {
                     if (x == 0 || x == 7)
                     {
+                        
                         if (y == 0 || y == 7)
                         {
                             schaakarray[x, y].schaakstuk = new Toren(kleurstuk, schaakarray[x, y]);
+                            if(kleurstuk == "wit")
+                            {
+                                aantal1++;
+                            }
+                            else
+                            {
+                                aantal2++;
+                            }
                         }
 
                         else if (y == 1 || y == 6)
                         {
                             schaakarray[x, y].schaakstuk = new Paard(kleurstuk, schaakarray[x, y]);
+                            if (kleurstuk == "wit")
+                            {
+                                aantal1++;
+                            }
+                            else
+                            {
+                                aantal2++;
+                            }
                         }
 
                         else if (y == 2 || y == 5)
                         {
                             schaakarray[x, y].schaakstuk = new Loper(kleurstuk, schaakarray[x, y]);
+                            if (kleurstuk == "wit")
+                            {
+                                aantal1++;
+                            }
+                            else
+                            {
+                                aantal2++;
+                            }
                         }
 
                         else if (y == 3)
                         {
                             schaakarray[x, y].schaakstuk = new Dame(kleurstuk, schaakarray[x, y]);
+                            if (kleurstuk == "wit")
+                            {
+                                aantal1++;
+                            }
+                            else
+                            {
+                                aantal2++;
+                            }
                         }
 
                         else if (y == 4)
                         {
                             schaakarray[x, y].schaakstuk = new Koning(kleurstuk, schaakarray[x, y]);
+                            if (kleurstuk == "wit")
+                            {
+                                aantal1++;
+                            }
+                            else
+                            {
+                                aantal2++;
+                            }
                         }
                     }
                     else if (x == 1 || x == 6)
                     {
                         schaakarray[x, y].schaakstuk = new Pion(kleurstuk, schaakarray[x, y]);
+                        if (kleurstuk == "wit")
+                        {
+                            aantal1++;
+                        }
+                        else
+                        {
+                            aantal2++;
+                        }
                     }
-                }
+                }               
             }
+            
+            Console.WriteLine("a1 "+aantal1);
+            Console.WriteLine("a2 "+aantal2);
 
             // Geef buren aan de vakjes
             for (int x = 0; x < 8; x++)
