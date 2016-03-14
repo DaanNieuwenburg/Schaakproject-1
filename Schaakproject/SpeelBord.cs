@@ -22,13 +22,9 @@ namespace Schaakproject
         {
             _SpelMode = SpelMode;
             InitializeComponent();
-            Console.WriteLine("SP " + Speler1.Naam);
-            Console.WriteLine("SP " + Speler2.Naam);
             _speler1 = Speler1;
             _speler2 = Speler2;
             _spel = spel;
-            Console.WriteLine("PRIVATE " + _speler1.Naam);
-            Console.WriteLine("PRIVATE " + _speler2.Naam);
             this.CenterToScreen();
             lblaantal1.Text = schaakbord.aantal1.ToString();
             lblaantal2.Text = schaakbord.aantal2.ToString();

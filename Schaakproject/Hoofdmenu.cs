@@ -55,7 +55,7 @@ namespace Schaakproject
 
         private void btnafsluiten_Click(object sender, EventArgs e)
         {
-            Afsluiten_Warning _afsluiten = new Afsluiten_Warning();
+            AfsluitMelding _afsluiten = new AfsluitMelding();
             _afsluiten.ShowDialog();
             if (_afsluiten.Sure == true)
             {

@@ -38,8 +38,7 @@ namespace Schaakproject
                 for (int y = 0; y < 8; y++)
                 {
                     if (x == 0 || x == 7)
-                    {
-                        
+                    {                      
                         if (y == 0 || y == 7)
                         {
                             schaakarray[x, y].schaakstuk = new Toren(kleurstuk, schaakarray[x, y]);
@@ -119,9 +118,6 @@ namespace Schaakproject
                     }
                 }               
             }
-            
-            Console.WriteLine("a1 "+aantal1);
-            Console.WriteLine("a2 "+aantal2);
 
             // Geef buren aan de vakjes
             for (int x = 0; x < 8; x++)
@@ -131,7 +127,6 @@ namespace Schaakproject
                     if (x != 0)
                     {
                         schaakarray[x, y].buurNoord = schaakarray[x - 1, y];
-                        Console.WriteLine(schaakarray[x, y].buurNoord);
                     }
                     if (x != 7)
                     {

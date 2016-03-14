@@ -1,6 +1,6 @@
 ﻿namespace Schaakproject
 {
-    partial class Afsluiten_Warning
+    partial class AfsluitMelding
     {
         /// <summary>
         /// Required designer variable.

@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Schaakproject
 {
-    public partial class Afsluiten_Warning : Form
+    public partial class AfsluitMelding : Form
     {
         public bool Sure;
-        public Afsluiten_Warning()
+        public AfsluitMelding()
         {
             InitializeComponent();
             DialogResult = DialogResult.Yes;
