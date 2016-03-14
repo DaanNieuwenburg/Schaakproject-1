@@ -32,6 +32,7 @@ namespace Schaakproject
             Speler1 = txtSpeler1Naam.Text;
             Speler2 = txtSpeler2Naam.Text;
             Spel spel = new Spel(Mode, Speler1, Speler2);
+            hLabel.Visible = true;
 
         }
 
@@ -49,6 +50,7 @@ namespace Schaakproject
             txtSpeler2Naam.Visible = true;
             btnBegin.Visible = true;
             Mode = "MultiPlayer";
+            hLabel.Visible = false;
         }
 
         private void btModeComputer_Click(object sender, EventArgs e)
@@ -65,7 +67,8 @@ namespace Schaakproject
             btnBegin.Visible = true;
             Mode = "SinglePlayer";
             lblDontPress.Visible = true;
-            
+            hLabel.Visible = false;
+
         }
 
         private void btModeRealMulti_Click(object sender, EventArgs e)
@@ -82,6 +85,7 @@ namespace Schaakproject
             MainForm Login = new MainForm();
             Login.Show();
             lblDontPress.Visible = true;
+            hLabel.Visible = false;
         }
 
         private void btModeComputer_MouseEnter(object sender, EventArgs e)

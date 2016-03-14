@@ -16,6 +16,7 @@ namespace Schaakproject
         public PromoveerForm(Pion _pion)
         {
             InitializeComponent();
+            this.ControlBox = false;
             pion = _pion;
         }
 

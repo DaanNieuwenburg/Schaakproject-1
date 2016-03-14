@@ -40,6 +40,7 @@
             this.lbTitel = new System.Windows.Forms.Label();
             this.lblDontPress = new System.Windows.Forms.Label();
             this.btTerug = new System.Windows.Forms.Button();
+            this.hLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtSpeler1Naam
@@ -199,6 +200,15 @@
             this.btTerug.MouseEnter += new System.EventHandler(this.btTerug_MouseEnter);
             this.btTerug.MouseLeave += new System.EventHandler(this.btTerug_MouseLeave);
             // 
+            // hLabel
+            // 
+            this.hLabel.AutoSize = true;
+            this.hLabel.Location = new System.Drawing.Point(216, 173);
+            this.hLabel.Name = "hLabel";
+            this.hLabel.Size = new System.Drawing.Size(82, 13);
+            this.hLabel.TabIndex = 13;
+            this.hLabel.Text = "Hidden function";
+            // 
             // NaamInvoer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,6 +216,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(514, 455);
+            this.Controls.Add(this.hLabel);
             this.Controls.Add(this.btTerug);
             this.Controls.Add(this.lblDontPress);
             this.Controls.Add(this.txtSpeler1Naam);
@@ -237,5 +248,6 @@
         private System.Windows.Forms.Label lbTitel;
         private System.Windows.Forms.Label lblDontPress;
         private System.Windows.Forms.Button btTerug;
+        private System.Windows.Forms.Label hLabel;
     }
 }
