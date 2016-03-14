@@ -13,10 +13,20 @@ namespace Schaakproject
     public partial class PromoveerForm : Form
     {
         Pion pion { get; set; }
-        public PromoveerForm(Pion _pion)
+        string kleur { get; set; }
+        public PromoveerForm(Pion _pion, string _kleur)
         {
             InitializeComponent();
+            this.ControlBox = false;
             pion = _pion;
+            kleur = _kleur;
+            if (kleur.Equals("zwart"))
+            {
+                pbDame.Image = global::Schaakproject.Properties.Resources.DameZwart;
+                pbLoper.Image = global::Schaakproject.Properties.Resources.LoperZwart;
+                pbToren.Image = global::Schaakproject.Properties.Resources.TorenZwart;
+                pbPaard.Image = global::Schaakproject.Properties.Resources.PaardZwart;
+            }
         }
 
         private void pbPaard_Click(object sender, EventArgs e)
