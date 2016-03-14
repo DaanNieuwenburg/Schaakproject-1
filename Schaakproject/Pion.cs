@@ -118,7 +118,7 @@ namespace Schaakproject
             }
             if (vakje.buurNoord == null || vakje.buurZuid == null)
             {
-                PromoveerForm promoveerform = new PromoveerForm(this);
+                PromoveerForm promoveerform = new PromoveerForm(this, kleur);
                 promoveerform.ShowDialog();
             }
            
