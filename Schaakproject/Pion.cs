@@ -58,7 +58,7 @@ namespace Schaakproject
                 }
 
                 // Iets anders
-                else if (selected.vakje.buurNoordoost == pictures.vakje && pictures.vakje.schaakstuk != null)
+                else if (selected.vakje.buurNoordwest == pictures.vakje && pictures.vakje.schaakstuk != null)
                 {
                     pictures.vakje.schaakstuk = this;
                     selected.vakje.schaakstuk = null;
@@ -101,7 +101,7 @@ namespace Schaakproject
                 }
 
                 // Iets anders
-                else if (selected.vakje.buurZuidoost == pictures.vakje && pictures.vakje.schaakstuk != null)
+                else if (selected.vakje.buurZuidwest == pictures.vakje && pictures.vakje.schaakstuk != null)
                 {
                     pictures.vakje.schaakstuk = this;
                     selected.vakje.schaakstuk = null;

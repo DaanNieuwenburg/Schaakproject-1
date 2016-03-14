@@ -27,7 +27,8 @@ namespace Schaakproject
 
         public void Start()
         {
-            SpeelBord speelbord = new SpeelBord(this, _SpelMode, _Speler1, _Speler2);
+            Schaakbord schaakbord = new Schaakbord();
+            SpeelBord speelbord = new SpeelBord(this, schaakbord, _SpelMode, _Speler1, _Speler2);
             speelbord.Show();
         }
 
