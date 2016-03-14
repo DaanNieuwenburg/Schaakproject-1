@@ -36,6 +36,7 @@ namespace Schaakproject
                         selected.vakje.schaakstuk = null;
                         _eersteZet = true;
                         speler.validezet = true;
+                        this.vakje = pictures.vakje;
                     }
                 }
 
@@ -46,6 +47,7 @@ namespace Schaakproject
                     selected.vakje.schaakstuk = null;
                     _eersteZet = true;
                     speler.validezet = true;
+                    this.vakje = pictures.vakje;
                 }
 
                 // Pion naar voren na eerste zet
@@ -55,6 +57,7 @@ namespace Schaakproject
                     selected.vakje.schaakstuk = null;
                     _eersteZet = true;
                     speler.validezet = true;
+                    this.vakje = pictures.vakje;
                 }
 
                 // Iets anders
@@ -64,6 +67,7 @@ namespace Schaakproject
                     selected.vakje.schaakstuk = null;
                     _eersteZet = true;
                     speler.validezet = true;
+                    this.vakje = pictures.vakje;
                 }
             }
 
@@ -78,6 +82,7 @@ namespace Schaakproject
                         selected.vakje.schaakstuk = null;
                         _eersteZet = true;
                         speler.validezet = true;
+                        this.vakje = pictures.vakje;
                     }
                 }
 
@@ -88,6 +93,7 @@ namespace Schaakproject
                     selected.vakje.schaakstuk = null;
                     _eersteZet = true;
                     speler.validezet = true;
+                    this.vakje = pictures.vakje;
                 }
 
                 // Pion naar voren na eerste zet
@@ -107,9 +113,15 @@ namespace Schaakproject
                     selected.vakje.schaakstuk = null;
                     _eersteZet = true;
                     speler.validezet = true;
+                    this.vakje = pictures.vakje;
                 }
             }
-
+            if (vakje.buurNoord == null || vakje.buurZuid == null)
+            {
+                PromoveerForm promoveerform = new PromoveerForm(this);
+                promoveerform.ShowDialog();
+            }
+           
         }
 
         private void EnPassant()
@@ -117,8 +129,24 @@ namespace Schaakproject
             throw new System.NotImplementedException();
         }
 
-        private void Promoveert()
+        public void Promoveert(string keuze)
         {
+            if(keuze.Equals("paard"))
+            {
+                vakje.schaakstuk = new Paard(kleur, vakje);
+            }
+            else if(keuze.Equals("loper"))
+            {
+                vakje.schaakstuk = new Loper(kleur, vakje);
+            }
+            else if (keuze.Equals("toren"))
+            {
+                vakje.schaakstuk = new Toren(kleur, vakje);
+            }
+            else if (keuze.Equals("dame"))
+            {
+                vakje.schaakstuk = new Dame(kleur, vakje);
+            }
 
         }
     }

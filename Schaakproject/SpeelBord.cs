@@ -13,15 +13,17 @@ namespace Schaakproject
     public partial class SpeelBord : Form
     {
         private string _SpelMode { get; set; }
+        private Schaakbord _schaakbord { get; set; }
         private Mens _speler1 { get; set; }
         private Mens _speler2 { get; set; }
         private Spel _spel { get; set; }
-        Schaakbord schaakbord = new Schaakbord();
 
-        public SpeelBord(Spel spel, string SpelMode, Mens Speler1, Mens Speler2)
+        public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2)
         {
             _SpelMode = SpelMode;
             InitializeComponent();
+            Console.WriteLine("SP " + Speler1.Naam);
+            Console.WriteLine("SP " + Speler2.Naam);
             _speler1 = Speler1;
             _speler2 = Speler2;
             _spel = spel;
@@ -53,7 +55,7 @@ namespace Schaakproject
                     pictures.vakje = schaakbord.schaakarray[x, y];
                     schaakbord.schaakarray[x, y].pbox = pictures;
                     schaakbord.schaakarray[x, y].update();
-                    
+
                     pictures.Click += new EventHandler((o, a) => select(pictures));
 
                     zwartwit = !zwartwit;
