@@ -116,6 +116,47 @@ namespace Schaakproject
                 pictures = _spel.selected.vakje.buurNoord.buurNoord.buurOost.buurOost.pbox;             // geselecteerd vak
                 voerZetUit();
             }
+
+            // "Larsens Opening"
+            else if(_positieWest == 2 && _positieZuid == 3 && _vorigschaakstuk is Pion)
+            {
+                Console.WriteLine("Larsens Opening");
+                _tegenstanderstactiek = "Larsens Opening";
+                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurNoord.buurOost.buurOost.buurOost.pbox;   // geselecteerd stuk
+                pictures = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurOost.buurOost.buurOost.pbox;             // geselecteerd vak
+                voerZetUit();
+            }
+
+            // "Birds Opening"
+            else if (_positieWest == 6 && _positieZuid == 4 && _vorigschaakstuk is Pion)
+            {
+                Console.WriteLine("Birds Opening");
+                _tegenstanderstactiek = "Birds Opening";
+                selected = _spel.selected.vakje.buurWest.buurWest.buurNoord.buurNoord.buurNoord.pbox;   // geselecteerd stuk
+                pictures = _spel.selected.vakje.buurWest.buurWest.buurNoord.pbox;                       // geselecteerd vak
+                voerZetUit();
+            }
+
+            // "Sokolsky Opening"
+            else if (_positieWest == 2 && _positieZuid == 4 && _vorigschaakstuk is Pion)
+            {
+                Console.WriteLine("Sokolsky Opening");
+                _tegenstanderstactiek = "Sokolsky Opening";
+                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurOost.buurOost.pbox;   // geselecteerd stuk
+                pictures = _spel.selected.vakje.buurNoord.buurOost.buurOost.pbox;    // geselecteerd vak
+                voerZetUit();
+            }
+
+            // "Hungarian Opening"
+            else if (_positieWest == 7 && _positieZuid == 3 && _vorigschaakstuk is Pion)
+            {
+                Console.WriteLine("Hungarian Opening");
+                _tegenstanderstactiek = "Hungarian Opening";
+                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurNoord.buurWest.buurWest.buurWest.pbox;   // geselecteerd stuk
+                pictures = _spel.selected.vakje.buurNoord.buurNoord.buurWest.buurWest.buurWest.pbox;     // geselecteerd vak
+                voerZetUit();
+            }
+
         }
 
         private void voerZetUit()
