@@ -16,16 +16,18 @@ namespace Schaakproject
         private Schaakbord _schaakbord { get; set; }
         private Mens _speler1 { get; set; }
         private Mens _speler2 { get; set; }
+        private Computer _computerSpeler { get; set; }
+
         private Spel _spel { get; set; }
 
-        public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2)
+        public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2, Computer computerSpeler)
         {
             _SpelMode = SpelMode;
+
             InitializeComponent();
-            Console.WriteLine("SP " + Speler1.Naam);
-            Console.WriteLine("SP " + Speler2.Naam);
             _speler1 = Speler1;
             _speler2 = Speler2;
+            _computerSpeler = computerSpeler;
             _spel = spel;
             this.CenterToScreen();
             lblaantal1.Text = "xx"; //hier moet de variabele komen voor het aantal van wit
@@ -77,6 +79,29 @@ namespace Schaakproject
 
         private void select(SpecialPB pictures)
         {
+            if (_SpelMode == "Singleplayer")
+            {
+                if (_spel.speler1aanzet == true)
+                {
+                    Console.WriteLine("SPELERS BEURT");
+                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
+                    {
+                        _speler1.SelecteerStuk(pictures);
+                    }
+                    else
+                    {
+                        _speler1.SelecteerVakje(pictures, this, _spel);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("COMPUTERS BEURT");
+                    _computerSpeler.Zet(_spel, _speler1);
+                }
+            }
+            else if (_SpelMode == "Multiplayer")
+            {
+                Console.WriteLine("SPELER1");
             if (_spel.speler1aanzet == true)
             {
                 
@@ -86,26 +111,20 @@ namespace Schaakproject
                 }
                 else
                 {
-                    _speler1.SelecteerVakje(pictures, _spel);                
+                        _speler1.SelecteerVakje(pictures, this, _spel);
                 }
             }
-            else
+            else 
             {
-                if (_SpelMode.Equals("MultiPlayer"))
+                    Console.WriteLine("SPELER2");
+                if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
                 {
-                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
-                    {
-                        _speler2.SelecteerStuk(pictures);
-                    }
-                    else
-                    {
-                        _speler2.SelecteerVakje(pictures, _spel);
-                    }
+                    _speler2.SelecteerStuk(pictures);
                 }
                 else
                 {
-                    Computer _computer = new Computer();
-                    _computer.Zet();
+                        _speler2.SelecteerVakje(pictures, this, _spel);
+                    }
                 }
             }
 
@@ -117,7 +136,7 @@ namespace Schaakproject
 
         private void SpeelBord_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();  // sluit applicatie af
+           Application.Exit();  // sluit applicatie af
         }
 
         private void btHerstart_Click(object sender, EventArgs e)
@@ -129,6 +148,6 @@ namespace Schaakproject
                 this.Hide();
                 Spel.Herstart(_SpelMode, _speler1.Naam, _speler2.Naam);
             }
+            }
         }
-    }
 }

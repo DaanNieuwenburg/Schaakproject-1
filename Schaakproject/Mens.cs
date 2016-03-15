@@ -8,7 +8,7 @@ namespace Schaakproject
 {
     public class Mens : Speler
     {
-        private SpecialPB selected { get; set; }
+        public SpecialPB selected { get; set; }
         public bool validezet { get; set; }
         public Mens(string naam, string kleur)
         {
@@ -43,7 +43,7 @@ namespace Schaakproject
             selected = null;
         }
 
-        public void SelecteerVakje(SpecialPB pictures, Spel spel)
+        public void SelecteerVakje(SpecialPB pictures, SpeelBord speelbord, Spel spel)
         {
             if (selected != null)
             {
@@ -55,6 +55,7 @@ namespace Schaakproject
                 selected = null;
                 if (validezet == true)
                 {
+                    spel.vorigVakje = clicked;
                     spel.VeranderSpeler();
                 }
                 validezet = false;
