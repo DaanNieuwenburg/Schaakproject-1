@@ -48,7 +48,14 @@ namespace Schaakproject
 
         public static void Herstart(string spelMode, string speler1Naam, string speler2Naam)
         {
-            Spel spel = new Spel(spelMode, speler1Naam, speler2Naam);
+            if(spelMode == "Multiplayer")
+            {
+                Spel spel = new Spel(spelMode, speler1Naam, speler2Naam);
+            }
+            else
+            {
+                Spel spel = new Spel(spelMode, speler1Naam, "comp");
+            }
 
         }
 

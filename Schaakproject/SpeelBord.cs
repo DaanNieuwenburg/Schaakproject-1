@@ -143,7 +143,7 @@ namespace Schaakproject
             if (Warning.Sure == true)
             {
                 this.Hide();
-                Spel.Herstart(_SpelMode, _speler1.Naam, _speler2.Naam);
+                Spel.Herstart(_SpelMode, _speler1.Naam, "COMP");
             }
             }
     }
