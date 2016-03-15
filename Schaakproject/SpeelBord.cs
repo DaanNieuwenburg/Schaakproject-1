@@ -16,16 +16,18 @@ namespace Schaakproject
         private Schaakbord _schaakbord { get; set; }
         private Mens _speler1 { get; set; }
         private Mens _speler2 { get; set; }
+        private Computer _computerSpeler { get; set; }
+
         private Spel _spel { get; set; }
 
-        public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2)
+        public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2, Computer computerSpeler)
         {
             _SpelMode = SpelMode;
+
             InitializeComponent();
-            Console.WriteLine("SP " + Speler1.Naam);
-            Console.WriteLine("SP " + Speler2.Naam);
             _speler1 = Speler1;
             _speler2 = Speler2;
+            _computerSpeler = computerSpeler;
             _spel = spel;
             this.CenterToScreen();
             lblaantal1.Text = schaakbord.aantal1.ToString();
@@ -77,29 +79,53 @@ namespace Schaakproject
 
         private void select(SpecialPB pictures)
         {
-            if (_spel.speler1aanzet == true)
+            if (_SpelMode == "Singleplayer")
             {
-                if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
+                if (_spel.speler1aanzet == true)
                 {
-                    _speler1.SelecteerStuk(pictures);
+                    Console.WriteLine("SPELERS BEURT");
+                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
+                    {
+                        _speler1.SelecteerStuk(pictures);
+                    }
+                    else
+                    {
+                        _speler1.SelecteerVakje(pictures, this, _spel);
+                    }
                 }
                 else
                 {
-                    _speler1.SelecteerVakje(pictures, _spel);
+                    Console.WriteLine("COMPUTERS BEURT");
+                    _computerSpeler.Zet(_spel, _speler1);
                 }
             }
-            else 
+            else if (_SpelMode == "Multiplayer")
             {
-                if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
+                Console.WriteLine("SPELER1");
+                if (_spel.speler1aanzet == true)
                 {
-                    _speler2.SelecteerStuk(pictures);
+                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
+                    {
+                        _speler1.SelecteerStuk(pictures);
+                    }
+                    else
+                    {
+                        _speler1.SelecteerVakje(pictures, this, _spel);
+                    }
                 }
                 else
                 {
-                    _speler2.SelecteerVakje(pictures, _spel);
+                    Console.WriteLine("SPELER2");
+                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
+                    {
+                        _speler2.SelecteerStuk(pictures);
+                    }
+                    else
+                    {
+                        _speler2.SelecteerVakje(pictures, this, _spel);
+                    }
                 }
             }
-
         }
 
         private void SpeelBord_Load(object sender, EventArgs e)
@@ -108,7 +134,7 @@ namespace Schaakproject
 
         private void SpeelBord_FormClosed(object sender, FormClosedEventArgs e)
         {
-           Application.Exit();  // sluit applicatie af
+            Application.Exit();  // sluit applicatie af
         }
 
         private void btHerstart_Click(object sender, EventArgs e)
@@ -120,6 +146,6 @@ namespace Schaakproject
                 this.Hide();
                 Spel.Herstart(_SpelMode, _speler1.Naam, _speler2.Naam);
             }
-            }
         }
+    }
 }
