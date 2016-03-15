@@ -62,7 +62,7 @@
             this.btnYes.UseVisualStyleBackColor = true;
             this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
-            // Afsluiten_Warning
+            // AfsluitMelding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -70,7 +70,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
-            this.Name = "Afsluiten_Warning";
+            this.Name = "AfsluitMelding";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Afsluiten_Warning";
             this.ResumeLayout(false);
             this.PerformLayout();
