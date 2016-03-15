@@ -72,6 +72,8 @@
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AfsluitMelding";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Afsluiten_Warning";
