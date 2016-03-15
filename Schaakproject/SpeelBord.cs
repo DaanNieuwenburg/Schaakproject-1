@@ -37,6 +37,8 @@ namespace Schaakproject
             {
                 for (int y = 0; y < 8; y++)
                 {
+
+                    // Maak vakjes pictures
                     SpecialPB pictures = new SpecialPB();
                     if (zwartwit == false)
                     {
@@ -91,11 +93,12 @@ namespace Schaakproject
                     else
                     {
                         _speler1.SelecteerVakje(pictures, this, _spel);
+                        _computerSpeler.Zet(pictures, _spel, _speler1);
                     }
                 }
                 else
                 {
-                    _computerSpeler.Zet(_spel, _speler1);
+                    //_computerSpeler.Zet(pictures, _spel, _speler1);
                 }
             }
             else if (_SpelMode == "Multiplayer")

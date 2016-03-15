@@ -13,7 +13,7 @@ namespace Schaakproject
         private Mens _Speler2 { get; set; }
         private Computer _computerSpeler { get; set; }
         public bool speler1aanzet { get; set; }
-        public SpecialPB vorigVakje { get; set; }
+        public SpecialPB selected { get; set; }
 
         public Spel(string Mode, string Speler1, string Speler2)
         {
@@ -21,7 +21,7 @@ namespace Schaakproject
 
             if (Mode == "Singleplayer")
             {
-            Mens speler1 = new Mens(Speler1, "wit");
+                Mens speler1 = new Mens(Speler1, "wit");
                 Computer computerSpeler = new Computer(Speler2, "zwart");
                 _Speler1 = speler1;
                 _Speler2 = null;
@@ -30,9 +30,9 @@ namespace Schaakproject
             else if (Mode == "Multiplayer")
             {
                 Mens speler1 = new Mens(Speler1, "wit");
-            Mens speler2 = new Mens(Speler2, "zwart");
-            _Speler1 = speler1;
-            _Speler2 = speler2;
+                Mens speler2 = new Mens(Speler2, "zwart");
+                _Speler1 = speler1;
+                _Speler2 = speler2;
                 _computerSpeler = null;
             }
             speler1aanzet = true;
@@ -48,7 +48,7 @@ namespace Schaakproject
 
         public static void Herstart(string spelMode, string speler1Naam, string speler2Naam)
         {
-            if(spelMode == "Multiplayer")
+            if (spelMode == "Multiplayer")
             {
                 Spel spel = new Spel(spelMode, speler1Naam, speler2Naam);
             }
@@ -62,9 +62,9 @@ namespace Schaakproject
         public void VeranderSpeler()
         {
             speler1aanzet = !speler1aanzet;
-        
+
         }
-  
+
     }
 }
 
