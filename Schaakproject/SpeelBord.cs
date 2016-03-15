@@ -17,7 +17,6 @@ namespace Schaakproject
         private Mens _speler1 { get; set; }
         private Mens _speler2 { get; set; }
         private Spel _spel { get; set; }
-        private Schaakstuk _randomzet { get; set; }
 
         public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2)
         {
@@ -29,9 +28,8 @@ namespace Schaakproject
             _speler2 = Speler2;
             _spel = spel;
             this.CenterToScreen();
-            lblaantal1.Text = schaakbord.aantal1.ToString();
-            lblaantal2.Text = schaakbord.aantal2.ToString();
-
+            lblaantal1.Text = "xx"; //hier moet de variabele komen voor het aantal van wit
+            lblaantal2.Text = "xx"; //hier moet de variabele komen voor het aantal van zwart
             bool zwartwit = false;
             for (int x = 0; x < 8; x++)
             {
@@ -81,13 +79,14 @@ namespace Schaakproject
         {
             if (_spel.speler1aanzet == true)
             {
+                
                 if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
                 {
                     _speler1.SelecteerStuk(pictures);
                 }
                 else
                 {
-                    _speler1.SelecteerVakje(pictures, _spel);
+                    _speler1.SelecteerVakje(pictures, _spel);                
                 }
             }
             else

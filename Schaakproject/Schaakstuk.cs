@@ -11,14 +11,14 @@ namespace Schaakproject
         public string kleur { get; set; }
         public Image afbeelding { get; set; }
         public Vakje vakje { get; set; }
-        
 
         public abstract void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler);
 
-        private void Slaan()
+        public void Slaan(string kleur)
         {
-            throw new System.NotImplementedException();
+
         }
     }
 }
+
 

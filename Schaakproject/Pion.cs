@@ -40,12 +40,14 @@ namespace Schaakproject
                 else if (selected.vakje.buurNoordoost == pictures.vakje && pictures.vakje.schaakstuk != null)
                 {
                     mogelijk = true;
+                    
                 }
 
                 // Slaan naar noordwest voor een witte pion
                 else if (selected.vakje.buurNoordwest == pictures.vakje && pictures.vakje.schaakstuk != null)
                 {
                     mogelijk = true;
+                    Slaan(kleur);
                 }
 
                 // Twee stappen vooruit voor een witte pion
@@ -59,6 +61,7 @@ namespace Schaakproject
                 {
                     EnPassant(pictures, selected, speler);
                     _magEnpassant = false;
+                    Slaan(kleur);
                 }
             }
             
@@ -74,6 +77,7 @@ namespace Schaakproject
                 else if (selected.vakje.buurZuidoost == pictures.vakje && kleur == "zwart" && pictures.vakje.schaakstuk != null)
                 {
                     mogelijk = true;
+                    
                 }
 
                 // Slaan naar zuidwest voor een zwarte pion

@@ -90,18 +90,16 @@
             this.lblaantal2.AutoSize = true;
             this.lblaantal2.Location = new System.Drawing.Point(375, 9);
             this.lblaantal2.Name = "lblaantal2";
-            this.lblaantal2.Size = new System.Drawing.Size(17, 13);
+            this.lblaantal2.Size = new System.Drawing.Size(0, 13);
             this.lblaantal2.TabIndex = 5;
-            this.lblaantal2.Text = "xx";
             // 
             // lblaantal1
             // 
             this.lblaantal1.AutoSize = true;
             this.lblaantal1.Location = new System.Drawing.Point(375, 493);
             this.lblaantal1.Name = "lblaantal1";
-            this.lblaantal1.Size = new System.Drawing.Size(17, 13);
+            this.lblaantal1.Size = new System.Drawing.Size(0, 13);
             this.lblaantal1.TabIndex = 6;
-            this.lblaantal1.Text = "xx";
             // 
             // lblaanzet
             // 
