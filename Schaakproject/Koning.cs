@@ -70,9 +70,64 @@ namespace Schaakproject
             }
         }
 
-        private void Rokeren()
+        public void Rokeren(SpecialPB picturesToren, SpecialPB selectedKoning, Mens speler)
         {
-            throw new System.NotImplementedException();
+            bool mogelijk = false;
+
+            if (picturesToren.vakje.buurOost == null)
+            {
+
+                if (_eersteZet == false && (picturesToren.vakje.schaakstuk as Toren)._eersteZet == false && picturesToren.vakje.buurWest.schaakstuk == null && picturesToren.vakje.buurWest.buurWest.schaakstuk == null)
+                {
+                    mogelijk = true;
+
+                }
+                if (mogelijk == true)
+                {
+                    picturesToren.vakje.schaakstuk.vakje = picturesToren.vakje.buurWest.buurWest;
+                    picturesToren.vakje.buurWest.buurWest.schaakstuk = picturesToren.vakje.schaakstuk;
+                    picturesToren.vakje.schaakstuk = null;
+
+                    this.vakje = selectedKoning.vakje.buurOost.buurOost;
+                    selectedKoning.vakje.buurOost.buurOost.schaakstuk = this;
+                    selectedKoning.vakje.schaakstuk = null;
+
+                    this.vakje.update();
+                    this.vakje.buurWest.buurWest.update();
+                    this.vakje.buurWest.update();
+                    this.vakje.buurOost.update();
+
+                    speler.validezet = true;
+                    _eersteZet = true;
+                }
+            }
+
+            else if (picturesToren.vakje.buurWest == null)
+            {
+                if (_eersteZet == false && (picturesToren.vakje.schaakstuk as Toren)._eersteZet == false && picturesToren.vakje.buurOost.schaakstuk == null && picturesToren.vakje.buurOost.buurOost.schaakstuk == null && picturesToren.vakje.buurOost.buurOost.buurOost.schaakstuk == null)
+                {
+                    mogelijk = true;
+                }
+                if (mogelijk == true)
+                {
+                    picturesToren.vakje.schaakstuk.vakje = picturesToren.vakje.buurOost.buurOost.buurOost;
+                    picturesToren.vakje.buurOost.buurOost.buurOost.schaakstuk = picturesToren.vakje.schaakstuk;
+                    picturesToren.vakje.schaakstuk = null;
+
+                    this.vakje = selectedKoning.vakje.buurWest.buurWest;
+                    selectedKoning.vakje.buurWest.buurWest.schaakstuk = this;
+                    selectedKoning.vakje.schaakstuk = null;
+
+                    this.vakje.update();
+                    this.vakje.buurWest.buurWest.update();
+                    this.vakje.buurOost.buurOost.update();
+                    this.vakje.buurOost.update();
+                    speler.validezet = true;
+                    _eersteZet = true;
+                }
+            }
+
+
         }
     }
 }

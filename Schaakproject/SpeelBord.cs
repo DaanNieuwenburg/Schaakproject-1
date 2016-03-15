@@ -86,7 +86,7 @@ namespace Schaakproject
                     Console.WriteLine("SPELERS BEURT");
                     if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
                     {
-                        _speler1.SelecteerStuk(pictures);
+                        _speler1.SelecteerStuk(pictures, _spel);
                     }
                     else
                     {
@@ -107,7 +107,7 @@ namespace Schaakproject
                 
                 if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
                 {
-                    _speler1.SelecteerStuk(pictures);
+                    _speler1.SelecteerStuk(pictures, _spel);
                 }
                 else
                 {
@@ -119,7 +119,7 @@ namespace Schaakproject
                     Console.WriteLine("SPELER2");
                 if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
                 {
-                    _speler2.SelecteerStuk(pictures);
+                    _speler2.SelecteerStuk(pictures, _spel);
                 }
                 else
                 {
