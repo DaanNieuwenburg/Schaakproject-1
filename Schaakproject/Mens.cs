@@ -86,7 +86,6 @@ namespace Schaakproject
                 }
                 validezet = false;
             }
-
         }
 
     }

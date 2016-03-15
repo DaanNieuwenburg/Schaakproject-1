@@ -84,7 +84,6 @@ namespace Schaakproject
             {
                 if (_spel.speler1aanzet == true)
                 {
-                    Console.WriteLine("SPELERS BEURT");
                     if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
                     {
                         _speler1.SelecteerStuk(pictures, _spel);
@@ -96,13 +95,11 @@ namespace Schaakproject
                 }
                 else
                 {
-                    Console.WriteLine("COMPUTERS BEURT");
                     _computerSpeler.Zet(_spel, _speler1);
                 }
             }
             else if (_SpelMode == "Multiplayer")
             {
-                Console.WriteLine("SPELER1");
             if (_spel.speler1aanzet == true)
             {
                 
@@ -117,7 +114,6 @@ namespace Schaakproject
             }
             else 
             {
-                    Console.WriteLine("SPELER2");
                 if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
                 {
                     _speler2.SelecteerStuk(pictures, _spel);
