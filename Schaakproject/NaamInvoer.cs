@@ -66,7 +66,6 @@ namespace Schaakproject
             txtSpeler2Naam.Visible = false;
             btnBegin.Visible = true;
             Mode = "Singleplayer";
-            lblDontPress.Visible = true;
             hLabel.Visible = false;
 
         }
@@ -84,7 +83,6 @@ namespace Schaakproject
             btnBegin.Visible = true;
             MainForm Login = new MainForm();
             Login.Show();
-            lblDontPress.Visible = true;
             hLabel.Visible = false;
         }
 
@@ -156,7 +154,6 @@ namespace Schaakproject
                 txtSpeler1Naam.Visible = false;
                 txtSpeler2Naam.Visible = false;
                 btnBegin.Visible = false;
-                lblDontPress.Visible = false;
             }
         }
 

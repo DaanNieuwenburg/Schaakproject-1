@@ -38,7 +38,6 @@
             this.btModeComputer = new System.Windows.Forms.Button();
             this.btModeRealMulti = new System.Windows.Forms.Button();
             this.lbTitel = new System.Windows.Forms.Label();
-            this.lblDontPress = new System.Windows.Forms.Label();
             this.btTerug = new System.Windows.Forms.Button();
             this.hLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -170,18 +169,6 @@
             this.lbTitel.Text = "Selecteer een schaakmode";
             this.lbTitel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lblDontPress
-            // 
-            this.lblDontPress.AutoSize = true;
-            this.lblDontPress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDontPress.ForeColor = System.Drawing.Color.Red;
-            this.lblDontPress.Location = new System.Drawing.Point(155, 396);
-            this.lblDontPress.Name = "lblDontPress";
-            this.lblDontPress.Size = new System.Drawing.Size(227, 16);
-            this.lblDontPress.TabIndex = 11;
-            this.lblDontPress.Text = "Don\'t press the goddamn button";
-            this.lblDontPress.Visible = false;
-            // 
             // btTerug
             // 
             this.btTerug.BackColor = System.Drawing.Color.Transparent;
@@ -218,7 +205,6 @@
             this.ClientSize = new System.Drawing.Size(514, 455);
             this.Controls.Add(this.hLabel);
             this.Controls.Add(this.btTerug);
-            this.Controls.Add(this.lblDontPress);
             this.Controls.Add(this.txtSpeler1Naam);
             this.Controls.Add(this.btModeRealMulti);
             this.Controls.Add(this.btModeComputer);
@@ -246,7 +232,6 @@
         private System.Windows.Forms.Button btModeComputer;
         private System.Windows.Forms.Button btModeRealMulti;
         private System.Windows.Forms.Label lbTitel;
-        private System.Windows.Forms.Label lblDontPress;
         private System.Windows.Forms.Button btTerug;
         private System.Windows.Forms.Label hLabel;
     }

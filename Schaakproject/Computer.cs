@@ -28,46 +28,12 @@ namespace Schaakproject
         {
             _spel = spel;
             _vorigvakje = _spel.selected.vakje;
-            selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.pbox;
-            selected.BackColor = System.Drawing.Color.DarkRed;
-            pictures = _spel.selected.vakje.buurNoord.buurNoord.pbox;
-            pictures.BackColor = System.Drawing.Color.Firebrick;
             _vorigschaakstuk = _spel.selected.vakje.schaakstuk;
-            bepaalMensSchaakStuk();
             bepaalMensPositie();
-            bepaalTegenstandersTactiek();
-            bepaalReactie();
+            bepaalMensTactiekEnAntwoord();
         }
 
 
-        private void bepaalMensSchaakStuk()
-        {
-            // Kijk welk schaakstuk door mens verplaatst is
-            if (_vorigschaakstuk is Pion)
-            {
-                _schaakstuk = "pion";
-            }
-            else if (_vorigschaakstuk is Paard)
-            {
-                _schaakstuk = "paard";
-            }
-            else if (_vorigschaakstuk is Toren)
-            {
-                _schaakstuk = "toren";
-            }
-            else if (_vorigschaakstuk is Loper)
-            {
-                _schaakstuk = "loper";
-            }
-            else if (_vorigschaakstuk is Dame)
-            {
-                _schaakstuk = "dame";
-            }
-            else if (_vorigschaakstuk is Koning)
-            {
-                _schaakstuk = "koningq";
-            }
-        }
 
         private void bepaalMensPositie()
         {
@@ -90,23 +56,6 @@ namespace Schaakproject
                 }
             }
 
-            bool buurnoord = false;
-            int noordteller = 0;
-            _vorigvakje = _spel.selected.vakje; // reset vakje
-            while (buurnoord == false)
-            {
-                if (buurnoord == false && _vorigvakje != null)
-                {
-                    _vorigvakje = _vorigvakje.buurNoord;
-                    noordteller++;
-                    Console.WriteLine(noordteller);
-                }
-                else
-                {
-                    buurnoord = true;
-                }
-            }
-
             bool buurwest = false;
             int westteller = 0;
             _vorigvakje = _spel.selected.vakje; // reset vakje
@@ -124,61 +73,59 @@ namespace Schaakproject
                     _positieWest = westteller;
                 }
             }
-
-            bool buuroost = false;
-            int oostteller = 0;
-            _vorigvakje = _spel.selected.vakje; // reset vakje
-            while (buuroost == false)
-            {
-                if (buuroost == false && _vorigvakje != null)
-                {
-                    _vorigvakje = _vorigvakje.buurOost;
-                    oostteller++;
-                    Console.WriteLine(oostteller);
-                }
-                else
-                {
-                    buuroost = true;
-                }
-            }
-            Console.WriteLine("Zuidbuur " + zuidteller);
-            Console.WriteLine("Noordbuur " + noordteller);
-            Console.WriteLine("Westbuur " + westteller);
-            Console.WriteLine("Oostbuur " + oostteller);
         }
 
-        private void bepaalTegenstandersTactiek()
+        private void bepaalMensTactiekEnAntwoord()
         {
             // "French defense"
-            if (_positieWest == 5 && _positieZuid == 4 && _schaakstuk == "pion")
+            if (_positieWest == 5 && _positieZuid == 4 && _vorigschaakstuk is Pion)
             {
-                Console.WriteLine("WE HEBBEN TE MAKEN MET EEN FRENCH DEFENSE");
+                Console.WriteLine("FRENCH DEFENSE");
                 _tegenstanderstactiek = "French defense";
+                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.pbox;                     // geselecteerd stuk
+                pictures = _spel.selected.vakje.buurNoord.buurNoord.pbox;                               // geselecteerd vak
+                voerZetUit();
+            }
+
+            // "Dutch defense"
+            else if (_positieWest == 4 && _positieZuid == 4 && _vorigschaakstuk is Pion)
+            {
+                Console.WriteLine("DUTCH DEFENSE");
+                _tegenstanderstactiek = "Dutch defense";
+                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurOost.buurOost.pbox;   // geselecteerd stuk
+                pictures = _spel.selected.vakje.buurNoord.buurOost.buurOost.pbox;                       // geselecteerd vak
+                voerZetUit();
+            }
+
+            // "Anderssen's Opening"
+            else if(_positieWest == 1 && _positieZuid == 3 && _vorigschaakstuk is Pion)
+            {
+                Console.WriteLine("Anderssen's Opening");
+                _tegenstanderstactiek = "Anderssen's opening";
+                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurNoord.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost.pbox;     // geselecteerd stuk
+                pictures = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost.pbox;               // geselecteerd vak
+                voerZetUit();
+            }
+
+            // "English Opening"
+            else if (_positieWest == 3 && _positieZuid == 4 && _vorigschaakstuk is Pion)
+            {
+                Console.WriteLine("English Opening");
+                _tegenstanderstactiek = "English Opening";
+                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurOost.buurOost.pbox;   // geselecteerd stuk
+                pictures = _spel.selected.vakje.buurNoord.buurNoord.buurOost.buurOost.pbox;             // geselecteerd vak
+                voerZetUit();
             }
         }
 
-
-        private void bepaalReactie()
+        private void voerZetUit()
         {
-            if (_tegenstanderstactiek == "French defense")
-            {
-                Console.WriteLine("AAMVAL");
-                voerZetUit("French defense");
-            }
-        }
-
-
-        private void voerZetUit(string aanval)
-        {
-            if (aanval == "French defense")
-            {
-                Mens hierhoortgeenmens = new Mens("ikhoorhierniet", "zwart");
-                selected.vakje.schaakstuk.Verplaats(pictures, selected, hierhoortgeenmens);
-                selected.vakje.update();
-                pictures.vakje.update();
-                selected = null;
-                _spel.VeranderSpeler();
-            }
+            Mens hierhoortgeenmens = new Mens("ikhoorhierniet", "zwart");
+            selected.vakje.schaakstuk.Verplaats(pictures, selected, hierhoortgeenmens);
+            selected.vakje.update();
+            pictures.vakje.update();
+            selected = null;
+            _spel.VeranderSpeler();
         }
     }
 }

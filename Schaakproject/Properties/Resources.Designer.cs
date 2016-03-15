@@ -213,6 +213,16 @@ namespace Schaakproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HuidigSchaakbord {
+            get {
+                object obj = ResourceManager.GetObject("HuidigSchaakbord", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap KoningWit {
             get {
                 object obj = ResourceManager.GetObject("KoningWit", resourceCulture);
