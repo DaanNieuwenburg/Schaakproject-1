@@ -22,7 +22,6 @@ namespace Schaakproject
             _Speler2 = speler2;
             speler1aanzet = true;
             Start();
-            
         }
 
         public void Start()

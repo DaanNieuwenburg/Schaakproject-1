@@ -7,12 +7,13 @@ namespace Schaakproject
 {
     public class Computer : Speler
     {
+        private Spel _spel { get; set; }
         public Computer()
         {
-
+            
         }
 
-        private void Zet()
+        public void Zet()
         {
             throw new System.NotImplementedException();
         }

@@ -17,6 +17,7 @@ namespace Schaakproject
         private Mens _speler1 { get; set; }
         private Mens _speler2 { get; set; }
         private Spel _spel { get; set; }
+        private Schaakstuk _randomzet { get; set; }
 
         public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2)
         {
@@ -73,6 +74,7 @@ namespace Schaakproject
                 lblPlayer2.Text = "P2: " + _speler2.Naam;
             }
             InitializeComponent();
+
         }
 
         private void select(SpecialPB pictures)
@@ -88,15 +90,23 @@ namespace Schaakproject
                     _speler1.SelecteerVakje(pictures, _spel);
                 }
             }
-            else 
+            else
             {
-                if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
+                if (_SpelMode.Equals("MultiPlayer"))
                 {
-                    _speler2.SelecteerStuk(pictures);
+                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
+                    {
+                        _speler2.SelecteerStuk(pictures);
+                    }
+                    else
+                    {
+                        _speler2.SelecteerVakje(pictures, _spel);
+                    }
                 }
                 else
                 {
-                    _speler2.SelecteerVakje(pictures, _spel);
+                    Computer _computer = new Computer();
+                    _computer.Zet();
                 }
             }
 
@@ -108,7 +118,7 @@ namespace Schaakproject
 
         private void SpeelBord_FormClosed(object sender, FormClosedEventArgs e)
         {
-           Application.Exit();  // sluit applicatie af
+            Application.Exit();  // sluit applicatie af
         }
 
         private void btHerstart_Click(object sender, EventArgs e)
@@ -120,6 +130,6 @@ namespace Schaakproject
                 this.Hide();
                 Spel.Herstart(_SpelMode, _speler1.Naam, _speler2.Naam);
             }
-            }
         }
+    }
 }
