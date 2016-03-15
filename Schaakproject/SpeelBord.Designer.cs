@@ -42,18 +42,24 @@
             // lblPlayer1
             // 
             this.lblPlayer1.AutoSize = true;
-            this.lblPlayer1.Location = new System.Drawing.Point(82, 493);
+            this.lblPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer1.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPlayer1.Location = new System.Drawing.Point(68, 493);
             this.lblPlayer1.Name = "lblPlayer1";
-            this.lblPlayer1.Size = new System.Drawing.Size(20, 13);
+            this.lblPlayer1.Size = new System.Drawing.Size(26, 18);
             this.lblPlayer1.TabIndex = 0;
             this.lblPlayer1.Text = "P1";
             // 
             // lblPlayer2
             // 
             this.lblPlayer2.AutoSize = true;
-            this.lblPlayer2.Location = new System.Drawing.Point(82, 9);
+            this.lblPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer2.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPlayer2.Location = new System.Drawing.Point(68, 9);
             this.lblPlayer2.Name = "lblPlayer2";
-            this.lblPlayer2.Size = new System.Drawing.Size(20, 13);
+            this.lblPlayer2.Size = new System.Drawing.Size(26, 18);
             this.lblPlayer2.TabIndex = 1;
             this.lblPlayer2.Text = "P2";
             // 
@@ -70,35 +76,47 @@
             // lblResterend1
             // 
             this.lblResterend1.AutoSize = true;
+            this.lblResterend1.BackColor = System.Drawing.Color.Transparent;
+            this.lblResterend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResterend1.ForeColor = System.Drawing.SystemColors.Control;
             this.lblResterend1.Location = new System.Drawing.Point(260, 493);
             this.lblResterend1.Name = "lblResterend1";
-            this.lblResterend1.Size = new System.Drawing.Size(108, 13);
+            this.lblResterend1.Size = new System.Drawing.Size(146, 18);
             this.lblResterend1.TabIndex = 3;
             this.lblResterend1.Text = "Resterende Stukken:";
             // 
             // lblResterend2
             // 
             this.lblResterend2.AutoSize = true;
+            this.lblResterend2.BackColor = System.Drawing.Color.Transparent;
+            this.lblResterend2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResterend2.ForeColor = System.Drawing.SystemColors.Control;
             this.lblResterend2.Location = new System.Drawing.Point(260, 9);
             this.lblResterend2.Name = "lblResterend2";
-            this.lblResterend2.Size = new System.Drawing.Size(108, 13);
+            this.lblResterend2.Size = new System.Drawing.Size(146, 18);
             this.lblResterend2.TabIndex = 4;
             this.lblResterend2.Text = "Resterende Stukken:";
             // 
             // lblaantal2
             // 
             this.lblaantal2.AutoSize = true;
+            this.lblaantal2.BackColor = System.Drawing.Color.Transparent;
+            this.lblaantal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblaantal2.ForeColor = System.Drawing.SystemColors.Control;
             this.lblaantal2.Location = new System.Drawing.Point(375, 9);
             this.lblaantal2.Name = "lblaantal2";
-            this.lblaantal2.Size = new System.Drawing.Size(0, 13);
+            this.lblaantal2.Size = new System.Drawing.Size(0, 18);
             this.lblaantal2.TabIndex = 5;
             // 
             // lblaantal1
             // 
             this.lblaantal1.AutoSize = true;
+            this.lblaantal1.BackColor = System.Drawing.Color.Transparent;
+            this.lblaantal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblaantal1.ForeColor = System.Drawing.SystemColors.Control;
             this.lblaantal1.Location = new System.Drawing.Point(375, 493);
             this.lblaantal1.Name = "lblaantal1";
-            this.lblaantal1.Size = new System.Drawing.Size(0, 13);
+            this.lblaantal1.Size = new System.Drawing.Size(0, 18);
             this.lblaantal1.TabIndex = 6;
             // 
             // lblaanzet
@@ -114,6 +132,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(738, 540);
             this.Controls.Add(this.lblaanzet);
             this.Controls.Add(this.lblaantal1);

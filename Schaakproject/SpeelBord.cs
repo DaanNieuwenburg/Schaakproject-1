@@ -63,13 +63,14 @@ namespace Schaakproject
                 }
                 zwartwit = !zwartwit;
             }
-            if (_SpelMode.Equals("SinglePlayer"))
+            if (_SpelMode.Equals("Singleplayer"))
             {
                 lblPlayer1.Text = _speler1.Naam;
                 lblPlayer2.Text = "COMP";
             }
-            else if (_SpelMode.Equals("MultiPlayer"))
+            else if (_SpelMode.Equals("Multiplayer"))
             {
+                Console.WriteLine("test1 " + _speler1.Naam);
                 lblPlayer1.Text = "P1: " + _speler1.Naam;
                 lblPlayer2.Text = "P2: " + _speler2.Naam;
             }
@@ -149,5 +150,5 @@ namespace Schaakproject
                 Spel.Herstart(_SpelMode, _speler1.Naam, _speler2.Naam);
             }
             }
-        }
+    }
 }

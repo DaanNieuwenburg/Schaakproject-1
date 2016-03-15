@@ -59,7 +59,7 @@
             this.lblSpeler1Naam.Location = new System.Drawing.Point(213, 71);
             this.lblSpeler1Naam.Name = "lblSpeler1Naam";
             this.lblSpeler1Naam.Size = new System.Drawing.Size(83, 13);
-            this.lblSpeler1Naam.TabIndex = 1;
+            this.lblSpeler1Naam.TabIndex = 3;
             this.lblSpeler1Naam.Text = "Voer je naam in:";
             this.lblSpeler1Naam.Visible = false;
             // 
@@ -88,7 +88,7 @@
             this.txtSpeler2Naam.Location = new System.Drawing.Point(205, 174);
             this.txtSpeler2Naam.Name = "txtSpeler2Naam";
             this.txtSpeler2Naam.Size = new System.Drawing.Size(100, 20);
-            this.txtSpeler2Naam.TabIndex = 3;
+            this.txtSpeler2Naam.TabIndex = 1;
             this.txtSpeler2Naam.Visible = false;
             // 
             // lblSpeler2Naam

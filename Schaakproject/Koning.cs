@@ -11,6 +11,8 @@ namespace Schaakproject
 
         private bool _eersteZet { get; set; }
 
+        public bool mogelijk { get; set; }
+
         public Koning(string kleur, Vakje vakje)
         {
             this.kleur = kleur;
@@ -72,14 +74,16 @@ namespace Schaakproject
 
         public void Rokeren(SpecialPB picturesToren, SpecialPB selectedKoning, Mens speler)
         {
-            bool mogelijk = false;
+            
 
             if (picturesToren.vakje.buurOost == null)
             {
 
                 if (_eersteZet == false && (picturesToren.vakje.schaakstuk as Toren)._eersteZet == false && picturesToren.vakje.buurWest.schaakstuk == null && picturesToren.vakje.buurWest.buurWest.schaakstuk == null)
                 {
-                    mogelijk = true;
+                    // popup voor rokeren
+                    Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
+                    _Rokerenmelding.ShowDialog();
 
                 }
                 if (mogelijk == true)
@@ -106,7 +110,8 @@ namespace Schaakproject
             {
                 if (_eersteZet == false && (picturesToren.vakje.schaakstuk as Toren)._eersteZet == false && picturesToren.vakje.buurOost.schaakstuk == null && picturesToren.vakje.buurOost.buurOost.schaakstuk == null && picturesToren.vakje.buurOost.buurOost.buurOost.schaakstuk == null)
                 {
-                    mogelijk = true;
+                    Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
+                    _Rokerenmelding.ShowDialog();
                 }
                 if (mogelijk == true)
                 {
