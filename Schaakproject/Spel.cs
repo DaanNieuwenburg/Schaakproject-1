@@ -21,7 +21,7 @@ namespace Schaakproject
 
             if (Mode == "Singleplayer")
             {
-                Mens speler1 = new Mens(Speler1, "wit");
+            Mens speler1 = new Mens(Speler1, "wit");
                 Computer computerSpeler = new Computer(Speler2, "zwart");
                 _Speler1 = speler1;
                 _Speler2 = null;
@@ -30,14 +30,13 @@ namespace Schaakproject
             else if (Mode == "Multiplayer")
             {
                 Mens speler1 = new Mens(Speler1, "wit");
-                Mens speler2 = new Mens(Speler2, "zwart");
-                _Speler1 = speler1;
-                _Speler2 = speler2;
+            Mens speler2 = new Mens(Speler2, "zwart");
+            _Speler1 = speler1;
+            _Speler2 = speler2;
                 _computerSpeler = null;
             }
             speler1aanzet = true;
             Start();
-
         }
 
         public void Start()

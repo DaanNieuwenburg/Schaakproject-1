@@ -30,9 +30,8 @@ namespace Schaakproject
             _computerSpeler = computerSpeler;
             _spel = spel;
             this.CenterToScreen();
-            lblaantal1.Text = schaakbord.aantal1.ToString();
-            lblaantal2.Text = schaakbord.aantal2.ToString();
-
+            lblaantal1.Text = "xx"; //hier moet de variabele komen voor het aantal van wit
+            lblaantal2.Text = "xx"; //hier moet de variabele komen voor het aantal van zwart
             bool zwartwit = false;
             for (int x = 0; x < 8; x++)
             {
@@ -75,6 +74,7 @@ namespace Schaakproject
                 lblPlayer2.Text = "P2: " + _speler2.Naam;
             }
             InitializeComponent();
+
         }
 
         private void select(SpecialPB pictures)
@@ -102,30 +102,32 @@ namespace Schaakproject
             else if (_SpelMode == "Multiplayer")
             {
                 Console.WriteLine("SPELER1");
-                if (_spel.speler1aanzet == true)
+            if (_spel.speler1aanzet == true)
+            {
+                
+                if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
                 {
-                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
-                    {
-                        _speler1.SelecteerStuk(pictures);
-                    }
-                    else
-                    {
-                        _speler1.SelecteerVakje(pictures, this, _spel);
-                    }
+                    _speler1.SelecteerStuk(pictures);
                 }
                 else
                 {
+                        _speler1.SelecteerVakje(pictures, this, _spel);
+                }
+            }
+            else 
+            {
                     Console.WriteLine("SPELER2");
-                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
-                    {
-                        _speler2.SelecteerStuk(pictures);
-                    }
-                    else
-                    {
+                if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
+                {
+                    _speler2.SelecteerStuk(pictures);
+                }
+                else
+                {
                         _speler2.SelecteerVakje(pictures, this, _spel);
                     }
                 }
             }
+
         }
 
         private void SpeelBord_Load(object sender, EventArgs e)
@@ -134,7 +136,7 @@ namespace Schaakproject
 
         private void SpeelBord_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();  // sluit applicatie af
+           Application.Exit();  // sluit applicatie af
         }
 
         private void btHerstart_Click(object sender, EventArgs e)
@@ -146,6 +148,6 @@ namespace Schaakproject
                 this.Hide();
                 Spel.Herstart(_SpelMode, _speler1.Naam, _speler2.Naam);
             }
+            }
         }
-    }
 }

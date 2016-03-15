@@ -36,6 +36,7 @@
             this.lblResterend2 = new System.Windows.Forms.Label();
             this.lblaantal2 = new System.Windows.Forms.Label();
             this.lblaantal1 = new System.Windows.Forms.Label();
+            this.lblaanzet = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblPlayer1
@@ -89,18 +90,24 @@
             this.lblaantal2.AutoSize = true;
             this.lblaantal2.Location = new System.Drawing.Point(375, 9);
             this.lblaantal2.Name = "lblaantal2";
-            this.lblaantal2.Size = new System.Drawing.Size(17, 13);
+            this.lblaantal2.Size = new System.Drawing.Size(0, 13);
             this.lblaantal2.TabIndex = 5;
-            this.lblaantal2.Text = "xx";
             // 
             // lblaantal1
             // 
             this.lblaantal1.AutoSize = true;
             this.lblaantal1.Location = new System.Drawing.Point(375, 493);
             this.lblaantal1.Name = "lblaantal1";
-            this.lblaantal1.Size = new System.Drawing.Size(17, 13);
+            this.lblaantal1.Size = new System.Drawing.Size(0, 13);
             this.lblaantal1.TabIndex = 6;
-            this.lblaantal1.Text = "xx";
+            // 
+            // lblaanzet
+            // 
+            this.lblaanzet.AutoSize = true;
+            this.lblaanzet.Location = new System.Drawing.Point(561, 9);
+            this.lblaanzet.Name = "lblaanzet";
+            this.lblaanzet.Size = new System.Drawing.Size(0, 13);
+            this.lblaanzet.TabIndex = 7;
             // 
             // SpeelBord
             // 
@@ -108,6 +115,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(738, 540);
+            this.Controls.Add(this.lblaanzet);
             this.Controls.Add(this.lblaantal1);
             this.Controls.Add(this.lblaantal2);
             this.Controls.Add(this.lblResterend2);
@@ -134,5 +142,6 @@
         private System.Windows.Forms.Label lblResterend2;
         private System.Windows.Forms.Label lblaantal2;
         private System.Windows.Forms.Label lblaantal1;
+        private System.Windows.Forms.Label lblaanzet;
     }
 }

@@ -105,7 +105,6 @@ namespace Schaakproject
 
             }
         }
-
         private void Rokeren()
         {
             throw new System.NotImplementedException();

@@ -8,8 +8,8 @@ namespace Schaakproject
     public class Schaakbord
     {
         public Vakje[,] schaakarray = new Vakje[8, 8];
-        public int aantal1;
-        public int aantal2;
+        public int aantal1 { get; set; }
+        public int aantal2 { get; set; }
         public string kleurstuk { get; set; }
         public Schaakbord()
         {
@@ -132,13 +132,13 @@ namespace Schaakproject
                     {
                         schaakarray[x, y].buurZuid = schaakarray[x + 1, y];
                     }
-                    if (y != 0)
-                    {
-                        schaakarray[x, y].buurOost = schaakarray[x, y - 1];
-                    }
                     if (y != 7)
                     {
-                        schaakarray[x, y].buurWest = schaakarray[x, y + 1];
+                        schaakarray[x, y].buurOost = schaakarray[x, y + 1];
+                    }
+                    if (y != 0)
+                    {
+                        schaakarray[x, y].buurWest = schaakarray[x, y - 1];
                     }
                     if (x != 0 && y != 0)
                     {

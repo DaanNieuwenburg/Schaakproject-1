@@ -42,7 +42,7 @@ namespace Schaakproject
             int noordteller = 0;
             _vorigvakje = _spel.vorigVakje.vakje.buurNoord;
             while (buurnoord == false)
-            {
+        {
 
                 if (buurnoord == false && _vorigvakje != null)
                 {
@@ -54,7 +54,7 @@ namespace Schaakproject
                 {
                     buurnoord = true;
                 }
-            }
+        }
 
 
             bool buurzuid = false;
@@ -69,7 +69,7 @@ namespace Schaakproject
                     Console.WriteLine(zuidteller);
                 }
                 else
-                {
+        {
                     buurzuid = true;
                 }
             }
