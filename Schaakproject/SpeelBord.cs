@@ -83,7 +83,6 @@ namespace Schaakproject
             {
                 if (_spel.speler1aanzet == true)
                 {
-                    Console.WriteLine("SPELERS BEURT");
                     if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
                     {
                         _speler1.SelecteerStuk(pictures);
@@ -95,34 +94,31 @@ namespace Schaakproject
                 }
                 else
                 {
-                    Console.WriteLine("COMPUTERS BEURT");
                     _computerSpeler.Zet(_spel, _speler1);
                 }
             }
             else if (_SpelMode == "Multiplayer")
             {
-                Console.WriteLine("SPELER1");
-            if (_spel.speler1aanzet == true)
-            {
-                
-                if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
+                if (_spel.speler1aanzet == true)
                 {
-                    _speler1.SelecteerStuk(pictures);
-                }
-                else
-                {
+
+                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
+                    {
+                        _speler1.SelecteerStuk(pictures);
+                    }
+                    else
+                    {
                         _speler1.SelecteerVakje(pictures, this, _spel);
-                }
-            }
-            else 
-            {
-                    Console.WriteLine("SPELER2");
-                if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
-                {
-                    _speler2.SelecteerStuk(pictures);
+                    }
                 }
                 else
                 {
+                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
+                    {
+                        _speler2.SelecteerStuk(pictures);
+                    }
+                    else
+                    {
                         _speler2.SelecteerVakje(pictures, this, _spel);
                     }
                 }
@@ -136,7 +132,7 @@ namespace Schaakproject
 
         private void SpeelBord_FormClosed(object sender, FormClosedEventArgs e)
         {
-           Application.Exit();  // sluit applicatie af
+            Application.Exit();  // sluit applicatie af
         }
 
         private void btHerstart_Click(object sender, EventArgs e)
@@ -148,6 +144,6 @@ namespace Schaakproject
                 this.Hide();
                 Spel.Herstart(_SpelMode, _speler1.Naam, _speler2.Naam);
             }
-            }
         }
+    }
 }

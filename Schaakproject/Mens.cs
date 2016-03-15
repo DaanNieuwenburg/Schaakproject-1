@@ -60,7 +60,6 @@ namespace Schaakproject
                 }
                 validezet = false;
             }
-
         }
 
     }
