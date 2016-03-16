@@ -31,6 +31,7 @@ namespace Schaakproject
             _vorigvakje = _spel.selected.vakje;
             _vorigschaakstuk = _spel.selected.vakje.schaakstuk;
             bepaalMensPositie();
+            bepaalKoningPositie();
             bepaalRondeEnAntwoord();
         }
 
@@ -76,6 +77,56 @@ namespace Schaakproject
             }
         }
 
+        private void bepaalKoningPositie()
+        {
+            // kijk waar de koning staat
+            bool koningGevonden = false;
+            Vakje vorigvakjeHorizontaalOost = _spel.selected.vakje;
+            Vakje vorigvakjeHorizontaalWest = _spel.selected.vakje;
+            Vakje vorigvakjeVerticaal = _spel.selected.vakje;
+
+            // Loop tot de koning gevonden is
+            while (koningGevonden == false)
+            {
+                //VorigvakjeVerticaal loopt naar boven toe
+                if (vorigvakjeVerticaal != null)
+                {
+                    //VorigvakjeHorizontaal loopt naar het oosten (rechts) toe
+                    while(vorigvakjeHorizontaalOost != null)
+                    {
+                        if(vorigvakjeHorizontaalOost.schaakstuk is Koning)
+                        {
+                            koningGevonden = true;
+                            koning = vorigvakjeHorizontaalOost.pbox;
+                            vorigvakjeHorizontaalOost = null;
+                        }
+                        else
+                        {
+                            vorigvakjeHorizontaalOost = vorigvakjeHorizontaalOost.buurOost;
+                        }
+                    }
+
+                    //VorigvakjeHorizontaal loopt naar het westen (links) toe
+                    while (vorigvakjeHorizontaalWest != null)
+                    {
+                        if (vorigvakjeHorizontaalWest.schaakstuk is Koning)
+                        {
+                            koningGevonden = true;
+                            koning = vorigvakjeHorizontaalWest.pbox;
+                            vorigvakjeHorizontaalWest = null;
+                        }
+                        else
+                        {
+                            vorigvakjeHorizontaalWest = vorigvakjeHorizontaalWest.buurWest;
+                        }
+                    }
+                    vorigvakjeVerticaal = vorigvakjeVerticaal.buurNoord;
+                    vorigvakjeHorizontaalOost = vorigvakjeVerticaal.buurNoord;
+                    vorigvakjeHorizontaalWest = vorigvakjeVerticaal.buurNoord;
+                }
+            }  
+        }
+
         private void bepaalRondeEnAntwoord()
         {
             if (_ronde == 0)
@@ -97,8 +148,8 @@ namespace Schaakproject
             {
                 Console.WriteLine("FRENCH DEFENSE");
                 _tegenstanderstactiek = "French defense";
-                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.pbox;                     // geselecteerd stuk
-                pictures = _spel.selected.vakje.buurNoord.buurNoord.pbox;                               // geselecteerd vak
+                selected = koning.vakje.buurZuid.pbox;                      // geselecteerd stuk
+                pictures = koning.vakje.buurZuid.buurZuid.pbox;    // geselecteerd vak
                 voerZetUit();
             }
 
@@ -107,8 +158,8 @@ namespace Schaakproject
             {
                 Console.WriteLine("DUTCH DEFENSE");
                 _tegenstanderstactiek = "Dutch defense";
-                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurOost.buurOost.pbox;   // geselecteerd stuk
-                pictures = _spel.selected.vakje.buurNoord.buurOost.buurOost.pbox;                       // geselecteerd vak
+                selected = koning.vakje.buurOost.buurZuid.pbox;                      // geselecteerd stuk
+                pictures = koning.vakje.buurOost.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
                 voerZetUit();
             }
 
@@ -117,8 +168,8 @@ namespace Schaakproject
             {
                 Console.WriteLine("Anderssen's Opening");
                 _tegenstanderstactiek = "Anderssen's opening";
-                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurNoord.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost.pbox;     // geselecteerd stuk
-                pictures = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost.pbox;               // geselecteerd vak
+                selected = koning.vakje.buurOost.buurOost.buurZuid.pbox;                // geselecteerd stuk
+                pictures = koning.vakje.buurOost.buurOost.buurZuid.buurZuid.pbox;       // geselecteerd vak
                 voerZetUit();
             }
 
@@ -127,8 +178,8 @@ namespace Schaakproject
             {
                 Console.WriteLine("English Opening");
                 _tegenstanderstactiek = "English Opening";
-                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurOost.buurOost.pbox;   // geselecteerd stuk
-                pictures = _spel.selected.vakje.buurNoord.buurNoord.buurOost.buurOost.pbox;             // geselecteerd vak
+                selected = koning.vakje.buurZuid.pbox;                      // geselecteerd stuk
+                pictures = koning.vakje.buurZuid.buurZuid.pbox;    // geselecteerd vak
                 voerZetUit();
             }
 
@@ -137,8 +188,8 @@ namespace Schaakproject
             {
                 Console.WriteLine("Larsens Opening");
                 _tegenstanderstactiek = "Larsens Opening";
-                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurNoord.buurOost.buurOost.buurOost.pbox;   // geselecteerd stuk
-                pictures = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurOost.buurOost.buurOost.pbox;             // geselecteerd vak
+                selected = koning.vakje.buurZuid.pbox;          // geselecteerd stuk
+                pictures = koning.vakje.buurZuid.buurZuid.pbox; // geselecteerd vak
                 voerZetUit();
             }
 
@@ -147,8 +198,8 @@ namespace Schaakproject
             {
                 Console.WriteLine("Birds Opening");
                 _tegenstanderstactiek = "Birds Opening";
-                selected = _spel.selected.vakje.buurWest.buurWest.buurNoord.buurNoord.buurNoord.pbox;   // geselecteerd stuk
-                pictures = _spel.selected.vakje.buurWest.buurWest.buurNoord.pbox;                       // geselecteerd vak
+                selected = koning.vakje.buurWest.buurZuid.pbox;                      // geselecteerd stuk
+                pictures = koning.vakje.buurWest.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
                 voerZetUit();
             }
 
@@ -157,8 +208,8 @@ namespace Schaakproject
             {
                 Console.WriteLine("Sokolsky Opening");
                 _tegenstanderstactiek = "Sokolsky Opening";
-                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurOost.buurOost.pbox;   // geselecteerd stuk
-                pictures = _spel.selected.vakje.buurNoord.buurOost.buurOost.pbox;                       // geselecteerd vak
+                selected = koning.vakje.buurWest.buurZuid.pbox;                      // geselecteerd stuk
+                pictures = koning.vakje.buurWest.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
                 voerZetUit();
             }
 
@@ -167,8 +218,8 @@ namespace Schaakproject
             {
                 Console.WriteLine("Hungarian Opening");
                 _tegenstanderstactiek = "Hungarian Opening";
-                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurNoord.buurWest.buurWest.buurWest.pbox;    // geselecteerd stuk
-                pictures = _spel.selected.vakje.buurNoord.buurNoord.buurWest.buurWest.buurWest.pbox;                        // geselecteerd vak
+                selected = koning.vakje.buurWest.buurZuid.pbox;                      // geselecteerd stuk
+                pictures = koning.vakje.buurWest.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
                 voerZetUit();
             }
 
@@ -177,8 +228,8 @@ namespace Schaakproject
             {
                 Console.WriteLine("Ware Opening");
                 _tegenstanderstactiek = "Ware Opening";
-                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurOost.buurOost.buurOost.buurOost.pbox;    // geselecteerd stuk
-                pictures = _spel.selected.vakje.buurNoord.buurOost.buurOost.buurOost.buurOost.pbox;                        // geselecteerd vak
+                selected = koning.vakje.buurZuid.pbox;                      // geselecteerd stuk
+                pictures = koning.vakje.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
                 voerZetUit();
             }
 
@@ -187,8 +238,8 @@ namespace Schaakproject
             {
                 Console.WriteLine("Clemenz Opening");
                 _tegenstanderstactiek = "Clemenz Opening";
-                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurNoord.buurWest.buurWest.buurWest.buurWest.pbox;    // geselecteerd stuk
-                pictures = _spel.selected.vakje.buurNoord.buurNoord.buurWest.buurWest.buurWest.buurWest.pbox;                        // geselecteerd vak
+                selected = koning.vakje.buurWest.buurZuid.pbox;                      // geselecteerd stuk
+                pictures = koning.vakje.buurWest.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
                 voerZetUit();
             }
 
@@ -197,8 +248,8 @@ namespace Schaakproject
             {
                 Console.WriteLine("Desprez Opening");
                 _tegenstanderstactiek = "Desprez Opening";
-                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurWest.buurWest.buurWest.buurWest.pbox;    // geselecteerd stuk
-                pictures = _spel.selected.vakje.buurNoord.buurWest.buurWest.buurWest.buurWest.pbox;                        // geselecteerd vak
+                selected = koning.vakje.buurWest.buurZuid.pbox;                      // geselecteerd stuk
+                pictures = koning.vakje.buurWest.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
                 voerZetUit();
             }
 
@@ -207,8 +258,8 @@ namespace Schaakproject
             {
                 Console.WriteLine("Grob Attack");
                 _tegenstanderstactiek = "Grob Attack";
-                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurWest.buurWest.pbox;    // geselecteerd stuk
-                pictures = _spel.selected.vakje.buurNoord.buurWest.buurWest.pbox;                        // geselecteerd vak
+                selected = koning.vakje.buurZuid.pbox;                      // geselecteerd stuk
+                pictures = koning.vakje.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
                 voerZetUit();
             }
 
@@ -217,8 +268,8 @@ namespace Schaakproject
             {
                 Console.WriteLine("Barnes Opening");
                 _tegenstanderstactiek = "Barnes Opening";
-                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurNoord.buurWest.pbox;    // geselecteerd stuk
-                pictures = _spel.selected.vakje.buurNoord.buurNoord.buurWest.pbox;                        // geselecteerd vak
+                selected = koning.vakje.buurZuid.pbox;                      // geselecteerd stuk
+                pictures = koning.vakje.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
                 voerZetUit();
             }
 
@@ -227,8 +278,8 @@ namespace Schaakproject
             {
                 Console.WriteLine("Van 't kruijs Opening");
                 _tegenstanderstactiek = "Van 't kruijs Opening";
-                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurNoord.pbox;    // geselecteerd stuk
-                pictures = _spel.selected.vakje.buurNoord.buurNoord.pbox;                        // geselecteerd vak
+                selected = koning.vakje.buurZuid.pbox;                      // geselecteerd stuk
+                pictures = koning.vakje.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
                 voerZetUit();
             }
 
@@ -236,8 +287,8 @@ namespace Schaakproject
             else if (_positieWest == 4 && _positieZuid == 3 && _vorigschaakstuk is Pion)
             {
                 _tegenstanderstactiek = "Mieses Opening";
-                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurNoord.buurOost.pbox;    // geselecteerd stuk
-                pictures = _spel.selected.vakje.buurNoord.buurNoord.buurOost.pbox;                        // geselecteerd vak
+                selected = koning.vakje.buurZuid.pbox;                      // geselecteerd stuk
+                pictures = koning.vakje.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
                 voerZetUit();
             }
 
@@ -245,8 +296,8 @@ namespace Schaakproject
             else if (_positieWest == 3 && _positieZuid == 3 && _vorigschaakstuk is Pion)
             {
                 _tegenstanderstactiek = "Saragossa Opening";
-                selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurNoord.pbox;    // geselecteerd stuk
-                pictures = _spel.selected.vakje.buurNoord.buurNoord.pbox;                        // geselecteerd vak
+                selected = koning.vakje.buurWest.buurWest.buurZuid.pbox;            // geselecteerd stuk
+                pictures = koning.vakje.buurWest.buurWest.buurZuid.buurZuid.buurZuid.pbox;   // geselecteerd vak
                 voerZetUit();
             }
         }
