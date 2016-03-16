@@ -49,7 +49,7 @@ namespace Schaakproject
             lblSpeler2Naam.Visible = true;
             txtSpeler1Naam.Visible = true;
             txtSpeler2Naam.Visible = true;
-            btnBegin.Visible = true;
+            btnBegin.Visible = false;
             Mode = "Multiplayer";
             hLabel.Visible = false;
         }
@@ -66,7 +66,7 @@ namespace Schaakproject
             lblSpeler2Naam.Visible = false;
             txtSpeler1Naam.Visible = true;
             txtSpeler2Naam.Visible = false;
-            btnBegin.Visible = true;
+            btnBegin.Visible = false;
             Mode = "Singleplayer";
             hLabel.Visible = false;
 
@@ -83,6 +83,8 @@ namespace Schaakproject
             lblSpeler1Naam.Visible = false;
             lblSpeler2Naam.Visible = false;
             txtSpeler1Naam.Visible = false;
+            btnKlassiek.Visible = false;
+            btnChess960.Visible = false;
             btnBegin.Visible = true;
             MainForm Login = new MainForm();
             Login.Show();
@@ -157,6 +159,8 @@ namespace Schaakproject
                 txtSpeler1Naam.Visible = false;
                 txtSpeler2Naam.Visible = false;
                 btnBegin.Visible = false;
+                btnKlassiek.Visible = false;
+                btnChess960.Visible = false;
             }
         }
 
@@ -177,6 +181,7 @@ namespace Schaakproject
             this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960);
             click2 = false;
             click = true;
+            btnBegin.Visible = true;
         }
 
         private void btnChess960_Click(object sender, EventArgs e)
@@ -186,6 +191,7 @@ namespace Schaakproject
             this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960_click);
             click = false;
             click2 = true;
+            btnBegin.Visible = true;
         }
 
         private void btnKlassiek_MouseEnter(object sender, EventArgs e)
