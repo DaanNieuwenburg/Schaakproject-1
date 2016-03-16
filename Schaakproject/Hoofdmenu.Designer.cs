@@ -82,6 +82,7 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Hoofdmenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Schaakspel";
             this.Load += new System.EventHandler(this.Hoofdmenu_Load);
             this.ResumeLayout(false);
