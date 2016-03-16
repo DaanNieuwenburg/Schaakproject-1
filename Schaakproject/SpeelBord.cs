@@ -146,7 +146,7 @@ namespace Schaakproject
             if (Warning.Sure == true)
             {
                 this.Hide();
-                Spel.Herstart(_SpelMode, _speler1.Naam, "COMP");
+                _spel.Herstart(_SpelMode, _speler1.Naam, "COMP");
             }
             }
     }

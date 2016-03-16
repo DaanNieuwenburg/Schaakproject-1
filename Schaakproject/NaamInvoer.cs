@@ -13,12 +13,12 @@ namespace Schaakproject
 {
     public partial class NaamInvoer : Form
     {
-        public string Mode
-        {
-            get; set;
-        }
+        public string Mode { get; set; }
+        public string Variant { get; set; }
         private string Speler1 { get; set; }
         private string Speler2 { get; set; }
+        private bool click { get; set; }
+        private bool click2 { get; set; }
         public NaamInvoer()
         {
             //lblNotImplented.Visible = true;
@@ -31,7 +31,7 @@ namespace Schaakproject
             DialogResult = DialogResult.Yes;
             Speler1 = txtSpeler1Naam.Text;
             Speler2 = txtSpeler2Naam.Text;
-            Spel spel = new Spel(Mode, Speler1, Speler2);
+            Spel spel = new Spel(Mode, Speler1, Speler2, Variant);
             hLabel.Visible = true;
 
         }
@@ -43,7 +43,8 @@ namespace Schaakproject
             btModeMultiplayer.Visible = false;
             btModeRealMulti.Visible = false;
             lbTitel.Text = "Multiplayer";
-            
+            btnKlassiek.Visible = true;
+            btnChess960.Visible = true;
             lblSpeler1Naam.Visible = true;
             lblSpeler2Naam.Visible = true;
             txtSpeler1Naam.Visible = true;
@@ -59,7 +60,8 @@ namespace Schaakproject
             btModeMultiplayer.Visible = false;
             btModeRealMulti.Visible = false;
             lbTitel.Text = "Single Player";
-
+            btnKlassiek.Visible = true;
+            btnChess960.Visible = true;
             lblSpeler1Naam.Visible = true;
             lblSpeler2Naam.Visible = false;
             txtSpeler1Naam.Visible = true;
@@ -76,7 +78,8 @@ namespace Schaakproject
             btModeMultiplayer.Visible = false;
             btModeRealMulti.Visible = false;
             lbTitel.Text = "Online";
-
+            btnKlassiek.Visible = true;
+            btnChess960.Visible = true;
             lblSpeler1Naam.Visible = false;
             lblSpeler2Naam.Visible = false;
             txtSpeler1Naam.Visible = false;
@@ -165,6 +168,59 @@ namespace Schaakproject
         private void btTerug_MouseLeave(object sender, EventArgs e)
         {
             this.btTerug.BackgroundImage = (System.Drawing.Image)(Properties.Resources.backIcon);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Variant = "Klassiek";
+            this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek_click);
+            this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960);
+            click2 = false;
+            click = true;
+        }
+
+        private void btnChess960_Click(object sender, EventArgs e)
+        {
+            Variant = "Chess960";
+            this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek);
+            this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960_click);
+            click = false;
+            click2 = true;
+        }
+
+        private void btnKlassiek_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek_click);
+        }
+
+        private void btnKlassiek_MouseLeave(object sender, EventArgs e)
+        {
+            if (click == true)
+            {
+                this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek_click);
+            }
+            else
+            {
+                this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek);
+            }
+        }
+
+        private void btnChess960_MouseLeave(object sender, EventArgs e)
+        {
+            if (click2 == true)
+            {
+                this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960_click);
+            }
+            else
+            {
+                this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960);
+            }
+            
+        }
+
+        private void btnChess960_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960_click);
         }
     }
 }

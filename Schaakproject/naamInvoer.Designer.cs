@@ -40,6 +40,8 @@
             this.lbTitel = new System.Windows.Forms.Label();
             this.btTerug = new System.Windows.Forms.Button();
             this.hLabel = new System.Windows.Forms.Label();
+            this.btnKlassiek = new System.Windows.Forms.Button();
+            this.btnChess960 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtSpeler1Naam
@@ -196,6 +198,44 @@
             this.hLabel.TabIndex = 13;
             this.hLabel.Text = "Hidden function";
             // 
+            // btnKlassiek
+            // 
+            this.btnKlassiek.BackColor = System.Drawing.Color.Transparent;
+            this.btnKlassiek.BackgroundImage = global::Schaakproject.Properties.Resources.button_klassiek;
+            this.btnKlassiek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnKlassiek.FlatAppearance.BorderSize = 0;
+            this.btnKlassiek.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnKlassiek.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnKlassiek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKlassiek.Location = new System.Drawing.Point(82, 278);
+            this.btnKlassiek.Name = "btnKlassiek";
+            this.btnKlassiek.Size = new System.Drawing.Size(175, 70);
+            this.btnKlassiek.TabIndex = 14;
+            this.btnKlassiek.UseVisualStyleBackColor = false;
+            this.btnKlassiek.Visible = false;
+            this.btnKlassiek.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnKlassiek.MouseEnter += new System.EventHandler(this.btnKlassiek_MouseEnter);
+            this.btnKlassiek.MouseLeave += new System.EventHandler(this.btnKlassiek_MouseLeave);
+            // 
+            // btnChess960
+            // 
+            this.btnChess960.BackColor = System.Drawing.Color.Transparent;
+            this.btnChess960.BackgroundImage = global::Schaakproject.Properties.Resources.button_960;
+            this.btnChess960.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnChess960.FlatAppearance.BorderSize = 0;
+            this.btnChess960.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnChess960.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnChess960.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChess960.Location = new System.Drawing.Point(272, 278);
+            this.btnChess960.Name = "btnChess960";
+            this.btnChess960.Size = new System.Drawing.Size(178, 70);
+            this.btnChess960.TabIndex = 15;
+            this.btnChess960.UseVisualStyleBackColor = false;
+            this.btnChess960.Visible = false;
+            this.btnChess960.Click += new System.EventHandler(this.btnChess960_Click);
+            this.btnChess960.MouseEnter += new System.EventHandler(this.btnChess960_MouseEnter);
+            this.btnChess960.MouseLeave += new System.EventHandler(this.btnChess960_MouseLeave);
+            // 
             // NaamInvoer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,6 +243,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(514, 455);
+            this.Controls.Add(this.btnChess960);
+            this.Controls.Add(this.btnKlassiek);
             this.Controls.Add(this.hLabel);
             this.Controls.Add(this.btTerug);
             this.Controls.Add(this.txtSpeler1Naam);
@@ -234,5 +276,7 @@
         private System.Windows.Forms.Label lbTitel;
         private System.Windows.Forms.Button btTerug;
         private System.Windows.Forms.Label hLabel;
+        private System.Windows.Forms.Button btnKlassiek;
+        private System.Windows.Forms.Button btnChess960;
     }
 }

@@ -14,11 +14,12 @@ namespace Schaakproject
         private Computer _computerSpeler { get; set; }
         public bool speler1aanzet { get; set; }
         public SpecialPB selected { get; set; }
+        public string _Variant { get; set; }
 
-        public Spel(string Mode, string Speler1, string Speler2)
+        public Spel(string Mode, string Speler1, string Speler2, string Variant)
         {
             _SpelMode = Mode;
-
+            _Variant = Variant;
             if (Mode == "Singleplayer")
             {
                 Mens speler1 = new Mens(Speler1, "wit");
@@ -41,20 +42,20 @@ namespace Schaakproject
 
         public void Start()
         {
-            Schaakbord schaakbord = new Schaakbord();
+            Schaakbord schaakbord = new Schaakbord(_Variant);
             SpeelBord speelbord = new SpeelBord(this, schaakbord, _SpelMode, _Speler1, _Speler2, _computerSpeler);
             speelbord.Show();
         }
 
-        public static void Herstart(string spelMode, string speler1Naam, string speler2Naam)
+        public void Herstart(string spelMode, string speler1Naam, string speler2Naam)
         {
             if (spelMode == "Multiplayer")
             {
-                Spel spel = new Spel(spelMode, speler1Naam, speler2Naam);
+                Spel spel = new Spel(spelMode, speler1Naam, speler2Naam, _Variant);
             }
             else
             {
-                Spel spel = new Spel(spelMode, speler1Naam, "comp");
+                Spel spel = new Spel(spelMode, speler1Naam, "comp", _Variant);
             }
 
         }
