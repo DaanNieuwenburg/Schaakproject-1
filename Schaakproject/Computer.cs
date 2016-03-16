@@ -78,12 +78,12 @@ namespace Schaakproject
 
         private void bepaalRondeEnAntwoord()
         {
-            if(_ronde == 0)
+            if (_ronde == 0)
             {
                 TactiekEnAntwoordR0();
                 _ronde++;
             }
-            else if(_ronde == 1)
+            else if (_ronde == 1)
             {
                 TactiekEnAntwoordR1();
                 _ronde++;
@@ -113,7 +113,7 @@ namespace Schaakproject
             }
 
             // "Anderssen's Opening"
-            else if(_positieWest == 1 && _positieZuid == 3 && _vorigschaakstuk is Pion)
+            else if (_positieWest == 1 && _positieZuid == 3 && _vorigschaakstuk is Pion)
             {
                 Console.WriteLine("Anderssen's Opening");
                 _tegenstanderstactiek = "Anderssen's opening";
@@ -133,7 +133,7 @@ namespace Schaakproject
             }
 
             // "Larsens Opening"
-            else if(_positieWest == 2 && _positieZuid == 3 && _vorigschaakstuk is Pion)
+            else if (_positieWest == 2 && _positieZuid == 3 && _vorigschaakstuk is Pion)
             {
                 Console.WriteLine("Larsens Opening");
                 _tegenstanderstactiek = "Larsens Opening";
@@ -173,7 +173,7 @@ namespace Schaakproject
             }
 
             // "Ware Opening"
-            else if(_positieWest == 1 && _positieZuid == 4 && _vorigschaakstuk is Pion)
+            else if (_positieWest == 1 && _positieZuid == 4 && _vorigschaakstuk is Pion)
             {
                 Console.WriteLine("Ware Opening");
                 _tegenstanderstactiek = "Ware Opening";
@@ -253,15 +253,15 @@ namespace Schaakproject
 
         private void TactiekEnAntwoordR1()
         {
-            if(_tegenstanderstactiek == "French defense")
+            if (_tegenstanderstactiek == "French defense")
             {
-                if(_positieWest == 4 && _positieZuid == 4)
+                if (_positieWest == 4 && _positieZuid == 4)
                 {
                     selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.pbox;     // geselecteerd stuk
                     pictures = _spel.selected.vakje.buurNoord.pbox;                         // geselecteerd vak
                     voerZetUit();
                 }
-                else if(_positieWest == 5 && _positieZuid == 5)
+                else if (_positieWest == 5 && _positieZuid == 5)
                 {
                     selected = _spel.selected.vakje.buurNoord.buurNoord.buurWest.pbox;      // geselecteerd stuk
                     pictures = _spel.selected.vakje.buurWest.pbox;                          // geselecteerd vak
@@ -281,11 +281,11 @@ namespace Schaakproject
         private void AlgoritmeR1()
         {
             // kijk of speler defensief flankt links met Pion
-            if(_positieWest <=  3 && _positieZuid >= 4 && _vorigschaakstuk is Pion)
+            if (_positieWest <= 3 && _positieZuid >= 4 && _vorigschaakstuk is Pion)
             {
                 Console.WriteLine("DEFENSIEF FLANK LINKS");
             }
-            else if(_positieWest >= 6 &&  _positieZuid >= 4 && _vorigschaakstuk is Pion)
+            else if (_positieWest >= 6 && _positieZuid >= 4 && _vorigschaakstuk is Pion)
             {
                 Console.WriteLine("DEFENSIEF FLANK RECHTS");
             }
@@ -319,7 +319,7 @@ namespace Schaakproject
 
 
             // Dit is lelijk :(
-            else if(_positieZuid == 3 && _positieWest == 1 && _vorigschaakstuk is Pion)
+            else if (_positieZuid == 3 && _positieWest == 1 && _vorigschaakstuk is Pion)
             {
                 Console.WriteLine("BEETJE LELIJK");
                 selected = _spel.selected.vakje.buurNoord.buurNoord.buurNoord.buurNoord.buurOost.buurOost.buurOost.pbox;    // geselecteerd stuk

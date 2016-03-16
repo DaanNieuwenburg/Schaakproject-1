@@ -13,7 +13,7 @@ namespace Schaakproject
         private Mens _Speler2 { get; set; }
         private Computer _computerSpeler { get; set; }
         public bool speler1aanzet { get; private set; }
-        public SpecialPB selected { get; private set; }
+        public SpecialPB selected { get; set; }
         public string _Variant { get; private set; }
 
         public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant)
