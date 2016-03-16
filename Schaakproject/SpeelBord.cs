@@ -143,11 +143,22 @@ namespace Schaakproject
         {
             HerstartMelding Warning = new HerstartMelding();
             Warning.ShowDialog();
+            if (_SpelMode == "Singleplayer")
+            {
             if (Warning.Sure == true)
             {
                 this.Hide();
                 _spel.Herstart(_SpelMode, _speler1.Naam, "COMP");
             }
             }
+            else
+            {
+                if (Warning.Sure == true)
+                {
+                    this.Hide();
+                    _spel.Herstart(_SpelMode, _speler1.Naam, _speler2.Naam);
+                }
+            }
+        }
     }
 }
