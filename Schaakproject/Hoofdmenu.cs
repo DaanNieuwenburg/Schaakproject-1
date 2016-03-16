@@ -16,9 +16,7 @@ namespace Schaakproject
         public Hoofdmenu()
         {
             InitializeComponent();
-            this.CenterToScreen();
         }
-
 
         private void startButton_Click(object sender, EventArgs e)
         {
@@ -50,7 +48,6 @@ namespace Schaakproject
         private void btnafsluiten_MouseLeave(object sender, EventArgs e)
         {
             this.btnafsluiten.BackgroundImage = (Image)(Properties.Resources.afsluiten);
-
         }
 
         private void btnafsluiten_Click(object sender, EventArgs e)

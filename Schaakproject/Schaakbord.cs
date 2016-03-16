@@ -10,6 +10,7 @@ namespace Schaakproject
         public Vakje[,] schaakarray = new Vakje[8, 8];
         public int aantal1 { get; set; }
         public int aantal2 { get; set; }
+        public bool staatschaak { get; set; }
         public string kleurstuk { get; set; }
         public Schaakbord()
         {
@@ -165,9 +166,76 @@ namespace Schaakproject
             throw new System.NotImplementedException();
         }
 
-        private void CheckSchaak()
+        private void CheckSchaak(Koning koning)
         {
-            throw new System.NotImplementedException();
+            bool mogelijkloop = false;
+            staatschaak = false;
+            Vakje vorige = koning.vakje;
+
+            //kijk of er noord van de koning een toren of dame staat
+            while(mogelijkloop == false)
+            {
+                if (vorige.buurNoord.schaakstuk is Toren || vorige.buurNoord.schaakstuk is Dame)
+                {
+                    staatschaak = true;
+                    mogelijkloop = true;
+                }
+                else if(vorige.buurNoord == null || vorige.buurNoord.schaakstuk != null)
+                {
+                    mogelijkloop = true;
+                }
+                vorige = vorige.buurNoord;
+            }
+            mogelijkloop = false;
+
+            //kijk of er zuid van de koning een toren of dame staat
+            while (mogelijkloop == false)
+            {
+                if (vorige.buurZuid.schaakstuk is Toren || vorige.buurZuid.schaakstuk is Dame)
+                {
+                    staatschaak = true;
+                    mogelijkloop = true;
+                }
+                else if (vorige.buurZuid == null || vorige.buurZuid.schaakstuk != null)
+                {
+                    mogelijkloop = true;
+                }
+                vorige = vorige.buurNoord;
+            }
+            mogelijkloop = false;
+
+            //kijk of er oost van de koning een toren of dame staat
+            while (mogelijkloop == false)
+            {
+                if (vorige.buurOost.schaakstuk is Toren || vorige.buurOost.schaakstuk is Dame)
+                {
+                    staatschaak = true;
+                    mogelijkloop = true;
+                }
+                else if (vorige.buurOost == null || vorige.buurOost.schaakstuk != null)
+                {
+                    mogelijkloop = true;
+                }
+                vorige = vorige.buurNoord;
+            }
+            mogelijkloop = false;
+
+            //kijk of er west van de koning een toren of dame staat
+            while (mogelijkloop == false)
+            {
+                if (vorige.buurWest.schaakstuk is Toren || vorige.buurWest.schaakstuk is Dame)
+                {
+                    staatschaak = true;
+                    mogelijkloop = true;
+                }
+                else if (vorige.buurWest == null || vorige.buurWest.schaakstuk != null)
+                {
+                    mogelijkloop = true;
+                }
+                vorige = vorige.buurNoord;
+            }
+
+            
         }
 
         private void CheckMat()

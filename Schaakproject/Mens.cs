@@ -76,6 +76,7 @@ namespace Schaakproject
                 SpecialPB clicked = pictures;
                 pictures.BackColor = Color.AliceBlue;
                 selected.vakje.schaakstuk.Verplaats(pictures, selected, this);
+                
                 selected.vakje.update();
                 pictures.vakje.update();
                 selected = null;

@@ -102,6 +102,7 @@ namespace Schaakproject
                 selected.vakje.schaakstuk = null;
                 this.vakje = pictures.vakje;
                 speler.validezet = true;
+                _eersteZet = true;
 
             }
         }
