@@ -25,11 +25,11 @@ namespace Schaakproject
     public class Schaakbord
     {
         public Vakje[,] schaakarray = new Vakje[8, 8];
-        public int aantal1 { get; set; }
-        public int aantal2 { get; set; }
-        public bool staatschaak { get; set; }
-        public string kleurstuk { get; set; }
-        public string variant { get; set; }
+        private int aantal1 { get; set; }
+        private int aantal2 { get; set; }
+        private bool staatschaak { get; set; }
+        private string kleurstuk { get; set; }
+        private string variant { get; set; }
         public Schaakbord(string _Variant)
         {
             variant = _Variant;

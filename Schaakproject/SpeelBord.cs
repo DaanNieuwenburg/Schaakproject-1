@@ -17,7 +17,6 @@ namespace Schaakproject
         private Mens _speler1 { get; set; }
         private Mens _speler2 { get; set; }
         private Computer _computerSpeler { get; set; }
-
         private Spel _spel { get; set; }
 
         public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2, Computer computerSpeler)
@@ -37,7 +36,6 @@ namespace Schaakproject
             {
                 for (int y = 0; y < 8; y++)
                 {
-
                     // Maak vakjes pictures
                     SpecialPB pictures = new SpecialPB();
                     if (zwartwit == false)
