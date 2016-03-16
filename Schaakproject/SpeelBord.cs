@@ -103,26 +103,26 @@ namespace Schaakproject
             }
             else if (_SpelMode == "Multiplayer")
             {
-            if (_spel.speler1aanzet == true)
-            {
-                
-                if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
+                if (_spel.speler1aanzet == true)
                 {
-                    _speler1.SelecteerStuk(pictures, _spel);
-                }
-                else
-                {
+
+                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
+                    {
+                        _speler1.SelecteerStuk(pictures, _spel);
+                    }
+                    else
+                    {
                         _speler1.SelecteerVakje(pictures, this, _spel);
-                }
-            }
-            else 
-            {
-                if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
-                {
-                    _speler2.SelecteerStuk(pictures, _spel);
+                    }
                 }
                 else
                 {
+                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
+                    {
+                        _speler2.SelecteerStuk(pictures, _spel);
+                    }
+                    else
+                    {
                         _speler2.SelecteerVakje(pictures, this, _spel);
                     }
                 }
@@ -136,18 +136,29 @@ namespace Schaakproject
 
         private void SpeelBord_FormClosed(object sender, FormClosedEventArgs e)
         {
-           Application.Exit();  // sluit applicatie af
+            Application.Exit();  // sluit applicatie af
         }
 
         private void btHerstart_Click(object sender, EventArgs e)
         {
             HerstartMelding Warning = new HerstartMelding();
             Warning.ShowDialog();
-            if (Warning.Sure == true)
+            if (_SpelMode == "Singleplayer")
             {
-                this.Hide();
-                Spel.Herstart(_SpelMode, _speler1.Naam, "COMP");
+                if (Warning.Sure == true)
+                {
+                    this.Hide();
+                    Spel.Herstart(_SpelMode, _speler1.Naam, "COMP");
+                }
             }
+            else
+            {
+                if (Warning.Sure == true)
+                {
+                    this.Hide();
+                    Spel.Herstart(_SpelMode, _speler1.Naam, _speler2.Naam);
+                }
             }
+        }
     }
 }
