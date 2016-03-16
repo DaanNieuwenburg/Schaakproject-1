@@ -161,6 +161,7 @@ namespace Schaakproject
                 btnBegin.Visible = false;
                 btnKlassiek.Visible = false;
                 btnChess960.Visible = false;
+                hLabel.Visible = true;
             }
         }
 
