@@ -82,7 +82,7 @@ namespace Schaakproject
                 selected = null;
                 if (validezet == true)
                 {
-                    spel.selected = clicked;
+                    //spel.selected = clicked;
                     spel.VeranderSpeler();
                 }
                 validezet = false;
