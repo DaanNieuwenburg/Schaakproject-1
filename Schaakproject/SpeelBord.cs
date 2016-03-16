@@ -91,7 +91,15 @@ namespace Schaakproject
                     else
                     {
                         _speler1.SelecteerVakje(pictures, this, _spel);
-                        _computerSpeler.Zet(pictures, _spel, _speler1);
+                        if (_spel.selected.vakje == null)
+                        {
+                            Console.WriteLine("ARGHHHH");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Dit werkt");
+                        }
+                        //_computerSpeler.Zet(pictures, _spel, _speler1);
                     }
                 }
                 else
