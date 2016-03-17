@@ -156,6 +156,7 @@
             this.btnregels.TabIndex = 9;
             this.btnregels.Text = "Regels";
             this.btnregels.UseVisualStyleBackColor = true;
+            this.btnregels.Visible = false;
             this.btnregels.Click += new System.EventHandler(this.btnregels_Click);
             // 
             // button2
@@ -310,7 +311,6 @@
         private System.Windows.Forms.Label lblaantal1;
         private System.Windows.Forms.Label lblaanzet;
         private System.Windows.Forms.Label lbluitleg;
-        private System.Windows.Forms.Button btnregels;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnpaard;
         private System.Windows.Forms.Button btntoren;
@@ -320,5 +320,6 @@
         private System.Windows.Forms.Button btnpion;
         private System.Windows.Forms.Button btnterug;
         private System.Windows.Forms.PictureBox pbuitleg;
+        private System.Windows.Forms.Button btnregels;
     }
 }

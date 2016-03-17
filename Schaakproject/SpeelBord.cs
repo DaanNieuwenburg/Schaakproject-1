@@ -138,6 +138,7 @@ namespace Schaakproject
 
         private void SpeelBord_Load(object sender, EventArgs e)
         {
+            btnregels.Visible = true;
         }
 
         private void SpeelBord_FormClosed(object sender, FormClosedEventArgs e)
@@ -185,14 +186,16 @@ namespace Schaakproject
             this.btnloper.Visible = true;
             this.btnpaard.Visible = true;
             this.btnpion.Visible = true;
+            this.btnregels.Visible = false;
         }
 
         private void btnpaard_Click(object sender, EventArgs e)
         {
             clicks++;
             lbluitleg.Visible = true;
-            lbluitleg.Text = ("Paard\n Het paard maakt een beweging die een \ncombinatie is van 1 vlakje horizontaal of \nvertikaal, en 1 vlakje diagonaal.\nHet paard is het enige stuk dat kan \nspringen over andere stukken,\nd.w.z.het paard mag over andere \nstukken bewegen om van het ene \nnaar het andere vlakje te komen.\n De stukken waar het paard tijdens \nzijn zet overheen springt worden \nniet beïnvloed.");
+            lbluitleg.Text = ("Paard\nHet paard maakt een beweging die een \ncombinatie is van 1 vlakje horizontaal of \nvertikaal, en 1 vlakje diagonaal.\nHet paard is het enige stuk dat kan \nspringen over andere stukken,\nd.w.z.het paard mag over andere \nstukken bewegen om van het ene \nnaar het andere vlakje te komen.\nDe stukken waar het paard tijdens \nzijn zet overheen springt worden \nniet beïnvloed.");
             this.btndame.Visible = false;
+            pbuitleg.BackgroundImage = Properties.Resources.zettenpaard;
             pbuitleg.Visible = true;
             this.btnkoning.Visible = false;
             this.btntoren.Visible = false;
@@ -237,6 +240,7 @@ namespace Schaakproject
             clicks++;
             lbluitleg.Text = ("Koning\nDe Koning mag vertikaal, horizontaal en \ndiagonaal bewegen op dezelfde manier \nals de Dame, maar slechts met 1 stapje tegelijk.\n De Koning mag nooit een vlakje \nbetreden wat een (mogelijk) \neindpunt zou kunnen \nzijn van een stuk van de tegenstander. In \nandere woorden, je kunt de Koning nooit op een vlakje zetten waar \nhij direct daarop geslagen zou \nkunnen worden door de tegenstander.");
             lbluitleg.Visible = true;
+            pbuitleg.BackgroundImage = Properties.Resources.zettenkoning;
             pbuitleg.Visible = true;
             this.btndame.Visible = false;
             this.btnkoning.Visible = false;
@@ -271,6 +275,7 @@ namespace Schaakproject
             lbluitleg.Text = ("Toren\nDe toren beweegt vertikaal of horizontaal\nin een rechte lijn. De toren mag niet over\nandere stukken springen, alle vlakken\ntussen het begin en eindpunt van een\nzet dienen leeg te zijn.");
             lbluitleg.Visible = true;
             this.btndame.Visible = false;
+            pbuitleg.BackgroundImage = Properties.Resources.zettentoren;
             this.btnkoning.Visible = false;
             this.btntoren.Visible = false;
             this.btnloper.Visible = false;
@@ -286,6 +291,7 @@ namespace Schaakproject
             clicks++;
             lbluitleg.Text = ("Loper\nDe loper beweegt diagonaal over\nhet bord. Net als de toren mag de\nloper niet over andere stukken springen.");
             lbluitleg.Visible = true;
+            pbuitleg.BackgroundImage = Properties.Resources.zettenloper;
             this.btndame.Visible = false;
             this.btnkoning.Visible = false;
             this.btntoren.Visible = false;
@@ -303,6 +309,7 @@ namespace Schaakproject
             lbluitleg.Visible = true;
             lbluitleg.Text = ("Pion\nDe pion mag in princiepe alleen vooruit lopen.\nPer beurt mag de pion 1 vakje verplaatsen, tenzij\nde pion nog nooit is verplaatst dan mag die 2 vakjes\nverplaatsen. Verder mag de pion alleen schuin slaan.\nAls de pion aan de andere kant van het\nbord is gekomen mag die promoveren tot\neen ander schaakstuk naar keuze.");
             this.btndame.Visible = false;
+            pbuitleg.BackgroundImage = Properties.Resources.zettenpion;
             this.btnkoning.Visible = false;
             this.btntoren.Visible = false;
             this.btnloper.Visible = false;
