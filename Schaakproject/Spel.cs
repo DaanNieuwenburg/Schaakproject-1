@@ -14,7 +14,7 @@ namespace Schaakproject
         private Computer _computerSpeler { get; set; }  //De computer coor singleplayer
         public bool speler1aanzet { get; private set; } //is speler 1 aan zet?
         public SpecialPB selected { get;  set; } //Maakt de computer gebruik van
-        public string _Variant { get; private set; }    //Klassiek of Chess960
+        public string _Variant { get; set; }    //Klassiek of Chess960
 
         public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant)
         {
