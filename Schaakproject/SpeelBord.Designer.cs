@@ -39,7 +39,7 @@
             this.lblaanzet = new System.Windows.Forms.Label();
             this.lbluitleg = new System.Windows.Forms.Label();
             this.btnregels = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnvariant = new System.Windows.Forms.Button();
             this.btnpaard = new System.Windows.Forms.Button();
             this.btntoren = new System.Windows.Forms.Button();
             this.btnloper = new System.Windows.Forms.Button();
@@ -161,16 +161,16 @@
             this.btnregels.Visible = false;
             this.btnregels.Click += new System.EventHandler(this.btnregels_Click);
             // 
-            // button2
+            // btnvariant
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(591, 154);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 23);
-            this.button2.TabIndex = 10;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Visible = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnvariant.BackColor = System.Drawing.SystemColors.Control;
+            this.btnvariant.Location = new System.Drawing.Point(591, 154);
+            this.btnvariant.Name = "btnvariant";
+            this.btnvariant.Size = new System.Drawing.Size(136, 23);
+            this.btnvariant.TabIndex = 10;
+            this.btnvariant.UseVisualStyleBackColor = false;
+            this.btnvariant.Visible = false;
+            this.btnvariant.Click += new System.EventHandler(this.btnvariant_Click);
             // 
             // btnpaard
             // 
@@ -260,6 +260,7 @@
             this.pbuitleg.Location = new System.Drawing.Point(478, 251);
             this.pbuitleg.Name = "pbuitleg";
             this.pbuitleg.Size = new System.Drawing.Size(198, 196);
+            this.pbuitleg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbuitleg.TabIndex = 18;
             this.pbuitleg.TabStop = false;
             this.pbuitleg.Visible = false;
@@ -279,7 +280,7 @@
             this.Controls.Add(this.btnloper);
             this.Controls.Add(this.btntoren);
             this.Controls.Add(this.btnpaard);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnvariant);
             this.Controls.Add(this.btnregels);
             this.Controls.Add(this.lbluitleg);
             this.Controls.Add(this.lblaanzet);
@@ -312,7 +313,7 @@
         private System.Windows.Forms.Label lblaantal1;
         private System.Windows.Forms.Label lblaanzet;
         private System.Windows.Forms.Label lbluitleg;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnvariant;
         private System.Windows.Forms.Button btnpaard;
         private System.Windows.Forms.Button btntoren;
         private System.Windows.Forms.Button btnloper;

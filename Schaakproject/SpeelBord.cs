@@ -134,11 +134,11 @@ namespace Schaakproject
             btnregels.Visible = true;
             if (_variant == "Chess960")
             {
-                button2.Text = "Schaken960";
+                btnvariant.Text = "Schaken960";
         }
             else
             {
-                button2.Text = "Schaken";
+                btnvariant.Text = "Schaken";
             }
         }
 
@@ -174,18 +174,20 @@ namespace Schaakproject
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnvariant_Click(object sender, EventArgs e)
         {
             clicks++;
             lbluitleg.Visible = true;
             if(_variant == "Chess960")
             {
-                lbluitleg.Text = ("Chess960\nChess960 of Schaak960 is een variant\nvan het klassieke schaakspel. Hierbij\nworden in tegenstelling tot de klassieke\nvariant de schaakstukken van de eerste rij\nop een random positie geplaatst. Doordat\nhet aantal mogelijkheden 960 is zullen begin\ntactieken niet altijd gelden.");
-                pbuitleg.Visible = false;
+                pbuitleg.Image = Properties.Resources.chess960_uitleg_2;
+                pbuitleg.Visible = true;
+                lbluitleg.Text = ("Chess960\nChess960 of Schaak960 is een variant\nvan het klassieke schaakspel. Hierbij\nworden in tegenstelling tot de klassieke\nvariant de schaakstukken van de eerste rij\nop een random positie geplaatst. Doordat\nhet aantal mogelijkheden 960 is zullen begin\ntactieken niet altijd gelden.");              
             }
             else
             {
-                lbluitleg.Text = ("Hier komt wat uitleg over klassiek schaken");
+                lbluitleg.Text = ("Klassiek Schaken\nKlassiek schaken is het oeroude\nschaakspel, waarbij twee spelers\nmet behulp van dezelfde muis tegenelkaar\nkunnen schaken. De regels zijn\nbekend: Alle stukken bewegen op hun\neigen manier.Als één van jouw stukken\nop een vakje komt van een stuk van de\ntegenstander dan verdwijnt dat stuk van\nhet bord.Als je de koning van de\ntegenstander slaat heb je gewonnen.");
+                pbuitleg.Image = Properties.Resources.schaken_uitleg_1;
                 pbuitleg.Visible = false;
             }          
             this.btndame.Visible = false;
@@ -198,7 +200,7 @@ namespace Schaakproject
             this.btnpion.Visible = false;
             this.btnterug.Visible = true;
             this.btnregels.Visible = false;
-            this.button2.Visible = false;
+            this.btnvariant.Visible = false;
         }
 
         private void btnregels_Click(object sender, EventArgs e)
@@ -209,7 +211,7 @@ namespace Schaakproject
             this.btnloper.Visible = true;
             this.btnpaard.Visible = true;
             this.btnpion.Visible = true;
-            this.button2.Visible = true;
+            this.btnvariant.Visible = true;
             this.btnregels.Visible = false;
         }
 
@@ -228,7 +230,7 @@ namespace Schaakproject
             this.btnpion.Visible = false;
             this.btnterug.Visible = true;
             this.btnregels.Visible = false;
-            this.button2.Visible = false;
+            this.btnvariant.Visible = false;
         }
 
         private void btnterug_Click(object sender, EventArgs e)
@@ -244,7 +246,8 @@ namespace Schaakproject
                 this.btnpion.Visible = false;
                 lbluitleg.Visible = false;
                 this.btnregels.Visible = true;
-                this.button2.Visible = false;
+                this.btnvariant.Visible = false;
+                pbuitleg.Image = null;
             }
             else if (clicks == 1)
             {
@@ -258,7 +261,8 @@ namespace Schaakproject
                 this.btnpion.Visible = true;
                 lbluitleg.Visible = false;
                 this.btnregels.Visible = false;
-                this.button2.Visible = true;
+                this.btnvariant.Visible = true;
+                pbuitleg.Image = null;
             }
         }
 
@@ -277,7 +281,7 @@ namespace Schaakproject
             this.btnpion.Visible = false;
             this.btnterug.Visible = true;
             this.btnregels.Visible = false;
-            this.button2.Visible = false;
+            this.btnvariant.Visible = false;
         }
 
         private void btndame_Click(object sender, EventArgs e)
@@ -295,7 +299,7 @@ namespace Schaakproject
             this.btnpaard.Visible = false;
             this.btnpion.Visible = false;
             this.btnterug.Visible = true;
-            this.button2.Visible = false;
+            this.btnvariant.Visible = false;
         }
 
         private void btntoren_Click(object sender, EventArgs e)
@@ -312,7 +316,7 @@ namespace Schaakproject
             this.btnpion.Visible = false;
             this.btnterug.Visible = true;
             this.btnregels.Visible = false;
-            this.button2.Visible = false;
+            this.btnvariant.Visible = false;
             pbuitleg.Visible = true;
         }
 
@@ -330,7 +334,7 @@ namespace Schaakproject
             this.btnpion.Visible = false;
             this.btnterug.Visible = true;
             pbuitleg.Visible = true;
-            this.button2.Visible = false;
+            this.btnvariant.Visible = false;
             this.btnregels.Visible = false;
         }
 
@@ -347,7 +351,7 @@ namespace Schaakproject
             pbuitleg.Visible = true;
             this.btnpaard.Visible = false;
             this.btnpion.Visible = false;
-            this.button2.Visible = false;
+            this.btnvariant.Visible = false;
             this.btnterug.Visible = true;
             this.btnregels.Visible = false;
         }

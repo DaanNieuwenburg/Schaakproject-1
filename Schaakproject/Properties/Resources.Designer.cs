@@ -233,6 +233,36 @@ namespace Schaakproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chess960_uitleg_1 {
+            get {
+                object obj = ResourceManager.GetObject("chess960 uitleg 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chess960_uitleg_11 {
+            get {
+                object obj = ResourceManager.GetObject("chess960 uitleg 11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chess960_uitleg_2 {
+            get {
+                object obj = ResourceManager.GetObject("chess960 uitleg 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DameWit {
             get {
                 object obj = ResourceManager.GetObject("DameWit", resourceCulture);
@@ -336,6 +366,26 @@ namespace Schaakproject.Properties {
         internal static System.Drawing.Bitmap PionZwart {
             get {
                 object obj = ResourceManager.GetObject("PionZwart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap schaken_uitleg_1 {
+            get {
+                object obj = ResourceManager.GetObject("schaken uitleg 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap schaken_uitleg_11 {
+            get {
+                object obj = ResourceManager.GetObject("schaken uitleg 11", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
