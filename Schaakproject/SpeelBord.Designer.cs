@@ -142,6 +142,8 @@
             // lbluitleg
             // 
             this.lbluitleg.AutoSize = true;
+            this.lbluitleg.BackColor = System.Drawing.Color.Transparent;
+            this.lbluitleg.ForeColor = System.Drawing.Color.White;
             this.lbluitleg.Location = new System.Drawing.Point(475, 79);
             this.lbluitleg.Name = "lbluitleg";
             this.lbluitleg.Size = new System.Drawing.Size(0, 13);
@@ -166,7 +168,6 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(136, 23);
             this.button2.TabIndex = 10;
-            this.button2.Text = "Schaken960";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);

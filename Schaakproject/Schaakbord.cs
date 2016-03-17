@@ -284,7 +284,7 @@ namespace Schaakproject
             throw new System.NotImplementedException();
         }
 
-        private void CheckSchaak(Koning koning)
+        public void CheckSchaak(Koning koning)
         {
             bool mogelijkloop = false;
             staatschaak = false;
