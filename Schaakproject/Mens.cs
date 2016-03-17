@@ -10,6 +10,7 @@ namespace Schaakproject
     {
         private SpecialPB selected { get; set; }
         public bool validezet { get; set; }
+        public Koning koning { get; set; }
         public Mens(string naam, string kleur)
         {
             Naam = naam;

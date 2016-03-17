@@ -104,12 +104,8 @@ namespace Schaakproject
                 this.vakje = pictures.vakje;
                 speler.validezet = true;
                 _eersteZet = true;
-
+                
             }
-        }
-        private void Rokeren()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
