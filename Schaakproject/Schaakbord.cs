@@ -24,14 +24,16 @@ namespace Schaakproject
     }
     public class Schaakbord
     {
-        public Vakje[,] schaakarray = new Vakje[8, 8];
-        private int aantal1 { get; set; }
-        private int aantal2 { get; set; }
-        private bool staatschaak { get; set; }
-        private string kleurstuk { get; set; }
-        private string variant { get; set; }
-        public Schaakbord(string _Variant)
+        public Vakje[,] schaakarray { get; private set; }   //Een array van vakjes zodat het schaakbord kan worden opgezet
+        private int aantal1 { get; set; }                   //Het aantal schaakstukken wordt ingesteld voor wit
+        private int aantal2 { get; set; }                   //Het aantal schaakstukken wordt ingesteld voor zwart
+        private bool staatschaak { get; set; }              //Staat er iemand schaak?
+        private string kleurstuk { get; set; }              //De kleur van het stuk
+        private string variant { get; set; }                //Klassiek of Chess960
+
+        public Schaakbord(string _Variant)                  
         {
+            schaakarray = new Vakje[8, 8];
             variant = _Variant;
             bool kleurvakje = false; //zwart of wit
             kleurstuk = "zwart";

@@ -7,12 +7,10 @@ namespace Schaakproject
 {
     public class Koning : Schaakstuk
     {
-        private bool _staatschaak { get; set; }
-
-        private bool _eersteZet { get; set; }
-
-        public bool mogelijk { get; set; }
-
+        private bool _staatschaak { get; set; }     //Staat de koning schaak
+        private bool _eersteZet { get; set; }       //Is de koning al verzet
+        private bool _wilRokeren { get; set; }      //Als je op ja drukt als er gevraagd wordt of je wilt rokeren
+        
         public Koning(string kleur, Vakje vakje)
         {
             this.kleur = kleur;
@@ -74,8 +72,8 @@ namespace Schaakproject
 
         public void Rokeren(SpecialPB picturesToren, SpecialPB selectedKoning, Mens speler)
         {
-            
 
+            _wilRokeren = false;
             if (picturesToren.vakje.buurOost == null)
             {
 
@@ -84,9 +82,10 @@ namespace Schaakproject
                     // popup voor rokeren
                     Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
                     _Rokerenmelding.ShowDialog();
-
+                    
                 }
-                if (mogelijk == true)
+                
+                if (_wilRokeren == true)
                 {
                     picturesToren.vakje.schaakstuk.vakje = picturesToren.vakje.buurWest.buurWest;
                     picturesToren.vakje.buurWest.buurWest.schaakstuk = picturesToren.vakje.schaakstuk;
@@ -113,7 +112,7 @@ namespace Schaakproject
                     Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
                     _Rokerenmelding.ShowDialog();
                 }
-                if (mogelijk == true)
+                if (_wilRokeren == true)
                 {
                     picturesToren.vakje.schaakstuk.vakje = picturesToren.vakje.buurOost.buurOost.buurOost;
                     picturesToren.vakje.buurOost.buurOost.buurOost.schaakstuk = picturesToren.vakje.schaakstuk;
@@ -131,8 +130,11 @@ namespace Schaakproject
                     _eersteZet = true;
                 }
             }
+        }
 
-
+        public void Wilrokeren()
+        {
+            _wilRokeren = true;            
         }
     }
 }
