@@ -178,7 +178,16 @@ namespace Schaakproject
         {
             clicks++;
             lbluitleg.Visible = true;
-            lbluitleg.Text = ("xx");
+            if(_variant == "Chess960")
+            {
+                lbluitleg.Text = ("Chess960\nChess960 of Schaak960 is een variant\nvan het klassieke schaakspel. Hierbij\nworden in tegenstelling tot de klassieke\nvariant de schaakstukken van de eerste rij\nop een random positie geplaatst. Doordat\nhet aantal mogelijkheden 960 is zullen begin\ntactieken niet altijd gelden.");
+                pbuitleg.Visible = false;
+            }
+            else
+            {
+                lbluitleg.Text = ("Hier komt wat uitleg over klassiek schaken");
+                pbuitleg.Visible = false;
+            }          
             this.btndame.Visible = false;
             pbuitleg.BackgroundImage = Properties.Resources.zettenpaard;
             pbuitleg.Visible = true;
@@ -189,6 +198,7 @@ namespace Schaakproject
             this.btnpion.Visible = false;
             this.btnterug.Visible = true;
             this.btnregels.Visible = false;
+            this.button2.Visible = false;
         }
 
         private void btnregels_Click(object sender, EventArgs e)
