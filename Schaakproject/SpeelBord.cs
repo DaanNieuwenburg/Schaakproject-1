@@ -230,7 +230,7 @@ namespace Schaakproject
         private void btnkoning_Click(object sender, EventArgs e)
         {
             clicks++;
-            lbluitleg.Text = ("Koning\nDe Koning mag vertikaal, horizontaal en \ndiagonaal bewegen op dezelfde manier \nals de Dame, maar slechts met 1 stapje tegelijk.\n De Koning mag nooit een vlakje \nbetreden wat een (mogelijk) \neindpunt zou kunnen \nzijn van een stuk van de tegenstander. In \nandere woorden, je kunt de Koning nooit op een vlakje zetten waar \nhij direct daarop geslagen zou \nkunnen worden door de tegenstander.");
+            lbluitleg.Text = ("Koning\nDe Koning mag vertikaal, horizontaal en \ndiagonaal bewegen op dezelfde manier \nals de Dame, maar slechts met 1 stapje tegelijk.\nDe Koning mag nooit een vlakje \nbetreden wat een (mogelijk) eindpunt zou \nkunnen zijn van een stuk van de tegenstander. In \nandere woorden, je kunt de Koning nooit op \neen vlakje zetten waar hij direct daarop geslagen zou \nkunnen worden door de tegenstander.");
             lbluitleg.Visible = true;
             pbuitleg.BackgroundImage = Properties.Resources.zettenkoning;
             pbuitleg.Visible = true;
