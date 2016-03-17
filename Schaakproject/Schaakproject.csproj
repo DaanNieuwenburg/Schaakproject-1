@@ -267,6 +267,24 @@
   <ItemGroup>
     <None Include="Resources\button 960.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zettendame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zettenkoning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zettenloper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zettenpaard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zettenpion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zettentoren.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

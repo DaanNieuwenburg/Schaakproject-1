@@ -35,6 +35,7 @@
             // 
             // startButton
             // 
+            this.startButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.startButton.BackColor = System.Drawing.Color.Transparent;
             this.startButton.BackgroundImage = global::Schaakproject.Properties.Resources.start_klad_2_;
             this.startButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -43,9 +44,9 @@
             this.startButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startButton.ForeColor = System.Drawing.Color.Transparent;
-            this.startButton.Location = new System.Drawing.Point(168, 209);
+            this.startButton.Location = new System.Drawing.Point(164, 222);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(351, 131);
+            this.startButton.Size = new System.Drawing.Size(370, 135);
             this.startButton.TabIndex = 1;
             this.startButton.TabStop = false;
             this.startButton.UseVisualStyleBackColor = false;
@@ -55,6 +56,7 @@
             // 
             // btnafsluiten
             // 
+            this.btnafsluiten.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnafsluiten.BackColor = System.Drawing.Color.Transparent;
             this.btnafsluiten.BackgroundImage = global::Schaakproject.Properties.Resources.afsluiten;
             this.btnafsluiten.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -62,9 +64,9 @@
             this.btnafsluiten.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnafsluiten.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnafsluiten.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnafsluiten.Location = new System.Drawing.Point(226, 361);
+            this.btnafsluiten.Location = new System.Drawing.Point(238, 363);
             this.btnafsluiten.Name = "btnafsluiten";
-            this.btnafsluiten.Size = new System.Drawing.Size(235, 62);
+            this.btnafsluiten.Size = new System.Drawing.Size(230, 71);
             this.btnafsluiten.TabIndex = 2;
             this.btnafsluiten.UseVisualStyleBackColor = false;
             this.btnafsluiten.Click += new System.EventHandler(this.btnafsluiten_Click);
@@ -77,8 +79,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(716, 446);
-            this.Controls.Add(this.btnafsluiten);
             this.Controls.Add(this.startButton);
+            this.Controls.Add(this.btnafsluiten);
             this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Hoofdmenu";

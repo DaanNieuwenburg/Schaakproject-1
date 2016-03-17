@@ -37,22 +37,22 @@ namespace Schaakproject
             }
 
             if (validezet == false) //als hij niet gerokeerd heeft
-            {
+                {
                 if (pictures == selected) //als het stuk waarop geklikt is al geselecteerd was
-                {
-                    DeselecteerStuk();
-                }
-                else
-                {
-                    if (selected != null) //als er al een stuk geselecteerd staat
                     {
                         DeselecteerStuk();
                     }
+                    else
+                    {
+                    if (selected != null) //als er al een stuk geselecteerd staat
+                        {
+                            DeselecteerStuk();
+                        }
                     this.selected = pictures; //het stuk waarop geklikt is wordt geselecteerd
                     pictures.BackColor = Color.HotPink; //de kleur van het vakje veranderd
 
+                    }
                 }
-            }
             else // als het rokeren gelukt is
             {
                 spel.VeranderSpeler(); //De speler veranderd;
@@ -76,7 +76,7 @@ namespace Schaakproject
                 selected.vakje.update();    //update het eerste vakje
                 pictures.vakje.update();    //update het tweede vakje
                 selected = null;            //niets is meer geselecteerd
-
+                
                 if (validezet == true)          //als het schaakstuk daar heen mag
                 {
                     spel.selected = clicked;    //voor de singleplayer
