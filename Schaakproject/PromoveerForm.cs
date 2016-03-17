@@ -12,16 +12,16 @@ namespace Schaakproject
 {
     public partial class PromoveerForm : Form
     {
-        Pion pion { get; set; }
-        string kleur { get; set; }
+        Pion pion { get; set; }                             //onthoudt de pion die wil promoveren
+
         public PromoveerForm(Pion _pion, string _kleur)
         {
             InitializeComponent();
             this.ControlBox = false;
             pion = _pion;
-            kleur = _kleur;
-            if (kleur.Equals("zwart"))
+            if (_kleur.Equals("zwart"))         
             {
+                //verander de plaatjes zodat deze bij de kleur van de pion passen
                 pbDame.Image = global::Schaakproject.Properties.Resources.DameZwart;
                 pbLoper.Image = global::Schaakproject.Properties.Resources.LoperZwart;
                 pbToren.Image = global::Schaakproject.Properties.Resources.TorenZwart;

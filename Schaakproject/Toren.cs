@@ -8,7 +8,8 @@ namespace Schaakproject
 {
     public class Toren : Schaakstuk
     {
-        public bool _eersteZet { get; set; }
+        public bool _eersteZet { get; private set; } // Is de toren al eens verzet
+
         public Toren(string kleur, Vakje vakje)
         {
             this.kleur = kleur;
