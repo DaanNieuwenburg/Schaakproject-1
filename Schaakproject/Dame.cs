@@ -21,7 +21,10 @@ namespace Schaakproject
                 afbeelding = Properties.Resources.DameZwart;
             }
         }
-
+        public override bool kanStukSlaan(SpecialPB geselecteerdStuk)
+        {
+            return false;
+        }
         public override void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler)
         {
             bool mogelijk = false;

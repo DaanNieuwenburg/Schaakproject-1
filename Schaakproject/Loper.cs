@@ -20,6 +20,10 @@ namespace Schaakproject
                 afbeelding = Properties.Resources.LoperZwart;
             }
         }
+        public override bool kanStukSlaan(SpecialPB geselecteerdStuk)
+        {
+            return false;
+        }
 
         public override void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler)
         {

@@ -14,6 +14,18 @@ namespace Schaakproject
         private SpecialPB selected { get; set; }
         private SpecialPB pictures { get; set; }
         private SpecialPB koning { get; set; }
+        private List<SpecialPB> _verplaatsingslijstMens = new List<SpecialPB>();
+        public List<SpecialPB> verplaatsingsLijstMens
+        {
+            get { return _verplaatsingslijstMens; }
+            set { _verplaatsingslijstMens = value; }
+        }
+        private List<SpecialPB> _verplaatsingsLijstComputer = new List<SpecialPB>();
+        public List<SpecialPB> verplaatsingsLijstComputer
+        {
+            get { return _verplaatsingsLijstComputer; }
+            set { _verplaatsingsLijstComputer = value; }
+        }
         private string _tegenstandersopening { get; set; }
         private string _tegenstanderstactiek { get; set; }
         private int _ronde { get; set; }
@@ -29,8 +41,20 @@ namespace Schaakproject
         public void Zet(SpecialPB _pictures, Spel spel, Mens tegenspeler)
         {
             _spel = spel;
-            _vorigvakje = _spel.selected.vakje;
-            _vorigschaakstuk = _spel.selected.vakje.schaakstuk;
+            _vorigvakje = _spel.selected.vakje;                     // slaat het door de speler geselecteerde vakje op
+            _vorigschaakstuk = _spel.selected.vakje.schaakstuk;     // slaat het door de speler geselecteerde schaakstuk op     -- dit moet ook vanuit vorigvakje kunnen, scheelt code?
+            verplaatsingsLijstMens.Add(_spel.selected.vakje.pbox);  // slaat de positie van de spelerszet in lijst op 
+
+            foreach (SpecialPB kleurvakje in verplaatsingsLijstMens)
+            {
+                kleurvakje.vakje.pbox.BackColor = System.Drawing.Color.AliceBlue;
+            }
+
+            foreach (SpecialPB kleurvakje in verplaatsingsLijstComputer)
+            {
+                kleurvakje.vakje.pbox.BackColor = System.Drawing.Color.Yellow;
+            }
+
             bepaalMensPositie();
             bepaalKoningPositie();
             controleerOpSlaan();
@@ -131,6 +155,15 @@ namespace Schaakproject
         {
             if (_ronde == 0)
             {
+                if(_vorigvakje != null)
+                {
+                    TactiekEnAntwoordR0();
+                    _ronde++;
+                }
+                else
+                {
+                    Console.WriteLine("");
+                }
                 TactiekEnAntwoordR0();
                 _ronde++;
             }
@@ -139,37 +172,20 @@ namespace Schaakproject
                 TactiekEnAntwoordR1();
                 _ronde++;
             }
-            else if(_ronde == 2)
-            {
-                TactiekEnAntwoordR2();
-                _ronde++;
-            }
         }
 
         private void controleerOpSlaan()
-        {/*
-            Vakje vorigvakjeHorizontaalOost = koning.vakje;
-            Vakje vorigvakjeHorizontaalWest = koning.vakje;
-            Vakje vorigvakjeVerticaal = koning.vakje;
-            while (vorigvakjeVerticaal != null)
+        {
+
+            foreach (SpecialPB kleurvakje in verplaatsingsLijstComputer)
             {
-                //VorigvakjeHorizontaal loopt naar het oosten (rechts) toe
-                while (vorigvakjeHorizontaalOost != null)
+                if (kleurvakje.vakje.schaakstuk is Pion)
                 {
-                    if(vorigvakjeHorizontaalOost.schaakstuk is Schaakstuk && vorigvakjeHorizontaalOost.schaakstuk.kleur == "zwart")
-                    {
-                        if(vorigvakjeHorizontaalOost.schaakstuk is Toren)
-                        {
-                            Console.WriteLine("Toren");
-                        }
-                    }
-                    else
-                    {
-                        vorigvakjeHorizontaalOost = vorigvakjeHorizontaalOost.buurOost;
-                    }
+                    bool kanslaan = kleurvakje.vakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    Console.WriteLine("Kan stuk slaan" + kanslaan); 
                 }
-                vorigvakjeVerticaal = vorigvakjeVerticaal.buurZuid;
-            }*/
+            }
+            // inprincipe moet dit vanuit de schaakstuk klassen maar dat gaat nog niet,
         }
 
         private void TactiekEnAntwoordR0()
@@ -183,176 +199,6 @@ namespace Schaakproject
                 _tegenstanderstactiek = "midcontrol";
                 selected = koning.vakje.buurZuid.pbox;                      // geselecteerd stuk
                 pictures = koning.vakje.buurZuid.buurZuid.pbox;    // geselecteerd vak
-                voerZetUit();
-            }
-
-            // "Dutch defense"
-            else if (_positieWest == 4 && _positieZuid == 4 && _vorigschaakstuk is Pion)
-            {
-                Console.WriteLine("DUTCH DEFENSE");
-                _tegenstandersopening = "Dutch defense";
-                _tegenstanderstactiek = "midcontrol";
-                selected = koning.vakje.buurOost.buurZuid.pbox;                      // geselecteerd stuk
-                pictures = koning.vakje.buurOost.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
-                voerZetUit();
-            }
-
-            // "Anderssen's Opening"
-            else if (_positieWest == 1 && _positieZuid == 3 && _vorigschaakstuk is Pion)
-            {
-                Console.WriteLine("Anderssen's Opening");
-                _tegenstandersopening = "Anderssen's opening";
-                _tegenstanderstactiek = "flanklinks";
-                selected = koning.vakje.buurOost.buurOost.buurZuid.pbox;                // geselecteerd stuk
-                pictures = koning.vakje.buurOost.buurOost.buurZuid.buurZuid.pbox;       // geselecteerd vak
-                voerZetUit();
-            }
-
-            // "English Opening"
-            else if (_positieWest == 3 && _positieZuid == 4 && _vorigschaakstuk is Pion)
-            {
-                _tegenstandersopening = "English Opening";
-                _tegenstanderstactiek = "midcontrol";
-                selected = koning.vakje.buurZuid.pbox;                      // geselecteerd stuk
-                pictures = koning.vakje.buurZuid.buurZuid.pbox;    // geselecteerd vak
-                voerZetUit();
-            }
-
-            // "Larsens Opening"
-            else if (_positieWest == 2 && _positieZuid == 3 && _vorigschaakstuk is Pion)
-            {
-                _tegenstandersopening = "Larsens Opening";
-                _tegenstanderstactiek = "flanklinks";
-                selected = koning.vakje.buurZuid.pbox;          // geselecteerd stuk
-                pictures = koning.vakje.buurZuid.buurZuid.pbox; // geselecteerd vak
-                voerZetUit();
-            }
-
-            // "Birds Opening"
-            else if (_positieWest == 6 && _positieZuid == 4 && _vorigschaakstuk is Pion)
-            {
-                _tegenstandersopening = "Birds Opening";
-                _tegenstanderstactiek = "flankrechts";
-                selected = koning.vakje.buurWest.buurZuid.pbox;                      // geselecteerd stuk
-                pictures = koning.vakje.buurWest.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
-                voerZetUit();
-            }
-
-            // "Sokolsky Opening"
-            else if (_positieWest == 2 && _positieZuid == 4 && _vorigschaakstuk is Pion)
-            {
-                _tegenstandersopening = "Sokolsky Opening";
-                _tegenstanderstactiek = "flanklinks";
-                selected = koning.vakje.buurWest.buurZuid.pbox;                      // geselecteerd stuk
-                pictures = koning.vakje.buurWest.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
-                voerZetUit();
-            }
-
-            // "Hungarian Opening"
-            else if (_positieWest == 7 && _positieZuid == 3 && _vorigschaakstuk is Pion)
-            {
-                _tegenstandersopening = "Hungarian Opening";
-                _tegenstanderstactiek = "flankrechts";
-                selected = koning.vakje.buurWest.buurZuid.pbox;                      // geselecteerd stuk
-                pictures = koning.vakje.buurWest.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
-                voerZetUit();
-            }
-
-            // "Ware Opening"
-            else if (_positieWest == 1 && _positieZuid == 4 && _vorigschaakstuk is Pion)
-            {
-                _tegenstandersopening = "Ware Opening";
-                _tegenstanderstactiek = "flanklinks";
-                selected = koning.vakje.buurZuid.pbox;                      // geselecteerd stuk
-                pictures = koning.vakje.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
-                voerZetUit();
-            }
-
-            // "Clemenz Opening"
-            else if (_positieWest == 8 && _positieZuid == 3 && _vorigschaakstuk is Pion)
-            {
-                _tegenstandersopening = "Clemenz Opening";
-                _tegenstanderstactiek = "flankrechts";
-                selected = koning.vakje.buurWest.buurZuid.pbox;                      // geselecteerd stuk
-                pictures = koning.vakje.buurWest.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
-                voerZetUit();
-            }
-
-            // "Desprez Opening"
-            else if (_positieWest == 8 && _positieZuid == 4 && _vorigschaakstuk is Pion)
-            {
-                _tegenstandersopening = "Desprez Opening";
-                _tegenstanderstactiek = "flankrechts";
-                selected = koning.vakje.buurWest.buurZuid.pbox;                      // geselecteerd stuk
-                pictures = koning.vakje.buurWest.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
-                voerZetUit();
-            }
-
-            // "Grob Attack"
-            else if (_positieWest == 7 && _positieZuid == 4 && _vorigschaakstuk is Pion)
-            {
-                _tegenstandersopening = "Grob Attack";
-                _tegenstanderstactiek = "flankrechts";
-                selected = koning.vakje.buurZuid.pbox;                      // geselecteerd stuk
-                pictures = koning.vakje.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
-                voerZetUit();
-            }
-
-            // "Barnes Opening"
-            else if (_positieWest == 6 && _positieZuid == 3 && _vorigschaakstuk is Pion)
-            {
-                _tegenstandersopening = "Barnes Opening";
-                _tegenstanderstactiek = "flankrechts";
-                selected = koning.vakje.buurZuid.pbox;                      // geselecteerd stuk
-                pictures = koning.vakje.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
-                voerZetUit();
-            }
-
-            // "Van 't kruijs Opening"
-            else if (_positieWest == 5 && _positieZuid == 3 && _vorigschaakstuk is Pion)
-            {
-                _tegenstandersopening = "Van 't kruijs Opening";
-                _tegenstanderstactiek = "flankrechts";
-                selected = koning.vakje.buurZuid.pbox;                      // geselecteerd stuk
-                pictures = koning.vakje.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
-                voerZetUit();
-            }
-
-            // "Mieses Opening"
-            else if (_positieWest == 4 && _positieZuid == 3 && _vorigschaakstuk is Pion)
-            {
-                _tegenstandersopening = "Mieses Opening";
-                _tegenstanderstactiek = "midcontrol";
-                selected = koning.vakje.buurZuid.pbox;                      // geselecteerd stuk
-                pictures = koning.vakje.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
-                voerZetUit();
-            }
-
-            // "Saragossa Opening"
-            else if (_positieWest == 3 && _positieZuid == 3 && _vorigschaakstuk is Pion)
-            {
-                _tegenstandersopening = "Saragossa Opening";
-                _tegenstanderstactiek = "flanklinks";
-                selected = koning.vakje.buurWest.buurWest.buurZuid.pbox;                     // geselecteerd stuk
-                pictures = koning.vakje.buurWest.buurWest.buurZuid.buurZuid.buurZuid.pbox;   // geselecteerd vak
-                voerZetUit();
-            }
-            // "King knight Opening"
-            else if(_positieWest == 6 && _positieZuid == 3 && _vorigschaakstuk is Paard)
-            {
-                _tegenstandersopening = "King Knight Opening";
-                _tegenstanderstactiek = "paardmidlinks";
-                selected = koning.vakje.buurZuid.pbox;                     // geselecteerd stuk
-                pictures = koning.vakje.buurZuid.buurZuid.buurZuid.pbox;   // geselecteerd vak
-                voerZetUit();
-            }
-            // "Dunst Opening"
-            else if (_positieWest == 3 && _positieZuid == 3 && _vorigschaakstuk is Paard)
-            {
-                _tegenstandersopening = "Dunst Opening";
-                _tegenstanderstactiek = "paardmidrechts";
-                selected = koning.vakje.buurWest.buurZuid.pbox;                     // geselecteerd stuk
-                pictures = koning.vakje.buurWest.buurZuid.buurZuid.buurZuid.pbox;   // geselecteerd vak
                 voerZetUit();
             }
         }
@@ -381,33 +227,6 @@ namespace Schaakproject
             else
             {
                 AlgoritmeR1();
-            }
-        }
-
-        private void TactiekEnAntwoordR2()
-        {
-            if (_tegenstandersopening == "French defense")
-            {
-                if (_positieWest == 4 && _positieZuid == 4)
-                {
-                    selected = koning.vakje.buurWest.buurZuid.pbox;                      // geselecteerd stuk
-                    pictures = koning.vakje.buurWest.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
-                    voerZetUit();
-                }
-                else if (_positieWest == 5 && _positieZuid == 5)
-                {
-                    selected = koning.vakje.buurWest.buurZuid.pbox;                      // geselecteerd stuk
-                    pictures = koning.vakje.buurWest.buurZuid.buurZuid.buurZuid.pbox;    // geselecteerd vak
-                    voerZetUit();
-                }
-                else
-                {
-                    AlgoritmeR2();
-                }
-            }
-            else
-            {
-                AlgoritmeR2();
             }
         }
 
@@ -451,48 +270,9 @@ namespace Schaakproject
             }
         }
 
-        private void AlgoritmeR2()
-        {
-            // Flank links
-            if (_positieWest <= 3 && _positieZuid >= 4 && _vorigschaakstuk is Pion)
-            {
-                selected = koning.vakje.buurWest.buurWest.buurWest.pbox;            // geselecteerd stuk
-                pictures = koning.vakje.buurWest.buurWest.buurZuid.buurZuid.pbox;   // geselecteerd vak
-                voerZetUit();
-            }
-            // Flank rechts
-            else if (_positieWest >= 6 && _positieZuid >= 4 && _vorigschaakstuk is Pion)
-            {
-                selected = koning.vakje.buurOost.buurOost.pbox;                     // geselecteerd stuk
-                pictures = koning.vakje.buurOost.buurZuid.buurZuid.pbox;            // geselecteerd vak
-                Console.WriteLine("FLANKR");
-                voerZetUit();
-            }
-            // Defensief op 3de rij
-            else if (_positieZuid == 3 && _vorigschaakstuk is Pion)
-            {
-                selected = koning.vakje.buurWest.buurZuid.pbox;            // geselecteerd stuk
-                pictures = koning.vakje.buurWest.buurZuid.buurZuid.pbox;   // geselecteerd vak
-                voerZetUit();
-            }
-            // Aanvallend paard vanuit west
-            else if (_positieWest == 3 && _vorigschaakstuk is Paard)
-            {
-                selected = koning.vakje.buurWest.buurWest.buurZuid.pbox;                    // geselecteerd stuk
-                pictures = koning.vakje.buurWest.buurWest.buurZuid.buurZuid.buurZuid.pbox;  // geselecteerd vak
-                voerZetUit();
-            }
-            // Aanvallend paard vanuit oost
-            else if (_positieWest == 6 && _vorigschaakstuk is Paard)
-            {
-                selected = koning.vakje.buurOost.buurZuid.pbox;                     // geselecteerd stuk
-                pictures = koning.vakje.buurOost.buurZuid.buurZuid.buurZuid.pbox;   // geselecteerd vak
-                voerZetUit();
-            }
-        }
-
         private void voerZetUit()
         {
+            _verplaatsingsLijstComputer.Add(pictures.vakje.pbox);       // slaat de positie van de computerszet in lijst op 
             Mens hierhoortgeenmens = new Mens("ikhoorhierniet", "zwart");
             selected.vakje.schaakstuk.Verplaats(pictures, selected, hierhoortgeenmens);
             selected.vakje.update();
