@@ -12,13 +12,13 @@ using LoginProject;
 
 namespace Schaakproject
 {
-    public partial class MainForm : Form
+    public partial class LoginForm : Form
     {
         private bool login = false;
         public string username { get; set; }
         public string password { get; set; }
 
-        public MainForm()
+        public LoginForm()
         {
             InitializeComponent();
             txtPassword.PasswordChar = '*';

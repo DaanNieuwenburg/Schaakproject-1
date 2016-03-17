@@ -86,7 +86,7 @@ namespace Schaakproject
             btnKlassiek.Visible = false;
             btnChess960.Visible = false;
             btnBegin.Visible = true;
-            MainForm Login = new MainForm();
+            LoginForm Login = new LoginForm();
             Login.Show();
             hLabel.Visible = false;
         }

@@ -14,13 +14,15 @@ namespace LoginProject
     public partial class FormRegister : Form
     {
         public string user { get; set; }
-        public string pass { get; set; }
+        public string pass { get; set; }       
+        private bool confirmed { get; set; }
         public StreamWriter userfile { get; set; }
         public StreamWriter passfile { get; set; }
 
 
         public FormRegister()
         {
+            confirmed = false;
             InitializeComponent();
             userfile = new StreamWriter(@"C:\Users\daan1\Source\Repos\Schaakproject\Login\username.txt", true);
             // file nog veranderen naar de projectfolder. Werkt nu nog niet.
@@ -34,16 +36,35 @@ namespace LoginProject
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            user = txtuser.Text;
-            pass = txtpass.Text;
-            userfile.WriteLine(user);
-            userfile.Close();
-            passfile.WriteLine(pass);
-            passfile.Close();
-            // Main.username = txtuser.Text;
-            //Main.password = txtpass.Text;
-            DialogResult = DialogResult.Yes;
-            //button1.DialogResult = DialogResult.No;
+            if (txtpass.Text == txtconfirm.Text)
+            {
+                user = txtuser.Text;
+                pass = txtpass.Text;
+                userfile.WriteLine(user);
+                userfile.Close();
+                passfile.WriteLine(pass);
+                passfile.Close();
+                // Main.username = txtuser.Text;
+                //Main.password = txtpass.Text;
+                DialogResult = DialogResult.Yes;
+                //button1.DialogResult = DialogResult.No;
+            }
+            else
+            {
+                lblerror.ForeColor = Color.Red;
+                lblerror.Text = "⚠ Password en Confirm zijn niet het zelfde ⚠";
+            }
+
+        }
+
+        private void txtconfirm_TextChanged(object sender, EventArgs e)
+        {
+            txtconfirm.PasswordChar = '*';              // hierdoor is het ingevoerde wachtwoord onzichtbaar
+        }
+
+        private void txtpass_TextChanged(object sender, EventArgs e)
+        {
+            txtpass.PasswordChar = '*';                 // hierdoor is het ingevoerde wachtwoord onzichtbaar
         }
     }
 }

@@ -74,11 +74,11 @@
     </Compile>
     <Compile Include="Koning.cs" />
     <Compile Include="Loper.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mens.cs" />
     <Compile Include="NaamInvoer.cs">
@@ -130,8 +130,8 @@
     <EmbeddedResource Include="Hoofdmenu.resx">
       <DependentUpon>Hoofdmenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NaamInvoer.resx">
       <DependentUpon>NaamInvoer.cs</DependentUpon>
