@@ -26,7 +26,7 @@ namespace Schaakproject
 
         private void btnYes_Click(object sender, EventArgs e)
         {
-            koning.mogelijk = true;
+            koning.Wilrokeren();
             DialogResult = DialogResult.Yes;
 
         }

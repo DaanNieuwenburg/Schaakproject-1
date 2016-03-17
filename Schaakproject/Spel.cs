@@ -8,13 +8,13 @@ namespace Schaakproject
 {
     public class Spel
     {
-        private string _SpelMode { get; set; }
-        private Mens _Speler1 { get; set; }
-        private Mens _Speler2 { get; set; }
-        private Computer _computerSpeler { get; set; }
-        public bool speler1aanzet { get; private set; }
-        public SpecialPB selected { get; set; }
-        public string _Variant { get; private set; }
+        private string _SpelMode { get; set; }  //Singleplayer of multiplayer
+        private Mens _Speler1 { get; set; }     //De speler (is er altijd)
+        private Mens _Speler2 { get; set; }     //De tweede speler voor multiplayer
+        private Computer _computerSpeler { get; set; }  //De computer coor singleplayer
+        public bool speler1aanzet { get; private set; } //is speler 1 aan zet?
+        public SpecialPB selected { get;  set; } //Maakt de computer gebruik van
+        public string _Variant { get; private set; }    //Klassiek of Chess960
 
         public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant)
         {
