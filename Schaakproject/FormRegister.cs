@@ -14,7 +14,7 @@ namespace LoginProject
     public partial class FormRegister : Form
     {
         public string user { get; set; }
-        public string pass { get; set; }       
+        public string pass { get; set; }
         private bool confirmed { get; set; }
         public StreamWriter userfile { get; set; }
         public StreamWriter passfile { get; set; }
@@ -24,32 +24,38 @@ namespace LoginProject
         {
             confirmed = false;
             InitializeComponent();
-            userfile = new StreamWriter(@"C:\Users\daan1\Source\Repos\Schaakproject\Login\username.txt", true);
+            //userfile = new StreamWriter(@"C:\Users\daan1\Source\Repos\Schaakproject\Login\username.txt", true);
             // file nog veranderen naar de projectfolder. Werkt nu nog niet.
-            passfile = new StreamWriter(@"C:\Users\daan1\Source\Repos\Schaakproject\Login\password.txt", true);
+           //passfile = new StreamWriter(@"C:\Users\daan1\Source\Repos\Schaakproject\Login\password.txt", true);
             // file nog veranderen naar de projectfolder. Werkt nu nog niet.
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (txtpass.Text == txtconfirm.Text)
+            lblerror.Text = null;
+            if (txtpass.Text == txtconfirm.Text && txtvoornaam.Text != null && txtachternaam.Text != null && txtconfirm.Text != null && txtpass.Text != null && txtuser.Text != null)
             {
                 user = txtuser.Text;
                 pass = txtpass.Text;
-                userfile.WriteLine(user);
-                userfile.Close();
-                passfile.WriteLine(pass);
-                passfile.Close();
+               // userfile.WriteLine(user);
+                //userfile.Close();
+               // passfile.WriteLine(pass);
+                //passfile.Close();
                 // Main.username = txtuser.Text;
                 //Main.password = txtpass.Text;
                 DialogResult = DialogResult.Yes;
                 //button1.DialogResult = DialogResult.No;
             }
-            else
+            else if (txtvoornaam.Text == null || txtachternaam.Text == null || txtconfirm.Text == null || txtpass.Text == null || txtuser.Text == null)
+            {
+                lblerror.ForeColor = Color.Red;
+                lblerror.Text = "⚠ 1 of meer verplichte velden zijn leeg ⚠";
+            }
+            else if (txtpass.Text != txtconfirm.Text)
             {
                 lblerror.ForeColor = Color.Red;
                 lblerror.Text = "⚠ Password en Confirm zijn niet het zelfde ⚠";
