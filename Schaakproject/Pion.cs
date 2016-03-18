@@ -100,7 +100,7 @@ namespace Schaakproject
                         {
                             // Als er oost een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
                             (nieuwVakje.buurOost.schaakstuk as Pion)._speler.enPassantPion = this;
-                            
+
                         }
                     }
                     if (nieuwVakje.buurWest != null)
@@ -109,35 +109,32 @@ namespace Schaakproject
                         {
                             // Als er west een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
                             (nieuwVakje.buurWest.schaakstuk as Pion)._speler.enPassantPion = this;
-                            
+
                         }
                     }
                 }
                 else if (selected.buurOost != null)
                 {
                     //en-passant slaan naar noordoost
-                    if (selected.buurOost.schaakstuk is Pion && selected.buurNoordoost == nieuwVakje && selected.buurNoordoost.schaakstuk == null)
+                    if (selected.buurNoordoost == nieuwVakje && speler.enPassantPion == selected.buurOost.schaakstuk)
                     {
-                        if (speler.enPassantPion == selected.buurOost.schaakstuk)
-                        {
-                            selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
-                            selected.buurOost.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
-                            mogelijk = true;
 
-                        }
+                        selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
+                        selected.buurOost.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
+                        mogelijk = true;
+
                     }
                 }
                 if (selected.buurWest != null)
                 {
                     //en-passant slaan naar noordwest
-                    if (selected.buurWest.schaakstuk is Pion && selected.buurNoordwest == nieuwVakje && selected.buurNoordwest.schaakstuk == null)
+                    if (selected.buurNoordwest == nieuwVakje && speler.enPassantPion == selected.buurWest.schaakstuk)
                     {
-                        if (speler.enPassantPion == selected.buurWest.schaakstuk)
-                        {
-                            selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
-                            selected.buurWest.pbox.update(); //update deze pbox zodat je de pion niet meer ziet
-                            mogelijk = true;
-                        }
+
+                        selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
+                        selected.buurWest.pbox.update(); //update deze pbox zodat je de pion niet meer ziet
+                        mogelijk = true;
+
                     }
                 }
 
@@ -175,7 +172,7 @@ namespace Schaakproject
                         {
                             // Als er oost een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
                             (nieuwVakje.buurOost.schaakstuk as Pion)._speler.enPassantPion = this;
-                            
+
                         }
                     }
                     if (nieuwVakje.buurWest != null)
@@ -184,34 +181,32 @@ namespace Schaakproject
                         {
                             // Als er west een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
                             (nieuwVakje.buurWest.schaakstuk as Pion)._speler.enPassantPion = this;
-                            
+
                         }
                     }
                 }
                 else if (selected.buurOost != null)
                 {
                     //en-passant slaan naar zuidoost
-                    if (selected.buurOost.schaakstuk is Pion && selected.buurZuidoost == nieuwVakje && selected.buurZuidoost.schaakstuk == null)
+                    if (selected.buurZuidoost == nieuwVakje && speler.enPassantPion == selected.buurOost.schaakstuk)
                     {
-                        if (speler.enPassantPion == selected.buurOost.schaakstuk)
-                        {
-                            selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
-                            selected.buurOost.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
-                            mogelijk = true;
-                        }
+
+                        selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
+                        selected.buurOost.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
+                        mogelijk = true;
+
                     }
                 }
                 if (selected.buurWest != null)
                 {
                     //en-passant slaan naar zuidwest
-                    if (selected.buurWest.schaakstuk is Pion && selected.buurZuidwest == nieuwVakje && selected.buurZuidwest.schaakstuk == null)
+                    if (selected.buurZuidwest == nieuwVakje && speler.enPassantPion == selected.buurWest.schaakstuk)
                     {
-                        if (speler.enPassantPion == selected.buurWest.schaakstuk)
-                        {
-                            selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
-                            selected.buurWest.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
-                            mogelijk = true;
-                        }
+
+                        selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
+                        selected.buurWest.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
+                        mogelijk = true;
+
                     }
                 }
             }
