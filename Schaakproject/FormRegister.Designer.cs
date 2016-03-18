@@ -44,7 +44,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(32, 206);
+            this.button1.Location = new System.Drawing.Point(35, 216);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -54,7 +54,7 @@
             // 
             // txtpass
             // 
-            this.txtpass.Location = new System.Drawing.Point(100, 123);
+            this.txtpass.Location = new System.Drawing.Point(99, 105);
             this.txtpass.Name = "txtpass";
             this.txtpass.Size = new System.Drawing.Size(100, 20);
             this.txtpass.TabIndex = 8;
@@ -62,7 +62,7 @@
             // 
             // txtuser
             // 
-            this.txtuser.Location = new System.Drawing.Point(100, 89);
+            this.txtuser.Location = new System.Drawing.Point(99, 71);
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(100, 20);
             this.txtuser.TabIndex = 7;
@@ -70,7 +70,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 126);
+            this.label2.Location = new System.Drawing.Point(31, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 6;
@@ -79,7 +79,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 89);
+            this.label1.Location = new System.Drawing.Point(31, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 5;
@@ -120,7 +120,7 @@
             // 
             // txtachternaam
             // 
-            this.txtachternaam.Location = new System.Drawing.Point(100, 51);
+            this.txtachternaam.Location = new System.Drawing.Point(100, 42);
             this.txtachternaam.Name = "txtachternaam";
             this.txtachternaam.Size = new System.Drawing.Size(100, 20);
             this.txtachternaam.TabIndex = 15;
@@ -128,7 +128,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(32, 51);
+            this.label5.Location = new System.Drawing.Point(32, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 14;

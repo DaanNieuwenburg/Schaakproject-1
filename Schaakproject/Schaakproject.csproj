@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Computer.cs" />
     <Compile Include="Dame.cs" />
+    <Compile Include="Database.cs" />
     <Compile Include="FormRegister.cs">
       <SubType>Form</SubType>
     </Compile>
