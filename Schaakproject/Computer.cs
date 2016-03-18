@@ -314,8 +314,8 @@ namespace Schaakproject
             _verplaatsingsLijstComputer.Add(pictures.vakje.pbox);       // slaat de positie van de computerszet in lijst op 
             Mens hierhoortgeenmens = new Mens("ikhoorhierniet", "zwart");
             selected.vakje.schaakstuk.Verplaats(pictures, selected, hierhoortgeenmens);
-            selected.vakje.update();
-            pictures.vakje.update();
+            selected.update();
+            pictures.update();
             selected = null;
             _spel.VeranderSpeler();
         }

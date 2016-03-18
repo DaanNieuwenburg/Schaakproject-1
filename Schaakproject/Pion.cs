@@ -138,11 +138,14 @@ namespace Schaakproject
                 this.vakje = pictures.vakje;
                 _eersteZet = true;
                 speler.validezet = true;
+                
             }
 
                 
             if (vakje.buurNoord == null || vakje.buurZuid == null)
             {
+                pictures.update();
+                selected.update();
                 PromoveerForm promoveerform = new PromoveerForm(this, kleur);
                 promoveerform.ShowDialog();
             }
