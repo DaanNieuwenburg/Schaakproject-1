@@ -70,7 +70,12 @@ namespace Schaakproject
                 lblPlayer1.Text = "P1: " + _speler1.Naam;
                 lblPlayer2.Text = "P2: " + _speler2.Naam;
             }
-            InitializeComponent();
+            else if (_SpelMode.Equals("Online"))
+            {
+                Console.WriteLine("test1 " + _speler1.Naam);
+                lblPlayer1.Text = "P1: " + Speler1.Naam;
+            }
+                
 
         }
 
@@ -122,7 +127,33 @@ namespace Schaakproject
                     }
                 }
             }
-
+            else if (_SpelMode == "Online")
+            {
+                
+                if (_spel.speler1aanzet == true)
+                {
+                    //als de picturebox waarop gedrukt is wel een schaakstuk heeft en dit schaakstuk de kleur heeft van de speler
+                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
+                    {
+                        _speler1.SelecteerStuk(pictures, _spel);
+                    }
+                    else
+                    {
+                        _speler1.SelecteerVakje(pictures, this, _spel);
+                    }
+                }
+                else
+                {
+                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
+                    {
+                        _speler2.SelecteerStuk(pictures, _spel);
+                    }
+                    else
+                    {
+                        _speler2.SelecteerVakje(pictures, this, _spel);
+                    }
+                }
+            }
         }
 
         private void SpeelBord_Load(object sender, EventArgs e)

@@ -36,6 +36,15 @@ namespace Schaakproject
                 _Speler2 = speler2;
                 _computerSpeler = null;
             }
+            else if (Mode == "Online")
+            {
+                Mens speler1 = new Mens(NaamSpeler1, "wit");
+                Console.WriteLine("Test Spel Naamspeler1: " + NaamSpeler1);
+                Mens speler2 = new Mens(NaamSpeler2, "zwart");
+                _Speler1 = speler1;
+                _Speler2 = speler2;
+                _computerSpeler = null;
+            }
             speler1aanzet = true;
             Start();
         }
@@ -49,7 +58,7 @@ namespace Schaakproject
 
         public void Herstart(string spelMode, string speler1Naam, string speler2Naam)
         {
-            if (spelMode == "Multiplayer")
+            if (spelMode == "Multiplayer" || _SpelMode == "Online")
             {
                 Spel spel = new Spel(spelMode, speler1Naam, speler2Naam, _Variant);
             }

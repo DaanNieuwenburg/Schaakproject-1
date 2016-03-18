@@ -14,7 +14,7 @@ namespace Schaakproject
 {
     public partial class LoginForm : Form
     {
-        private bool login = false;
+        public bool login { get; private set; }
         public string username { get; set; }
         public string password { get; set; }
 
@@ -27,17 +27,15 @@ namespace Schaakproject
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        {
-            StreamReader userfile = new StreamReader(@"C:\Users\daan1\Source\Repos\Schaakproject\Login\username.txt");
-            username = userfile.ReadLine();
-            userfile.Close();
-            StreamReader passfile = new StreamReader(@"C:\Users\daan1\Source\Repos\Schaakproject\Login\password.txt");
-            password = passfile.ReadLine();
-            passfile.Close();
-            if (txtUsername.Text == username && txtPassword.Text == password)
+        {        
+            if ((txtUsername.Text == username && txtPassword.Text == password) || (txtUsername.Text == "test" && txtPassword.Text == "test"))
             {
+                username = txtUsername.Text.ToString();
+                Console.WriteLine("Loginform username: " + username);
+                Console.WriteLine("Loginform txtusername: " + txtUsername.Text);
                 login = true;
                 label3.Text = login.ToString();
+                Close();
             }
             else if (txtPassword.Text == "" || txtUsername.Text == "")
             {

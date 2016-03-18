@@ -18,6 +18,7 @@ namespace Schaakproject
         private string Speler1 { get; set; }
         private string Speler2 { get; set; }
         private bool click { get; set; }
+        private string _username { get; set; }
         private bool click2 { get; set; }
         public NaamInvoer()
         {
@@ -29,11 +30,21 @@ namespace Schaakproject
         private void btnNaamSubmit_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Yes;
-            Speler1 = txtSpeler1Naam.Text;
-            Speler2 = txtSpeler2Naam.Text;
-            Spel spel = new Spel(Mode, Speler1, Speler2, Variant);
+            if (Mode == "Multiplayer")
+            {
+                Speler1 = txtSpeler1Naam.Text;
+                Speler2 = txtSpeler2Naam.Text;
+                Spel spel = new Spel(Mode, Speler1, Speler2, Variant);
+            }
+            else if (Mode == "Online")
+            {
+                Speler1 = _username;
+                Speler2 = txtSpeler2Naam.Text;
+                Spel spel = new Spel(Mode, _username, Speler2, Variant);
+            }
+            
+            
             hLabel.Visible = true;
-
         }
 
         private void btModeMultiplayer_Click(object sender, EventArgs e)
@@ -74,21 +85,27 @@ namespace Schaakproject
 
         private void btModeRealMulti_Click(object sender, EventArgs e)
         {
+            Mode = "Online";
             btModeComputer.Visible = false;
             btModeMultiplayer.Visible = false;
             btModeRealMulti.Visible = false;
             lbTitel.Text = "Online";
-            btnKlassiek.Visible = true;
-            btnChess960.Visible = true;
+            btnKlassiek.Visible = false;
+            btnChess960.Visible = false;
             lblSpeler1Naam.Visible = false;
             lblSpeler2Naam.Visible = false;
             txtSpeler1Naam.Visible = false;
-            btnKlassiek.Visible = false;
-            btnChess960.Visible = false;
             btnBegin.Visible = true;
             LoginForm Login = new LoginForm();
-            Login.Show();
+            Login.ShowDialog();
             hLabel.Visible = false;
+            if (Login.login == true)
+            {
+                _username = Login.username;
+                Console.WriteLine("Test Naaminvoer: " + _username);
+                btnKlassiek.Visible = true;
+                btnChess960.Visible = true;    
+            }
         }
 
         private void btModeComputer_MouseEnter(object sender, EventArgs e)
