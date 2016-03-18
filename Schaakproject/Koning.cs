@@ -24,6 +24,88 @@ namespace Schaakproject
                 afbeelding = Properties.Resources.KoningZwart;
             }
         }
+        public override bool kanStukSlaan(SpecialPB geselecteerdStuk)
+        {
+            Vakje geselecteerdVak = geselecteerdStuk.vakje;
+            if (geselecteerdVak.schaakstuk.kleur == "wit")
+            {
+                if (geselecteerdVak.buurNoord.schaakstuk != null && geselecteerdVak.buurNoord.schaakstuk.kleur != "wit")
+                {
+                    return true;
+                }
+                else if (geselecteerdVak.buurOost.schaakstuk != null && geselecteerdVak.buurOost.schaakstuk.kleur != "wit")
+                {
+                    return true;
+                }
+                else if (geselecteerdVak.buurZuid.schaakstuk != null && geselecteerdVak.buurZuid.schaakstuk.kleur != "wit")
+                {
+                    return true;
+                }
+                else if (geselecteerdVak.buurWest.schaakstuk != null && geselecteerdVak.buurWest.schaakstuk.kleur != "wit")
+                {
+                    return true;
+                }
+                else if (geselecteerdVak.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
+                {
+                    return true;
+                }
+                else if (geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordwest.schaakstuk.kleur != "wit")
+                {
+                    return true;
+                }
+                else if (geselecteerdVak.buurZuidoost.schaakstuk != null && geselecteerdVak.buurZuidoost.schaakstuk.kleur != "wit")
+                {
+                    return true;
+                }
+                else if (geselecteerdVak.buurZuidwest.schaakstuk != null && geselecteerdVak.buurZuidwest.schaakstuk.kleur != "wit")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                if (geselecteerdVak.buurNoord.schaakstuk != null && geselecteerdVak.buurNoord.schaakstuk.kleur != "zwart")
+                {
+                    return true;
+                }
+                else if (geselecteerdVak.buurOost.schaakstuk != null && geselecteerdVak.buurOost.schaakstuk.kleur != "zwart")
+                {
+                    return true;
+                }
+                else if (geselecteerdVak.buurZuid.schaakstuk != null && geselecteerdVak.buurZuid.schaakstuk.kleur != "zwart")
+                {
+                    return true;
+                }
+                else if (geselecteerdVak.buurWest.schaakstuk != null && geselecteerdVak.buurWest.schaakstuk.kleur != "zwart")
+                {
+                    return true;
+                }
+                else if (geselecteerdVak.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "zwart")
+                {
+                    return true;
+                }
+                else if (geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordwest.schaakstuk.kleur != "zwart")
+                {
+                    return true;
+                }
+                else if (geselecteerdVak.buurZuidoost.schaakstuk != null && geselecteerdVak.buurZuidoost.schaakstuk.kleur != "zwart")
+                {
+                    return true;
+                }
+                else if (geselecteerdVak.buurZuidwest.schaakstuk != null && geselecteerdVak.buurZuidwest.schaakstuk.kleur != "zwart")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
 
         public override void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler)
         {
@@ -95,10 +177,10 @@ namespace Schaakproject
                     selectedKoning.vakje.buurOost.buurOost.schaakstuk = this;
                     selectedKoning.vakje.schaakstuk = null;
 
-                    this.vakje.update();
-                    this.vakje.buurWest.buurWest.update();
-                    this.vakje.buurWest.update();
-                    this.vakje.buurOost.update();
+                    this.vakje.pbox.update();
+                    this.vakje.buurWest.buurWest.pbox.update();
+                    this.vakje.buurWest.pbox.update();
+                    this.vakje.buurOost.pbox.update();
 
                     speler.validezet = true;
                     _eersteZet = true;
@@ -122,10 +204,10 @@ namespace Schaakproject
                     selectedKoning.vakje.buurWest.buurWest.schaakstuk = this;
                     selectedKoning.vakje.schaakstuk = null;
 
-                    this.vakje.update();
-                    this.vakje.buurWest.buurWest.update();
-                    this.vakje.buurOost.buurOost.update();
-                    this.vakje.buurOost.update();
+                    this.vakje.pbox.update();
+                    this.vakje.buurWest.buurWest.pbox.update();
+                    this.vakje.buurOost.buurOost.pbox.update();
+                    this.vakje.buurOost.pbox.update();
                     speler.validezet = true;
                     _eersteZet = true;
                 }

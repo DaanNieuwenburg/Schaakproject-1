@@ -63,7 +63,7 @@ namespace Schaakproject
 
         private void DeselecteerStuk()
         {
-            selected.vakje.update();    //de picturebox updatet zodat de kleur weer normaal wordt.
+            selected.update();          //de picturebox updatet zodat de kleur weer normaal wordt.
             selected = null;            //er staat niets meer geselecteerd
         }
 
@@ -74,8 +74,8 @@ namespace Schaakproject
                 SpecialPB clicked = pictures;   //voor de singleplayer
                 selected.vakje.schaakstuk.Verplaats(pictures, selected, this); //probeer het schaakstuk te verplaatsen
 
-                selected.vakje.update();    //update het eerste vakje
-                pictures.vakje.update();    //update het tweede vakje
+                selected.update();    //update het eerste vakje
+                pictures.update();    //update het tweede vakje
                 selected = null;            //niets is meer geselecteerd
                 
                 if (validezet == true)          //als het schaakstuk daar heen mag

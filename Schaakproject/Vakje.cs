@@ -9,7 +9,7 @@ namespace Schaakproject
 {
     public class Vakje
     {
-        private Color _kleur { get; set; }
+        public Color _kleur { get; private set; }
         public Schaakstuk schaakstuk { get; set; }
         public SpecialPB pbox { get; set; }
         public Vakje buurNoord { get; set; }
@@ -33,19 +33,8 @@ namespace Schaakproject
             }
         }
 
-        public void update()
-        {
-            if (this.schaakstuk != null)
-            {
-                pbox.Image = schaakstuk.afbeelding;
-                pbox.BackColor = _kleur;
-            }
-            else
-            {
-                pbox.Image = null;
-                pbox.BackColor = _kleur;
-            }
-        }
+        
+
     }
 }
 

@@ -25,6 +25,41 @@ namespace Schaakproject
             }
         }
 
+        public override bool kanStukSlaan(SpecialPB geselecteerdStuk )
+        {
+            Vakje geselecteerdVak = geselecteerdStuk.vakje;
+            if(geselecteerdVak.schaakstuk.kleur == "wit")
+            {
+                if (geselecteerdVak.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
+                {
+                    return true;
+                }
+                else if(geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                if (geselecteerdVak.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "zwart")
+                {
+                    return true;
+                }
+                else if (geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "zwart")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         public override void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler)
         {
            bool mogelijk = false;
@@ -103,11 +138,14 @@ namespace Schaakproject
                 this.vakje = pictures.vakje;
                 _eersteZet = true;
                 speler.validezet = true;
+                
             }
 
                 
             if (vakje.buurNoord == null || vakje.buurZuid == null)
             {
+                pictures.update();
+                selected.update();
                 PromoveerForm promoveerform = new PromoveerForm(this, kleur);
                 promoveerform.ShowDialog();
             }

@@ -32,38 +32,33 @@ namespace Schaakproject
             this.CenterToScreen();
             lblaantal1.Text = "xx"; //hier moet de variabele komen voor het aantal van wit
             lblaantal2.Text = "xx"; //hier moet de variabele komen voor het aantal van zwart
-            bool zwartwit = false;
+            
             for (int x = 0; x < 8; x++)
             {
                 for (int y = 0; y < 8; y++)
                 {
-                    // Maak vakjes pictures
-                    SpecialPB pictures = new SpecialPB();
-                    if (zwartwit == false)
-                    {
-                        pictures.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-                    }
-                    else
-                    {
-                        pictures.BackColor = Color.SaddleBrown;
-                    }
-                    pictures.Location = new Point(12 + 54 * y, 50 + 54 * x);
-                    pictures.Size = new Size(54, 54);
-                    pictures.SizeMode = PictureBoxSizeMode.CenterImage;
-                    pictures.TabIndex = 0;
-                    pictures.TabStop = false;
+                    // Maak pictureboxes
+                    SpecialPB pictureBox = new SpecialPB();                    
+                    pictureBox.Location = new Point(12 + 54 * y, 50 + 54 * x);
+                    pictureBox.Size = new Size(54, 54);
+                    pictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
+                    pictureBox.TabIndex = 0;
+                    pictureBox.TabStop = false;                                       
+                    this.Controls.Add(pictureBox);
 
-                    this.Controls.Add(pictures);
-                    pictures.vakje = schaakbord.schaakarray[x, y];
-                    schaakbord.schaakarray[x, y].pbox = pictures;
-                    schaakbord.schaakarray[x, y].update();
+                    // Koppel SpecialPB aan Vakje
+                    pictureBox.vakje = schaakbord.schaakarray[x, y];
+                    pictureBox.BackColor = pictureBox.vakje._kleur;
+                    schaakbord.schaakarray[x, y].pbox = pictureBox;
 
-                    pictures.Click += new EventHandler((o, a) => select(pictures));
+                    pictureBox.update(); // Laat schaakstukken zien
 
-                    zwartwit = !zwartwit;
+                    pictureBox.Click += new EventHandler((o, a) => select(pictureBox));                                        
                 }
-                zwartwit = !zwartwit;
+                
             }
+
+            // Het spel is singleplayer of multiplayer
             if (_SpelMode.Equals("Singleplayer"))
             {
                 lblPlayer1.Text = _speler1.Naam;
@@ -79,7 +74,7 @@ namespace Schaakproject
 
         }
 
-        private void select(SpecialPB pictures)
+        private void select(SpecialPB pictures) //click event voor alle pictureboxes
         {
             if (_SpelMode == "Singleplayer")
             {
@@ -100,6 +95,7 @@ namespace Schaakproject
                     //_computerSpeler.Zet(pictures, _spel, _speler1);
                 }
             }
+
             else if (_SpelMode == "Multiplayer")
             {
                 if (_spel.speler1aanzet == true)
