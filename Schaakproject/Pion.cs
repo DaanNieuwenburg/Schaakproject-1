@@ -98,18 +98,18 @@ namespace Schaakproject
                     {
                         if (nieuwVakje.buurOost.schaakstuk is Pion)
                         {
-                            // Als er oost een pion staat dan onthoudt de tegenstander dat hij deze pion met die pion mag slaan
-                            (nieuwVakje.buurOost.schaakstuk as Pion)._speler.tegenstanderPion = this;
-                            (nieuwVakje.buurOost.schaakstuk as Pion)._speler.mijnPassantPion = nieuwVakje.buurOost.schaakstuk as Pion;
+                            // Als er oost een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
+                            (nieuwVakje.buurOost.schaakstuk as Pion)._speler.enPassantPion = this;
+                            
                         }
                     }
                     if (nieuwVakje.buurWest != null)
                     {
                         if (nieuwVakje.buurWest.schaakstuk is Pion)
                         {
-                            // Als er west een pion staat dan onthoudt de tegenstander dat hij deze pion met die pion mag slaan
-                            (nieuwVakje.buurWest.schaakstuk as Pion)._speler.tegenstanderPion = this;
-                            (nieuwVakje.buurWest.schaakstuk as Pion)._speler.mijnPassantPion2 = nieuwVakje.buurWest.schaakstuk as Pion;
+                            // Als er west een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
+                            (nieuwVakje.buurWest.schaakstuk as Pion)._speler.enPassantPion = this;
+                            
                         }
                     }
                 }
@@ -118,7 +118,7 @@ namespace Schaakproject
                     //en-passant slaan naar noordoost
                     if (selected.buurOost.schaakstuk is Pion && selected.buurNoordoost == nieuwVakje && selected.buurNoordoost.schaakstuk == null)
                     {
-                        if (speler.mijnPassantPion2 == this && speler.tegenstanderPion == selected.buurOost.schaakstuk)
+                        if (speler.enPassantPion == selected.buurOost.schaakstuk)
                         {
                             selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
                             selected.buurOost.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
@@ -132,7 +132,7 @@ namespace Schaakproject
                     //en-passant slaan naar noordwest
                     if (selected.buurWest.schaakstuk is Pion && selected.buurNoordwest == nieuwVakje && selected.buurNoordwest.schaakstuk == null)
                     {
-                        if (speler.mijnPassantPion == this && speler.tegenstanderPion == selected.buurWest.schaakstuk)
+                        if (speler.enPassantPion == selected.buurWest.schaakstuk)
                         {
                             selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
                             selected.buurWest.pbox.update(); //update deze pbox zodat je de pion niet meer ziet
@@ -173,18 +173,18 @@ namespace Schaakproject
                     {
                         if (nieuwVakje.buurOost.schaakstuk is Pion)
                         {
-                            // Als er oost een pion staat dan onthoudt de tegenstander dat hij deze pion met die pion mag slaan
-                            (nieuwVakje.buurOost.schaakstuk as Pion)._speler.tegenstanderPion = this;
-                            (nieuwVakje.buurOost.schaakstuk as Pion)._speler.mijnPassantPion = nieuwVakje.buurOost.schaakstuk as Pion;
+                            // Als er oost een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
+                            (nieuwVakje.buurOost.schaakstuk as Pion)._speler.enPassantPion = this;
+                            
                         }
                     }
                     if (nieuwVakje.buurWest != null)
                     {
                         if (nieuwVakje.buurWest.schaakstuk is Pion)
                         {
-                            // Als er west een pion staat dan onthoudt de tegenstander dat hij deze pion met die pion mag slaan
-                            (nieuwVakje.buurWest.schaakstuk as Pion)._speler.tegenstanderPion = this;
-                            (nieuwVakje.buurWest.schaakstuk as Pion)._speler.mijnPassantPion2 = nieuwVakje.buurWest.schaakstuk as Pion;
+                            // Als er west een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
+                            (nieuwVakje.buurWest.schaakstuk as Pion)._speler.enPassantPion = this;
+                            
                         }
                     }
                 }
@@ -193,7 +193,7 @@ namespace Schaakproject
                     //en-passant slaan naar zuidoost
                     if (selected.buurOost.schaakstuk is Pion && selected.buurZuidoost == nieuwVakje && selected.buurZuidoost.schaakstuk == null)
                     {
-                        if (speler.mijnPassantPion2 == this && speler.tegenstanderPion == selected.buurOost.schaakstuk)
+                        if (speler.enPassantPion == selected.buurOost.schaakstuk)
                         {
                             selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
                             selected.buurOost.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
@@ -206,7 +206,7 @@ namespace Schaakproject
                     //en-passant slaan naar zuidwest
                     if (selected.buurWest.schaakstuk is Pion && selected.buurZuidwest == nieuwVakje && selected.buurZuidwest.schaakstuk == null)
                     {
-                        if (speler.mijnPassantPion == this && speler.tegenstanderPion == selected.buurWest.schaakstuk)
+                        if (speler.enPassantPion == selected.buurWest.schaakstuk)
                         {
                             selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
                             selected.buurWest.pbox.update(); // update deze pbox zodat je de pion niet meer ziet

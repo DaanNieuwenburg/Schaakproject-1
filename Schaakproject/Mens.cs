@@ -58,10 +58,9 @@ namespace Schaakproject
             {
                 spel.VeranderSpeler(); //De speler veranderd;
 
-                // De pionnen voor en-passant worden weer vergeten.
-                mijnPassantPion = null;
-                tegenstanderPion = null;
-                mijnPassantPion2 = null;
+                // De pion voor en-passant wordt weer vergeten.               
+                enPassantPion = null;
+                
             }
             validezet = false;
         }
@@ -88,10 +87,8 @@ namespace Schaakproject
                     spel.selected = clicked;    //voor de singleplayer
                     spel.VeranderSpeler();      //de andere speler is aan zet
 
-                    // De pionnen voor en-passant worden weer vergeten.
-                    mijnPassantPion = null;
-                    tegenstanderPion = null;
-                    mijnPassantPion2 = null;
+                    // De pion voor en-passant wordt weer vergeten.
+                    enPassantPion = null;
                 }
                 validezet = false;
             }
