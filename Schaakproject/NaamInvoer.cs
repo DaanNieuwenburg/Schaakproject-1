@@ -95,7 +95,7 @@ namespace Schaakproject
             lblSpeler1Naam.Visible = false;
             lblSpeler2Naam.Visible = false;
             txtSpeler1Naam.Visible = false;
-            btnBegin.Visible = true;
+            btnBegin.Visible = false;
             LoginForm Login = new LoginForm();
             Login.ShowDialog();
             hLabel.Visible = false;
