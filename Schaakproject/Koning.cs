@@ -24,9 +24,9 @@ namespace Schaakproject
                 afbeelding = Properties.Resources.KoningZwart;
             }
         }
-        public override bool kanStukSlaan(SpecialPB geselecteerdStuk)
+        public override bool kanStukSlaan(Vakje geselecteerdStuk)
         {
-            Vakje geselecteerdVak = geselecteerdStuk.vakje;
+            Vakje geselecteerdVak = geselecteerdStuk;
             if (geselecteerdVak.schaakstuk.kleur == "wit")
             {
                 if (geselecteerdVak.buurNoord.schaakstuk != null && geselecteerdVak.buurNoord.schaakstuk.kleur != "wit")
@@ -107,59 +107,59 @@ namespace Schaakproject
             }
         }
 
-        public override void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler)
+        public override void Verplaats(Vakje leegVakje, Vakje selected, Mens speler)
         {
             bool gevonden = false;
-            if (selected.vakje.buurNoord == pictures.vakje)
+            if (selected.buurNoord == leegVakje)
             {
                 gevonden = true;
             }
-            else if (selected.vakje.buurOost == pictures.vakje)
+            else if (selected.buurOost == leegVakje)
             {
                 gevonden = true;
             }
-            else if (selected.vakje.buurZuid == pictures.vakje)
+            else if (selected.buurZuid == leegVakje)
             {
                 gevonden = true;
             }
-            else if (selected.vakje.buurWest == pictures.vakje)
+            else if (selected.buurWest == leegVakje)
             {
                 gevonden = true;
             }
-            else if (selected.vakje.buurNoordoost == pictures.vakje)
+            else if (selected.buurNoordoost == leegVakje)
             {
                 gevonden = true;
             }
-            else if (selected.vakje.buurNoordwest == pictures.vakje)
+            else if (selected.buurNoordwest == leegVakje)
             {
                 gevonden = true;
             }
-            else if (selected.vakje.buurZuidoost == pictures.vakje)
+            else if (selected.buurZuidoost == leegVakje)
             {
                 gevonden = true;
             }
-            else if (selected.vakje.buurZuidwest == pictures.vakje)
+            else if (selected.buurZuidwest == leegVakje)
             {
                 gevonden = true;
             }
 
             if (gevonden == true)
             {
-                pictures.vakje.schaakstuk = this;
-                selected.vakje.schaakstuk = null;
-                this.vakje = pictures.vakje;
+                leegVakje.schaakstuk = this;
+                selected.schaakstuk = null;
+                this.vakje = leegVakje;
                 speler.validezet = true;
             }
         }
 
-        public void Rokeren(SpecialPB picturesToren, SpecialPB selectedKoning, Mens speler)
+        public void Rokeren(Vakje vakjeToren, Vakje vakjeKoning, Mens speler)
         {
             
             _wilRokeren = false;
-            if (picturesToren.vakje.buurOost == null)
+            if (vakjeToren.buurOost == null)
             {
 
-                if (_eersteZet == false && (picturesToren.vakje.schaakstuk as Toren)._eersteZet == false && picturesToren.vakje.buurWest.schaakstuk == null && picturesToren.vakje.buurWest.buurWest.schaakstuk == null)
+                if (_eersteZet == false && (vakjeToren.schaakstuk as Toren)._eersteZet == false && vakjeToren.buurWest.schaakstuk == null && vakjeToren.buurWest.buurWest.schaakstuk == null)
                 {
                     // popup voor rokeren
                     Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
@@ -169,13 +169,13 @@ namespace Schaakproject
                 
                 if (_wilRokeren == true)
                 {
-                    picturesToren.vakje.schaakstuk.vakje = picturesToren.vakje.buurWest.buurWest;
-                    picturesToren.vakje.buurWest.buurWest.schaakstuk = picturesToren.vakje.schaakstuk;
-                    picturesToren.vakje.schaakstuk = null;
+                    vakjeToren.schaakstuk.vakje = vakjeToren.buurWest.buurWest;
+                    vakjeToren.buurWest.buurWest.schaakstuk = vakjeToren.schaakstuk;
+                    vakjeToren.schaakstuk = null;
 
-                    this.vakje = selectedKoning.vakje.buurOost.buurOost;
-                    selectedKoning.vakje.buurOost.buurOost.schaakstuk = this;
-                    selectedKoning.vakje.schaakstuk = null;
+                    this.vakje = vakjeKoning.buurOost.buurOost;
+                    vakjeKoning.buurOost.buurOost.schaakstuk = this;
+                    vakjeKoning.schaakstuk = null;
 
                     this.vakje.pbox.update();
                     this.vakje.buurWest.buurWest.pbox.update();
@@ -187,22 +187,22 @@ namespace Schaakproject
                 }
             }
 
-            else if (picturesToren.vakje.buurWest == null)
+            else if (vakjeToren.buurWest == null)
             {
-                if (_eersteZet == false && (picturesToren.vakje.schaakstuk as Toren)._eersteZet == false && picturesToren.vakje.buurOost.schaakstuk == null && picturesToren.vakje.buurOost.buurOost.schaakstuk == null && picturesToren.vakje.buurOost.buurOost.buurOost.schaakstuk == null)
+                if (_eersteZet == false && (vakjeToren.schaakstuk as Toren)._eersteZet == false && vakjeToren.buurOost.schaakstuk == null && vakjeToren.buurOost.buurOost.schaakstuk == null && vakjeToren.buurOost.buurOost.buurOost.schaakstuk == null)
                 {
                     Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
                     _Rokerenmelding.ShowDialog();
                 }
                 if (_wilRokeren == true)
                 {
-                    picturesToren.vakje.schaakstuk.vakje = picturesToren.vakje.buurOost.buurOost.buurOost;
-                    picturesToren.vakje.buurOost.buurOost.buurOost.schaakstuk = picturesToren.vakje.schaakstuk;
-                    picturesToren.vakje.schaakstuk = null;
+                    vakjeToren.schaakstuk.vakje = vakjeToren.buurOost.buurOost.buurOost;
+                    vakjeToren.buurOost.buurOost.buurOost.schaakstuk = vakjeToren.schaakstuk;
+                    vakjeToren.schaakstuk = null;
 
-                    this.vakje = selectedKoning.vakje.buurWest.buurWest;
-                    selectedKoning.vakje.buurWest.buurWest.schaakstuk = this;
-                    selectedKoning.vakje.schaakstuk = null;
+                    this.vakje = vakjeKoning.buurWest.buurWest;
+                    vakjeKoning.buurWest.buurWest.schaakstuk = this;
+                    vakjeKoning.schaakstuk = null;
 
                     this.vakje.pbox.update();
                     this.vakje.buurWest.buurWest.pbox.update();

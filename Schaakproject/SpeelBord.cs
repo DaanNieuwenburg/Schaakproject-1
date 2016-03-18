@@ -79,25 +79,25 @@ namespace Schaakproject
 
         }
 
-        private void select(SpecialPB pictures) //click event voor alle pictureboxes
+        private void select(SpecialPB pictureBox) //click event voor alle pictureboxes
         {
             if (_SpelMode == "Singleplayer")
             {
                 if (_spel.speler1aanzet == true)
                 {
-                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
+                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler1.Kleur)
                     {
-                        _speler1.SelecteerStuk(pictures, _spel);
+                        _speler1.SelecteerStuk(pictureBox.vakje, _spel);
                     }
                     else
                     {
-                        _speler1.SelecteerVakje(pictures, this, _spel);
-                        _computerSpeler.Zet(pictures, _spel, _speler1);
+                        _speler1.SelecteerVakje(pictureBox.vakje, _spel);
+                        _computerSpeler.Zet(pictureBox.vakje, _spel, _speler1);
                     }
                 }
                 else
                 {
-                    //_computerSpeler.Zet(pictures, _spel, _speler1);
+                    //_computerSpeler.Zet(pictureBox.vakje, _spel, _speler1);
                 }
             }
 
@@ -106,24 +106,24 @@ namespace Schaakproject
                 if (_spel.speler1aanzet == true)
                 {
                     //als de picturebox waarop gedrukt is wel een schaakstuk heeft en dit schaakstuk de kleur heeft van de speler
-                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler1.Kleur)
+                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler1.Kleur)
                     {
-                        _speler1.SelecteerStuk(pictures, _spel);
+                        _speler1.SelecteerStuk(pictureBox.vakje, _spel);
                     }
                     else
                     {
-                        _speler1.SelecteerVakje(pictures, this, _spel);
+                        _speler1.SelecteerVakje(pictureBox.vakje, _spel);
                     }
                 }
                 else
                 {
-                    if (pictures.vakje.schaakstuk != null && pictures.vakje.schaakstuk.kleur == _speler2.Kleur)
+                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler2.Kleur)
                     {
-                        _speler2.SelecteerStuk(pictures, _spel);
+                        _speler2.SelecteerStuk(pictureBox.vakje, _spel);
                     }
                     else
                     {
-                        _speler2.SelecteerVakje(pictures, this, _spel);
+                        _speler2.SelecteerVakje(pictureBox.vakje, _spel);
                     }
                 }
             }

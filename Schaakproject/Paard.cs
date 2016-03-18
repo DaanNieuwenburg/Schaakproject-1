@@ -20,9 +20,9 @@ namespace Schaakproject
                 afbeelding = Properties.Resources.PaardZwart;
             }
         }
-        public override bool kanStukSlaan(SpecialPB geselecteerdStuk)
+        public override bool kanStukSlaan(Vakje geselecteerdStuk)
         {
-            Vakje geselecteerdVak = geselecteerdStuk.vakje;
+            Vakje geselecteerdVak = geselecteerdStuk;
             if (geselecteerdVak.schaakstuk.kleur == "wit")
             {
                 if (geselecteerdVak.buurNoord.buurNoordoost != null && geselecteerdVak.buurNoord.buurNoordoost.schaakstuk.kleur != "wit")
@@ -46,8 +46,8 @@ namespace Schaakproject
                 }
                 else
                 {
-                    return false;
-                }
+            return false;
+        }
             }
             else
             {
@@ -77,50 +77,50 @@ namespace Schaakproject
             }
         }
 
-        public override void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler)
+        public override void Verplaats(Vakje leegVakje, Vakje selected, Mens speler)
         {
             bool gevonden = false;
-            if (selected.vakje.buurNoord != null)
+            if (selected.buurNoord != null)
             {
-                if (selected.vakje.buurNoord.buurNoordoost == pictures.vakje)
+                if (selected.buurNoord.buurNoordoost == leegVakje)
                 {
                     gevonden = true;
                 }
-                else if (selected.vakje.buurNoord.buurNoordwest == pictures.vakje)
+                else if (selected.buurNoord.buurNoordwest == leegVakje)
                 {
                     gevonden = true;
                 }
             }
-            if (selected.vakje.buurOost != null)
+            if (selected.buurOost != null)
             {
-                if (selected.vakje.buurOost.buurNoordoost == pictures.vakje)
+                if (selected.buurOost.buurNoordoost == leegVakje)
                 {
                     gevonden = true;
                 }
-                else if (selected.vakje.buurOost.buurZuidoost == pictures.vakje)
+                else if (selected.buurOost.buurZuidoost == leegVakje)
                 {
                     gevonden = true;
                 }
             }
-            if (selected.vakje.buurZuid != null)
+            if (selected.buurZuid != null)
             {
-                if (selected.vakje.buurZuid.buurZuidoost == pictures.vakje)
+                if (selected.buurZuid.buurZuidoost == leegVakje)
                 {
                     gevonden = true;
                 }
-                else if (selected.vakje.buurZuid.buurZuidwest == pictures.vakje)
+                else if (selected.buurZuid.buurZuidwest == leegVakje)
                 {
                     gevonden = true;
                 }
             }
-            if (selected.vakje.buurWest != null)
+            if (selected.buurWest != null)
             {
-                if (selected.vakje.buurWest.buurZuidwest == pictures.vakje)
+                if (selected.buurWest.buurZuidwest == leegVakje)
                 {
                     gevonden = true;
                 }
 
-                else if (selected.vakje.buurWest.buurNoordwest == pictures.vakje)
+                else if (selected.buurWest.buurNoordwest == leegVakje)
                 {
                     gevonden = true;
                 }
@@ -128,9 +128,9 @@ namespace Schaakproject
 
             if (gevonden == true)
             {
-                pictures.vakje.schaakstuk = this;
-                selected.vakje.schaakstuk = null;
-                this.vakje = pictures.vakje;
+                leegVakje.schaakstuk = this;
+                selected.schaakstuk = null;
+                this.vakje = leegVakje;
                 speler.validezet = true;
             }
         }

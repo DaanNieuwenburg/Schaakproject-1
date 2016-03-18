@@ -24,12 +24,12 @@ namespace Schaakproject
             }
         }
 
-        public override bool kanStukSlaan(SpecialPB geselecteerdStuk)
+        public override bool kanStukSlaan(Vakje geselecteerdStuk)
         {
             bool mogelijkloop = false;
             bool kanSlaan = false;
-            Vakje geselecteerdVak = geselecteerdStuk.vakje;
-            Vakje vorigVakje = geselecteerdStuk.vakje;
+            Vakje geselecteerdVak = geselecteerdStuk;
+            Vakje vorigVakje = geselecteerdStuk;
             while (mogelijkloop == false)
             {
                 if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
@@ -50,8 +50,8 @@ namespace Schaakproject
                 vorigVakje = vorigVakje.buurNoord;
             }
 
-            geselecteerdVak = geselecteerdStuk.vakje;
-            vorigVakje = geselecteerdStuk.vakje;
+            geselecteerdVak = geselecteerdStuk;
+            vorigVakje = geselecteerdStuk;
             while (mogelijkloop == false)
             {
                 if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
@@ -72,8 +72,8 @@ namespace Schaakproject
                 vorigVakje = vorigVakje.buurOost;
             }
 
-            geselecteerdVak = geselecteerdStuk.vakje;
-            vorigVakje = geselecteerdStuk.vakje;
+            geselecteerdVak = geselecteerdStuk;
+            vorigVakje = geselecteerdStuk;
             while (mogelijkloop == false)
             {
                 if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
@@ -89,13 +89,13 @@ namespace Schaakproject
                 else if (vorigVakje == null)
                 {
                     mogelijkloop = true;
-                    return false;
-                }
+            return false;
+        }
                 vorigVakje = vorigVakje.buurZuid;
             }
 
-            geselecteerdVak = geselecteerdStuk.vakje;
-            vorigVakje = geselecteerdStuk.vakje;
+            geselecteerdVak = geselecteerdStuk;
+            vorigVakje = geselecteerdStuk;
             while (mogelijkloop == false)
             {
                 if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
@@ -118,14 +118,14 @@ namespace Schaakproject
             return kanSlaan;
         }
 
-        public override void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler)
+        public override void Verplaats(Vakje leegVakje, Vakje selected, Mens speler)
         {
             bool mogelijk = false;
             bool mogelijkloop = false;
-            Vakje vorige = selected.vakje;
+            Vakje vorige = selected;
             while (mogelijkloop == false)
             {
-                if (vorige.buurNoord == pictures.vakje)
+                if (vorige.buurNoord == leegVakje)
                 {
                     mogelijk = true;
                     mogelijkloop = true;
@@ -137,12 +137,12 @@ namespace Schaakproject
                 vorige = vorige.buurNoord;
             }
             mogelijkloop = false;
-            vorige = selected.vakje;
+            vorige = selected;
             if (mogelijk == false)
             {
                 while (mogelijkloop == false)
                 {
-                    if (vorige.buurOost == pictures.vakje)
+                    if (vorige.buurOost == leegVakje)
                     {
                         mogelijk = true;
                         mogelijkloop = true;
@@ -155,12 +155,12 @@ namespace Schaakproject
                 }
             }
             mogelijkloop = false;
-            vorige = selected.vakje;
+            vorige = selected;
             if (mogelijk == false)
             {
                 while (mogelijkloop == false)
                 {
-                    if (vorige.buurZuid == pictures.vakje)
+                    if (vorige.buurZuid == leegVakje)
                     {
                         mogelijk = true;
                         mogelijkloop = true;
@@ -174,12 +174,12 @@ namespace Schaakproject
                 }
             }
             mogelijkloop = false;
-            vorige = selected.vakje;
+            vorige = selected;
             if (mogelijk == false)
             {
                 while (mogelijkloop == false)
                 {
-                    if (vorige.buurWest == pictures.vakje)
+                    if (vorige.buurWest == leegVakje)
                     {
                         mogelijk = true;
                         mogelijkloop = true;
@@ -193,9 +193,9 @@ namespace Schaakproject
             }
             if (mogelijk == true)
             {
-                pictures.vakje.schaakstuk = this;
-                selected.vakje.schaakstuk = null;
-                this.vakje = pictures.vakje;
+                leegVakje.schaakstuk = this;
+                selected.schaakstuk = null;
+                this.vakje = leegVakje;
                 speler.validezet = true;
                 _eersteZet = true;
                 
