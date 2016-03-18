@@ -177,10 +177,10 @@ namespace Schaakproject
                     selectedKoning.vakje.buurOost.buurOost.schaakstuk = this;
                     selectedKoning.vakje.schaakstuk = null;
 
-                    this.vakje.update();
-                    this.vakje.buurWest.buurWest.update();
-                    this.vakje.buurWest.update();
-                    this.vakje.buurOost.update();
+                    this.vakje.pbox.update();
+                    this.vakje.buurWest.buurWest.pbox.update();
+                    this.vakje.buurWest.pbox.update();
+                    this.vakje.buurOost.pbox.update();
 
                     speler.validezet = true;
                     _eersteZet = true;
@@ -204,10 +204,10 @@ namespace Schaakproject
                     selectedKoning.vakje.buurWest.buurWest.schaakstuk = this;
                     selectedKoning.vakje.schaakstuk = null;
 
-                    this.vakje.update();
-                    this.vakje.buurWest.buurWest.update();
-                    this.vakje.buurOost.buurOost.update();
-                    this.vakje.buurOost.update();
+                    this.vakje.pbox.update();
+                    this.vakje.buurWest.buurWest.pbox.update();
+                    this.vakje.buurOost.buurOost.pbox.update();
+                    this.vakje.buurOost.pbox.update();
                     speler.validezet = true;
                     _eersteZet = true;
                 }
