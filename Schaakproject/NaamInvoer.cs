@@ -30,7 +30,13 @@ namespace Schaakproject
         private void btnNaamSubmit_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Yes;
-            if (Mode == "Multiplayer")
+            if (Mode == "Singleplayer")
+            {
+                Speler1 = txtSpeler1Naam.Text;
+                Speler2 = txtSpeler2Naam.Text;
+                Spel spel = new Spel(Mode, Speler1, Speler2, Variant);
+            }
+            else if (Mode == "Multiplayer")
             {
                 Speler1 = txtSpeler1Naam.Text;
                 Speler2 = txtSpeler2Naam.Text;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegister));
             this.button1 = new System.Windows.Forms.Button();
             this.txtpass = new System.Windows.Forms.TextBox();
             this.txtuser = new System.Windows.Forms.TextBox();
@@ -54,7 +55,7 @@
             // 
             // txtpass
             // 
-            this.txtpass.Location = new System.Drawing.Point(99, 105);
+            this.txtpass.Location = new System.Drawing.Point(105, 121);
             this.txtpass.Name = "txtpass";
             this.txtpass.Size = new System.Drawing.Size(100, 20);
             this.txtpass.TabIndex = 8;
@@ -62,7 +63,7 @@
             // 
             // txtuser
             // 
-            this.txtuser.Location = new System.Drawing.Point(99, 71);
+            this.txtuser.Location = new System.Drawing.Point(105, 90);
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(100, 20);
             this.txtuser.TabIndex = 7;
@@ -70,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 108);
+            this.label2.Location = new System.Drawing.Point(31, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 6;
@@ -79,7 +80,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 71);
+            this.label1.Location = new System.Drawing.Point(31, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 5;
@@ -87,7 +88,7 @@
             // 
             // txtconfirm
             // 
-            this.txtconfirm.Location = new System.Drawing.Point(100, 157);
+            this.txtconfirm.Location = new System.Drawing.Point(105, 152);
             this.txtconfirm.Name = "txtconfirm";
             this.txtconfirm.Size = new System.Drawing.Size(100, 20);
             this.txtconfirm.TabIndex = 11;
@@ -96,7 +97,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 160);
+            this.label3.Location = new System.Drawing.Point(31, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 10;
@@ -104,7 +105,7 @@
             // 
             // txtvoornaam
             // 
-            this.txtvoornaam.Location = new System.Drawing.Point(100, 12);
+            this.txtvoornaam.Location = new System.Drawing.Point(105, 22);
             this.txtvoornaam.Name = "txtvoornaam";
             this.txtvoornaam.Size = new System.Drawing.Size(100, 20);
             this.txtvoornaam.TabIndex = 13;
@@ -112,7 +113,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 12);
+            this.label4.Location = new System.Drawing.Point(32, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 12;
@@ -120,7 +121,7 @@
             // 
             // txtachternaam
             // 
-            this.txtachternaam.Location = new System.Drawing.Point(100, 42);
+            this.txtachternaam.Location = new System.Drawing.Point(105, 56);
             this.txtachternaam.Name = "txtachternaam";
             this.txtachternaam.Size = new System.Drawing.Size(100, 20);
             this.txtachternaam.TabIndex = 15;
@@ -128,7 +129,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(32, 42);
+            this.label5.Location = new System.Drawing.Point(32, 56);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 14;
@@ -159,6 +160,8 @@
             this.Controls.Add(this.txtuser);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormRegister";
