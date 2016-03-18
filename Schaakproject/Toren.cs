@@ -26,8 +26,98 @@ namespace Schaakproject
 
         public override bool kanStukSlaan(SpecialPB geselecteerdStuk)
         {
-            return false;
+            bool mogelijkloop = false;
+            bool kanSlaan = false;
+            Vakje geselecteerdVak = geselecteerdStuk.vakje;
+            Vakje vorigVakje = geselecteerdStuk.vakje;
+            while (mogelijkloop == false)
+            {
+                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if(vorigVakje == null)
+                {
+                    mogelijkloop = true;
+                    return false;
+                }
+                vorigVakje = vorigVakje.buurNoord;
+            }
+
+            geselecteerdVak = geselecteerdStuk.vakje;
+            vorigVakje = geselecteerdStuk.vakje;
+            while (mogelijkloop == false)
+            {
+                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje == null)
+                {
+                    mogelijkloop = true;
+                    return false;
+                }
+                vorigVakje = vorigVakje.buurOost;
+            }
+
+            geselecteerdVak = geselecteerdStuk.vakje;
+            vorigVakje = geselecteerdStuk.vakje;
+            while (mogelijkloop == false)
+            {
+                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje == null)
+                {
+                    mogelijkloop = true;
+                    return false;
+                }
+                vorigVakje = vorigVakje.buurZuid;
+            }
+
+            geselecteerdVak = geselecteerdStuk.vakje;
+            vorigVakje = geselecteerdStuk.vakje;
+            while (mogelijkloop == false)
+            {
+                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje == null)
+                {
+                    mogelijkloop = true;
+                    return false;
+                }
+                vorigVakje = vorigVakje.buurWest;
+            }
+            return kanSlaan;
         }
+
         public override void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler)
         {
             bool mogelijk = false;
