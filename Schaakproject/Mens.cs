@@ -57,6 +57,11 @@ namespace Schaakproject
             else // als het rokeren gelukt is
             {
                 spel.VeranderSpeler(); //De speler veranderd;
+
+                // De pionnen voor en-passant worden weer vergeten.
+                mijnPassantPion = null;
+                tegenstanderPion = null;
+                mijnPassantPion2 = null;
             }
             validezet = false;
         }
@@ -67,21 +72,26 @@ namespace Schaakproject
             selected = null;            //er staat niets meer geselecteerd
         }
 
-        public void SelecteerVakje(Vakje leegVakje,  Spel spel)
+        public void SelecteerVakje(Vakje nieuwVakje,  Spel spel)
         {
             if (selected != null) //alleen als er al iets is geselecteerd
             {
-                Vakje clicked = leegVakje;   //voor de singleplayer
-                selected.schaakstuk.Verplaats(leegVakje, selected, this); //probeer het schaakstuk te verplaatsen
+                Vakje clicked = nieuwVakje;   //voor de singleplayer
+                selected.schaakstuk.Verplaats(nieuwVakje, selected, this); //probeer het schaakstuk te verplaatsen
 
                 selected.pbox.update();    //update het eerste vakje
-                leegVakje.pbox.update();         //update het tweede vakje
+                nieuwVakje.pbox.update();         //update het tweede vakje
                 selected = null;            //niets is meer geselecteerd
                 
                 if (validezet == true)          //als het schaakstuk daar heen mag
                 {
                     spel.selected = clicked;    //voor de singleplayer
                     spel.VeranderSpeler();      //de andere speler is aan zet
+
+                    // De pionnen voor en-passant worden weer vergeten.
+                    mijnPassantPion = null;
+                    tegenstanderPion = null;
+                    mijnPassantPion2 = null;
                 }
                 validezet = false;
             }

@@ -114,14 +114,14 @@ namespace Schaakproject
             return kanSlaan;
         }
 
-        public override void Verplaats(Vakje leegVakje, Vakje selected, Mens speler)
+        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler)
         {
             bool mogelijk = false;
             bool mogelijkloop = false;
             Vakje vorige = selected;
             while (mogelijkloop == false)
             {
-                if (vorige.buurNoordoost == leegVakje)
+                if (vorige.buurNoordoost == nieuwVakje)
                 {
                     mogelijk = true;
                     mogelijkloop = true;
@@ -138,7 +138,7 @@ namespace Schaakproject
             {
                 while (mogelijkloop == false)
                 {
-                    if (vorige.buurNoordwest == leegVakje)
+                    if (vorige.buurNoordwest == nieuwVakje)
                     {
                         mogelijk = true;
                         mogelijkloop = true;
@@ -156,7 +156,7 @@ namespace Schaakproject
             {
                 while (mogelijkloop == false)
                 {
-                    if (vorige.buurZuidoost == leegVakje)
+                    if (vorige.buurZuidoost == nieuwVakje)
                     {
                         mogelijk = true;
                         mogelijkloop = true;
@@ -175,7 +175,7 @@ namespace Schaakproject
             {
                 while (mogelijkloop == false)
                 {
-                    if (vorige.buurZuidwest == leegVakje)
+                    if (vorige.buurZuidwest == nieuwVakje)
                     {
                         mogelijk = true;
                         mogelijkloop = true;
@@ -190,9 +190,9 @@ namespace Schaakproject
             }
             if (mogelijk == true)
             {
-                leegVakje.schaakstuk = this;
+                nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
-                this.vakje = leegVakje;
+                this.vakje = nieuwVakje;
                 speler.validezet = true;
             }
         }

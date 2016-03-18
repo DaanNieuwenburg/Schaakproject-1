@@ -77,50 +77,50 @@ namespace Schaakproject
             }
         }
 
-        public override void Verplaats(Vakje leegVakje, Vakje selected, Mens speler)
+        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler)
         {
             bool gevonden = false;
             if (selected.buurNoord != null)
             {
-                if (selected.buurNoord.buurNoordoost == leegVakje)
+                if (selected.buurNoord.buurNoordoost == nieuwVakje)
                 {
                     gevonden = true;
                 }
-                else if (selected.buurNoord.buurNoordwest == leegVakje)
+                else if (selected.buurNoord.buurNoordwest == nieuwVakje)
                 {
                     gevonden = true;
                 }
             }
             if (selected.buurOost != null)
             {
-                if (selected.buurOost.buurNoordoost == leegVakje)
+                if (selected.buurOost.buurNoordoost == nieuwVakje)
                 {
                     gevonden = true;
                 }
-                else if (selected.buurOost.buurZuidoost == leegVakje)
+                else if (selected.buurOost.buurZuidoost == nieuwVakje)
                 {
                     gevonden = true;
                 }
             }
             if (selected.buurZuid != null)
             {
-                if (selected.buurZuid.buurZuidoost == leegVakje)
+                if (selected.buurZuid.buurZuidoost == nieuwVakje)
                 {
                     gevonden = true;
                 }
-                else if (selected.buurZuid.buurZuidwest == leegVakje)
+                else if (selected.buurZuid.buurZuidwest == nieuwVakje)
                 {
                     gevonden = true;
                 }
             }
             if (selected.buurWest != null)
             {
-                if (selected.buurWest.buurZuidwest == leegVakje)
+                if (selected.buurWest.buurZuidwest == nieuwVakje)
                 {
                     gevonden = true;
                 }
 
-                else if (selected.buurWest.buurNoordwest == leegVakje)
+                else if (selected.buurWest.buurNoordwest == nieuwVakje)
                 {
                     gevonden = true;
                 }
@@ -128,9 +128,9 @@ namespace Schaakproject
 
             if (gevonden == true)
             {
-                leegVakje.schaakstuk = this;
+                nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
-                this.vakje = leegVakje;
+                this.vakje = nieuwVakje;
                 speler.validezet = true;
             }
         }

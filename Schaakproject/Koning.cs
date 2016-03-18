@@ -107,47 +107,47 @@ namespace Schaakproject
             }
         }
 
-        public override void Verplaats(Vakje leegVakje, Vakje selected, Mens speler)
+        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler)
         {
             bool gevonden = false;
-            if (selected.buurNoord == leegVakje)
+            if (selected.buurNoord == nieuwVakje)
             {
                 gevonden = true;
             }
-            else if (selected.buurOost == leegVakje)
+            else if (selected.buurOost == nieuwVakje)
             {
                 gevonden = true;
             }
-            else if (selected.buurZuid == leegVakje)
+            else if (selected.buurZuid == nieuwVakje)
             {
                 gevonden = true;
             }
-            else if (selected.buurWest == leegVakje)
+            else if (selected.buurWest == nieuwVakje)
             {
                 gevonden = true;
             }
-            else if (selected.buurNoordoost == leegVakje)
+            else if (selected.buurNoordoost == nieuwVakje)
             {
                 gevonden = true;
             }
-            else if (selected.buurNoordwest == leegVakje)
+            else if (selected.buurNoordwest == nieuwVakje)
             {
                 gevonden = true;
             }
-            else if (selected.buurZuidoost == leegVakje)
+            else if (selected.buurZuidoost == nieuwVakje)
             {
                 gevonden = true;
             }
-            else if (selected.buurZuidwest == leegVakje)
+            else if (selected.buurZuidwest == nieuwVakje)
             {
                 gevonden = true;
             }
 
             if (gevonden == true)
             {
-                leegVakje.schaakstuk = this;
+                nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
-                this.vakje = leegVakje;
+                this.vakje = nieuwVakje;
                 speler.validezet = true;
             }
         }

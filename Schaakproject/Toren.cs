@@ -118,14 +118,14 @@ namespace Schaakproject
             return kanSlaan;
         }
 
-        public override void Verplaats(Vakje leegVakje, Vakje selected, Mens speler)
+        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler)
         {
             bool mogelijk = false;
             bool mogelijkloop = false;
             Vakje vorige = selected;
             while (mogelijkloop == false)
             {
-                if (vorige.buurNoord == leegVakje)
+                if (vorige.buurNoord == nieuwVakje)
                 {
                     mogelijk = true;
                     mogelijkloop = true;
@@ -142,7 +142,7 @@ namespace Schaakproject
             {
                 while (mogelijkloop == false)
                 {
-                    if (vorige.buurOost == leegVakje)
+                    if (vorige.buurOost == nieuwVakje)
                     {
                         mogelijk = true;
                         mogelijkloop = true;
@@ -160,7 +160,7 @@ namespace Schaakproject
             {
                 while (mogelijkloop == false)
                 {
-                    if (vorige.buurZuid == leegVakje)
+                    if (vorige.buurZuid == nieuwVakje)
                     {
                         mogelijk = true;
                         mogelijkloop = true;
@@ -179,7 +179,7 @@ namespace Schaakproject
             {
                 while (mogelijkloop == false)
                 {
-                    if (vorige.buurWest == leegVakje)
+                    if (vorige.buurWest == nieuwVakje)
                     {
                         mogelijk = true;
                         mogelijkloop = true;
@@ -193,9 +193,9 @@ namespace Schaakproject
             }
             if (mogelijk == true)
             {
-                leegVakje.schaakstuk = this;
+                nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
-                this.vakje = leegVakje;
+                this.vakje = nieuwVakje;
                 speler.validezet = true;
                 _eersteZet = true;
                 
