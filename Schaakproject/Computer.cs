@@ -31,7 +31,8 @@ namespace Schaakproject
         private int _ronde { get; set; }
         private int _positieZuid { get; set; }
         private int _positieWest { get; set; }
-
+        private bool spelerkanslaan { get; set; }
+        private bool computerkanslaan { get; set; }
         public Computer(string naam, string kleur)
         {
             Naam = naam;
@@ -162,30 +163,95 @@ namespace Schaakproject
                 }
                 else
                 {
-                    Console.WriteLine("");
+                    Console.WriteLine("VAKJE IS NULL");
                 }
                 TactiekEnAntwoordR0();
                 _ronde++;
             }
             else if (_ronde == 1)
             {
+                if (_vorigvakje != null)
+                {
                 TactiekEnAntwoordR1();
                 _ronde++;
+            }
+                else
+                {
+                    Console.WriteLine("VAKJE IS NULL");
+        }
             }
         }
 
         private void controleerOpSlaan()
         {
+            // Kijk per stuk of er geslagen kan worden
+            foreach (Vakje kleurvakje in verplaatsingsLijstMens)
+            {
+                if (kleurvakje.schaakstuk is Pion)
+                {
+                    spelerkanslaan = kleurvakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    Console.WriteLine("Pion kan stuk slaan" + spelerkanslaan); 
+                }
+                else if(kleurvakje.schaakstuk is Loper)
+                {
+                    spelerkanslaan = kleurvakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    Console.WriteLine("Loper kan stuk slaan" + spelerkanslaan);
+                }
+                else if (kleurvakje.schaakstuk is Toren)
+                {
+                    spelerkanslaan = kleurvakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    Console.WriteLine("Pion kan stuk slaan" + spelerkanslaan);
+                }
+                else if (kleurvakje.schaakstuk is Paard)
+                {
+                    spelerkanslaan = kleurvakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    Console.WriteLine("Paard kan stuk slaan" + spelerkanslaan);
+                }
+                else if (kleurvakje.schaakstuk is Dame)
+                {
+                    spelerkanslaan = kleurvakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    Console.WriteLine("Dame kan stuk slaan" + spelerkanslaan);
+                }
+                else if (kleurvakje.schaakstuk is Koning)
+                {
+                    spelerkanslaan = kleurvakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    Console.WriteLine("Koning kan stuk slaan" + spelerkanslaan);
+                }
+            }
 
             foreach (Vakje kleurvakje in verplaatsingsLijstComputer)
             {
                 if (kleurvakje.schaakstuk is Pion)
                 {
-                    bool kanslaan = kleurvakje.schaakstuk.kanStukSlaan(kleurvakje);
-                    Console.WriteLine("Kan stuk slaan" + kanslaan); 
+                    computerkanslaan = kleurvakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    Console.WriteLine("Pion kan stuk slaan" + computerkanslaan);
+                }
+                else if (kleurvakje.schaakstuk is Loper)
+                {
+                    computerkanslaan = kleurvakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    Console.WriteLine("Loper kan stuk slaan" + computerkanslaan);
+                }
+                else if (kleurvakje.schaakstuk is Toren)
+                {
+                    computerkanslaan = kleurvakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    Console.WriteLine("Pion kan stuk slaan" + computerkanslaan);
+                }
+                else if (kleurvakje.schaakstuk is Paard)
+                {
+                    computerkanslaan = kleurvakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    Console.WriteLine("Paard kan stuk slaan" + computerkanslaan);
+                }
+                else if (kleurvakje.schaakstuk is Dame)
+                {
+                    computerkanslaan = kleurvakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    Console.WriteLine("Dame kan stuk slaan" + computerkanslaan);
+                }
+                else if (kleurvakje.schaakstuk is Koning)
+                {
+                    computerkanslaan = kleurvakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    Console.WriteLine("Koning kan stuk slaan" + computerkanslaan);
                 }
             }
-            // inprincipe moet dit vanuit de schaakstuk klassen maar dat gaat nog niet,
         }
 
         private void TactiekEnAntwoordR0()
@@ -232,41 +298,14 @@ namespace Schaakproject
 
         private void AlgoritmeR1()
         {
-            // Flank links
-            if (_positieWest <= 3 && _positieZuid >= 4 && _vorigschaakstuk is Pion)
+            // Dit wordt het algemene algoritme
+            if (spelerkanslaan == true)
             {
-                selected = koning.buurWest.buurWest.buurWest;            // geselecteerd stuk
-                pictures = koning.buurWest.buurWest.buurZuid.buurZuid;   // geselecteerd vak
-                voerZetUit();
+
             }
-            // Flank rechts
-            else if (_positieWest >= 6 && _positieZuid >= 4 && _vorigschaakstuk is Pion)
+            else if(computerkanslaan == true)
             {
-                selected = koning.buurOost.buurOost;                     // geselecteerd stuk
-                pictures = koning.buurOost.buurZuid.buurZuid;            // geselecteerd vak
-                Console.WriteLine("FLANKR");
-                voerZetUit();
-            }
-            // Defensief op 3de rij
-            else if (_positieZuid == 3 && _vorigschaakstuk is Pion)
-            {
-                selected = koning.buurWest.buurZuid;            // geselecteerd stuk
-                pictures = koning.buurWest.buurZuid.buurZuid;   // geselecteerd vak
-                voerZetUit();
-            }
-            // Aanvallend paard vanuit west
-            else if (_positieWest == 3 && _vorigschaakstuk is Paard)
-            {
-                selected = koning.buurWest.buurWest.buurZuid;                    // geselecteerd stuk
-                pictures = koning.buurWest.buurWest.buurZuid.buurZuid.buurZuid;  // geselecteerd vak
-                voerZetUit();
-            }
-            // Aanvallend paard vanuit oost
-            else if (_positieWest == 6 && _vorigschaakstuk is Paard)
-            {
-                selected = koning.buurOost.buurZuid;                     // geselecteerd stuk
-                pictures = koning.buurOost.buurZuid.buurZuid.buurZuid;   // geselecteerd vak
-                voerZetUit();
+
             }
         }
 

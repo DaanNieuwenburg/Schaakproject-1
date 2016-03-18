@@ -23,7 +23,184 @@ namespace Schaakproject
         }
         public override bool kanStukSlaan(Vakje geselecteerdStuk)
         {
-            return false;
+            bool mogelijkloop = false;
+            bool kanSlaan = false;
+            Vakje geselecteerdVak = geselecteerdStuk;
+            Vakje vorigVakje = geselecteerdStuk;
+            while (mogelijkloop == false)
+            {
+                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje == null)
+                {
+                    mogelijkloop = true;
+                    return false;
+                }
+                vorigVakje = vorigVakje.buurNoord;
+            }
+
+            geselecteerdVak = geselecteerdStuk;
+            vorigVakje = geselecteerdStuk;
+            while (mogelijkloop == false)
+            {
+                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje == null)
+                {
+                    mogelijkloop = true;
+                    return false;
+                }
+                vorigVakje = vorigVakje.buurOost;
+            }
+
+            geselecteerdVak = geselecteerdStuk;
+            vorigVakje = geselecteerdStuk;
+            while (mogelijkloop == false)
+            {
+                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje == null)
+                {
+                    mogelijkloop = true;
+                    return false;
+                }
+                vorigVakje = vorigVakje.buurZuid;
+            }
+
+            geselecteerdVak = geselecteerdStuk;
+            vorigVakje = geselecteerdStuk;
+            while (mogelijkloop == false)
+            {
+                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje == null)
+                {
+                    mogelijkloop = true;
+                    return false;
+                }
+                vorigVakje = vorigVakje.buurWest;
+            }
+
+            geselecteerdVak = geselecteerdStuk;
+            vorigVakje = geselecteerdStuk;
+            while (mogelijkloop == false)
+            {
+                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje == null)
+                {
+                    mogelijkloop = true;
+                    return false;
+                }
+                vorigVakje = vorigVakje.buurNoordoost;
+            }
+
+            geselecteerdVak = geselecteerdStuk;
+            vorigVakje = geselecteerdStuk;
+            while (mogelijkloop == false)
+            {
+                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje == null)
+                {
+                    mogelijkloop = true;
+                    return false;
+                }
+                vorigVakje = vorigVakje.buurNoordwest;
+            }
+
+            geselecteerdVak = geselecteerdStuk;
+            vorigVakje = geselecteerdStuk;
+            while (mogelijkloop == false)
+            {
+                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje == null)
+                {
+                    mogelijkloop = true;
+                    return false;
+                }
+                vorigVakje = vorigVakje.buurZuidoost;
+            }
+
+            geselecteerdVak = geselecteerdStuk;
+            vorigVakje = geselecteerdStuk;
+            while (mogelijkloop == false)
+            {
+                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                {
+                    mogelijkloop = true;
+                    kanSlaan = true;
+                }
+                else if (vorigVakje == null)
+                {
+                    mogelijkloop = true;
+                    return false;
+                }
+                vorigVakje = vorigVakje.buurZuidwest;
+            }
+            return kanSlaan;
         }
         public override void Verplaats(Vakje leegVakje, Vakje selected, Mens speler)
         {

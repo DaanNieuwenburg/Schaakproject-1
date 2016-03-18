@@ -39,11 +39,21 @@ namespace Schaakproject
                 login = true;
                 label3.Text = login.ToString();
             }
-            else
+            else if (txtPassword.Text == "" || txtUsername.Text == "")
             {
                 login = false;
                 label3.Text = login.ToString();
+                this.lblerror.ForeColor = Color.Red;
+                lblerror.Text = "⚠ Het veld username of password is leeg ⚠";
             }
+            else if (txtUsername.Text != username || txtPassword.Text != password)
+            {
+                login = false;
+                label3.Text = login.ToString();
+                this.lblerror.ForeColor = Color.Red;
+                lblerror.Text = "⚠ De username of password is onjuist ⚠";
+            }
+            
         }
 
         private void btnReg_Click(object sender, EventArgs e)

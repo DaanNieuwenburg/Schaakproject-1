@@ -37,7 +37,7 @@ namespace LoginProject
         private void button1_Click_1(object sender, EventArgs e)
         {
             lblerror.Text = null;
-            if (txtpass.Text == txtconfirm.Text && txtvoornaam.Text != null && txtachternaam.Text != null && txtconfirm.Text != null && txtpass.Text != null && txtuser.Text != null)
+            if (txtpass.Text == txtconfirm.Text && txtvoornaam.Text != "" && txtachternaam.Text != "" && txtconfirm.Text != "" && txtpass.Text != "" && txtuser.Text != "")
             {
                 user = txtuser.Text;
                 pass = txtpass.Text;
@@ -48,9 +48,13 @@ namespace LoginProject
                 // Main.username = txtuser.Text;
                 //Main.password = txtpass.Text;
                 DialogResult = DialogResult.Yes;
-                //button1.DialogResult = DialogResult.No;
             }
-            else if (txtvoornaam.Text == null || txtachternaam.Text == null || txtconfirm.Text == null || txtpass.Text == null || txtuser.Text == null)
+            else if ((txtvoornaam.Text == "" || txtachternaam.Text == "" || txtconfirm.Text == "" || txtpass.Text == "" || txtuser.Text == "")&& (txtpass.Text != txtconfirm.Text))
+            {
+                lblerror.ForeColor = Color.Red;
+                lblerror.Text = "⚠ 1 of meer verplichte velden zijn leeg \nen het de wachtwoorden zijn ongelijk⚠";
+            }
+            else if (txtvoornaam.Text == "" || txtachternaam.Text == "" || txtconfirm.Text == "" || txtpass.Text == "" || txtuser.Text == "")
             {
                 lblerror.ForeColor = Color.Red;
                 lblerror.Text = "⚠ 1 of meer verplichte velden zijn leeg ⚠";
@@ -72,6 +76,7 @@ namespace LoginProject
         {
             txtpass.PasswordChar = '*';                 // hierdoor is het ingevoerde wachtwoord onzichtbaar
         }
+
     }
 }
 

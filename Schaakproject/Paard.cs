@@ -22,8 +22,61 @@ namespace Schaakproject
         }
         public override bool kanStukSlaan(Vakje geselecteerdStuk)
         {
+            Vakje geselecteerdVak = geselecteerdStuk;
+            if (geselecteerdVak.schaakstuk.kleur == "wit")
+            {
+                if (geselecteerdVak.buurNoord.buurNoordoost != null && geselecteerdVak.buurNoord.buurNoordoost.schaakstuk.kleur != "wit")
+                {
+                    return true;
+                }
+
+                else if (geselecteerdVak.buurNoord.buurNoordwest != null && geselecteerdVak.buurNoord.buurNoordwest.schaakstuk.kleur != "wit")
+                {
+                    return true;
+                }
+
+                else if (geselecteerdVak.buurZuid.buurZuidoost != null && geselecteerdVak.buurZuid.buurZuidoost.schaakstuk.kleur != "wit")
+                {
+                    return true;
+                }
+
+                else if (geselecteerdVak.buurZuid.buurZuidwest != null && geselecteerdVak.buurZuid.buurZuidwest.schaakstuk.kleur != "wit")
+                {
+                    return true;
+                }
+                else
+                {
             return false;
         }
+            }
+            else
+            {
+                if (geselecteerdVak.buurNoord.buurNoordoost != null && geselecteerdVak.buurNoord.buurNoordoost.schaakstuk.kleur != "zwart")
+                {
+                    return true;
+                }
+
+                else if (geselecteerdVak.buurNoord.buurNoordwest != null && geselecteerdVak.buurNoord.buurNoordwest.schaakstuk.kleur != "zwart")
+                {
+                    return true;
+                }
+
+                else if (geselecteerdVak.buurZuid.buurZuidoost != null && geselecteerdVak.buurZuid.buurZuidoost.schaakstuk.kleur != "zwart")
+                {
+                    return true;
+                }
+
+                else if (geselecteerdVak.buurZuid.buurZuidwest != null && geselecteerdVak.buurZuid.buurZuidwest.schaakstuk.kleur != "zwart")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         public override void Verplaats(Vakje leegVakje, Vakje selected, Mens speler)
         {
             bool gevonden = false;
