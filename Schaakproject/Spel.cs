@@ -13,7 +13,7 @@ namespace Schaakproject
         private Mens _Speler2 { get; set; }     //De tweede speler voor multiplayer
         private Computer _computerSpeler { get; set; }  //De computer coor singleplayer
         public bool speler1aanzet { get; private set; } //is speler 1 aan zet?
-        public SpecialPB selected { get;  set; } //Maakt de computer gebruik van
+        public Vakje selected { get;  set; } //Maakt de computer gebruik van
         public string _Variant { get; set; }    //Klassiek of Chess960
 
         public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant)
@@ -36,6 +36,15 @@ namespace Schaakproject
                 _Speler2 = speler2;
                 _computerSpeler = null;
             }
+            else if (Mode == "Online")
+            {
+                Mens speler1 = new Mens(NaamSpeler1, "wit");
+                Console.WriteLine("Test Spel Naamspeler1: " + NaamSpeler1);
+                Mens speler2 = new Mens(NaamSpeler2, "zwart");
+                _Speler1 = speler1;
+                _Speler2 = speler2;
+                _computerSpeler = null;
+            }
             speler1aanzet = true;
             Start();
         }
@@ -49,7 +58,7 @@ namespace Schaakproject
 
         public void Herstart(string spelMode, string speler1Naam, string speler2Naam)
         {
-            if (spelMode == "Multiplayer")
+            if (spelMode == "Multiplayer" || _SpelMode == "Online")
             {
                 Spel spel = new Spel(spelMode, speler1Naam, speler2Naam, _Variant);
             }

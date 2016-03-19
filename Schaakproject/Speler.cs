@@ -10,6 +10,9 @@ namespace Schaakproject
         public string Naam{ get; set; }
 
         public string Kleur{ get; set; }
+                
+        public Pion enPassantPion{ get; set; }
+        
     }
 }
 

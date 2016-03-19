@@ -12,8 +12,8 @@ namespace Schaakproject
         public Image afbeelding { get; set; }
         public Vakje vakje { get; set; }
 
-        public abstract void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler);
-        public abstract void kanStukSlaan(Computer computer, SpecialPB geselecteerdStuk);
+        public abstract void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler);
+        public abstract void kanStukSlaan(Computer computer, Vakje geselecteerdStuk);
         public void Slaan(string kleur)
         {
 

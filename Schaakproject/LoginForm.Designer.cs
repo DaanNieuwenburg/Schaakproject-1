@@ -38,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblerror = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -57,7 +58,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 25);
+            this.label1.Location = new System.Drawing.Point(171, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 2;
@@ -119,11 +120,21 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "label5";
             // 
-            // MainForm
+            // lblerror
+            // 
+            this.lblerror.AutoSize = true;
+            this.lblerror.Location = new System.Drawing.Point(52, 216);
+            this.lblerror.Name = "lblerror";
+            this.lblerror.Size = new System.Drawing.Size(0, 13);
+            this.lblerror.TabIndex = 9;
+            // 
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.lblerror);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -134,7 +145,8 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MainForm";
+            this.MaximizeBox = false;
+            this.Name = "LoginForm";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
@@ -153,6 +165,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblerror;
     }
 }
 

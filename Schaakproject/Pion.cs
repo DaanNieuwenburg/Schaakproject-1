@@ -8,11 +8,10 @@ namespace Schaakproject
     public class Pion : Schaakstuk
     {
         private bool _eersteZet { get; set; }       //is de pion al eens verzet
-        private bool _magEnpassant { get; set; }    //mag de pion en-passant slaan
+        public Speler _speler { get; private set; }
 
         public Pion(string kleur, Vakje vakje)
         {
-            _magEnpassant = true;
             this.vakje = vakje;
             this.kleur = kleur;
             if (kleur == "wit")
@@ -25,16 +24,16 @@ namespace Schaakproject
             }
         }
 
-        public override void kanStukSlaan(Computer computer, SpecialPB geselecteerdStuk )
+        public override void kanStukSlaan(Computer computer, Vakje geselecteerdStuk )
         {
-            Vakje geselecteerdVak = geselecteerdStuk.vakje;
-            if(geselecteerdVak.schaakstuk.kleur == "wit")
+            Vakje geselecteerdVak = geselecteerdStuk;
+            if (geselecteerdVak.schaakstuk.kleur == "wit")
             {
                 if (geselecteerdVak.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
                 {
                     computer.spelerkanslaan = true;
                 }
-                else if(geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
+                else if (geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
                 {
                     computer.computerkanslaan = true;
                 }
@@ -62,155 +61,186 @@ namespace Schaakproject
             }
         }
 
-        public override void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler)
+        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler)
         {
+            if (_speler == null)
+            {
+                _speler = speler;
+            }
+
            bool mogelijk = false;
 
             if (kleur == "wit")
             {
                 // Witte pion een stapje naar voren
-                if (selected.vakje.buurNoord == pictures.vakje && pictures.vakje.schaakstuk == null)
+                if (selected.buurNoord == nieuwVakje && nieuwVakje.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
 
                 // Slaan naar noordoost voor een witte pion
-                else if (selected.vakje.buurNoordoost == pictures.vakje && pictures.vakje.schaakstuk != null)
+                else if (selected.buurNoordoost == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
                     mogelijk = true;
                 }
 
                 // Slaan naar noordwest voor een witte pion
-                else if (selected.vakje.buurNoordwest == pictures.vakje && pictures.vakje.schaakstuk != null)
+                else if (selected.buurNoordwest == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
                     mogelijk = true;
                 }
 
                 // Twee stappen vooruit voor een witte pion
-                else if (_eersteZet == false && selected.vakje.buurNoord.buurNoord == pictures.vakje && selected.vakje.buurNoord.buurNoord.schaakstuk == null && selected.vakje.buurNoord.schaakstuk == null)
+                else if (_eersteZet == false && selected.buurNoord.buurNoord == nieuwVakje && selected.buurNoord.buurNoord.schaakstuk == null && selected.buurNoord.schaakstuk == null)
                 {
                     mogelijk = true;
-                }
 
-                // En-passant voor een witte pion
-                else if (_eersteZet == false)
+                    // Zodat de tegenstander mag en-passant slaan
+                    if (nieuwVakje.buurOost != null)
+                    {
+                        if (nieuwVakje.buurOost.schaakstuk is Pion)
+                        {
+                            // Als er oost een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
+                            (nieuwVakje.buurOost.schaakstuk as Pion)._speler.enPassantPion = this;
+
+                }
+                    }
+                    if (nieuwVakje.buurWest != null)
+                    {
+                        if (nieuwVakje.buurWest.schaakstuk is Pion)
+                        {
+                            // Als er west een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
+                            (nieuwVakje.buurWest.schaakstuk as Pion)._speler.enPassantPion = this;
+
+                        }
+                    }
+                }
+                else if (selected.buurOost != null)
                 {
-                    EnPassant(pictures, selected, speler);
-                    _magEnpassant = false;
+                    //en-passant slaan naar noordoost
+                    if (selected.buurNoordoost == nieuwVakje && speler.enPassantPion == selected.buurOost.schaakstuk && speler.enPassantPion != null)
+                    {
+
+                        selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
+                        selected.buurOost.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
+                        mogelijk = true;
+                        
+
                 }
             }
+                if (selected.buurWest != null)
+                {
+                    //en-passant slaan naar noordwest
+                    if (selected.buurNoordwest == nieuwVakje && speler.enPassantPion == selected.buurWest.schaakstuk && speler.enPassantPion != null)
+                    {
             
+                        selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
+                        selected.buurWest.pbox.update(); //update deze pbox zodat je de pion niet meer ziet
+                        mogelijk = true;
+
+                    }
+                }
+
+            }
+
             else if (kleur == "zwart")
             {
                 // Zwarte pion een stapje naar voren
-                if (selected.vakje.buurZuid == pictures.vakje && pictures.vakje.schaakstuk == null)
+                if (selected.buurZuid == nieuwVakje && nieuwVakje.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
 
                 // Slaan naar zuidoost voor een zwarte pion
-                else if (selected.vakje.buurZuidoost == pictures.vakje && kleur == "zwart" && pictures.vakje.schaakstuk != null)
+                else if (selected.buurZuidoost == nieuwVakje && kleur == "zwart" && nieuwVakje.schaakstuk != null)
                 {
                     mogelijk = true;
                 }
 
                 // Slaan naar zuidwest voor een zwarte pion
-                else if (selected.vakje.buurZuidwest == pictures.vakje && pictures.vakje.schaakstuk != null)
+                else if (selected.buurZuidwest == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
                     mogelijk = true;
                 }
 
                 // Twee stappen vooruit voor een zwarte pion
-                else if (_eersteZet == false && selected.vakje.buurZuid.buurZuid == pictures.vakje && selected.vakje.buurZuid.buurZuid.schaakstuk == null && selected.vakje.buurZuid.schaakstuk == null)
+                else if (_eersteZet == false && selected.buurZuid.buurZuid == nieuwVakje && selected.buurZuid.buurZuid.schaakstuk == null && selected.buurZuid.schaakstuk == null)
                 {
                     mogelijk = true;
-                }
-                // En-passant voor een zwarte pion
-                else if (_eersteZet == false)
+
+                    // Zodat de tegenstander mag en-passant slaan
+                    if (nieuwVakje.buurOost != null)
                 {
-                    EnPassant(pictures, selected, speler);
-                    _magEnpassant = false;
+                        if (nieuwVakje.buurOost.schaakstuk is Pion)
+                        {
+                            // Als er oost een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
+                            (nieuwVakje.buurOost.schaakstuk as Pion)._speler.enPassantPion = this;
+
+                }
+            }
+                    if (nieuwVakje.buurWest != null)
+                    {
+                        if (nieuwVakje.buurWest.schaakstuk is Pion)
+            {
+                            // Als er west een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
+                            (nieuwVakje.buurWest.schaakstuk as Pion)._speler.enPassantPion = this;
+                
+            }
+                    }
+                }
+                else if (selected.buurOost != null)
+                {
+                    //en-passant slaan naar zuidoost
+                    if (selected.buurZuidoost == nieuwVakje && speler.enPassantPion == selected.buurOost.schaakstuk && speler.enPassantPion != null)
+                    {
+
+                        selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
+                        selected.buurOost.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
+                        mogelijk = true;
+                
+            }
+        }
+                if (selected.buurWest != null)
+        {
+                    //en-passant slaan naar zuidwest
+                    if (selected.buurZuidwest == nieuwVakje && speler.enPassantPion == selected.buurWest.schaakstuk && speler.enPassantPion != null)
+            {
+
+                        selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
+                        selected.buurWest.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
+                        mogelijk = true;
+
+                    }
                 }
             }
 
             if (mogelijk == true)
-            {
-                pictures.vakje.schaakstuk = this;
-                selected.vakje.schaakstuk = null;
-                this.vakje = pictures.vakje;
-                _eersteZet = true;
-                speler.validezet = true;
-                
-            }
+                    {
+                nieuwVakje.schaakstuk = this;
+                selected.schaakstuk = null;
+                this.vakje = nieuwVakje;
+                        _eersteZet = true;
+                        speler.validezet = true;
 
-                
+                    }
+
             if (vakje.buurNoord == null || vakje.buurZuid == null)
-            {
-                pictures.update();
-                selected.update();
+                    {
+                nieuwVakje.pbox.update();
+                selected.pbox.update();
                 PromoveerForm promoveerform = new PromoveerForm(this, kleur);
                 promoveerform.ShowDialog();
-            }
-           
-        }
-
-        private void EnPassant(SpecialPB pictures, SpecialPB selected, Mens speler)
-        {
-            if (kleur.Equals("wit"))
-            {
-
-                if (selected.vakje.buurNoord != null && selected.vakje.buurNoord.buurNoord != null)
-                {
-                    if (selected.vakje.buurNoord.buurNoord.buurOost == pictures.vakje && pictures.vakje.schaakstuk is Pion)
-                    {
-                        pictures.vakje.schaakstuk = this;
-                        selected.vakje.schaakstuk = null;
-                        _eersteZet = true;
-                        speler.validezet = true;
-                        this.vakje = pictures.vakje;
-                    }
-                    else if (selected.vakje.buurNoord.buurNoord.buurWest == pictures.vakje && pictures.vakje.schaakstuk is Pion)
-                    {
-                        pictures.vakje.schaakstuk = this;
-                        selected.vakje.schaakstuk = null;
-                        _eersteZet = true;
-                        speler.validezet = true;
-                        this.vakje = pictures.vakje;
-                    }
-                }
-            }
-            else
-            {
-                if (selected.vakje.buurZuid != null && selected.vakje.buurZuid.buurZuid != null)
-                {
-                    if (selected.vakje.buurZuid.buurZuid.buurOost == pictures.vakje && pictures.vakje.schaakstuk is Pion)
-                    {
-                        pictures.vakje.schaakstuk = this;
-                        selected.vakje.schaakstuk = null;
-                        _eersteZet = true;
-                        speler.validezet = true;
-                        this.vakje = pictures.vakje;
-                    }
-                    else if (selected.vakje.buurZuid.buurZuid.buurWest == pictures.vakje && pictures.vakje.schaakstuk is Pion)
-                    {
-                        pictures.vakje.schaakstuk = this;
-                        selected.vakje.schaakstuk = null;
-                        _eersteZet = true;
-                        speler.validezet = true;
-                        this.vakje = pictures.vakje;
-                    }
-                }
             }
 
         }
 
         public void Promoveert(string keuze)
         {
-            if(keuze.Equals("paard"))
+            if (keuze.Equals("paard"))
             {
                 vakje.schaakstuk = new Paard(kleur, vakje);
             }
-            else if(keuze.Equals("loper"))
+            else if (keuze.Equals("loper"))
             {
                 vakje.schaakstuk = new Loper(kleur, vakje);
             }
