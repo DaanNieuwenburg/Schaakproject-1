@@ -25,37 +25,39 @@ namespace Schaakproject
             }
         }
 
-        public override bool kanStukSlaan(SpecialPB geselecteerdStuk )
+        public override void kanStukSlaan(Computer computer, SpecialPB geselecteerdStuk )
         {
             Vakje geselecteerdVak = geselecteerdStuk.vakje;
             if(geselecteerdVak.schaakstuk.kleur == "wit")
             {
                 if (geselecteerdVak.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
                 {
-                    return true;
+                    computer.spelerkanslaan = true;
                 }
                 else if(geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
                 {
-                    return true;
+                    computer.computerkanslaan = true;
                 }
                 else
                 {
-                    return false;
+                    computer.spelerkanslaan = false;
+                    computer.computerkanslaan = false;
                 }
             }
             else
             {
                 if (geselecteerdVak.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "zwart")
                 {
-                    return true;
+                    computer.spelerkanslaan = true;
                 }
                 else if (geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "zwart")
                 {
-                    return true;
+                    computer.computerkanslaan = true;
                 }
                 else
                 {
-                    return false;
+                    computer.spelerkanslaan = false;
+                    computer.computerkanslaan = false;
                 }
             }
         }

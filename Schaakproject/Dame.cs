@@ -21,187 +21,294 @@ namespace Schaakproject
                 afbeelding = Properties.Resources.DameZwart;
             }
         }
-        public override bool kanStukSlaan(SpecialPB geselecteerdStuk)
+        public override void kanStukSlaan(Computer computer, SpecialPB geselecteerdStuk)
         {
             bool mogelijkloop = false;
-            bool kanSlaan = false;
             Vakje geselecteerdVak = geselecteerdStuk.vakje;
-            Vakje vorigVakje = geselecteerdStuk.vakje;
+            Vakje volgendVakje = geselecteerdStuk.vakje.buurNoordwest;
             while (mogelijkloop == false)
             {
-                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                if (volgendVakje == null)
                 {
                     mogelijkloop = true;
-                    kanSlaan = true;
                 }
-                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                else
                 {
-                    mogelijkloop = true;
-                    kanSlaan = true;
+                    //volgendVakje = volgendVakje.buurNoord;
+                    if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
+                    {
+                        mogelijkloop = true;
+                        computer.spelerkanslaan = true;
+                        computer.slaanmogelijkhedenSpeler.Add(volgendVakje.pbox);
+                        computer.slaanmogelijkhedenSpelerVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                    {
+                        mogelijkloop = true;
+                        computer.spelerkanslaan = true;
+                        computer.slaanmogelijkhedenSpeler.Add(volgendVakje.pbox);
+                        computer.slaanmogelijkhedenSpelerVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (volgendVakje == null)
+                    {
+                        mogelijkloop = true;
+                    }
+                    volgendVakje = volgendVakje.buurNoordwest;
                 }
-                else if (vorigVakje == null)
-                {
-                    mogelijkloop = true;
-                    return false;
-                }
-                vorigVakje = vorigVakje.buurNoord;
             }
 
+            mogelijkloop = false;
             geselecteerdVak = geselecteerdStuk.vakje;
-            vorigVakje = geselecteerdStuk.vakje;
+            volgendVakje = geselecteerdStuk.vakje.buurNoordoost;
             while (mogelijkloop == false)
             {
-                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                if (volgendVakje == null)
                 {
                     mogelijkloop = true;
-                    kanSlaan = true;
                 }
-                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                else
                 {
-                    mogelijkloop = true;
-                    kanSlaan = true;
+                    //volgendVakje = volgendVakje.buurNoord;
+                    if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
+                    {
+                        mogelijkloop = true;
+                        computer.spelerkanslaan = true;
+                        computer.slaanmogelijkhedenSpeler.Add(volgendVakje.pbox);
+                        computer.slaanmogelijkhedenSpelerVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                    {
+                        mogelijkloop = true;
+                        computer.spelerkanslaan = true;
+                        computer.slaanmogelijkhedenSpeler.Add(volgendVakje.pbox);
+                        computer.slaanmogelijkhedenSpelerVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (volgendVakje == null)
+                    {
+                        mogelijkloop = true;
+                    }
+                    volgendVakje = volgendVakje.buurNoordoost;
                 }
-                else if (vorigVakje == null)
-                {
-                    mogelijkloop = true;
-                    return false;
-                }
-                vorigVakje = vorigVakje.buurOost;
             }
 
+            mogelijkloop = false;
             geselecteerdVak = geselecteerdStuk.vakje;
-            vorigVakje = geselecteerdStuk.vakje;
+            volgendVakje = geselecteerdStuk.vakje.buurNoord;
             while (mogelijkloop == false)
             {
-                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                if (volgendVakje == null)
                 {
                     mogelijkloop = true;
-                    kanSlaan = true;
                 }
-                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                else
                 {
-                    mogelijkloop = true;
-                    kanSlaan = true;
+                    //volgendVakje = volgendVakje.buurNoord;
+                    if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
+                    {
+                        mogelijkloop = true;
+                        computer.spelerkanslaan = true;
+                        computer.slaanmogelijkhedenSpeler.Add(volgendVakje.pbox);
+                        computer.slaanmogelijkhedenSpelerVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                    {
+                        mogelijkloop = true;
+                        computer.spelerkanslaan = true;
+                        computer.slaanmogelijkhedenSpeler.Add(volgendVakje.pbox);
+                        computer.slaanmogelijkhedenSpelerVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (volgendVakje == null)
+                    {
+                        mogelijkloop = true;
+                    }
+                    volgendVakje = volgendVakje.buurNoord;
                 }
-                else if (vorigVakje == null)
-                {
-                    mogelijkloop = true;
-                    return false;
-                }
-                vorigVakje = vorigVakje.buurZuid;
             }
 
+            mogelijkloop = false;
             geselecteerdVak = geselecteerdStuk.vakje;
-            vorigVakje = geselecteerdStuk.vakje;
+            volgendVakje = geselecteerdStuk.vakje.buurWest;
             while (mogelijkloop == false)
             {
-                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                if (volgendVakje == null)
                 {
                     mogelijkloop = true;
-                    kanSlaan = true;
                 }
-                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                else
                 {
-                    mogelijkloop = true;
-                    kanSlaan = true;
+                    //volgendVakje = volgendVakje.buurNoord;
+                    if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
+                    {
+                        mogelijkloop = true;
+                        computer.spelerkanslaan = true;
+                        computer.slaanmogelijkhedenSpeler.Add(volgendVakje.pbox);
+                        computer.slaanmogelijkhedenSpelerVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                    {
+                        mogelijkloop = true;
+                        computer.spelerkanslaan = true;
+                        computer.slaanmogelijkhedenSpeler.Add(volgendVakje.pbox);
+                        computer.slaanmogelijkhedenSpelerVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (volgendVakje == null)
+                    {
+                        mogelijkloop = true;
+                    }
+                    volgendVakje = volgendVakje.buurWest;
                 }
-                else if (vorigVakje == null)
-                {
-                    mogelijkloop = true;
-                    return false;
-                }
-                vorigVakje = vorigVakje.buurWest;
             }
 
+            mogelijkloop = false;
             geselecteerdVak = geselecteerdStuk.vakje;
-            vorigVakje = geselecteerdStuk.vakje;
+            volgendVakje = geselecteerdStuk.vakje.buurZuid;
             while (mogelijkloop == false)
             {
-                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                if (volgendVakje == null)
                 {
                     mogelijkloop = true;
-                    kanSlaan = true;
                 }
-                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                else
                 {
-                    mogelijkloop = true;
-                    kanSlaan = true;
+                    //volgendVakje = volgendVakje.buurNoord;
+                    if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
+                    {
+                        mogelijkloop = true;
+                        computer.spelerkanslaan = true;
+                        computer.slaanmogelijkhedenSpeler.Add(volgendVakje.pbox);
+                        computer.slaanmogelijkhedenSpelerVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                    {
+                        mogelijkloop = true;
+                        computer.spelerkanslaan = true;
+                        computer.slaanmogelijkhedenSpeler.Add(volgendVakje.pbox);
+                        computer.slaanmogelijkhedenSpelerVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (volgendVakje == null)
+                    {
+                        mogelijkloop = true;
+                    }
+                    volgendVakje = volgendVakje.buurZuid;
                 }
-                else if (vorigVakje == null)
-                {
-                    mogelijkloop = true;
-                    return false;
-                }
-                vorigVakje = vorigVakje.buurNoordoost;
             }
 
+            mogelijkloop = false;
             geselecteerdVak = geselecteerdStuk.vakje;
-            vorigVakje = geselecteerdStuk.vakje;
+            volgendVakje = geselecteerdStuk.vakje.buurZuidoost;
             while (mogelijkloop == false)
             {
-                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                if (volgendVakje == null)
                 {
                     mogelijkloop = true;
-                    kanSlaan = true;
                 }
-                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                else
                 {
-                    mogelijkloop = true;
-                    kanSlaan = true;
+                    //volgendVakje = volgendVakje.buurNoord;
+                    if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
+                    {
+                        volgendVakje.pbox.BackColor = System.Drawing.Color.Black;
+                        mogelijkloop = true;
+                        computer.spelerkanslaan = true;
+                        computer.slaanmogelijkhedenSpeler.Add(volgendVakje.pbox);
+                        computer.slaanmogelijkhedenSpelerVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                    {
+                        volgendVakje.pbox.BackColor = System.Drawing.Color.Black;
+                        mogelijkloop = true;
+                        computer.spelerkanslaan = true;
+                        computer.slaanmogelijkhedenSpeler.Add(volgendVakje.pbox);
+                        computer.slaanmogelijkhedenSpelerVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (volgendVakje == null)
+                    {
+                        mogelijkloop = true;
+                        volgendVakje.pbox.BackColor = System.Drawing.Color.DeepPink;
+                    }
+                    volgendVakje.pbox.BackColor = System.Drawing.Color.DeepPink;
+                    volgendVakje = volgendVakje.buurZuidoost;  
                 }
-                else if (vorigVakje == null)
-                {
-                    mogelijkloop = true;
-                    return false;
-                }
-                vorigVakje = vorigVakje.buurNoordwest;
             }
 
+            mogelijkloop = false;
             geselecteerdVak = geselecteerdStuk.vakje;
-            vorigVakje = geselecteerdStuk.vakje;
+            volgendVakje = geselecteerdStuk.vakje.buurZuidwest; ;
             while (mogelijkloop == false)
             {
-                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                if (volgendVakje == null)
                 {
                     mogelijkloop = true;
-                    kanSlaan = true;
                 }
-                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                else
                 {
-                    mogelijkloop = true;
-                    kanSlaan = true;
+                    //volgendVakje = volgendVakje.buurNoord;
+                    if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
+                    {
+                        volgendVakje.pbox.BackColor = System.Drawing.Color.Black;
+                        mogelijkloop = true;
+                        computer.spelerkanslaan = true;
+                        computer.slaanmogelijkhedenSpeler.Add(volgendVakje.pbox);
+                        computer.slaanmogelijkhedenSpelerVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                    {
+                        volgendVakje.pbox.BackColor = System.Drawing.Color.Black;
+                        mogelijkloop = true;
+                        computer.spelerkanslaan = true;
+                        computer.slaanmogelijkhedenSpeler.Add(volgendVakje.pbox);
+                        computer.slaanmogelijkhedenSpelerVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (volgendVakje == null)
+                    {
+                        mogelijkloop = true;
+                        volgendVakje.pbox.BackColor = System.Drawing.Color.DeepPink;
+                    }
+                    volgendVakje.pbox.BackColor = System.Drawing.Color.DeepPink;
+                    volgendVakje = volgendVakje.buurZuidwest;
                 }
-                else if (vorigVakje == null)
-                {
-                    mogelijkloop = true;
-                    return false;
-                }
-                vorigVakje = vorigVakje.buurZuidoost;
             }
 
+            mogelijkloop = false;
             geselecteerdVak = geselecteerdStuk.vakje;
-            vorigVakje = geselecteerdStuk.vakje;
+            volgendVakje = geselecteerdStuk.vakje.buurOost;
             while (mogelijkloop == false)
             {
-                if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
+                if (volgendVakje == null)
                 {
                     mogelijkloop = true;
-                    kanSlaan = true;
                 }
-                else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
+                else
                 {
-                    mogelijkloop = true;
-                    kanSlaan = true;
+                    //volgendVakje = volgendVakje.buurNoord;
+                    if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
+                    {
+                        volgendVakje.pbox.BackColor = System.Drawing.Color.Black;
+                        mogelijkloop = true;
+                        computer.spelerkanslaan = true;
+                        computer.slaanmogelijkhedenSpeler.Add(volgendVakje.pbox);
+                        computer.slaanmogelijkhedenSpelerVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                    {
+                        volgendVakje.pbox.BackColor = System.Drawing.Color.Black;
+                        mogelijkloop = true;
+                        computer.spelerkanslaan = true;
+                        computer.slaanmogelijkhedenSpeler.Add(volgendVakje.pbox);
+                        computer.slaanmogelijkhedenSpelerVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (volgendVakje == null)
+                    {
+                        mogelijkloop = true;
+                        volgendVakje.pbox.BackColor = System.Drawing.Color.DeepPink;
+                    }
+                    volgendVakje.pbox.BackColor = System.Drawing.Color.DeepPink;
+                    volgendVakje = volgendVakje.buurOost;
                 }
-                else if (vorigVakje == null)
-                {
-                    mogelijkloop = true;
-                    return false;
-                }
-                vorigVakje = vorigVakje.buurZuidwest;
             }
-            return kanSlaan;
         }
+
+
         public override void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler)
         {
             bool mogelijk = false;
@@ -276,7 +383,7 @@ namespace Schaakproject
                     vorige = vorige.buurWest;
                 }
             }
-            
+
 
             mogelijkloop = false;
             vorige = selected.vakje;

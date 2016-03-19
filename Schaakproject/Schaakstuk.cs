@@ -13,7 +13,7 @@ namespace Schaakproject
         public Vakje vakje { get; set; }
 
         public abstract void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler);
-        public abstract bool kanStukSlaan(SpecialPB geselecteerdStuk);
+        public abstract void kanStukSlaan(Computer computer, SpecialPB geselecteerdStuk);
         public void Slaan(string kleur)
         {
 

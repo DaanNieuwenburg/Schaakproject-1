@@ -24,10 +24,9 @@ namespace Schaakproject
             }
         }
 
-        public override bool kanStukSlaan(SpecialPB geselecteerdStuk)
+        public override void kanStukSlaan(Computer computer, SpecialPB geselecteerdStuk)
         {
             bool mogelijkloop = false;
-            bool kanSlaan = false;
             Vakje geselecteerdVak = geselecteerdStuk.vakje;
             Vakje vorigVakje = geselecteerdStuk.vakje;
             while (mogelijkloop == false)
@@ -35,17 +34,19 @@ namespace Schaakproject
                 if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
                 {
                     mogelijkloop = true;
-                    kanSlaan = true;
+                    computer.spelerkanslaan = true;
                 }
                 else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
                 {
                     mogelijkloop = true;
-                    kanSlaan = true;
+                    computer.computerkanslaan = true;
                 }
                 else if(vorigVakje == null)
                 {
                     mogelijkloop = true;
-                    return false;
+                    computer.spelerkanslaan = false;
+                    computer.computerkanslaan = false;
+
                 }
                 vorigVakje = vorigVakje.buurNoord;
             }
@@ -57,17 +58,18 @@ namespace Schaakproject
                 if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
                 {
                     mogelijkloop = true;
-                    kanSlaan = true;
+                    computer.spelerkanslaan = true;
                 }
                 else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
                 {
                     mogelijkloop = true;
-                    kanSlaan = true;
+                    computer.computerkanslaan = true;
                 }
                 else if (vorigVakje == null)
                 {
                     mogelijkloop = true;
-                    return false;
+                    computer.spelerkanslaan = false;
+                    computer.computerkanslaan = false;
                 }
                 vorigVakje = vorigVakje.buurOost;
             }
@@ -79,17 +81,18 @@ namespace Schaakproject
                 if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
                 {
                     mogelijkloop = true;
-                    kanSlaan = true;
+                    computer.spelerkanslaan = true;
                 }
                 else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
                 {
                     mogelijkloop = true;
-                    kanSlaan = true;
+                    computer.computerkanslaan = true;
                 }
                 else if (vorigVakje == null)
                 {
                     mogelijkloop = true;
-                    return false;
+                    computer.spelerkanslaan = false;
+                    computer.computerkanslaan = false;
                 }
                 vorigVakje = vorigVakje.buurZuid;
             }
@@ -101,21 +104,21 @@ namespace Schaakproject
                 if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "wit")
                 {
                     mogelijkloop = true;
-                    kanSlaan = true;
+                    computer.spelerkanslaan = true;
                 }
                 else if (vorigVakje.schaakstuk != null && vorigVakje.schaakstuk.kleur == "zwart")
                 {
                     mogelijkloop = true;
-                    kanSlaan = true;
+                    computer.computerkanslaan = true;
                 }
                 else if (vorigVakje == null)
                 {
                     mogelijkloop = true;
-                    return false;
+                    computer.spelerkanslaan = false;
+                    computer.computerkanslaan = false;
                 }
                 vorigVakje = vorigVakje.buurWest;
             }
-            return kanSlaan;
         }
 
         public override void Verplaats(SpecialPB pictures, SpecialPB selected, Mens speler)

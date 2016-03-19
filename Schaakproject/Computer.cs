@@ -26,13 +26,41 @@ namespace Schaakproject
             get { return _verplaatsingsLijstComputer; }
             set { _verplaatsingsLijstComputer = value; }
         }
+        private List<SpecialPB> _slaanmogelijkhedenComputer = new List<SpecialPB>();
+        public List<SpecialPB> slaanmogelijkhedenComputer
+        {
+            get { return _slaanmogelijkhedenComputer; }
+            set { _slaanmogelijkhedenComputer = value; }
+        }
+        private List<SpecialPB> _slaanmogelijkhedenComputerVanaf = new List<SpecialPB>();
+        public List<SpecialPB> slaanmogelijkhedenComputerVanaf
+        {
+            get { return _slaanmogelijkhedenComputerVanaf; }
+            set { _slaanmogelijkhedenComputerVanaf = value; }
+        }
+
+        private List<SpecialPB> _slaanmogelijkhedenSpeler = new List<SpecialPB>();
+        public List<SpecialPB> slaanmogelijkhedenSpeler
+        {
+            get { return _slaanmogelijkhedenSpeler; }
+            set { _slaanmogelijkhedenSpeler = value; }
+        }
+
+
+        private List<SpecialPB> _slaanmogelijkhedenSpelerVanaf = new List<SpecialPB>();
+        public List<SpecialPB> slaanmogelijkhedenSpelerVanaf
+        {
+            get { return _slaanmogelijkhedenSpelerVanaf; }
+            set { _slaanmogelijkhedenSpelerVanaf = value; }
+        }
+
         private string _tegenstandersopening { get; set; }
         private string _tegenstanderstactiek { get; set; }
         private int _ronde { get; set; }
         private int _positieZuid { get; set; }
         private int _positieWest { get; set; }
-        private bool spelerkanslaan { get; set; }
-        private bool computerkanslaan { get; set; }
+        public bool spelerkanslaan { get; set; }
+        public bool computerkanslaan { get; set; }
         public Computer(string naam, string kleur)
         {
             Naam = naam;
@@ -53,7 +81,7 @@ namespace Schaakproject
 
             foreach (SpecialPB kleurvakje in verplaatsingsLijstComputer)
             {
-                kleurvakje.vakje.pbox.BackColor = System.Drawing.Color.Yellow;
+                //kleurvakje.vakje.pbox.BackColor = System.Drawing.Color.Yellow;
             }
 
             bepaalMensPositie();
@@ -156,7 +184,7 @@ namespace Schaakproject
         {
             if (_ronde == 0)
             {
-                if(_vorigvakje != null)
+                if (_vorigvakje != null)
                 {
                     TactiekEnAntwoordR0();
                     _ronde++;
@@ -184,73 +212,86 @@ namespace Schaakproject
 
         private void controleerOpSlaan()
         {
-            // Kijk per stuk of er geslagen kan worden
+            // Reset de slaan mogelijkheden
+            spelerkanslaan = false;
+            computerkanslaan = false;
+
+            // Kijk nu per stuk of er geslagen kan worden door de mens
             foreach (SpecialPB kleurvakje in verplaatsingsLijstMens)
             {
                 if (kleurvakje.vakje.schaakstuk is Pion)
                 {
-                    spelerkanslaan = kleurvakje.vakje.schaakstuk.kanStukSlaan(kleurvakje);
-                    Console.WriteLine("Pion kan stuk slaan" + spelerkanslaan); 
+                    kleurvakje.vakje.schaakstuk.kanStukSlaan(this, kleurvakje);
+                    Console.WriteLine("Pion kan stuk slaan" + spelerkanslaan);
                 }
-                else if(kleurvakje.vakje.schaakstuk is Loper)
+                else if (kleurvakje.vakje.schaakstuk is Loper)
                 {
-                    spelerkanslaan = kleurvakje.vakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    kleurvakje.vakje.schaakstuk.kanStukSlaan(this, kleurvakje);
                     Console.WriteLine("Loper kan stuk slaan" + spelerkanslaan);
                 }
                 else if (kleurvakje.vakje.schaakstuk is Toren)
                 {
-                    spelerkanslaan = kleurvakje.vakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    kleurvakje.vakje.schaakstuk.kanStukSlaan(this, kleurvakje);
                     Console.WriteLine("Pion kan stuk slaan" + spelerkanslaan);
                 }
                 else if (kleurvakje.vakje.schaakstuk is Paard)
                 {
-                    spelerkanslaan = kleurvakje.vakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    kleurvakje.vakje.schaakstuk.kanStukSlaan(this, kleurvakje);
                     Console.WriteLine("Paard kan stuk slaan" + spelerkanslaan);
                 }
                 else if (kleurvakje.vakje.schaakstuk is Dame)
                 {
-                    spelerkanslaan = kleurvakje.vakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    kleurvakje.vakje.schaakstuk.kanStukSlaan(this, kleurvakje);
                     Console.WriteLine("Dame kan stuk slaan" + spelerkanslaan);
                 }
                 else if (kleurvakje.vakje.schaakstuk is Koning)
                 {
-                    spelerkanslaan = kleurvakje.vakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    kleurvakje.vakje.schaakstuk.kanStukSlaan(this, kleurvakje);
                     Console.WriteLine("Koning kan stuk slaan" + spelerkanslaan);
                 }
             }
 
+            // Kijk nu per stuk of er geslagen kan worden door de computer
             foreach (SpecialPB kleurvakje in verplaatsingsLijstComputer)
             {
                 if (kleurvakje.vakje.schaakstuk is Pion)
                 {
-                    computerkanslaan = kleurvakje.vakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    kleurvakje.vakje.schaakstuk.kanStukSlaan(this, kleurvakje);
                     Console.WriteLine("Pion kan stuk slaan" + computerkanslaan);
                 }
                 else if (kleurvakje.vakje.schaakstuk is Loper)
                 {
-                    computerkanslaan = kleurvakje.vakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    kleurvakje.vakje.schaakstuk.kanStukSlaan(this, kleurvakje);
                     Console.WriteLine("Loper kan stuk slaan" + computerkanslaan);
                 }
                 else if (kleurvakje.vakje.schaakstuk is Toren)
                 {
-                    computerkanslaan = kleurvakje.vakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    kleurvakje.vakje.schaakstuk.kanStukSlaan(this, kleurvakje);
                     Console.WriteLine("Pion kan stuk slaan" + computerkanslaan);
                 }
                 else if (kleurvakje.vakje.schaakstuk is Paard)
                 {
-                    computerkanslaan = kleurvakje.vakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    kleurvakje.vakje.schaakstuk.kanStukSlaan(this, kleurvakje);
                     Console.WriteLine("Paard kan stuk slaan" + computerkanslaan);
                 }
                 else if (kleurvakje.vakje.schaakstuk is Dame)
                 {
-                    computerkanslaan = kleurvakje.vakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    kleurvakje.vakje.schaakstuk.kanStukSlaan(this, kleurvakje);
                     Console.WriteLine("Dame kan stuk slaan" + computerkanslaan);
                 }
                 else if (kleurvakje.vakje.schaakstuk is Koning)
                 {
-                    computerkanslaan = kleurvakje.vakje.schaakstuk.kanStukSlaan(kleurvakje);
+                    kleurvakje.vakje.schaakstuk.kanStukSlaan(this, kleurvakje);
                     Console.WriteLine("Koning kan stuk slaan" + computerkanslaan);
                 }
+            }
+            foreach (SpecialPB testvakje2 in slaanmogelijkhedenSpeler)
+            {
+                testvakje2.vakje.pbox.BackColor = System.Drawing.Color.Black;   // moet het te slane vakje zijn
+            }
+            foreach (SpecialPB testvakje in slaanmogelijkhedenSpelerVanaf)
+            {
+                testvakje.vakje.pbox.BackColor = System.Drawing.Color.Green;
             }
         }
 
@@ -303,7 +344,7 @@ namespace Schaakproject
             {
 
             }
-            else if(computerkanslaan == true)
+            else if (computerkanslaan == true)
             {
 
             }
