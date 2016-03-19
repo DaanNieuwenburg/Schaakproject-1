@@ -116,19 +116,20 @@ namespace Schaakproject
                 else if (selected.buurOost != null)
                 {
                     //en-passant slaan naar noordoost
-                    if (selected.buurNoordoost == nieuwVakje && speler.enPassantPion == selected.buurOost.schaakstuk)
+                    if (selected.buurNoordoost == nieuwVakje && speler.enPassantPion == selected.buurOost.schaakstuk && speler.enPassantPion != null)
                     {
 
                         selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
                         selected.buurOost.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
                         mogelijk = true;
+                        
 
                     }
                 }
                 if (selected.buurWest != null)
                 {
                     //en-passant slaan naar noordwest
-                    if (selected.buurNoordwest == nieuwVakje && speler.enPassantPion == selected.buurWest.schaakstuk)
+                    if (selected.buurNoordwest == nieuwVakje && speler.enPassantPion == selected.buurWest.schaakstuk && speler.enPassantPion != null)
                     {
 
                         selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
@@ -188,7 +189,7 @@ namespace Schaakproject
                 else if (selected.buurOost != null)
                 {
                     //en-passant slaan naar zuidoost
-                    if (selected.buurZuidoost == nieuwVakje && speler.enPassantPion == selected.buurOost.schaakstuk)
+                    if (selected.buurZuidoost == nieuwVakje && speler.enPassantPion == selected.buurOost.schaakstuk && speler.enPassantPion != null)
                     {
 
                         selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
@@ -200,7 +201,7 @@ namespace Schaakproject
                 if (selected.buurWest != null)
                 {
                     //en-passant slaan naar zuidwest
-                    if (selected.buurZuidwest == nieuwVakje && speler.enPassantPion == selected.buurWest.schaakstuk)
+                    if (selected.buurZuidwest == nieuwVakje && speler.enPassantPion == selected.buurWest.schaakstuk && speler.enPassantPion != null)
                     {
 
                         selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
