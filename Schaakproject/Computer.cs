@@ -26,32 +26,19 @@ namespace Schaakproject
             get { return _verplaatsingsLijstComputer; }
             set { _verplaatsingsLijstComputer = value; }
         }
-        private List<Vakje> _slaanmogelijkhedenComputer = new List<Vakje>();
-        public List<Vakje> slaanmogelijkhedenComputer
+
+        private List<Vakje> _slaanmogelijkheden = new List<Vakje>();
+        public List<Vakje> slaanmogelijkheden
         {
-            get { return _slaanmogelijkhedenComputer; }
-            set { _slaanmogelijkhedenComputer = value; }
-        }
-        private List<Vakje> _slaanmogelijkhedenComputerVanaf = new List<Vakje>();
-        public List<Vakje> slaanmogelijkhedenComputerVanaf
-        {
-            get { return _slaanmogelijkhedenComputerVanaf; }
-            set { _slaanmogelijkhedenComputerVanaf = value; }
+            get { return _slaanmogelijkheden; }
+            set { _slaanmogelijkheden = value; }
         }
 
-        private List<SpecialPB> _slaanmogelijkhedenSpeler = new List<SpecialPB>();
-        public List<SpecialPB> slaanmogelijkhedenSpeler
+        private List<Vakje> _slaanmogelijkhedenVanaf = new List<Vakje>();
+        public List<Vakje> slaanmogelijkhedenVanaf
         {
-            get { return _slaanmogelijkhedenSpeler; }
-            set { _slaanmogelijkhedenSpeler = value; }
-        }
-
-
-        private List<SpecialPB> _slaanmogelijkhedenSpelerVanaf = new List<SpecialPB>();
-        public List<SpecialPB> slaanmogelijkhedenSpelerVanaf
-        {
-            get { return _slaanmogelijkhedenSpelerVanaf; }
-            set { _slaanmogelijkhedenSpelerVanaf = value; }
+            get { return _slaanmogelijkhedenVanaf; }
+            set { _slaanmogelijkhedenVanaf = value; }
         }
 
         private string _tegenstandersopening { get; set; }
@@ -251,46 +238,13 @@ namespace Schaakproject
                 }
             }
 
-            foreach (Vakje kleurvakje in verplaatsingsLijstComputer)
+            foreach (Vakje testvakje2 in slaanmogelijkheden)
             {
-                if (kleurvakje.schaakstuk is Pion)
-                {
-                    kleurvakje.schaakstuk.kanStukSlaan(this, kleurvakje);
-                    Console.WriteLine("Pion kan stuk slaan" + computerkanslaan);
-                }
-                else if (kleurvakje.schaakstuk is Loper)
-                {
-                    kleurvakje.schaakstuk.kanStukSlaan(this, kleurvakje);
-                    Console.WriteLine("Loper kan stuk slaan" + computerkanslaan);
-                }
-                else if (kleurvakje.schaakstuk is Toren)
-                {
-                    kleurvakje.schaakstuk.kanStukSlaan(this, kleurvakje);
-                    Console.WriteLine("Pion kan stuk slaan" + computerkanslaan);
-                }
-                else if (kleurvakje.schaakstuk is Paard)
-                {
-                    kleurvakje.schaakstuk.kanStukSlaan(this, kleurvakje);
-                    Console.WriteLine("Paard kan stuk slaan" + computerkanslaan);
-                }
-                else if (kleurvakje.schaakstuk is Dame)
-                {
-                    kleurvakje.schaakstuk.kanStukSlaan(this, kleurvakje);
-                    Console.WriteLine("Dame kan stuk slaan" + computerkanslaan);
-                }
-                else if (kleurvakje.schaakstuk is Koning)
-                {
-                    kleurvakje.schaakstuk.kanStukSlaan(this, kleurvakje);
-                    Console.WriteLine("Koning kan stuk slaan" + computerkanslaan);
-                }
+                testvakje2.pbox.BackColor = System.Drawing.Color.Black;   // moet het te slane vakje zijn
             }
-            foreach (SpecialPB testvakje2 in slaanmogelijkhedenSpeler)
+            foreach (Vakje testvakje in slaanmogelijkheden)
             {
-                testvakje2.vakje.pbox.BackColor = System.Drawing.Color.Black;   // moet het te slane vakje zijn
-            }
-            foreach (SpecialPB testvakje in slaanmogelijkhedenSpelerVanaf)
-            {
-                testvakje.vakje.pbox.BackColor = System.Drawing.Color.Green;
+                testvakje.pbox.BackColor = System.Drawing.Color.Green;
             }
         }
 

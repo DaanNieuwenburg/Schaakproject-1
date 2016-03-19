@@ -26,77 +26,7 @@ namespace Schaakproject
         }
         public override void kanStukSlaan(Computer computer, Vakje geselecteerdStuk)
         {
-            Vakje geselecteerdVak = geselecteerdStuk;
-            if (geselecteerdVak.schaakstuk.kleur == "wit")
-            {
-                if (geselecteerdVak.buurNoord.schaakstuk != null && geselecteerdVak.buurNoord.schaakstuk.kleur != "wit")
-                {
-                    computer.spelerkanslaan = true;
-                }
-                else if (geselecteerdVak.buurOost.schaakstuk != null && geselecteerdVak.buurOost.schaakstuk.kleur != "wit")
-                {
-                    computer.spelerkanslaan = true;
-                }
-                else if (geselecteerdVak.buurZuid.schaakstuk != null && geselecteerdVak.buurZuid.schaakstuk.kleur != "wit")
-                {
-                    computer.spelerkanslaan = true;
-                }
-                else if (geselecteerdVak.buurWest.schaakstuk != null && geselecteerdVak.buurWest.schaakstuk.kleur != "wit")
-                {
-                    computer.spelerkanslaan = true;
-                }
-                else if (geselecteerdVak.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
-                {
-                    computer.spelerkanslaan = true;
-                }
-                else if (geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordwest.schaakstuk.kleur != "wit")
-                {
-                    computer.spelerkanslaan = true;
-                }
-                else if (geselecteerdVak.buurZuidoost.schaakstuk != null && geselecteerdVak.buurZuidoost.schaakstuk.kleur != "wit")
-                {
-                    computer.spelerkanslaan = true;
-                }
-                else if (geselecteerdVak.buurZuidwest.schaakstuk != null && geselecteerdVak.buurZuidwest.schaakstuk.kleur != "wit")
-                {
-                    computer.spelerkanslaan = true;
-                }
-            }
-            else
-            {
-                if (geselecteerdVak.buurNoord.schaakstuk != null && geselecteerdVak.buurNoord.schaakstuk.kleur != "zwart")
-                {
-                    computer.computerkanslaan = true;
-                }
-                else if (geselecteerdVak.buurOost.schaakstuk != null && geselecteerdVak.buurOost.schaakstuk.kleur != "zwart")
-                {
-                    computer.computerkanslaan = true;
-                }
-                else if (geselecteerdVak.buurZuid.schaakstuk != null && geselecteerdVak.buurZuid.schaakstuk.kleur != "zwart")
-                {
-                    computer.computerkanslaan = true;
-                }
-                else if (geselecteerdVak.buurWest.schaakstuk != null && geselecteerdVak.buurWest.schaakstuk.kleur != "zwart")
-                {
-                    computer.computerkanslaan = true;
-                }
-                else if (geselecteerdVak.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "zwart")
-                {
-                    computer.computerkanslaan = true;
-                }
-                else if (geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordwest.schaakstuk.kleur != "zwart")
-                {
-                    computer.computerkanslaan = true;
-                }
-                else if (geselecteerdVak.buurZuidoost.schaakstuk != null && geselecteerdVak.buurZuidoost.schaakstuk.kleur != "zwart")
-                {
-                    computer.computerkanslaan = true;
-                }
-                else if (geselecteerdVak.buurZuidwest.schaakstuk != null && geselecteerdVak.buurZuidwest.schaakstuk.kleur != "zwart")
-                {
-                    computer.computerkanslaan = true;
-                }
-            }
+            
         }
 
         public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler)
@@ -146,7 +76,7 @@ namespace Schaakproject
 
         public void Rokeren(Vakje vakjeToren, Vakje vakjeKoning, Mens speler)
         {
-            
+
             _wilRokeren = false;
             if (vakjeToren.buurOost == null)
             {
@@ -158,7 +88,7 @@ namespace Schaakproject
                     _Rokerenmelding.ShowDialog();
 
                 }
-                
+
                 if (_wilRokeren == true)
                 {
                     vakjeToren.schaakstuk.vakje = vakjeToren.buurWest.buurWest;
@@ -208,7 +138,7 @@ namespace Schaakproject
 
         public void Wilrokeren()
         {
-            _wilRokeren = true;            
+            _wilRokeren = true;
         }
         public void Checkschaak(SpecialPB pictures, SpecialPB selected, Mens speler)
         {
@@ -226,7 +156,7 @@ namespace Schaakproject
                 else if (vorige.buurNoord == null || vorige.buurNoord.schaakstuk != null)
                 {
                     mogelijkloop = true;
-                    Console.WriteLine("schaakfalse: "+ schaak);
+                    Console.WriteLine("schaakfalse: " + schaak);
                 }
                 vorige = vorige.buurNoord;
             }
