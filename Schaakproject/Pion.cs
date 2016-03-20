@@ -31,11 +31,11 @@ namespace Schaakproject
             Vakje geselecteerdVak = geselecteerdStuk;
             if (geselecteerdVak.schaakstuk.kleur == "wit")
             {
-                if (geselecteerdVak.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
+                if (geselecteerdVak.buurNoordoost != null && geselecteerdVak.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
                 {
                     computer.spelerkanslaan = true;
                 }
-                else if (geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
+                else if (geselecteerdVak.buurNoordoost != null && geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
                 {
                     computer.computerkanslaan = true;
                 }
@@ -47,11 +47,11 @@ namespace Schaakproject
             }
             else
             {
-                if (geselecteerdVak.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "zwart")
+                if (geselecteerdVak.buurNoordwest != null && geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordwest.schaakstuk.kleur != "zwart")
                 {
                     computer.spelerkanslaan = true;
                 }
-                else if (geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "zwart")
+                else if (geselecteerdVak.buurNoordwest != null && geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordwest.schaakstuk.kleur != "zwart")
                 {
                     computer.computerkanslaan = true;
                 }

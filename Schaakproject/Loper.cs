@@ -34,6 +34,7 @@ namespace Schaakproject
                 {
                     if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur != geselecteerdStuk.schaakstuk.kleur)
                     {
+                        Console.WriteLine("FOUND");
                         mogelijkloop = true;
                         computer.spelerkanslaan = true;
                         computer.slaanmogelijkheden.Add(volgendVakje);
@@ -59,10 +60,11 @@ namespace Schaakproject
                 {
                     if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur != geselecteerdStuk.schaakstuk.kleur)
                     {
+                        Console.WriteLine("FOUND");
                         mogelijkloop = true;
                         computer.spelerkanslaan = true;
                         computer.slaanmogelijkheden.Add(volgendVakje);
-                        computer.slaanmogelijkheden.Add(geselecteerdStuk);
+                        computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
                     else if (volgendVakje == null)
                     {
@@ -84,6 +86,7 @@ namespace Schaakproject
                 {
                     if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur != geselecteerdStuk.schaakstuk.kleur)
                     {
+                        Console.WriteLine("FOUND");
                         mogelijkloop = true;
                         computer.spelerkanslaan = true;
                         computer.slaanmogelijkheden.Add(volgendVakje);
@@ -109,6 +112,7 @@ namespace Schaakproject
                 {
                     if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur != geselecteerdStuk.schaakstuk.kleur)
                     {
+                        Console.WriteLine("FOUND");
                         mogelijkloop = true;
                         computer.spelerkanslaan = true;
                         computer.slaanmogelijkheden.Add(volgendVakje);
