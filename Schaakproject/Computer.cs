@@ -242,10 +242,6 @@ namespace Schaakproject
             {
                 testvakje2.pbox.BackColor = System.Drawing.Color.Black;   // moet het te slane vakje zijn
             }
-            foreach (Vakje testvakje in slaanmogelijkheden)
-            {
-                testvakje.pbox.BackColor = System.Drawing.Color.Green;
-            }
         }
 
         private void TactiekEnAntwoordR0()
