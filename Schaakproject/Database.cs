@@ -17,6 +17,8 @@ namespace Schaakproject
         public string invoerpass { get; set; }
         public String[] _Username { get; set; }
         public String[] _Password { get; set; }
+        public List<string> Userlist { get; set; }
+        public List<string> Passlist { get; set; }
 
         //public bool valid { get; set; }
 
@@ -32,33 +34,16 @@ namespace Schaakproject
             MySqlDataReader reader = query.ExecuteReader();
             _Username = new String[5];
             _Password = new String[5];
+            Userlist = new List<string>();
+            Passlist = new List<string>();
             string[] UserId = new string[5];
 
 
             while (reader.Read())
             {
-
-                _Username[0] = (String)reader["Username"];
-                invoeruser = _Username[0].ToString();
-                Console.WriteLine("database test: "+ _Username[0]);
-                _Password[0] = (String)reader["Password"];
-                invoerpass = _Password[0].ToString();
-                Console.WriteLine("database test: "+ _Password[0]);
-                //UserId[0] = (string)reader["UserId rij"];
-                /*Usernames[1] = (String)reader["username rij"];
-                Passwords[1] = (String)reader["password rij"];
-                UserId[1] = (String)reader["UserId rij"];
-                Usernames[2] = (String)reader["username rij"];
-                Passwords[2] = (String)reader["password rij"];
-                UserId[2] = (String)reader["UserId rij"];
-                Usernames[3] = (String)reader["username rij"];
-                Passwords[3] = (String)reader["password rij"];
-                UserId[3] = (String)reader["UserId rij"];
-                Usernames[4] = (String)reader["username rij"];
-                Passwords[4] = (String)reader["password rij"];
-                UserId[4] = (String)reader["UserId rij"];*/
+                Userlist.Add((String)reader["Username"]);
+                Passlist.Add((String)reader["Password"]);
             }
-            // werkt niet. Terug aanpassen in LoginForm if else
         }
         public Database(string username, string password)
         {
