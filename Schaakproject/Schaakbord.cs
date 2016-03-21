@@ -37,7 +37,7 @@ namespace Schaakproject
             variant = _Variant;
             bool kleurvakje = false; //zwart of wit
             kleurstuk = "zwart";
-            Speler voorDitStuk = Speler1;
+            Speler voorDitStuk = Speler2;
             int[] array = new int[]
             {
                 0,1,2,3,4,5,6,7
@@ -63,7 +63,7 @@ namespace Schaakproject
                     if (x == 2)
                     {
                         kleurstuk = "wit";
-                        voorDitStuk = Speler2;
+                        voorDitStuk = Speler1;
                     }
                     for (int y = 0; y < 8; y++)
                     {

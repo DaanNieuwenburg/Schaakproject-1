@@ -66,7 +66,7 @@ namespace Schaakproject
 
         public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler, Spel spel)
         {
-
+            
             bool mogelijk = false;
 
             if (kleur == "wit")
@@ -115,7 +115,7 @@ namespace Schaakproject
                 else if (selected.buurOost != null)
                 {
                     //en-passant slaan naar noordoost
-                    if (selected.buurNoordoost == nieuwVakje && speler.enPassantPion == selected.buurOost.schaakstuk && speler.enPassantPion != null)
+                    if (selected.buurNoordoost == nieuwVakje && _speler.enPassantPion == selected.buurOost.schaakstuk && _speler.enPassantPion != null)
                     {
                         selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
                         selected.buurOost.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
@@ -125,7 +125,7 @@ namespace Schaakproject
                 if (selected.buurWest != null)
                 {
                     //en-passant slaan naar noordwest
-                    if (selected.buurNoordwest == nieuwVakje && speler.enPassantPion == selected.buurWest.schaakstuk && speler.enPassantPion != null)
+                    if (selected.buurNoordwest == nieuwVakje && _speler.enPassantPion == selected.buurWest.schaakstuk && _speler.enPassantPion != null)
                     {
                         selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
                         selected.buurWest.pbox.update(); //update deze pbox zodat je de pion niet meer ziet
@@ -183,7 +183,7 @@ namespace Schaakproject
                 else if (selected.buurOost != null)
                 {
                     //en-passant slaan naar zuidoost
-                    if (selected.buurZuidoost == nieuwVakje && speler.enPassantPion == selected.buurOost.schaakstuk && speler.enPassantPion != null)
+                    if (selected.buurZuidoost == nieuwVakje && _speler.enPassantPion == selected.buurOost.schaakstuk && _speler.enPassantPion != null)
                     {
 
                         selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
@@ -195,7 +195,7 @@ namespace Schaakproject
                 if (selected.buurWest != null)
                 {
                     //en-passant slaan naar zuidwest
-                    if (selected.buurZuidwest == nieuwVakje && speler.enPassantPion == selected.buurWest.schaakstuk && speler.enPassantPion != null)
+                    if (selected.buurZuidwest == nieuwVakje && _speler.enPassantPion == selected.buurWest.schaakstuk && _speler.enPassantPion != null)
                     {
 
                         selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
