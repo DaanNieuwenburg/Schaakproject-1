@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,8 +51,6 @@ namespace Schaakproject
         }
         public void Login()
         {
-
-
             MySqlConnection connection = new MySqlConnection(connCredentials);
 
             MySqlCommand query = connection.CreateCommand();
@@ -75,4 +73,3 @@ namespace Schaakproject
         
     }
 }
-*/
