@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Schaakproject;
 
 namespace LoginProject
 {
@@ -15,13 +16,16 @@ namespace LoginProject
     {
         public string user { get; set; }
         public string pass { get; set; }
+        public string voornaam { get; set; }
+        public string achternaam { get; set; }
         private bool confirmed { get; set; }
         public StreamWriter userfile { get; set; }
         public StreamWriter passfile { get; set; }
-
-
-        public FormRegister()
+        public Database _database { get; set; }
+        public FormRegister(Database database)
         {
+            
+            _database = database;
             confirmed = false;
             InitializeComponent();
             //userfile = new StreamWriter(@"C:\Users\daan1\Source\Repos\Schaakproject\Login\username.txt", true);
@@ -41,12 +45,10 @@ namespace LoginProject
             {
                 user = txtuser.Text;
                 pass = txtpass.Text;
-               // userfile.WriteLine(user);
-                //userfile.Close();
-               // passfile.WriteLine(pass);
-                //passfile.Close();
-                // Main.username = txtuser.Text;
-                //Main.password = txtpass.Text;
+                voornaam = txtvoornaam.Text;
+                achternaam = txtachternaam.Text;
+                Console.WriteLine(user + pass + voornaam + achternaam);
+                _database.Register(user, pass, voornaam, achternaam);
                 DialogResult = DialogResult.Yes;
             }
             else if ((txtvoornaam.Text == "" || txtachternaam.Text == "" || txtconfirm.Text == "" || txtpass.Text == "" || txtuser.Text == "")&& (txtpass.Text != txtconfirm.Text))

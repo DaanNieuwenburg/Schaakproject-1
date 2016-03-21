@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 namespace Schaakproject
 {
 
-    public class Database : LoginForm
+    public class Database
     {
         public string[] Username { get; set; }
         public string[] Password { get; set; }
@@ -19,13 +19,40 @@ namespace Schaakproject
         public String[] _Password { get; set; }
         public List<string> Userlist { get; set; }
         public List<string> Passlist { get; set; }
-
+        String connCredentials = "Server = 127.0.0.1;Database=chessregisterdb;User Id=root;Password=daanpronk1;Connection Timeout = 5";
         //public bool valid { get; set; }
-
-        public void connect()
+        public Database(string username, string password)
+        {
+            Console.WriteLine("invoeruser: " + invoeruser);
+            Console.WriteLine("invoerpass: " + invoerpass);
+            username = invoeruser;
+            password = invoerpass;
+            Login();
+        }
+        public void Register(string R_user, string R_pass, string R_voornaam, string R_achternaam)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connCredentials))
+            {
+                MySqlCommand query = connection.CreateCommand();
+                int Count = 0;
+                query.CommandText = "Select MAX(UserId) WHERE UserId != null";
+                query.ExecuteNonQuery();
+                connection.Open();
+                Count = (int)query.ExecuteScalar();
+                int newCount = Count + 1;
+                query.CommandText = "INSERT INTO Register (UserId, Username, Password, Voornaam, Achternaam) VALUES (@UserId, @Username, @Password, @Voornaam, @Achternaam)";
+                query.Parameters.AddWithValue("@UserId", newCount);
+                query.Parameters.AddWithValue("@Username", R_user);
+                query.Parameters.AddWithValue("@Password", R_pass);
+                query.Parameters.AddWithValue("@Voornaam", R_voornaam);
+                query.Parameters.AddWithValue("@Achternaam", R_achternaam);
+                query.ExecuteNonQuery();
+            }
+        }
+        public void Login()
         {
 
-            String connCredentials = "Server = 127.0.0.1;Database=chessregisterdb;User Id=root;Password=daanpronk1;Connection Timeout = 5";
+
             MySqlConnection connection = new MySqlConnection(connCredentials);
 
             MySqlCommand query = connection.CreateCommand();
@@ -45,13 +72,6 @@ namespace Schaakproject
                 Passlist.Add((String)reader["Password"]);
             }
         }
-        public Database(string username, string password)
-        {
-            Console.WriteLine("invoeruser: " + invoeruser);
-            Console.WriteLine("invoerpass: " + invoerpass);
-            username = invoeruser;
-            password = invoerpass;
-            connect();
-        }
+        
     }
 }
