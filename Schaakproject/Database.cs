@@ -19,6 +19,7 @@ namespace Schaakproject
         public String[] _Password { get; set; }
         public List<string> Userlist { get; set; }
         public List<string> Passlist { get; set; }
+        public MySqlConnection connection { get; set; }
         String connCredentials = "Server = 127.0.0.1;Database=chessregisterdb;User Id=root;Password=daanpronk1;Connection Timeout = 5";
         //public bool valid { get; set; }
         public Database(string username, string password)
@@ -31,13 +32,13 @@ namespace Schaakproject
         }
         public void Register(string R_user, string R_pass, string R_voornaam, string R_achternaam)
         {
-            using (MySqlConnection connection = new MySqlConnection(connCredentials))
-            {
+            //using (MySqlConnection connection = new MySqlConnection(connCredentials))
+           // {
                 MySqlCommand query = connection.CreateCommand();
                 int Count = 0;
                 query.CommandText = "Select MAX(UserId) WHERE UserId != null";
                 query.ExecuteNonQuery();
-                connection.Open();
+                //connection.Open();
                 Count = (int)query.ExecuteScalar();
                 int newCount = Count + 1;
                 query.CommandText = "INSERT INTO Register (UserId, Username, Password, Voornaam, Achternaam) VALUES (@UserId, @Username, @Password, @Voornaam, @Achternaam)";
@@ -47,13 +48,13 @@ namespace Schaakproject
                 query.Parameters.AddWithValue("@Voornaam", R_voornaam);
                 query.Parameters.AddWithValue("@Achternaam", R_achternaam);
                 query.ExecuteNonQuery();
-            }
+           // }
         }
         public void Login()
         {
 
 
-            MySqlConnection connection = new MySqlConnection(connCredentials);
+            connection = new MySqlConnection(connCredentials);
 
             MySqlCommand query = connection.CreateCommand();
             query.CommandText = "SELECT * FROM logintable";
