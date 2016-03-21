@@ -52,6 +52,7 @@ namespace Schaakproject
 
         public void Start()
         {
+            Console.WriteLine("start");
             Schaakbord schaakbord = new Schaakbord(_Variant, this, _Speler1, _Speler2);
             this.schaakbord = schaakbord;
             SpeelBord speelbord = new SpeelBord(this, schaakbord, _SpelMode, _Speler1, _Speler2, _computerSpeler, _Variant);
@@ -72,6 +73,7 @@ namespace Schaakproject
 
         public void VeranderSpeler()
         {
+            Console.WriteLine("VeranderSpeler")
             if (spelerAanZet == _Speler1)
             {
                 spelerAanZet = _Speler2;
@@ -81,8 +83,62 @@ namespace Schaakproject
                 spelerAanZet = _Speler1;
             }
 
+        public void controleerOpSchaak()
+        {
+            Console.WriteLine("Controleer op schaak");
+            // kijk waar de koning staat
+            bool koningGevonden = false;
+            bool koningNietGevonden = true;
+            Vakje vorigvakjeHO = selected;  // Horizontaal oost
+            Vakje vorigvakjeVZ = selected; // Verticaal noord
+
+            // Loop tot het meest linker vakje gevonden is
+            while (vorigvakjeHO != null)
+            {
+                vorigvakjeHO = vorigvakjeHO.buurOost;
         }
 
+            // Loop tot het meest onderste vakje gevonden is
+            while (vorigvakjeVZ != null)
+            {
+                vorigvakjeVZ = vorigvakjeHO.buurZuid;
+            }
+
+
+            // Loop tot de koning gevonden is
+            while (koningGevonden == false)
+            {
+                // loop naar boven
+                // loop naar oost
+                while (koningNietGevonden == true)
+                {
+                    if (vorigvakjeHO.schaakstuk is Koning && vorigvakjeHO.schaakstuk.kleur != selected.schaakstuk.kleur)
+                    {
+                        vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Pink;
+                        koningNietGevonden = false;
+                    }
+                    else
+                    {
+                        vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Pink;
+                        vorigvakjeHO = vorigvakjeHO.buurWest;
+                    }
+                }
+                // loop naar west
+                while (koningNietGevonden == true)
+                {
+                    if (vorigvakjeVZ.schaakstuk is Koning && vorigvakjeVZ.schaakstuk.kleur != selected.schaakstuk.kleur)
+                    {
+                        vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Pink;
+                        koningNietGevonden = false;
+                    }
+                    else
+                    {
+                        vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Pink;
+                        vorigvakjeVZ = vorigvakjeVZ.buurNoord;
+                    }
+                }
+            }
+        }
     }
 }
 

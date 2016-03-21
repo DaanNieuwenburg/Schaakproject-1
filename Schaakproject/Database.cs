@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 namespace Schaakproject
 {
 
-    class Database : LoginForm
+    public class Database
     {
         public string[] Username { get; set; }
         public string[] Password { get; set; }
@@ -17,13 +17,42 @@ namespace Schaakproject
         public string invoerpass { get; set; }
         public String[] _Username { get; set; }
         public String[] _Password { get; set; }
-
+        public List<string> Userlist { get; set; }
+        public List<string> Passlist { get; set; }
+        String connCredentials = "Server = 127.0.0.1;Database=chessregisterdb;User Id=root;Password=daanpronk1;Connection Timeout = 5";
         //public bool valid { get; set; }
-
-        public void connect()
+        public Database(string username, string password)
+        {
+            Console.WriteLine("invoeruser: " + invoeruser);
+            Console.WriteLine("invoerpass: " + invoerpass);
+            username = invoeruser;
+            password = invoerpass;
+            Login();
+        }
+        public void Register(string R_user, string R_pass, string R_voornaam, string R_achternaam)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connCredentials))
+            {
+                MySqlCommand query = connection.CreateCommand();
+                int Count = 0;
+                query.CommandText = "Select MAX(UserId) WHERE UserId != null";
+                query.ExecuteNonQuery();
+                connection.Open();
+                Count = (int)query.ExecuteScalar();
+                int newCount = Count + 1;
+                query.CommandText = "INSERT INTO Register (UserId, Username, Password, Voornaam, Achternaam) VALUES (@UserId, @Username, @Password, @Voornaam, @Achternaam)";
+                query.Parameters.AddWithValue("@UserId", newCount);
+                query.Parameters.AddWithValue("@Username", R_user);
+                query.Parameters.AddWithValue("@Password", R_pass);
+                query.Parameters.AddWithValue("@Voornaam", R_voornaam);
+                query.Parameters.AddWithValue("@Achternaam", R_achternaam);
+                query.ExecuteNonQuery();
+            }
+        }
+        public void Login()
         {
 
-            String connCredentials = "Server = 127.0.0.1;Database=chessregisterdb;User Id=root;Password=daanpronk1;Connection Timeout = 5";
+
             MySqlConnection connection = new MySqlConnection(connCredentials);
 
             MySqlCommand query = connection.CreateCommand();
@@ -32,41 +61,17 @@ namespace Schaakproject
             MySqlDataReader reader = query.ExecuteReader();
             _Username = new String[5];
             _Password = new String[5];
+            Userlist = new List<string>();
+            Passlist = new List<string>();
             string[] UserId = new string[5];
 
 
             while (reader.Read())
             {
-
-                _Username[0] = (String)reader["Username"];
-                invoeruser = _Username[0].ToString();
-                Console.WriteLine("database test: "+ _Username[0]);
-                _Password[0] = (String)reader["Password"];
-                invoerpass = _Password[0].ToString();
-                Console.WriteLine("database test: "+ _Password[0]);
-                //UserId[0] = (string)reader["UserId rij"];
-                /*Usernames[1] = (String)reader["username rij"];
-                Passwords[1] = (String)reader["password rij"];
-                UserId[1] = (String)reader["UserId rij"];
-                Usernames[2] = (String)reader["username rij"];
-                Passwords[2] = (String)reader["password rij"];
-                UserId[2] = (String)reader["UserId rij"];
-                Usernames[3] = (String)reader["username rij"];
-                Passwords[3] = (String)reader["password rij"];
-                UserId[3] = (String)reader["UserId rij"];
-                Usernames[4] = (String)reader["username rij"];
-                Passwords[4] = (String)reader["password rij"];
-                UserId[4] = (String)reader["UserId rij"];*/
+                Userlist.Add((String)reader["Username"]);
+                Passlist.Add((String)reader["Password"]);
             }
-            // werkt niet. Terug aanpassen in LoginForm if else
         }
-        public Database(string username, string password)
-        {
-            Console.WriteLine("invoeruser: " + invoeruser);
-            Console.WriteLine("invoerpass: " + invoerpass);
-            username = invoeruser;
-            password = invoerpass;
-            connect();
-        }
+        
     }
 }
