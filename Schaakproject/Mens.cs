@@ -25,7 +25,7 @@ namespace Schaakproject
                 if (selected.schaakstuk is Toren && clicked.schaakstuk is Koning)
                 {
                     //als het eerste stuk een toren is en het tweede een koning probeer dan te rokeren
-                    (clicked.schaakstuk as Koning).Rokeren(selected, clicked, this);
+                    (clicked.schaakstuk as Koning).Rokeren(selected, clicked, this, spel);
                     DeselecteerStuk();
 
                 }
@@ -33,7 +33,7 @@ namespace Schaakproject
                 else if (selected.schaakstuk is Koning && clicked.schaakstuk is Toren)
                 {
                     //als het eerste stuk een koning is en het tweede een toren probeer dan te rokeren
-                    (selected.schaakstuk as Koning).Rokeren(clicked, selected, this);
+                    (selected.schaakstuk as Koning).Rokeren(clicked, selected, this, spel);
                     DeselecteerStuk();
                 }
             }
