@@ -373,14 +373,15 @@ namespace Schaakproject
             }
             if (mogelijk == true)
             {
-                nieuwVakje.schaakstuk = this;
+                Schaakstuk temp = nieuwVakje.schaakstuk;
+                nieuwVakje.schaakstuk = this;                
                 selected.schaakstuk = null;
                 this.vakje = nieuwVakje;
                 bool checkSchaak = spel.schaakbord.CheckSchaak(speler.Koning);
                 if (checkSchaak == true)
                 {
                     selected.schaakstuk = this;
-                    nieuwVakje.schaakstuk = null;
+                    nieuwVakje.schaakstuk = temp;
                     this.vakje = selected;
                 }
                 else

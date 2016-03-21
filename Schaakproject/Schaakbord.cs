@@ -391,7 +391,103 @@ namespace Schaakproject
                 }
                 vorige = vorige.buurWest;
             }
-            //staatschaak = false;
+
+            mogelijkloop = false;
+            vorige = koning.vakje;
+
+            //kijk of er noordoost van de koning een loper of dame staat
+            while (mogelijkloop == false)
+            {
+                if (vorige.buurNoordoost == null)
+                {
+                    mogelijkloop = true;
+                }
+                else if (vorige.buurNoordoost.schaakstuk is Loper || vorige.buurNoordoost.schaakstuk is Dame)
+                {
+                    if (vorige.buurNoordoost.schaakstuk.kleur != koning.kleur)
+                    {
+                        staatschaak = true;
+                    }
+                    mogelijkloop = true;
+                }
+                else if (vorige.buurNoordoost.schaakstuk != null)
+                {
+                    mogelijkloop = true;
+                }
+                vorige = vorige.buurNoordoost;
+            }
+            mogelijkloop = false;
+            vorige = koning.vakje;
+
+            //kijk of er zuidoost van de koning een loper of dame staat
+            while (mogelijkloop == false)
+            {
+                if (vorige.buurZuidoost == null)
+                {
+                    mogelijkloop = true;
+                }
+                else if (vorige.buurZuidoost.schaakstuk is Loper || vorige.buurZuidoost.schaakstuk is Dame)
+                {
+                    if (vorige.buurZuidoost.schaakstuk.kleur != koning.kleur)
+                    {
+                        staatschaak = true;
+                    }
+                    mogelijkloop = true;
+                }
+                else if (vorige.buurZuidoost.schaakstuk != null)
+                {
+                    mogelijkloop = true;
+                }
+                vorige = vorige.buurZuidoost;
+            }
+            mogelijkloop = false;
+            vorige = koning.vakje;
+
+            //kijk of er zuidwest van de koning een loper of dame staat
+            while (mogelijkloop == false)
+            {
+                if (vorige.buurZuidwest == null)
+                {
+                    mogelijkloop = true;
+                }
+                else if (vorige.buurZuidwest.schaakstuk is Loper || vorige.buurZuidwest.schaakstuk is Dame)
+                {
+                    if (vorige.buurZuidwest.schaakstuk.kleur != koning.kleur)
+                    {
+                        staatschaak = true;
+                    }
+                    mogelijkloop = true;
+                }
+                else if (vorige.buurZuidwest.schaakstuk != null)
+                {
+                    mogelijkloop = true;
+                }
+                vorige = vorige.buurZuidwest;
+            }
+            mogelijkloop = false;
+            vorige = koning.vakje;
+
+            //kijk of er noordwest van de koning een loper of dame staat
+            while (mogelijkloop == false)
+            {
+                if (vorige.buurNoordwest == null)
+                {
+                    mogelijkloop = true;
+                }
+                else if (vorige.buurNoordwest.schaakstuk is Loper || vorige.buurNoordwest.schaakstuk is Dame)
+                {
+                    if (vorige.buurNoordwest.schaakstuk.kleur != koning.kleur)
+                    {
+                        staatschaak = true;
+                    }
+                    mogelijkloop = true;
+                }
+                else if (vorige.buurNoordwest.schaakstuk != null)
+                {
+                    mogelijkloop = true;
+                }
+                vorige = vorige.buurNoordwest;
+            }
             return staatschaak;
         }
 

@@ -73,7 +73,7 @@ namespace Schaakproject
 
         public void VeranderSpeler()
         {
-            Console.WriteLine("VeranderSpeler")
+            Console.WriteLine("VeranderSpeler");
             if (spelerAanZet == _Speler1)
             {
                 spelerAanZet = _Speler2;
@@ -82,7 +82,7 @@ namespace Schaakproject
             {
                 spelerAanZet = _Speler1;
             }
-
+        }
         public void controleerOpSchaak()
         {
             Console.WriteLine("Controleer op schaak");

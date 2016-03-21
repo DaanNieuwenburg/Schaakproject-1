@@ -102,16 +102,16 @@ namespace Schaakproject
             lblSpeler2Naam.Visible = false;
             txtSpeler1Naam.Visible = false;
             btnBegin.Visible = false;
-            LoginForm Login = new LoginForm();
-            Login.ShowDialog();
+            //LoginForm Login = new LoginForm();
+            //Login.ShowDialog();
             hLabel.Visible = false;
-            if (Login.login == true)
+            /*if (Login.login == true)
             {
                 _username = Login.username;
                 Console.WriteLine("Test Naaminvoer: " + _username);
                 btnKlassiek.Visible = true;
-                btnChess960.Visible = true;    
-            }
+                btnChess960.Visible = true;   
+            }*/
         }
 
         private void btModeComputer_MouseEnter(object sender, EventArgs e)

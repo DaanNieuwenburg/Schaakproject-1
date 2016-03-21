@@ -208,6 +208,7 @@ namespace Schaakproject
 
             if (mogelijk == true)
             {
+                Schaakstuk temp = nieuwVakje.schaakstuk;
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
                 this.vakje = nieuwVakje;
@@ -216,7 +217,7 @@ namespace Schaakproject
                 if (checkSchaak == true)
                 {
                     selected.schaakstuk = this;
-                    nieuwVakje.schaakstuk = null;
+                    nieuwVakje.schaakstuk = temp;
                     this.vakje = selected;
                 }
                 else

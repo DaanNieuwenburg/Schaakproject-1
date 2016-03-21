@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,7 +31,7 @@ namespace Schaakproject
         }
         public void Register(string R_user, string R_pass, string R_voornaam, string R_achternaam)
         {
-            using (MySqlConnection connection = new MySqlConnection(connCredentials))
+            //using (MySqlConnection connection = new MySqlConnection(connCredentials))
             {
                 MySqlCommand query = connection.CreateCommand();
                 int Count = 0;
@@ -75,3 +75,4 @@ namespace Schaakproject
         
     }
 }
+*/
