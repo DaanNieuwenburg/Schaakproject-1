@@ -10,6 +10,7 @@ namespace Schaakproject
 
     public class Database
     {
+
         public string[] Username { get; set; }
         public string[] Password { get; set; }
         public string[] UserId { get; set; }
@@ -33,12 +34,12 @@ namespace Schaakproject
         public void Register(string R_user, string R_pass, string R_voornaam, string R_achternaam)
         {
             //using (MySqlConnection connection = new MySqlConnection(connCredentials))
-           // {
+            {
                 MySqlCommand query = connection.CreateCommand();
                 int Count = 0;
                 query.CommandText = "Select MAX(UserId) WHERE UserId != null";
                 query.ExecuteNonQuery();
-                //connection.Open();
+                connection.Open();
                 Count = (int)query.ExecuteScalar();
                 int newCount = Count + 1;
                 query.CommandText = "INSERT INTO Register (UserId, Username, Password, Voornaam, Achternaam) VALUES (@UserId, @Username, @Password, @Voornaam, @Achternaam)";
@@ -48,7 +49,7 @@ namespace Schaakproject
                 query.Parameters.AddWithValue("@Voornaam", R_voornaam);
                 query.Parameters.AddWithValue("@Achternaam", R_achternaam);
                 query.ExecuteNonQuery();
-           // }
+            }
         }
         public void Login()
         {
