@@ -20,6 +20,7 @@ namespace Schaakproject
         public List<string> Userlist { get; set; }
         public List<string> Passlist { get; set; }
         String connCredentials = "Server = 127.0.0.1;Database=chessregisterdb;User Id=root;Password=daanpronk1;Connection Timeout = 5";
+        public MySqlConnection connection;
         //public bool valid { get; set; }
         public Database(string username, string password)
         {
