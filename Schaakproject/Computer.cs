@@ -197,7 +197,7 @@ namespace Schaakproject
             }
             else if (_ronde == 1)
             {
-                TactiekEnAntwoordR1();
+                Algoritme();
                 _ronde++;
             }
             else if (_ronde == 2)

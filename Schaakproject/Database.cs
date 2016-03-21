@@ -52,7 +52,7 @@ namespace Schaakproject
         public void Login()
         {
 
-            
+
             MySqlConnection connection = new MySqlConnection(connCredentials);
 
             MySqlCommand query = connection.CreateCommand();
