@@ -10,11 +10,12 @@ namespace Schaakproject
     {
         private Vakje selected { get; set; }
         public bool validezet { get; set; }
-        public Koning koning { get; set; }
-        public Mens(string naam, string kleur)
+        
+        public Mens(string naam, string kleur, Spel _spel)
         {
             Naam = naam;
             Kleur = kleur;
+            spel = _spel;
         }
 
         public void SelecteerStuk(Vakje clicked, Spel spel)
@@ -36,7 +37,7 @@ namespace Schaakproject
                     DeselecteerStuk();
                 }
             }
-
+            
             if (validezet == false) //als hij niet gerokeerd heeft
                 {
                 if (clicked == selected) //als het stuk waarop geklikt is al geselecteerd was
@@ -62,9 +63,10 @@ namespace Schaakproject
                 enPassantPion = null;
                 
             }
+            
             validezet = false;
         }
-
+        
         private void DeselecteerStuk()
         {
             selected.pbox.update();     //de picturebox updatet zodat de kleur weer normaal wordt.
@@ -76,8 +78,8 @@ namespace Schaakproject
             if (selected != null) //alleen als er al iets is geselecteerd
             {
                 Vakje clicked = nieuwVakje;   //voor de singleplayer
-                selected.schaakstuk.Verplaats(nieuwVakje, selected, this); //probeer het schaakstuk te verplaatsen
-
+                selected.schaakstuk.Verplaats(nieuwVakje, selected, this, spel); //probeer het schaakstuk te verplaatsen
+                
                 selected.pbox.update();    //update het eerste vakje
                 nieuwVakje.pbox.update();         //update het tweede vakje
                 selected = null;            //niets is meer geselecteerd

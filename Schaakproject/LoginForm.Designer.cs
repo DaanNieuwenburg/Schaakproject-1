@@ -1,4 +1,4 @@
-﻿namespace Schaakproject
+﻿/*namespace Schaakproject
 {
     partial class LoginForm
     {
@@ -168,4 +168,4 @@
         private System.Windows.Forms.Label lblerror;
     }
 }
-
+*/

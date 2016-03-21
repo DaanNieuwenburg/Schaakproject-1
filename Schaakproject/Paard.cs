@@ -7,7 +7,7 @@ namespace Schaakproject
 {
     public class Paard : Schaakstuk
     {
-        public Paard(string kleur, Vakje vakje)
+        public Paard(string kleur, Vakje vakje, Speler speler)
         {
             this.vakje = vakje;
             this.kleur = kleur;
@@ -77,7 +77,7 @@ namespace Schaakproject
             }
         }
 
-        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler)
+        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler, Spel spel)
         {
             bool gevonden = false;
             if (selected.buurNoord != null)
@@ -128,10 +128,21 @@ namespace Schaakproject
 
             if (gevonden == true)
             {
+                Schaakstuk temp = nieuwVakje.schaakstuk;
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
                 this.vakje = nieuwVakje;
-                speler.validezet = true;
+                bool checkSchaak = spel.schaakbord.CheckSchaak(speler.Koning);
+                if (checkSchaak == true)
+                {
+                    selected.schaakstuk = this;
+                    nieuwVakje.schaakstuk = temp;
+                    this.vakje = selected;
+                }
+                else
+                {
+                    speler.validezet = true;
+                }
             }
         }
     }

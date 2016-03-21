@@ -32,7 +32,6 @@ namespace Schaakproject
             this.CenterToScreen();
             lblaantal1.Text = "xx"; //hier moet de variabele komen voor het aantal van wit
             lblaantal2.Text = "xx"; //hier moet de variabele komen voor het aantal van zwart
-            
             for (int x = 0; x < 8; x++)
             {
                 for (int y = 0; y < 8; y++)
@@ -66,13 +65,13 @@ namespace Schaakproject
             }
             else if (_SpelMode.Equals("Multiplayer"))
             {
-                Console.WriteLine("test1 " + _speler1.Naam);
+                Console.WriteLine("tlest " + _speler1.Naam);
                 lblPlayer1.Text = "P1: " + _speler1.Naam;
                 lblPlayer2.Text = "P2: " + _speler2.Naam;
             }
             else if (_SpelMode.Equals("Online"))
             {
-                Console.WriteLine("test1 " + _speler1.Naam);
+                Console.WriteLine("tlest " + _speler1.Naam);
                 lblPlayer1.Text = "P1: " + Speler1.Naam;
             }
                 
@@ -83,7 +82,7 @@ namespace Schaakproject
         {
             if (_SpelMode == "Singleplayer")
             {
-                if (_spel.speler1aanzet == true)
+                if (_spel.spelerAanZet == _speler1)
                 {
                     if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler1.Kleur)
                     {
@@ -103,8 +102,9 @@ namespace Schaakproject
 
             else if (_SpelMode == "Multiplayer")
             {
-                if (_spel.speler1aanzet == true)
+                if (_spel.spelerAanZet == _speler1)
                 {
+                    //_spel.controleerOpSchaak();
                     //als de picturebox waarop gedrukt is wel een schaakstuk heeft en dit schaakstuk de kleur heeft van de speler
                     if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler1.Kleur)
                     {
@@ -117,6 +117,7 @@ namespace Schaakproject
                 }
                 else
                 {
+                    //_spel.controleerOpSchaak();
                     if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler2.Kleur)
                     {
                         _speler2.SelecteerStuk(pictureBox.vakje, _spel);
@@ -130,7 +131,7 @@ namespace Schaakproject
             else if (_SpelMode == "Online")
             {
                 
-                if (_spel.speler1aanzet == true)
+                if (_spel.spelerAanZet == _speler1)
                 {
                     //als de picturebox waarop gedrukt is wel een schaakstuk heeft en dit schaakstuk de kleur heeft van de speler
                     if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler1.Kleur)
@@ -176,6 +177,7 @@ namespace Schaakproject
 
         private void btHerstart_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("HERSTART");
             HerstartMelding Warning = new HerstartMelding();
             Warning.ShowDialog();
             if (_SpelMode == "Singleplayer")
