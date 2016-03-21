@@ -19,21 +19,20 @@ namespace Schaakproject
         public string password { get; set; }
         public string _username { get; set; }
         public string _password { get; set; }
-
+        public Database database { get; set; }
 
         public LoginForm()
         {
-            
+            Database database = new Database(_username, _password);
             InitializeComponent();
             txtPassword.PasswordChar = '*';
             label4.Text = username;
             label5.Text = password;
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Database database = new Database(_username, _password);
-            database.connect();
+            
+            database.Login();
             //username = database.Username[0].ToString();
             //password = database.Password[0].ToString();
             for (int i = 0; i < 3; i++)
@@ -81,11 +80,8 @@ namespace Schaakproject
 
     private void btnReg_Click(object sender, EventArgs e)
     {
-        FormRegister Registerdialog = new FormRegister();
+        FormRegister Registerdialog = new FormRegister(database);
         Registerdialog.ShowDialog();
-
-
-
     }
 
     private void MainForm_Load(object sender, EventArgs e)
