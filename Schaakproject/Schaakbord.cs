@@ -134,7 +134,14 @@ namespace Schaakproject
                                 else
                                 {
                                     aantal2++;
-                                    Spel._Speler2.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                    if(Spel._SpelMode == "Singleplayer")
+                                    {
+                                        Spel._computerSpeler.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                    }
+                                    else
+                                    {
+                                        Spel._Speler2.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                    }
                                 }
                             }
                         }
