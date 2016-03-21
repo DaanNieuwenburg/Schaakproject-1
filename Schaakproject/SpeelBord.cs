@@ -83,7 +83,7 @@ namespace Schaakproject
         {
             if (_SpelMode == "Singleplayer")
             {
-                if (_spel.speler1aanzet == true)
+                if (_spel.spelerAanZet == _speler1)
                 {
                     if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler1.Kleur)
                     {
@@ -103,7 +103,7 @@ namespace Schaakproject
 
             else if (_SpelMode == "Multiplayer")
             {
-                if (_spel.speler1aanzet == true)
+                if (_spel.spelerAanZet == _speler1)
                 {
                     //als de picturebox waarop gedrukt is wel een schaakstuk heeft en dit schaakstuk de kleur heeft van de speler
                     if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler1.Kleur)
@@ -130,7 +130,7 @@ namespace Schaakproject
             else if (_SpelMode == "Online")
             {
                 
-                if (_spel.speler1aanzet == true)
+                if (_spel.spelerAanZet == _speler1)
                 {
                     //als de picturebox waarop gedrukt is wel een schaakstuk heeft en dit schaakstuk de kleur heeft van de speler
                     if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler1.Kleur)

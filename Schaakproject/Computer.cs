@@ -314,8 +314,8 @@ namespace Schaakproject
         private void voerZetUit()
         {
             verplaatsingsLijst.Add(pictures);       // slaat de positie van de computerszet in lijst op 
-            Mens hierhoortgeenmens = new Mens("ikhoorhierniet", "zwart");
-            selected.schaakstuk.Verplaats(pictures, selected, hierhoortgeenmens);
+            Mens hierhoortgeenmens = new Mens("ikhoorhierniet", "zwart", spel);
+            selected.schaakstuk.Verplaats(pictures, selected, hierhoortgeenmens, spel);
             selected.pbox.update();
             pictures.pbox.update();
             selected = null;

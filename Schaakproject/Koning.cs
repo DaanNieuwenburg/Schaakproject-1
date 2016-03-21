@@ -11,7 +11,7 @@ namespace Schaakproject
         private bool _eersteZet { get; set; }       //Is de koning al verzet
         private bool _wilRokeren { get; set; }      //Als je op ja drukt als er gevraagd wordt of je wilt rokeren
 
-        public Koning(string kleur, Vakje vakje)
+        public Koning(string kleur, Vakje vakje, Speler speler)
         {
             this.kleur = kleur;
             this.vakje = vakje;
@@ -29,7 +29,7 @@ namespace Schaakproject
             
         }
 
-        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler)
+        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler, Spel spel)
         {
             bool gevonden = false;
             if (selected.buurNoord == nieuwVakje)
@@ -70,7 +70,17 @@ namespace Schaakproject
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
                 this.vakje = nieuwVakje;
-                speler.validezet = true;
+                bool checkSchaak = spel.schaakbord.CheckSchaak(speler.Koning);
+                if (checkSchaak == true)
+                {
+                    selected.schaakstuk = this;
+                    nieuwVakje.schaakstuk = null;
+                    this.vakje = selected;
+                }
+                else
+                {
+                    speler.validezet = true;
+                }
             }
         }
 
@@ -147,6 +157,7 @@ namespace Schaakproject
             Vakje vorige = vakje;
             while (mogelijkloop == false)
             {
+
                 if (vorige.buurNoord.schaakstuk is Toren || vorige.buurNoord.schaakstuk is Dame)
                 {
                     schaak = true;

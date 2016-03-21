@@ -8,7 +8,7 @@ namespace Schaakproject
 {
     public class Dame : Schaakstuk
     {
-        public Dame(string kleur, Vakje vakje)
+        public Dame(string kleur, Vakje vakje, Speler speler)
         {
             this.vakje = vakje;
             this.kleur = kleur;
@@ -224,7 +224,7 @@ namespace Schaakproject
             }
         }
 
-        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler)
+        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler, Spel spel)
         {
             bool mogelijk = false;
             bool mogelijkloop = false;
@@ -376,7 +376,17 @@ namespace Schaakproject
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
                 this.vakje = nieuwVakje;
-                speler.validezet = true;
+                bool checkSchaak = spel.schaakbord.CheckSchaak(speler.Koning);
+                if (checkSchaak == true)
+                {
+                    selected.schaakstuk = this;
+                    nieuwVakje.schaakstuk = null;
+                    this.vakje = selected;
+                }
+                else
+                {
+                    speler.validezet = true;
+                }
             }
         }
     }

@@ -31,12 +31,13 @@ namespace Schaakproject
         private string kleurstuk { get; set; }              //De kleur van het stuk
         private string variant { get; set; }                //Klassiek of Chess960
 
-        public Schaakbord(string _Variant)                  
+        public Schaakbord(string _Variant, Spel Spel, Speler Speler1, Speler Speler2)
         {
             schaakarray = new Vakje[8, 8];
             variant = _Variant;
             bool kleurvakje = false; //zwart of wit
             kleurstuk = "zwart";
+            Speler voorDitStuk = Speler1;
             int[] array = new int[]
             {
                 0,1,2,3,4,5,6,7
@@ -55,13 +56,14 @@ namespace Schaakproject
             }
 
             //voeg schaakstukken aan vakjes toe
-            if(variant == "Klassiek")
+            if (variant == "Klassiek")
             {
                 for (int x = 0; x < 8; x++)
                 {
                     if (x == 2)
                     {
                         kleurstuk = "wit";
+                        voorDitStuk = Speler2;
                     }
                     for (int y = 0; y < 8; y++)
                     {
@@ -69,7 +71,7 @@ namespace Schaakproject
                         {
                             if (y == 0 || y == 7)
                             {
-                                schaakarray[x, y].schaakstuk = new Toren(kleurstuk, schaakarray[x, y]);
+                                schaakarray[x, y].schaakstuk = new Toren(kleurstuk, schaakarray[x, y], voorDitStuk);
                                 if (kleurstuk == "wit")
                                 {
                                     aantal1++;
@@ -82,7 +84,7 @@ namespace Schaakproject
 
                             else if (y == 1 || y == 6)
                             {
-                                schaakarray[x, y].schaakstuk = new Paard(kleurstuk, schaakarray[x, y]);
+                                schaakarray[x, y].schaakstuk = new Paard(kleurstuk, schaakarray[x, y], voorDitStuk);
                                 if (kleurstuk == "wit")
                                 {
                                     aantal1++;
@@ -95,7 +97,7 @@ namespace Schaakproject
 
                             else if (y == 2 || y == 5)
                             {
-                                schaakarray[x, y].schaakstuk = new Loper(kleurstuk, schaakarray[x, y]);
+                                schaakarray[x, y].schaakstuk = new Loper(kleurstuk, schaakarray[x, y], voorDitStuk);
                                 if (kleurstuk == "wit")
                                 {
                                     aantal1++;
@@ -108,7 +110,7 @@ namespace Schaakproject
 
                             else if (y == 3)
                             {
-                                schaakarray[x, y].schaakstuk = new Dame(kleurstuk, schaakarray[x, y]);
+                                schaakarray[x, y].schaakstuk = new Dame(kleurstuk, schaakarray[x, y], voorDitStuk);
                                 if (kleurstuk == "wit")
                                 {
                                     aantal1++;
@@ -121,20 +123,24 @@ namespace Schaakproject
 
                             else if (y == 4)
                             {
-                                schaakarray[x, y].schaakstuk = new Koning(kleurstuk, schaakarray[x, y]);
+                                schaakarray[x, y].schaakstuk = new Koning(kleurstuk, schaakarray[x, y], voorDitStuk);
+
                                 if (kleurstuk == "wit")
                                 {
                                     aantal1++;
+                                    Spel._Speler1.Koning = schaakarray[x, y].schaakstuk as Koning;
+
                                 }
                                 else
                                 {
                                     aantal2++;
+                                    Spel._Speler2.Koning = schaakarray[x, y].schaakstuk as Koning;
                                 }
                             }
                         }
                         else if (x == 1 || x == 6)
                         {
-                            schaakarray[x, y].schaakstuk = new Pion(kleurstuk, schaakarray[x, y]);
+                            schaakarray[x, y].schaakstuk = new Pion(kleurstuk, schaakarray[x, y], voorDitStuk);
                             if (kleurstuk == "wit")
                             {
                                 aantal1++;
@@ -161,7 +167,7 @@ namespace Schaakproject
                         {
                             if (y == array[0] || y == array[1])
                             {
-                                schaakarray[x, y].schaakstuk = new Toren(kleurstuk, schaakarray[x, y]);
+                                schaakarray[x, y].schaakstuk = new Toren(kleurstuk, schaakarray[x, y], voorDitStuk);
                                 if (kleurstuk == "wit")
                                 {
                                     aantal1++;
@@ -174,7 +180,7 @@ namespace Schaakproject
 
                             else if (y == array[2] || y == array[3])
                             {
-                                schaakarray[x, y].schaakstuk = new Paard(kleurstuk, schaakarray[x, y]);
+                                schaakarray[x, y].schaakstuk = new Paard(kleurstuk, schaakarray[x, y], voorDitStuk);
                                 if (kleurstuk == "wit")
                                 {
                                     aantal1++;
@@ -187,7 +193,7 @@ namespace Schaakproject
 
                             else if (y == array[4] || y == array[5])
                             {
-                                schaakarray[x, y].schaakstuk = new Loper(kleurstuk, schaakarray[x, y]);
+                                schaakarray[x, y].schaakstuk = new Loper(kleurstuk, schaakarray[x, y], voorDitStuk);
                                 if (kleurstuk == "wit")
                                 {
                                     aantal1++;
@@ -200,7 +206,7 @@ namespace Schaakproject
 
                             else if (y == array[6])
                             {
-                                schaakarray[x, y].schaakstuk = new Dame(kleurstuk, schaakarray[x, y]);
+                                schaakarray[x, y].schaakstuk = new Dame(kleurstuk, schaakarray[x, y], voorDitStuk);
                                 if (kleurstuk == "wit")
                                 {
                                     aantal1++;
@@ -213,7 +219,7 @@ namespace Schaakproject
 
                             else if (y == array[7])
                             {
-                                schaakarray[x, y].schaakstuk = new Koning(kleurstuk, schaakarray[x, y]);
+                                schaakarray[x, y].schaakstuk = new Koning(kleurstuk, schaakarray[x, y], voorDitStuk);
                                 if (kleurstuk == "wit")
                                 {
                                     aantal1++;
@@ -226,7 +232,7 @@ namespace Schaakproject
                         }
                         else if (x == 1 || x == 6)
                         {
-                            schaakarray[x, y].schaakstuk = new Pion(kleurstuk, schaakarray[x, y]);
+                            schaakarray[x, y].schaakstuk = new Pion(kleurstuk, schaakarray[x, y], voorDitStuk);
                             if (kleurstuk == "wit")
                             {
                                 aantal1++;
@@ -286,76 +292,107 @@ namespace Schaakproject
             throw new System.NotImplementedException();
         }
 
-        public void CheckSchaak(Koning koning)
+        public bool CheckSchaak(Koning koning)
         {
             bool mogelijkloop = false;
             staatschaak = false;
             Vakje vorige = koning.vakje;
 
             //kijk of er noord van de koning een toren of dame staat
-            while(mogelijkloop == false)
+            while (mogelijkloop == false)
             {
-                if (vorige.buurNoord.schaakstuk is Toren || vorige.buurNoord.schaakstuk is Dame)
+                if (vorige.buurNoord == null)
                 {
-                    staatschaak = true;
                     mogelijkloop = true;
                 }
-                else if(vorige.buurNoord == null || vorige.buurNoord.schaakstuk != null)
+                else if (vorige.buurNoord.schaakstuk is Toren || vorige.buurNoord.schaakstuk is Dame)
+                {
+                    if (vorige.buurNoord.schaakstuk.kleur != koning.kleur)
+                    {
+                        staatschaak = true;
+                    }
+                    mogelijkloop = true;
+                }
+                else if (vorige.buurNoord.schaakstuk != null)
                 {
                     mogelijkloop = true;
                 }
                 vorige = vorige.buurNoord;
             }
             mogelijkloop = false;
+            vorige = koning.vakje;
 
             //kijk of er zuid van de koning een toren of dame staat
             while (mogelijkloop == false)
             {
-                if (vorige.buurZuid.schaakstuk is Toren || vorige.buurZuid.schaakstuk is Dame)
-                {
-                    staatschaak = true;
-                    mogelijkloop = true;
-                }
-                else if (vorige.buurZuid == null || vorige.buurZuid.schaakstuk != null)
+                if (vorige.buurZuid == null)
                 {
                     mogelijkloop = true;
                 }
-                vorige = vorige.buurNoord;
+                else if (vorige.buurZuid.schaakstuk is Toren || vorige.buurZuid.schaakstuk is Dame)
+                {
+                    if (vorige.buurZuid.schaakstuk.kleur != koning.kleur)
+                    {
+                        staatschaak = true;
+                    }
+                    mogelijkloop = true;
+                }
+                else if (vorige.buurZuid.schaakstuk != null)
+                {
+                    mogelijkloop = true;
+                }
+                vorige = vorige.buurZuid;
             }
             mogelijkloop = false;
+            vorige = koning.vakje;
 
             //kijk of er oost van de koning een toren of dame staat
             while (mogelijkloop == false)
             {
-                if (vorige.buurOost.schaakstuk is Toren || vorige.buurOost.schaakstuk is Dame)
-                {
-                    staatschaak = true;
-                    mogelijkloop = true;
-                }
-                else if (vorige.buurOost == null || vorige.buurOost.schaakstuk != null)
+                if (vorige.buurOost == null)
                 {
                     mogelijkloop = true;
                 }
-                vorige = vorige.buurNoord;
+                else if (vorige.buurOost.schaakstuk is Toren || vorige.buurOost.schaakstuk is Dame)
+                {
+                    if (vorige.buurOost.schaakstuk.kleur != koning.kleur)
+                    {
+                        staatschaak = true;
+                    }
+                    mogelijkloop = true;
+                }
+                else if (vorige.buurOost.schaakstuk != null)
+                {
+                    mogelijkloop = true;
+                }
+                vorige = vorige.buurOost;
             }
             mogelijkloop = false;
+            vorige = koning.vakje;
 
             //kijk of er west van de koning een toren of dame staat
             while (mogelijkloop == false)
             {
-                if (vorige.buurWest.schaakstuk is Toren || vorige.buurWest.schaakstuk is Dame)
-                {
-                    staatschaak = true;
-                    mogelijkloop = true;
-                }
-                else if (vorige.buurWest == null || vorige.buurWest.schaakstuk != null)
+                if (vorige.buurWest == null)
                 {
                     mogelijkloop = true;
                 }
-                vorige = vorige.buurNoord;
+                else if (vorige.buurWest.schaakstuk is Toren || vorige.buurWest.schaakstuk is Dame)
+                {
+                    if (vorige.buurWest.schaakstuk.kleur != koning.kleur)
+                    {
+                        staatschaak = true;
+                    }                    
+                    mogelijkloop = true;
+                }
+                else if (vorige.buurWest.schaakstuk != null)
+                {
+                    mogelijkloop = true;
+                }
+                vorige = vorige.buurWest;
             }
-
-            
+            //staatschaak = false;
+            return staatschaak;
         }
 
         private void CheckMat()
