@@ -85,13 +85,13 @@ namespace Schaakproject
             Vakje vorigvakjeVZ = selected; // Verticaal noord
 
             // Loop tot het meest linker vakje gevonden is
-            while(vorigvakjeHO != null)
+            while (vorigvakjeHO != null)
             {
                 vorigvakjeHO = vorigvakjeHO.buurOost;
             }
 
             // Loop tot het meest onderste vakje gevonden is
-            while (vorigvakjeHO != null)
+            while (vorigvakjeVZ != null)
             {
                 vorigvakjeVZ = vorigvakjeHO.buurZuid;
             }
@@ -102,16 +102,16 @@ namespace Schaakproject
             {
                 // loop naar boven
                 // loop naar oost
-                while(koningNietGevonden == true)
+                while (koningNietGevonden == true)
                 {
-                    if(vorigvakjeHO.schaakstuk is Koning && vorigvakjeHO.schaakstuk.kleur != selected.schaakstuk.kleur)
+                    if (vorigvakjeHO.schaakstuk is Koning && vorigvakjeHO.schaakstuk.kleur != selected.schaakstuk.kleur)
                     {
-                        vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Beige;
+                        vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Pink;
                         koningNietGevonden = false;
                     }
                     else
                     {
-                        vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Beige;
+                        vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Pink;
                         vorigvakjeHO = vorigvakjeHO.buurWest;
                     }
                 }
@@ -120,16 +120,16 @@ namespace Schaakproject
                 {
                     if (vorigvakjeVZ.schaakstuk is Koning && vorigvakjeVZ.schaakstuk.kleur != selected.schaakstuk.kleur)
                     {
+                        vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Pink;
                         koningNietGevonden = false;
                     }
                     else
                     {
+                        vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Pink;
                         vorigvakjeVZ = vorigvakjeVZ.buurNoord;
                     }
                 }
             }
-            vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Aqua;
-            vorigvakjeVZ.pbox.BackColor = System.Drawing.Color.Aqua;
         }
     }
 }
