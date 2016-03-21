@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 namespace Schaakproject
 {
 
-    class Database : LoginForm
+    public class Database : LoginForm
     {
         public string[] Username { get; set; }
         public string[] Password { get; set; }

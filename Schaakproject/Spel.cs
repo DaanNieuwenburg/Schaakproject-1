@@ -13,7 +13,7 @@ namespace Schaakproject
         private Mens _Speler2 { get; set; }     //De tweede speler voor multiplayer
         private Computer _computerSpeler { get; set; }  //De computer coor singleplayer
         public bool speler1aanzet { get; private set; } //is speler 1 aan zet?
-        public Vakje selected { get;  set; } //Maakt de computer gebruik van
+        public Vakje selected { get; set; } //Maakt de computer gebruik van
         public string _Variant { get; set; }    //Klassiek of Chess960
 
         public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant)
@@ -51,6 +51,7 @@ namespace Schaakproject
 
         public void Start()
         {
+            Console.WriteLine("Start");
             Schaakbord schaakbord = new Schaakbord(_Variant);
             SpeelBord speelbord = new SpeelBord(this, schaakbord, _SpelMode, _Speler1, _Speler2, _computerSpeler, _Variant);
             speelbord.Show();
@@ -70,10 +71,66 @@ namespace Schaakproject
 
         public void VeranderSpeler()
         {
+            Console.WriteLine("VeranderSpeler");
             speler1aanzet = !speler1aanzet;
-
         }
 
+        public void controleerOpSchaak()
+        {
+            Console.WriteLine("Controleer op schaak");
+            // kijk waar de koning staat
+            bool koningGevonden = false;
+            bool koningNietGevonden = true;
+            Vakje vorigvakjeHO = selected;  // Horizontaal oost
+            Vakje vorigvakjeVZ = selected; // Verticaal noord
+
+            // Loop tot het meest linker vakje gevonden is
+            while(vorigvakjeHO != null)
+            {
+                vorigvakjeHO = vorigvakjeHO.buurOost;
+            }
+
+            // Loop tot het meest onderste vakje gevonden is
+            while (vorigvakjeHO != null)
+            {
+                vorigvakjeVZ = vorigvakjeHO.buurZuid;
+            }
+
+
+            // Loop tot de koning gevonden is
+            while (koningGevonden == false)
+            {
+                // loop naar boven
+                // loop naar oost
+                while(koningNietGevonden == true)
+                {
+                    if(vorigvakjeHO.schaakstuk is Koning && vorigvakjeHO.schaakstuk.kleur != selected.schaakstuk.kleur)
+                    {
+                        vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Beige;
+                        koningNietGevonden = false;
+                    }
+                    else
+                    {
+                        vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Beige;
+                        vorigvakjeHO = vorigvakjeHO.buurWest;
+                    }
+                }
+                // loop naar west
+                while (koningNietGevonden == true)
+                {
+                    if (vorigvakjeVZ.schaakstuk is Koning && vorigvakjeVZ.schaakstuk.kleur != selected.schaakstuk.kleur)
+                    {
+                        koningNietGevonden = false;
+                    }
+                    else
+                    {
+                        vorigvakjeVZ = vorigvakjeVZ.buurNoord;
+                    }
+                }
+            }
+            vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Aqua;
+            vorigvakjeVZ.pbox.BackColor = System.Drawing.Color.Aqua;
+        }
     }
 }
 
