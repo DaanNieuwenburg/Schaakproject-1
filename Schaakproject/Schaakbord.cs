@@ -382,7 +382,7 @@ namespace Schaakproject
                     if (vorige.buurWest.schaakstuk.kleur != koning.kleur)
                     {
                         staatschaak = true;
-                    }                    
+                    }
                     mogelijkloop = true;
                 }
                 else if (vorige.buurWest.schaakstuk != null)
@@ -487,6 +487,96 @@ namespace Schaakproject
                     mogelijkloop = true;
                 }
                 vorige = vorige.buurNoordwest;
+            }
+            vorige = koning.vakje;
+
+            //kijk of er noord-noordwest een paard staat
+            if (vorige.buurNoord != null)
+            {
+                if (vorige.buurNoord.buurNoordwest != null)
+                {
+                    if (vorige.buurNoord.buurNoordwest.schaakstuk is Paard && vorige.buurNoord.buurNoordwest.schaakstuk.kleur != koning.kleur)
+                    {
+                        staatschaak = true;
+                    }
+                }
+            }
+            //kijk of er noord-noordoost een paard staat
+            if (vorige.buurNoord != null)
+            {
+                if (vorige.buurNoord.buurNoordoost != null)
+                {
+                    if (vorige.buurNoord.buurNoordoost.schaakstuk is Paard && vorige.buurNoord.buurNoordoost.schaakstuk.kleur != koning.kleur)
+                    {
+                        staatschaak = true;
+                    }
+                }
+            }
+            //kijk of er oost-noordoost een paard staat
+            if (vorige.buurOost != null)
+            {
+                if (vorige.buurOost.buurNoordoost != null)
+                {
+                    if (vorige.buurOost.buurNoordoost.schaakstuk is Paard && vorige.buurOost.buurNoordoost.schaakstuk.kleur != koning.kleur)
+                    {
+                        staatschaak = true;
+                    }
+                }
+            }
+            //kijk of er oost-zuidoost een paard staat
+            if (vorige.buurOost != null)
+            {
+                if (vorige.buurOost.buurZuidoost != null)
+                {
+                    if (vorige.buurOost.buurZuidoost.schaakstuk is Paard && vorige.buurOost.buurZuidoost.schaakstuk.kleur != koning.kleur)
+                    {
+                        staatschaak = true;
+                    }
+                }
+            }
+            //kijk of er zuid-zuidoost een paard staat
+            if (vorige.buurZuid != null)
+            {
+                if (vorige.buurZuid.buurZuidoost != null)
+                {
+                    if (vorige.buurZuid.buurZuidoost.schaakstuk is Paard && vorige.buurZuid.buurZuidoost.schaakstuk.kleur != koning.kleur)
+                    {
+                        staatschaak = true;
+                    }
+                }
+            }
+            //kijk of er zuid-zuidwest een paard staat
+            if (vorige.buurZuid != null)
+            {
+                if (vorige.buurZuid.buurZuidwest != null)
+                {
+                    if (vorige.buurZuid.buurZuidwest.schaakstuk is Paard && vorige.buurZuid.buurZuidwest.schaakstuk.kleur != koning.kleur)
+                    {
+                        staatschaak = true;
+                    }
+                }
+            }
+            //kijk of er west-noordwest een paard staat
+            if (vorige.buurWest != null)
+            {
+                if (vorige.buurWest.buurNoordwest != null)
+                {
+                    if (vorige.buurWest.buurNoordwest.schaakstuk is Paard && vorige.buurWest.buurNoordwest.schaakstuk.kleur != koning.kleur)
+                    {
+                        staatschaak = true;
+                    }
+                }
+            }
+            //kijk of er west-zuidwest een paard staat
+            if (vorige.buurWest != null)
+            {
+                if (vorige.buurWest.buurZuidwest != null)
+                {
+                    if (vorige.buurWest.buurZuidwest.schaakstuk is Paard && vorige.buurWest.buurZuidwest.schaakstuk.kleur != koning.kleur)
+                    {
+                        staatschaak = true;
+                    }
+                }
             }
             return staatschaak;
         }
