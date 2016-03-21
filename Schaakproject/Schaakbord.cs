@@ -578,6 +578,106 @@ namespace Schaakproject
                     }
                 }
             }
+            //kijk of er noord een koning staat
+            if (vorige.buurNoord != null)
+            {
+                if(vorige.buurNoord.schaakstuk is Koning)
+                {
+                    staatschaak = true;
+                }
+            }
+            //kijk of er oost een koning staat
+            if (vorige.buurOost != null)
+            {
+                if (vorige.buurOost.schaakstuk is Koning)
+                {
+                    staatschaak = true;
+                }
+            }
+            //kijk of er zuid een koning staat
+            if (vorige.buurZuid != null)
+            {
+                if (vorige.buurZuid.schaakstuk is Koning)
+                {
+                    staatschaak = true;
+                }
+            }
+            //kijk of er west een koning staat
+            if (vorige.buurWest != null)
+            {
+                if (vorige.buurWest.schaakstuk is Koning)
+                {
+                    staatschaak = true;
+                }
+            }
+            //kijk of er noordoost een koning staat
+            if (vorige.buurNoordoost != null)
+            {
+                if (vorige.buurNoordoost.schaakstuk is Koning)
+                {
+                    staatschaak = true;
+                }
+            }
+            //kijk of er noordwest een koning staat
+            if (vorige.buurNoordwest != null)
+            {
+                if (vorige.buurNoordwest.schaakstuk is Koning)
+                {
+                    staatschaak = true;
+                }
+            }
+            //kijk of er zuidoost een koning staat
+            if (vorige.buurZuidoost != null)
+            {
+                if (vorige.buurZuidoost.schaakstuk is Koning)
+                {
+                    staatschaak = true;
+                }
+            }
+            //kijk of er zuidwest een koning staat
+            if (vorige.buurZuidwest != null)
+            {
+                if (vorige.buurZuidwest.schaakstuk is Koning)
+                {
+                    staatschaak = true;
+                }
+            }
+            //alleen een witte koning hoeft uit te kijken voor pionnen die noord staan
+            if (koning.kleur == "wit")
+            {
+                if (vorige.buurNoordoost != null)
+                {
+                    if (vorige.buurNoordoost.schaakstuk is Pion && vorige.buurNoordoost.schaakstuk.kleur == "zwart")
+                    {
+                        staatschaak = true;
+                    }
+                }
+                if (vorige.buurNoordwest != null)
+                {
+                    if (vorige.buurNoordwest.schaakstuk is Pion && vorige.buurNoordwest.schaakstuk.kleur == "zwart")
+                    {
+                        staatschaak = true;
+                    }
+                }
+            }
+            //alleen een zwarte koning hoeft uit te kijken voor pionnen die zuid staan
+            if (koning.kleur == "zwart")
+            {
+                if (vorige.buurZuidoost != null)
+                {
+                    if (vorige.buurZuidoost.schaakstuk is Pion && vorige.buurZuidoost.schaakstuk.kleur == "wit")
+                    {
+                        staatschaak = true;
+                    }
+                }
+                if (vorige.buurZuidwest != null)
+                {
+                    if (vorige.buurZuidwest.schaakstuk is Pion && vorige.buurZuidwest.schaakstuk.kleur == "wit")
+                    {
+                        staatschaak = true;
+                    }
+                }
+            }
             return staatschaak;
         }
 
