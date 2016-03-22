@@ -95,6 +95,7 @@ namespace Schaakproject
         {
             _vorigvakje = spel.selected;
             Schaakstuk tempToren = vakjeToren.schaakstuk;
+            // Rokeren voor klassieke schaakvariant
             if (spel._Variant == "Klassiek")
             {
 
@@ -253,11 +254,20 @@ namespace Schaakproject
                     }
                 }
             }
+            // Rokeren voor klassieke schaakvariant
             else if (spel._Variant == "Chess960")
             {
                 int i = 0;
+                int west = 0;
+                while (_vorigwest != null)                      //bepaald locatie van de koning a.d.v. het aantal buren links
+                {
+                    _vorigwest = _vorigwest.buurWest;
+                    west++;
+                }
+                Console.WriteLine("west: " + west);
                 // voor west
-                int aantalplaatsenwest = 0;
+                int aantalplaatsenwest = 0;                     // aantal plaatsen tussen koning en linker toren
+                int aantalplaatsenoost = 0;                     // aantal plaatsen tussen koning en rechter toren
                 if (vakjeKoning.buurWest == vakjeToren)
                 {
                     aantalplaatsenwest = 1;
@@ -349,7 +359,7 @@ namespace Schaakproject
                 }
 
                 // voor oost
-                int aantalplaatsenoost = 0;
+                
                 if (vakjeKoning.buurOost == vakjeToren)
                 {
                     aantalplaatsenoost = 1;
@@ -369,9 +379,10 @@ namespace Schaakproject
                         {
                             _vorigvakje = _vorigvakje.buurOost;
                             i++;
-                            _magRokeren = true;
+                            
                         }
                     }
+                    _magRokeren = true;
                 }
                 else if (vakjeKoning.buurOost.buurOost.buurOost == vakjeToren)
                 {
@@ -382,10 +393,10 @@ namespace Schaakproject
                         {
                             _vorigvakje = _vorigvakje.buurOost;
                             i++;
-                            _magRokeren = true;
 
                         }
                     }
+                    _magRokeren = true;
                 }
                 else if (vakjeKoning.buurOost.buurOost.buurOost.buurOost == vakjeToren)
                 {
@@ -396,9 +407,9 @@ namespace Schaakproject
                         {
                             _vorigvakje = _vorigvakje.buurOost;
                             i++;
-                            _magRokeren = true;
                         }
                     }
+                    _magRokeren = true;
                 }
                 else if (vakjeKoning.buurOost.buurOost.buurOost.buurOost.buurOost == vakjeToren)
                 {
@@ -409,9 +420,9 @@ namespace Schaakproject
                         {
                             _vorigvakje = _vorigvakje.buurOost;
                             i++;
-                            _magRokeren = true;
                         }
                     }
+                    _magRokeren = true;
                 }
                 else if (vakjeKoning.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost == vakjeToren)
                 {
@@ -422,9 +433,9 @@ namespace Schaakproject
                         {
                             _vorigvakje = _vorigvakje.buurOost;
                             i++;
-                            _magRokeren = true;
                         }
                     }
+                    _magRokeren = true;
                 }
                 else if (vakjeKoning.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost == vakjeToren)
                 {
@@ -435,19 +446,13 @@ namespace Schaakproject
                         {
                             _vorigvakje = _vorigvakje.buurOost;
                             i++;
-                            _magRokeren = true;
                         }
                     }
+                    _magRokeren = true;
                 }
                 
-                int west = 0;
-                while (_vorigwest != null)
-                {
-                    _vorigwest = _vorigwest.buurWest;
-                    west++;
-                    
-                }
-                Console.WriteLine("west: " + west);
+                
+
                 if (_wilRokeren == true && _magRokeren == true)
                 {
                     int j = 0;

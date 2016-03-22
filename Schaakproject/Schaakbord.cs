@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -25,14 +26,18 @@ namespace Schaakproject
     public class Schaakbord
     {
         public Vakje[,] schaakarray { get; private set; }   //Een array van vakjes zodat het schaakbord kan worden opgezet
+        public Color _kleur { get; private set; }
         private int aantal1 { get; set; }                   //Het aantal schaakstukken wordt ingesteld voor wit
         private int aantal2 { get; set; }                   //Het aantal schaakstukken wordt ingesteld voor zwart
         private bool staatschaak { get; set; }              //Staat er iemand schaak?
         private string kleurstuk { get; set; }              //De kleur van het stuk
         private string variant { get; set; }                //Klassiek of Chess960
-
+        
         public Schaakbord(string _Variant, Spel Spel, Speler Speler1, Speler Speler2)
         {
+
+
+            bool staatopwit = true;
             schaakarray = new Vakje[8, 8];
             variant = _Variant;
             bool kleurvakje = false; //zwart of wit
@@ -162,6 +167,7 @@ namespace Schaakproject
             }
             else if (variant == "Chess960")
             {
+                int aantallopers = 0;
                 for (int x = 0; x < 8; x++)
                 {
                     if (x == 2)
@@ -201,15 +207,45 @@ namespace Schaakproject
 
                             else if (y == array[4] || y == array[5])
                             {
-                                schaakarray[x, y].schaakstuk = new Loper(kleurstuk, schaakarray[x, y], voorDitStuk);
-                                if (kleurstuk == "wit")
+                                if (IsOdd(array[4]) && IsOdd(array[5]))
                                 {
-                                    aantal1++;
+                                    int aantalloops = 0;
+                                    foreach (int ywaarde in array)
+                                    {
+                                        aantalloops++;
+                                        if (IsOdd(ywaarde))
+                                        {
+                                            int temp = array[4];
+                                            array[4] = array[aantallopers];
+                                            array[aantallopers] = temp;
+                                        }
+                                    }
                                 }
                                 else
                                 {
-                                    aantal2++;
-                                }
+                                    aantallopers++;
+                                    schaakarray[x, y].schaakstuk = new Loper(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                    if (kleurstuk == "wit" && aantallopers == 1 && _kleur == Color.SaddleBrown)
+                                    {
+                                        staatopwit = false;
+                                        aantal1++;
+                                    }
+                                    else if (kleurstuk == "wit" && aantallopers == 2 && _kleur != Color.SaddleBrown)
+                                    {
+                                        aantal1++;
+                                        staatopwit = true;
+                                    }
+                                    else if (kleurstuk == "zwart" && aantallopers == 3 && _kleur == Color.SaddleBrown)
+                                    {
+                                        aantal2++;
+                                        staatopwit = false;
+                                    }
+                                    else if (kleurstuk == "zwart" && aantallopers == 4 && _kleur != Color.SaddleBrown)
+                                    {
+                                        staatopwit = true;
+                                        aantal2++;
+                                    }
+                                }                               
                             }
 
                             else if (y == array[6])
@@ -704,7 +740,7 @@ namespace Schaakproject
         {
             bool mat = true;
             bool mogelijk = false;
-            
+
             Schaakstuk bewaar = null;
             Vakje beginvakje = koning.vakje;
 
@@ -825,6 +861,10 @@ namespace Schaakproject
                 }
             }
             return mat;
+        }
+        public static bool IsOdd(int value)
+        {
+            return value % 2 != 0;
         }
     }
 }
