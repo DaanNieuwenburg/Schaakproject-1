@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,15 +23,15 @@ namespace Schaakproject
 
         public LoginForm()
         {
-            Database database = new Database(_username, _password);
             InitializeComponent();
             txtPassword.PasswordChar = '*';
             label4.Text = username;
             label5.Text = password;
+            Database database = new Database(_username, _password);
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
+
             database.Login();
             //username = database.Username[0].ToString();
             //password = database.Password[0].ToString();
@@ -73,20 +73,20 @@ namespace Schaakproject
                 else
                 {
                     break;
-                }             
+                }
             }
         }
-            
 
-    private void btnReg_Click(object sender, EventArgs e)
-    {
-        FormRegister Registerdialog = new FormRegister(database);
-        Registerdialog.ShowDialog();
-    }
 
-    private void MainForm_Load(object sender, EventArgs e)
-    {
+        private void btnReg_Click(object sender, EventArgs e)
+        {
+            //FormRegister Registerdialog = new FormRegister(database);
+            //Registerdialog.ShowDialog();
+        }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-}*/
