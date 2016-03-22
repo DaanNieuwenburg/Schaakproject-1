@@ -78,15 +78,34 @@ namespace Schaakproject
             Console.WriteLine("VeranderSpeler");
             if (spelerAanZet == _Speler1)
             {
-                spelerAanZet = _Speler2;
-                schaak = schaakbord.CheckSchaak(_Speler2.Koning);
+                if (_SpelMode == "Singleplayer")
+                {
+                    spelerAanZet = _computerSpeler;
+                    schaak = schaakbord.CheckSchaak(_computerSpeler.Koning);
+                }
+                else
+                {
+                    spelerAanZet = _Speler2;
+                    schaak = schaakbord.CheckSchaak(_Speler2.Koning);
+                }
                 if (schaak == true)
                 {
-                    _Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Blue;
-                    mat = schaakbord.CheckMat(_Speler2.Koning);
-                    if (mat == true)
+                    if (_SpelMode == "Singleplayer")
                     {
-                        _Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
+                        mat = schaakbord.CheckMat(_computerSpeler.Koning);
+                        if (mat == true)
+                        {
+                            _Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
+                        }
+                    }
+                    else
+                    {
+                        _Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Blue;
+                        mat = schaakbord.CheckMat(_Speler2.Koning);
+                        if (mat == true)
+                        {
+                            _Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
+                        }
                     }
                 }
             }

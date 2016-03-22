@@ -52,7 +52,7 @@ namespace Schaakproject
             _spel = spel;
             _vorigvakje = _spel.selected;                   // slaat het door de speler geselecteerde vakje op
             _vorigschaakstuk = _spel.selected.schaakstuk;   // slaat het door de speler geselecteerde schaakstuk op     -- dit moet ook vanuit vorigvakje kunnen, scheelt code?
-            verplaatsingsLijst.Add(_spel.selected);     // slaat de positie van de spelerszet in lijst op 
+            verplaatsingsLijst.Add(_spel.selected);         // slaat de positie van de spelerszet in lijst op 
             bepaalMensPositie();
             controleerOpSlaan();
             bepaalRondeEnAntwoord();
@@ -101,9 +101,8 @@ namespace Schaakproject
 
         private void controleerOpSlaan()
         {
-            // Reset de slaan mogelijkheden
-            spelerkanslaan = false;
-            computerkanslaan = false;
+            // Reset de slaanmogelijkheden
+            slaanmogelijkheden.Clear();
 
             // Kijk nu per stuk of er geslagen kan worden door de mens
             foreach (Vakje kleurvakje in verplaatsingsLijst)
@@ -168,17 +167,17 @@ namespace Schaakproject
             // "French defense"
             if (_positieWest == 5 && _positieZuid == 4 && _vorigschaakstuk is Pion)
             {
-                Console.WriteLine("R0");
                 _tegenstandersopening = "French defense";
                 _tegenstanderstactiek = "midcontrol";
-                selected = Koning.vakje.buurOost.buurZuid;             // geselecteerd stuk
-                pictures = Koning.vakje.buurOost.buurZuid.buurZuid;    // geselecteerd vak
+                selected = Koning.vakje.buurZuid;             // geselecteerd stuk
+                pictures = Koning.vakje.buurZuid.buurZuid;    // geselecteerd vak
                 selected.pbox.BackColor = System.Drawing.Color.Black;
                 pictures.pbox.BackColor = System.Drawing.Color.Black;
                 voerZetUit();
             }
             else
             {
+                Console.WriteLine("ER IS GEEN OPENINGSZET, GA NAAR HET ALGORITME");
                 Algoritme();
             }
         }
@@ -190,11 +189,13 @@ namespace Schaakproject
 
             // Creert een percentage van 25% / 75% voor het verplaatsen van stukken bij geen slaan mogelijkheden
             Random rnd = new Random();
-            int percentage = rnd.Next(1, 4);
+            //int percentage = rnd.Next(1, 4);
+            int percentage = 1;
 
             // Bij slaanmogelijkheden
             if (slaanmogelijkheden.Count > 0)
             {
+                Console.WriteLine("SLA EEN STUK");
                 slaEenStuk();
             }
 
@@ -210,146 +211,198 @@ namespace Schaakproject
             // Verplaats een eerder verplaatst stuk
             else if (percentage == 2 || percentage == 3)
             {
-                verplaatsVerplaatstStuk();
+                //verplaatsVerplaatstStuk();
             }
         }
 
         private void slaEenStuk()
         {
-                Console.WriteLine("SLAANMOGELIJKHEDEN");
-                for (int i = 0; i < slaanmogelijkheden.Count; i++)
+            Console.WriteLine("METHODE SLAANMOGELIJKHEDEN");
+            for (int i = 0; i < slaanmogelijkheden.Count; i++)
+            {
+                Console.WriteLine("SLAANMOGELIJKHEDEN LOOP");
+                Schaakstuk schaakstuk = slaanmogelijkheden[i].schaakstuk;
+                slaanmogelijkheden[i].pbox.BackColor = System.Drawing.Color.Aqua;
+                if (schaakstuk is Koning && schaakstuk.kleur == "wit")
                 {
-                    Schaakstuk schaakstuk = slaanmogelijkheden[i].schaakstuk;
-                    slaanmogelijkheden[i].pbox.BackColor = System.Drawing.Color.Black;
-                    if (schaakstuk is Koning && schaakstuk.kleur == "wit")
-                    {
-                        selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
-                        pictures = slaanmogelijkheden[i];       // geselecteerd vak
-                        voerZetUit();
-                    }
-                    else if (schaakstuk is Dame && schaakstuk.kleur == "wit")
-                    {
-                        selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
-                        pictures = slaanmogelijkheden[i];       // geselecteerd vak
-                        voerZetUit();
-                    }
-                    else if (schaakstuk is Toren || schaakstuk is Paard || schaakstuk is Loper && schaakstuk.kleur == "wit")
-                    {
-                        selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
-                        pictures = slaanmogelijkheden[i];       // geselecteerd vak
-                        voerZetUit();
-                    }
-                    else if (schaakstuk is Pion && schaakstuk.kleur == "wit")
-                    {
-                        selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
-                        pictures = slaanmogelijkheden[i];       // geselecteerd vak
-                        voerZetUit();
-                    }
+                    selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
+                    pictures = slaanmogelijkheden[i];       // geselecteerd vak
+                    voerZetUit();
                 }
+                else if (schaakstuk is Dame && schaakstuk.kleur == "wit")
+                {
+                    selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
+                    pictures = slaanmogelijkheden[i];       // geselecteerd vak
+                    voerZetUit();
+                }
+                else if (schaakstuk is Toren || schaakstuk is Paard || schaakstuk is Loper && schaakstuk.kleur == "wit")
+                {
+                    selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
+                    pictures = slaanmogelijkheden[i];       // geselecteerd vak
+                    voerZetUit();
+                }
+                else if (schaakstuk is Pion && schaakstuk.kleur == "wit")
+                {
+                    selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
+                    selected.pbox.BackColor = System.Drawing.Color.Aqua;
+                    pictures = slaanmogelijkheden[i];       // geselecteerd vak
+                    voerZetUit();
+                }
+            }
         }
 
         private void verplaatsNieuwStuk()
         {
             Random rnd = new Random();
-            Console.WriteLine("DOE RANDOM");
             // Verdeelt het speelbord in 5 stukken d.m.v. random getal
             int randomgetal = rnd.Next(1, 6);
 
             // Linkerkantbord
             if (randomgetal == 1)
             {
+                Console.WriteLine("A");
                 int randomstuk = rnd.Next(1, 4);
-                if (randomstuk == 1)
+                if (randomstuk == 1 && Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null && Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.schaakstuk != null)
                 {
                     selected = Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid;                // geselecteerd stuk
+                    Console.WriteLine("A1");
                     pictures = Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
-                else if (randomstuk == 2)
+                else if (randomstuk == 2 && Koning.vakje.buurWest.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null && Koning.vakje.buurWest.buurWest.buurWest.buurZuid != null)
                 {
                     selected = Koning.vakje.buurWest.buurWest.buurWest.buurZuid;                // geselecteerd stuk
+                    Console.WriteLine("A2");
                     pictures = Koning.vakje.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
-                else
+                else if (randomstuk == 3 && Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null && Koning.vakje.buurWest.buurWest.buurWest != null)
                 {
                     selected = Koning.vakje.buurWest.buurWest.buurWest;                                   // geselecteerd stuk
+                    Console.WriteLine("A3");
                     pictures = Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
+                else
+                {
+                    Console.WriteLine("ALGO + " + randomstuk);
+                    Algoritme();
+                }
             }
+
             // Linksmiddenbord
             else if (randomgetal == 2)
             {
+                Console.WriteLine("B");
                 int randomstuk = rnd.Next(1, 3);
-                if (randomstuk == 1)
+                if (randomstuk == 1 && Koning.vakje.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null)
                 {
                     selected = Koning.vakje.buurWest.buurWest.buurWest;                // geselecteerd stuk
+                    Console.WriteLine("B1");
                     pictures = Koning.vakje.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
-                else if (randomstuk == 2)
+                else if (randomstuk == 2 && Koning.vakje.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null)
                 {
                     selected = Koning.vakje.buurWest.buurWest.buurZuid;                // geselecteerd stuk
+                    Console.WriteLine("B2");
                     pictures = Koning.vakje.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
-                    voerZetUit();
-                }
-            }
-            // Midden
-            else if (randomgetal == 3)
-            {
-                int randomstuk = rnd.Next(1, 3);
-                if (randomstuk == 1)
-                {
-                    selected = Koning.vakje.buurWest.buurZuid;                // geselecteerd stuk
-                    pictures = Koning.vakje.buurWest.buurZuid.buurZuid;      // geselecteerd vak
-                    voerZetUit();
-                }
-                else if (randomstuk == 2)
-                {
-                    selected = Koning.vakje.buurZuid;                // geselecteerd stuk
-                    pictures = Koning.vakje.buurZuid.buurZuid;      // geselecteerd vak
-                    voerZetUit();
-                }
-            }
-            // Rechtsmiddenbord
-            else if (randomgetal == 4)
-            {
-                int randomstuk = rnd.Next(1, 3);
-                if (randomstuk == 1)
-                {
-                    selected = Koning.vakje.buurWest.buurOost.buurOost;                // geselecteerd stuk
-                    pictures = Koning.vakje.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
-                    voerZetUit();
-                }
-                else if (randomstuk == 2)
-                {
-                    selected = Koning.vakje.buurOost.buurOost.buurZuid;                // geselecteerd stuk
-                    pictures = Koning.vakje.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
-                    voerZetUit();
-                }
-            }
-            // Rechterkantbord
-            else if (randomgetal == 5)
-            {
-                int randomstuk = rnd.Next(1, 4);
-                if (randomstuk == 1)
-                {
-                    selected = Koning.vakje.buurOost.buurOost.buurOost.buurOost.buurZuid;                // geselecteerd stuk
-                    pictures = Koning.vakje.buurOost.buurOost.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
-                    voerZetUit();
-                }
-                else if (randomstuk == 2)
-                {
-                    selected = Koning.vakje.buurOost.buurOost.buurOost.buurZuid;                // geselecteerd stuk
-                    pictures = Koning.vakje.buurOost.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
                 else
                 {
-                    selected = Koning.vakje.buurOost.buurOost.buurOost;                                   // geselecteerd stuk
-                    pictures = Koning.vakje.buurOost.buurOost.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
+                    Console.WriteLine("ALGO + " + randomstuk);
+                    Algoritme();
+                }
+            }
+
+            // Midden
+            else if (randomgetal == 3)
+            {
+                Console.WriteLine("C");
+                int randomstuk = rnd.Next(1, 3);
+                if (randomstuk == 1 && Koning.vakje.buurWest.buurZuid.buurZuid.schaakstuk == null)
+                {
+                    selected = Koning.vakje.buurWest.buurZuid;          // geselecteerd stuk
+                    pictures = Koning.vakje.buurWest.buurZuid.buurZuid; // geselecteerd vak
                     voerZetUit();
+                }
+                else if (randomstuk == 2 && Koning.vakje.buurZuid.buurZuid.schaakstuk == null)
+                {
+                    selected = Koning.vakje.buurZuid;           // geselecteerd stuk
+                    pictures = Koning.vakje.buurZuid.buurZuid;  // geselecteerd vak
+                    voerZetUit();
+                }
+                else
+                {
+                    Console.WriteLine("ALGO + " + randomstuk);
+                    Algoritme();
+                }
+            }
+
+            // Rechtsmiddenbord
+            else if (randomgetal == 4)
+            {
+                Console.WriteLine("D");
+                int randomstuk = rnd.Next(1, 3);
+                if (randomstuk == 1 && Koning.vakje.buurOost.buurZuid.buurZuid.schaakstuk == null)
+                {
+                    selected = Koning.vakje.buurOost;                   // geselecteerd stuk
+                    Console.WriteLine("D1");
+                    pictures = Koning.vakje.buurOost.buurZuid.buurZuid; // geselecteerd vak
+                    voerZetUit();
+                }
+                else if (randomstuk == 2 && Koning.vakje.buurOost.buurZuid.buurZuid.schaakstuk == null)
+                {
+                    selected = Koning.vakje.buurOost.buurOost;                // geselecteerd stuk
+                    Console.WriteLine("D2");
+                    pictures = Koning.vakje.buurOost.buurZuid.buurZuid;      // geselecteerd vak
+                    voerZetUit();
+                }
+                else
+                {
+                    Console.WriteLine("ALGO + " + randomstuk);
+                    Algoritme();
+                }
+            }
+
+            // Rechterkantbord
+            else if (randomgetal == 5)
+            {
+                Console.WriteLine("E");
+                int randomstuk = rnd.Next(1, 4);
+                if (randomstuk == 1 && Koning.vakje.buurOost.buurZuid.buurZuid.schaakstuk == null)
+                {
+                    selected = Koning.vakje.buurOost.buurZuid;                // geselecteerd stuk
+                    Console.WriteLine("E1");
+                    pictures = Koning.vakje.buurOost.buurZuid.buurZuid;      // geselecteerd vak
+                    voerZetUit();
+                }
+                else if (randomstuk == 2 && Koning.vakje.buurOost.buurOost.buurOost.buurZuid.buurZuid.schaakstuk == null)
+                {
+                    selected = Koning.vakje.buurOost.buurOost.buurOost.buurZuid;            // geselecteerd stuk
+                    Console.WriteLine("E2");
+                    pictures = Koning.vakje.buurOost.buurOost.buurOost.buurZuid.buurZuid;   // geselecteerd vak
+                    voerZetUit();
+                }
+                else if (randomstuk == 3 && Koning.vakje.buurOost.buurOost.buurOost.buurZuid.buurZuid.schaakstuk == null)
+                {
+                    selected = Koning.vakje.buurOost.buurOost;                              // geselecteerd stuk
+                    Console.WriteLine("E3");
+                    pictures = Koning.vakje.buurOost.buurOost.buurOost.buurZuid.buurZuid;   // geselecteerd vak
+                    voerZetUit();
+                }
+                else if (randomstuk == 4 && Koning.vakje.buurOost.buurOost.buurZuid.buurZuid.schaakstuk == null)
+                {
+                    selected = Koning.vakje.buurOost.buurOost.buurZuid;             // geselecteerd stuk
+                    Console.WriteLine("E4");
+                    pictures = Koning.vakje.buurOost.buurOost.buurZuid.buurZuid;    // geselecteerd vak
+                    voerZetUit();
+                }
+                else
+                {
+                    Console.WriteLine("ALGO + " + randomstuk);
+                    Algoritme();
                 }
             }
         }
@@ -362,7 +415,7 @@ namespace Schaakproject
             {
                 teller++;
 
-                // Dit stukje kijkt of er de teller niet of range gaat, dit gebeurd als bij alle mogelijke computerzetten de computer aangevallen kan worden
+                // Dit stukje kijkt of er de teller niet off range gaat, dit gebeurd als bij alle mogelijke computerzetten de computer aangevallen kan worden
                 if (teller == verplaatsingsLijst.Count)
                 {
                     verplaatsNieuwStuk();
