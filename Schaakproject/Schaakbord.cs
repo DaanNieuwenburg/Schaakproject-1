@@ -167,6 +167,7 @@ namespace Schaakproject
                     if (x == 2)
                     {
                         kleurstuk = "wit";
+                        voorDitStuk = Speler1;
                     }
                     for (int y = 0; y < 8; y++)
                     {
@@ -216,10 +217,12 @@ namespace Schaakproject
                                 schaakarray[x, y].schaakstuk = new Dame(kleurstuk, schaakarray[x, y], voorDitStuk);
                                 if (kleurstuk == "wit")
                                 {
+                                    
                                     aantal1++;
                                 }
                                 else
                                 {
+                                    
                                     aantal2++;
                                 }
                             }
@@ -229,10 +232,19 @@ namespace Schaakproject
                                 schaakarray[x, y].schaakstuk = new Koning(kleurstuk, schaakarray[x, y], voorDitStuk);
                                 if (kleurstuk == "wit")
                                 {
+                                    Spel._Speler1.Koning = schaakarray[x, y].schaakstuk as Koning;
                                     aantal1++;
                                 }
                                 else
                                 {
+                                    if (Spel._SpelMode == "Singleplayer")
+                                    {
+                                        Spel._computerSpeler.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                    }
+                                    else
+                                    {
+                                        Spel._Speler2.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                    }
                                     aantal2++;
                                 }
                             }
