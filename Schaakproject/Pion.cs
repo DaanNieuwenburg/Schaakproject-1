@@ -29,39 +29,29 @@ namespace Schaakproject
 
         public override void kanStukSlaan(Computer computer, Vakje geselecteerdStuk)
         {
-            /*Vakje geselecteerdVak = geselecteerdStuk;
-            if (geselecteerdVak.schaakstuk.kleur == "wit")
+            if (geselecteerdStuk.schaakstuk.kleur == "zwart")
             {
-                if (geselecteerdVak.buurNoordoost != null && geselecteerdVak.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
+                Vakje geselecteerdVak = geselecteerdStuk;
+                Console.WriteLine("CONTROLEERT");
+                if (geselecteerdVak.buurZuidoost != null && geselecteerdVak.buurZuidoost.schaakstuk != null && geselecteerdVak.buurZuidoost.schaakstuk.kleur == "wit")
                 {
-                    computer.spelerkanslaan = true;
+                    Console.WriteLine("FOUND OOST");
+                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurZuidoost);
+                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
-                else if (geselecteerdVak.buurNoordwest != null && geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
+                else if (geselecteerdVak.buurZuidwest != null && geselecteerdVak.buurZuidwest.schaakstuk != null && geselecteerdVak.buurZuidwest.schaakstuk.kleur == "wit")
                 {
-                    computer.computerkanslaan = true;
+                    Console.WriteLine("FOUND WEST");
+                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurZuidwest);
+                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
                 else
                 {
+                    Console.WriteLine("NOT FOUND");
                     computer.spelerkanslaan = false;
                     computer.computerkanslaan = false;
                 }
             }
-            else
-            {
-                if (geselecteerdVak.buurNoordwest != null && geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordwest.schaakstuk.kleur != "zwart")
-                {
-                    computer.spelerkanslaan = true;
-                }
-                else if (geselecteerdVak.buurNoordwest != null && geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordwest.schaakstuk.kleur != "zwart")
-                {
-                    computer.computerkanslaan = true;
-                }
-                else
-                {
-                    computer.spelerkanslaan = false;
-                    computer.computerkanslaan = false;
-                }
-            }*/
         }
 
         public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler, Spel spel)
@@ -151,12 +141,14 @@ namespace Schaakproject
                 // Slaan naar zuidoost voor een zwarte pion
                 else if (selected.buurZuidoost == nieuwVakje && kleur == "zwart" && nieuwVakje.schaakstuk != null)
                 {
+                    Console.WriteLine("ZUIDOOST SLAAN");
                     mogelijk = true;
                 }
 
                 // Slaan naar zuidwest voor een zwarte pion
                 else if (selected.buurZuidwest == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
+                    Console.WriteLine("ZUIDWEST SLAAN");
                     mogelijk = true;
                 }
 
@@ -198,17 +190,22 @@ namespace Schaakproject
 
                     }
                 }
-                if (selected.buurWest != null)
-                {
-                    //en-passant slaan naar zuidwest
-                    if (selected.buurZuidwest == nieuwVakje && _speler.enPassantPion == selected.buurWest.schaakstuk && _speler.enPassantPion != null)
-                    {
-                        locatie = true;
-                        tempPion = selected.buurWest.schaakstuk;
-                        selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
-                        selected.buurWest.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
-                        mogelijk = true;
 
+                // dit laat de SP crashen dus uit SP gehaald
+                if (spel._SpelMode == "Multiplayer")
+                {
+                    if (selected.buurWest != null)
+                    {
+                        //en-passant slaan naar zuidwest
+                        if (selected.buurZuidwest == nieuwVakje && _speler.enPassantPion == selected.buurWest.schaakstuk && _speler.enPassantPion != null)
+                        {
+                            locatie = true;
+                            tempPion = selected.buurWest.schaakstuk;
+                            selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
+                            selected.buurWest.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
+                            mogelijk = true;
+
+                        }
                     }
                 }
             }
@@ -230,7 +227,6 @@ namespace Schaakproject
                     {
                         if (locatie == false)
                         {
-
                             selected.buurOost.schaakstuk = tempPion;
                             selected.buurOost.pbox.update();
                         }

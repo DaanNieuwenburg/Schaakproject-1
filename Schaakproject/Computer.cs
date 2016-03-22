@@ -52,7 +52,7 @@ namespace Schaakproject
             _spel = spel;
             _vorigvakje = _spel.selected;                   // slaat het door de speler geselecteerde vakje op
             _vorigschaakstuk = _spel.selected.schaakstuk;   // slaat het door de speler geselecteerde schaakstuk op     -- dit moet ook vanuit vorigvakje kunnen, scheelt code?
-            verplaatsingsLijst.Add(_spel.selected);     // slaat de positie van de spelerszet in lijst op 
+            verplaatsingsLijst.Add(_spel.selected);         // slaat de positie van de spelerszet in lijst op 
             bepaalMensPositie();
             controleerOpSlaan();
             bepaalRondeEnAntwoord();
@@ -219,11 +219,12 @@ namespace Schaakproject
 
         private void slaEenStuk()
         {
-            Console.WriteLine("SLAANMOGELIJKHEDEN");
+            Console.WriteLine("METHODE SLAANMOGELIJKHEDEN");
             for (int i = 0; i < slaanmogelijkheden.Count; i++)
             {
+                Console.WriteLine("SLAANMOGELIJKHEDEN LOOP");
                 Schaakstuk schaakstuk = slaanmogelijkheden[i].schaakstuk;
-                slaanmogelijkheden[i].pbox.BackColor = System.Drawing.Color.Black;
+                slaanmogelijkheden[i].pbox.BackColor = System.Drawing.Color.Aqua;
                 if (schaakstuk is Koning && schaakstuk.kleur == "wit")
                 {
                     selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
@@ -244,7 +245,9 @@ namespace Schaakproject
                 }
                 else if (schaakstuk is Pion && schaakstuk.kleur == "wit")
                 {
+                    Console.WriteLine("Slaat Pion");
                     selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
+                    selected.pbox.BackColor = System.Drawing.Color.Aqua;
                     pictures = slaanmogelijkheden[i];       // geselecteerd vak
                     voerZetUit();
                 }
@@ -415,7 +418,7 @@ namespace Schaakproject
             {
                 teller++;
 
-                // Dit stukje kijkt of er de teller niet of range gaat, dit gebeurd als bij alle mogelijke computerzetten de computer aangevallen kan worden
+                // Dit stukje kijkt of er de teller niet off range gaat, dit gebeurd als bij alle mogelijke computerzetten de computer aangevallen kan worden
                 if (teller == verplaatsingsLijst.Count)
                 {
                     verplaatsNieuwStuk();
