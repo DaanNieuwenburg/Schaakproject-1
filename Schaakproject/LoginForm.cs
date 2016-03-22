@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -80,7 +80,7 @@ namespace Schaakproject
 
     private void btnReg_Click(object sender, EventArgs e)
     {
-        FormRegister Registerdialog = new FormRegister(database);
+        FormRegister Registerdialog = new FormRegister();
         Registerdialog.ShowDialog();
     }
 
@@ -89,4 +89,4 @@ namespace Schaakproject
 
     }
 }
-}*/
+}
