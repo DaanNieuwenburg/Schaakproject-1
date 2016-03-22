@@ -7,8 +7,10 @@ namespace Schaakproject
 {
     public class Koning : Schaakstuk
     {
+        private Vakje _vorigvakje { get; set; }
         private bool _staatschaak { get; set; }     //Staat de koning schaak
         private bool _eersteZet { get; set; }       //Is de koning al verzet
+        private int _positiewest { get; set; }
         private bool _wilRokeren { get; set; }      //Als je op ja drukt als er gevraagd wordt of je wilt rokeren
 
         public Koning(string kleur, Vakje vakje, Speler speler)
@@ -31,6 +33,7 @@ namespace Schaakproject
 
         public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler, Spel spel)
         {
+
             bool gevonden = false;
             if (selected.buurNoord == nieuwVakje)
             {
@@ -87,15 +90,18 @@ namespace Schaakproject
 
         public void Rokeren(Vakje vakjeToren, Vakje vakjeKoning, Mens speler, Spel spel)
         {
+            Schaakstuk tempToren = vakjeToren.schaakstuk;
             if (spel._Variant == "Klassiek")
             {
-                Schaakstuk tempToren = vakjeToren.schaakstuk;
+                
+                bool veldenLeeg = false;
                 _wilRokeren = false;
                 if (vakjeToren.buurOost == null)
                 {
                     //check of rokeren mogelijk is
                     if (_eersteZet == false && (vakjeToren.schaakstuk as Toren)._eersteZet == false && vakjeToren.buurWest.schaakstuk == null && vakjeToren.buurWest.buurWest.schaakstuk == null)
                     {
+                        veldenLeeg = true;
                         bool checkschaak = spel.schaakbord.CheckSchaak(speler.Koning);
                         if (checkschaak == false)
                         {
@@ -151,12 +157,15 @@ namespace Schaakproject
                     }
                     else
                     {
-                        this.vakje = vakjeKoning;
-                        tempToren.vakje = vakjeToren;
-                        vakjeKoning.schaakstuk = this;
-                        vakjeToren.schaakstuk = tempToren;
-                        vakjeKoning.buurOost.buurOost.schaakstuk = null;
-                        vakjeKoning.buurOost.schaakstuk = null;
+                        if (veldenLeeg == true)
+                        {
+                            this.vakje = vakjeKoning;
+                            tempToren.vakje = vakjeToren;
+                            vakjeKoning.schaakstuk = this;
+                            vakjeToren.schaakstuk = tempToren;
+                            vakjeKoning.buurOost.buurOost.schaakstuk = null;
+                            vakjeKoning.buurOost.schaakstuk = null;
+                        }
                     }
                 }
 
@@ -220,126 +229,80 @@ namespace Schaakproject
                         this.vakje.buurWest.buurWest.pbox.update();
                         this.vakje.buurWest.pbox.update();
                         this.vakje.buurOost.pbox.update();
+                        this.vakje.buurOost.buurOost.pbox.update();
 
                         speler.validezet = true;
                         _eersteZet = true;
                     }
                     else
                     {
-                        this.vakje = vakjeKoning;
-                        tempToren.vakje = vakjeToren;
-                        vakjeKoning.schaakstuk = this;
-                        vakjeToren.schaakstuk = tempToren;
-                        vakjeKoning.buurWest.buurWest.schaakstuk = null;
-                        vakjeKoning.buurWest.schaakstuk = null;
-                        vakjeToren.buurOost.schaakstuk = null;
+                        if (veldenLeeg == true)
+                        {
+                            this.vakje = vakjeKoning;
+                            tempToren.vakje = vakjeToren;
+                            vakjeKoning.schaakstuk = this;
+                            vakjeToren.schaakstuk = tempToren;
+                            vakjeKoning.buurWest.buurWest.schaakstuk = null;
+                            vakjeKoning.buurWest.schaakstuk = null;
+                            vakjeToren.buurOost.schaakstuk = null;
+                        }
                     }
                 }
             }
             else if (spel._Variant == "Chess960")
             {
-                Schaakstuk tempToren = vakjeToren.schaakstuk;
-                _wilRokeren = false;
-                if (vakjeToren.buurOost == null)
+                _vorigvakje = spel.selected;
+                bool buurwest = false;
+                bool torenwestgevonden = false;
+                bool veldenLeeg = false;
+                int westteller = 0;
+                while (buurwest == false)
                 {
-                    //check of rokeren mogelijk is
-                    if (_eersteZet == false && (vakjeToren.schaakstuk as Toren)._eersteZet == false && vakjeToren.buurWest.schaakstuk == null && vakjeToren.buurWest.buurWest.schaakstuk == null)
+                    if (buurwest == false && _vorigvakje != null)
                     {
-                        bool checkschaak = spel.schaakbord.CheckSchaak(speler.Koning);
-                        if (checkschaak == false)
-                        {
-                            this.vakje = vakjeKoning.buurOost;
-                            vakjeKoning.buurOost.schaakstuk = this;
-                            vakjeKoning.schaakstuk = null;
+                        _vorigvakje = _vorigvakje.buurWest;
+                        westteller++;
+                        Console.WriteLine(westteller);
 
-                            checkschaak = spel.schaakbord.CheckSchaak(speler.Koning);
-                            if (checkschaak == false)
-                            {
-                                this.vakje = vakjeKoning.buurOost.buurOost;
-                                vakjeKoning.buurOost.buurOost.schaakstuk = this;
-                                vakjeKoning.buurOost.schaakstuk = null;
-
-                                checkschaak = spel.schaakbord.CheckSchaak(speler.Koning);
-                                if (checkschaak == false)
-                                {
-                                    this.vakje = vakjeKoning.buurOost.buurOost.buurOost;
-                                    vakjeKoning.buurOost.buurOost.buurOost.schaakstuk = this;
-                                    vakjeKoning.buurOost.buurOost.schaakstuk = null;
-
-                                    checkschaak = spel.schaakbord.CheckSchaak(speler.Koning);
-                                    if (checkschaak == false)
-                                    {
-                                        // popup voor rokeren
-                                        Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
-                                        _Rokerenmelding.ShowDialog();
-
-                                    }
-                                }
-                            }
-                        }
                     }
-
-                    if (_wilRokeren == true)
+                    else if (_vorigvakje == vakjeToren)
                     {
-                        this.vakje = vakjeKoning.buurOost.buurOost;
-                        vakjeKoning.buurOost.buurOost.schaakstuk = this;
-
-                        tempToren.vakje = vakjeKoning.buurOost;
-                        vakjeKoning.buurOost.schaakstuk = tempToren;
-
-                        vakjeKoning.schaakstuk = null;
-                        vakjeToren.schaakstuk = null;
-
-                        this.vakje.pbox.update();
-                        this.vakje.buurWest.buurWest.pbox.update();
-                        this.vakje.buurWest.pbox.update();
-                        this.vakje.buurOost.pbox.update();
-
-                        speler.validezet = true;
-                        _eersteZet = true;
+                        buurwest = true;
+                        _positiewest = westteller;
+                        torenwestgevonden = true;
                     }
                     else
                     {
-                        this.vakje = vakjeKoning;
-                        tempToren.vakje = vakjeToren;
-                        vakjeKoning.schaakstuk = this;
-                        vakjeToren.schaakstuk = tempToren;
-                        vakjeKoning.buurOost.buurOost.schaakstuk = null;
-                        vakjeKoning.buurOost.schaakstuk = null;
+                        buurwest = true;
+                        _positiewest = westteller;
                     }
-                }
 
-                else if (vakjeToren.buurWest == null)
-                {
-                    if (_eersteZet == false && (vakjeToren.schaakstuk as Toren)._eersteZet == false && vakjeToren.buurOost.schaakstuk == null && vakjeToren.buurOost.buurOost.schaakstuk == null && vakjeToren.buurOost.buurOost.buurOost.schaakstuk == null)
+                    _wilRokeren = false;
+                    if (vakjeToren.buurOost == null)
                     {
-                        bool checkschaak = spel.schaakbord.CheckSchaak(speler.Koning);
-                        if (checkschaak == false)
+                        //check of rokeren mogelijk is
+                        if (_eersteZet == false && (vakjeToren.schaakstuk as Toren)._eersteZet == false && veldenLeeg == true)
                         {
-                            this.vakje = vakjeKoning.buurWest;
-                            vakjeKoning.buurWest.schaakstuk = this;
-                            vakjeKoning.schaakstuk = null;
-
-                            checkschaak = spel.schaakbord.CheckSchaak(speler.Koning);
+                            bool checkschaak = spel.schaakbord.CheckSchaak(speler.Koning);
                             if (checkschaak == false)
                             {
-                                this.vakje = vakjeKoning.buurWest.buurWest;
-                                vakjeKoning.buurWest.buurWest.schaakstuk = this;
-                                vakjeKoning.buurWest.schaakstuk = null;
+                                this.vakje = vakjeKoning.buurOost;
+                                vakjeKoning.buurOost.schaakstuk = this;
+                                vakjeKoning.schaakstuk = null;
 
                                 checkschaak = spel.schaakbord.CheckSchaak(speler.Koning);
                                 if (checkschaak == false)
                                 {
-                                    this.vakje = vakjeKoning.buurWest.buurWest.buurWest;
-                                    vakjeKoning.buurWest.buurWest.buurWest.schaakstuk = this;
-                                    vakjeKoning.buurWest.buurWest.schaakstuk = null;
+                                    this.vakje = vakjeKoning.buurOost.buurOost;
+                                    vakjeKoning.buurOost.buurOost.schaakstuk = this;
+                                    vakjeKoning.buurOost.schaakstuk = null;
 
                                     checkschaak = spel.schaakbord.CheckSchaak(speler.Koning);
                                     if (checkschaak == false)
                                     {
-                                        this.vakje = vakjeKoning.buurWest.buurWest.buurWest.buurWest;
-                                        vakjeKoning.buurWest.buurWest.buurWest.buurWest.schaakstuk = this;
-                                        vakjeKoning.buurWest.buurWest.buurWest.schaakstuk = null;
+                                        this.vakje = vakjeKoning.buurOost.buurOost.buurOost;
+                                        vakjeKoning.buurOost.buurOost.buurOost.schaakstuk = this;
+                                        vakjeKoning.buurOost.buurOost.schaakstuk = null;
 
                                         checkschaak = spel.schaakbord.CheckSchaak(speler.Koning);
                                         if (checkschaak == false)
@@ -347,46 +310,105 @@ namespace Schaakproject
                                             // popup voor rokeren
                                             Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
                                             _Rokerenmelding.ShowDialog();
+
                                         }
                                     }
                                 }
                             }
                         }
+
+                        if (_wilRokeren == true)
+                        {
+                            this.vakje = vakjeKoning.buurOost.buurOost;
+                            vakjeKoning.buurOost.buurOost.schaakstuk = this;
+
+                            tempToren.vakje = vakjeKoning.buurOost;
+                            vakjeKoning.buurOost.schaakstuk = tempToren;
+
+                            vakjeKoning.schaakstuk = null;
+                            vakjeToren.schaakstuk = null;
+
+                            this.vakje.pbox.update();
+                            this.vakje.buurWest.buurWest.pbox.update();
+                            this.vakje.buurWest.pbox.update();
+                            this.vakje.buurOost.pbox.update();
+
+                            speler.validezet = true;
+                            _eersteZet = true;
+                        }
+                        else
+                        {
+                            this.vakje = vakjeKoning;
+                            tempToren.vakje = vakjeToren;
+                            vakjeKoning.schaakstuk = this;
+                            vakjeToren.schaakstuk = tempToren;
+                            vakjeKoning.buurOost.buurOost.schaakstuk = null;
+                            vakjeKoning.buurOost.schaakstuk = null;
+                        }
                     }
-                    if (_wilRokeren == true)
+
+                    else if (torenwestgevonden == true)
                     {
-                        this.vakje = vakjeKoning.buurWest.buurWest;
-                        vakjeKoning.buurWest.buurWest.schaakstuk = this;
+                        for (int i = 0; i < westteller;)
+                        {
+                            if (_vorigvakje.schaakstuk == null)
+                            {
+                                _vorigvakje = _vorigvakje.buurOost;
+                                i++;
+                            }
+                            else if (_vorigvakje.schaakstuk == null && westteller == i)
+                            {
+                                veldenLeeg = true;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                        if (_eersteZet == false && (vakjeToren.schaakstuk as Toren)._eersteZet == false && veldenLeeg == true)
+                        {
 
-                        tempToren.vakje = vakjeKoning.buurWest;
-                        vakjeKoning.buurWest.schaakstuk = tempToren;
+                            // popup voor rokeren
+                            Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
+                            _Rokerenmelding.ShowDialog();
 
-                        vakjeToren.buurOost.schaakstuk = null;
-                        vakjeKoning.schaakstuk = null;
-                        vakjeToren.schaakstuk = null;
-
-                        this.vakje.pbox.update();
-                        this.vakje.buurWest.buurWest.pbox.update();
-                        this.vakje.buurWest.pbox.update();
-                        this.vakje.buurOost.pbox.update();
-
-                        speler.validezet = true;
-                        _eersteZet = true;
-                    }
-                    else
-                    {
-                        this.vakje = vakjeKoning;
-                        tempToren.vakje = vakjeToren;
-                        vakjeKoning.schaakstuk = this;
-                        vakjeToren.schaakstuk = tempToren;
-                        vakjeKoning.buurWest.buurWest.schaakstuk = null;
-                        vakjeKoning.buurWest.schaakstuk = null;
-                        vakjeToren.buurOost.schaakstuk = null;
+                        }
                     }
                 }
             }
 
+            if (_wilRokeren == true)
+            {
+                this.vakje = vakjeKoning.buurWest.buurWest;
+                vakjeKoning.buurWest.buurWest.schaakstuk = this;
+
+                tempToren.vakje = vakjeKoning.buurWest;
+                vakjeKoning.buurWest.schaakstuk = tempToren;
+
+                vakjeToren.buurOost.schaakstuk = null;
+                vakjeKoning.schaakstuk = null;
+                vakjeToren.schaakstuk = null;
+
+                this.vakje.pbox.update();
+                this.vakje.buurWest.buurWest.pbox.update();
+                this.vakje.buurWest.pbox.update();
+                this.vakje.buurOost.pbox.update();
+
+                speler.validezet = true;
+                _eersteZet = true;
+            }
+            else
+            {
+                this.vakje = vakjeKoning;
+                tempToren.vakje = vakjeToren;
+                vakjeKoning.schaakstuk = this;
+                vakjeToren.schaakstuk = tempToren;
+                vakjeKoning.buurWest.buurWest.schaakstuk = null;
+                vakjeKoning.buurWest.schaakstuk = null;
+                vakjeToren.buurOost.schaakstuk = null;
+            }
         }
+
 
         public void Wilrokeren()
         {

@@ -31,7 +31,7 @@ namespace Schaakproject
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            
             database.Login();
             //username = database.Username[0].ToString();
             //password = database.Password[0].ToString();
@@ -73,20 +73,20 @@ namespace Schaakproject
                 else
                 {
                     break;
-                }
+                }             
             }
         }
+            
 
-
-        private void btnReg_Click(object sender, EventArgs e)
-        {
+    private void btnReg_Click(object sender, EventArgs e)
+    {
             //FormRegister Registerdialog = new FormRegister(database);
             //Registerdialog.ShowDialog();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
+
+    private void MainForm_Load(object sender, EventArgs e)
+    {
+
+    }
+}
 }
