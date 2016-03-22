@@ -134,7 +134,7 @@ namespace Schaakproject
                                 else
                                 {
                                     aantal2++;
-                                    if(Spel._SpelMode == "Singleplayer")
+                                    if (Spel._SpelMode == "Singleplayer")
                                     {
                                         Spel._computerSpeler.Koning = schaakarray[x, y].schaakstuk as Koning;
                                     }
@@ -217,12 +217,12 @@ namespace Schaakproject
                                 schaakarray[x, y].schaakstuk = new Dame(kleurstuk, schaakarray[x, y], voorDitStuk);
                                 if (kleurstuk == "wit")
                                 {
-                                    
+
                                     aantal1++;
                                 }
                                 else
                                 {
-                                    
+
                                     aantal2++;
                                 }
                             }
@@ -600,7 +600,7 @@ namespace Schaakproject
             //kijk of er noord een koning staat
             if (vorige.buurNoord != null)
             {
-                if(vorige.buurNoord.schaakstuk is Koning)
+                if (vorige.buurNoord.schaakstuk is Koning)
                 {
                     staatschaak = true;
                 }
@@ -700,9 +700,131 @@ namespace Schaakproject
             return staatschaak;
         }
 
-        private void CheckMat()
+        public bool CheckMat(Koning koning)
         {
-            throw new System.NotImplementedException();
+            bool mat = true;
+            bool mogelijk = false;
+            
+            Schaakstuk bewaar = null;
+            Vakje beginvakje = koning.vakje;
+
+            //bekijk of de koning schaak staat als hij naar noord zou bewegen
+            if (beginvakje.buurNoord != null)
+            {
+                if (beginvakje.buurNoord.schaakstuk == null)
+                {
+                    mogelijk = true;
+                }
+                else if (beginvakje.buurNoord.schaakstuk.kleur != koning.kleur)
+                {
+                    mogelijk = true;
+                }
+
+                if (mogelijk == true)
+                {
+                    bewaar = beginvakje.buurNoord.schaakstuk;
+                    koning.vakje = beginvakje.buurNoord;
+                    beginvakje.buurNoord.schaakstuk = koning;
+                    beginvakje.schaakstuk = null;
+
+                    bool checkschaak = CheckSchaak(koning);
+                    if (checkschaak == false)
+                    {
+                        mat = false;
+                    }
+                    koning.vakje = beginvakje;
+                    beginvakje.buurNoord.schaakstuk = bewaar;
+                    beginvakje.schaakstuk = koning;
+                }
+                mogelijk = false;
+            }
+            //bekijk of de koning schaak staat als hij naar oost zou bewegen
+            if (beginvakje.buurOost != null)
+            {
+                if (beginvakje.buurOost.schaakstuk == null)
+                {
+                    mogelijk = true;
+                }
+                else if (beginvakje.buurOost.schaakstuk.kleur != koning.kleur)
+                {
+                    mogelijk = true;
+                }
+                if (mogelijk == true)
+                {
+                    bewaar = beginvakje.buurOost.schaakstuk;
+                    koning.vakje = beginvakje.buurOost;
+                    beginvakje.buurOost.schaakstuk = koning;
+                    beginvakje.schaakstuk = null;
+
+                    bool checkschaak = CheckSchaak(koning);
+                    if (checkschaak == false)
+                    {
+                        mat = false;
+                    }
+                    koning.vakje = beginvakje;
+                    beginvakje.buurOost.schaakstuk = bewaar;
+                    beginvakje.schaakstuk = koning;
+                }
+                mogelijk = false;
+            }
+            //bekijk of de koning schaak staat als hij naar zuid zou bewegen
+            if (beginvakje.buurZuid != null)
+            {
+                if (beginvakje.buurZuid.schaakstuk == null)
+                {
+                    mogelijk = true;
+                }
+                else if (beginvakje.buurZuid.schaakstuk.kleur != koning.kleur)
+                {
+                    mogelijk = true;
+                }
+                if (mogelijk == true)
+                {
+                    bewaar = beginvakje.buurZuid.schaakstuk;
+                    koning.vakje = beginvakje.buurZuid;
+                    beginvakje.buurZuid.schaakstuk = koning;
+                    beginvakje.schaakstuk = null;
+
+                    bool checkschaak = CheckSchaak(koning);
+                    if (checkschaak == false)
+                    {
+                        mat = false;
+                    }
+                    koning.vakje = beginvakje;
+                    beginvakje.buurZuid.schaakstuk = bewaar;
+                    beginvakje.schaakstuk = koning;
+                }
+                mogelijk = false;
+            }
+            //bekijk of de koning schaak staat als hij naar west zou bewegen
+            if (beginvakje.buurWest != null)
+            {
+                if (beginvakje.buurWest.schaakstuk == null)
+                {
+                    mogelijk = true;
+                }
+                else if (beginvakje.buurWest.schaakstuk.kleur != koning.kleur)
+                {
+                    mogelijk = true;
+                }
+                if (mogelijk == true)
+                {
+                    bewaar = beginvakje.buurWest.schaakstuk;
+                    koning.vakje = beginvakje.buurWest;
+                    beginvakje.buurWest.schaakstuk = koning;
+                    beginvakje.schaakstuk = null;
+
+                    bool checkschaak = CheckSchaak(koning);
+                    if (checkschaak == false)
+                    {
+                        mat = false;
+                    }
+                    koning.vakje = beginvakje;
+                    beginvakje.buurWest.schaakstuk = bewaar;
+                    beginvakje.schaakstuk = koning;
+                }
+            }
+            return mat;
         }
     }
 }

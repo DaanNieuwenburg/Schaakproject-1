@@ -73,15 +73,38 @@ namespace Schaakproject
 
         public void VeranderSpeler()
         {
+            bool schaak;
+            bool mat;
             Console.WriteLine("VeranderSpeler");
             if (spelerAanZet == _Speler1)
             {
                 spelerAanZet = _Speler2;
+                schaak = schaakbord.CheckSchaak(_Speler2.Koning);
+                if (schaak == true)
+                {
+                    _Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Blue;
+                    mat = schaakbord.CheckMat(_Speler2.Koning);
+                    if (mat == true)
+                    {
+                        _Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
+                    }
+                }
             }
             else
             {
                 spelerAanZet = _Speler1;
+                schaak = schaakbord.CheckSchaak(_Speler1.Koning);
+                if (schaak == true)
+                {
+                    _Speler1.Koning.vakje.pbox.BackColor = System.Drawing.Color.Blue;
+                    mat = schaakbord.CheckMat(_Speler1.Koning);
+                    if (mat == true)
+                    {
+                        _Speler1.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
+                    }
+                }
             }
+            
         }
         public void controleerOpSchaak()
         {
