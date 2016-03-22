@@ -8,6 +8,7 @@ namespace Schaakproject
     public class Koning : Schaakstuk
     {
         private Vakje _vorigvakje { get; set; }
+        private Vakje _vorigwest { get; set; }
         private bool _staatschaak { get; set; }     //Staat de koning schaak
         private bool _eersteZet { get; set; }       //Is de koning al verzet
         private int _positiewest { get; set; }
@@ -16,6 +17,7 @@ namespace Schaakproject
 
         public Koning(string kleur, Vakje vakje, Speler speler)
         {
+            
             this.kleur = kleur;
             this.vakje = vakje;
             if (kleur == "wit")
@@ -91,6 +93,7 @@ namespace Schaakproject
 
         public void Rokeren(Vakje vakjeToren, Vakje vakjeKoning, Mens speler, Spel spel)
         {
+            _vorigvakje = spel.selected;
             Schaakstuk tempToren = vakjeToren.schaakstuk;
             if (spel._Variant == "Klassiek")
             {
@@ -261,7 +264,6 @@ namespace Schaakproject
                     if (_vorigvakje.schaakstuk == null)
                     {
                         _vorigvakje = _vorigvakje.buurWest;
-                        i++;
                         _magRokeren = true;
                     }
                 }
@@ -274,9 +276,10 @@ namespace Schaakproject
                         {
                             _vorigvakje = _vorigvakje.buurWest;
                             i++;
-                            _magRokeren = true;
+                            
                         }
                     }
+                    _magRokeren = true;
                 }
                 else if (vakjeKoning.buurWest.buurWest.buurWest == vakjeToren)
                 {
@@ -287,9 +290,10 @@ namespace Schaakproject
                         {
                             _vorigvakje = _vorigvakje.buurWest;
                             i++;
-                            _magRokeren = true;
+
                         }
                     }
+                    _magRokeren = true;
                 }
                 else if (vakjeKoning.buurWest.buurWest.buurWest.buurWest == vakjeToren)
                 {
@@ -300,9 +304,9 @@ namespace Schaakproject
                         {
                             _vorigvakje = _vorigvakje.buurWest;
                             i++;
-                            _magRokeren = true;
                         }
                     }
+                    _magRokeren = true;
                 }
                 else if (vakjeKoning.buurWest.buurWest.buurWest.buurWest.buurWest == vakjeToren)
                 {
@@ -313,9 +317,9 @@ namespace Schaakproject
                         {
                             _vorigvakje = _vorigvakje.buurWest;
                             i++;
-                            _magRokeren = true;
                         }
                     }
+                    _magRokeren = true;
                 }
                 else if (vakjeKoning.buurWest.buurWest.buurWest.buurWest.buurWest.buurWest == vakjeToren)
                 {
@@ -326,9 +330,9 @@ namespace Schaakproject
                         {
                             _vorigvakje = _vorigvakje.buurWest;
                             i++;
-                            _magRokeren = true;
                         }
                     }
+                    _magRokeren = true;
                 }
                 else if (vakjeKoning.buurWest.buurWest.buurWest.buurWest.buurWest.buurWest.buurWest == vakjeToren)
                 {
@@ -339,115 +343,115 @@ namespace Schaakproject
                         {
                             _vorigvakje = _vorigvakje.buurWest;
                             i++;
-                            _magRokeren = true;
                         }
                     }
+                    _magRokeren = true;
                 }
 
                 // voor oost
                 int aantalplaatsenoost = 0;
-                if (vakjeKoning.buurWest == vakjeToren)
+                if (vakjeKoning.buurOost == vakjeToren)
                 {
                     aantalplaatsenoost = 1;
                     if (_vorigvakje.schaakstuk == null)
                     {
-                        _vorigvakje = _vorigvakje.buurWest;
+                        _vorigvakje = _vorigvakje.buurOost;
                         i++;
                         _magRokeren = true;
                     }
                 }
-                else if (vakjeKoning.buurWest.buurWest == vakjeToren)
+                else if (vakjeKoning.buurOost.buurOost == vakjeToren)
                 {
                     aantalplaatsenoost = 2;
                     while (i < aantalplaatsenoost)
                     {
                         if (_vorigvakje.schaakstuk == null)
                         {
-                            _vorigvakje = _vorigvakje.buurWest;
+                            _vorigvakje = _vorigvakje.buurOost;
                             i++;
                             _magRokeren = true;
                         }
                     }
                 }
-                else if (vakjeKoning.buurWest.buurWest.buurWest == vakjeToren)
+                else if (vakjeKoning.buurOost.buurOost.buurOost == vakjeToren)
                 {
                     aantalplaatsenoost = 3;
                     while (i < aantalplaatsenoost)
                     {
                         if (_vorigvakje.schaakstuk == null)
                         {
-                            _vorigvakje = _vorigvakje.buurWest;
+                            _vorigvakje = _vorigvakje.buurOost;
                             i++;
                             _magRokeren = true;
 
                         }
                     }
                 }
-                else if (vakjeKoning.buurWest.buurWest.buurWest.buurWest == vakjeToren)
+                else if (vakjeKoning.buurOost.buurOost.buurOost.buurOost == vakjeToren)
                 {
                     aantalplaatsenoost = 4;
                     while (i < aantalplaatsenoost)
                     {
                         if (_vorigvakje.schaakstuk == null)
                         {
-                            _vorigvakje = _vorigvakje.buurWest;
+                            _vorigvakje = _vorigvakje.buurOost;
                             i++;
                             _magRokeren = true;
                         }
                     }
                 }
-                else if (vakjeKoning.buurWest.buurWest.buurWest.buurWest.buurWest == vakjeToren)
+                else if (vakjeKoning.buurOost.buurOost.buurOost.buurOost.buurOost == vakjeToren)
                 {
                     aantalplaatsenoost = 5;
                     while (i < aantalplaatsenoost)
                     {
                         if (_vorigvakje.schaakstuk == null)
                         {
-                            _vorigvakje = _vorigvakje.buurWest;
+                            _vorigvakje = _vorigvakje.buurOost;
                             i++;
                             _magRokeren = true;
                         }
                     }
                 }
-                else if (vakjeKoning.buurWest.buurWest.buurWest.buurWest.buurWest.buurWest == vakjeToren)
+                else if (vakjeKoning.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost == vakjeToren)
                 {
                     aantalplaatsenoost = 6;
                     while (i < aantalplaatsenoost)
                     {
                         if (_vorigvakje.schaakstuk == null)
                         {
-                            _vorigvakje = _vorigvakje.buurWest;
+                            _vorigvakje = _vorigvakje.buurOost;
                             i++;
                             _magRokeren = true;
                         }
                     }
                 }
-                else if (vakjeKoning.buurWest.buurWest.buurWest.buurWest.buurWest.buurWest.buurWest == vakjeToren)
+                else if (vakjeKoning.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost == vakjeToren)
                 {
                     aantalplaatsenoost = 7;
                     while (i < aantalplaatsenoost)
                     {
                         if (_vorigvakje.schaakstuk == null)
                         {
-                            _vorigvakje = _vorigvakje.buurWest;
+                            _vorigvakje = _vorigvakje.buurOost;
                             i++;
                             _magRokeren = true;
                         }
                     }
                 }
-
+                
+                int west = 0;
+                while (_vorigwest != null)
+                {
+                    _vorigwest = _vorigwest.buurWest;
+                    west++;
+                    
+                }
+                Console.WriteLine("west: " + west);
                 if (_wilRokeren == true && _magRokeren == true)
                 {
-                    this.vakje = vakjeKoning.buurWest.buurWest;
-                    vakjeKoning.buurWest.buurWest.schaakstuk = this;
-
-                    tempToren.vakje = vakjeKoning.buurWest;
-                    vakjeKoning.buurWest.schaakstuk = tempToren;
-
-                    vakjeToren.buurOost.schaakstuk = null;
-                    vakjeKoning.schaakstuk = null;
-                    vakjeToren.schaakstuk = null;
-
+                    int j = 0;
+                    
                     this.vakje.pbox.update();
                     this.vakje.buurWest.buurWest.pbox.update();
                     this.vakje.buurWest.pbox.update();
@@ -459,9 +463,7 @@ namespace Schaakproject
                 else
                 {
                     this.vakje = vakjeKoning;
-                    tempToren.vakje = vakjeToren;
                     vakjeKoning.schaakstuk = this;
-                    vakjeToren.schaakstuk = tempToren;
                     vakjeKoning.buurWest.buurWest.schaakstuk = null;
                     vakjeKoning.buurWest.schaakstuk = null;
                     vakjeToren.buurOost.schaakstuk = null;
