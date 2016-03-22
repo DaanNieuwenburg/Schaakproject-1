@@ -101,9 +101,8 @@ namespace Schaakproject
 
         private void controleerOpSlaan()
         {
-            // Reset de slaan mogelijkheden
-            spelerkanslaan = false;
-            computerkanslaan = false;
+            // Reset de slaanmogelijkheden
+            slaanmogelijkheden.Clear();
 
             // Kijk nu per stuk of er geslagen kan worden door de mens
             foreach (Vakje kleurvakje in verplaatsingsLijst)
@@ -168,11 +167,10 @@ namespace Schaakproject
             // "French defense"
             if (_positieWest == 5 && _positieZuid == 4 && _vorigschaakstuk is Pion)
             {
-                Console.WriteLine("R0");
                 _tegenstandersopening = "French defense";
                 _tegenstanderstactiek = "midcontrol";
-                selected = Koning.vakje.buurOost.buurZuid;             // geselecteerd stuk
-                pictures = Koning.vakje.buurOost.buurZuid.buurZuid;    // geselecteerd vak
+                selected = Koning.vakje.buurZuid;             // geselecteerd stuk
+                pictures = Koning.vakje.buurZuid.buurZuid;    // geselecteerd vak
                 selected.pbox.BackColor = System.Drawing.Color.Black;
                 pictures.pbox.BackColor = System.Drawing.Color.Black;
                 voerZetUit();
@@ -245,7 +243,6 @@ namespace Schaakproject
                 }
                 else if (schaakstuk is Pion && schaakstuk.kleur == "wit")
                 {
-                    Console.WriteLine("Slaat Pion");
                     selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
                     selected.pbox.BackColor = System.Drawing.Color.Aqua;
                     pictures = slaanmogelijkheden[i];       // geselecteerd vak

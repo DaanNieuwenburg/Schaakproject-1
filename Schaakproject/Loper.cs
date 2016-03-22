@@ -34,7 +34,7 @@ namespace Schaakproject
                     }
                     else
                     {
-                        if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur != geselecteerdStuk.schaakstuk.kleur)
+                        if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
                         {
                             Console.WriteLine("FOUND");
                             mogelijkloop = true;
@@ -46,6 +46,7 @@ namespace Schaakproject
                         {
                             mogelijkloop = true;
                         }
+                        volgendVakje.pbox.BackColor = System.Drawing.Color.Brown;
                         volgendVakje = volgendVakje.buurNoordwest;
                     }
                 }
@@ -60,7 +61,7 @@ namespace Schaakproject
                     }
                     else
                     {
-                        if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur != geselecteerdStuk.schaakstuk.kleur)
+                        if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
                         {
                             Console.WriteLine("FOUND");
                             mogelijkloop = true;
@@ -72,6 +73,7 @@ namespace Schaakproject
                         {
                             mogelijkloop = true;
                         }
+                        volgendVakje.pbox.BackColor = System.Drawing.Color.Brown;
                         volgendVakje = volgendVakje.buurNoordoost;
                     }
                 }
@@ -86,7 +88,7 @@ namespace Schaakproject
                     }
                     else
                     {
-                        if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur != geselecteerdStuk.schaakstuk.kleur)
+                        if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
                         {
                             Console.WriteLine("FOUND");
                             mogelijkloop = true;
@@ -98,6 +100,7 @@ namespace Schaakproject
                         {
                             mogelijkloop = true;
                         }
+                        volgendVakje.pbox.BackColor = System.Drawing.Color.Brown;
                         volgendVakje = volgendVakje.buurZuidwest;
                     }
                 }
@@ -112,7 +115,7 @@ namespace Schaakproject
                     }
                     else
                     {
-                        if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur != geselecteerdStuk.schaakstuk.kleur)
+                        if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
                         {
                             Console.WriteLine("FOUND");
                             mogelijkloop = true;
@@ -124,6 +127,7 @@ namespace Schaakproject
                         {
                             mogelijkloop = true;
                         }
+                        volgendVakje.pbox.BackColor = System.Drawing.Color.Brown;
                         volgendVakje = volgendVakje.buurZuidoost;
                     }
                 }
