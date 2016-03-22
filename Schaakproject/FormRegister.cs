@@ -24,7 +24,6 @@ namespace LoginProject
         public Database _database { get; set; }
         public FormRegister(Database database)
         {
-            
             _database = database;
             confirmed = false;
             InitializeComponent();
@@ -54,7 +53,7 @@ namespace LoginProject
             else if ((txtvoornaam.Text == "" || txtachternaam.Text == "" || txtconfirm.Text == "" || txtpass.Text == "" || txtuser.Text == "")&& (txtpass.Text != txtconfirm.Text))
             {
                 lblerror.ForeColor = Color.Red;
-                lblerror.Text = "⚠ 1 of meer verplichte velden zijn leeg \nen het de wachtwoorden zijn ongelijk⚠";
+                lblerror.Text = "⚠ 1 of meer verplichte velden zijn leeg \nen het de wachtwoorden zijn ongelijk ⚠";
             }
             else if (txtvoornaam.Text == "" || txtachternaam.Text == "" || txtconfirm.Text == "" || txtpass.Text == "" || txtuser.Text == "")
             {
