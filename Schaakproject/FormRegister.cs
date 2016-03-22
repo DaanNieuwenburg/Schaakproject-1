@@ -21,17 +21,18 @@ namespace LoginProject
         private bool confirmed { get; set; }
         public StreamWriter userfile { get; set; }
         public StreamWriter passfile { get; set; }
-        public Database _database { get; set; }
-        public FormRegister(Database database)
-        {
-            _database = database;
-            confirmed = false;
-            InitializeComponent();
+        //public Database _database { get; set; }
+        //public FormRegister(Database database)
+        //{
+            
+            //_database = database;
+            //confirmed = false;
+            //InitializeComponent();
             //userfile = new StreamWriter(@"C:\Users\daan1\Source\Repos\Schaakproject\Login\username.txt", true);
             // file nog veranderen naar de projectfolder. Werkt nu nog niet.
            //passfile = new StreamWriter(@"C:\Users\daan1\Source\Repos\Schaakproject\Login\password.txt", true);
             // file nog veranderen naar de projectfolder. Werkt nu nog niet.
-        }
+        //}
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -47,7 +48,7 @@ namespace LoginProject
                 voornaam = txtvoornaam.Text;
                 achternaam = txtachternaam.Text;
                 Console.WriteLine(user + pass + voornaam + achternaam);
-                _database.Register(user, pass, voornaam, achternaam);
+                //_database.Register(user, pass, voornaam, achternaam);
                 DialogResult = DialogResult.Yes;
             }
             else if ((txtvoornaam.Text == "" || txtachternaam.Text == "" || txtconfirm.Text == "" || txtpass.Text == "" || txtuser.Text == "")&& (txtpass.Text != txtconfirm.Text))

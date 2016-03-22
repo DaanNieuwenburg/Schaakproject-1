@@ -189,6 +189,7 @@ namespace Schaakproject
 
         private void bepaalRondeEnAntwoord()
         {
+
             if (_ronde == 0)
             {
                 TactiekEnAntwoordR0();
@@ -225,17 +226,10 @@ namespace Schaakproject
                 pictures = koning.buurOost.buurZuid.buurZuid;    // geselecteerd vak
                 voerZetUit();
             }
-        }
-
-        private void TactiekEnAntwoordR1()
-        {
-            Console.WriteLine("R1");
-            selected = koning.buurOost;            // geselecteerd stuk
-            selected.pbox.BackColor = System.Drawing.Color.Blue;
-            pictures = selected.buurZuidwest.buurZuidwest.buurZuidwest;                   // geselecteerd vak
-            pictures.pbox.BackColor = System.Drawing.Color.CadetBlue;
-
-            voerZetUit();
+            else
+            {
+                Algoritme();
+            }
         }
 
         private void Algoritme()
@@ -243,12 +237,39 @@ namespace Schaakproject
             // Dit wordt het algemene algoritme
             // Foreach kan niet gebruikt worden om door twee lijsten te loopen, daarom for loop
 
+            // Creert een percentage van 25% / 75% voor het verplaatsen van stukken bij geen slaan mogelijkheden
+            Random rnd = new Random();
+            int percentage = rnd.Next(1, 4);
+
             // Bij slaanmogelijkheden
-            if (slaanmogelijkheden.Count >= 0)
+            if (slaanmogelijkheden.Count > 0)
             {
+                slaEenStuk();
+            }
+
+            // Verplaats een verplaatst stuk
+
+
+            // Bij geen mogelijkheden verplaats een nieuw stuk
+            else if (percentage == 1)
+            {
+                verplaatsNieuwStuk();
+            }
+
+            // Verplaats een eerder verplaatst stuk
+            else if (percentage == 2 || percentage == 3)
+            {
+                verplaatsVerplaatstStuk();
+            }
+        }
+
+        private void slaEenStuk()
+        {
+                Console.WriteLine("SLAANMOGELIJKHEDEN");
                 for (int i = 0; i < slaanmogelijkheden.Count; i++)
                 {
                     Schaakstuk schaakstuk = slaanmogelijkheden[i].schaakstuk;
+                    slaanmogelijkheden[i].pbox.BackColor = System.Drawing.Color.Black;
                     if (schaakstuk is Koning && schaakstuk.kleur == "wit")
                     {
                         selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
@@ -274,48 +295,207 @@ namespace Schaakproject
                         voerZetUit();
                     }
                 }
-            }
+        }
 
-            // Bij geen mogelijkheden doe iets randoms
-            else
+        private void verplaatsNieuwStuk()
+        {
+            Random rnd = new Random();
+            Console.WriteLine("DOE RANDOM");
+            // Verdeelt het speelbord in 5 stukken d.m.v. random getal
+            int randomgetal = rnd.Next(1, 6);
+
+            // Linkerkantbord
+            if (randomgetal == 1)
             {
-                // Verdeelt het speelbord in 5 stukken d.m.v. random getal
-                Random rnd = new Random();
-                int randomgetal = rnd.Next(1, 5);
-
-                // Linkerkantbord
-                if(randomgetal == 1)
+                int randomstuk = rnd.Next(1, 4);
+                if (randomstuk == 1)
                 {
-
+                    selected = koning.buurWest.buurWest.buurWest.buurWest.buurZuid;                // geselecteerd stuk
+                    pictures = koning.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    voerZetUit();
                 }
-                // Linksmiddenbord
-                else if(randomgetal == 2)
+                else if (randomstuk == 2)
                 {
-
+                    selected = koning.buurWest.buurWest.buurWest.buurZuid;                // geselecteerd stuk
+                    pictures = koning.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    voerZetUit();
                 }
-                // Midden
-                else if(randomgetal == 3)
+                else
                 {
-
-                }
-                // Rechtsmiddenbord
-                else if (randomgetal == 4)
-                {
-
-                }
-                // Rechterkantbord
-                else if (randomgetal == 5)
-                {
-
+                    selected = koning.buurWest.buurWest.buurWest;                                   // geselecteerd stuk
+                    pictures = koning.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    voerZetUit();
                 }
             }
+            // Linksmiddenbord
+            else if (randomgetal == 2)
+            {
+                int randomstuk = rnd.Next(1, 3);
+                if (randomstuk == 1)
+                {
+                    selected = koning.buurWest.buurWest.buurWest;                // geselecteerd stuk
+                    pictures = koning.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    voerZetUit();
+                }
+                else if (randomstuk == 2)
+                {
+                    selected = koning.buurWest.buurWest.buurZuid;                // geselecteerd stuk
+                    pictures = koning.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    voerZetUit();
+                }
+            }
+            // Midden
+            else if (randomgetal == 3)
+            {
+                int randomstuk = rnd.Next(1, 3);
+                if (randomstuk == 1)
+                {
+                    selected = koning.buurWest.buurZuid;                // geselecteerd stuk
+                    pictures = koning.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    voerZetUit();
+                }
+                else if (randomstuk == 2)
+                {
+                    selected = koning.buurZuid;                // geselecteerd stuk
+                    pictures = koning.buurZuid.buurZuid;      // geselecteerd vak
+                    voerZetUit();
+                }
+            }
+            // Rechtsmiddenbord
+            else if (randomgetal == 4)
+            {
+                int randomstuk = rnd.Next(1, 3);
+                if (randomstuk == 1)
+                {
+                    selected = koning.buurWest.buurOost.buurOost;                // geselecteerd stuk
+                    pictures = koning.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
+                    voerZetUit();
+                }
+                else if (randomstuk == 2)
+                {
+                    selected = koning.buurOost.buurOost.buurZuid;                // geselecteerd stuk
+                    pictures = koning.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
+                    voerZetUit();
+                }
+            }
+            // Rechterkantbord
+            else if (randomgetal == 5)
+            {
+                int randomstuk = rnd.Next(1, 4);
+                if (randomstuk == 1)
+                {
+                    selected = koning.buurOost.buurOost.buurOost.buurOost.buurZuid;                // geselecteerd stuk
+                    pictures = koning.buurOost.buurOost.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
+                    voerZetUit();
+                }
+                else if (randomstuk == 2)
+                {
+                    selected = koning.buurOost.buurOost.buurOost.buurZuid;                // geselecteerd stuk
+                    pictures = koning.buurOost.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
+                    voerZetUit();
+                }
+                else
+                {
+                    selected = koning.buurOost.buurOost.buurOost;                                   // geselecteerd stuk
+                    pictures = koning.buurOost.buurOost.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
+                    voerZetUit();
+                }
+            }
+        }
+
+        private void verplaatsVerplaatstStuk()
+        {
+            bool verplaats = false;
+            int teller = 0;
+            while (verplaats == false)
+            {
+                teller++;
+
+                // Dit stukje kijkt of er de teller niet of range gaat, dit gebeurd als bij alle mogelijke computerzetten de computer aangevallen kan worden
+                if (teller == verplaatsingsLijst.Count)
+                {
+                    verplaatsNieuwStuk();
+                }
+
+                Vakje vak = verplaatsingsLijst[teller];
+                if (vak.schaakstuk is Pion && vak.schaakstuk.kleur == "zwart")
+                {
+                    Schaakstuk buurvakje1;
+                    Schaakstuk buurvakje2;
+                    // if else voorkomt dat er naar niet bestaande vakjes wordt gekeken
+                    if (vak.buurZuid.buurZuidoost.schaakstuk == null)
+                    {
+                        buurvakje1 = null;
+                    }
+                    else
+                    {
+                        buurvakje1 = vak.buurZuid.buurZuidoost.schaakstuk;
+                    }
+
+                    if (vak.buurZuid.buurZuidwest.schaakstuk == null)
+                    {
+                        buurvakje2 = null;
+                    }
+                    else
+                    {
+                        buurvakje2 = vak.buurZuid.buurZuidwest.schaakstuk;
+                    }
+
+                    verplaats = BijVerplaatsingSlaan(buurvakje1, buurvakje2, null, null, null, null, null, null);
+                    if (verplaats == true)
+                    {
+                        selected = vak;                // geselecteerd stuk
+                        pictures = vak.buurZuid;      // geselecteerd vak
+                        voerZetUit();
+                    }
+                }
+            }
+        }
+
+        // Dit is lelijk ja, is bekend
+        private bool BijVerplaatsingSlaan(Schaakstuk buurvakje1, Schaakstuk buurvakje2, Schaakstuk buurvakje3, Schaakstuk buurvakje4, Schaakstuk buurvakje5, Schaakstuk buurvakje6, Schaakstuk buurvakje7, Schaakstuk buurvakje8)
+        {
+            bool verplaatsen = true;
+            if (buurvakje1 != null)
+            {
+                verplaatsen = false;
+            }
+            else if (buurvakje2 != null)
+            {
+                verplaatsen = false;
+            }
+            else if (buurvakje3 != null)
+            {
+                verplaatsen = false;
+            }
+            else if (buurvakje4 != null)
+            {
+                verplaatsen = false;
+            }
+            else if (buurvakje5 != null)
+            {
+                verplaatsen = false;
+            }
+            else if (buurvakje6 != null)
+            {
+                verplaatsen = false;
+            }
+            else if (buurvakje7 != null)
+            {
+                verplaatsen = false;
+            }
+            else if (buurvakje8 != null)
+            {
+                verplaatsen = false;
+            }
+            return verplaatsen;
         }
 
         private void voerZetUit()
         {
             verplaatsingsLijst.Add(pictures);       // slaat de positie van de computerszet in lijst op 
-            Mens hierhoortgeenmens = new Mens("ikhoorhierniet", "zwart");
-            selected.schaakstuk.Verplaats(pictures, selected, hierhoortgeenmens);
+            Mens hierhoortgeenmens = new Mens("ikhoorhierniet", "zwart", spel);
+            selected.schaakstuk.Verplaats(pictures, selected, hierhoortgeenmens, spel);
             selected.pbox.update();
             pictures.pbox.update();
             selected = null;

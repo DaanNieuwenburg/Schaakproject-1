@@ -29,7 +29,7 @@ namespace Schaakproject
             Console.WriteLine("invoerpass: " + invoerpass);
             username = invoeruser;
             password = invoerpass;
-            Login();
+            //Login();
         }
         public void Register(string R_user, string R_pass, string R_voornaam, string R_achternaam)
         {
@@ -53,9 +53,7 @@ namespace Schaakproject
         }
         public void Login()
         {
-
-
-            connection = new MySqlConnection(connCredentials);
+            MySqlConnection connection = new MySqlConnection(connCredentials);
 
             MySqlCommand query = connection.CreateCommand();
             query.CommandText = "SELECT * FROM logintable";

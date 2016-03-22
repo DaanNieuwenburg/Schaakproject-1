@@ -75,13 +75,13 @@
       <DependentUpon>Hoofdmenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Koning.cs" />
-    <Compile Include="Loper.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="LoginFormTest.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Loper.cs" />
     <Compile Include="Mens.cs" />
     <Compile Include="NaamInvoer.cs">
       <SubType>Form</SubType>
@@ -301,6 +301,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\schaken uitleg 11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bglogin1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

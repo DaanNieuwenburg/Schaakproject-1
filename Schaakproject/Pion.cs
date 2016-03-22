@@ -9,11 +9,12 @@ namespace Schaakproject
     {
         private bool _eersteZet { get; set; }       //is de pion al eens verzet
         private bool _magEnpassant { get; set; }    //mag de pion en-passant slaan
-        public Speler _speler { get; private set; }
+        
 
-        public Pion(string kleur, Vakje vakje)
+        public Pion(string kleur, Vakje vakje, Speler speler)
         {
             _magEnpassant = true;
+            _speler = speler;
             this.vakje = vakje;
             this.kleur = kleur;
             if (kleur == "wit")
@@ -63,13 +64,9 @@ namespace Schaakproject
             }
         }
 
-        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler)
+        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler, Spel spel)
         {
-            if (_speler == null)
-            {
-                _speler = speler;
-            }
-
+            
             bool mogelijk = false;
 
             if (kleur == "wit")
@@ -118,7 +115,7 @@ namespace Schaakproject
                 else if (selected.buurOost != null)
                 {
                     //en-passant slaan naar noordoost
-                    if (selected.buurNoordoost == nieuwVakje && speler.enPassantPion == selected.buurOost.schaakstuk && speler.enPassantPion != null)
+                    if (selected.buurNoordoost == nieuwVakje && _speler.enPassantPion == selected.buurOost.schaakstuk && _speler.enPassantPion != null)
                     {
                         selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
                         selected.buurOost.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
@@ -128,7 +125,7 @@ namespace Schaakproject
                 if (selected.buurWest != null)
                 {
                     //en-passant slaan naar noordwest
-                    if (selected.buurNoordwest == nieuwVakje && speler.enPassantPion == selected.buurWest.schaakstuk && speler.enPassantPion != null)
+                    if (selected.buurNoordwest == nieuwVakje && _speler.enPassantPion == selected.buurWest.schaakstuk && _speler.enPassantPion != null)
                     {
                         selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
                         selected.buurWest.pbox.update(); //update deze pbox zodat je de pion niet meer ziet
@@ -186,7 +183,7 @@ namespace Schaakproject
                 else if (selected.buurOost != null)
                 {
                     //en-passant slaan naar zuidoost
-                    if (selected.buurZuidoost == nieuwVakje && speler.enPassantPion == selected.buurOost.schaakstuk && speler.enPassantPion != null)
+                    if (selected.buurZuidoost == nieuwVakje && _speler.enPassantPion == selected.buurOost.schaakstuk && _speler.enPassantPion != null)
                     {
 
                         selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
@@ -198,7 +195,7 @@ namespace Schaakproject
                 if (selected.buurWest != null)
                 {
                     //en-passant slaan naar zuidwest
-                    if (selected.buurZuidwest == nieuwVakje && speler.enPassantPion == selected.buurWest.schaakstuk && speler.enPassantPion != null)
+                    if (selected.buurZuidwest == nieuwVakje && _speler.enPassantPion == selected.buurWest.schaakstuk && _speler.enPassantPion != null)
                     {
 
                         selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
@@ -211,14 +208,27 @@ namespace Schaakproject
 
             if (mogelijk == true)
             {
+                Schaakstuk temp = nieuwVakje.schaakstuk;
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
                 this.vakje = nieuwVakje;
-                _eersteZet = true;
-                speler.validezet = true;
+                bool checkSchaak = spel.schaakbord.CheckSchaak(speler.Koning);
+                
+                if (checkSchaak == true)
+                {
+                    selected.schaakstuk = this;
+                    nieuwVakje.schaakstuk = temp;
+                    this.vakje = selected;
+                }
+                else
+                {
+                    _eersteZet = true;
+                    speler.validezet = true;
+                }
 
             }
 
+            //De pion wil promoveren wanneer hij op de eerste of laatste rij komt te staan
             if (vakje.buurNoord == null || vakje.buurZuid == null)
             {
                 nieuwVakje.pbox.update();
@@ -233,19 +243,19 @@ namespace Schaakproject
         {
             if (keuze.Equals("paard"))
             {
-                vakje.schaakstuk = new Paard(kleur, vakje);
+                vakje.schaakstuk = new Paard(kleur, vakje, _speler);
             }
             else if (keuze.Equals("loper"))
             {
-                vakje.schaakstuk = new Loper(kleur, vakje);
+                vakje.schaakstuk = new Loper(kleur, vakje, _speler);
             }
             else if (keuze.Equals("toren"))
             {
-                vakje.schaakstuk = new Toren(kleur, vakje);
+                vakje.schaakstuk = new Toren(kleur, vakje, _speler);
             }
             else if (keuze.Equals("dame"))
             {
-                vakje.schaakstuk = new Dame(kleur, vakje);
+                vakje.schaakstuk = new Dame(kleur, vakje, _speler);
             }
 
         }

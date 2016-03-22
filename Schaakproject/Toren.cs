@@ -10,8 +10,9 @@ namespace Schaakproject
     {
         public bool _eersteZet { get; private set; } // Is de toren al eens verzet
 
-        public Toren(string kleur, Vakje vakje)
+        public Toren(string kleur, Vakje vakje, Speler speler)
         {
+            
             this.kleur = kleur;
             this.vakje = vakje;
             if (kleur == "wit")
@@ -127,7 +128,7 @@ namespace Schaakproject
             }
         }
 
-        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler)
+        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler, Spel spel)
         {
             bool mogelijk = false;
             bool mogelijkloop = false;
@@ -202,12 +203,22 @@ namespace Schaakproject
             }
             if (mogelijk == true)
             {
+                Schaakstuk temp = nieuwVakje.schaakstuk;
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
                 this.vakje = nieuwVakje;
-                speler.validezet = true;
-                _eersteZet = true;
-                
+                bool checkSchaak = spel.schaakbord.CheckSchaak(speler.Koning);
+                if (checkSchaak == true)
+                {
+                    selected.schaakstuk = this;
+                    nieuwVakje.schaakstuk = temp;
+                    this.vakje = selected;
+                }
+                else
+                {
+                    speler.validezet = true;
+                    _eersteZet = true;
+                }
             }
         }
     }
