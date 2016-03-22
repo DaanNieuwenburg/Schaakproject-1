@@ -262,21 +262,21 @@ namespace Schaakproject
             {
                 Console.WriteLine("A");
                 int randomstuk = rnd.Next(1, 4);
-                if (randomstuk == 1 && Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null)
+                if (randomstuk == 1 && Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null && Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.schaakstuk != null)
                 {
                     selected = Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid;                // geselecteerd stuk
                     Console.WriteLine("A1");
                     pictures = Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
-                else if (randomstuk == 2 && Koning.vakje.buurWest.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null)
+                else if (randomstuk == 2 && Koning.vakje.buurWest.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null && Koning.vakje.buurWest.buurWest.buurWest.buurZuid != null)
                 {
                     selected = Koning.vakje.buurWest.buurWest.buurWest.buurZuid;                // geselecteerd stuk
                     Console.WriteLine("A2");
                     pictures = Koning.vakje.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
-                else if (randomstuk == 3 && Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null)
+                else if (randomstuk == 3 && Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null && Koning.vakje.buurWest.buurWest.buurWest != null)
                 {
                     selected = Koning.vakje.buurWest.buurWest.buurWest;                                   // geselecteerd stuk
                     Console.WriteLine("A3");
