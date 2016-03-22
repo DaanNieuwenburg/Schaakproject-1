@@ -29,14 +29,14 @@ namespace Schaakproject
 
         public override void kanStukSlaan(Computer computer, Vakje geselecteerdStuk)
         {
-            Vakje geselecteerdVak = geselecteerdStuk;
+            /*Vakje geselecteerdVak = geselecteerdStuk;
             if (geselecteerdVak.schaakstuk.kleur == "wit")
             {
                 if (geselecteerdVak.buurNoordoost != null && geselecteerdVak.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
                 {
                     computer.spelerkanslaan = true;
                 }
-                else if (geselecteerdVak.buurNoordoost != null && geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
+                else if (geselecteerdVak.buurNoordwest != null && geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur != "wit")
                 {
                     computer.computerkanslaan = true;
                 }
@@ -61,7 +61,7 @@ namespace Schaakproject
                     computer.spelerkanslaan = false;
                     computer.computerkanslaan = false;
                 }
-            }
+            }*/
         }
 
         public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler, Spel spel)

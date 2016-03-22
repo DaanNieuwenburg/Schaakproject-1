@@ -23,7 +23,9 @@ namespace Schaakproject
         public override void kanStukSlaan(Computer computer, Vakje geselecteerdStuk)
         {
             Vakje geselecteerdVak = geselecteerdStuk;
-            if (geselecteerdVak.schaakstuk.kleur == "wit")
+
+            // Dit werkt nog niet :( ziet buren buiten het bord als null en geeft daardoor null exceptions
+            /*if (geselecteerdVak.schaakstuk.kleur == "wit")
             {
                 if (geselecteerdVak.buurNoord.buurNoordoost != null && geselecteerdVak.buurNoord.buurNoordoost.schaakstuk.kleur != "wit")
                 {
@@ -74,7 +76,7 @@ namespace Schaakproject
                 {
                     computer.computerkanslaan = true;
                 }
-            }
+            }*/
         }
 
         public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler, Spel spel)
