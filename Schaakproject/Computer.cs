@@ -13,7 +13,6 @@ namespace Schaakproject
         private Spel _spel { get; set; }
         private Vakje selected { get; set; }
         private Vakje pictures { get; set; }
-        private Vakje koning { get; set; }
         private List<Vakje> _verplaatsingslijst = new List<Vakje>();
         public List<Vakje> verplaatsingsLijst
         {
@@ -55,7 +54,6 @@ namespace Schaakproject
             _vorigschaakstuk = _spel.selected.schaakstuk;   // slaat het door de speler geselecteerde schaakstuk op     -- dit moet ook vanuit vorigvakje kunnen, scheelt code?
             verplaatsingsLijst.Add(_spel.selected);     // slaat de positie van de spelerszet in lijst op 
             bepaalMensPositie();
-            bepaalKoningPositie();
             controleerOpSlaan();
             bepaalRondeEnAntwoord();
         }
@@ -100,55 +98,6 @@ namespace Schaakproject
             }
         }
 
-        private void bepaalKoningPositie()
-        {
-            // kijk waar de koning staat
-            bool koningGevonden = false;
-            Vakje vorigvakjeHorizontaalOost = _spel.selected;
-            Vakje vorigvakjeHorizontaalWest = _spel.selected;
-            Vakje vorigvakjeVerticaal = _spel.selected;
-
-            // Loop tot de koning gevonden is
-            while (koningGevonden == false)
-            {
-                //VorigvakjeVerticaal loopt naar boven toe
-                if (vorigvakjeVerticaal != null)
-                {
-                    //VorigvakjeHorizontaal loopt naar het oosten (rechts) toe
-                    while (vorigvakjeHorizontaalOost != null)
-                    {
-                        if (vorigvakjeHorizontaalOost.schaakstuk is Koning && vorigvakjeHorizontaalOost.schaakstuk.kleur == "zwart")
-                        {
-                            koningGevonden = true;
-                            koning = vorigvakjeHorizontaalOost;
-                            vorigvakjeHorizontaalOost = null;
-                        }
-                        else
-                        {
-                            vorigvakjeHorizontaalOost = vorigvakjeHorizontaalOost.buurOost;
-                        }
-                    }
-
-                    //VorigvakjeHorizontaal loopt naar het westen (links) toe
-                    while (vorigvakjeHorizontaalWest != null)
-                    {
-                        if (vorigvakjeHorizontaalWest.schaakstuk is Koning && vorigvakjeHorizontaalWest.schaakstuk.kleur == "zwart")
-                        {
-                            koningGevonden = true;
-                            koning = vorigvakjeHorizontaalWest;
-                            vorigvakjeHorizontaalWest = null;
-                        }
-                        else
-                        {
-                            vorigvakjeHorizontaalWest = vorigvakjeHorizontaalWest.buurWest;
-                        }
-                    }
-                    vorigvakjeVerticaal = vorigvakjeVerticaal.buurNoord;
-                    vorigvakjeHorizontaalOost = vorigvakjeVerticaal.buurNoord;
-                    vorigvakjeHorizontaalWest = vorigvakjeVerticaal.buurNoord;
-                }
-            }
-        }
 
         private void controleerOpSlaan()
         {
@@ -222,8 +171,10 @@ namespace Schaakproject
                 Console.WriteLine("R0");
                 _tegenstandersopening = "French defense";
                 _tegenstanderstactiek = "midcontrol";
-                selected = koning.buurOost.buurZuid;             // geselecteerd stuk
-                pictures = koning.buurOost.buurZuid.buurZuid;    // geselecteerd vak
+                selected = Koning.vakje.buurOost.buurZuid;             // geselecteerd stuk
+                pictures = Koning.vakje.buurOost.buurZuid.buurZuid;    // geselecteerd vak
+                selected.pbox.BackColor = System.Drawing.Color.Black;
+                pictures.pbox.BackColor = System.Drawing.Color.Black;
                 voerZetUit();
             }
             else
@@ -310,20 +261,20 @@ namespace Schaakproject
                 int randomstuk = rnd.Next(1, 4);
                 if (randomstuk == 1)
                 {
-                    selected = koning.buurWest.buurWest.buurWest.buurWest.buurZuid;                // geselecteerd stuk
-                    pictures = koning.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    selected = Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid;                // geselecteerd stuk
+                    pictures = Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
                 else if (randomstuk == 2)
                 {
-                    selected = koning.buurWest.buurWest.buurWest.buurZuid;                // geselecteerd stuk
-                    pictures = koning.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    selected = Koning.vakje.buurWest.buurWest.buurWest.buurZuid;                // geselecteerd stuk
+                    pictures = Koning.vakje.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
                 else
                 {
-                    selected = koning.buurWest.buurWest.buurWest;                                   // geselecteerd stuk
-                    pictures = koning.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    selected = Koning.vakje.buurWest.buurWest.buurWest;                                   // geselecteerd stuk
+                    pictures = Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
             }
@@ -333,14 +284,14 @@ namespace Schaakproject
                 int randomstuk = rnd.Next(1, 3);
                 if (randomstuk == 1)
                 {
-                    selected = koning.buurWest.buurWest.buurWest;                // geselecteerd stuk
-                    pictures = koning.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    selected = Koning.vakje.buurWest.buurWest.buurWest;                // geselecteerd stuk
+                    pictures = Koning.vakje.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
                 else if (randomstuk == 2)
                 {
-                    selected = koning.buurWest.buurWest.buurZuid;                // geselecteerd stuk
-                    pictures = koning.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    selected = Koning.vakje.buurWest.buurWest.buurZuid;                // geselecteerd stuk
+                    pictures = Koning.vakje.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
             }
@@ -350,14 +301,14 @@ namespace Schaakproject
                 int randomstuk = rnd.Next(1, 3);
                 if (randomstuk == 1)
                 {
-                    selected = koning.buurWest.buurZuid;                // geselecteerd stuk
-                    pictures = koning.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    selected = Koning.vakje.buurWest.buurZuid;                // geselecteerd stuk
+                    pictures = Koning.vakje.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
                 else if (randomstuk == 2)
                 {
-                    selected = koning.buurZuid;                // geselecteerd stuk
-                    pictures = koning.buurZuid.buurZuid;      // geselecteerd vak
+                    selected = Koning.vakje.buurZuid;                // geselecteerd stuk
+                    pictures = Koning.vakje.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
             }
@@ -367,14 +318,14 @@ namespace Schaakproject
                 int randomstuk = rnd.Next(1, 3);
                 if (randomstuk == 1)
                 {
-                    selected = koning.buurWest.buurOost.buurOost;                // geselecteerd stuk
-                    pictures = koning.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
+                    selected = Koning.vakje.buurWest.buurOost.buurOost;                // geselecteerd stuk
+                    pictures = Koning.vakje.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
                 else if (randomstuk == 2)
                 {
-                    selected = koning.buurOost.buurOost.buurZuid;                // geselecteerd stuk
-                    pictures = koning.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
+                    selected = Koning.vakje.buurOost.buurOost.buurZuid;                // geselecteerd stuk
+                    pictures = Koning.vakje.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
             }
@@ -384,20 +335,20 @@ namespace Schaakproject
                 int randomstuk = rnd.Next(1, 4);
                 if (randomstuk == 1)
                 {
-                    selected = koning.buurOost.buurOost.buurOost.buurOost.buurZuid;                // geselecteerd stuk
-                    pictures = koning.buurOost.buurOost.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
+                    selected = Koning.vakje.buurOost.buurOost.buurOost.buurOost.buurZuid;                // geselecteerd stuk
+                    pictures = Koning.vakje.buurOost.buurOost.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
                 else if (randomstuk == 2)
                 {
-                    selected = koning.buurOost.buurOost.buurOost.buurZuid;                // geselecteerd stuk
-                    pictures = koning.buurOost.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
+                    selected = Koning.vakje.buurOost.buurOost.buurOost.buurZuid;                // geselecteerd stuk
+                    pictures = Koning.vakje.buurOost.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
                 else
                 {
-                    selected = koning.buurOost.buurOost.buurOost;                                   // geselecteerd stuk
-                    pictures = koning.buurOost.buurOost.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
+                    selected = Koning.vakje.buurOost.buurOost.buurOost;                                   // geselecteerd stuk
+                    pictures = Koning.vakje.buurOost.buurOost.buurOost.buurOost.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
             }
@@ -495,7 +446,9 @@ namespace Schaakproject
         {
             verplaatsingsLijst.Add(pictures);       // slaat de positie van de computerszet in lijst op 
             Mens hierhoortgeenmens = new Mens("ikhoorhierniet", "zwart", spel);
-            selected.schaakstuk.Verplaats(pictures, selected, hierhoortgeenmens, spel);
+            hierhoortgeenmens.Koning = Koning;
+            hierhoortgeenmens.selected = selected;
+            selected.schaakstuk.Verplaats(pictures, selected, hierhoortgeenmens, _spel);
             selected.pbox.update();
             pictures.pbox.update();
             selected = null;

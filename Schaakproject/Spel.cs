@@ -53,7 +53,7 @@ namespace Schaakproject
         public void Start()
         {
             Console.WriteLine("start");
-            Schaakbord schaakbord = new Schaakbord(_Variant, this, _Speler1, _Speler2);
+                Schaakbord schaakbord = new Schaakbord(_Variant, this, _Speler1, _Speler2);
             this.schaakbord = schaakbord;
             SpeelBord speelbord = new SpeelBord(this, schaakbord, _SpelMode, _Speler1, _Speler2, _computerSpeler, _Variant);
             speelbord.Show();

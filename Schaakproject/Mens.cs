@@ -8,7 +8,7 @@ namespace Schaakproject
 {
     public class Mens : Speler
     {
-        private Vakje selected { get; set; }
+        public Vakje selected { get; set; }
         public bool validezet { get; set; }
         
         public Mens(string naam, string kleur, Spel _spel)
