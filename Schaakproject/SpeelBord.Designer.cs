@@ -48,6 +48,7 @@
             this.btnpion = new System.Windows.Forms.Button();
             this.btnterug = new System.Windows.Forms.Button();
             this.pbuitleg = new System.Windows.Forms.PictureBox();
+            this.lblbeurt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbuitleg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -265,6 +266,18 @@
             this.pbuitleg.TabStop = false;
             this.pbuitleg.Visible = false;
             // 
+            // lblbeurt
+            // 
+            this.lblbeurt.AutoSize = true;
+            this.lblbeurt.BackColor = System.Drawing.Color.Transparent;
+            this.lblbeurt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbeurt.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblbeurt.Location = new System.Drawing.Point(518, 9);
+            this.lblbeurt.Name = "lblbeurt";
+            this.lblbeurt.Size = new System.Drawing.Size(97, 18);
+            this.lblbeurt.TabIndex = 19;
+            this.lblbeurt.Text = "Wit is aan zet";
+            // 
             // SpeelBord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +285,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(738, 540);
+            this.Controls.Add(this.lblbeurt);
             this.Controls.Add(this.pbuitleg);
             this.Controls.Add(this.btnterug);
             this.Controls.Add(this.btnpion);
@@ -323,5 +337,6 @@
         private System.Windows.Forms.Button btnterug;
         private System.Windows.Forms.PictureBox pbuitleg;
         private System.Windows.Forms.Button btnregels;
+        public System.Windows.Forms.Label lblbeurt;
     }
 }
