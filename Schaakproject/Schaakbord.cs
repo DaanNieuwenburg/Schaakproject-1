@@ -33,6 +33,8 @@ namespace Schaakproject
         private string kleurstuk { get; set; }              //De kleur van het stuk
         private string variant { get; set; }                //Klassiek of Chess960
         private Schaakstuk schaakGezet { get; set; }        //Het schaakstuk dat de koning schaak heeft gezet
+        private string richting { get; set; }               //De richting waar het schaakstuk dat de koning schaak heeft gezet staat
+        private bool pionvoormat { get; set; }              //om te kijken of er een pion gezet kan worden tussen de koning en een stuk
 
         public Schaakbord(string _Variant, Spel Spel, Speler Speler1, Speler Speler2)
         {
@@ -394,6 +396,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurNoord.schaakstuk;
+                        richting = "noord";
                     }
                     mogelijkloop = true;
                 }
@@ -419,6 +422,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurZuid.schaakstuk;
+                        richting = "zuid";
                     }
                     mogelijkloop = true;
                 }
@@ -444,6 +448,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurOost.schaakstuk;
+                        richting = "oost";
                     }
                     mogelijkloop = true;
                 }
@@ -469,6 +474,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurWest.schaakstuk;
+                        richting = "west";
                     }
                     mogelijkloop = true;
                 }
@@ -495,6 +501,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurNoordoost.schaakstuk;
+                        richting = "noordoost";
                     }
                     mogelijkloop = true;
                 }
@@ -520,6 +527,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurZuidoost.schaakstuk;
+                        richting = "zuidoost";
                     }
                     mogelijkloop = true;
                 }
@@ -545,6 +553,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurZuidwest.schaakstuk;
+                        richting = "zuidwest";
                     }
                     mogelijkloop = true;
                 }
@@ -570,6 +579,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurNoordwest.schaakstuk;
+                        richting = "noordwest";
                     }
                     mogelijkloop = true;
                 }
@@ -741,43 +751,93 @@ namespace Schaakproject
                     staatschaak = true;
                 }
             }
-            //alleen een witte koning hoeft uit te kijken voor pionnen die noord staan
-            if (koning.kleur == "wit")
+            if (pionvoormat == false)
             {
-                if (vorige.buurNoordoost != null)
+                //alleen een witte koning hoeft uit te kijken voor pionnen die noord staan
+                if (koning.kleur == "wit")
                 {
-                    if (vorige.buurNoordoost.schaakstuk is Pion && vorige.buurNoordoost.schaakstuk.kleur == "zwart")
+                    if (vorige.buurNoordoost != null)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurNoordoost.schaakstuk;
+                        if (vorige.buurNoordoost.schaakstuk is Pion && vorige.buurNoordoost.schaakstuk.kleur == "zwart")
+                        {
+                            staatschaak = true;
+                            zetSchaak = vorige.buurNoordoost.schaakstuk;
+                        }
+                    }
+                    if (vorige.buurNoordwest != null)
+                    {
+                        if (vorige.buurNoordwest.schaakstuk is Pion && vorige.buurNoordwest.schaakstuk.kleur == "zwart")
+                        {
+                            staatschaak = true;
+                            zetSchaak = vorige.buurNoordwest.schaakstuk;
+                        }
                     }
                 }
-                if (vorige.buurNoordwest != null)
+                //alleen een zwarte koning hoeft uit te kijken voor pionnen die zuid staan
+                if (koning.kleur == "zwart")
                 {
-                    if (vorige.buurNoordwest.schaakstuk is Pion && vorige.buurNoordwest.schaakstuk.kleur == "zwart")
+                    if (vorige.buurZuidoost != null)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurNoordwest.schaakstuk;
+                        if (vorige.buurZuidoost.schaakstuk is Pion && vorige.buurZuidoost.schaakstuk.kleur == "wit")
+                        {
+                            staatschaak = true;
+                            zetSchaak = vorige.buurZuidoost.schaakstuk;
+                        }
+                    }
+                    if (vorige.buurZuidwest != null)
+                    {
+                        if (vorige.buurZuidwest.schaakstuk is Pion && vorige.buurZuidwest.schaakstuk.kleur == "wit")
+                        {
+                            staatschaak = true;
+                            zetSchaak = vorige.buurZuidwest.schaakstuk;
+                        }
                     }
                 }
             }
-            //alleen een zwarte koning hoeft uit te kijken voor pionnen die zuid staan
-            if (koning.kleur == "zwart")
+            else
             {
-                if (vorige.buurZuidoost != null)
+                //alleen een witte koning hoeft uit te kijken voor pionnen die noord staan
+                if (koning.kleur == "wit")
                 {
-                    if (vorige.buurZuidoost.schaakstuk is Pion && vorige.buurZuidoost.schaakstuk.kleur == "wit")
+                    if (vorige.buurNoord != null)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurZuidoost.schaakstuk;
-                    }
+                        if (vorige.buurNoord.schaakstuk is Pion && vorige.buurNoord.schaakstuk.kleur == "zwart")
+                        {
+                            staatschaak = true;                            
+                        }
+
+                        if (vorige.buurNoord.buurNoord != null)
+                        {
+                            if (vorige.buurNoord.buurNoord.schaakstuk is Pion && vorige.buurNoord.buurNoord.schaakstuk.kleur == "zwart" )
+                            {
+                                if ((vorige.buurNoord.buurNoord.schaakstuk as Pion)._eersteZet == true)
+                                {
+                                    staatschaak = true;
+                                }                                
+                            }
+                        }
+                    }                    
                 }
-                if (vorige.buurZuidwest != null)
+                //alleen een zwarte koning hoeft uit te kijken voor pionnen die zuid staan
+                if (koning.kleur == "zwart")
                 {
-                    if (vorige.buurZuidwest.schaakstuk is Pion && vorige.buurZuidwest.schaakstuk.kleur == "wit")
+                    if (vorige.buurZuid != null)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurZuidwest.schaakstuk;
+                        if (vorige.buurZuid.schaakstuk is Pion && vorige.buurZuid.schaakstuk.kleur == "wit")
+                        {
+                            staatschaak = true;
+                        }
+
+                        if (vorige.buurZuid.buurZuid != null)
+                        {
+                            if (vorige.buurZuid.buurZuid.schaakstuk is Pion && vorige.buurZuid.buurZuid.schaakstuk.kleur == "wit")
+                            {
+                                if ((vorige.buurZuid.buurZuid.schaakstuk as Pion)._eersteZet == true)
+                                {
+                                    staatschaak = true;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -1026,6 +1086,7 @@ namespace Schaakproject
                 mogelijk = false;
             }
             schaakGezet = null;
+            richting = null;
             CheckSchaak(koning);
             if (schaakGezet != null)
             {
@@ -1049,7 +1110,203 @@ namespace Schaakproject
                 {
                     mat = false;
                 }
-
+                koning.vakje = beginvakje;
+                bewaarvakje.schaakstuk = bewaarstuk;
+                bewaarstuk.vakje = bewaarvakje;
+                beginvakje.schaakstuk = koning;
+                Vakje vorige = beginvakje;
+                pionvoormat = true;
+                if (mat == true && richting != null)
+                {
+                    if (richting == "noord")
+                    {
+                        while (mogelijk == false)
+                        {
+                            if (vorige.buurNoord.schaakstuk == null)
+                            {
+                                koning.vakje = vorige.buurNoord;
+                                vorige.buurNoord.schaakstuk = koning;
+                                vorige.schaakstuk = null;
+                                checkschaak = CheckSchaak(koning);
+                                vorige = vorige.buurNoord;
+                                if (checkschaak == true)
+                                {
+                                    mat = false;
+                                    mogelijk = true;
+                                }
+                            }
+                            else
+                            {
+                                mogelijk = true;
+                            }
+                        }
+                    }
+                    else if (richting == "oost")
+                    {
+                        while (mogelijk == false)
+                        {
+                            if (vorige.buurOost.schaakstuk == null)
+                            {
+                                koning.vakje = vorige.buurOost;
+                                vorige.buurOost.schaakstuk = koning;
+                                vorige.schaakstuk = null;
+                                checkschaak = CheckSchaak(koning);
+                                vorige = vorige.buurOost;
+                                if (checkschaak == true)
+                                {
+                                    mat = false;
+                                    mogelijk = true;
+                                }
+                            }
+                            else
+                            {
+                                mogelijk = true;
+                            }
+                        }
+                    }
+                    else if (richting == "zuid")
+                    {
+                        while (mogelijk == false)
+                        {
+                            if (vorige.buurZuid.schaakstuk == null)
+                            {
+                                koning.vakje = vorige.buurZuid;
+                                vorige.buurZuid.schaakstuk = koning;
+                                vorige.schaakstuk = null;
+                                checkschaak = CheckSchaak(koning);
+                                vorige = vorige.buurZuid;
+                                if (checkschaak == true)
+                                {
+                                    mat = false;
+                                    mogelijk = true;
+                                }
+                            }
+                            else
+                            {
+                                mogelijk = true;
+                            }
+                        }
+                    }
+                    else if (richting == "west")
+                    {
+                        while (mogelijk == false)
+                        {
+                            if (vorige.buurWest.schaakstuk == null)
+                            {
+                                koning.vakje = vorige.buurWest;
+                                vorige.buurWest.schaakstuk = koning;
+                                vorige.schaakstuk = null;
+                                checkschaak = CheckSchaak(koning);
+                                vorige = vorige.buurWest;
+                                if (checkschaak == true)
+                                {
+                                    mat = false;
+                                    mogelijk = true;
+                                }
+                            }
+                            else
+                            {
+                                mogelijk = true;
+                            }
+                        }
+                    }
+                    else if (richting == "noordoost")
+                    {
+                        while (mogelijk == false)
+                        {
+                            if (vorige.buurNoordoost.schaakstuk == null)
+                            {
+                                koning.vakje = vorige.buurNoordoost;
+                                vorige.buurNoordoost.schaakstuk = koning;
+                                vorige.schaakstuk = null;
+                                checkschaak = CheckSchaak(koning);
+                                vorige = vorige.buurNoordoost;
+                                if (checkschaak == true)
+                                {
+                                    mat = false;
+                                    mogelijk = true;
+                                }
+                            }
+                            else
+                            {
+                                mogelijk = true;
+                            }
+                        }
+                    }
+                    else if (richting == "noordwest")
+                    {
+                        while (mogelijk == false)
+                        {
+                            if (vorige.buurNoordwest.schaakstuk == null)
+                            {
+                                koning.vakje = vorige.buurNoordwest;
+                                vorige.buurNoordwest.schaakstuk = koning;
+                                vorige.schaakstuk = null;
+                                checkschaak = CheckSchaak(koning);
+                                vorige = vorige.buurNoordwest;
+                                if (checkschaak == true)
+                                {
+                                    mat = false;
+                                    mogelijk = true;
+                                }
+                            }
+                            else
+                            {
+                                mogelijk = true;
+                            }
+                        }
+                    }
+                    else if (richting == "zuidoost")
+                    {
+                        while (mogelijk == false)
+                        {
+                            if (vorige.buurZuidoost.schaakstuk == null)
+                            {
+                                koning.vakje = vorige.buurZuidoost;
+                                vorige.buurZuidoost.schaakstuk = koning;
+                                vorige.schaakstuk = null;
+                                checkschaak = CheckSchaak(koning);
+                                vorige = vorige.buurZuidoost;
+                                if (checkschaak == true)
+                                {
+                                    mat = false;
+                                    mogelijk = true;
+                                }
+                            }
+                            else
+                            {
+                                mogelijk = true;
+                            }
+                        }
+                    }
+                    else if (richting == "zuidwest")
+                    {
+                        while (mogelijk == false)
+                        {
+                            if (vorige.buurZuidwest.schaakstuk == null)
+                            {
+                                koning.vakje = vorige.buurZuidwest;
+                                vorige.buurZuidwest.schaakstuk = koning;
+                                vorige.schaakstuk = null;
+                                checkschaak = CheckSchaak(koning);
+                                vorige = vorige.buurZuidwest;
+                                if (checkschaak == true)
+                                {
+                                    mat = false;
+                                    mogelijk = true;
+                                }
+                            }
+                            else
+                            {
+                                mogelijk = true;
+                            }
+                        }
+                    }
+                    koning.vakje = beginvakje;
+                    beginvakje.schaakstuk = koning;
+                    vorige.schaakstuk = null;
+                    
+                }
                 if (koning.kleur == "wit")
                 {
                     koning.kleur = "zwart";
@@ -1058,11 +1315,9 @@ namespace Schaakproject
                 {
                     koning.kleur = "wit";
                 }
-                koning.vakje = beginvakje;
-                bewaarvakje.schaakstuk = bewaarstuk;
-                bewaarstuk.vakje = bewaarvakje;
-                beginvakje.schaakstuk = koning;
+
             }
+            pionvoormat = false;
             return mat;
         }
         public bool IsOdd(int value)
