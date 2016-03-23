@@ -27,103 +27,110 @@ namespace Schaakproject
 
         public override void kanStukSlaan(Computer computer, Vakje geselecteerdStuk)
         {
-            bool mogelijkloop = false;
-            Vakje volgendVakje = geselecteerdStuk.buurNoord;
-            while (mogelijkloop == false)
+            if (geselecteerdStuk.schaakstuk.kleur == "zwart")
             {
-                if (volgendVakje == null)
+                // Kijkt of er noord geslagen kan worden
+                bool mogelijkloop = false;
+                Vakje volgendVakje = geselecteerdStuk.buurNoord;
+                while (mogelijkloop == false)
                 {
-                    mogelijkloop = true;
-                }
-                else
-                {
-                    if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur != geselecteerdStuk.schaakstuk.kleur)
-                    {
-                        mogelijkloop = true;
-                        computer.spelerkanslaan = true;
-                        computer.slaanmogelijkheden.Add(volgendVakje);
-                        computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
-                    }
-                    else if (volgendVakje == null)
+                    if (volgendVakje == null)
                     {
                         mogelijkloop = true;
                     }
-                    volgendVakje = volgendVakje.buurNoord;
+                    else
+                    {
+                        if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                        {
+                            mogelijkloop = true;
+                            computer.spelerkanslaan = true;
+                            computer.slaanmogelijkheden.Add(volgendVakje);
+                            computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                        }
+                        else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
+                        {
+                            mogelijkloop = true;
+                        }
+                        volgendVakje = volgendVakje.buurNoord;
+                    }
                 }
-            }
 
-            mogelijkloop = false;
-            volgendVakje = geselecteerdStuk.buurOost;
-            while (mogelijkloop == false)
-            {
-                if (volgendVakje == null)
+                // Kijkt of er oost geslagen kan worden
+                mogelijkloop = false;
+                volgendVakje = geselecteerdStuk.buurOost;
+                while (mogelijkloop == false)
                 {
-                    mogelijkloop = true;
-                }
-                else
-                {
-                    if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur != geselecteerdStuk.schaakstuk.kleur)
-                    {
-                        mogelijkloop = true;
-                        computer.spelerkanslaan = true;
-                        computer.slaanmogelijkheden.Add(volgendVakje);
-                        computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
-                    }
-                    else if (volgendVakje == null)
+                    if (volgendVakje == null)
                     {
                         mogelijkloop = true;
                     }
-                    volgendVakje = volgendVakje.buurOost;
+                    else
+                    {
+                        if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                        {
+                            mogelijkloop = true;
+                            computer.spelerkanslaan = true;
+                            computer.slaanmogelijkheden.Add(volgendVakje);
+                            computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                        }
+                        else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
+                        {
+                            mogelijkloop = true;
+                        }
+                        volgendVakje = volgendVakje.buurOost;
+                    }
                 }
-            }
 
-            mogelijkloop = false;
-            volgendVakje = geselecteerdStuk.buurZuid;
-            while (mogelijkloop == false)
-            {
-                if (volgendVakje == null)
+                // Kijkt of er Zuidwest geslagen kan worden
+                mogelijkloop = false;
+                volgendVakje = geselecteerdStuk.buurZuid;
+                while (mogelijkloop == false)
                 {
-                    mogelijkloop = true;
-                }
-                else
-                {
-                    if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur != geselecteerdStuk.schaakstuk.kleur)
-                    {
-                        mogelijkloop = true;
-                        computer.spelerkanslaan = true;
-                        computer.slaanmogelijkheden.Add(volgendVakje);
-                        computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
-                    }
-                    else if (volgendVakje == null)
+                    if (volgendVakje == null)
                     {
                         mogelijkloop = true;
                     }
-                    volgendVakje = volgendVakje.buurZuid;
+                    else
+                    {
+                        if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                        {
+                            mogelijkloop = true;
+                            computer.spelerkanslaan = true;
+                            computer.slaanmogelijkheden.Add(volgendVakje);
+                            computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                        }
+                        else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
+                        {
+                            mogelijkloop = true;
+                        }
+                        volgendVakje = volgendVakje.buurZuid;
+                    }
                 }
-            }
 
-            mogelijkloop = false;
-            volgendVakje = geselecteerdStuk.buurWest;
-            while (mogelijkloop == false)
-            {
-                if (volgendVakje == null)
+                // Kijkt of er Zuidoost geslagen kan worden
+                mogelijkloop = false;
+                volgendVakje = geselecteerdStuk.buurWest;
+                while (mogelijkloop == false)
                 {
-                    mogelijkloop = true;
-                }
-                else
-                {
-                    if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur != geselecteerdStuk.schaakstuk.kleur)
-                    {
-                        mogelijkloop = true;
-                        computer.spelerkanslaan = true;
-                        computer.slaanmogelijkheden.Add(volgendVakje);
-                        computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
-                    }
-                    else if (volgendVakje == null)
+                    if (volgendVakje == null)
                     {
                         mogelijkloop = true;
                     }
-                    volgendVakje = volgendVakje.buurWest;
+                    else
+                    {
+                        if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                        {
+                            mogelijkloop = true;
+                            computer.spelerkanslaan = true;
+                            computer.slaanmogelijkheden.Add(volgendVakje);
+                            computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                        }
+                        else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
+                        {
+                            mogelijkloop = true;
+                        }
+                        volgendVakje = volgendVakje.buurWest;
+                    }
                 }
             }
         }
