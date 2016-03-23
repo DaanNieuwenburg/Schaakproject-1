@@ -213,12 +213,28 @@ namespace Schaakproject
                                     foreach (int ywaarde in array)
                                     {
                                         aantalloops++;
+                                        if (array[aantalloops] % 2 == 1)
+                                        {
+                                            int temp = array[4];
+                                            array[4] = array[aantalloops];
+                                            array[aantalloops] = temp;
+
+                                        }
+                                        break;
+                                    }
+                                }
+                                else if (array[4] % 2 == 1 && array[5] % 2 == 1)
+                                {
+                                    int aantalloops = 0;
+                                    foreach (int ywaarde in array)
+                                    {
+                                        aantalloops++;
                                         if (array[aantalloops] % 2 == 0)
                                         {
                                             int temp = array[4];
                                             array[4] = array[aantalloops];
                                             array[aantalloops] = temp;
-                                            
+
                                         }
                                         break;
                                     }
