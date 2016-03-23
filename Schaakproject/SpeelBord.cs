@@ -85,7 +85,8 @@ namespace Schaakproject
                 {
                     if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler1.Kleur)
                     {
-                        _computerSpeler.nietverplaatstlijst.Clear();
+                        _computerSpeler.slaanmogelijkheden.Clear();
+                        _computerSpeler.slaanmogelijkhedenVanaf.Clear();
                         _speler1.SelecteerStuk(pictureBox.vakje, _spel);
                     }
                     else

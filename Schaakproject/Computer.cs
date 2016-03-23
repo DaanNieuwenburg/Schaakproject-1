@@ -148,7 +148,6 @@ namespace Schaakproject
                 }
                 else if (verplaatststuk.schaakstuk is Loper)
                 {
-                    verplaatststuk.pbox.BackColor = System.Drawing.Color.Azure;
                     verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
                 }
                 else if (verplaatststuk.schaakstuk is Toren)
