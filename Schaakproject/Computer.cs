@@ -1,4 +1,6 @@
-﻿using System;
+﻿// COMPUTER
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +16,7 @@ namespace Schaakproject
         private Vakje selected { get; set; }
         private Vakje pictures { get; set; }
 
-        private List <Vakje> _nietverplaatstlijst = new List<Vakje>();
+        private List<Vakje> _nietverplaatstlijst = new List<Vakje>();
         public List<Vakje> nietverplaatstlijst
         {
             get { return _nietverplaatstlijst; }
@@ -111,7 +113,7 @@ namespace Schaakproject
             slaanmogelijkheden.Clear();
 
             // Kijk nu per niet verplaatst stuk of er geslagen kan worden
-            foreach(Vakje nietverplaatststuk in nietverplaatstlijst)
+            foreach (Vakje nietverplaatststuk in nietverplaatstlijst)
             {
                 if (nietverplaatststuk.schaakstuk is Pion)
                 {
@@ -119,9 +121,7 @@ namespace Schaakproject
                 }
                 else if (nietverplaatststuk.schaakstuk is Loper)
                 {
-                    //nietverplaatststuk.pbox.BackColor = System.Drawing.Color.Azure;
                     nietverplaatststuk.schaakstuk.kanStukSlaan(this, nietverplaatststuk);
-                    Console.WriteLine("Loper kan stuk slaan");
                 }
                 else if (nietverplaatststuk.schaakstuk is Toren)
                 {
@@ -132,10 +132,6 @@ namespace Schaakproject
                     nietverplaatststuk.schaakstuk.kanStukSlaan(this, nietverplaatststuk);
                 }
                 else if (nietverplaatststuk.schaakstuk is Dame)
-                {
-                    nietverplaatststuk.schaakstuk.kanStukSlaan(this, nietverplaatststuk);
-                }
-                else if (nietverplaatststuk.schaakstuk is Koning)
                 {
                     nietverplaatststuk.schaakstuk.kanStukSlaan(this, nietverplaatststuk);
                 }
@@ -150,6 +146,7 @@ namespace Schaakproject
                 }
                 else if (verplaatststuk.schaakstuk is Loper)
                 {
+                    verplaatststuk.pbox.BackColor = System.Drawing.Color.Azure;
                     verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
                 }
                 else if (verplaatststuk.schaakstuk is Toren)
@@ -205,8 +202,8 @@ namespace Schaakproject
             {
                 _tegenstandersopening = "French defense";
                 _tegenstanderstactiek = "midcontrol";
-                selected = Koning.vakje.buurZuid;             // geselecteerd stuk
-                pictures = Koning.vakje.buurZuid.buurZuid;    // geselecteerd vak
+                selected = Koning.vakje.buurOost.buurOost;             // geselecteerd stuk
+                pictures = Koning.vakje.buurOost.buurZuid.buurZuid;    // geselecteerd vak
                 selected.pbox.BackColor = System.Drawing.Color.Black;
                 pictures.pbox.BackColor = System.Drawing.Color.Black;
                 voerZetUit();
@@ -516,9 +513,9 @@ namespace Schaakproject
             hierhoortgeenmens.Koning = Koning;
             hierhoortgeenmens.selected = selected;
             selected.schaakstuk.Verplaats(pictures, selected, hierhoortgeenmens, _spel);
-            selected.pbox.update();
-            pictures.pbox.update();
-            selected = null;
+            selected.pbox.update();                 //update het eerste vakje
+            pictures.pbox.update();                 //update het tweede vakje
+            selected = null;                        //niets is meer geselecteerd
             _spel.VeranderSpeler();
         }
     }

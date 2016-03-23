@@ -23,60 +23,68 @@ namespace Schaakproject
         public override void kanStukSlaan(Computer computer, Vakje geselecteerdStuk)
         {
             Vakje geselecteerdVak = geselecteerdStuk;
-
-            // Dit werkt nog niet :( ziet buren buiten het bord als null en geeft daardoor null exceptions
-            /*if (geselecteerdVak.schaakstuk.kleur == "wit")
+            if (geselecteerdStuk.schaakstuk.kleur == "zwart")
             {
-                if (geselecteerdVak.buurNoord.buurNoordoost != null && geselecteerdVak.buurNoord.buurNoordoost.schaakstuk.kleur != "wit")
+                if (geselecteerdVak.buurNoord != null)
                 {
-                    computer.spelerkanslaan = true;
+                    if (geselecteerdVak.buurNoord.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoord.buurNoordoost.schaakstuk.kleur == "wit")
+                    {
+                        computer.slaanmogelijkheden.Add(geselecteerdVak.buurNoord.buurNoordoost);
+                        computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (geselecteerdVak.buurNoord.buurNoordwest != null && geselecteerdVak.buurNoord.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoord.buurNoordwest.schaakstuk.kleur == "wit")
+                    {
+                        computer.slaanmogelijkheden.Add(geselecteerdVak.buurNoord.buurNoordwest);
+                        computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    }
                 }
 
-                else if (geselecteerdVak.buurNoord.buurNoordwest != null && geselecteerdVak.buurNoord.buurNoordwest.schaakstuk.kleur != "wit")
+                if (geselecteerdVak.buurZuid != null)
                 {
-                    computer.spelerkanslaan = true;
+                    if (geselecteerdVak.buurZuid.buurZuidwest != null && geselecteerdVak.buurZuid.buurZuidwest.schaakstuk != null && geselecteerdVak.buurZuid.buurZuidwest.schaakstuk.kleur == "wit")
+                    {
+                        computer.slaanmogelijkheden.Add(geselecteerdVak.buurZuid.buurZuidwest);
+                        computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (geselecteerdVak.buurZuid.buurZuidoost != null && geselecteerdVak.buurZuid.buurZuidoost.schaakstuk != null && geselecteerdVak.buurZuid.buurZuidoost.schaakstuk.kleur == "wit")
+                    {
+                        computer.slaanmogelijkheden.Add(geselecteerdVak.buurZuid.buurZuidoost);
+                        computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    }
                 }
 
-                else if (geselecteerdVak.buurZuid.buurZuidoost != null && geselecteerdVak.buurZuid.buurZuidoost.schaakstuk.kleur != "wit")
+                if (geselecteerdVak.buurWest != null)
                 {
-                    computer.spelerkanslaan = true;
+                    if (geselecteerdVak.buurWest.buurNoordwest != null && geselecteerdVak.buurWest.buurNoordwest.schaakstuk != null && geselecteerdVak.buurWest.buurNoordwest.schaakstuk.kleur == "wit")
+                    {
+                        computer.slaanmogelijkheden.Add(geselecteerdVak.buurWest.buurNoordwest);
+                        computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (geselecteerdVak.buurWest.buurZuidwest != null && geselecteerdVak.buurWest.buurZuidwest.schaakstuk != null && geselecteerdVak.buurWest.buurZuidwest.schaakstuk.kleur == "wit")
+                    {
+                        computer.slaanmogelijkheden.Add(geselecteerdVak.buurWest.buurZuidwest);
+                        computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    }
                 }
-
-                else if (geselecteerdVak.buurZuid.buurZuidwest != null && geselecteerdVak.buurZuid.buurZuidwest.schaakstuk.kleur != "wit")
+                if (geselecteerdVak.buurOost != null)
                 {
-                    computer.spelerkanslaan = true;
+                    if (geselecteerdVak.buurOost.buurNoordwest != null && geselecteerdVak.buurOost.buurNoordwest.schaakstuk != null && geselecteerdVak.buurOost.buurNoordwest.schaakstuk.kleur == "wit")
+                    {
+                        computer.slaanmogelijkheden.Add(geselecteerdVak.buurOost.buurNoordwest);
+                        computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    }
+                    else if (geselecteerdVak.buurOost.buurZuidwest != null && geselecteerdVak.buurOost.buurZuidwest.schaakstuk != null && geselecteerdVak.buurOost.buurZuidwest.schaakstuk.kleur == "wit")
+                    {
+                        computer.slaanmogelijkheden.Add(geselecteerdVak.buurOost.buurZuidwest);
+                        computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    }
                 }
                 else
                 {
-                    computer.spelerkanslaan = true;
+                    computer.spelerkanslaan = false;
+                    computer.computerkanslaan = false;
                 }
             }
-            else
-            {
-                if (geselecteerdVak.buurNoord.buurNoordoost != null && geselecteerdVak.buurNoord.buurNoordoost.schaakstuk.kleur != "zwart")
-                {
-                    computer.computerkanslaan = true;
-                }
-
-                else if (geselecteerdVak.buurNoord.buurNoordwest != null && geselecteerdVak.buurNoord.buurNoordwest.schaakstuk.kleur != "zwart")
-                {
-                    computer.computerkanslaan = true;
-                }
-
-                else if (geselecteerdVak.buurZuid.buurZuidoost != null && geselecteerdVak.buurZuid.buurZuidoost.schaakstuk.kleur != "zwart")
-                {
-                    computer.computerkanslaan = true;
-                }
-
-                else if (geselecteerdVak.buurZuid.buurZuidwest != null && geselecteerdVak.buurZuid.buurZuidwest.schaakstuk.kleur != "zwart")
-                {
-                    computer.computerkanslaan = true;
-                }
-                else
-                {
-                    computer.computerkanslaan = true;
-                }
-            }*/
         }
 
         public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler, Spel spel)

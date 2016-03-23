@@ -31,7 +31,83 @@ namespace Schaakproject
         }
         public override void kanStukSlaan(Computer computer, Vakje geselecteerdStuk)
         {
+            if (geselecteerdStuk.schaakstuk.kleur == "zwart")
+            {
+                Vakje geselecteerdVak = geselecteerdStuk;
 
+                // noord
+                if (geselecteerdVak.buurNoordwest != null && geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordwest.schaakstuk.kleur == "wit")
+                {
+                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurNoordwest);
+                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                }
+                else if (geselecteerdVak.buurNoord != null && geselecteerdVak.buurNoord.schaakstuk != null && geselecteerdVak.buurNoord.schaakstuk.kleur == "wit")
+                {
+                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurNoord);
+                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                }
+                else if (geselecteerdVak.buurNoordoost != null && geselecteerdVak.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur == "wit")
+                {
+                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurNoordoost);
+                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                }
+
+                // west
+                else if (geselecteerdVak.buurWest.buurNoord != null && geselecteerdVak.buurWest.buurNoord.schaakstuk != null && geselecteerdVak.buurWest.buurNoord.schaakstuk.kleur == "wit")
+                {
+                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurWest.buurNoord);
+                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                }
+                else if (geselecteerdVak.buurWest != null && geselecteerdVak.buurWest.schaakstuk != null && geselecteerdVak.buurWest.schaakstuk.kleur == "wit")
+                {
+                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurWest);
+                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                }
+                else if (geselecteerdVak.buurWest.buurZuid != null && geselecteerdVak.buurWest.buurZuid.schaakstuk != null && geselecteerdVak.buurWest.buurZuid.schaakstuk.kleur == "wit")
+                {
+                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurWest.buurZuid);
+                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                }
+
+                // zuid
+                else if (geselecteerdVak.buurZuidwest != null && geselecteerdVak.buurZuidwest.schaakstuk != null && geselecteerdVak.buurZuidwest.schaakstuk.kleur == "wit")
+                {
+                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurZuidwest);
+                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                }
+                else if (geselecteerdVak.buurZuid != null && geselecteerdVak.buurZuid.schaakstuk != null && geselecteerdVak.buurZuid.schaakstuk.kleur == "wit")
+                {
+                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurZuid);
+                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                }
+                else if (geselecteerdVak.buurZuidoost != null && geselecteerdVak.buurZuidoost.schaakstuk != null && geselecteerdVak.buurZuidoost.schaakstuk.kleur == "wit")
+                {
+                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurZuidoost);
+                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                }
+
+                // oost
+                else if (geselecteerdVak.buurOost.buurNoord != null && geselecteerdVak.buurOost.buurNoord.schaakstuk != null && geselecteerdVak.buurOost.buurNoord.schaakstuk.kleur == "wit")
+                {
+                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurOost.buurNoord);
+                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                }
+                else if (geselecteerdVak.buurOost != null && geselecteerdVak.buurOost.schaakstuk != null && geselecteerdVak.buurOost.schaakstuk.kleur == "wit")
+                {
+                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurOost);
+                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                }
+                else if (geselecteerdVak.buurOost.buurZuid != null && geselecteerdVak.buurOost.buurZuid.schaakstuk != null && geselecteerdVak.buurOost.buurZuid.schaakstuk.kleur == "wit")
+                {
+                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurOost.buurZuid);
+                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                }
+                else
+                {
+                    computer.spelerkanslaan = false;
+                    computer.computerkanslaan = false;
+                }
+            }
         }
 
         public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler, Spel spel)

@@ -8,19 +8,52 @@ namespace Schaakproject
 {
     public static class MSSystemExtenstions
     {
+        static bool shuffle = true;
+        public static bool IsOdd(int value)
+        {
+            return value % 2 != 0;
+        }
         private static Random rng = new Random();
         public static void Shuffle<T>(this T[] array)
         {
-            rng = new Random();
-            int n = array.Length;
-            while (n > 1)
+            while (shuffle == true)
             {
-                int k = rng.Next(n);
-                n--;
-                T temp = array[n];
-                array[n] = array[k];
-                array[k] = temp;
+                rng = new Random();
+                int n = array.Length;
+                while (n > 1)
+                {
+                    int k = rng.Next(n);
+                    n--;
+                    T temp = array[n];
+                    array[n] = array[k];
+                    array[k] = temp;
+                }
+                if (Convert.ToInt32(array[4]) % 2 == 0 && Convert.ToInt32(array[5]) % 2 == 0)
+                {
+                    shuffle = true;
+                }
+                else if (Convert.ToInt32(array[4]) % 2 == 1 && Convert.ToInt32(array[5]) % 2 == 1)
+                {
+                    shuffle = true;
+                }
+                else if (Convert.ToInt32(array[0]) < Convert.ToInt32(array[7]) && Convert.ToInt32(array[1]) < Convert.ToInt32(array[7]))
+                {
+                    shuffle = true;
+                }
+                else if (Convert.ToInt32(array[0]) > Convert.ToInt32(array[7]) && Convert.ToInt32(array[1]) > Convert.ToInt32(array[7]))
+                {
+                    shuffle = true;
+                }
+                else if (Convert.ToInt32(array[7]) == 0  || Convert.ToInt32(array[7]) == 7)
+                {
+                    shuffle = true;
+                }
+                else
+                {
+                    shuffle = false;
+                }
             }
+            shuffle = true;
         }
     }
     public class Schaakbord
@@ -204,14 +237,36 @@ namespace Schaakproject
                         {
                             if (y == array[0] || y == array[1])
                             {
-                                schaakarray[x, y].schaakstuk = new Toren(kleurstuk, schaakarray[x, y], voorDitStuk);
-                                if (kleurstuk == "wit")
+                                if (array[0] < array[7] && array[1] < array[7])
                                 {
-                                    aantal1++;
+
                                 }
-                                else
+                                else if (array[0] > array[7] && array[1] > array[7])
                                 {
-                                    aantal2++;
+                                    int aantalloops = 0;
+                                    foreach (int ywaarde in array)
+                                    {
+                                        aantalloops++;
+                                        if (array[aantalloops] < array[7])
+                                        {
+                                            int temp = array[0];
+                                            array[0] = array[aantalloops];
+                                            array[aantalloops] = temp;
+                                        }
+                                        break;
+                                    }
+                                }
+                                else if ((array[0] < array[7] && array[1] > array[7]) || (array[0] > array[7] && array[1] < array[7]))
+                                {
+                                    schaakarray[x, y].schaakstuk = new Toren(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                    if (kleurstuk == "wit")
+                                    {
+                                        aantal1++;
+                                    }
+                                    else
+                                    {
+                                        aantal2++;
+                                    }
                                 }
                             }
 
@@ -230,51 +285,17 @@ namespace Schaakproject
 
                             else if (y == array[4] || y == array[5])
                             {
-                                if (array[4] % 2 == 0 && array[5] % 2 == 0)
+                                aantallopers++;
+                                schaakarray[x, y].schaakstuk = new Loper(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                if (kleurstuk == "wit")
                                 {
-                                    int aantalloops = 0;
-                                    foreach (int ywaarde in array)
-                                    {
-                                        aantalloops++;
-                                        if (array[aantalloops] % 2 == 1)
-                                        {
-                                            int temp = array[4];
-                                            array[4] = array[aantalloops];
-                                            array[aantalloops] = temp;
-
-                                        }
-                                        break;
-                                    }
+                                    aantal1++;
                                 }
-                                else if (array[4] % 2 == 1 && array[5] % 2 == 1)
+                                else
                                 {
-                                    int aantalloops = 0;
-                                    foreach (int ywaarde in array)
-                                    {
-                                        aantalloops++;
-                                        if (array[aantalloops] % 2 == 0)
-                                        {
-                                            int temp = array[4];
-                                            array[4] = array[aantalloops];
-                                            array[aantalloops] = temp;
-
-                                        }
-                                        break;
-                                    }
+                                    aantal2++;
                                 }
-                                else if ((array[4] % 2 == 1 && array[5] % 2 == 0) || (array[4] % 2 == 0 && array[5] % 2 == 1))
-                                {
-                                    aantallopers++;
-                                    schaakarray[x, y].schaakstuk = new Loper(kleurstuk, schaakarray[x, y], voorDitStuk);
-                                    if (kleurstuk == "wit")
-                                    {
-                                        aantal1++;
-                                    }
-                                    else
-                                    {
-                                        aantal2++;
-                                    }
-                                }
+                                
                             }
 
                             else if (y == array[6])
@@ -312,6 +333,7 @@ namespace Schaakproject
                                     }
                                     aantal2++;
                                 }
+                                //}
                             }
                         }
                         else if (x == 1 || x == 6)
@@ -1320,10 +1342,7 @@ namespace Schaakproject
             pionvoormat = false;
             return mat;
         }
-        public bool IsOdd(int value)
-        {
-            return value % 2 != 0;
-        }
+
     }
 }
 
