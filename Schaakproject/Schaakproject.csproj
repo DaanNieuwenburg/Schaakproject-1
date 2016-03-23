@@ -305,6 +305,42 @@
   <ItemGroup>
     <None Include="Resources\bglogin1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button klassiekregels click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button klassiekregels.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttontest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button paard regels.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button schaken960 click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button schaken960.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels paard click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels paard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels koning click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels koning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels toren click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels toren.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

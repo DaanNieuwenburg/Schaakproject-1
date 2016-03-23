@@ -164,45 +164,64 @@
             // 
             // btnvariant
             // 
-            this.btnvariant.BackColor = System.Drawing.SystemColors.Control;
-            this.btnvariant.Location = new System.Drawing.Point(591, 154);
+            this.btnvariant.BackColor = System.Drawing.Color.Transparent;
+            this.btnvariant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnvariant.FlatAppearance.BorderSize = 0;
+            this.btnvariant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnvariant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnvariant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnvariant.Location = new System.Drawing.Point(536, 68);
             this.btnvariant.Name = "btnvariant";
-            this.btnvariant.Size = new System.Drawing.Size(136, 23);
+            this.btnvariant.Size = new System.Drawing.Size(191, 52);
             this.btnvariant.TabIndex = 10;
             this.btnvariant.UseVisualStyleBackColor = false;
             this.btnvariant.Visible = false;
             this.btnvariant.Click += new System.EventHandler(this.btnvariant_Click);
+            this.btnvariant.MouseEnter += new System.EventHandler(this.btnvariant_MouseEnter);
+            this.btnvariant.MouseLeave += new System.EventHandler(this.btnvariant_MouseLeave);
             // 
             // btnpaard
             // 
-            this.btnpaard.BackColor = System.Drawing.SystemColors.Control;
-            this.btnpaard.Location = new System.Drawing.Point(591, 183);
+            this.btnpaard.BackColor = System.Drawing.Color.Transparent;
+            this.btnpaard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnpaard.FlatAppearance.BorderSize = 0;
+            this.btnpaard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnpaard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnpaard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnpaard.Location = new System.Drawing.Point(536, 126);
             this.btnpaard.Name = "btnpaard";
-            this.btnpaard.Size = new System.Drawing.Size(136, 23);
+            this.btnpaard.Size = new System.Drawing.Size(191, 42);
             this.btnpaard.TabIndex = 11;
-            this.btnpaard.Text = "Paard";
             this.btnpaard.UseVisualStyleBackColor = false;
             this.btnpaard.Visible = false;
             this.btnpaard.Click += new System.EventHandler(this.btnpaard_Click);
+            this.btnpaard.MouseEnter += new System.EventHandler(this.btnpaard_MouseEnter);
+            this.btnpaard.MouseLeave += new System.EventHandler(this.btnpaard_MouseLeave);
             // 
             // btntoren
             // 
-            this.btntoren.BackColor = System.Drawing.SystemColors.Control;
-            this.btntoren.Location = new System.Drawing.Point(591, 212);
+            this.btntoren.BackColor = System.Drawing.Color.Transparent;
+            this.btntoren.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btntoren.FlatAppearance.BorderSize = 0;
+            this.btntoren.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btntoren.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btntoren.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btntoren.Location = new System.Drawing.Point(535, 174);
             this.btntoren.Name = "btntoren";
-            this.btntoren.Size = new System.Drawing.Size(136, 23);
+            this.btntoren.Size = new System.Drawing.Size(191, 42);
             this.btntoren.TabIndex = 12;
-            this.btntoren.Text = "Toren";
             this.btntoren.UseVisualStyleBackColor = false;
             this.btntoren.Visible = false;
             this.btntoren.Click += new System.EventHandler(this.btntoren_Click);
+            this.btntoren.MouseEnter += new System.EventHandler(this.btntoren_MouseEnter);
+            this.btntoren.MouseLeave += new System.EventHandler(this.btntoren_MouseLeave);
             // 
             // btnloper
             // 
             this.btnloper.BackColor = System.Drawing.SystemColors.Control;
-            this.btnloper.Location = new System.Drawing.Point(591, 241);
+            this.btnloper.Location = new System.Drawing.Point(535, 227);
             this.btnloper.Name = "btnloper";
-            this.btnloper.Size = new System.Drawing.Size(136, 23);
+            this.btnloper.Size = new System.Drawing.Size(191, 48);
             this.btnloper.TabIndex = 13;
             this.btnloper.Text = "Loper";
             this.btnloper.UseVisualStyleBackColor = false;
@@ -212,9 +231,9 @@
             // btndame
             // 
             this.btndame.BackColor = System.Drawing.SystemColors.Control;
-            this.btndame.Location = new System.Drawing.Point(590, 270);
+            this.btndame.Location = new System.Drawing.Point(535, 281);
             this.btndame.Name = "btndame";
-            this.btndame.Size = new System.Drawing.Size(136, 23);
+            this.btndame.Size = new System.Drawing.Size(191, 48);
             this.btndame.TabIndex = 14;
             this.btndame.Text = "Dame";
             this.btndame.UseVisualStyleBackColor = false;
@@ -223,22 +242,28 @@
             // 
             // btnkoning
             // 
-            this.btnkoning.BackColor = System.Drawing.SystemColors.Control;
-            this.btnkoning.Location = new System.Drawing.Point(591, 299);
+            this.btnkoning.BackColor = System.Drawing.Color.Transparent;
+            this.btnkoning.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnkoning.FlatAppearance.BorderSize = 0;
+            this.btnkoning.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnkoning.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnkoning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnkoning.Location = new System.Drawing.Point(536, 335);
             this.btnkoning.Name = "btnkoning";
-            this.btnkoning.Size = new System.Drawing.Size(136, 23);
+            this.btnkoning.Size = new System.Drawing.Size(191, 48);
             this.btnkoning.TabIndex = 15;
-            this.btnkoning.Text = "Koning";
             this.btnkoning.UseVisualStyleBackColor = false;
             this.btnkoning.Visible = false;
             this.btnkoning.Click += new System.EventHandler(this.btnkoning_Click);
+            this.btnkoning.MouseEnter += new System.EventHandler(this.btnkoning_MouseEnter);
+            this.btnkoning.MouseLeave += new System.EventHandler(this.btnkoning_MouseLeave);
             // 
             // btnpion
             // 
             this.btnpion.BackColor = System.Drawing.SystemColors.Control;
-            this.btnpion.Location = new System.Drawing.Point(591, 328);
+            this.btnpion.Location = new System.Drawing.Point(536, 389);
             this.btnpion.Name = "btnpion";
-            this.btnpion.Size = new System.Drawing.Size(136, 23);
+            this.btnpion.Size = new System.Drawing.Size(191, 48);
             this.btnpion.TabIndex = 16;
             this.btnpion.Text = "Pion";
             this.btnpion.UseVisualStyleBackColor = false;

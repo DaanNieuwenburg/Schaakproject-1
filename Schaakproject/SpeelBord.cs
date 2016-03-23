@@ -158,14 +158,16 @@ namespace Schaakproject
 
         private void SpeelBord_Load(object sender, EventArgs e)
         {
+            btntoren.BackgroundImage = Properties.Resources.button_regels_toren;
+            btnpaard.BackgroundImage = Properties.Resources.button_regels_paard;
             btnregels.Visible = true;
             if (_variant == "Chess960")
             {
-                btnvariant.Text = "Schaken960";
+                btnvariant.BackgroundImage = Properties.Resources.button_schaken9601;
         }
             else
             {
-                btnvariant.Text = "Schaken";
+                btnvariant.BackgroundImage = Properties.Resources.button_klassiekregels;
             }
         }
 
@@ -382,6 +384,61 @@ namespace Schaakproject
             this.btnvariant.Visible = false;
             this.btnterug.Visible = true;
             this.btnregels.Visible = false;
+        }
+
+        private void btnvariant_MouseEnter(object sender, EventArgs e)
+        {
+            if(_variant == "Chess960")
+            {
+                btnvariant.BackgroundImage = Properties.Resources.button_schaken960_click1;
+            }
+            else
+            {
+                btnvariant.BackgroundImage = Properties.Resources.button_klassiekregels_click;
+            }
+        }
+
+        private void btnvariant_MouseLeave(object sender, EventArgs e)
+        {
+            if (_variant == "Chess960")
+            {
+                btnvariant.BackgroundImage = Properties.Resources.button_schaken9601;
+            }
+            else
+            {
+                btnvariant.BackgroundImage = Properties.Resources.button_klassiekregels;
+            }
+        }
+
+        private void btnpaard_MouseEnter(object sender, EventArgs e)
+        {
+            btnpaard.BackgroundImage = Properties.Resources.button_regels_paard_click;
+        }
+
+        private void btnpaard_MouseLeave(object sender, EventArgs e)
+        {
+            btnpaard.BackgroundImage = Properties.Resources.button_regels_paard;
+
+        }
+
+        private void btnkoning_MouseEnter(object sender, EventArgs e)
+        {
+            btnkoning.BackgroundImage = Properties.Resources.button_regels_koning_click;
+        }
+
+        private void btnkoning_MouseLeave(object sender, EventArgs e)
+        {
+            btnkoning.BackgroundImage = Properties.Resources.button_regels_koning;
+        }
+
+        private void btntoren_MouseEnter(object sender, EventArgs e)
+        {
+            btntoren.BackgroundImage = Properties.Resources.button_regels_toren_click;
+        }
+
+        private void btntoren_MouseLeave(object sender, EventArgs e)
+        {
+            btntoren.BackgroundImage = Properties.Resources.button_regels_toren;
         }
     }
 }
