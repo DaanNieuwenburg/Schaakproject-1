@@ -13,6 +13,14 @@ namespace Schaakproject
         private Spel _spel { get; set; }
         private Vakje selected { get; set; }
         private Vakje pictures { get; set; }
+
+        private List <Vakje> _nietverplaatstlijst = new List<Vakje>();
+        public List<Vakje> nietverplaatstlijst
+        {
+            get { return _nietverplaatstlijst; }
+            set { _nietverplaatstlijst = value; }
+        }
+
         private List<Vakje> _verplaatsingslijst = new List<Vakje>();
         public List<Vakje> verplaatsingsLijst
         {
@@ -70,7 +78,6 @@ namespace Schaakproject
                 {
                     _vorigvakje = _vorigvakje.buurZuid;
                     zuidteller++;
-                    Console.WriteLine(zuidteller);
                 }
                 else
                 {
@@ -88,7 +95,6 @@ namespace Schaakproject
                 {
                     _vorigvakje = _vorigvakje.buurWest;
                     westteller++;
-                    Console.WriteLine(westteller);
                 }
                 else
                 {
@@ -104,33 +110,63 @@ namespace Schaakproject
             // Reset de slaanmogelijkheden
             slaanmogelijkheden.Clear();
 
-            // Kijk nu per stuk of er geslagen kan worden door de mens
-            foreach (Vakje kleurvakje in verplaatsingsLijst)
+            // Kijk nu per niet verplaatst stuk of er geslagen kan worden
+            foreach(Vakje nietverplaatststuk in nietverplaatstlijst)
             {
-                if (kleurvakje.schaakstuk is Pion)
+                if (nietverplaatststuk.schaakstuk is Pion)
                 {
-                    kleurvakje.schaakstuk.kanStukSlaan(this, kleurvakje);
+                    nietverplaatststuk.schaakstuk.kanStukSlaan(this, nietverplaatststuk);
                 }
-                else if (kleurvakje.schaakstuk is Loper)
+                else if (nietverplaatststuk.schaakstuk is Loper)
                 {
-                    kleurvakje.schaakstuk.kanStukSlaan(this, kleurvakje);
+                    //nietverplaatststuk.pbox.BackColor = System.Drawing.Color.Azure;
+                    nietverplaatststuk.schaakstuk.kanStukSlaan(this, nietverplaatststuk);
                     Console.WriteLine("Loper kan stuk slaan");
                 }
-                else if (kleurvakje.schaakstuk is Toren)
+                else if (nietverplaatststuk.schaakstuk is Toren)
                 {
-                    kleurvakje.schaakstuk.kanStukSlaan(this, kleurvakje);
+                    nietverplaatststuk.schaakstuk.kanStukSlaan(this, nietverplaatststuk);
                 }
-                else if (kleurvakje.schaakstuk is Paard)
+                else if (nietverplaatststuk.schaakstuk is Paard)
                 {
-                    kleurvakje.schaakstuk.kanStukSlaan(this, kleurvakje);
+                    nietverplaatststuk.schaakstuk.kanStukSlaan(this, nietverplaatststuk);
                 }
-                else if (kleurvakje.schaakstuk is Dame)
+                else if (nietverplaatststuk.schaakstuk is Dame)
                 {
-                    kleurvakje.schaakstuk.kanStukSlaan(this, kleurvakje);
+                    nietverplaatststuk.schaakstuk.kanStukSlaan(this, nietverplaatststuk);
                 }
-                else if (kleurvakje.schaakstuk is Koning)
+                else if (nietverplaatststuk.schaakstuk is Koning)
                 {
-                    kleurvakje.schaakstuk.kanStukSlaan(this, kleurvakje);
+                    nietverplaatststuk.schaakstuk.kanStukSlaan(this, nietverplaatststuk);
+                }
+            }
+
+            // Kijk nu per verplaatst stuk of er geslagen kan worden
+            foreach (Vakje verplaatststuk in verplaatsingsLijst)
+            {
+                if (verplaatststuk.schaakstuk is Pion)
+                {
+                    verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
+                }
+                else if (verplaatststuk.schaakstuk is Loper)
+                {
+                    verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
+                }
+                else if (verplaatststuk.schaakstuk is Toren)
+                {
+                    verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
+                }
+                else if (verplaatststuk.schaakstuk is Paard)
+                {
+                    verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
+                }
+                else if (verplaatststuk.schaakstuk is Dame)
+                {
+                    verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
+                }
+                else if (verplaatststuk.schaakstuk is Koning)
+                {
+                    verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
                 }
             }
         }
@@ -217,10 +253,8 @@ namespace Schaakproject
 
         private void slaEenStuk()
         {
-            Console.WriteLine("METHODE SLAANMOGELIJKHEDEN");
             for (int i = 0; i < slaanmogelijkheden.Count; i++)
             {
-                Console.WriteLine("SLAANMOGELIJKHEDEN LOOP");
                 Schaakstuk schaakstuk = slaanmogelijkheden[i].schaakstuk;
                 slaanmogelijkheden[i].pbox.BackColor = System.Drawing.Color.Aqua;
                 if (schaakstuk is Koning && schaakstuk.kleur == "wit")
@@ -237,6 +271,7 @@ namespace Schaakproject
                 }
                 else if (schaakstuk is Toren || schaakstuk is Paard || schaakstuk is Loper && schaakstuk.kleur == "wit")
                 {
+                    Console.WriteLine("LOPER SLAAT");
                     selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
                     pictures = slaanmogelijkheden[i];       // geselecteerd vak
                     voerZetUit();
@@ -260,32 +295,27 @@ namespace Schaakproject
             // Linkerkantbord
             if (randomgetal == 1)
             {
-                Console.WriteLine("A");
                 int randomstuk = rnd.Next(1, 4);
                 if (randomstuk == 1 && Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null && Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.schaakstuk != null)
                 {
                     selected = Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid;                // geselecteerd stuk
-                    Console.WriteLine("A1");
                     pictures = Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
                 else if (randomstuk == 2 && Koning.vakje.buurWest.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null && Koning.vakje.buurWest.buurWest.buurWest.buurZuid != null)
                 {
                     selected = Koning.vakje.buurWest.buurWest.buurWest.buurZuid;                // geselecteerd stuk
-                    Console.WriteLine("A2");
                     pictures = Koning.vakje.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
                 else if (randomstuk == 3 && Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null && Koning.vakje.buurWest.buurWest.buurWest != null)
                 {
                     selected = Koning.vakje.buurWest.buurWest.buurWest;                                   // geselecteerd stuk
-                    Console.WriteLine("A3");
                     pictures = Koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
                 else
                 {
-                    Console.WriteLine("ALGO + " + randomstuk);
                     Algoritme();
                 }
             }
@@ -293,25 +323,21 @@ namespace Schaakproject
             // Linksmiddenbord
             else if (randomgetal == 2)
             {
-                Console.WriteLine("B");
                 int randomstuk = rnd.Next(1, 3);
                 if (randomstuk == 1 && Koning.vakje.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null)
                 {
                     selected = Koning.vakje.buurWest.buurWest.buurWest;                // geselecteerd stuk
-                    Console.WriteLine("B1");
                     pictures = Koning.vakje.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
                 else if (randomstuk == 2 && Koning.vakje.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null)
                 {
                     selected = Koning.vakje.buurWest.buurWest.buurZuid;                // geselecteerd stuk
-                    Console.WriteLine("B2");
                     pictures = Koning.vakje.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
                 else
                 {
-                    Console.WriteLine("ALGO + " + randomstuk);
                     Algoritme();
                 }
             }
@@ -319,7 +345,6 @@ namespace Schaakproject
             // Midden
             else if (randomgetal == 3)
             {
-                Console.WriteLine("C");
                 int randomstuk = rnd.Next(1, 3);
                 if (randomstuk == 1 && Koning.vakje.buurWest.buurZuid.buurZuid.schaakstuk == null)
                 {
@@ -335,7 +360,6 @@ namespace Schaakproject
                 }
                 else
                 {
-                    Console.WriteLine("ALGO + " + randomstuk);
                     Algoritme();
                 }
             }
@@ -343,25 +367,21 @@ namespace Schaakproject
             // Rechtsmiddenbord
             else if (randomgetal == 4)
             {
-                Console.WriteLine("D");
                 int randomstuk = rnd.Next(1, 3);
                 if (randomstuk == 1 && Koning.vakje.buurOost.buurZuid.buurZuid.schaakstuk == null)
                 {
                     selected = Koning.vakje.buurOost;                   // geselecteerd stuk
-                    Console.WriteLine("D1");
                     pictures = Koning.vakje.buurOost.buurZuid.buurZuid; // geselecteerd vak
                     voerZetUit();
                 }
                 else if (randomstuk == 2 && Koning.vakje.buurOost.buurZuid.buurZuid.schaakstuk == null)
                 {
                     selected = Koning.vakje.buurOost.buurOost;                // geselecteerd stuk
-                    Console.WriteLine("D2");
                     pictures = Koning.vakje.buurOost.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
                 else
                 {
-                    Console.WriteLine("ALGO + " + randomstuk);
                     Algoritme();
                 }
             }
@@ -369,39 +389,33 @@ namespace Schaakproject
             // Rechterkantbord
             else if (randomgetal == 5)
             {
-                Console.WriteLine("E");
                 int randomstuk = rnd.Next(1, 4);
                 if (randomstuk == 1 && Koning.vakje.buurOost.buurZuid.buurZuid.schaakstuk == null)
                 {
                     selected = Koning.vakje.buurOost.buurZuid;                // geselecteerd stuk
-                    Console.WriteLine("E1");
                     pictures = Koning.vakje.buurOost.buurZuid.buurZuid;      // geselecteerd vak
                     voerZetUit();
                 }
                 else if (randomstuk == 2 && Koning.vakje.buurOost.buurOost.buurOost.buurZuid.buurZuid.schaakstuk == null)
                 {
                     selected = Koning.vakje.buurOost.buurOost.buurOost.buurZuid;            // geselecteerd stuk
-                    Console.WriteLine("E2");
                     pictures = Koning.vakje.buurOost.buurOost.buurOost.buurZuid.buurZuid;   // geselecteerd vak
                     voerZetUit();
                 }
                 else if (randomstuk == 3 && Koning.vakje.buurOost.buurOost.buurOost.buurZuid.buurZuid.schaakstuk == null)
                 {
                     selected = Koning.vakje.buurOost.buurOost;                              // geselecteerd stuk
-                    Console.WriteLine("E3");
                     pictures = Koning.vakje.buurOost.buurOost.buurOost.buurZuid.buurZuid;   // geselecteerd vak
                     voerZetUit();
                 }
                 else if (randomstuk == 4 && Koning.vakje.buurOost.buurOost.buurZuid.buurZuid.schaakstuk == null)
                 {
                     selected = Koning.vakje.buurOost.buurOost.buurZuid;             // geselecteerd stuk
-                    Console.WriteLine("E4");
                     pictures = Koning.vakje.buurOost.buurOost.buurZuid.buurZuid;    // geselecteerd vak
                     voerZetUit();
                 }
                 else
                 {
-                    Console.WriteLine("ALGO + " + randomstuk);
                     Algoritme();
                 }
             }

@@ -32,22 +32,18 @@ namespace Schaakproject
             if (geselecteerdStuk.schaakstuk.kleur == "zwart")
             {
                 Vakje geselecteerdVak = geselecteerdStuk;
-                Console.WriteLine("CONTROLEERT");
                 if (geselecteerdVak.buurZuidoost != null && geselecteerdVak.buurZuidoost.schaakstuk != null && geselecteerdVak.buurZuidoost.schaakstuk.kleur == "wit")
                 {
-                    Console.WriteLine("FOUND OOST");
                     computer.slaanmogelijkheden.Add(geselecteerdVak.buurZuidoost);
                     computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
                 else if (geselecteerdVak.buurZuidwest != null && geselecteerdVak.buurZuidwest.schaakstuk != null && geselecteerdVak.buurZuidwest.schaakstuk.kleur == "wit")
                 {
-                    Console.WriteLine("FOUND WEST");
                     computer.slaanmogelijkheden.Add(geselecteerdVak.buurZuidwest);
                     computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
                 else
                 {
-                    Console.WriteLine("NOT FOUND");
                     computer.spelerkanslaan = false;
                     computer.computerkanslaan = false;
                 }
@@ -141,14 +137,12 @@ namespace Schaakproject
                 // Slaan naar zuidoost voor een zwarte pion
                 else if (selected.buurZuidoost == nieuwVakje && kleur == "zwart" && nieuwVakje.schaakstuk != null)
                 {
-                    Console.WriteLine("ZUIDOOST SLAAN");
                     mogelijk = true;
                 }
 
                 // Slaan naar zuidwest voor een zwarte pion
                 else if (selected.buurZuidwest == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
-                    Console.WriteLine("ZUIDWEST SLAAN");
                     mogelijk = true;
                 }
 
