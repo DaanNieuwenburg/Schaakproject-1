@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading; // voor testen
 
 namespace Schaakproject
 {
@@ -62,7 +63,7 @@ namespace Schaakproject
             _spel = spel;
             _vorigvakje = _spel.selected;                   // slaat het door de speler geselecteerde vakje op
             _vorigschaakstuk = _spel.selected.schaakstuk;   // slaat het door de speler geselecteerde schaakstuk op     -- dit moet ook vanuit vorigvakje kunnen, scheelt code?
-            verplaatsingsLijst.Add(_spel.selected);         // slaat de positie van de spelerszet in lijst op 
+            //verplaatsingsLijst.Add(_spel.selected);         // slaat de positie van de spelerszet in lijst op 
             bepaalMensPositie();
             controleerOpSlaan();
             bepaalRondeEnAntwoord();
@@ -111,6 +112,7 @@ namespace Schaakproject
         {
             // Reset de slaanmogelijkheden
             slaanmogelijkheden.Clear();
+            slaanmogelijkhedenVanaf.Clear();
 
             // Kijk nu per niet verplaatst stuk of er geslagen kan worden
             foreach (Vakje nietverplaatststuk in nietverplaatstlijst)
@@ -146,7 +148,6 @@ namespace Schaakproject
                 }
                 else if (verplaatststuk.schaakstuk is Loper)
                 {
-                    verplaatststuk.pbox.BackColor = System.Drawing.Color.Azure;
                     verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
                 }
                 else if (verplaatststuk.schaakstuk is Toren)
@@ -253,28 +254,35 @@ namespace Schaakproject
             for (int i = 0; i < slaanmogelijkheden.Count; i++)
             {
                 Schaakstuk schaakstuk = slaanmogelijkheden[i].schaakstuk;
-                slaanmogelijkheden[i].pbox.BackColor = System.Drawing.Color.Aqua;
                 if (schaakstuk is Koning && schaakstuk.kleur == "wit")
                 {
+                    Console.WriteLine("KONING GESLAGEN");
                     selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
+                    selected.pbox.BackColor = System.Drawing.Color.Aqua;
+                    pictures = slaanmogelijkheden[i];       // geselecteerd vak
+                    voerZetUit();
+                }
+
+                else if (schaakstuk is Pion && schaakstuk.kleur == "wit")
+                {
+                    Console.WriteLine("PION GESLAGEN");
+                    selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
+                    selected.pbox.BackColor = System.Drawing.Color.Aqua;
+                    pictures = slaanmogelijkheden[i];       // geselecteerd vak
+                    voerZetUit();
+                }
+
+                else if (schaakstuk is Toren || schaakstuk is Paard || schaakstuk is Loper && schaakstuk.kleur == "wit")
+                {
+                    Console.WriteLine("LOPER GESLAGEN");
+                    selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
+                    selected.pbox.BackColor = System.Drawing.Color.Aqua;
                     pictures = slaanmogelijkheden[i];       // geselecteerd vak
                     voerZetUit();
                 }
                 else if (schaakstuk is Dame && schaakstuk.kleur == "wit")
                 {
-                    selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
-                    pictures = slaanmogelijkheden[i];       // geselecteerd vak
-                    voerZetUit();
-                }
-                else if (schaakstuk is Toren || schaakstuk is Paard || schaakstuk is Loper && schaakstuk.kleur == "wit")
-                {
-                    Console.WriteLine("LOPER SLAAT");
-                    selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
-                    pictures = slaanmogelijkheden[i];       // geselecteerd vak
-                    voerZetUit();
-                }
-                else if (schaakstuk is Pion && schaakstuk.kleur == "wit")
-                {
+                    Console.WriteLine("DAME GESLAGEN");
                     selected = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
                     selected.pbox.BackColor = System.Drawing.Color.Aqua;
                     pictures = slaanmogelijkheden[i];       // geselecteerd vak
@@ -285,6 +293,7 @@ namespace Schaakproject
 
         private void verplaatsNieuwStuk()
         {
+            Console.WriteLine("VERPLAATS NIEUW STUK");
             Random rnd = new Random();
             // Verdeelt het speelbord in 5 stukken d.m.v. random getal
             int randomgetal = rnd.Next(1, 6);
@@ -420,6 +429,7 @@ namespace Schaakproject
 
         private void verplaatsVerplaatstStuk()
         {
+            Console.WriteLine("VERPLAATS VERPLAATST STUK");
             bool verplaats = false;
             int teller = 0;
             while (verplaats == false)
@@ -508,7 +518,10 @@ namespace Schaakproject
 
         private void voerZetUit()
         {
+            Console.WriteLine("UITVOEREN VAN ZET");
             verplaatsingsLijst.Add(pictures);       // slaat de positie van de computerszet in lijst op 
+            selected.pbox.BackColor = System.Drawing.Color.Red;
+            pictures.pbox.BackColor = System.Drawing.Color.Blue;
             Mens hierhoortgeenmens = new Mens("ikhoorhierniet", "zwart", spel);
             hierhoortgeenmens.Koning = Koning;
             hierhoortgeenmens.selected = selected;
