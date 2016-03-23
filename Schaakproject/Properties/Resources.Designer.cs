@@ -183,6 +183,26 @@ namespace Schaakproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap button_regels_dame {
+            get {
+                object obj = ResourceManager.GetObject("button regels dame", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_regels_dame_click {
+            get {
+                object obj = ResourceManager.GetObject("button regels dame click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_regels_koning {
             get {
                 object obj = ResourceManager.GetObject("button regels koning", resourceCulture);
@@ -203,6 +223,46 @@ namespace Schaakproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap button_regels_loper {
+            get {
+                object obj = ResourceManager.GetObject("button regels loper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_regels_loper_click {
+            get {
+                object obj = ResourceManager.GetObject("button regels loper click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_regels_loper_click1 {
+            get {
+                object obj = ResourceManager.GetObject("button regels loper click1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_regels_loper1 {
+            get {
+                object obj = ResourceManager.GetObject("button regels loper1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_regels_paard {
             get {
                 object obj = ResourceManager.GetObject("button regels paard", resourceCulture);
@@ -216,6 +276,26 @@ namespace Schaakproject.Properties {
         internal static System.Drawing.Bitmap button_regels_paard_click {
             get {
                 object obj = ResourceManager.GetObject("button regels paard click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_regels_pion {
+            get {
+                object obj = ResourceManager.GetObject("button regels pion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_regels_pion_click {
+            get {
+                object obj = ResourceManager.GetObject("button regels pion click", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -158,6 +158,10 @@ namespace Schaakproject
 
         private void SpeelBord_Load(object sender, EventArgs e)
         {
+            btnkoning.BackgroundImage = Properties.Resources.button_regels_koning;
+            btndame.BackgroundImage = Properties.Resources.button_regels_dame;
+            btnpion.BackgroundImage = Properties.Resources.button_regels_pion;
+            btnloper.BackgroundImage = Properties.Resources.button_regels_loper;
             btntoren.BackgroundImage = Properties.Resources.button_regels_toren;
             btnpaard.BackgroundImage = Properties.Resources.button_regels_paard;
             btnregels.Visible = true;
@@ -439,6 +443,38 @@ namespace Schaakproject
         private void btntoren_MouseLeave(object sender, EventArgs e)
         {
             btntoren.BackgroundImage = Properties.Resources.button_regels_toren;
+        }
+
+        private void btnloper_MouseEnter(object sender, EventArgs e)
+        {
+            btnloper.BackgroundImage = Properties.Resources.button_regels_loper_click1;
+        }
+
+        private void btnloper_MouseLeave(object sender, EventArgs e)
+        {
+            btnloper.BackgroundImage = Properties.Resources.button_regels_loper1;
+        }
+
+        private void btndame_MouseEnter(object sender, EventArgs e)
+        {
+            btndame.BackgroundImage = Properties.Resources.button_regels_dame_click;
+        }
+
+        private void btndame_MouseLeave(object sender, EventArgs e)
+        {
+            btndame.BackgroundImage = Properties.Resources.button_regels_dame;
+        }
+
+        private void btnpion_MouseEnter(object sender, EventArgs e)
+        {
+            btnpion.BackgroundImage = Properties.Resources.button_regels_pion_click;
+
+        }
+
+        private void btnpion_MouseLeave(object sender, EventArgs e)
+        {
+            btnpion.BackgroundImage = Properties.Resources.button_regels_pion;
+
         }
     }
 }

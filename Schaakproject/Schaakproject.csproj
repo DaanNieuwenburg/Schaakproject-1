@@ -341,6 +341,30 @@
   <ItemGroup>
     <None Include="Resources\button regels toren.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels loper click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels loper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels loper click1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels loper1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels dame click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels dame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels pion click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels pion.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
