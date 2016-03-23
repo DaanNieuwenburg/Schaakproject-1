@@ -84,6 +84,10 @@ namespace Schaakproject
                                 else
                                 {
                                     aantal2++;
+                                    if (Spel._SpelMode == "Singleplayer")
+                                    {
+                                        Spel._computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                    }
                                 }
                             }
 
@@ -97,6 +101,10 @@ namespace Schaakproject
                                 else
                                 {
                                     aantal2++;
+                                    if (Spel._SpelMode == "Singleplayer")
+                                    {
+                                        Spel._computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                    }
                                 }
                             }
 
@@ -110,6 +118,10 @@ namespace Schaakproject
                                 else
                                 {
                                     aantal2++;
+                                    if (Spel._SpelMode == "Singleplayer")
+                                    {
+                                        Spel._computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                    }
                                 }
                             }
 
@@ -123,6 +135,10 @@ namespace Schaakproject
                                 else
                                 {
                                     aantal2++;
+                                    if (Spel._SpelMode == "Singleplayer")
+                                    {
+                                        Spel._computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                    }
                                 }
                             }
 
@@ -160,6 +176,10 @@ namespace Schaakproject
                             else
                             {
                                 aantal2++;
+                                if (Spel._SpelMode == "Singleplayer")
+                                {
+                                    Spel._computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                }
                             }
                         }
                     }
