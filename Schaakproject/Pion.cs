@@ -7,8 +7,8 @@ namespace Schaakproject
 {
     public class Pion : Schaakstuk
     {
-        private bool _eersteZet { get; set; }       //is de pion al eens verzet
-        private bool _magEnpassant { get; set; }    //mag de pion en-passant slaan
+        public bool _eersteZet { get; private set; }        //is de pion al eens verzet
+        private bool _magEnpassant { get; set; }            //mag de pion en-passant slaan
 
 
         public Pion(string kleur, Vakje vakje, Speler speler)

@@ -9,6 +9,7 @@ namespace Schaakproject
     public class Spel
     {
         public string _SpelMode { get; set; }  //Singleplayer of multiplayer
+        public bool witaanzet { get; set; }     //Wie is aan zet
         public Mens _Speler1 { get; set; }     //De speler (is er altijd)
         public Mens _Speler2 { get; set; }     //De tweede speler voor multiplayer
         public Computer _computerSpeler { get; set; }  //De computer voor singleplayer
@@ -16,6 +17,7 @@ namespace Schaakproject
         public Vakje selected { get;  set; } //Maakt de computer gebruik van
         public string _Variant { get; set; }    //Klassiek of Chess960
         public Schaakbord schaakbord { get; set; }
+        public SpeelBord _speelbord { get; set; }
 
         public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant)
         {
@@ -53,9 +55,10 @@ namespace Schaakproject
         public void Start()
         {
             Console.WriteLine("start");
-                Schaakbord schaakbord = new Schaakbord(_Variant, this, _Speler1, _Speler2);
+            Schaakbord schaakbord = new Schaakbord(_Variant, this, _Speler1, _Speler2);
             this.schaakbord = schaakbord;
             SpeelBord speelbord = new SpeelBord(this, schaakbord, _SpelMode, _Speler1, _Speler2, _computerSpeler, _Variant);
+            _speelbord = speelbord;
             speelbord.Show();
         }
 
@@ -70,14 +73,26 @@ namespace Schaakproject
                 Spel spel = new Spel(spelMode, speler1Naam, "comp", _Variant);
             }
         }
-
+        public void veranderlbltext()
+        {
+            if (witaanzet == false)
+            {
+                _speelbord.lblbeurt.Text = "Zwart is aan zet";
+            }
+            else
+            {
+                _speelbord.lblbeurt.Text = "Wit is aan zet";
+            }
+        }
         public void VeranderSpeler()
         {
+            veranderlbltext();
             bool schaak;
             bool mat;
             Console.WriteLine("VeranderSpeler");
             if (spelerAanZet == _Speler1)
             {
+                witaanzet = true;
                 if (_SpelMode == "Singleplayer")
                 {
                     spelerAanZet = _computerSpeler;
@@ -111,6 +126,7 @@ namespace Schaakproject
             }
             else
             {
+                witaanzet = false;
                 spelerAanZet = _Speler1;
                 schaak = schaakbord.CheckSchaak(_Speler1.Koning);
                 if (schaak == true)

@@ -20,6 +20,7 @@ namespace Schaakproject
         private Spel _spel { get; set; }                    //Een spel
         private int clicks { get; set; }                    //voor het laten zien van de uitleg
         public string _variant { get; set; }                //string voor spelvariant
+        private bool _witaanzet { get; set; }
         public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2, Computer computerSpeler, string Variant)
         {
             _SpelMode = SpelMode;
@@ -74,10 +75,8 @@ namespace Schaakproject
                 Console.WriteLine("tlest " + _speler1.Naam);
                 lblPlayer1.Text = "P1: " + Speler1.Naam;
             }
-                
-
         }
-
+       
         private void select(SpecialPB pictureBox) //click event voor alle pictureboxes
         {
             if (_SpelMode == "Singleplayer")
