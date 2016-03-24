@@ -123,7 +123,7 @@
             this.lblaantal2.BackColor = System.Drawing.Color.Transparent;
             this.lblaantal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblaantal2.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblaantal2.Location = new System.Drawing.Point(375, 9);
+            this.lblaantal2.Location = new System.Drawing.Point(407, 9);
             this.lblaantal2.Name = "lblaantal2";
             this.lblaantal2.Size = new System.Drawing.Size(0, 18);
             this.lblaantal2.TabIndex = 5;
@@ -134,7 +134,7 @@
             this.lblaantal1.BackColor = System.Drawing.Color.Transparent;
             this.lblaantal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblaantal1.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblaantal1.Location = new System.Drawing.Point(375, 493);
+            this.lblaantal1.Location = new System.Drawing.Point(406, 493);
             this.lblaantal1.Name = "lblaantal1";
             this.lblaantal1.Size = new System.Drawing.Size(0, 18);
             this.lblaantal1.TabIndex = 6;

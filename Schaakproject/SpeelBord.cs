@@ -23,7 +23,7 @@ namespace Schaakproject
         private bool _witaanzet { get; set; }
         public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2, Computer computerSpeler, string Variant)
         {
-            clicks = 1;
+            clicks = 0;
             _SpelMode = SpelMode;
             _variant = Variant;
             InitializeComponent();
@@ -189,6 +189,7 @@ namespace Schaakproject
 
         private void btHerstart_Click(object sender, EventArgs e)
         {
+            btHerstart.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //transparent bordercolor (Color.Transparent is unsupported)
             Console.WriteLine("HERSTART");
             HerstartMelding Warning = new HerstartMelding();
             Warning.ShowDialog();
@@ -246,6 +247,7 @@ namespace Schaakproject
 
         private void btnregels_Click(object sender, EventArgs e)
         {
+            clicks = 1;
             this.btndame.Visible = true;
             this.btnkoning.Visible = true;
             this.btntoren.Visible = true;
@@ -276,6 +278,7 @@ namespace Schaakproject
 
         private void btnterug_Click(object sender, EventArgs e)
         {
+            this.btnterug.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //transparent bordercolor (Color.Transparent is unsupported)
             if (clicks == 0)
             {
                 TerugMelding menu = new TerugMelding(this);
