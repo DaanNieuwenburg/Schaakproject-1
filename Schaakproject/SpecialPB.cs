@@ -16,12 +16,12 @@ namespace Schaakproject
             if (vakje.schaakstuk != null)
             {
                 Image = vakje.schaakstuk.afbeelding;
-                BackColor = vakje._kleur;
+                BackColor = vakje.kleur;
             }
             else
             {
                 Image = null;
-                BackColor = vakje._kleur;
+                BackColor = vakje.kleur;
             }
         }
     }

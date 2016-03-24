@@ -19,13 +19,13 @@ namespace Schaakproject
         private Computer _computerSpeler { get; set; }      //Computer
         private Spel _spel { get; set; }                    //Een spel
         private int clicks { get; set; }                    //voor het laten zien van de uitleg
-        public string _variant { get; set; }                //string voor spelvariant
+        public string variant { get; set; }                //string voor spelvariant
         private bool _witaanzet { get; set; }
         public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2, Computer computerSpeler, string Variant)
         {
             clicks = 0;
             _SpelMode = SpelMode;
-            _variant = Variant;
+            variant = Variant;
             InitializeComponent();
 
             _speler1 = Speler1;
@@ -45,7 +45,7 @@ namespace Schaakproject
             _spel = spel;
             this.CenterToScreen();
             lblaantal1.Text = Convert.ToString(_speler1.resterendestukken); //hier moet de variabele komen voor het aantal van wit
-            if(spel._SpelMode != "Singleplayer")
+            if(spel.SpelMode != "Singleplayer")
             {
                 lblaantal2.Text = Convert.ToString(_speler2.resterendestukken); //hier moet de variabele komen voor het aantal van wit
             }
@@ -64,7 +64,7 @@ namespace Schaakproject
 
                     // Koppel SpecialPB aan Vakje
                     pictureBox.vakje = schaakbord.schaakarray[x, y];
-                    pictureBox.BackColor = pictureBox.vakje._kleur;
+                    pictureBox.BackColor = pictureBox.vakje.kleur;
                     schaakbord.schaakarray[x, y].pbox = pictureBox;
 
                     pictureBox.update(); // Laat schaakstukken zien
@@ -187,7 +187,7 @@ namespace Schaakproject
             btntoren.BackgroundImage = Properties.Resources.button_regels_toren;
             btnpaard.BackgroundImage = Properties.Resources.button_regels_paard;
             btnregels.Visible = true;
-            if (_variant == "Chess960")
+            if (variant == "Chess960")
             {
                 btnvariant.BackgroundImage = Properties.Resources.button_regels_chess960;
             }
@@ -235,7 +235,7 @@ namespace Schaakproject
         {
             clicks++;
             lbluitleg.Visible = true;
-            if (_variant == "Chess960")
+            if (variant == "Chess960")
             {
                 pbuitleg.Image = Properties.Resources.chess960_uitleg_2;
                 pbuitleg.Visible = true;
@@ -423,7 +423,7 @@ namespace Schaakproject
 
         private void btnvariant_MouseEnter(object sender, EventArgs e)
         {
-            if (_variant == "Chess960")
+            if (variant == "Chess960")
             {
                 btnvariant.BackgroundImage = Properties.Resources.button_regels_chess960_click;
             }
@@ -435,7 +435,7 @@ namespace Schaakproject
 
         private void btnvariant_MouseLeave(object sender, EventArgs e)
         {
-            if (_variant == "Chess960")
+            if (variant == "Chess960")
             {
                 btnvariant.BackgroundImage = Properties.Resources.button_regels_chess960;
             }

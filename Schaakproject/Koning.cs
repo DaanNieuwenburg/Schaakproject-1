@@ -170,7 +170,7 @@ namespace Schaakproject
             _vorigvakje = spel.selected;
             Schaakstuk tempToren = vakjeToren.schaakstuk;
             // Rokeren voor klassieke schaakvariant
-            if (spel._Variant == "Klassiek")
+            if (spel.Variant == "Klassiek")
             {
 
                 bool veldenLeeg = false;
@@ -330,7 +330,7 @@ namespace Schaakproject
                 }
             }
             // Rokeren voor 960 schaakvariant
-            else if (spel._Variant == "Chess960")
+            else if (spel.Variant == "Chess960")
             {
                 int i = 0;
                 int west = 0;

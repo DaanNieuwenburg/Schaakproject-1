@@ -514,7 +514,7 @@
           </property>
           <property
             Id="77c4ddca-5280-4154-893c-9b16c447ae85"
-            name="_kleur"
+            name="kleur"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1039,7 +1039,7 @@
           </property>
           <property
             Id="049d4693-e605-4346-898e-da71ba4ae9c2"
-            name="_speler"
+            name="speler"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1178,10 +1178,9 @@
           <operation
             Id="e108de7d-d6bd-46ea-a891-fbcb2efbda74"
             name="kanStukSlaan"
-            visibility="Private"
             isLeaf="false"
             isStatic="false"
-            isAbstract="false"
+            isAbstract="true"
             concurrency="Sequential"
             isQuery="false" />
         </ownedOperationsInternal>
@@ -1356,7 +1355,7 @@
         <ownedAttributesInternal>
           <property
             Id="ef7b270e-5ec6-4c82-b6da-fe5d52609de4"
-            name="_kleur"
+            name="kleur"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1684,84 +1683,8 @@
         </generalsInternal>
         <ownedAttributesInternal>
           <property
-            Id="9a4bd662-6908-495f-aeb9-f3872f6e7021"
-            name="_eersteZet"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="7050b726-9cd0-48a6-a46a-1946638230a7"
-                name="property"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="b1fe7bfb-16c7-4196-84a2-3060f71a2aa4">
-                    <propertyInstance
-                      Id="bb809d8a-4f92-4b36-9c6f-388453f10352"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="9c740608-a8ff-4397-9c42-3476fbb8aba0">
-                    <propertyInstance
-                      Id="af291306-bcce-4728-9e92-31b060d6ab64"
-                      name="Get"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="f723c4d7-8771-419d-9ee8-8cab795676f1">
-                    <propertyInstance
-                      Id="5ea80f28-ab2a-407a-ba0a-dbc96024bdcb"
-                      name="HasBody"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="0666bbe1-c5ef-4587-beb2-a5b943de5842">
-                    <propertyInstance
-                      Id="711adb9a-f085-4157-b790-1cf604f0d824"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="9abad1e1-50cd-4055-a0ac-d3588b63ffe8">
-                    <propertyInstance
-                      Id="d8c56cab-16e0-42c8-a434-51a1fe4124de"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="80c7455c-b3ea-46a5-a8e4-42e01fdf9a0b">
-                    <propertyInstance
-                      Id="ca85d5db-ddcc-4bdf-a777-5fed71d057bc"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="481cde55-e423-4ec0-a1f2-854663815b1e">
-                    <propertyInstance
-                      Id="345d1cb3-25a1-4e61-8717-ffd29dba9e78"
-                      name="Set"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
-                LastKnownName="bool"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="35eb1512-7815-4c98-a60f-17a3b17bca11"
-            name="_eersteZet"
+            name="eersteZet"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3221,7 +3144,7 @@
           </property>
           <property
             Id="86f20630-688d-42d4-93de-a3547b394e67"
-            name="_Spelmode"
+            name="Spelmode"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3239,7 +3162,7 @@
           </property>
           <property
             Id="03dbce1c-f0ef-4322-85a5-5156b8437e9f"
-            name="_Speler1"
+            name="Speler1"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3257,7 +3180,7 @@
           </property>
           <property
             Id="3d12405f-ce1c-4806-a506-93c393c0a394"
-            name="_Speler2"
+            name="Speler2"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3293,7 +3216,7 @@
           </property>
           <property
             Id="78bd29e9-6c81-4a55-93ff-e07f94b07883"
-            name="_computerSpeler"
+            name="computerSpeler"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3329,7 +3252,7 @@
           </property>
           <property
             Id="b1286240-120f-467d-aab6-cec0a295999a"
-            name="_Variant"
+            name="Variant"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3365,7 +3288,7 @@
           </property>
           <property
             Id="54aaf4b7-4e8d-4585-a669-6d66aafff325"
-            name="SpeelBord"
+            name="speelBord"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3376,8 +3299,8 @@
             isComposite="false">
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="cfc34850-6c44-4da3-983e-cb11511e7f1a"
-                LastKnownName="_speelbord"
+                Id="c1de82da-15d9-450b-8222-c45d91a84440"
+                LastKnownName="Speelbord"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -5854,7 +5777,7 @@
           </property>
           <property
             Id="c26a0b30-3c87-49b6-a1ce-eb24515ab753"
-            name="_variant"
+            name="variant"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -6627,6 +6550,16 @@
       <undefinedType
         Id="99b3ff70-8cd8-4ff0-9765-be639ffe3c58"
         name="Database" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="6f15d64a-e20f-4ad7-9c25-decf5d586753"
+        name="speelbord" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="c1de82da-15d9-450b-8222-c45d91a84440"
+        name="Speelbord" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

@@ -24,14 +24,14 @@ namespace Schaakproject
         private void btn_ja_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Yes;
-            spel.Herstart(spel._SpelMode, spel._Speler1.Naam, spel._Speler2.Naam);
+            spel.Herstart(spel.SpelMode, spel.Speler1.Naam, spel.Speler2.Naam);
         }
 
         private void btn_nee_Click(object sender, EventArgs e)
         {
             Hide();
             DialogResult = DialogResult.Yes;
-            spel._speelbord.Hide();
+            spel.speelbord.Hide();
             NaamInvoer menu = new NaamInvoer();
             menu.ShowDialog();
         }

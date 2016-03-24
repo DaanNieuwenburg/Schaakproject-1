@@ -8,95 +8,95 @@ namespace Schaakproject
 {
     public class Spel
     {
-        public string _SpelMode { get; set; }  //Singleplayer of multiplayer
+        public string SpelMode { get; set; }  //Singleplayer of multiplayer
         public bool witaanzet { get; set; }     //Wie is aan zet
-        public Mens _Speler1 { get; set; }     //De speler (is er altijd)
-        public Mens _Speler2 { get; set; }     //De tweede speler voor multiplayer
-        public Computer _computerSpeler { get; set; }  //De computer voor singleplayer
+        public Mens Speler1 { get; set; }     //De speler (is er altijd)
+        public Mens Speler2 { get; set; }     //De tweede speler voor multiplayer
+        public Computer computerSpeler { get; set; }  //De computer voor singleplayer
         public Speler spelerAanZet { get; private set; } //welke speler is aan zet
         public Vakje selected { get; set; } //Maakt de computer gebruik van
-        public string _Variant { get; set; }    //Klassiek of Chess960
+        public string Variant { get; set; }    //Klassiek of Chess960
         public Schaakbord schaakbord { get; set; }
-        public SpeelBord _speelbord { get; set; }
+        public SpeelBord speelbord { get; set; }
 
         public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant)
         {
-            _SpelMode = Mode;
-            _Variant = Variant;
-            if (_SpelMode == "Singleplayer")
+            SpelMode = Mode;
+            this.Variant = Variant;
+            if (SpelMode == "Singleplayer")
             {
                 Mens speler1 = new Mens(NaamSpeler1, "wit", this);
                 Computer computerSpeler = new Computer(NaamSpeler2, "zwart");
-                _Speler1 = speler1;
-                _Speler2 = null;
-                _computerSpeler = computerSpeler;
+                Speler1 = speler1;
+                Speler2 = null;
+                this.computerSpeler = computerSpeler;
             }
             else if (Mode == "Multiplayer")
             {
                 Mens speler1 = new Mens(NaamSpeler1, "wit", this);
                 Mens speler2 = new Mens(NaamSpeler2, "zwart", this);
-                _Speler1 = speler1;
-                _Speler2 = speler2;
-                _computerSpeler = null;
+                Speler1 = speler1;
+                Speler2 = speler2;
+                computerSpeler = null;
             }
             else if (Mode == "Online")
             {
                 Mens speler1 = new Mens(NaamSpeler1, "wit", this);
                 Console.WriteLine("Test Spel Naamspeler1: " + NaamSpeler1);
                 Mens speler2 = new Mens(NaamSpeler2, "zwart", this);
-                _Speler1 = speler1;
-                _Speler2 = speler2;
-                _computerSpeler = null;
+                Speler1 = speler1;
+                Speler2 = speler2;
+                computerSpeler = null;
             }
-            spelerAanZet = _Speler1;
+            spelerAanZet = Speler1;
             Start();
         }
 
         public void Start()
         {
             Console.WriteLine("start");
-            Schaakbord schaakbord = new Schaakbord(_Variant, this, _Speler1, _Speler2);
+            Schaakbord schaakbord = new Schaakbord(Variant, this, Speler1, Speler2);
             this.schaakbord = schaakbord;
-            SpeelBord speelbord = new SpeelBord(this, schaakbord, _SpelMode, _Speler1, _Speler2, _computerSpeler, _Variant);
-            _speelbord = speelbord;
+            SpeelBord speelbord = new SpeelBord(this, schaakbord, SpelMode, Speler1, Speler2, computerSpeler, Variant);
+            this.speelbord = speelbord;
             speelbord.Show();
         }
 
         public void Herstart(string spelMode, string speler1Naam, string speler2Naam)
         {
-            if (spelMode == "Multiplayer" || _SpelMode == "Online")
+            if (spelMode == "Multiplayer" || SpelMode == "Online")
             {
-                Spel spel = new Spel(spelMode, speler1Naam, speler2Naam, _Variant);
+                Spel spel = new Spel(spelMode, speler1Naam, speler2Naam, Variant);
             }
             else
             {
-                Spel spel = new Spel(spelMode, speler1Naam, "comp", _Variant);
+                Spel spel = new Spel(spelMode, speler1Naam, "comp", Variant);
             }
         }
         public void veranderlbltext()
         {
-            if (_SpelMode == "Multiplayer")
+            if (SpelMode == "Multiplayer")
             {
-                if (_Speler1.Naam != "" && _Speler2.Naam != "")
+                if (Speler1.Naam != "" && Speler2.Naam != "")
                 {
                     if (witaanzet == false)
                     {
-                        _speelbord.lblbeurt.Text = _Speler2.Naam + " is aan zet";
+                        speelbord.lblbeurt.Text = Speler2.Naam + " is aan zet";
                     }
                     else
                     {
-                        _speelbord.lblbeurt.Text = _Speler1.Naam + " is aan zet";
+                        speelbord.lblbeurt.Text = Speler1.Naam + " is aan zet";
                     }
                 }
                 else
                 {
                     if (witaanzet == false)
                     {
-                        _speelbord.lblbeurt.Text = "Zwart is aan zet";
+                        speelbord.lblbeurt.Text = "Zwart is aan zet";
                     }
                     else
                     {
-                        _speelbord.lblbeurt.Text = "Wit is aan zet";
+                        speelbord.lblbeurt.Text = "Wit is aan zet";
                     }
                 }
             }          
@@ -107,39 +107,39 @@ namespace Schaakproject
             bool schaak;
             bool mat;
             //Console.WriteLine("VeranderSpeler");
-            if (spelerAanZet == _Speler1)
+            if (spelerAanZet == Speler1)
             {
                 witaanzet = true;
-                if (_SpelMode == "Singleplayer")
+                if (SpelMode == "Singleplayer")
                 {
-                    spelerAanZet = _computerSpeler;
-                    schaak = schaakbord.CheckSchaak(_computerSpeler.Koning);
+                    spelerAanZet = computerSpeler;
+                    schaak = schaakbord.CheckSchaak(computerSpeler.Koning);
                 }
                 else
                 {
-                    spelerAanZet = _Speler2;
-                    schaak = schaakbord.CheckSchaak(_Speler2.Koning);
+                    spelerAanZet = Speler2;
+                    schaak = schaakbord.CheckSchaak(Speler2.Koning);
                 }
                 if (schaak == true)
                 {
-                    if (_SpelMode == "Singleplayer")
+                    if (SpelMode == "Singleplayer")
                     {
-                        mat = schaakbord.CheckMat(_computerSpeler.Koning);
+                        mat = schaakbord.CheckMat(computerSpeler.Koning);
                         if (mat == true)
                         {
-                            _Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
+                            Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
                         }
                     }
                     else
                     {
                         
-                        mat = schaakbord.CheckMat(_Speler2.Koning);
+                        mat = schaakbord.CheckMat(Speler2.Koning);
                         if (mat == true)
                         {
-                            _Speler2.Koning.vakje.pbox.Image = Properties.Resources.ZwartMat1;
-                            SchaakMat _SchaakMat = new SchaakMat(_Speler1.Naam, this);
+                            Speler2.Koning.vakje.pbox.Image = Properties.Resources.ZwartMat1;
+                            SchaakMat _SchaakMat = new SchaakMat(Speler1.Naam, this);
                             _SchaakMat.ShowDialog();
-                            _speelbord.Hide();
+                            speelbord.Hide();
                         }
                     }
                 }
@@ -147,19 +147,19 @@ namespace Schaakproject
             else
             {
                 witaanzet = false;
-                spelerAanZet = _Speler1;
-                schaak = schaakbord.CheckSchaak(_Speler1.Koning);
+                spelerAanZet = Speler1;
+                schaak = schaakbord.CheckSchaak(Speler1.Koning);
                 if (schaak == true)
                 {
                     
-                    mat = schaakbord.CheckMat(_Speler1.Koning);
+                    mat = schaakbord.CheckMat(Speler1.Koning);
                     if (mat == true)
                     {
                         
-                        _Speler1.Koning.vakje.pbox.Image = Properties.Resources.WitMat1;
-                        SchaakMat _SchaakMat = new SchaakMat(_Speler2.Naam, this);
+                        Speler1.Koning.vakje.pbox.Image = Properties.Resources.WitMat1;
+                        SchaakMat _SchaakMat = new SchaakMat(Speler2.Naam, this);
                         _SchaakMat.ShowDialog();
-                        _speelbord.Hide();
+                        speelbord.Hide();
                     }
                 }
             }
@@ -224,15 +224,15 @@ namespace Schaakproject
 
         public void updateAantalStukken(Speler speler)
         {
-            if (_SpelMode != "Singleplayer")
+            if (SpelMode != "Singleplayer")
             {
                 if (speler.Kleur == "wit")
             {
-                _speelbord.lblaantal2.Text = Convert.ToString(_Speler1.resterendestukken); //onlogisch, speler1 = label 2
+                speelbord.lblaantal2.Text = Convert.ToString(Speler1.resterendestukken); //onlogisch, speler1 = label 2
             }
             else
             {
-                _speelbord.lblaantal1.Text = Convert.ToString(_Speler2.resterendestukken); //onlogisch, speler2 = label 1
+                speelbord.lblaantal1.Text = Convert.ToString(Speler2.resterendestukken); //onlogisch, speler2 = label 1
             }
         }
     }

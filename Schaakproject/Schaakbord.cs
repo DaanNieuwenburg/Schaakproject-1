@@ -59,7 +59,7 @@ namespace Schaakproject
     public class Schaakbord
     {
         public Vakje[,] schaakarray { get; private set; }   //Een array van vakjes zodat het schaakbord kan worden opgezet
-        public Color _kleur { get; private set; }
+        public Color kleur { get; private set; }
         private int aantal1 { get; set; }                   //Het aantal schaakstukken wordt ingesteld voor wit
         private int aantal2 { get; set; }                   //Het aantal schaakstukken wordt ingesteld voor zwart
         private bool staatschaak { get; set; }              //Staat er iemand schaak?
@@ -120,9 +120,9 @@ namespace Schaakproject
                                 else
                                 {
                                     aantal2++;
-                                    if (Spel._SpelMode == "Singleplayer")
+                                    if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel._computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                        Spel.computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
                                     }
                                 }
                             }
@@ -137,9 +137,9 @@ namespace Schaakproject
                                 else
                                 {
                                     aantal2++;
-                                    if (Spel._SpelMode == "Singleplayer")
+                                    if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel._computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                        Spel.computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
                                     }
                                 }
                             }
@@ -154,9 +154,9 @@ namespace Schaakproject
                                 else
                                 {
                                     aantal2++;
-                                    if (Spel._SpelMode == "Singleplayer")
+                                    if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel._computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                        Spel.computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
                                     }
                                 }
                             }
@@ -171,9 +171,9 @@ namespace Schaakproject
                                 else
                                 {
                                     aantal2++;
-                                    if (Spel._SpelMode == "Singleplayer")
+                                    if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel._computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                        Spel.computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
                                     }
                                 }
                             }
@@ -185,19 +185,19 @@ namespace Schaakproject
                                 if (kleurstuk == "wit")
                                 {
                                     aantal1++;
-                                    Spel._Speler1.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                    Spel.Speler1.Koning = schaakarray[x, y].schaakstuk as Koning;
 
                                 }
                                 else
                                 {
                                     aantal2++;
-                                    if (Spel._SpelMode == "Singleplayer")
+                                    if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel._computerSpeler.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                        Spel.computerSpeler.Koning = schaakarray[x, y].schaakstuk as Koning;
                                     }
                                     else
                                     {
-                                        Spel._Speler2.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                        Spel.Speler2.Koning = schaakarray[x, y].schaakstuk as Koning;
                                     }
                                 }
                             }
@@ -212,9 +212,9 @@ namespace Schaakproject
                             else
                             {
                                 aantal2++;
-                                if (Spel._SpelMode == "Singleplayer")
+                                if (Spel.SpelMode == "Singleplayer")
                                 {
-                                    Spel._computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                    Spel.computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
                                 }
                             }
                         }
@@ -318,18 +318,18 @@ namespace Schaakproject
                                 schaakarray[x, y].schaakstuk = new Koning(kleurstuk, schaakarray[x, y], voorDitStuk);
                                 if (kleurstuk == "wit")
                                 {
-                                    Spel._Speler1.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                    Spel.Speler1.Koning = schaakarray[x, y].schaakstuk as Koning;
                                     aantal1++;
                                 }
                                 else
                                 {
-                                    if (Spel._SpelMode == "Singleplayer")
+                                    if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel._computerSpeler.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                        Spel.computerSpeler.Koning = schaakarray[x, y].schaakstuk as Koning;
                                     }
                                     else
                                     {
-                                        Spel._Speler2.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                        Spel.Speler2.Koning = schaakarray[x, y].schaakstuk as Koning;
                                     }
                                     aantal2++;
                                 }
@@ -832,7 +832,7 @@ namespace Schaakproject
                         {
                             if (vorige.buurNoord.buurNoord.schaakstuk is Pion && vorige.buurNoord.buurNoord.schaakstuk.kleur == "zwart" )
                             {
-                                if ((vorige.buurNoord.buurNoord.schaakstuk as Pion)._eersteZet == true)
+                                if ((vorige.buurNoord.buurNoord.schaakstuk as Pion).eersteZet == true)
                                 {
                                     staatschaak = true;
                                 }                                
@@ -854,7 +854,7 @@ namespace Schaakproject
                         {
                             if (vorige.buurZuid.buurZuid.schaakstuk is Pion && vorige.buurZuid.buurZuid.schaakstuk.kleur == "wit")
                             {
-                                if ((vorige.buurZuid.buurZuid.schaakstuk as Pion)._eersteZet == true)
+                                if ((vorige.buurZuid.buurZuid.schaakstuk as Pion).eersteZet == true)
                                 {
                                     staatschaak = true;
                                 }

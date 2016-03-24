@@ -7,14 +7,14 @@ namespace Schaakproject
 {
     public class Pion : Schaakstuk
     {
-        public bool _eersteZet { get; private set; }        //is de pion al eens verzet
+        public bool eersteZet { get; private set; }        //is de pion al eens verzet
         private bool _magEnpassant { get; set; }            //mag de pion en-passant slaan
 
 
         public Pion(string kleur, Vakje vakje, Speler speler)
         {
             _magEnpassant = true;
-            _speler = speler;
+            base.speler = speler;
             this.vakje = vakje;
             this.kleur = kleur;
             if (kleur == "wit")
@@ -81,7 +81,7 @@ namespace Schaakproject
                 }
 
                 // Twee stappen vooruit voor een witte pion
-                else if (_eersteZet == false && selected.buurNoord.buurNoord == nieuwVakje && selected.buurNoord.buurNoord.schaakstuk == null && selected.buurNoord.schaakstuk == null)
+                else if (eersteZet == false && selected.buurNoord.buurNoord == nieuwVakje && selected.buurNoord.buurNoord.schaakstuk == null && selected.buurNoord.schaakstuk == null)
                 {
                     mogelijk = true;
 
@@ -91,7 +91,7 @@ namespace Schaakproject
                         if (nieuwVakje.buurOost.schaakstuk is Pion)
                         {
                             // Als er oost een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
-                            (nieuwVakje.buurOost.schaakstuk as Pion)._speler.enPassantPion = this;
+                            (nieuwVakje.buurOost.schaakstuk as Pion).speler.enPassantPion = this;
                         }
                     }
                     if (nieuwVakje.buurWest != null)
@@ -99,14 +99,14 @@ namespace Schaakproject
                         if (nieuwVakje.buurWest.schaakstuk is Pion)
                         {
                             // Als er west een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
-                            (nieuwVakje.buurWest.schaakstuk as Pion)._speler.enPassantPion = this;
+                            (nieuwVakje.buurWest.schaakstuk as Pion).speler.enPassantPion = this;
                         }
                     }
                 }
                 else if (selected.buurOost != null)
                 {
                     //en-passant slaan naar noordoost
-                    if (selected.buurNoordoost == nieuwVakje && _speler.enPassantPion == selected.buurOost.schaakstuk && _speler.enPassantPion != null)
+                    if (selected.buurNoordoost == nieuwVakje && base.speler.enPassantPion == selected.buurOost.schaakstuk && base.speler.enPassantPion != null)
                     {
                         Console.WriteLine("TEST3");
                         speler.resterendestukken = speler.resterendestukken - 1;
@@ -121,7 +121,7 @@ namespace Schaakproject
                 if (selected.buurWest != null)
                 {
                     //en-passant slaan naar noordwest
-                    if (selected.buurNoordwest == nieuwVakje && _speler.enPassantPion == selected.buurWest.schaakstuk && _speler.enPassantPion != null)
+                    if (selected.buurNoordwest == nieuwVakje && base.speler.enPassantPion == selected.buurWest.schaakstuk && base.speler.enPassantPion != null)
                     {
                         Console.WriteLine("TEST4");
                         speler.resterendestukken = speler.resterendestukken - 1;
@@ -165,7 +165,7 @@ namespace Schaakproject
                 }
 
                 // Twee stappen vooruit voor een zwarte pion
-                else if (_eersteZet == false && selected.buurZuid.buurZuid == nieuwVakje && selected.buurZuid.buurZuid.schaakstuk == null && selected.buurZuid.schaakstuk == null)
+                else if (eersteZet == false && selected.buurZuid.buurZuid == nieuwVakje && selected.buurZuid.buurZuid.schaakstuk == null && selected.buurZuid.schaakstuk == null)
                 {
                     mogelijk = true;
 
@@ -175,7 +175,7 @@ namespace Schaakproject
                         if (nieuwVakje.buurOost.schaakstuk is Pion)
                         {
                             // Als er oost een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
-                            (nieuwVakje.buurOost.schaakstuk as Pion)._speler.enPassantPion = this;
+                            (nieuwVakje.buurOost.schaakstuk as Pion).speler.enPassantPion = this;
 
                         }
                     }
@@ -184,7 +184,7 @@ namespace Schaakproject
                         if (nieuwVakje.buurWest.schaakstuk is Pion)
                         {
                             // Als er west een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
-                            (nieuwVakje.buurWest.schaakstuk as Pion)._speler.enPassantPion = this;
+                            (nieuwVakje.buurWest.schaakstuk as Pion).speler.enPassantPion = this;
 
                         }
                     }
@@ -192,7 +192,7 @@ namespace Schaakproject
                 else if (selected.buurOost != null)
                 {
                     //en-passant slaan naar zuidoost
-                    if (selected.buurZuidoost == nieuwVakje && _speler.enPassantPion == selected.buurOost.schaakstuk && _speler.enPassantPion != null)
+                    if (selected.buurZuidoost == nieuwVakje && base.speler.enPassantPion == selected.buurOost.schaakstuk && base.speler.enPassantPion != null)
                     {
                         Console.WriteLine("TEST7");
                         speler.resterendestukken = speler.resterendestukken - 1;
@@ -207,12 +207,12 @@ namespace Schaakproject
                 }
 
                 // dit laat de SP crashen dus uit SP gehaald
-                if (spel._SpelMode == "Multiplayer")
+                if (spel.SpelMode == "Multiplayer")
                 {
                     if (selected.buurWest != null)
                     {
                         //en-passant slaan naar zuidwest
-                        if (selected.buurZuidwest == nieuwVakje && _speler.enPassantPion == selected.buurWest.schaakstuk && _speler.enPassantPion != null)
+                        if (selected.buurZuidwest == nieuwVakje && base.speler.enPassantPion == selected.buurWest.schaakstuk && base.speler.enPassantPion != null)
                         {
                             Console.WriteLine("TEST8");
                             speler.resterendestukken = speler.resterendestukken - 1;
@@ -257,7 +257,7 @@ namespace Schaakproject
                 }
                 else
                 {
-                    _eersteZet = true;
+                    eersteZet = true;
                     speler.validezet = true;
                 }
 
@@ -269,7 +269,7 @@ namespace Schaakproject
 
                 nieuwVakje.pbox.update();
                 selected.pbox.update();
-                vakje.schaakstuk = new Dame(kleur, vakje, _speler);
+                vakje.schaakstuk = new Dame(kleur, vakje, base.speler);
                 PromoveerForm promoveerform = new PromoveerForm(this, kleur);
                 promoveerform.ShowDialog();
             }
@@ -280,19 +280,19 @@ namespace Schaakproject
         {
             if (keuze.Equals("paard"))
             {
-                vakje.schaakstuk = new Paard(kleur, vakje, _speler);
+                vakje.schaakstuk = new Paard(kleur, vakje, speler);
             }
             else if (keuze.Equals("loper"))
             {
-                vakje.schaakstuk = new Loper(kleur, vakje, _speler);
+                vakje.schaakstuk = new Loper(kleur, vakje, speler);
             }
             else if (keuze.Equals("toren"))
             {
-                vakje.schaakstuk = new Toren(kleur, vakje, _speler);
+                vakje.schaakstuk = new Toren(kleur, vakje, speler);
             }
             else if (keuze.Equals("dame"))
             {
-                vakje.schaakstuk = new Dame(kleur, vakje, _speler);
+                vakje.schaakstuk = new Dame(kleur, vakje, speler);
             }
 
         }
