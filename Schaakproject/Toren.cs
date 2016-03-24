@@ -43,7 +43,7 @@ namespace Schaakproject
                         if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
                         {
                             mogelijkloop = true;
-                            computer.spelerkanslaan = true;
+
                             computer.slaanmogelijkheden.Add(volgendVakje);
                             computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                         }
@@ -69,7 +69,6 @@ namespace Schaakproject
                         if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
                         {
                             mogelijkloop = true;
-                            computer.spelerkanslaan = true;
                             computer.slaanmogelijkheden.Add(volgendVakje);
                             computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                         }
@@ -95,7 +94,6 @@ namespace Schaakproject
                         if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
                         {
                             mogelijkloop = true;
-                            computer.spelerkanslaan = true;
                             computer.slaanmogelijkheden.Add(volgendVakje);
                             computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                         }
@@ -121,7 +119,6 @@ namespace Schaakproject
                         if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
                         {
                             mogelijkloop = true;
-                            computer.spelerkanslaan = true;
                             computer.slaanmogelijkheden.Add(volgendVakje);
                             computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                         }

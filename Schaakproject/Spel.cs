@@ -75,14 +75,31 @@ namespace Schaakproject
         }
         public void veranderlbltext()
         {
-            if (witaanzet == false)
+            if (_SpelMode == "Multiplayer")
             {
-                _speelbord.lblbeurt.Text = "Zwart is aan zet";
-            }
-            else
-            {
-                _speelbord.lblbeurt.Text = "Wit is aan zet";
-            }
+                if (_Speler1.Naam != "" && _Speler2.Naam != "")
+                {
+                    if (witaanzet == false)
+                    {
+                        _speelbord.lblbeurt.Text = _Speler2.Naam + " is aan zet";
+                    }
+                    else
+                    {
+                        _speelbord.lblbeurt.Text = _Speler1.Naam + " is aan zet";
+                    }
+                }
+                else
+                {
+                    if (witaanzet == false)
+                    {
+                        _speelbord.lblbeurt.Text = "Zwart is aan zet";
+                    }
+                    else
+                    {
+                        _speelbord.lblbeurt.Text = "Wit is aan zet";
+                    }
+                }
+            }          
         }
         public void VeranderSpeler()
         {
@@ -201,6 +218,15 @@ namespace Schaakproject
                         vorigvakjeVZ = vorigvakjeVZ.buurNoord;
                     }
                 }
+            }
+        }
+
+        public void updateAantalStukken(Speler speler)
+        {
+            if(speler.Kleur == "wit")
+            {
+                //_speelbord.lblaantal1.Text = Convert.ToString(Speler1.resterendestukken); //hier moet de variabele komen voor het aantal van wit
+                //_speelbord.lblaantal2.Text = Convert.ToString(Speler2.resterendestukken); //hier moet de variabele komen voor het aantal van zwart
             }
         }
     }

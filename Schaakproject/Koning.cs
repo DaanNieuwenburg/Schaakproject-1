@@ -104,8 +104,6 @@ namespace Schaakproject
                 }
                 else
                 {
-                    computer.spelerkanslaan = false;
-                    computer.computerkanslaan = false;
                 }
             }
         }
