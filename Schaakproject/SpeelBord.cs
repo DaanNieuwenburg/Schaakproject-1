@@ -160,6 +160,9 @@ namespace Schaakproject
 
         private void SpeelBord_Load(object sender, EventArgs e)
         {
+            btnregels.BackgroundImage = Properties.Resources.button_regels_2;
+            btnterug.BackgroundImage = Properties.Resources.button_terug_2;
+            btHerstart.BackgroundImage = Properties.Resources.button_herstart_2;
             btnkoning.BackgroundImage = Properties.Resources.button_regels_koning;
             btndame.BackgroundImage = Properties.Resources.button_regels_dame;
             btnpion.BackgroundImage = Properties.Resources.button_regels_pion;
@@ -169,7 +172,7 @@ namespace Schaakproject
             btnregels.Visible = true;
             if (_variant == "Chess960")
             {
-                btnvariant.BackgroundImage = Properties.Resources.button_schaken9601;
+                btnvariant.BackgroundImage = Properties.Resources.button_regels_chess960;
         }
             else
             {
@@ -396,7 +399,7 @@ namespace Schaakproject
         {
             if(_variant == "Chess960")
             {
-                btnvariant.BackgroundImage = Properties.Resources.button_schaken960_click1;
+                btnvariant.BackgroundImage = Properties.Resources.button_regels_chess960_click;
             }
             else
             {
@@ -408,7 +411,7 @@ namespace Schaakproject
         {
             if (_variant == "Chess960")
             {
-                btnvariant.BackgroundImage = Properties.Resources.button_schaken9601;
+                btnvariant.BackgroundImage = Properties.Resources.button_regels_chess960;
             }
             else
             {
@@ -476,7 +479,35 @@ namespace Schaakproject
         private void btnpion_MouseLeave(object sender, EventArgs e)
         {
             btnpion.BackgroundImage = Properties.Resources.button_regels_pion;
+        }
 
+        private void btHerstart_MouseEnter(object sender, EventArgs e)
+        {
+            btHerstart.BackgroundImage = Properties.Resources.button_herstart_click_2;
+        }
+        private void btHerstart_MouseLeave(object sender, EventArgs e)
+        {
+            btHerstart.BackgroundImage = Properties.Resources.button_herstart_2;
+        }
+
+        private void btnterug_MouseEnter(object sender, EventArgs e)
+        {
+            btnterug.BackgroundImage = Properties.Resources.button_terug_click_2;
+        }
+
+        private void btnterug_MouseLeave(object sender, EventArgs e)
+        {
+            btnterug.BackgroundImage = Properties.Resources.button_terug_2;
+        }
+
+        private void btnregels_MouseLeave(object sender, EventArgs e)
+        {
+            btnregels.BackgroundImage = Properties.Resources.button_regels_2;
+        }
+
+        private void btnregels_MouseEnter(object sender, EventArgs e)
+        {
+            btnregels.BackgroundImage = Properties.Resources.button_regels_2_click;
         }
     }
 }

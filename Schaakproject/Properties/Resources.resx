@@ -118,185 +118,77 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="button2KladClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button 2 klad click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="KoningWit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KoningWit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PaardZwart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PaardZwart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button regels paard click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button regels paard click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DameZwart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DameZwart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="schaken uitleg 11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schaken uitleg 11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="schaken uitleg 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schaken uitleg 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DameWit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DameWit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="afsluiten click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\afsluiten click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="start click klad 2 " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\start click klad 2 .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="buttonBegin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button begin1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button1Klad" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button 1 klad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PionZwart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PionZwart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HuidigSchaakbord" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HuidigSchaakbord.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button regels paard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button regels paard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="afsluiten" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\afsluiten.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button3KladClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button 3 klad click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="zettenpion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\zettenpion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="buttonBegin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button begin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button paard regels" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button paard regels.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="buttontest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buttontest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button klassiekregels" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button klassiekregels.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="KoningZwart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KoningZwart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button regels loper click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button regels loper click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button regels koning" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button regels koning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="zettentoren" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\zettentoren.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button 960 click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button 960 click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button klassiek" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button klassiek.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button klassiekregels click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button klassiekregels click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="backIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button schaken960 click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button schaken960 click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="zettenloper" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\zettenloper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button regels toren" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button regels toren.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bglogin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bglogin1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button schaken9601" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button schaken960.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TorenWit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TorenWit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chess960 uitleg 11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chess960 uitleg 11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="buttonBeginClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button begin click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PaardWit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PaardWit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="zettenpaard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\zettenpaard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button2Klad" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button 2 klad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="zettendame" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\zettendame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="buttonBegin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button begin1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button1KladClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button 1 klad click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button schaken960" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button schaken960.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button herstart click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button herstart click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button schaken960 click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button schaken960 click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button 960 click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button 960 click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button regels pion click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels pion click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buttonBegin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button begin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button2Klad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button 2 klad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button paard regels" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button paard regels.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button terug click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button terug click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zettenloper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zettenloper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chess960 uitleg 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chess960 uitleg 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button regels loper" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button regels loper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button regels click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button regels toren click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button regels toren click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TorenWit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TorenWit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button regels loper1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button regels loper1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button herstart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button herstart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="backIcon click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backIcon click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chess960 uitleg 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chess960 uitleg 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button 960" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button 960.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PionZwart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PionZwart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button regels koning click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button regels koning click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button regels loper click1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button regels loper click1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="zettenkoning" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\zettenkoning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button klassiek" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button klassiek.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LoperWit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoperWit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TorenZwart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TorenZwart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button3KladClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button 3 klad click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PionWit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PionWit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button regels toren click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels toren click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button3Klad" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button 3 klad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button regels chess960" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels chess960.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="start klad 2 " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\start klad 2 .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button klassiekregels click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button klassiekregels click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button schaken960 click1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button schaken960 click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="backIcon click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backIcon click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LoperZwart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoperZwart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -304,16 +196,166 @@
   <data name="button klassiek click" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button klassiek click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PaardWit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PaardWit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chess960 uitleg 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chess960 uitleg 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="schaken uitleg 11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schaken uitleg 11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="schaken uitleg 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schaken uitleg 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KoningWit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KoningWit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button regels toren" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels toren.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="afsluiten" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\afsluiten.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button regels paard click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels paard click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button schaken960 click1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button schaken960 click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KoningZwart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KoningZwart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button regels chess960 click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels chess960 click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TorenZwart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TorenZwart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button regels pion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels pion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button klassiekregels" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button klassiekregels.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button regels koning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels koning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bglogin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bglogin1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button regels koning click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels koning click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DameZwart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DameZwart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="start click klad 2 " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\start click klad 2 .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button3Klad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button 3 klad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zettenpion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zettenpion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button schaken9601" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button schaken960.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button schaken960" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button schaken960.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="afsluiten click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\afsluiten click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="start klad 2 " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\start klad 2 .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PionWit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PionWit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button2KladClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button 2 klad click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chess960 uitleg 11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chess960 uitleg 11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button regels paard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels paard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button regels" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zettendame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zettendame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zettentoren" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zettentoren.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button regels loper click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels loper click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button terug" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button terug.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zettenpaard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zettenpaard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button regels loper1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels loper1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buttonBeginClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button begin click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button1Klad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button 1 klad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button 960" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button 960.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zettenkoning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zettenkoning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="button regels dame click" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button regels dame click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buttontest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttontest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button regels loper click1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels loper click1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button regels loper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels loper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PaardZwart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PaardZwart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button regels dame" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button regels dame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button regels pion click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button regels pion click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DameWit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DameWit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button regels pion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button regels pion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button herstart 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button herstart 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button herstart click 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button herstart click 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button regels 2 click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels 2 click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button regels 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button regels 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button terug 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button terug 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button terug click 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button terug click 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -78,13 +78,20 @@
             // 
             // btHerstart
             // 
-            this.btHerstart.Location = new System.Drawing.Point(651, 488);
+            this.btHerstart.BackColor = System.Drawing.Color.Transparent;
+            this.btHerstart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btHerstart.FlatAppearance.BorderSize = 0;
+            this.btHerstart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btHerstart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btHerstart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btHerstart.Location = new System.Drawing.Point(625, 453);
             this.btHerstart.Name = "btHerstart";
-            this.btHerstart.Size = new System.Drawing.Size(75, 23);
+            this.btHerstart.Size = new System.Drawing.Size(102, 35);
             this.btHerstart.TabIndex = 2;
-            this.btHerstart.Text = "Herstart";
-            this.btHerstart.UseVisualStyleBackColor = true;
+            this.btHerstart.UseVisualStyleBackColor = false;
             this.btHerstart.Click += new System.EventHandler(this.btHerstart_Click);
+            this.btHerstart.MouseEnter += new System.EventHandler(this.btHerstart_MouseEnter);
+            this.btHerstart.MouseLeave += new System.EventHandler(this.btHerstart_MouseLeave);
             // 
             // lblResterend1
             // 
@@ -153,14 +160,21 @@
             // 
             // btnregels
             // 
-            this.btnregels.Location = new System.Drawing.Point(651, 424);
+            this.btnregels.BackColor = System.Drawing.Color.Transparent;
+            this.btnregels.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnregels.FlatAppearance.BorderSize = 0;
+            this.btnregels.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnregels.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnregels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnregels.Location = new System.Drawing.Point(624, 34);
             this.btnregels.Name = "btnregels";
-            this.btnregels.Size = new System.Drawing.Size(75, 23);
+            this.btnregels.Size = new System.Drawing.Size(102, 37);
             this.btnregels.TabIndex = 9;
-            this.btnregels.Text = "Regels";
             this.btnregels.UseVisualStyleBackColor = true;
             this.btnregels.Visible = false;
             this.btnregels.Click += new System.EventHandler(this.btnregels_Click);
+            this.btnregels.MouseEnter += new System.EventHandler(this.btnregels_MouseEnter);
+            this.btnregels.MouseLeave += new System.EventHandler(this.btnregels_MouseLeave);
             // 
             // btnvariant
             // 
@@ -170,7 +184,7 @@
             this.btnvariant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnvariant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnvariant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnvariant.Location = new System.Drawing.Point(536, 68);
+            this.btnvariant.Location = new System.Drawing.Point(536, 73);
             this.btnvariant.Name = "btnvariant";
             this.btnvariant.Size = new System.Drawing.Size(191, 52);
             this.btnvariant.TabIndex = 10;
@@ -188,7 +202,7 @@
             this.btnpaard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnpaard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnpaard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnpaard.Location = new System.Drawing.Point(536, 126);
+            this.btnpaard.Location = new System.Drawing.Point(536, 131);
             this.btnpaard.Name = "btnpaard";
             this.btnpaard.Size = new System.Drawing.Size(191, 42);
             this.btnpaard.TabIndex = 11;
@@ -206,7 +220,7 @@
             this.btntoren.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btntoren.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btntoren.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btntoren.Location = new System.Drawing.Point(535, 174);
+            this.btntoren.Location = new System.Drawing.Point(536, 179);
             this.btntoren.Name = "btntoren";
             this.btntoren.Size = new System.Drawing.Size(191, 42);
             this.btntoren.TabIndex = 12;
@@ -290,13 +304,20 @@
             // 
             // btnterug
             // 
-            this.btnterug.Location = new System.Drawing.Point(651, 453);
+            this.btnterug.BackColor = System.Drawing.Color.Transparent;
+            this.btnterug.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnterug.FlatAppearance.BorderSize = 0;
+            this.btnterug.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnterug.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnterug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnterug.Location = new System.Drawing.Point(521, 34);
             this.btnterug.Name = "btnterug";
-            this.btnterug.Size = new System.Drawing.Size(75, 23);
+            this.btnterug.Size = new System.Drawing.Size(102, 35);
             this.btnterug.TabIndex = 17;
-            this.btnterug.Text = "Terug";
-            this.btnterug.UseVisualStyleBackColor = true;
+            this.btnterug.UseVisualStyleBackColor = false;
             this.btnterug.Click += new System.EventHandler(this.btnterug_Click);
+            this.btnterug.MouseEnter += new System.EventHandler(this.btnterug_MouseEnter);
+            this.btnterug.MouseLeave += new System.EventHandler(this.btnterug_MouseLeave);
             // 
             // pbuitleg
             // 
