@@ -65,12 +65,18 @@ namespace Schaakproject
                 // Slaan naar noordoost voor een witte pion
                 else if (selected.buurNoordoost == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
+                    Console.WriteLine("TEST1");
+                    speler.resterendestukken = speler.resterendestukken - 1;
+                    spel.updateAantalStukken(speler);
                     mogelijk = true;
                 }
 
                 // Slaan naar noordwest voor een witte pion
                 else if (selected.buurNoordwest == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
+                    Console.WriteLine("TEST2");
+                    speler.resterendestukken = speler.resterendestukken - 1;
+                    spel.updateAantalStukken(speler);
                     mogelijk = true;
                 }
 
@@ -102,6 +108,9 @@ namespace Schaakproject
                     //en-passant slaan naar noordoost
                     if (selected.buurNoordoost == nieuwVakje && _speler.enPassantPion == selected.buurOost.schaakstuk && _speler.enPassantPion != null)
                     {
+                        Console.WriteLine("TEST3");
+                        speler.resterendestukken = speler.resterendestukken - 1;
+                        spel.updateAantalStukken(speler);
                         tempPion = selected.buurOost.schaakstuk;
                         locatie = false;
                         selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
@@ -114,6 +123,9 @@ namespace Schaakproject
                     //en-passant slaan naar noordwest
                     if (selected.buurNoordwest == nieuwVakje && _speler.enPassantPion == selected.buurWest.schaakstuk && _speler.enPassantPion != null)
                     {
+                        Console.WriteLine("TEST4");
+                        speler.resterendestukken = speler.resterendestukken - 1;
+                        spel.updateAantalStukken(speler);
                         tempPion = selected.buurWest.schaakstuk;
                         locatie = true;
                         selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
@@ -135,14 +147,20 @@ namespace Schaakproject
                 // Slaan naar zuidoost voor een zwarte pion
                 else if (selected.buurZuidoost == nieuwVakje && kleur == "zwart" && nieuwVakje.schaakstuk != null)
                 {
+                    Console.WriteLine("TEST5");
                     speler.resterendestukken = speler.resterendestukken - 1;
+                    spel.updateAantalStukken(speler);
                     mogelijk = true;
                 }
 
                 // Slaan naar zuidwest voor een zwarte pion
                 else if (selected.buurZuidwest == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
+                    Console.WriteLine("TEST6");
                     speler.resterendestukken = speler.resterendestukken - 1;
+                    spel.updateAantalStukken(speler);
+                    speler.resterendestukken = speler.resterendestukken - 1;
+                    spel.updateAantalStukken(speler);
                     mogelijk = true;
                 }
 
@@ -176,6 +194,9 @@ namespace Schaakproject
                     //en-passant slaan naar zuidoost
                     if (selected.buurZuidoost == nieuwVakje && _speler.enPassantPion == selected.buurOost.schaakstuk && _speler.enPassantPion != null)
                     {
+                        Console.WriteLine("TEST7");
+                        speler.resterendestukken = speler.resterendestukken - 1;
+                        spel.updateAantalStukken(speler);
                         locatie = false;
                         tempPion = selected.buurOost.schaakstuk;
                         selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
@@ -193,6 +214,9 @@ namespace Schaakproject
                         //en-passant slaan naar zuidwest
                         if (selected.buurZuidwest == nieuwVakje && _speler.enPassantPion == selected.buurWest.schaakstuk && _speler.enPassantPion != null)
                         {
+                            Console.WriteLine("TEST8");
+                            speler.resterendestukken = speler.resterendestukken - 1;
+                            spel.updateAantalStukken(speler);
                             locatie = true;
                             tempPion = selected.buurWest.schaakstuk;
                             selected.buurWest.schaakstuk = null; //De andere pion verdwijnt

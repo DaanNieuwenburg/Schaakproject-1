@@ -226,8 +226,11 @@ namespace Schaakproject
         {
             if(speler.Kleur == "wit")
             {
-                _speelbord.lblaantal1.Text = Convert.ToString(_Speler1.resterendestukken); //hier moet de variabele komen voor het aantal van wit
-                _speelbord.lblaantal2.Text = Convert.ToString(_Speler2.resterendestukken); //hier moet de variabele komen voor het aantal van zwart
+                _speelbord.lblaantal2.Text = Convert.ToString(_Speler1.resterendestukken); //onlogisch, speler1 = label 2
+            }
+            else
+            {
+                _speelbord.lblaantal1.Text = Convert.ToString(_Speler2.resterendestukken); //onlogisch, speler2 = label 1
             }
         }
     }
