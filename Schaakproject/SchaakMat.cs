@@ -40,7 +40,12 @@ namespace Schaakproject
 
         private void btn_nee_Click(object sender, EventArgs e)
         {
+            Hide();
+            spel._speelbord.Hide();
             DialogResult = DialogResult.Yes;
+            NaamInvoer menu = new NaamInvoer();
+            menu.ShowDialog();
+            
 
         }
     }

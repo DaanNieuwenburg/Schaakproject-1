@@ -155,10 +155,12 @@ namespace Schaakproject
                     mat = schaakbord.CheckMat(_Speler1.Koning);
                     if (mat == true)
                     {
+                        
                         _Speler1.Koning.vakje.pbox.Image = Properties.Resources.WitMat1;
                         SchaakMat _SchaakMat = new SchaakMat(_Speler2.Naam, this);
+                        //_speelbord.Hide();
                         _SchaakMat.ShowDialog();
-                        _speelbord.Hide();
+                        
                     }
                 }
             }

@@ -242,8 +242,10 @@ namespace Schaakproject
             //De pion wil promoveren wanneer hij op de eerste of laatste rij komt te staan
             if (vakje.buurNoord == null || vakje.buurZuid == null)
             {
+
                 nieuwVakje.pbox.update();
                 selected.pbox.update();
+                vakje.schaakstuk = new Dame(kleur, vakje, _speler);
                 PromoveerForm promoveerform = new PromoveerForm(this, kleur);
                 promoveerform.ShowDialog();
             }
