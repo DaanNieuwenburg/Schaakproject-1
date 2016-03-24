@@ -44,8 +44,6 @@ namespace Schaakproject
                 }
                 else
                 {
-                    computer.spelerkanslaan = false;
-                    computer.computerkanslaan = false;
                 }
             }
         }
@@ -137,12 +135,14 @@ namespace Schaakproject
                 // Slaan naar zuidoost voor een zwarte pion
                 else if (selected.buurZuidoost == nieuwVakje && kleur == "zwart" && nieuwVakje.schaakstuk != null)
                 {
+                    speler.resterendestukken = speler.resterendestukken - 1;
                     mogelijk = true;
                 }
 
                 // Slaan naar zuidwest voor een zwarte pion
                 else if (selected.buurZuidwest == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
+                    speler.resterendestukken = speler.resterendestukken - 1;
                     mogelijk = true;
                 }
 
@@ -181,7 +181,7 @@ namespace Schaakproject
                         selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
                         selected.buurOost.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
                         mogelijk = true;
-
+                        speler.resterendestukken = speler.resterendestukken - 1;
                     }
                 }
 
@@ -198,7 +198,7 @@ namespace Schaakproject
                             selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
                             selected.buurWest.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
                             mogelijk = true;
-
+                            speler.resterendestukken = speler.resterendestukken - 1;
                         }
                     }
                 }
