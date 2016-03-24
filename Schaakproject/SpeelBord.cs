@@ -23,6 +23,7 @@ namespace Schaakproject
         private bool _witaanzet { get; set; }
         public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2, Computer computerSpeler, string Variant)
         {
+            clicks = 1;
             _SpelMode = SpelMode;
             _variant = Variant;
             InitializeComponent();
@@ -160,6 +161,7 @@ namespace Schaakproject
 
         private void SpeelBord_Load(object sender, EventArgs e)
         {
+            //hierdoor zijn de plaatjes ook zichtbaar zonder er eerst overheen te hoveren met je muis
             btnregels.BackgroundImage = Properties.Resources.button_regels_2;
             btnterug.BackgroundImage = Properties.Resources.button_terug_2;
             btHerstart.BackgroundImage = Properties.Resources.button_herstart_2;
@@ -274,8 +276,14 @@ namespace Schaakproject
 
         private void btnterug_Click(object sender, EventArgs e)
         {
-            if(clicks == 0)
+            if (clicks == 0)
             {
+                TerugMelding menu = new TerugMelding(this);
+                menu.Show();
+            }
+            else if(clicks == 1)
+            {
+                clicks--;
                 this.btndame.Visible = false;
                 this.btnkoning.Visible = false;
                 pbuitleg.Visible = false;
@@ -288,7 +296,7 @@ namespace Schaakproject
                 this.btnvariant.Visible = false;
                 pbuitleg.Image = null;
             }
-            else if (clicks == 1)
+            else if (clicks == 2)
             {
                 clicks--;
                 this.btndame.Visible = true;
