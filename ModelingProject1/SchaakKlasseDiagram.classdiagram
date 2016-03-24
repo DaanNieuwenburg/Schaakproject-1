@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="59986595-ab6f-432c-b6ad-b93a9a30056e" name="SchaakKlasseDiagram" linkedPackageId="b1492d3f-3f34-46c2-94ce-5dad21715151" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="59986595-ab6f-432c-b6ad-b93a9a30056e" name="SchaakKlasseDiagram" linkedPackageId="b1492d3f-3f34-46c2-94ce-5dad21715151" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <appliedStereotypesInternal>
     <stereotypeInstance Id="0e47286b-506a-466d-9996-b72b74750277" name="namespace" profile="CSharpProfile">
       <elementDefinition Id="dc5a29c7-9d7d-4d56-8303-f2da8848217f" />
@@ -114,7 +114,7 @@
         </appliedStereotypesInternal>
         <elementDefinition Id="1930fb1b-c192-4fac-821b-775cf2dbbb42" />
         <ownedAttributesInternal>
-          <property Id="ac7f2225-0a48-4803-8661-7944f69b6204" name="naam" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="ac7f2225-0a48-4803-8661-7944f69b6204" name="spel" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="c5732665-4337-4a78-a2e9-c2b1ee474b59" name="property" profile="CSharpProfile">
                 <elementDefinition Id="6486030c-cbaa-4f4c-be7b-6129893ae1c2" />
@@ -166,10 +166,10 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="1be35b3b-1f11-4f02-a0fb-f8aba731c1a6" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="fd12eaf2-7153-4315-b146-59ae5f7b7573" LastKnownName="string" />
+              <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
             </type_NamedElement>
           </property>
-          <property Id="8a50cbb8-4cc8-4d5d-b110-0f5a39e55e5e" name="kleur" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="8a50cbb8-4cc8-4d5d-b110-0f5a39e55e5e" name="Kleur" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="cc6d8fec-5350-4cfc-ac6a-b30a07ca4c9c" name="property" profile="CSharpProfile">
                 <elementDefinition Id="a7a1dcae-2cd2-4284-ac38-97c7c81a5488" />
@@ -221,7 +221,25 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="34175e14-9b85-4c22-902c-79ef867048bb" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="14e2c497-2eed-4fce-be4d-334c9352ab6c" LastKnownName="string" />
+              <referencedTypeMoniker Id="3a835d87-fa51-4739-bfe7-9e71bcf45faf" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="4ca6a676-a58f-46af-bca2-49ac5960257b" name="Naam" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b5b1ecf7-4ef0-42b1-a3f1-01a1e2809103" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="cbfe03cb-4908-4a9b-bba5-ec2898265bf3" name="enPassantPion" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="93effd5f-3795-4120-9b9b-07469bc55180" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="25548efc-69f6-4b9e-8df4-6dfed20e843f" LastKnownName="Pion" />
+            </type_NamedElement>
+          </property>
+          <property Id="cd1fdf0c-3555-45ce-aa1e-168769f9bce8" name="koning" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="694d6987-2de7-4902-8ebf-5d89d2a2256e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="384fe42b-4cf0-4775-9a3a-1d29c0f4a709" LastKnownName="Koning" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -297,9 +315,73 @@
         </targetEnds>
         <ownedAttributesInternal>
           <property Id="2db48271-e750-4e8a-98f6-68a7cfc359fd" name="schaakarray" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <lowerValueInternal>
+              <literalString Id="31b2ea3d-db17-42be-ad34-9a395685c976" name="Lower" value=",">
+                <elementDefinition Id="dc0ad6e2-a9cf-4e65-8814-7f3ab3a5d2ce" />
+              </literalString>
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString Id="24e2951b-42b7-4481-b8c9-cd5a2fae8aec" name="Upper" value=",">
+                <elementDefinition Id="56a2b965-7588-4dca-a002-fb6a25c0b888" />
+              </literalString>
+            </upperValueInternal>
             <elementDefinition Id="4c66e6aa-4cf6-4981-a230-8fcf5561619d" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="015dbbe2-9ad8-487d-9b76-9c142bbdbdb4" LastKnownName="ModelingProject1::Vakje[,]" />
+              <referencedTypeMoniker Id="601c9845-c4e0-4693-8e60-02cd2edb6abc" LastKnownName="Vakje" />
+            </type_NamedElement>
+          </property>
+          <property Id="01b1bc66-5eb3-4b27-a70c-92ce3ae22969" name="_kleur" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="77c4ddca-5280-4154-893c-9b16c447ae85" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2dcf1583-ea17-4b2f-bd3d-95a251069199" LastKnownName="Color" />
+            </type_NamedElement>
+          </property>
+          <property Id="9f796f0f-1892-4e71-906e-1792ee138464" name="aantal1" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="408bb774-d505-4954-984c-cd97bc428b04" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7822eb03-f8a8-478c-bc88-7be9bab2eedb" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="067cc7a3-f2c9-48d3-ae35-decac1c1a4b7" name="aantal2" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8fd71663-905c-4610-8da2-0059659ae240" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7822eb03-f8a8-478c-bc88-7be9bab2eedb" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="92362669-4d4f-45e9-912f-9d749567e24c" name="staatschaak" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="47173eb6-e3c6-428f-859a-ac1c94a3b57d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="6b8a3409-0554-4c63-b60b-d8586c11da59" name="kleurstuk" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="100e2193-30c7-49ef-acdd-54129eb92694" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="82a3c176-c4e2-4957-8fe9-a0caf8427bbe" name="variant" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a3821c01-bd41-4e24-a45c-05a483fda3d1" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="14195a78-905b-4c52-8865-b871b2bd06e3" name="schaakgezet" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6ec25cfa-6a2c-4988-8bb0-70b6653efd6c" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="314a9a26-9ea8-4ef0-92a3-8313d73ea247" LastKnownName="Schaakstuk" />
+            </type_NamedElement>
+          </property>
+          <property Id="ac785410-fdc5-4ef4-8adb-cf49d270383a" name="richting" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4f1b22f3-5b51-4e26-b965-e0290647b5c1" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="0508a594-ddfc-4c6a-a086-1d3f69b4a0b4" name="pionvoormat" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e6d36206-bca0-403a-b705-914fc52e073b" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -556,6 +638,12 @@
               <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
             </type_NamedElement>
           </property>
+          <property Id="f790dbc6-4316-4b89-861b-fbf66b06e6b7" name="_speler" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="049d4693-e605-4346-898e-da71ba4ae9c2" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5500be55-c974-4537-92ff-bc53591f95ed" LastKnownName="Speler" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="b75f5e36-e7b3-477b-8657-d985f4bf8d95" name="Verplaats" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
@@ -604,7 +692,7 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="54a33b79-badb-414d-8200-ebf13ea62345" />
           </operation>
-          <operation Id="16c64437-7c8c-4ce9-a5e3-ff97dc1e2596" name="Slaan" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="16c64437-7c8c-4ce9-a5e3-ff97dc1e2596" name="Slaan" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="5332e775-1698-4776-95d3-3b2481494b80" name="method" profile="CSharpProfile">
                 <elementDefinition Id="a7bb6a98-245b-4c91-aca5-d88abc96ffdc" />
@@ -649,6 +737,9 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="2b1ea21c-703c-4bb0-9f76-0b774847bc8d" />
+          </operation>
+          <operation Id="7f7b14ba-9ccc-4a2c-8ab4-7337f62abe95" name="kanStukSlaan" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e108de7d-d6bd-46ea-a891-fbcb2efbda74" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -758,7 +849,7 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="b63b37d2-6d8b-4137-ae7e-232e5222c968" name="_kleur" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="b63b37d2-6d8b-4137-ae7e-232e5222c968" name="_kleur" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="79695c95-ac17-4b5e-a551-612fbae22521" name="property" profile="CSharpProfile">
                 <elementDefinition Id="df92c2ba-c287-469b-93b9-662a8925fc4c" />
@@ -810,7 +901,7 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="ef7b270e-5ec6-4c82-b6da-fe5d52609de4" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+              <referencedTypeMoniker Id="38c8f3c3-c1c5-47ef-9ed0-7fff5b15b36f" LastKnownName="color" />
             </type_NamedElement>
           </property>
           <property Id="b01a7f92-3839-4002-86a6-e00898c010c8" name="schaakstuk" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -822,7 +913,7 @@
           <property Id="6bf923ab-cab0-41d8-9767-e5990ae3b3c1" name="pbox" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="51b81a10-4416-4e96-86c5-c4a92d3f7fe1" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="7c9a09ce-b428-460e-afef-f1ae81171705" LastKnownName="PictureBox" />
+              <referencedTypeMoniker Id="70ae158d-2653-4f58-b96f-2d8d787c9707" LastKnownName="SpecialPB" />
             </type_NamedElement>
           </property>
           <property Id="9a17abca-29ae-4c92-b331-7f5ce5f22b0b" name="Buurnoord" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -877,9 +968,6 @@
         <ownedOperationsInternal>
           <operation Id="547e9c60-62ca-4e90-afd0-7da350594b7a" name="Vakje" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="6a53e2ed-961c-45dc-964a-ea1e214b5428" />
-          </operation>
-          <operation Id="dbb4c059-36f1-4163-89ce-3c9032438836" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="ccc43f56-3e30-477c-a0f8-c9c5129677f0" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -986,6 +1074,12 @@
               <referencedTypeMoniker Id="74653302-a12c-43ae-9b94-2380a08bbaee" LastKnownName="bool" />
             </type_NamedElement>
           </property>
+          <property Id="4ba7c7af-573d-44d3-ba0e-6944e0b245d6" name="_eersteZet" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="35eb1512-7815-4c98-a60f-17a3b17bca11" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="e6dce0ef-831d-4708-85d4-95e69bc827ce" name="Verplaats" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -1034,57 +1128,14 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="4cf82b97-43f0-44bb-bec8-1bbc3f1657a4" />
           </operation>
-          <operation Id="4c0bdb31-0821-4321-8c7c-cb784ca03790" name="EnPassant" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance Id="48e8b0bf-707e-4e33-b040-eda37632d7cb" name="method" profile="CSharpProfile">
-                <elementDefinition Id="a0c3ec06-3ec0-4c2f-8a8f-489f3674f459" />
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="3fdbafda-1d77-44cf-8cbf-4fe22e161d73">
-                    <propertyInstance Id="a11374b7-5236-422e-8609-ff6282b22ff3" name="ClrAttributes">
-                      <elementDefinition Id="f208bd95-b7b1-49eb-a558-33b5d98fffe2" />
-                    </propertyInstance>
-                    <elementDefinition Id="70ff2dba-b8d1-438c-bbd8-53f4a219071d" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="02456696-4638-4de6-ac9b-11f8dbbb3937">
-                    <propertyInstance Id="2dfc0e30-e4bd-4e81-b1e4-903c2ae643a4" name="IsPartial" value="false">
-                      <elementDefinition Id="5f5f1aef-ab87-4551-9a51-7b5ffbbc0c43" />
-                    </propertyInstance>
-                    <elementDefinition Id="665a2fd7-dea3-4a17-99f7-e475b2a3f64b" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="fb5420bf-a4cc-4f89-b2e6-d73fdbccade8">
-                    <propertyInstance Id="03ba1546-e956-4298-a654-f79299924f1a" name="IsUnsafe" value="false">
-                      <elementDefinition Id="28ea6bba-d783-4286-8732-20cbe8640c49" />
-                    </propertyInstance>
-                    <elementDefinition Id="91298b92-3e88-428d-b26d-665b95b37c84" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="02e61e60-1a5c-4b70-9a2a-7a390c024a97">
-                    <propertyInstance Id="626938c9-2ace-402d-afd4-0a86092407bd" name="Inheritance" value="none">
-                      <elementDefinition Id="efd1b74b-4d59-4bbd-9944-c9d53e3ed4c8" />
-                    </propertyInstance>
-                    <elementDefinition Id="10f58917-64be-43ae-a7bf-6b3b3ffdc739" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="e8f710a3-1cf7-475a-ba2f-1cebd2f52768">
-                    <propertyInstance Id="650856a6-9096-42f1-bc80-af29a36b5894" name="PackageVisibility" value="internal">
-                      <elementDefinition Id="153c5ad4-203c-409d-9bc0-850c19a32547" />
-                    </propertyInstance>
-                    <elementDefinition Id="b8e5b706-fc41-4a52-84aa-ae02ae8e5224" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="25cbecf7-a2e1-4feb-ab20-0fccad27f8bd">
-                    <propertyInstance Id="030080fd-45e7-46b7-81dc-f81778097b11" name="params" value="false">
-                      <elementDefinition Id="edb30c59-d70f-4d7c-81ce-f43483fe6a92" />
-                    </propertyInstance>
-                    <elementDefinition Id="883b8b8c-b9fb-4a73-89ab-e39db133db9c" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <elementDefinition Id="aea211e8-3531-4dc2-be49-f06c3a439cf6" />
-          </operation>
           <operation Id="4d97dded-7109-449b-b401-8219d8672db0" name="Pion" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="f6cc81af-14ea-407e-8632-78fc0861affc" />
           </operation>
-          <operation Id="800c4636-7713-42ec-8313-460581ebe0d8" name="Promoveert" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="800c4636-7713-42ec-8313-460581ebe0d8" name="Promoveert" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="1a96baf1-7fc5-452f-a939-6214bc4b009d" />
+          </operation>
+          <operation Id="09f8b24f-c252-402f-8976-094d5ceb1a7e" name="kanStukSlaan" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ce118457-b4ec-472a-8305-9960799af54e" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -1239,54 +1290,11 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="67f88aa2-caa2-4303-8386-b4ee0c95aa46" />
           </operation>
-          <operation Id="b7d2202b-0ff9-43e4-b318-d9e769b927bd" name="Rokeren" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance Id="3adb096e-3f10-4ffe-9da0-cea70171be5f" name="method" profile="CSharpProfile">
-                <elementDefinition Id="93515d38-42bf-4890-8bec-0a067879b71d" />
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="bb38cd40-2607-45f2-9375-9ea2e5dbd9a0">
-                    <propertyInstance Id="c101667b-9846-46c3-871e-6c5cc2f9f81f" name="ClrAttributes">
-                      <elementDefinition Id="ac8b171f-13d4-418a-aea1-ecbea236081f" />
-                    </propertyInstance>
-                    <elementDefinition Id="36071cc3-d576-4540-a34f-7d5251cc3e96" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="d92ab4bb-6143-4c44-a8cc-7995ff1f5296">
-                    <propertyInstance Id="37fa1047-ceec-4f72-9666-17705eb40d7f" name="IsPartial" value="false">
-                      <elementDefinition Id="5af84bcc-dd1d-4e41-9386-6c126093739a" />
-                    </propertyInstance>
-                    <elementDefinition Id="88f5ff68-dbcd-46e1-909d-6b8b740d0a65" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="9f4c3285-004a-4850-b156-401e7f64ba9b">
-                    <propertyInstance Id="28696f80-4c4f-488f-bc52-a5d947623d75" name="IsUnsafe" value="false">
-                      <elementDefinition Id="43fb7907-96ce-49da-9d20-3213833e49ab" />
-                    </propertyInstance>
-                    <elementDefinition Id="7b49dfed-3ba0-4584-b709-0557b7435283" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="06a1fed0-0afe-4eee-91f7-72656c142b94">
-                    <propertyInstance Id="76253dbc-2a8b-4d2c-aac8-5caf7efe83e6" name="Inheritance" value="none">
-                      <elementDefinition Id="89a1392b-05d1-45c8-b744-ecd28894f155" />
-                    </propertyInstance>
-                    <elementDefinition Id="6062a7a5-cfa0-4ee0-8907-ec384c53e1c0" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="d67eb33e-530f-4757-b430-8c24fcd642c4">
-                    <propertyInstance Id="589d5515-02df-4940-8c31-9465480f6f88" name="PackageVisibility" value="internal">
-                      <elementDefinition Id="6d5ab1da-944d-4199-af3c-8c8e656e4e3e" />
-                    </propertyInstance>
-                    <elementDefinition Id="10998aee-c476-4c25-b33f-044d02bd9b8c" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="0780e572-c37b-478d-9baa-507d90e40386">
-                    <propertyInstance Id="0e1637fe-8425-4aa6-90ae-0ccdf547ac1f" name="params" value="false">
-                      <elementDefinition Id="d83825f4-1ac7-48dc-8c9d-63204aef1752" />
-                    </propertyInstance>
-                    <elementDefinition Id="75b7d813-9a50-48e5-a5d7-b86a72c2e6ce" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <elementDefinition Id="7a0c4c03-557a-4139-a3b4-cba1a1d88a8f" />
-          </operation>
           <operation Id="76c4c7b2-21ae-4fbb-b0d4-44a94bfd9dd2" name="Toren" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="dc48ebdd-d7c4-44ae-9cb4-15d6e093e3ba" />
+          </operation>
+          <operation Id="2b38fc46-796c-4197-b471-65acf8819887" name="kanStukSlaan" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6519acec-f579-439f-aa66-c204f805bd77" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -1387,6 +1395,9 @@
           <operation Id="5a5cfed7-a26f-4f1b-bfbe-058b373b352c" name="Loper" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="ea75400b-3a17-420b-9861-05ef2d461c58" />
           </operation>
+          <operation Id="6eac3464-1802-40ba-aef2-b4b6c3ae9c11" name="kanStukSlaan" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a18f3b04-e5e6-4642-a8fc-07b1d1264872" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -1485,6 +1496,9 @@
           </operation>
           <operation Id="113e0d5b-728d-4a30-b86c-8d6f735c2362" name="Paard" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="82c70c0b-78c3-4874-9875-a62bb048576a" />
+          </operation>
+          <operation Id="02ae0d9b-53b0-4e70-a403-f72388866ce4" name="kanStukSlaan" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e8f85adf-8255-4306-abff-9f8436d7d2a8" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -1585,6 +1599,9 @@
           <operation Id="b23d7d2e-b776-44f9-a827-be87612c937f" name="Dame" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="bc0ac576-8e5b-4ae2-be59-0413f712023a" />
           </operation>
+          <operation Id="39832318-78d7-4edd-9d09-b6d5be165c2f" name="kanStukSlaan" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e8b1db8f-2551-4d48-a4a8-8f39a597a129" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -1635,7 +1652,7 @@
           </generalization>
         </generalsInternal>
         <ownedAttributesInternal>
-          <property Id="9fb5904f-e92d-4df0-98ad-adbee22da38e" name="_staatSchaak" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="9fb5904f-e92d-4df0-98ad-adbee22da38e" name="_staatschaak" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="e205604f-bd8f-4b9e-9d62-76e86f2ec9db" name="property" profile="CSharpProfile">
                 <elementDefinition Id="10750c61-a531-4d3e-8049-a490e1f15f81" />
@@ -1745,6 +1762,36 @@
               <referencedTypeMoniker Id="3bb58100-f5ab-4d3f-aad6-2075c4a387e9" LastKnownName="bool" />
             </type_NamedElement>
           </property>
+          <property Id="f79835b2-5598-434c-8e88-f87804baaa31" name="_vorigvakje" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="186d8e24-a49b-4903-a65c-1fb42cd5b3f0" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+            </type_NamedElement>
+          </property>
+          <property Id="bb6369d1-fdc1-4b90-b7f5-8f0c3f062333" name="_vorigwest" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9dbe831f-99dc-48c8-9953-c8e4c7962610" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+            </type_NamedElement>
+          </property>
+          <property Id="02ee9ac6-1db2-49b5-aa8e-87af62a3ce03" name="_positiewest" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a242e65f-9019-4232-9153-888f492cd47a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7822eb03-f8a8-478c-bc88-7be9bab2eedb" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="9adcdaf3-4ec5-4825-93a6-74429a28e20d" name="_wilRokeren" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c6fa2303-492f-4db8-b39d-4fb1af93e6fa" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="d952721f-9d99-482f-aa8f-4adb6552bd4b" name="_magRokeren" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dd386dcf-c6b9-431c-8059-3b0a7e995b7a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="8d916ca8-e28e-4d67-b20b-caa3e478759d" name="Verplaats" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -1793,7 +1840,7 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="aa10744b-1c47-4c92-94dd-9ab728286f15" />
           </operation>
-          <operation Id="c1166dae-25a8-4cfc-bc3a-3a2dca85e700" name="Rokeren" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="c1166dae-25a8-4cfc-bc3a-3a2dca85e700" name="Rokeren" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="613891b3-657a-4df4-a8eb-4e2468937eb4" name="method" profile="CSharpProfile">
                 <elementDefinition Id="b111d4c3-2a46-4fe6-91d4-965858c8bb24" />
@@ -1841,6 +1888,15 @@
           </operation>
           <operation Id="f67f3e4e-1396-45dc-9793-acea84f0bf44" name="Koning" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="a5341f25-81cc-4b8b-bb88-4b06e84d6edd" />
+          </operation>
+          <operation Id="31023dc2-d28a-4198-b2d9-736b624fe31f" name="kanStukSlaan" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d8d5e7ad-0674-4c05-a5ec-e195972a676f" />
+          </operation>
+          <operation Id="43f8f6bc-7aa5-47d3-91e1-6486929ffc41" name="Wilrokeren" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="62267847-483a-4954-9508-6bb5b83d6655" />
+          </operation>
+          <operation Id="70a0cb77-a42a-49bf-8f66-7b50daec4937" name="Checkschaak" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="10f310b9-95b7-4c70-8c86-8e53e1ade425" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -2004,22 +2060,58 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="5d633e13-3f77-479b-b4cd-16a15edc2df1" />
           </property>
-          <property Id="203d6f71-d817-4350-8de6-605a4decaaf1" name="_spelmode" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="203d6f71-d817-4350-8de6-605a4decaaf1" name="_Spelmode" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="86f20630-688d-42d4-93de-a3547b394e67" />
             <type_NamedElement>
               <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
             </type_NamedElement>
           </property>
-          <property Id="f556deb9-5241-4c04-9178-da99fec655c1" name="_Speler1" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="f556deb9-5241-4c04-9178-da99fec655c1" name="_Speler1" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="03dbce1c-f0ef-4322-85a5-5156b8437e9f" />
             <type_NamedElement>
               <referencedTypeMoniker Id="9a5efb97-c456-4d06-a680-f481a84924a9" LastKnownName="Mens" />
             </type_NamedElement>
           </property>
-          <property Id="7170dce4-aad4-425d-86df-df2f6cfe5729" name="_Speler2" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="7170dce4-aad4-425d-86df-df2f6cfe5729" name="_Speler2" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="3d12405f-ce1c-4806-a506-93c393c0a394" />
             <type_NamedElement>
               <referencedTypeMoniker Id="9a5efb97-c456-4d06-a680-f481a84924a9" LastKnownName="Mens" />
+            </type_NamedElement>
+          </property>
+          <property Id="0c5f6055-d0dd-487e-8632-8c350890d019" name="witaanzet" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ff46d95e-db84-427f-b591-82f1b95632e4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="e1e77918-e444-4dff-94a0-512d73df6052" name="_computerSpeler" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="78bd29e9-6c81-4a55-93ff-e07f94b07883" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="518e744b-b76c-4e4b-af12-8b1df90be91c" LastKnownName="Computer" />
+            </type_NamedElement>
+          </property>
+          <property Id="2f8d4012-e75d-4cec-849b-e846f5a51854" name="selected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="de4bdf7f-ee76-414a-8d3e-0179ae867dce" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+            </type_NamedElement>
+          </property>
+          <property Id="fba651d6-a618-4041-b419-b0f0b8fece0a" name="_Variant" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b1286240-120f-467d-aab6-cec0a295999a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="1d3a12c4-5eb1-4994-a173-5df82937ca58" name="schaakbord" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="45db8cb9-e66f-415c-b2dd-529163c0e927" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="74d128f9-abf0-40d3-b5aa-cb433a2b3cba" LastKnownName="Schaakbord" />
+            </type_NamedElement>
+          </property>
+          <property Id="ff91c975-ae85-419e-a3da-9703c9ee00b9" name="SpeelBord" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="54aaf4b7-4e8d-4585-a669-6d66aafff325" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="cf2ef883-bd2d-472d-89ea-b36fb2fc2a75" LastKnownName="_speelbord" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -2419,6 +2511,122 @@
             <elementDefinition Id="72cc26f0-a975-4c9e-8c74-e27db23617b6" />
           </generalization>
         </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="07e901eb-d790-4b6d-b76d-44f3e5d3d083" name="_vorigvakje" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2b4a9907-858a-40a7-8bd2-90c46ecace9a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+            </type_NamedElement>
+          </property>
+          <property Id="0740f792-3508-4dae-8efc-88bc08afd100" name="_vorigschaakstuk" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4f81a5c6-dbc7-4543-86a3-cc456c8b34ce" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="314a9a26-9ea8-4ef0-92a3-8313d73ea247" LastKnownName="Schaakstuk" />
+            </type_NamedElement>
+          </property>
+          <property Id="0f273cc5-18ed-461a-8e57-5691d4c43cfe" name="_tegenspeler" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5cdbcf00-8303-459c-8e08-82e92ef1fd56" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9a5efb97-c456-4d06-a680-f481a84924a9" LastKnownName="Mens" />
+            </type_NamedElement>
+          </property>
+          <property Id="84112bf7-f37a-457b-8864-f187fba31684" name="_spel" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9486de1a-36fe-44a7-8429-4d5c8586bf73" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
+            </type_NamedElement>
+          </property>
+          <property Id="0226c76c-4b80-4424-a3d8-fd4b6fcc7350" name="selected" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b9221b39-b514-4cdc-92c4-22bc371e1ae7" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+            </type_NamedElement>
+          </property>
+          <property Id="b9d2a049-4fe0-46a0-ba2c-6c4ff739d27b" name="pictures" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f0a273c3-b8a0-4d46-a7ce-802600caeef8" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+            </type_NamedElement>
+          </property>
+          <property Id="253f7d5c-90f4-4ac3-aae6-aa1b5ddcf353" name="_nietverplaatstlijst" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4cb0d859-be67-4264-a4a8-57d81cfd13d8" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a197b916-06b8-4e2b-840d-08b91dcb08c4" LastKnownName="List&lt;Vakje&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="e014abc4-51af-4be5-8b05-148acf4d2054" name="nietverplaatstlijst" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d53b3707-c228-4c91-a92b-af8a923fe348" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="16678edb-0c4a-4b76-9b8d-7e758936796f" LastKnownName="List&lt;Vakje&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="9668668d-0121-4d91-9e2d-a4854f7cd260" name="_verplaatsingslijst" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="eae508bf-72ce-4c57-a3b8-e1631df49a4b" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="16678edb-0c4a-4b76-9b8d-7e758936796f" LastKnownName="List&lt;Vakje&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="b6aa3d49-1f96-47d5-bdc8-309dd60a37f9" name="verplaatsingsLijst" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4e092962-9f4d-46b2-8c65-a3fd78426722" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="16678edb-0c4a-4b76-9b8d-7e758936796f" LastKnownName="List&lt;Vakje&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="cbe8921d-c905-48e9-904d-d0e35894dbe7" name="_slaanmogelijkhedenVanaf" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3f9707f9-46f6-4473-983e-0de6fd078f13" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="16678edb-0c4a-4b76-9b8d-7e758936796f" LastKnownName="List&lt;Vakje&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="f80ea437-24da-4c61-b06c-ea240b79a90a" name="slaanmogelijkheden" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f556dc1c-0d4d-4c17-ae32-769acfc9ceba" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="16678edb-0c4a-4b76-9b8d-7e758936796f" LastKnownName="List&lt;Vakje&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="cd6e6547-e10b-4056-9781-3fbf57e50ce4" name="slaanmogelijkhedenVanaf" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="065618a6-98f0-403b-976c-758d4b0d4de6" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="16678edb-0c4a-4b76-9b8d-7e758936796f" LastKnownName="List&lt;Vakje&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="08ae2556-5e62-42dd-b117-435d9e54dfc9" name="_slaanmogelijkhedenVanaf" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6797e960-160c-41e1-90de-e0c68f375647" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="16678edb-0c4a-4b76-9b8d-7e758936796f" LastKnownName="List&lt;Vakje&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="5b1bacec-8983-4d60-801b-e59ba745447e" name="_tegenstandersopening" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8b4aaee0-7c10-47e9-851f-549dcfcf305d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="613e7422-14c0-4cf2-9942-9d52b7739c2a" name="_tegenstanderstactiek" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f7776bc0-0ec2-4afa-bd27-b18f74f19f04" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="365c83f8-1414-4899-8668-49541fef6ac5" name="_positieZuid" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ab0cdda6-8bed-43a0-b3fb-4a8e2a925c7d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="69ff60e7-3de0-480e-9200-cba0f0fd65d6" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="e8c95e82-5d52-460e-be5c-928de9f4aadb" name="_positieWest" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="15743ab2-dcf5-4862-9cd0-84e48042573a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7822eb03-f8a8-478c-bc88-7be9bab2eedb" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="5e416e37-5b35-4070-8d20-1bc6b5c34443" name="_ronde" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c3a23bae-3bf6-4149-9d16-ef4572a30c31" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7822eb03-f8a8-478c-bc88-7be9bab2eedb" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="f8e4b70e-a592-4581-b7d1-944b96d980ce" name="Zet" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
@@ -2468,6 +2676,36 @@
           </operation>
           <operation Id="2e7c0be8-e2bf-480c-861d-c0a2c2460ea0" name="Computer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="3c23148e-05da-44c3-8301-75848aeafe7f" />
+          </operation>
+          <operation Id="881fa832-c59b-490b-87b6-d4e8939f288e" name="bepaalMensPositie" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="974b8b97-4a48-41c7-afab-c12b0d262fb8" />
+          </operation>
+          <operation Id="1bfb46b3-c4db-4164-ac0c-d0ed30797c74" name="controleerOpSlaan" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ff6f928e-33e7-468b-8437-dcac3d33240f" />
+          </operation>
+          <operation Id="f83d4366-b3f4-4be6-81bc-c0d6439f60bf" name="bepaalRondeEnAntwoord" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7211d9e8-6a28-4479-b097-e39dd96f4283" />
+          </operation>
+          <operation Id="2fc0d36b-5d3f-4a32-ace7-05b408081f57" name="TactiekEnAntwoordR0" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d89b9646-65ab-49cf-aee8-bdde93635bdf" />
+          </operation>
+          <operation Id="f4ab9a3b-c871-47d7-b460-7cb1c45c99dc" name="Algoritme" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ad33b6e0-211f-4f56-b0f2-60eb61605123" />
+          </operation>
+          <operation Id="52a0bd99-6abd-414d-83be-d15f7ebef694" name="slaEenStuk" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="234fd7f4-ae1a-49bf-99fb-d0e287108670" />
+          </operation>
+          <operation Id="a5a55f11-303a-4899-92d5-b8fda06aecf3" name="verplaatsNieuwStuk" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="da6bfaa0-0596-4a4a-87fd-077cea15dc99" />
+          </operation>
+          <operation Id="5607fba8-2f6b-4ee8-ab7a-925f116854d2" name="verplaatsVerplaatstStuk" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="df87f23d-8659-4c96-870d-dbfd1c6a7373" />
+          </operation>
+          <operation Id="c78967c2-c063-4fbd-84bc-de48472ce60a" name="BijVerplaatsingSlaan" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="335a79d7-e06c-47f7-8cda-c9aa1c8200bd" />
+          </operation>
+          <operation Id="1f86cfc8-5e9c-4238-bcea-4c79d05eb56c" name="voerZetUit" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="260a63bd-70b5-46ad-9147-3158e265ae63" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -2540,6 +2778,14 @@
             <elementDefinition Id="6ba82b8f-8852-4f04-b9fa-1b31f2bd99df" />
           </generalization>
         </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="8bda3ecd-4041-4812-a9cd-0fefafe7437c" name="Sure" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="681cc2b8-bf5f-4162-9f93-c25276648f70" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="1f04c0ac-6646-4f67-8676-55446c3168fb" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="3146e540-a80f-4b29-9534-27f86fee4be2" name="btnYes_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="82570281-a505-4677-b4af-f149d9c7ec0e" />
@@ -2557,6 +2803,10 @@
           <dependency Id="002999e0-0d76-4527-a012-1374e9dc76d3">
             <classMoniker Id="3cd200af-8073-42a4-89e3-2a0a11819561" LastKnownName="Spel" />
             <elementDefinition Id="a63df85d-5112-4164-97a4-ebbfa40484c8" />
+          </dependency>
+          <dependency Id="2069b9b2-aac7-42e8-b34f-94b6ba9d400d">
+            <classMoniker Id="75b59da5-b94c-4c81-b8e4-384888bd2771" LastKnownName="LoginForm" />
+            <elementDefinition Id="7161365e-ac9a-4616-bb6a-fd53375df1ad" />
           </dependency>
         </suppliersInternal>
         <generalsInternal>
@@ -2582,6 +2832,30 @@
             <elementDefinition Id="aa14e3b0-6db3-4b75-abeb-c2b912be8078" />
             <type_NamedElement>
               <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="5667aef9-8ede-4603-943f-75108658525d" name="Variant" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="12bbdecb-7ebb-43ee-b046-4fd2ff893887" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="d0d2afa3-fca5-4690-9644-322a894638c6" name="click" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f49e2d9d-da82-4c21-8747-93ce6e1a0528" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="1b7ec050-3d26-4c36-9935-584b4348dba0" name="_username" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="802d9358-f90f-4555-acff-a17f4ab600b8" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="fdb05ff2-2568-4954-8d7f-16613c5a663f" name="click2" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="87dc2c31-c042-4c58-b977-143bb7f59663" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -2619,18 +2893,8 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
-      <referencedType Id="015dbbe2-9ad8-487d-9b76-9c142bbdbdb4" name="ModelingProject1::Vakje[,]" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Vakje[,]">
-        <elementDefinition Id="ab49c02d-db34-44c0-979e-cc5a84739335" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="314a9a26-9ea8-4ef0-92a3-8313d73ea247" name="Schaakstuk" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Schaakstuk">
         <elementDefinition Id="5707d178-3d72-4f4a-9f04-b079d5842eb3" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="7c9a09ce-b428-460e-afef-f1ae81171705" name="PictureBox" isAbstract="false" isLeaf="false" cachedFullName="PictureBox">
-        <elementDefinition Id="b9c0570d-425c-4b7c-90e2-3a85bcd31e4f" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -2653,6 +2917,62 @@
             <elementDefinition Id="43fd7ec3-3a99-4d5f-8253-74edfd3f3416" />
           </generalization>
         </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="b334fecf-2b08-4c99-9c43-4ce3a2526051" name="_SpelMode" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4848a679-bd24-434b-94a7-089f8497d685" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="c57c6217-6e13-4499-8fd2-fc46fa8ee7c3" name="_schaakbord" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="df9d5a5b-2563-42d1-9163-fd6feb83f5ce" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="74d128f9-abf0-40d3-b5aa-cb433a2b3cba" LastKnownName="Schaakbord" />
+            </type_NamedElement>
+          </property>
+          <property Id="f6d5d864-f355-4176-b651-451ac860b5d4" name="_speler1" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="82d0b952-d596-4924-a865-8903248058a4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9a5efb97-c456-4d06-a680-f481a84924a9" LastKnownName="Mens" />
+            </type_NamedElement>
+          </property>
+          <property Id="fec65eab-cfd3-46f7-acd3-20ba18a077a2" name="_speler2" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e6884f26-1689-44e2-887b-8c4869e7ba96" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9a5efb97-c456-4d06-a680-f481a84924a9" LastKnownName="Mens" />
+            </type_NamedElement>
+          </property>
+          <property Id="025ec2a1-55cc-4e15-a2b6-ab7f154cd58f" name="_computerSpeler" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0393a848-d248-4a88-97bb-77c989880f8e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="518e744b-b76c-4e4b-af12-8b1df90be91c" LastKnownName="Computer" />
+            </type_NamedElement>
+          </property>
+          <property Id="4604002a-68ee-4dd6-996e-42cd1db6633b" name="_spel" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="33ce525f-47e0-457a-afd0-47d9e20f3b4f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
+            </type_NamedElement>
+          </property>
+          <property Id="2549582f-1609-4f7c-961d-128a06149b68" name="clicks" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="531ee03e-d188-4617-b0a7-6edec95ded1e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7822eb03-f8a8-478c-bc88-7be9bab2eedb" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="8fc48972-d090-45f5-b9f9-a979ee83f18c" name="_variant" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c26a0b30-3c87-49b6-a1ce-eb24515ab753" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="e29a5cfd-a80f-401e-81b6-54f1780d31f6" name="_witaanzet" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cebf7d3a-390a-4684-812f-8379b6e5b252" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="b406b7d2-bea5-4f53-bb74-490d38543bbc" name="SpeelBord" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="668ea117-60f9-467e-8ea2-ee64a83ea82b" />
@@ -2662,6 +2982,42 @@
           </operation>
           <operation Id="fa7eb483-d441-4db0-9e7d-0592bcb9027f" name="SpeelBord_Load" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="a560b73a-4415-4e52-9860-1f7a3b7f24e1" />
+          </operation>
+          <operation Id="6d4c7899-acdf-4f2f-b2d7-ff454526cf1c" name="select" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="112cb932-bf1f-4e1f-8c44-822c0f9faf24" />
+          </operation>
+          <operation Id="18b0adec-9547-46f4-a141-c32dca3877af" name="btHerstart_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1ae32f5a-9978-4a33-8f77-a80297707ec3" />
+          </operation>
+          <operation Id="b967fb51-cb35-40f6-a19f-c453c7281acb" name="label1_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2b98f597-4cd6-4941-9824-4d827b274e9e" />
+          </operation>
+          <operation Id="c6fcc6e2-bcc9-4cac-a2e2-3d2af92334a2" name="btnvariant_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f39ed2a9-c8ad-4926-a80c-d19b683034e0" />
+          </operation>
+          <operation Id="73bc8876-d3f8-4b3d-af5d-fd5f25614e77" name="btnregels_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a008c8f3-57e9-4ac0-a538-fdd53b62c986" />
+          </operation>
+          <operation Id="6667ed17-2a3e-4c29-a875-7bbb2739c08f" name="btnpaard_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="eb397a02-9b73-434d-a03c-005fec58d257" />
+          </operation>
+          <operation Id="c63e9ee1-546d-425c-812f-37d5007fb761" name="btnterug_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e0e312d4-d740-42a5-8592-a8b0a16474c3" />
+          </operation>
+          <operation Id="20f5857b-ea46-43b7-9453-16821b32d288" name="btnkoning_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d4ede0a0-e7ee-4a16-97c8-e173494001ae" />
+          </operation>
+          <operation Id="757b7160-f008-402b-84c2-9baac1504746" name="btndame_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a73139ec-c131-4673-ad50-6f953d357e9d" />
+          </operation>
+          <operation Id="b9e7745c-ee7e-4812-a202-9e492a38667d" name="btntoren_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1fb256ec-f6fe-4a16-ab4d-84e4f848f08d" />
+          </operation>
+          <operation Id="5cfc9827-0b34-47c1-851d-92d9b1be9281" name="btnloper_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a9cc1b85-c9eb-4c85-8b7e-2750e2516fe5" />
+          </operation>
+          <operation Id="3f888ca3-f2b6-4957-b58c-1a323c0aa57c" name="btnpion_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3d693f93-fe0e-4147-b4b6-ea8470bef660" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -2732,18 +3088,13 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="ed35d2a5-554e-472f-9e40-f43738f53749" name="update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7c48b5ec-c6bc-416a-ae6b-8b7d9f87d48c" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="14e2c497-2eed-4fce-be4d-334c9352ab6c" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
-        <elementDefinition Id="9ae72030-5b19-4f74-b8af-7fbbca35c802" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="fd12eaf2-7153-4315-b146-59ae5f7b7573" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
-        <elementDefinition Id="9ae72030-5b19-4f74-b8af-7fbbca35c802" />
-      </referencedType>
-    </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="0b1f31c7-c7fd-41ce-907d-ae14ada4e7c4" name="SpelcialPB" isAbstract="false" isLeaf="false" cachedFullName="SpelcialPB">
         <elementDefinition Id="251151ad-f9bf-45f5-bafc-3fbbaf16f5e0" />
@@ -2763,6 +3114,14 @@
             <elementDefinition Id="a5d9091e-cb6a-4f88-9018-fe2a510985ae" />
           </generalization>
         </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="a227e9ca-3b47-4d66-a250-e49a35df4ce2" name="Sure" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8e698f84-ee44-43c3-9a38-bf3c6bdfe77e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="877835bc-3d6d-474b-8ec0-cdadd9c97fcd" name="btnYes_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="6376edd3-847d-4a05-8955-f961f6890e7d" />
@@ -2781,6 +3140,230 @@
     <packageHasNamedElement>
       <referencedType Id="adf22df7-3c8a-4446-83ec-28669b329b97" name="Vakje" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Vakje">
         <elementDefinition Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7822eb03-f8a8-478c-bc88-7be9bab2eedb" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="27bf647c-b259-4212-9525-4a079cf968d1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5500be55-c974-4537-92ff-bc53591f95ed" name="Speler" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Speler">
+        <elementDefinition Id="1930fb1b-c192-4fac-821b-775cf2dbbb42" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="38c8f3c3-c1c5-47ef-9ed0-7fff5b15b36f" name="color" isAbstract="false" isLeaf="false" cachedFullName="color">
+        <elementDefinition Id="b7e72923-43d7-4d43-9feb-801dafb5a682" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="70ae158d-2653-4f58-b96f-2d8d787c9707" name="SpecialPB" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::SpecialPB">
+        <elementDefinition Id="024322af-78d3-4585-b41a-c447535ff75d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="601c9845-c4e0-4693-8e60-02cd2edb6abc" name="Vakje" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Vakje">
+        <elementDefinition Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2dcf1583-ea17-4b2f-bd3d-95a251069199" name="Color" isAbstract="false" isLeaf="false" cachedFullName="Color">
+        <elementDefinition Id="8447702a-94be-413e-8fb0-396f6da26750" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="518e744b-b76c-4e4b-af12-8b1df90be91c" name="Computer" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Computer">
+        <elementDefinition Id="19f9934e-f970-46f6-998b-13a15ad234f5" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="74d128f9-abf0-40d3-b5aa-cb433a2b3cba" name="Schaakbord" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Schaakbord">
+        <elementDefinition Id="b8e9c20a-28d5-451e-b9a2-31a75299b217" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="cf2ef883-bd2d-472d-89ea-b36fb2fc2a75" name="_speelbord" isAbstract="false" isLeaf="false" cachedFullName="_speelbord">
+        <elementDefinition Id="cfc34850-6c44-4da3-983e-cb11511e7f1a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3a835d87-fa51-4739-bfe7-9e71bcf45faf" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="9ae72030-5b19-4f74-b8af-7fbbca35c802" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" name="Spel" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Spel">
+        <elementDefinition Id="640d89f1-83bc-4809-a5e9-83abdc7fec33" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="25548efc-69f6-4b9e-8df4-6dfed20e843f" name="Pion" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Pion">
+        <elementDefinition Id="cb86e7b4-7294-4ba3-b736-a8fe06520d6e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="384fe42b-4cf0-4775-9a3a-1d29c0f4a709" name="Koning" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Koning">
+        <elementDefinition Id="bf50c40b-7eff-4bae-bf79-01cca456b99e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="16678edb-0c4a-4b76-9b8d-7e758936796f" name="List&lt;Vakje&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Vakje&gt;">
+        <elementDefinition Id="ac8ee45f-ebb1-4449-8218-1f03b9cd78eb" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a197b916-06b8-4e2b-840d-08b91dcb08c4" name="List&lt;Vakje&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Vakje&gt;">
+        <elementDefinition Id="ac8ee45f-ebb1-4449-8218-1f03b9cd78eb" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="69ff60e7-3de0-480e-9200-cba0f0fd65d6" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="9ae72030-5b19-4f74-b8af-7fbbca35c802" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1f04c0ac-6646-4f67-8676-55446c3168fb" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9b21e7b3-dea7-40c9-85b9-49ba276ec0cc" name="FormRegister" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5b01bb72-3f4a-414a-af3e-089ad4fce058" />
+        <generalsInternal>
+          <generalization Id="d90eab2d-6a0b-4f81-af15-cacdaabae48a" isSubstitutable="false">
+            <classMoniker Id="f9a424aa-877b-4745-834a-07bfc5ceeb60" LastKnownName="Form" />
+            <elementDefinition Id="c13e2d41-b66e-437f-b040-a2021b4e7f98" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="0e8fb42b-8c5e-440a-8077-498dcbcb6916" name="user" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="50d8a91c-0666-49d0-8505-51bfedd031f7" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="c2aeaca5-7213-4274-ac5b-d41c3b0d96b8" name="pass" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b5325c8a-7e6e-49ed-a840-ac79aa9c8b25" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="06a9a56b-c4af-4de4-8bd9-e494df920695" name="voornaam" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="265d6eb0-435d-4ee4-ab71-836e60a61f02" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="a721a0b1-2d28-423b-a21b-8a7055be464f" name="achternaam" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fefd55a7-8032-4f37-b223-7bf7a94c016c" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="650be7df-f8d7-4f46-88e1-b704b72ee1e2" name="confirmed" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="abb1d723-bd4f-492e-9a5f-56d62f3ce1bc" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="87db9b80-965e-46e4-9131-f8ff3d29f3c1" name="userfile" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3f790064-b846-42ea-944f-93d70fe8c105" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e7f34312-d4cd-414d-9073-3e3d8fce4c47" LastKnownName="StreamWriter" />
+            </type_NamedElement>
+          </property>
+          <property Id="0fd8100b-f37e-442e-b8d8-c18a2704863a" name="passfile" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3650388f-0a7d-492d-a668-2f148c025f06" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e7f34312-d4cd-414d-9073-3e3d8fce4c47" LastKnownName="StreamWriter" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="e7f34312-d4cd-414d-9073-3e3d8fce4c47" name="StreamWriter" isAbstract="false" isLeaf="false" cachedFullName="StreamWriter">
+        <elementDefinition Id="5be96f46-5a4a-448c-9685-5077917312a2" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="75b59da5-b94c-4c81-b8e4-384888bd2771" name="LoginForm" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0525507d-11b6-47c3-8c50-3e000fe273b9" />
+        <suppliersInternal>
+          <dependency Id="39ec0536-ae31-457c-9691-d88222b45c60">
+            <classMoniker Id="9b21e7b3-dea7-40c9-85b9-49ba276ec0cc" LastKnownName="FormRegister" />
+            <elementDefinition Id="2aa58b9c-a7ba-4076-8976-9f3e44b11342" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="c4249c2f-9cc7-4cae-b601-8e92967d1637" isSubstitutable="false">
+            <classMoniker Id="f9a424aa-877b-4745-834a-07bfc5ceeb60" LastKnownName="Form" />
+            <elementDefinition Id="5b7fb143-48d1-466c-828b-3f0eeb5c59a8" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="bad9b00c-b082-4fbe-b036-c818845fae01" name="login" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="81d4c200-522b-49b4-8c08-b7e1d4a9ab0d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a26dcc4e-18af-4d32-9168-5b42dda2785e" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="03c58f71-1cf5-4167-9a9b-f08f9ee22da6" name="username" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c6098dfb-c7c0-4275-b20e-eb253e5b60f2" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="693e0f72-6012-4b46-a015-c5502d8c2911" name="password" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2516b405-ab3b-4d10-b159-580f16cb1bf4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="b8915d21-7f8f-48da-bfa9-9247c19fff9b" name="_username" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fb1eb9e8-f56e-4593-8831-1b2d203ff688" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="ce6bd3c7-92b1-4517-bc2c-e56dbc8949c5" name="_password" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4397f915-4d30-4e9a-b6c6-352019171f15" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="47848a4f-86f7-4c97-a448-27dce7121a4f" name="database" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4f2bee41-e0a3-424d-a9a4-52a95bc29692" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="21529b67-6e5f-40f0-a16b-f010696f7d05" LastKnownName="Database" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="f68c7888-f3e5-4918-b264-fcea8c9f3fc8" name="LoginForm" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6cc0d9bd-e642-466a-b823-563689c15644" />
+          </operation>
+          <operation Id="a0f2f4f3-a1b1-4073-ae9b-4a178b6e1e59" name="btnLogin_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ba0cf29d-727d-4196-ac63-b11c62d2e75c" />
+          </operation>
+          <operation Id="91055c58-805c-4532-a0fc-30d9dbaf4a51" name="btnReg_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="16626166-bc2e-4218-98b2-bc6f0e12945a" />
+          </operation>
+          <operation Id="08170911-5f34-480f-9e84-a7705732ae7e" name="MainForm_Load" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="de140eee-d44c-4a6a-9eaa-012f1226a699" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="a26dcc4e-18af-4d32-9168-5b42dda2785e" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="21529b67-6e5f-40f0-a16b-f010696f7d05" name="Database" isAbstract="false" isLeaf="false" cachedFullName="Database">
+        <elementDefinition Id="99b3ff70-8cd8-4ff0-9765-be639ffe3c58" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
