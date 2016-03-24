@@ -106,6 +106,12 @@
       <DependentUpon>Rokerenmelding.cs</DependentUpon>
     </Compile>
     <Compile Include="Schaakbord.cs" />
+    <Compile Include="SchaakMat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchaakMat.Designer.cs">
+      <DependentUpon>SchaakMat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Schaakstuk.cs" />
     <Compile Include="SpecialPB.cs">
       <SubType>Component</SubType>
@@ -153,6 +159,9 @@
     </Compile>
     <EmbeddedResource Include="Rokerenmelding.resx">
       <DependentUpon>Rokerenmelding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchaakMat.resx">
+      <DependentUpon>SchaakMat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SpeelBord.resx">
       <DependentUpon>SpeelBord.cs</DependentUpon>
@@ -364,6 +373,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button regels pion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WitMat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZwartMat1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

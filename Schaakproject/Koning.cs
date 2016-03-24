@@ -330,7 +330,7 @@ namespace Schaakproject
                     }
                 }
             }
-            // Rokeren voor klassieke schaakvariant
+            // Rokeren voor 960 schaakvariant
             else if (spel._Variant == "Chess960")
             {
                 int i = 0;
