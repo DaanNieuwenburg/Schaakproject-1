@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SchaakMat));
             this.lbl_gewonnen = new System.Windows.Forms.Label();
             this.lbl_opnieuw = new System.Windows.Forms.Label();
             this.btn_ja = new System.Windows.Forms.Button();
@@ -83,6 +84,7 @@
             this.Controls.Add(this.lbl_opnieuw);
             this.Controls.Add(this.lbl_gewonnen);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SchaakMat";
