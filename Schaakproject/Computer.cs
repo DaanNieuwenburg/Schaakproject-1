@@ -50,8 +50,6 @@ namespace Schaakproject
         private int _ronde { get; set; }
         private int _positieZuid { get; set; }
         private int _positieWest { get; set; }
-        public bool spelerkanslaan { get; set; }
-        public bool computerkanslaan { get; set; }
         public Computer(string naam, string kleur)
         {
             Naam = naam;
@@ -523,6 +521,7 @@ namespace Schaakproject
             selected.pbox.BackColor = System.Drawing.Color.Red;
             pictures.pbox.BackColor = System.Drawing.Color.Blue;
             Mens hierhoortgeenmens = new Mens("ikhoorhierniet", "zwart", spel);
+            hierhoortgeenmens.resterendestukken = 16;
             hierhoortgeenmens.Koning = Koning;
             hierhoortgeenmens.selected = selected;
             try

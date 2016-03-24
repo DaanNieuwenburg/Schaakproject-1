@@ -33,7 +33,10 @@ namespace Schaakproject
             _spel = spel;
             this.CenterToScreen();
             lblaantal1.Text = Convert.ToString(_speler1.resterendestukken); //hier moet de variabele komen voor het aantal van wit
-            lblaantal2.Text = Convert.ToString(_speler2.resterendestukken); //hier moet de variabele komen voor het aantal van wit
+            if(spel._SpelMode != "Singleplayer")
+            {
+                lblaantal2.Text = Convert.ToString(_speler2.resterendestukken); //hier moet de variabele komen voor het aantal van wit
+            }
             for (int x = 0; x < 8; x++)
             {
                 for (int y = 0; y < 8; y++)

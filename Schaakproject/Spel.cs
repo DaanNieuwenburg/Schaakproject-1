@@ -14,7 +14,7 @@ namespace Schaakproject
         public Mens _Speler2 { get; set; }     //De tweede speler voor multiplayer
         public Computer _computerSpeler { get; set; }  //De computer voor singleplayer
         public Speler spelerAanZet { get; private set; } //welke speler is aan zet
-        public Vakje selected { get;  set; } //Maakt de computer gebruik van
+        public Vakje selected { get; set; } //Maakt de computer gebruik van
         public string _Variant { get; set; }    //Klassiek of Chess960
         public Schaakbord schaakbord { get; set; }
         public SpeelBord _speelbord { get; set; }
@@ -99,7 +99,7 @@ namespace Schaakproject
                         _speelbord.lblbeurt.Text = "Wit is aan zet";
                     }
                 }
-            }          
+            }
         }
         public void VeranderSpeler()
         {
@@ -132,7 +132,7 @@ namespace Schaakproject
                     }
                     else
                     {
-                        
+
                         mat = schaakbord.CheckMat(_Speler2.Koning);
                         if (mat == true)
                         {
@@ -151,20 +151,20 @@ namespace Schaakproject
                 schaak = schaakbord.CheckSchaak(_Speler1.Koning);
                 if (schaak == true)
                 {
-                    
+
                     mat = schaakbord.CheckMat(_Speler1.Koning);
                     if (mat == true)
                     {
-                        
+
                         _Speler1.Koning.vakje.pbox.Image = Properties.Resources.WitMat1;
                         SchaakMat _SchaakMat = new SchaakMat(_Speler2.Naam, this);
                         //_speelbord.Hide();
                         _SchaakMat.ShowDialog();
-                        
+
                     }
                 }
             }
-            
+
         }
         public void controleerOpSchaak()
         {
@@ -179,7 +179,7 @@ namespace Schaakproject
             while (vorigvakjeHO != null)
             {
                 vorigvakjeHO = vorigvakjeHO.buurOost;
-        }
+            }
 
             // Loop tot het meest onderste vakje gevonden is
             while (vorigvakjeVZ != null)
@@ -225,13 +225,16 @@ namespace Schaakproject
 
         public void updateAantalStukken(Speler speler)
         {
-            if(speler.Kleur == "wit")
+            if (_SpelMode != "Singleplayer")
             {
-                _speelbord.lblaantal2.Text = Convert.ToString(_Speler1.resterendestukken); //onlogisch, speler1 = label 2
-            }
-            else
-            {
-                _speelbord.lblaantal1.Text = Convert.ToString(_Speler2.resterendestukken); //onlogisch, speler2 = label 1
+                if (speler.Kleur == "wit")
+                {
+                    _speelbord.lblaantal2.Text = Convert.ToString(_Speler1.resterendestukken); //onlogisch, speler1 = label 2
+                }
+                else
+                {
+                    _speelbord.lblaantal1.Text = Convert.ToString(_Speler2.resterendestukken); //onlogisch, speler2 = label 1
+                }
             }
         }
     }
