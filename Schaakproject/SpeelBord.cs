@@ -27,8 +27,20 @@ namespace Schaakproject
             _SpelMode = SpelMode;
             _variant = Variant;
             InitializeComponent();
+
             _speler1 = Speler1;
             _speler2 = Speler2;
+            if (_speler1.Naam == "")
+            {
+                _speler1.Naam = "Wit";
+            }
+            if (_speler2.Naam == "")
+            {
+                _speler2.Naam = "Zwart";
+            }
+
+            lblbeurt.Text = _speler1.Naam + " is aan zet";
+
             _computerSpeler = computerSpeler;
             _spel = spel;
             this.CenterToScreen();
@@ -39,12 +51,12 @@ namespace Schaakproject
                 for (int y = 0; y < 8; y++)
                 {
                     // Maak pictureboxes
-                    SpecialPB pictureBox = new SpecialPB();                    
+                    SpecialPB pictureBox = new SpecialPB();
                     pictureBox.Location = new Point(12 + 54 * y, 50 + 54 * x);
                     pictureBox.Size = new Size(54, 54);
                     pictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
                     pictureBox.TabIndex = 0;
-                    pictureBox.TabStop = false;                                       
+                    pictureBox.TabStop = false;
                     this.Controls.Add(pictureBox);
 
                     // Koppel SpecialPB aan Vakje
@@ -54,9 +66,9 @@ namespace Schaakproject
 
                     pictureBox.update(); // Laat schaakstukken zien
 
-                    pictureBox.Click += new EventHandler((o, a) => select(pictureBox));                                        
+                    pictureBox.Click += new EventHandler((o, a) => select(pictureBox));
                 }
-                
+
             }
 
             // Het spel is singleplayer of multiplayer
@@ -77,7 +89,7 @@ namespace Schaakproject
                 lblPlayer1.Text = "P1: " + Speler1.Naam;
             }
         }
-       
+
         private void select(SpecialPB pictureBox) //click event voor alle pictureboxes
         {
             if (_SpelMode == "Singleplayer")
@@ -132,7 +144,7 @@ namespace Schaakproject
             }
             else if (_SpelMode == "Online")
             {
-                
+
                 if (_spel.spelerAanZet == _speler1)
                 {
                     //als de picturebox waarop gedrukt is wel een schaakstuk heeft en dit schaakstuk de kleur heeft van de speler
@@ -175,7 +187,7 @@ namespace Schaakproject
             if (_variant == "Chess960")
             {
                 btnvariant.BackgroundImage = Properties.Resources.button_regels_chess960;
-        }
+            }
             else
             {
                 btnvariant.BackgroundImage = Properties.Resources.button_klassiekregels;
@@ -213,25 +225,25 @@ namespace Schaakproject
 
         private void label1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnvariant_Click(object sender, EventArgs e)
         {
             clicks++;
             lbluitleg.Visible = true;
-            if(_variant == "Chess960")
+            if (_variant == "Chess960")
             {
                 pbuitleg.Image = Properties.Resources.chess960_uitleg_2;
                 pbuitleg.Visible = true;
-                lbluitleg.Text = ("Chess960\nChess960 of Schaak960 is een variant\nvan het klassieke schaakspel. Hierbij\nworden in tegenstelling tot de klassieke\nvariant de schaakstukken van de eerste rij\nop een random positie geplaatst. Doordat\nhet aantal mogelijkheden 960 is zullen begin\ntactieken niet altijd gelden.");              
+                lbluitleg.Text = ("Chess960\nChess960 of Schaak960 is een variant\nvan het klassieke schaakspel. Hierbij\nworden in tegenstelling tot de klassieke\nvariant de schaakstukken van de eerste rij\nop een random positie geplaatst. Doordat\nhet aantal mogelijkheden 960 is zullen begin\ntactieken niet altijd gelden.");
             }
             else
             {
                 lbluitleg.Text = ("Klassiek Schaken\nKlassiek schaken is het oeroude\nschaakspel, waarbij twee spelers\nmet behulp van dezelfde muis tegenelkaar\nkunnen schaken. De regels zijn\nbekend: Alle stukken bewegen op hun\neigen manier.Als één van jouw stukken\nop een vakje komt van een stuk van de\ntegenstander dan verdwijnt dat stuk van\nhet bord.Als je de koning van de\ntegenstander slaat heb je gewonnen.");
                 pbuitleg.Image = Properties.Resources.schaken_uitleg_1;
                 pbuitleg.Visible = false;
-            }          
+            }
             this.btndame.Visible = false;
             pbuitleg.BackgroundImage = Properties.Resources.zettenpaard;
             pbuitleg.Visible = true;
@@ -284,7 +296,7 @@ namespace Schaakproject
                 TerugMelding menu = new TerugMelding(this);
                 menu.ShowDialog();
             }
-            else if(clicks == 1)
+            else if (clicks == 1)
             {
                 clicks--;
                 this.btndame.Visible = false;
@@ -408,7 +420,7 @@ namespace Schaakproject
 
         private void btnvariant_MouseEnter(object sender, EventArgs e)
         {
-            if(_variant == "Chess960")
+            if (_variant == "Chess960")
             {
                 btnvariant.BackgroundImage = Properties.Resources.button_regels_chess960_click;
             }

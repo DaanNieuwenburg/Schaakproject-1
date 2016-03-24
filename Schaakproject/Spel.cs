@@ -106,7 +106,7 @@ namespace Schaakproject
             veranderlbltext();
             bool schaak;
             bool mat;
-            Console.WriteLine("VeranderSpeler");
+            //Console.WriteLine("VeranderSpeler");
             if (spelerAanZet == _Speler1)
             {
                 witaanzet = true;
@@ -157,10 +157,9 @@ namespace Schaakproject
                     {
                         
                         _Speler1.Koning.vakje.pbox.Image = Properties.Resources.WitMat1;
-                        SchaakMat _SchaakMat = new SchaakMat(_Speler2.Naam, this);
-                        //_speelbord.Hide();
+                        SchaakMat _SchaakMat = new SchaakMat(_Speler2.Naam, this);                       
                         _SchaakMat.ShowDialog();
-                        
+                        _speelbord.Hide();
                     }
                 }
             }
