@@ -862,7 +862,7 @@ namespace Schaakproject
                         }
                     }
                 }
-                pionvoormat = false;
+                
             }
             schaakGezet = zetSchaak;
             return staatschaak;
