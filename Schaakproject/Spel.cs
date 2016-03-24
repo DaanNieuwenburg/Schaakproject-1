@@ -197,6 +197,15 @@ namespace Schaakproject
                 }
             }
         }
+
+        public void updateAantalStukken(Speler speler)
+        {
+            if(speler.Kleur == "wit")
+            {
+                _speelbord.lblaantal1.Text = Convert.ToString(Speler1.resterendestukken); //hier moet de variabele komen voor het aantal van wit
+                _speelbord.lblaantal2.Text = Convert.ToString(Speler2.resterendestukken); //hier moet de variabele komen voor het aantal van zwart
+            }
+        }
     }
 }
 

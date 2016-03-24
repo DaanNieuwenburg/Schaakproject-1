@@ -10,7 +10,7 @@ namespace Schaakproject
     {
         public Vakje selected { get; set; }
         public bool validezet { get; set; }
-        
+        public int resterendestukken { get; set; }
         public Mens(string naam, string kleur, Spel _spel)
         {
             Naam = naam;
