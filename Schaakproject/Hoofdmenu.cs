@@ -52,6 +52,7 @@ namespace Schaakproject
 
         private void btnafsluiten_Click(object sender, EventArgs e)
         {
+            btnafsluiten.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //transparent bordercolor (Color.Transparent is unsupported)
             Console.WriteLine("AFSLUITEN");
             AfsluitMelding _afsluiten = new AfsluitMelding();
             _afsluiten.ShowDialog();

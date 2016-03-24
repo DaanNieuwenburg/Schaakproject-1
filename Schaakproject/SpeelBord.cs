@@ -282,7 +282,7 @@ namespace Schaakproject
             if (clicks == 0)
             {
                 TerugMelding menu = new TerugMelding(this);
-                menu.Show();
+                menu.ShowDialog();
             }
             else if(clicks == 1)
             {
