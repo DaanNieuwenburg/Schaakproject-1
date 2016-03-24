@@ -340,7 +340,7 @@
             this.lblbeurt.Name = "lblbeurt";
             this.lblbeurt.Size = new System.Drawing.Size(97, 18);
             this.lblbeurt.TabIndex = 19;
-            this.lblbeurt.Text = "Wit is aan zet";
+            
             // 
             // SpeelBord
             // 

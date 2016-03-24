@@ -99,14 +99,14 @@ namespace Schaakproject
                         _speelbord.lblbeurt.Text = "Wit is aan zet";
                     }
                 }
-            }
+            }          
         }
         public void VeranderSpeler()
         {
             veranderlbltext();
             bool schaak;
             bool mat;
-            Console.WriteLine("VeranderSpeler");
+            //Console.WriteLine("VeranderSpeler");
             if (spelerAanZet == _Speler1)
             {
                 witaanzet = true;
@@ -132,7 +132,7 @@ namespace Schaakproject
                     }
                     else
                     {
-
+                        
                         mat = schaakbord.CheckMat(_Speler2.Koning);
                         if (mat == true)
                         {
@@ -151,20 +151,19 @@ namespace Schaakproject
                 schaak = schaakbord.CheckSchaak(_Speler1.Koning);
                 if (schaak == true)
                 {
-
+                    
                     mat = schaakbord.CheckMat(_Speler1.Koning);
                     if (mat == true)
                     {
-
+                        
                         _Speler1.Koning.vakje.pbox.Image = Properties.Resources.WitMat1;
                         SchaakMat _SchaakMat = new SchaakMat(_Speler2.Naam, this);
-                        //_speelbord.Hide();
                         _SchaakMat.ShowDialog();
-
+                        _speelbord.Hide();
                     }
                 }
             }
-
+            
         }
         public void controleerOpSchaak()
         {
@@ -179,7 +178,7 @@ namespace Schaakproject
             while (vorigvakjeHO != null)
             {
                 vorigvakjeHO = vorigvakjeHO.buurOost;
-            }
+        }
 
             // Loop tot het meest onderste vakje gevonden is
             while (vorigvakjeVZ != null)
@@ -228,15 +227,15 @@ namespace Schaakproject
             if (_SpelMode != "Singleplayer")
             {
                 if (speler.Kleur == "wit")
-                {
-                    _speelbord.lblaantal2.Text = Convert.ToString(_Speler1.resterendestukken); //onlogisch, speler1 = label 2
-                }
-                else
-                {
-                    _speelbord.lblaantal1.Text = Convert.ToString(_Speler2.resterendestukken); //onlogisch, speler2 = label 1
-                }
+            {
+                _speelbord.lblaantal2.Text = Convert.ToString(_Speler1.resterendestukken); //onlogisch, speler1 = label 2
+            }
+            else
+            {
+                _speelbord.lblaantal1.Text = Convert.ToString(_Speler2.resterendestukken); //onlogisch, speler2 = label 1
             }
         }
     }
+}
 }
 

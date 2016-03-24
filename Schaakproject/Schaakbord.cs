@@ -333,7 +333,7 @@ namespace Schaakproject
                                     }
                                     aantal2++;
                                 }
-                                //}
+                                
                             }
                         }
                         else if (x == 1 || x == 6)
@@ -862,6 +862,7 @@ namespace Schaakproject
                         }
                     }
                 }
+                
             }
             schaakGezet = zetSchaak;
             return staatschaak;
@@ -990,6 +991,7 @@ namespace Schaakproject
                     beginvakje.buurWest.schaakstuk = bewaar;
                     beginvakje.schaakstuk = koning;
                 }
+                mogelijk = false;
             }
             //bekijk of de koning schaak staat als hij naar noordoost zou bewegen
             if (beginvakje.buurNoordoost != null)
