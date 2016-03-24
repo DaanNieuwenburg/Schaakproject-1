@@ -15,6 +15,17 @@ namespace Schaakproject
         private Spel spel { get; set; }
         public SchaakMat(string naam, Spel spel)
         {
+            if (naam == "")
+            {
+                if (spel.spelerAanZet.Kleur == "zwart")
+                {
+                    naam = "Wit";
+                }
+                else
+                {
+                    naam = "Zwart";
+                }
+            }
             InitializeComponent();            
             lbl_gewonnen.Text = "Schaakmat! " + naam + " heeft gewonnen!";
             lbl_gewonnen.Location = new System.Drawing.Point(lbl_gewonnen.Location.X - (lbl_gewonnen.Text.Length * 2), lbl_gewonnen.Location.Y);
