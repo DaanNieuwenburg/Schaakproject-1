@@ -132,11 +132,14 @@ namespace Schaakproject
                     }
                     else
                     {
-                        _Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Blue;
+                        
                         mat = schaakbord.CheckMat(_Speler2.Koning);
                         if (mat == true)
                         {
-                            _Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
+                            _Speler2.Koning.vakje.pbox.Image = Properties.Resources.ZwartMat1;
+                            SchaakMat _SchaakMat = new SchaakMat(_Speler1.Naam, this);
+                            _SchaakMat.ShowDialog();
+                            _speelbord.Hide();
                         }
                     }
                 }
@@ -148,11 +151,14 @@ namespace Schaakproject
                 schaak = schaakbord.CheckSchaak(_Speler1.Koning);
                 if (schaak == true)
                 {
-                    _Speler1.Koning.vakje.pbox.BackColor = System.Drawing.Color.Blue;
+                    
                     mat = schaakbord.CheckMat(_Speler1.Koning);
                     if (mat == true)
                     {
-                        _Speler1.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
+                        _Speler1.Koning.vakje.pbox.Image = Properties.Resources.WitMat1;
+                        SchaakMat _SchaakMat = new SchaakMat(_Speler2.Naam, this);
+                        _SchaakMat.ShowDialog();
+                        _speelbord.Hide();
                     }
                 }
             }

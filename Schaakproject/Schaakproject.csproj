@@ -32,6 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -106,6 +110,12 @@
       <DependentUpon>Rokerenmelding.cs</DependentUpon>
     </Compile>
     <Compile Include="Schaakbord.cs" />
+    <Compile Include="SchaakMat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchaakMat.Designer.cs">
+      <DependentUpon>SchaakMat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Schaakstuk.cs" />
     <Compile Include="SpecialPB.cs">
       <SubType>Component</SubType>
@@ -159,6 +169,9 @@
     </Compile>
     <EmbeddedResource Include="Rokerenmelding.resx">
       <DependentUpon>Rokerenmelding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchaakMat.resx">
+      <DependentUpon>SchaakMat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SpeelBord.resx">
       <DependentUpon>SpeelBord.cs</DependentUpon>
@@ -373,6 +386,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button regels pion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WitMat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZwartMat1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button regels chess960.png" />

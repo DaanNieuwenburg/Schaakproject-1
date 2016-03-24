@@ -803,6 +803,16 @@ namespace Schaakproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap WitMat1 {
+            get {
+                object obj = ResourceManager.GetObject("WitMat1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap zettendame {
             get {
                 object obj = ResourceManager.GetObject("zettendame", resourceCulture);
@@ -856,6 +866,16 @@ namespace Schaakproject.Properties {
         internal static System.Drawing.Bitmap zettentoren {
             get {
                 object obj = ResourceManager.GetObject("zettentoren", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ZwartMat1 {
+            get {
+                object obj = ResourceManager.GetObject("ZwartMat1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
