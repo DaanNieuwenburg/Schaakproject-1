@@ -16,6 +16,7 @@ namespace Schaakproject
             Naam = naam;
             Kleur = kleur;
             spel = _spel;
+            resterendestukken = 16;
         }
 
         public void SelecteerStuk(Vakje clicked, Spel spel)

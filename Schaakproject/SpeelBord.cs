@@ -32,8 +32,8 @@ namespace Schaakproject
             _computerSpeler = computerSpeler;
             _spel = spel;
             this.CenterToScreen();
-            lblaantal1.Text = "xx"; //hier moet de variabele komen voor het aantal van wit
-            lblaantal2.Text = "xx"; //hier moet de variabele komen voor het aantal van zwart
+            lblaantal1.Text = Convert.ToString(_speler1.resterendestukken); //hier moet de variabele komen voor het aantal van wit
+            lblaantal2.Text = Convert.ToString(_speler2.resterendestukken); //hier moet de variabele komen voor het aantal van wit
             for (int x = 0; x < 8; x++)
             {
                 for (int y = 0; y < 8; y++)
