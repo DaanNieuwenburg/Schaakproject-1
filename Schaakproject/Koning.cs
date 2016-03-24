@@ -252,6 +252,7 @@ namespace Schaakproject
                 {
                     if (_eersteZet == false && (vakjeToren.schaakstuk as Toren)._eersteZet == false && vakjeToren.buurOost.schaakstuk == null && vakjeToren.buurOost.buurOost.schaakstuk == null && vakjeToren.buurOost.buurOost.buurOost.schaakstuk == null)
                     {
+                        veldenLeeg = true;
                         bool checkschaak = spel.schaakbord.CheckSchaak(speler.Koning);
                         if (checkschaak == false)
                         {
