@@ -387,8 +387,6 @@
         private System.Windows.Forms.Button btHerstart;
         private System.Windows.Forms.Label lblResterend1;
         private System.Windows.Forms.Label lblResterend2;
-        private System.Windows.Forms.Label lblaantal2;
-        private System.Windows.Forms.Label lblaantal1;
         private System.Windows.Forms.Label lblaanzet;
         private System.Windows.Forms.Label lbluitleg;
         private System.Windows.Forms.Button btnvariant;
@@ -402,5 +400,7 @@
         private System.Windows.Forms.PictureBox pbuitleg;
         private System.Windows.Forms.Button btnregels;
         public System.Windows.Forms.Label lblbeurt;
+        public System.Windows.Forms.Label lblaantal2;
+        public System.Windows.Forms.Label lblaantal1;
     }
 }
