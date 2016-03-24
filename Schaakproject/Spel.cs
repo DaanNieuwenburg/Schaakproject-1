@@ -136,7 +136,7 @@ namespace Schaakproject
                         mat = schaakbord.CheckMat(_Speler2.Koning);
                         if (mat == true)
                         {
-                            _Speler2.Koning.vakje.pbox.Image = global::Schaakproject.Properties.Resources.ZwartMat;
+                            _Speler2.Koning.vakje.pbox.Image = Properties.Resources.ZwartMat1;
                             SchaakMat _SchaakMat = new SchaakMat(_Speler1.Naam, this);
                             _SchaakMat.ShowDialog();
                             _speelbord.Hide();
@@ -155,7 +155,7 @@ namespace Schaakproject
                     mat = schaakbord.CheckMat(_Speler1.Koning);
                     if (mat == true)
                     {
-                        _Speler1.Koning.vakje.pbox.Image = global::Schaakproject.Properties.Resources.WitMat;
+                        _Speler1.Koning.vakje.pbox.Image = Properties.Resources.WitMat1;
                         SchaakMat _SchaakMat = new SchaakMat(_Speler2.Naam, this);
                         _SchaakMat.ShowDialog();
                         _speelbord.Hide();
