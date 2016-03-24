@@ -23,11 +23,11 @@ namespace Schaakproject
         public override void kanStukSlaan(Computer computer, Vakje geselecteerdStuk)
         {
             Vakje geselecteerdVak = geselecteerdStuk;
-            if (geselecteerdStuk.schaakstuk.kleur == "zwart")
+            if (geselecteerdStuk.schaakstuk.kleur == "zwart" && geselecteerdStuk.schaakstuk != null)
             {
-                if (geselecteerdVak.buurNoord != null)
+                if (geselecteerdVak.buurNoord != null && geselecteerdVak.buurNoord.buurNoordoost != null && geselecteerdVak.buurNoord.buurNoordwest != null)
                 {
-                    if (geselecteerdVak.buurNoord.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoord.buurNoordoost.schaakstuk.kleur == "wit")
+                    if (geselecteerdVak.buurNoord.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoord.buurNoordoost.schaakstuk != null  && geselecteerdVak.buurNoord.buurNoordoost.schaakstuk.kleur == "wit")
                     {
                         geselecteerdVak.buurNoord.buurNoordoost.pbox.BackColor = System.Drawing.Color.Red;
                         computer.slaanmogelijkheden.Add(geselecteerdVak.buurNoord.buurNoordoost);
@@ -41,7 +41,7 @@ namespace Schaakproject
                     }
                 }
 
-                if (geselecteerdVak.buurZuid != null)
+                if (geselecteerdVak.buurZuid != null && geselecteerdStuk.schaakstuk != null)
                 {
                     if (geselecteerdVak.buurZuid.buurZuidwest != null && geselecteerdVak.buurZuid.buurZuidwest.schaakstuk != null && geselecteerdVak.buurZuid.buurZuidwest.schaakstuk.kleur == "wit")
                     {
@@ -57,7 +57,7 @@ namespace Schaakproject
                     }
                 }
 
-                if (geselecteerdVak.buurWest != null)
+                if (geselecteerdVak.buurWest != null && geselecteerdStuk.schaakstuk != null)
                 {
                     if (geselecteerdVak.buurWest.buurNoordwest != null && geselecteerdVak.buurWest.buurNoordwest.schaakstuk != null && geselecteerdVak.buurWest.buurNoordwest.schaakstuk.kleur == "wit")
                     {
