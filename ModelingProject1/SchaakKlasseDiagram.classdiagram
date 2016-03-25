@@ -2456,6 +2456,24 @@
             <elementDefinition Id="72cc26f0-a975-4c9e-8c74-e27db23617b6" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association Id="fac664f7-8029-4b80-a505-c5c597780d78" isDerived="false" sourceEndRoleName="Computer" targetEndRoleName="Algoritme" isLeaf="false" name="Gebruikt" isAbstract="false">
+            <classMoniker Id="b020ba46-0330-4818-b3bb-a82a5712f189" LastKnownName="Algoritme" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e5f610e8-90d8-41d5-b035-8d5e86e7a325" name="Computer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1fffab4f-7ab1-42ed-b982-8cb05c5fd815" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d311a9e1-167c-4bba-9b67-4bc16f518a0d" name="Algoritme" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="723d0627-eedf-432b-9889-5f57155acecc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="78745042-4d37-496b-86df-2847ce38c9f8" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="07e901eb-d790-4b6d-b76d-44f3e5d3d083" name="_vorigvakje" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="2b4a9907-858a-40a7-8bd2-90c46ecace9a" />
@@ -2479,18 +2497,6 @@
             <elementDefinition Id="9486de1a-36fe-44a7-8429-4d5c8586bf73" />
             <type_NamedElement>
               <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
-            </type_NamedElement>
-          </property>
-          <property Id="0226c76c-4b80-4424-a3d8-fd4b6fcc7350" name="selected" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="b9221b39-b514-4cdc-92c4-22bc371e1ae7" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
-            </type_NamedElement>
-          </property>
-          <property Id="b9d2a049-4fe0-46a0-ba2c-6c4ff739d27b" name="pictures" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="f0a273c3-b8a0-4d46-a7ce-802600caeef8" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
             </type_NamedElement>
           </property>
           <property Id="253f7d5c-90f4-4ac3-aae6-aa1b5ddcf353" name="_nietverplaatstlijst" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -2517,42 +2523,6 @@
               <referencedTypeMoniker Id="16678edb-0c4a-4b76-9b8d-7e758936796f" LastKnownName="List&lt;Vakje&gt;" />
             </type_NamedElement>
           </property>
-          <property Id="cbe8921d-c905-48e9-904d-d0e35894dbe7" name="_slaanmogelijkhedenVanaf" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="3f9707f9-46f6-4473-983e-0de6fd078f13" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="16678edb-0c4a-4b76-9b8d-7e758936796f" LastKnownName="List&lt;Vakje&gt;" />
-            </type_NamedElement>
-          </property>
-          <property Id="f80ea437-24da-4c61-b06c-ea240b79a90a" name="slaanmogelijkheden" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="f556dc1c-0d4d-4c17-ae32-769acfc9ceba" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="16678edb-0c4a-4b76-9b8d-7e758936796f" LastKnownName="List&lt;Vakje&gt;" />
-            </type_NamedElement>
-          </property>
-          <property Id="cd6e6547-e10b-4056-9781-3fbf57e50ce4" name="slaanmogelijkhedenVanaf" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="065618a6-98f0-403b-976c-758d4b0d4de6" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="16678edb-0c4a-4b76-9b8d-7e758936796f" LastKnownName="List&lt;Vakje&gt;" />
-            </type_NamedElement>
-          </property>
-          <property Id="08ae2556-5e62-42dd-b117-435d9e54dfc9" name="_slaanmogelijkhedenVanaf" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="6797e960-160c-41e1-90de-e0c68f375647" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="16678edb-0c4a-4b76-9b8d-7e758936796f" LastKnownName="List&lt;Vakje&gt;" />
-            </type_NamedElement>
-          </property>
-          <property Id="5b1bacec-8983-4d60-801b-e59ba745447e" name="_tegenstandersopening" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="8b4aaee0-7c10-47e9-851f-549dcfcf305d" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
-            </type_NamedElement>
-          </property>
-          <property Id="613e7422-14c0-4cf2-9942-9d52b7739c2a" name="_tegenstanderstactiek" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="f7776bc0-0ec2-4afa-bd27-b18f74f19f04" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
-            </type_NamedElement>
-          </property>
           <property Id="365c83f8-1414-4899-8668-49541fef6ac5" name="_positieZuid" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="ab0cdda6-8bed-43a0-b3fb-4a8e2a925c7d" />
             <type_NamedElement>
@@ -2565,89 +2535,13 @@
               <referencedTypeMoniker Id="7822eb03-f8a8-478c-bc88-7be9bab2eedb" LastKnownName="int" />
             </type_NamedElement>
           </property>
-          <property Id="5e416e37-5b35-4070-8d20-1bc6b5c34443" name="_ronde" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="c3a23bae-3bf6-4149-9d16-ef4572a30c31" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="7822eb03-f8a8-478c-bc88-7be9bab2eedb" LastKnownName="int" />
-            </type_NamedElement>
-          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="f8e4b70e-a592-4581-b7d1-944b96d980ce" name="Zet" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance Id="2f57a86e-6199-4fb4-a5be-85fce4586203" name="method" profile="CSharpProfile">
-                <elementDefinition Id="745f042b-20dd-4693-806b-3908e2ba6c75" />
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="d3effb7d-05d7-4eae-b6c8-96bbb588d6bd">
-                    <propertyInstance Id="db2ccee2-9cd5-4234-8e66-22df41056076" name="ClrAttributes">
-                      <elementDefinition Id="aff1763b-4ab2-40be-9016-357d7a856d48" />
-                    </propertyInstance>
-                    <elementDefinition Id="6122fc00-69a7-4bc9-8253-827e26d9a28f" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="361f4a57-c50c-4f0c-be9c-9cf317dc6cfc">
-                    <propertyInstance Id="40a72a46-fab3-4a6f-b70d-345c682020a4" name="IsPartial" value="false">
-                      <elementDefinition Id="54e815fe-a05b-422e-a3df-87f444820ad4" />
-                    </propertyInstance>
-                    <elementDefinition Id="16d4bac8-e3b7-4170-b395-067b6d3240cd" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="f3c74199-1e12-456a-afd3-52af0faf2c7e">
-                    <propertyInstance Id="d14eab19-b031-464a-850d-30d296324afd" name="IsUnsafe" value="false">
-                      <elementDefinition Id="b82c8f21-1f80-41d1-a833-633f9ca3a619" />
-                    </propertyInstance>
-                    <elementDefinition Id="729160a4-3d20-46d8-8960-e9e81ea86143" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="2c6d505b-e1ac-464d-bef5-de96bdd0620b">
-                    <propertyInstance Id="b4203d1c-7e3f-44c4-ae60-af5afa3de03a" name="Inheritance" value="none">
-                      <elementDefinition Id="21f6438a-6c05-402b-a505-9c681104fed7" />
-                    </propertyInstance>
-                    <elementDefinition Id="35136846-8aa9-46b1-aa92-305cdc79c26c" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="981e8dee-1fd7-4881-b580-7c90fca365ce">
-                    <propertyInstance Id="0cf55271-d753-4efb-8c9f-90a5db367312" name="PackageVisibility" value="internal">
-                      <elementDefinition Id="e94662c7-fc90-4a1f-adf2-696e5b09d2b0" />
-                    </propertyInstance>
-                    <elementDefinition Id="33c88194-3ce0-4c28-9fe4-c6eda5c4b43f" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="3a97a785-0048-4b83-82fd-62be097b58aa">
-                    <propertyInstance Id="a9f3bd1f-88fd-4260-9bd3-82b7ddcb6e10" name="params" value="false">
-                      <elementDefinition Id="cde29cf9-af41-4007-9954-45d21390490b" />
-                    </propertyInstance>
-                    <elementDefinition Id="48af44ca-48bd-46fc-9c01-49fb984b5708" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <elementDefinition Id="44238905-6b03-430a-b963-6691745f21e3" />
-          </operation>
           <operation Id="2e7c0be8-e2bf-480c-861d-c0a2c2460ea0" name="Computer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="3c23148e-05da-44c3-8301-75848aeafe7f" />
           </operation>
           <operation Id="881fa832-c59b-490b-87b6-d4e8939f288e" name="bepaalMensPositie" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="974b8b97-4a48-41c7-afab-c12b0d262fb8" />
-          </operation>
-          <operation Id="1bfb46b3-c4db-4164-ac0c-d0ed30797c74" name="controleerOpSlaan" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="ff6f928e-33e7-468b-8437-dcac3d33240f" />
-          </operation>
-          <operation Id="f83d4366-b3f4-4be6-81bc-c0d6439f60bf" name="bepaalRondeEnAntwoord" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="7211d9e8-6a28-4479-b097-e39dd96f4283" />
-          </operation>
-          <operation Id="2fc0d36b-5d3f-4a32-ace7-05b408081f57" name="TactiekEnAntwoordR0" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="d89b9646-65ab-49cf-aee8-bdde93635bdf" />
-          </operation>
-          <operation Id="f4ab9a3b-c871-47d7-b460-7cb1c45c99dc" name="Algoritme" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="ad33b6e0-211f-4f56-b0f2-60eb61605123" />
-          </operation>
-          <operation Id="52a0bd99-6abd-414d-83be-d15f7ebef694" name="slaEenStuk" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="234fd7f4-ae1a-49bf-99fb-d0e287108670" />
-          </operation>
-          <operation Id="a5a55f11-303a-4899-92d5-b8fda06aecf3" name="verplaatsNieuwStuk" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="da6bfaa0-0596-4a4a-87fd-077cea15dc99" />
-          </operation>
-          <operation Id="5607fba8-2f6b-4ee8-ab7a-925f116854d2" name="verplaatsVerplaatstStuk" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="df87f23d-8659-4c96-870d-dbfd1c6a7373" />
-          </operation>
-          <operation Id="c78967c2-c063-4fbd-84bc-de48472ce60a" name="BijVerplaatsingSlaan" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="335a79d7-e06c-47f7-8cda-c9aa1c8200bd" />
           </operation>
           <operation Id="1f86cfc8-5e9c-4238-bcea-4c79d05eb56c" name="voerZetUit" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="260a63bd-70b5-46ad-9147-3158e265ae63" />
@@ -3306,6 +3200,78 @@
         <elementDefinition Id="c1de82da-15d9-450b-8222-c45d91a84440" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b020ba46-0330-4818-b3bb-a82a5712f189" name="Algoritme" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="df1ab9c3-b190-4d2e-8ef0-7d402bc3886d" />
+        <ownedAttributesInternal>
+          <property Id="37f9f4fe-d4cb-4355-bbba-a81c0823eaaa" name="_slaanmogelijkhedenVanaf" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="867f3ae6-1a39-4655-a26e-8f92eba8d6e5" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="16678edb-0c4a-4b76-9b8d-7e758936796f" LastKnownName="List&lt;Vakje&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="3f7142af-7406-4e3f-94bd-376b36cdd0d0" name="slaanmogelijkhedenVanaf" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="56dc9af0-4177-4d43-8b39-b28dd48a2311" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="16678edb-0c4a-4b76-9b8d-7e758936796f" LastKnownName="List&lt;Vakje&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="6f6b375d-1727-4944-a8db-c11aa17d491c" name="slaanmogelijkheden" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3200698d-a418-4155-8450-073e8c3f2475" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="16678edb-0c4a-4b76-9b8d-7e758936796f" LastKnownName="List&lt;Vakje&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="ef386f1a-e043-43a2-aea9-19006155c39b" name="_slaanmogelijkheden" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="60c3bed7-b26c-4036-a646-36a54210686d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="16678edb-0c4a-4b76-9b8d-7e758936796f" LastKnownName="List&lt;Vakje&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="11b3cca2-ca23-4401-b841-880750a38bb8" name="_computer" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="80ab3189-9144-47c9-a988-cfaa91737d9d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="518e744b-b76c-4e4b-af12-8b1df90be91c" LastKnownName="Computer" />
+            </type_NamedElement>
+          </property>
+          <property Id="dd5d30f8-9327-42fe-a470-602975728835" name="_koning" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e08ff7c7-23f8-4d91-b3e5-bacccd2af45d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="314a9a26-9ea8-4ef0-92a3-8313d73ea247" LastKnownName="Schaakstuk" />
+            </type_NamedElement>
+          </property>
+          <property Id="99d2c2c1-76c4-4e6b-b8eb-9a8b5bffee0b" name="_geselecteerdStuk" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="87078287-b42d-48a3-8c56-87fc97396b52" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+            </type_NamedElement>
+          </property>
+          <property Id="1796ed61-a28b-4275-9e91-af68c6e8cd3e" name="_geselecteerdVakje" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6ac859db-30b3-40a3-9455-1fa84d313d44" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="d8b2eb8c-a8a6-47aa-84b0-1c772f285ea9" name="Algoritme" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="959ee573-cdfb-4572-87a4-d438008416a1" />
+          </operation>
+          <operation Id="ea1f4ef7-c70e-412a-801c-044fe9cb73cd" name="controleeropSlaan" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="357f1433-1b11-4569-bcd6-7e7d6f3ae37b" />
+          </operation>
+          <operation Id="cb65bf44-0bb2-4d61-b6e3-18709d5f3563" name="slaEenStuk" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c80201f8-17ac-42bd-a1cb-5dc6ae61cf17" />
+          </operation>
+          <operation Id="2af44038-5e32-4ffd-ab11-a11e29ead53e" name="verplaatsNieuwStuk" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b24dc80c-bf20-4c3e-ac23-54d75fe44caf" />
+          </operation>
+          <operation Id="fbbd4626-a244-42bb-a035-6bb18f3a600a" name="verplaatsVerplaatstStuk" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e2daed5c-f10c-4743-84d8-a7cecd5e8642" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="b1492d3f-3f34-46c2-94ce-5dad21715151" name="ModelingProject1">
     <elementDefinition Id="de569ad7-15f5-468e-875f-a53a5601e060" />
