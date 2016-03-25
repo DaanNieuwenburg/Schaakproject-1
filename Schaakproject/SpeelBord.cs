@@ -34,7 +34,7 @@ namespace Schaakproject
             {
                 _speler1.Naam = "Wit";
             }
-            if (_speler2.Naam == "")
+            if (_speler2 != null && _speler2.Naam == "")
             {
                 _speler2.Naam = "Zwart";
             }
