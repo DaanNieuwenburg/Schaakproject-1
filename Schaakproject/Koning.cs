@@ -29,7 +29,7 @@ namespace Schaakproject
                 afbeelding = Properties.Resources.KoningZwart;
             }
         }
-        public override void kanStukSlaan(Computer computer, Vakje geselecteerdStuk)
+        public override void kanStukSlaan(Algoritme algoritme, Vakje geselecteerdStuk)
         {
             if (geselecteerdStuk.schaakstuk.kleur == "zwart")
             {
@@ -38,69 +38,69 @@ namespace Schaakproject
                 // noord
                 if (geselecteerdVak.buurNoordwest != null && geselecteerdVak.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoordwest.schaakstuk.kleur == "wit")
                 {
-                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurNoordwest);
-                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurNoordwest);
+                    algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
                 else if (geselecteerdVak.buurNoord != null && geselecteerdVak.buurNoord.schaakstuk != null && geselecteerdVak.buurNoord.schaakstuk.kleur == "wit")
                 {
-                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurNoord);
-                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurNoord);
+                    algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
                 else if (geselecteerdVak.buurNoordoost != null && geselecteerdVak.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoordoost.schaakstuk.kleur == "wit")
                 {
-                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurNoordoost);
-                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurNoordoost);
+                    algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
 
                 // west
                 else if (geselecteerdVak.buurWest.buurNoord != null && geselecteerdVak.buurWest.buurNoord.schaakstuk != null && geselecteerdVak.buurWest.buurNoord.schaakstuk.kleur == "wit")
                 {
-                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurWest.buurNoord);
-                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurWest.buurNoord);
+                    algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
                 else if (geselecteerdVak.buurWest != null && geselecteerdVak.buurWest.schaakstuk != null && geselecteerdVak.buurWest.schaakstuk.kleur == "wit")
                 {
-                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurWest);
-                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurWest);
+                    algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
                 else if (geselecteerdVak.buurWest.buurZuid != null && geselecteerdVak.buurWest.buurZuid.schaakstuk != null && geselecteerdVak.buurWest.buurZuid.schaakstuk.kleur == "wit")
                 {
-                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurWest.buurZuid);
-                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurWest.buurZuid);
+                    algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
 
                 // zuid
                 else if (geselecteerdVak.buurZuidwest != null && geselecteerdVak.buurZuidwest.schaakstuk != null && geselecteerdVak.buurZuidwest.schaakstuk.kleur == "wit")
                 {
-                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurZuidwest);
-                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurZuidwest);
+                    algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
                 else if (geselecteerdVak.buurZuid != null && geselecteerdVak.buurZuid.schaakstuk != null && geselecteerdVak.buurZuid.schaakstuk.kleur == "wit")
                 {
-                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurZuid);
-                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurZuid);
+                    algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
                 else if (geselecteerdVak.buurZuidoost != null && geselecteerdVak.buurZuidoost.schaakstuk != null && geselecteerdVak.buurZuidoost.schaakstuk.kleur == "wit")
                 {
-                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurZuidoost);
-                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurZuidoost);
+                    algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
 
                 // oost
                 else if (geselecteerdVak.buurOost.buurNoord != null && geselecteerdVak.buurOost.buurNoord.schaakstuk != null && geselecteerdVak.buurOost.buurNoord.schaakstuk.kleur == "wit")
                 {
-                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurOost.buurNoord);
-                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurOost.buurNoord);
+                    algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
                 else if (geselecteerdVak.buurOost != null && geselecteerdVak.buurOost.schaakstuk != null && geselecteerdVak.buurOost.schaakstuk.kleur == "wit")
                 {
-                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurOost);
-                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurOost);
+                    algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
                 else if (geselecteerdVak.buurOost.buurZuid != null && geselecteerdVak.buurOost.buurZuid.schaakstuk != null && geselecteerdVak.buurOost.buurZuid.schaakstuk.kleur == "wit")
                 {
-                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurOost.buurZuid);
-                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurOost.buurZuid);
+                    algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
                 else
                 {

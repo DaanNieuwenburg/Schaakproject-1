@@ -27,20 +27,20 @@ namespace Schaakproject
             }
         }
 
-        public override void kanStukSlaan(Computer computer, Vakje geselecteerdStuk)
+        public override void kanStukSlaan(Algoritme algoritme, Vakje geselecteerdStuk)
         {
             if (geselecteerdStuk.schaakstuk.kleur == "zwart")
             {
                 Vakje geselecteerdVak = geselecteerdStuk;
                 if (geselecteerdVak.buurZuidoost != null && geselecteerdVak.buurZuidoost.schaakstuk != null && geselecteerdVak.buurZuidoost.schaakstuk.kleur == "wit")
                 {
-                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurZuidoost);
-                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurZuidoost);
+                    algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
                 else if (geselecteerdVak.buurZuidwest != null && geselecteerdVak.buurZuidwest.schaakstuk != null && geselecteerdVak.buurZuidwest.schaakstuk.kleur == "wit")
                 {
-                    computer.slaanmogelijkheden.Add(geselecteerdVak.buurZuidwest);
-                    computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurZuidwest);
+                    algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
                 else
                 {

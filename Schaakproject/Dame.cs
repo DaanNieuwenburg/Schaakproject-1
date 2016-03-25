@@ -21,7 +21,7 @@ namespace Schaakproject
                 afbeelding = Properties.Resources.DameZwart;
             }
         }
-        public override void kanStukSlaan(Computer computer, Vakje geselecteerdStuk)
+        public override void kanStukSlaan(Algoritme algoritme, Vakje geselecteerdStuk)
         {
             if (geselecteerdStuk.schaakstuk.kleur == "zwart")
             {
@@ -39,8 +39,8 @@ namespace Schaakproject
                         if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
                         {
                             mogelijkloop = true;
-                            computer.slaanmogelijkheden.Add(volgendVakje);
-                            computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                            algoritme.slaanmogelijkheden.Add(volgendVakje);
+                            algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                         }
                         else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
                         {
@@ -64,8 +64,8 @@ namespace Schaakproject
                         if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
                         {
                             mogelijkloop = true;
-                            computer.slaanmogelijkheden.Add(volgendVakje);
-                            computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                            algoritme.slaanmogelijkheden.Add(volgendVakje);
+                            algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                         }
                         else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
                         {
@@ -89,8 +89,8 @@ namespace Schaakproject
                         if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
                         {
                             mogelijkloop = true;
-                            computer.slaanmogelijkheden.Add(volgendVakje);
-                            computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                            algoritme.slaanmogelijkheden.Add(volgendVakje);
+                            algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                         }
                         else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
                         {
@@ -114,8 +114,8 @@ namespace Schaakproject
                         if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
                         {
                             mogelijkloop = true;
-                            computer.slaanmogelijkheden.Add(volgendVakje);
-                            computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                            algoritme.slaanmogelijkheden.Add(volgendVakje);
+                            algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                         }
                         else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
                         {
@@ -139,8 +139,8 @@ namespace Schaakproject
                         if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
                         {
                             mogelijkloop = true;
-                            computer.slaanmogelijkheden.Add(volgendVakje);
-                            computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                            algoritme.slaanmogelijkheden.Add(volgendVakje);
+                            algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                         }
                         else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
                         {
@@ -164,8 +164,8 @@ namespace Schaakproject
                         if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
                         {
                             mogelijkloop = true;
-                            computer.slaanmogelijkheden.Add(volgendVakje);
-                            computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                            algoritme.slaanmogelijkheden.Add(volgendVakje);
+                            algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                         }
                         else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
                         {
@@ -189,8 +189,8 @@ namespace Schaakproject
                         if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
                         {
                             mogelijkloop = true;
-                            computer.slaanmogelijkheden.Add(volgendVakje);
-                            computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                            algoritme.slaanmogelijkheden.Add(volgendVakje);
+                            algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                         }
                         else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
                         {
@@ -215,8 +215,8 @@ namespace Schaakproject
                         if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
                         {
                             mogelijkloop = true;
-                            computer.slaanmogelijkheden.Add(volgendVakje);
-                            computer.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                            algoritme.slaanmogelijkheden.Add(volgendVakje);
+                            algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                         }
                         else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
                         {

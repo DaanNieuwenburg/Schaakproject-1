@@ -14,7 +14,7 @@ namespace Schaakproject
         public Speler speler { get; set; }
 
         public abstract void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler, Spel spel);
-        public abstract void kanStukSlaan(Computer computer, Vakje geselecteerdStuk);
+        public abstract void kanStukSlaan(Algoritme algoritme, Vakje geselecteerdStuk);
         public void Slaan(string kleur)
         {
 

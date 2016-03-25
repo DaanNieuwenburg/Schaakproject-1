@@ -57,6 +57,7 @@
     <Compile Include="AfsluitMelding.Designer.cs">
       <DependentUpon>AfsluitMelding.cs</DependentUpon>
     </Compile>
+    <Compile Include="Algoritme.cs" />
     <Compile Include="Computer.cs" />
     <Compile Include="Dame.cs" />
     <Compile Include="Database.cs" />
