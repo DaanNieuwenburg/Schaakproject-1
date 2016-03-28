@@ -113,12 +113,12 @@ namespace Schaakproject
                 if (SpelMode == "Singleplayer")
                 {
                     spelerAanZet = computerSpeler;
-                    schaak = schaakbord.CheckSchaak(computerSpeler.Koning);
+                    schaak = schaakbord.CheckSchaak(computerSpeler.Koning.vakje, computerSpeler.Koning.kleur);
                 }
                 else
                 {
                     spelerAanZet = Speler2;
-                    schaak = schaakbord.CheckSchaak(Speler2.Koning);
+                    schaak = schaakbord.CheckSchaak(Speler2.Koning.vakje, Speler2.Koning.kleur);
                 }
                 if (schaak == true)
                 {
@@ -148,7 +148,7 @@ namespace Schaakproject
             {
                 witaanzet = false;
                 spelerAanZet = Speler1;
-                schaak = schaakbord.CheckSchaak(Speler1.Koning);
+                schaak = schaakbord.CheckSchaak(Speler1.Koning.vakje, Speler1.Koning.kleur);
                 if (schaak == true)
                 {
                     
