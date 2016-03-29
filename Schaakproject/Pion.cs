@@ -10,11 +10,10 @@ namespace Schaakproject
         public bool eersteZet { get; private set; }        //is de pion al eens verzet
         private bool _magEnpassant { get; set; }            //mag de pion en-passant slaan
 
-
         public Pion(string kleur, Vakje vakje, Speler speler)
         {
             _magEnpassant = true;
-            base.speler = speler;
+            this.speler = speler;
             this.vakje = vakje;
             this.kleur = kleur;
             if (kleur == "wit")
@@ -113,6 +112,7 @@ namespace Schaakproject
                         spel.updateAantalStukken(speler);
                         tempPion = selected.buurOost.schaakstuk;
                         locatie = false;
+                        selected.buurOost.schaakstuk.Slaan();
                         selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
                         selected.buurOost.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
                         mogelijk = true;
@@ -128,6 +128,7 @@ namespace Schaakproject
                         spel.updateAantalStukken(speler);
                         tempPion = selected.buurWest.schaakstuk;
                         locatie = true;
+                        selected.buurWest.schaakstuk.Slaan();
                         selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
                         selected.buurWest.pbox.update(); //update deze pbox zodat je de pion niet meer ziet
                         mogelijk = true;
@@ -199,6 +200,7 @@ namespace Schaakproject
                         spel.updateAantalStukken(speler);
                         locatie = false;
                         tempPion = selected.buurOost.schaakstuk;
+                        selected.buurOost.schaakstuk.Slaan();
                         selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
                         selected.buurOost.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
                         mogelijk = true;
@@ -219,6 +221,7 @@ namespace Schaakproject
                             spel.updateAantalStukken(speler);
                             locatie = true;
                             tempPion = selected.buurWest.schaakstuk;
+                            selected.buurWest.schaakstuk.Slaan();
                             selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
                             selected.buurWest.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
                             mogelijk = true;
@@ -257,6 +260,10 @@ namespace Schaakproject
                 }
                 else
                 {
+                    if (nieuwVakje.schaakstuk != null)
+                    {
+                        nieuwVakje.schaakstuk.Slaan();
+                    }
                     eersteZet = true;
                     speler.validezet = true;
                 }

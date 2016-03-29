@@ -20,6 +20,7 @@ namespace Schaakproject
 
             this.kleur = kleur;
             this.vakje = vakje;
+            this.speler = speler;
             if (kleur == "wit")
             {
                 afbeelding = Properties.Resources.KoningWit;
@@ -160,6 +161,11 @@ namespace Schaakproject
                 }
                 else
                 {
+                    if (nieuwVakje.schaakstuk != null)
+                    {
+                        nieuwVakje.schaakstuk.Slaan();
+                    }
+
                     speler.validezet = true;
                 }
             }
@@ -494,88 +500,6 @@ namespace Schaakproject
         public void Wilrokeren()
         {
             _wilRokeren = true;
-        }
-        public void Checkschaak(SpecialPB pictures, SpecialPB selected, Mens speler)
-        {
-            bool schaak = false;
-            bool mogelijkloop = false;
-            Vakje vorige = vakje;
-            while (mogelijkloop == false)
-            {
-
-                if (vorige.buurNoord.schaakstuk is Toren || vorige.buurNoord.schaakstuk is Dame)
-                {
-                    schaak = true;
-                    Console.WriteLine("schaaktrue: " + schaak);
-                    mogelijkloop = true;
-                }
-                else if (vorige.buurNoord == null || vorige.buurNoord.schaakstuk != null)
-                {
-                    mogelijkloop = true;
-                    Console.WriteLine("schaakfalse: " + schaak);
-                }
-                vorige = vorige.buurNoord;
-            }
-            mogelijkloop = false;
-            vorige = vakje;
-            if (schaak == false)
-            {
-                while (mogelijkloop == false)
-                {
-                    if (vorige.buurOost.schaakstuk is Toren || vorige.buurOost.schaakstuk is Dame)
-                    {
-                        schaak = true;
-                        Console.WriteLine("schaaktrue: " + schaak);
-                        mogelijkloop = true;
-                    }
-                    else if (vorige.buurOost == null || vorige.buurOost.schaakstuk != null)
-                    {
-                        mogelijkloop = true;
-                        Console.WriteLine("schaakfalse: " + schaak);
-                    }
-                    vorige = vorige.buurOost;
-                }
-            }
-            mogelijkloop = false;
-            vorige = vakje;
-            if (schaak == false)
-            {
-                while (mogelijkloop == false)
-                {
-                    if (vorige.buurZuid.schaakstuk is Toren || vorige.buurZuid.schaakstuk is Dame)
-                    {
-                        schaak = true;
-                        Console.WriteLine("schaaktrue: " + schaak);
-                        mogelijkloop = true;
-                    }
-                    else if (vorige.buurZuid == null || vorige.buurZuid.schaakstuk != null)
-                    {
-                        mogelijkloop = true;
-                        Console.WriteLine("schaakfalse: " + schaak);
-                    }
-                    vorige = vorige.buurZuid;
-                }
-            }
-            mogelijkloop = false;
-            vorige = vakje;
-            if (schaak == false)
-            {
-                while (mogelijkloop == false)
-                {
-                    if (vorige.buurWest.schaakstuk is Toren || vorige.buurWest.schaakstuk is Dame)
-                    {
-                        schaak = true;
-                        Console.WriteLine("schaaktrue: " + schaak);
-                        mogelijkloop = true;
-                    }
-                    else if (vorige.buurWest == null || vorige.buurWest.schaakstuk != null)
-                    {
-                        mogelijkloop = true;
-                        Console.WriteLine("schaakfalse: " + schaak);
-                    }
-                    vorige = vorige.buurWest;
-                }
-            }
         }
     }
 }

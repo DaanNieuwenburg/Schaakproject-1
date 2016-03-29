@@ -99,13 +99,14 @@ namespace Schaakproject
                         speelbord.lblbeurt.Text = "Wit is aan zet";
                     }
                 }
-            }          
+            }
         }
         public void VeranderSpeler()
         {
             veranderlbltext();
             bool schaak;
             bool mat;
+            bool pat;
             //Console.WriteLine("VeranderSpeler");
             if (spelerAanZet == Speler1)
             {
@@ -132,13 +133,35 @@ namespace Schaakproject
                     }
                     else
                     {
-                        
+
                         mat = schaakbord.CheckMat(Speler2.Koning);
                         if (mat == true)
                         {
                             Speler2.Koning.vakje.pbox.Image = Properties.Resources.ZwartMat1;
                             SchaakMat _SchaakMat = new SchaakMat(Speler1.Naam, this);
                             _SchaakMat.ShowDialog();
+                            speelbord.Hide();
+                        }
+                    }
+                }
+                else //check pat
+                {
+                    if (SpelMode == "Singleplayer")
+                    {
+                        pat = schaakbord.CheckPat(computerSpeler.Koning);
+                        if (pat == true)
+                        {
+                            Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Purple;
+                        }
+                    }
+                    else
+                    {
+
+                        pat = schaakbord.CheckPat(Speler2.Koning);
+                        if (pat == true)
+                        {
+                            RemiseMelding _Remise = new RemiseMelding(this);
+                            _Remise.ShowDialog();
                             speelbord.Hide();
                         }
                     }
@@ -151,19 +174,30 @@ namespace Schaakproject
                 schaak = schaakbord.CheckSchaak(Speler1.Koning.vakje, Speler1.Koning.kleur);
                 if (schaak == true)
                 {
-                    
+
                     mat = schaakbord.CheckMat(Speler1.Koning);
                     if (mat == true)
                     {
-                        
+
                         Speler1.Koning.vakje.pbox.Image = Properties.Resources.WitMat1;
                         SchaakMat _SchaakMat = new SchaakMat(Speler2.Naam, this);
                         _SchaakMat.ShowDialog();
                         speelbord.Hide();
                     }
                 }
+                else //check pat
+                {
+
+                    pat = schaakbord.CheckPat(Speler1.Koning);
+                    if (pat == true)
+                    {
+                        RemiseMelding _Remise = new RemiseMelding(this);
+                        _Remise.ShowDialog();
+                        speelbord.Hide();
+                    }
+                }
             }
-            
+
         }
         public void controleerOpSchaak()
         {
@@ -178,7 +212,7 @@ namespace Schaakproject
             while (vorigvakjeHO != null)
             {
                 vorigvakjeHO = vorigvakjeHO.buurOost;
-        }
+            }
 
             // Loop tot het meest onderste vakje gevonden is
             while (vorigvakjeVZ != null)
@@ -227,15 +261,15 @@ namespace Schaakproject
             if (SpelMode != "Singleplayer")
             {
                 if (speler.Kleur == "wit")
-            {
-                speelbord.lblaantal2.Text = Convert.ToString(Speler1.resterendestukken); //onlogisch, speler1 = label 2
-            }
-            else
-            {
-                speelbord.lblaantal1.Text = Convert.ToString(Speler2.resterendestukken); //onlogisch, speler2 = label 1
+                {
+                    speelbord.lblaantal2.Text = Convert.ToString(Speler1.resterendestukken); //onlogisch, speler1 = label 2
+                }
+                else
+                {
+                    speelbord.lblaantal1.Text = Convert.ToString(Speler2.resterendestukken); //onlogisch, speler2 = label 1
+                }
             }
         }
     }
-}
 }
 

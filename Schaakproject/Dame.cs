@@ -12,6 +12,7 @@ namespace Schaakproject
         {
             this.vakje = vakje;
             this.kleur = kleur;
+            this.speler = speler;
             if (kleur == "wit")
             {
                 afbeelding = Properties.Resources.DameWit;
@@ -377,6 +378,7 @@ namespace Schaakproject
             }
             if (mogelijk == true)
             {
+                
                 Schaakstuk temp = nieuwVakje.schaakstuk;
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
@@ -390,6 +392,10 @@ namespace Schaakproject
                 }
                 else
                 {
+                    if (nieuwVakje.schaakstuk != null)
+                    {
+                        nieuwVakje.schaakstuk.Slaan();
+                    }
                     speler.validezet = true;
                 }
             }
