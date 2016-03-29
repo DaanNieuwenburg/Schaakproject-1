@@ -34,6 +34,7 @@ namespace Schaakproject
                 Speler1 = speler1;
                 Speler2 = null;
                 this.computerSpeler = computerSpeler;
+                Start();
             }
             else if (Mode == "Multiplayer")
             {
@@ -42,6 +43,7 @@ namespace Schaakproject
                 Speler1 = speler1;
                 Speler2 = speler2;
                 computerSpeler = null;
+                Start();
             }
         }
 

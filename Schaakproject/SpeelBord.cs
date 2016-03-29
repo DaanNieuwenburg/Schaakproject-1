@@ -535,7 +535,7 @@ namespace Schaakproject
                 lbluitleg.Visible = true;
                 lbluitleg.Text = (/* HIER NOG UITLEG VOOR SCHAAKMAT*/"");
                 this.btndame.Visible = false;
-                pbuitleg.BackgroundImage = Properties.Resources.zettenpaard; //HIER NOG UITLEG VOOR SCHAAKMAT
+                pbuitleg.BackgroundImage = Properties.Resources.uitlegmat; //HIER NOG UITLEG VOOR SCHAAKMAT
                 pbuitleg.Visible = true;
                 this.btnkoning.Visible = false;
                 this.btntoren.Visible = false;

@@ -43,12 +43,7 @@ namespace Schaakproject
                 Speler1 = txtSpeler1Naam.Text;
                 Speler2 = txtSpeler2Naam.Text;
                 Spel spel = new Spel(Mode, Speler1, Speler2, Variant, bordercolor, selectcolor);
-            }
-            else if (Mode == "Online")
-            {
-                Speler1 = _username;
-                Speler2 = txtSpeler2Naam.Text;
-                Spel spel = new Spel(Mode, _username, Speler2, Variant, bordercolor, selectcolor);
+                
             }
 
         }
@@ -85,30 +80,6 @@ namespace Schaakproject
             btnBegin.Visible = false;
             Mode = "Singleplayer";
 
-        }
-
-        private void btModeRealMulti_Click(object sender, EventArgs e)
-        {
-            Mode = "Online";
-            btModeComputer.Visible = false;
-            btModeMultiplayer.Visible = false;
-            lbTitel.Text = "Online";
-            btnKlassiek.Visible = false;
-            btnChess960.Visible = false;
-            lblSpeler1Naam.Visible = false;
-            lblSpeler2Naam.Visible = false;
-            txtSpeler1Naam.Visible = false;
-            btnBegin.Visible = false;
-            LoginForm Login = new LoginForm();
-            //Login.Visible = true;
-            Login.ShowDialog();
-            if (Login.login == true)
-            {
-                _username = Login.username;
-                Console.WriteLine("Test Naaminvoer: " + _username);
-                btnKlassiek.Visible = true;
-                btnChess960.Visible = true;
-            }
         }
 
         private void btModeComputer_MouseEnter(object sender, EventArgs e)

@@ -74,7 +74,6 @@ namespace Schaakproject
         {
             aantal1 = 16;
             aantal2 = 16;
-            bool staatopwit = true;
             schaakarray = new Vakje[8, 8];
             variant = _Variant;
             string kleurstuk;
