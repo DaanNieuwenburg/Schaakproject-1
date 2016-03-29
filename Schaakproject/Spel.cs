@@ -99,7 +99,7 @@ namespace Schaakproject
                         speelbord.lblbeurt.Text = "Wit is aan zet";
                     }
                 }
-            }          
+            }
         }
         public void VeranderSpeler()
         {
@@ -113,12 +113,12 @@ namespace Schaakproject
                 if (SpelMode == "Singleplayer")
                 {
                     spelerAanZet = computerSpeler;
-                    schaak = schaakbord.CheckSchaak(computerSpeler.Koning);
+                    schaak = schaakbord.CheckSchaak(computerSpeler.Koning.vakje, computerSpeler.Koning.kleur);
                 }
                 else
                 {
                     spelerAanZet = Speler2;
-                    schaak = schaakbord.CheckSchaak(Speler2.Koning);
+                    schaak = schaakbord.CheckSchaak(Speler2.Koning.vakje, Speler2.Koning.kleur);
                 }
                 if (schaak == true)
                 {
@@ -132,7 +132,7 @@ namespace Schaakproject
                     }
                     else
                     {
-                        
+
                         mat = schaakbord.CheckMat(Speler2.Koning);
                         if (mat == true)
                         {
@@ -148,14 +148,14 @@ namespace Schaakproject
             {
                 witaanzet = false;
                 spelerAanZet = Speler1;
-                schaak = schaakbord.CheckSchaak(Speler1.Koning);
+                schaak = schaakbord.CheckSchaak(Speler1.Koning.vakje, Speler1.Koning.kleur);
                 if (schaak == true)
                 {
-                    
+
                     mat = schaakbord.CheckMat(Speler1.Koning);
                     if (mat == true)
                     {
-                        
+
                         Speler1.Koning.vakje.pbox.Image = Properties.Resources.WitMat1;
                         SchaakMat _SchaakMat = new SchaakMat(Speler2.Naam, this);
                         _SchaakMat.ShowDialog();
@@ -163,7 +163,7 @@ namespace Schaakproject
                     }
                 }
             }
-            
+
         }
         public void controleerOpSchaak()
         {
@@ -178,7 +178,7 @@ namespace Schaakproject
             while (vorigvakjeHO != null)
             {
                 vorigvakjeHO = vorigvakjeHO.buurOost;
-        }
+            }
 
             // Loop tot het meest onderste vakje gevonden is
             while (vorigvakjeVZ != null)
@@ -222,20 +222,21 @@ namespace Schaakproject
             }
         }
 
-        public void updateAantalStukken(Speler speler)
+        public void updateAantalStukken(Mens speler)
         {
             if (SpelMode != "Singleplayer")
             {
+                speler.resterendestukken = speler.resterendestukken - 1;
                 if (speler.Kleur == "wit")
-            {
-                speelbord.lblaantal2.Text = Convert.ToString(Speler1.resterendestukken); //onlogisch, speler1 = label 2
-            }
-            else
-            {
-                speelbord.lblaantal1.Text = Convert.ToString(Speler2.resterendestukken); //onlogisch, speler2 = label 1
+                {
+                    speelbord.lblaantal2.Text = Convert.ToString(Speler1.resterendestukken); //onlogisch, speler1 = label 2
+                }
+                else
+                {
+                    speelbord.lblaantal1.Text = Convert.ToString(Speler2.resterendestukken); //onlogisch, speler2 = label 1
+                }
             }
         }
     }
-}
 }
 

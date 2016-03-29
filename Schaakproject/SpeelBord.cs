@@ -787,5 +787,10 @@ namespace Schaakproject
         {
             btnregels.BackgroundImage = Properties.Resources.button_regels_2_click;
         }
+
+        private void lblResterend2_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

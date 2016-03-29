@@ -32,6 +32,7 @@ namespace Schaakproject
             _koning = computer.Koning;
             // kijk of er geslagen kan worden
             controleerOpSlaan();
+            Console.WriteLine("-------------------------------------");
             if (slaanmogelijkheden.Count > 0)
             {
                 Console.WriteLine("SLA EEN STUK");
@@ -58,28 +59,32 @@ namespace Schaakproject
             // Reset de slaanmogelijkheden
             slaanmogelijkheden.Clear();
             slaanmogelijkhedenVanaf.Clear();
-
             // Kijk nu per niet verplaatst stuk of er geslagen kan worden
             foreach (Vakje nietverplaatststuk in _computer.nietverplaatstlijst)
             {
                 if (nietverplaatststuk.schaakstuk is Pion)
                 {
+                    Console.WriteLine("FOUND");
                     nietverplaatststuk.schaakstuk.kanStukSlaan(this, nietverplaatststuk);
                 }
                 else if (nietverplaatststuk.schaakstuk is Loper)
                 {
+                    Console.WriteLine("FOUND");
                     nietverplaatststuk.schaakstuk.kanStukSlaan(this, nietverplaatststuk);
                 }
                 else if (nietverplaatststuk.schaakstuk is Toren)
                 {
+                    Console.WriteLine("FOUND");
                     nietverplaatststuk.schaakstuk.kanStukSlaan(this, nietverplaatststuk);
                 }
                 else if (nietverplaatststuk.schaakstuk is Paard)
                 {
+                    Console.WriteLine("FOUND");
                     nietverplaatststuk.schaakstuk.kanStukSlaan(this, nietverplaatststuk);
                 }
                 else if (nietverplaatststuk.schaakstuk is Dame)
                 {
+                    Console.WriteLine("FOUND");
                     nietverplaatststuk.schaakstuk.kanStukSlaan(this, nietverplaatststuk);
                 }
             }
@@ -87,28 +92,40 @@ namespace Schaakproject
             // Kijk nu per verplaatst stuk of er geslagen kan worden
             foreach (Vakje verplaatststuk in _computer.verplaatsingsLijst)
             {
+                verplaatststuk.pbox.BackColor = System.Drawing.Color.Aqua;
+                Console.WriteLine("Zoekt in verplaatst");
                 if (verplaatststuk.schaakstuk is Pion)
                 {
+                    Console.WriteLine("FOUND");
                     verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
                 }
                 else if (verplaatststuk.schaakstuk is Loper)
                 {
+                    Console.WriteLine("FOUND");
                     verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
                 }
                 else if (verplaatststuk.schaakstuk is Toren)
                 {
+                    Console.WriteLine("FOUND");
+
                     verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
                 }
                 else if (verplaatststuk.schaakstuk is Paard)
                 {
+                    Console.WriteLine("FOUND");
+
                     verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
                 }
                 else if (verplaatststuk.schaakstuk is Dame)
                 {
+                    Console.WriteLine("FOUND");
+
                     verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
                 }
                 else if (verplaatststuk.schaakstuk is Koning)
                 {
+                    Console.WriteLine("FOUND");
+
                     verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
                 }
             }
@@ -116,38 +133,61 @@ namespace Schaakproject
 
         private void slaEenStuk()
         {
-            Console.WriteLine("SLA");
+            bool alGeslagen = false;
             for (int i = 0; i < slaanmogelijkheden.Count; i++)
             {
+                Console.WriteLine("SLAAN LOOP" + alGeslagen);
                 Schaakstuk schaakstuk = slaanmogelijkheden[i].schaakstuk;
-                if (schaakstuk is Koning && schaakstuk.kleur == "wit")
+                if (schaakstuk is Koning && schaakstuk.kleur == "wit" && alGeslagen == false)
                 {
                     Console.WriteLine("KONING GESLAGEN");
                     _geselecteerdStuk = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
+                    alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
 
-                else if (schaakstuk is Pion && schaakstuk.kleur == "wit")
+                else if (schaakstuk is Pion && schaakstuk.kleur == "wit" && alGeslagen == false)
                 {
                     Console.WriteLine("PION GESLAGEN");
                     _geselecteerdStuk = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
+                    alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
 
-                else if (schaakstuk is Toren || schaakstuk is Paard || schaakstuk is Loper && schaakstuk.kleur == "wit")
+                else if (schaakstuk is Toren && schaakstuk.kleur == "wit" && alGeslagen == false)
                 {
                     Console.WriteLine("LOPER GESLAGEN");
                     _geselecteerdStuk = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
+                    alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (schaakstuk is Dame && schaakstuk.kleur == "wit")
+
+                else if (schaakstuk is Paard && schaakstuk.kleur == "wit" && alGeslagen == false)
+                {
+                    Console.WriteLine("LOPER GESLAGEN");
+                    _geselecteerdStuk = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
+                    _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
+                    alGeslagen = true;
+                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                }
+
+                else if (schaakstuk is Loper && schaakstuk.kleur == "wit" && alGeslagen == false)
+                {
+                    Console.WriteLine("LOPER GESLAGEN");
+                    _geselecteerdStuk = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
+                    _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
+                    alGeslagen = true;
+                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                }
+                else if (schaakstuk is Dame && schaakstuk.kleur == "wit" && alGeslagen == false)
                 {
                     Console.WriteLine("DAME GESLAGEN");
                     _geselecteerdStuk = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
+                    alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
             }

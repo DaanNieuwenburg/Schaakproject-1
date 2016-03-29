@@ -116,6 +116,7 @@
             this.lblResterend2.Size = new System.Drawing.Size(146, 18);
             this.lblResterend2.TabIndex = 4;
             this.lblResterend2.Text = "Resterende Stukken:";
+            this.lblResterend2.Click += new System.EventHandler(this.lblResterend2_Click);
             // 
             // lblaantal2
             // 
@@ -338,9 +339,8 @@
             this.lblbeurt.ForeColor = System.Drawing.SystemColors.Control;
             this.lblbeurt.Location = new System.Drawing.Point(518, 9);
             this.lblbeurt.Name = "lblbeurt";
-            this.lblbeurt.Size = new System.Drawing.Size(97, 18);
+            this.lblbeurt.Size = new System.Drawing.Size(0, 18);
             this.lblbeurt.TabIndex = 19;
-            
             // 
             // SpeelBord
             // 

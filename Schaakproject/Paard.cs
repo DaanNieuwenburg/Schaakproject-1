@@ -100,10 +100,20 @@ namespace Schaakproject
             {
                 if (selected.buurNoord.buurNoordoost == nieuwVakje)
                 {
+                    if(nieuwVakje.schaakstuk != null)
+                    {
+                        spel.updateAantalStukken(speler);
+                        Console.WriteLine("SLAAT");
+                    }
                     gevonden = true;
                 }
                 else if (selected.buurNoord.buurNoordwest == nieuwVakje)
                 {
+                    if (nieuwVakje.schaakstuk != null)
+                    {
+                        spel.updateAantalStukken(speler);
+                        Console.WriteLine("SLAAT");
+                    }
                     gevonden = true;
                 }
             }
@@ -111,10 +121,20 @@ namespace Schaakproject
             {
                 if (selected.buurOost.buurNoordoost == nieuwVakje)
                 {
+                    if (nieuwVakje.schaakstuk != null)
+                    {
+                        spel.updateAantalStukken(speler);
+                        Console.WriteLine("SLAAT");
+                    }
                     gevonden = true;
                 }
                 else if (selected.buurOost.buurZuidoost == nieuwVakje)
                 {
+                    if (nieuwVakje.schaakstuk != null)
+                    {
+                        spel.updateAantalStukken(speler);
+                        Console.WriteLine("SLAAT");
+                    }
                     gevonden = true;
                 }
             }
@@ -122,10 +142,20 @@ namespace Schaakproject
             {
                 if (selected.buurZuid.buurZuidoost == nieuwVakje)
                 {
+                    if (nieuwVakje.schaakstuk != null)
+                    {
+                        spel.updateAantalStukken(speler);
+                        Console.WriteLine("SLAAT");
+                    }
                     gevonden = true;
                 }
                 else if (selected.buurZuid.buurZuidwest == nieuwVakje)
                 {
+                    if (nieuwVakje.schaakstuk != null)
+                    {
+                        spel.updateAantalStukken(speler);
+                        Console.WriteLine("SLAAT");
+                    }
                     gevonden = true;
                 }
             }
@@ -133,11 +163,21 @@ namespace Schaakproject
             {
                 if (selected.buurWest.buurZuidwest == nieuwVakje)
                 {
+                    if (nieuwVakje.schaakstuk != null)
+                    {
+                        spel.updateAantalStukken(speler);
+                        Console.WriteLine("SLAAT");
+                    }
                     gevonden = true;
                 }
 
                 else if (selected.buurWest.buurNoordwest == nieuwVakje)
                 {
+                    if (nieuwVakje.schaakstuk != null)
+                    {
+                        spel.updateAantalStukken(speler);
+                        Console.WriteLine("SLAAT");
+                    }
                     gevonden = true;
                 }
             }
@@ -148,7 +188,7 @@ namespace Schaakproject
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
                 this.vakje = nieuwVakje;
-                bool checkSchaak = spel.schaakbord.CheckSchaak(speler.Koning);
+                bool checkSchaak = spel.schaakbord.CheckSchaak(speler.Koning.vakje, speler.Koning.kleur);
                 if (checkSchaak == true)
                 {
                     selected.schaakstuk = this;
