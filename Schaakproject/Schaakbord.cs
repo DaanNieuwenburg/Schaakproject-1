@@ -64,20 +64,18 @@ namespace Schaakproject
         private int aantal1 { get; set; }                   //Het aantal schaakstukken wordt ingesteld voor wit
         private int aantal2 { get; set; }                   //Het aantal schaakstukken wordt ingesteld voor zwart
         private bool staatschaak { get; set; }              //Staat er iemand schaak?
+        private string kleurstuk { get; set; }              //De kleur van het stuk
         private string variant { get; set; }                //Klassiek of Chess960
         private Schaakstuk schaakGezet { get; set; }        //Het schaakstuk dat de koning schaak heeft gezet
         private string richting { get; set; }               //De richting waar het schaakstuk dat de koning schaak heeft gezet staat
         private bool pionvoormat { get; set; }              //om te kijken of er een pion gezet kan worden tussen de koning en een stuk
 
-
         public Schaakbord(string _Variant, Spel Spel, Speler Speler1, Speler Speler2)
         {
-            aantal1 = 16;
-            aantal2 = 16;
+
             bool staatopwit = true;
             schaakarray = new Vakje[8, 8];
             variant = _Variant;
-            string kleurstuk;
             bool kleurvakje = false; //zwart of wit
             kleurstuk = "zwart";
             Speler voorDitStuk = Speler2;
@@ -115,8 +113,13 @@ namespace Schaakproject
                             if (y == 0 || y == 7)
                             {
                                 schaakarray[x, y].schaakstuk = new Toren(kleurstuk, schaakarray[x, y], voorDitStuk);
-                                if (kleurstuk == "zwart")
+                                if (kleurstuk == "wit")
                                 {
+                                    aantal1++;
+                                }
+                                else
+                                {
+                                    aantal2++;
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
                                         Spel.computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
@@ -127,9 +130,13 @@ namespace Schaakproject
                             else if (y == 1 || y == 6)
                             {
                                 schaakarray[x, y].schaakstuk = new Paard(kleurstuk, schaakarray[x, y], voorDitStuk);
-                                if (kleurstuk == "zwart")
+                                if (kleurstuk == "wit")
                                 {
-
+                                    aantal1++;
+                                }
+                                else
+                                {
+                                    aantal2++;
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
                                         Spel.computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
@@ -140,8 +147,13 @@ namespace Schaakproject
                             else if (y == 2 || y == 5)
                             {
                                 schaakarray[x, y].schaakstuk = new Loper(kleurstuk, schaakarray[x, y], voorDitStuk);
-                                if (kleurstuk == "zwart")
+                                if (kleurstuk == "wit")
                                 {
+                                    aantal1++;
+                                }
+                                else
+                                {
+                                    aantal2++;
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
                                         Spel.computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
@@ -152,8 +164,13 @@ namespace Schaakproject
                             else if (y == 3)
                             {
                                 schaakarray[x, y].schaakstuk = new Dame(kleurstuk, schaakarray[x, y], voorDitStuk);
-                                if (kleurstuk == "zwart")
+                                if (kleurstuk == "wit")
                                 {
+                                    aantal1++;
+                                }
+                                else
+                                {
+                                    aantal2++;
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
                                         Spel.computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
@@ -167,10 +184,13 @@ namespace Schaakproject
 
                                 if (kleurstuk == "wit")
                                 {
+                                    aantal1++;
                                     Spel.Speler1.Koning = schaakarray[x, y].schaakstuk as Koning;
+
                                 }
                                 else
                                 {
+                                    aantal2++;
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
                                         Spel.computerSpeler.Koning = schaakarray[x, y].schaakstuk as Koning;
@@ -185,17 +205,17 @@ namespace Schaakproject
                         else if (x == 1 || x == 6)
                         {
                             schaakarray[x, y].schaakstuk = new Pion(kleurstuk, schaakarray[x, y], voorDitStuk);
-                            if (kleurstuk == "zwart")
+                            if (kleurstuk == "wit")
                             {
-                                Speler2.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                aantal1++;
+                            }
+                            else
+                            {
+                                aantal2++;
                                 if (Spel.SpelMode == "Singleplayer")
                                 {
                                     Spel.computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
                                 }
-                            }
-                            else
-                            {
-                                Speler1.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
                             }
                         }
                     }
@@ -239,23 +259,58 @@ namespace Schaakproject
                                 else if ((array[0] < array[7] && array[1] > array[7]) || (array[0] > array[7] && array[1] < array[7]))
                                 {
                                     schaakarray[x, y].schaakstuk = new Toren(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                    if (kleurstuk == "wit")
+                                    {
+                                        aantal1++;
+                                    }
+                                    else
+                                    {
+                                        aantal2++;
+                                    }
                                 }
                             }
 
                             else if (y == array[2] || y == array[3])
                             {
                                 schaakarray[x, y].schaakstuk = new Paard(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                if (kleurstuk == "wit")
+                                {
+                                    aantal1++;
+                                }
+                                else
+                                {
+                                    aantal2++;
+                                }
                             }
 
                             else if (y == array[4] || y == array[5])
                             {
                                 aantallopers++;
                                 schaakarray[x, y].schaakstuk = new Loper(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                if (kleurstuk == "wit")
+                                {
+                                    aantal1++;
+                                }
+                                else
+                                {
+                                    aantal2++;
+                                }
+
                             }
 
                             else if (y == array[6])
                             {
                                 schaakarray[x, y].schaakstuk = new Dame(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                if (kleurstuk == "wit")
+                                {
+
+                                    aantal1++;
+                                }
+                                else
+                                {
+
+                                    aantal2++;
+                            }
                             }
 
                             else if (y == array[7])
@@ -264,6 +319,7 @@ namespace Schaakproject
                                 if (kleurstuk == "wit")
                                 {
                                     Spel.Speler1.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                    aantal1++;
                                 }
                                 else
                                 {
@@ -275,6 +331,7 @@ namespace Schaakproject
                                     {
                                         Spel.Speler2.Koning = schaakarray[x, y].schaakstuk as Koning;
                                     }
+                                    aantal2++;
                                 }
 
                             }
@@ -284,11 +341,11 @@ namespace Schaakproject
                             schaakarray[x, y].schaakstuk = new Pion(kleurstuk, schaakarray[x, y], voorDitStuk);
                             if (kleurstuk == "wit")
                             {
-                                Speler1.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                aantal1++;
                             }
                             else
                             {
-                                Speler2.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                aantal2++;
                             }
                         }
                     }
@@ -901,7 +958,7 @@ namespace Schaakproject
             {
                 pat = false;
             }
-            
+
             return pat;
         }
 
@@ -1382,6 +1439,7 @@ namespace Schaakproject
             bool mogelijk = false;
 
             string kleur = koning.kleur;
+            Schaakstuk bewaar = null;
             Vakje koningVakje = koning.vakje;
 
             //bekijk of de koning schaak staat als hij naar noord zou bewegen
