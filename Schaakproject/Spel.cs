@@ -109,6 +109,7 @@ namespace Schaakproject
             veranderlbltext();
             bool schaak;
             bool mat;
+            bool pat;
             //Console.WriteLine("VeranderSpeler");
             if (spelerAanZet == Speler1)
             {
@@ -146,6 +147,28 @@ namespace Schaakproject
                         }
                     }
                 }
+                else //check pat
+                {
+                    if (SpelMode == "Singleplayer")
+                    {
+                        pat = schaakbord.CheckPat(computerSpeler.Koning);
+                        if (pat == true)
+                        {
+                            Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Purple;
+                        }
+                    }
+                    else
+                    {
+
+                        pat = schaakbord.CheckPat(Speler2.Koning);
+                        if (pat == true)
+                        {
+                            RemiseMelding _Remise = new RemiseMelding(this);
+                            _Remise.ShowDialog();
+                            speelbord.Hide();
+                        }
+                    }
+                }
             }
             else
             {
@@ -162,6 +185,17 @@ namespace Schaakproject
                         Speler1.Koning.vakje.pbox.Image = Properties.Resources.WitMat1;
                         SchaakMat _SchaakMat = new SchaakMat(Speler2.Naam, this);
                         _SchaakMat.ShowDialog();
+                        speelbord.Hide();
+                    }
+                }
+                else //check pat
+                {
+
+                    pat = schaakbord.CheckPat(Speler1.Koning);
+                    if (pat == true)
+                    {
+                        RemiseMelding _Remise = new RemiseMelding(this);
+                        _Remise.ShowDialog();
                         speelbord.Hide();
                     }
                 }

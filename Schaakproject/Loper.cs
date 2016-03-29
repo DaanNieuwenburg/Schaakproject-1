@@ -11,6 +11,7 @@ namespace Schaakproject
         {
             this.kleur = kleur;
             this.vakje = vakje;
+            this.speler = speler;
             if (kleur == "wit")
             {
                 afbeelding = Properties.Resources.LoperWit;
@@ -231,6 +232,10 @@ namespace Schaakproject
                 }
                 else
                 {
+                    if (nieuwVakje.schaakstuk != null)
+                    {
+                        nieuwVakje.schaakstuk.Slaan();
+                    }
                     speler.validezet = true;
                 }
             }
