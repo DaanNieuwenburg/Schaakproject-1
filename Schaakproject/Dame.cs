@@ -12,6 +12,7 @@ namespace Schaakproject
         {
             this.vakje = vakje;
             this.kleur = kleur;
+            this.speler = speler;
             if (kleur == "wit")
             {
                 afbeelding = Properties.Resources.DameWit;

@@ -103,9 +103,36 @@ namespace Schaakproject
         }
         public void VeranderSpeler()
         {
+            if (SpelMode == "Multiplayer")
+            {
+                if (Speler1.aantalstukken[5] < 3 && Speler2.aantalstukken[5] < 3)
+                {
+                    bool checkweingstukken = schaakbord.CheckWeinigStukken(Speler1, Speler2);
+                    if (checkweingstukken == true)
+                    {
+                        RemiseMelding _remise = new RemiseMelding(this);
+                        _remise.ShowDialog();
+                        speelbord.Hide();
+                    }
+                }
+            }
+            else
+            {
+                if (Speler1.aantalstukken[5] < 3 && computerSpeler.aantalstukken[5] < 3)
+                {
+                    bool checkweingstukken = schaakbord.CheckWeinigStukken(Speler1, computerSpeler);
+                    if (checkweingstukken == true)
+                    {
+                        RemiseMelding _remise = new RemiseMelding(this);
+                        _remise.ShowDialog();
+                        speelbord.Hide();
+                    }
+                }
+            }
             veranderlbltext();
             bool schaak;
             bool mat;
+            bool pat;
             //Console.WriteLine("VeranderSpeler");
             if (spelerAanZet == Speler1)
             {
@@ -143,6 +170,28 @@ namespace Schaakproject
                         }
                     }
                 }
+                else
+                {
+                    if (SpelMode == "Singleplayer")
+                    {
+                        pat = schaakbord.CheckPat(computerSpeler.Koning);
+                        if (pat == true)
+                        {
+                            Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Purple;
+                        }
+                    }
+                    else
+                    {
+
+                        pat = schaakbord.CheckPat(Speler2.Koning);
+                        if (pat == true)
+                        {
+                            RemiseMelding _remise = new RemiseMelding(this);
+                            _remise.ShowDialog();
+                            speelbord.Hide();
+                        }
+                    }
+                }
             }
             else
             {
@@ -159,6 +208,16 @@ namespace Schaakproject
                         Speler1.Koning.vakje.pbox.Image = Properties.Resources.WitMat1;
                         SchaakMat _SchaakMat = new SchaakMat(Speler2.Naam, this);
                         _SchaakMat.ShowDialog();
+                        speelbord.Hide();
+                    }
+                }
+                else
+                {
+                    pat = schaakbord.CheckPat(Speler1.Koning);
+                    if (pat == true)
+                    {
+                        RemiseMelding _remise = new RemiseMelding(this);
+                        _remise.ShowDialog();
                         speelbord.Hide();
                     }
                 }
