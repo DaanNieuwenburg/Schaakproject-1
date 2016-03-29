@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Drawing;
 
 namespace Schaakproject
 {
@@ -17,10 +17,12 @@ namespace Schaakproject
         public Vakje selected { get; set; } //Maakt de computer gebruik van
         public string Variant { get; set; }    //Klassiek of Chess960
         public Schaakbord schaakbord { get; set; }
+        private Color _bordercolor { get; set; }
         public SpeelBord speelbord { get; set; }
 
-        public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant)
+        public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant, Color bordercolor)
         {
+            _bordercolor = bordercolor;
             SpelMode = Mode;
             this.Variant = Variant;
             if (SpelMode == "Singleplayer")
@@ -57,7 +59,7 @@ namespace Schaakproject
             Console.WriteLine("start");
             Schaakbord schaakbord = new Schaakbord(Variant, this, Speler1, Speler2);
             this.schaakbord = schaakbord;
-            SpeelBord speelbord = new SpeelBord(this, schaakbord, SpelMode, Speler1, Speler2, computerSpeler, Variant);
+            SpeelBord speelbord = new SpeelBord(this, schaakbord, SpelMode, Speler1, Speler2, computerSpeler, Variant, _bordercolor);
             this.speelbord = speelbord;
             speelbord.Show();
         }
@@ -66,11 +68,11 @@ namespace Schaakproject
         {
             if (spelMode == "Multiplayer" || SpelMode == "Online")
             {
-                Spel spel = new Spel(spelMode, speler1Naam, speler2Naam, Variant);
+                Spel spel = new Spel(spelMode, speler1Naam, speler2Naam, Variant, _bordercolor);
             }
             else
             {
-                Spel spel = new Spel(spelMode, speler1Naam, "comp", Variant);
+                Spel spel = new Spel(spelMode, speler1Naam, "comp", Variant, _bordercolor);
             }
         }
         public void veranderlbltext()

@@ -123,6 +123,16 @@ namespace Schaakproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap border_transparent {
+            get {
+                object obj = ResourceManager.GetObject("border_transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap border2 {
             get {
                 object obj = ResourceManager.GetObject("border2", resourceCulture);
@@ -156,6 +166,26 @@ namespace Schaakproject.Properties {
         internal static System.Drawing.Bitmap button_960_click {
             get {
                 object obj = ResourceManager.GetObject("button 960 click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_bordercolor {
+            get {
+                object obj = ResourceManager.GetObject("button bordercolor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_bordercolor_click {
+            get {
+                object obj = ResourceManager.GetObject("button bordercolor click", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -626,6 +656,26 @@ namespace Schaakproject.Properties {
         internal static System.Drawing.Bitmap button_schaken9601 {
             get {
                 object obj = ResourceManager.GetObject("button schaken9601", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_settings {
+            get {
+                object obj = ResourceManager.GetObject("button settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_settings_click {
+            get {
+                object obj = ResourceManager.GetObject("button settings click", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

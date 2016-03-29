@@ -19,6 +19,7 @@ namespace Schaakproject
         private string Speler2 { get; set; }
         private bool click { get; set; }
         private string _username { get; set; }
+        public Color _bordercolor { get; set; }
         private bool click2 { get; set; }
         public NaamInvoer()
         {
@@ -34,23 +35,21 @@ namespace Schaakproject
             {
                 Speler1 = txtSpeler1Naam.Text;
                 Speler2 = txtSpeler2Naam.Text;
-                Spel spel = new Spel(Mode, Speler1, Speler2, Variant);
+                Spel spel = new Spel(Mode, Speler1, Speler2, Variant, _bordercolor);
             }
             else if (Mode == "Multiplayer")
             {
                 Speler1 = txtSpeler1Naam.Text;
                 Speler2 = txtSpeler2Naam.Text;
-                Spel spel = new Spel(Mode, Speler1, Speler2, Variant);
+                Spel spel = new Spel(Mode, Speler1, Speler2, Variant, _bordercolor);
             }
             else if (Mode == "Online")
             {
                 Speler1 = _username;
                 Speler2 = txtSpeler2Naam.Text;
-                Spel spel = new Spel(Mode, _username, Speler2, Variant);
+                Spel spel = new Spel(Mode, _username, Speler2, Variant, _bordercolor);
             }
-            
-            
-            hLabel.Visible = true;
+
         }
 
         private void btModeMultiplayer_Click(object sender, EventArgs e)
@@ -58,7 +57,7 @@ namespace Schaakproject
             // Maak mode buttons niet zichtbaar
             btModeComputer.Visible = false;
             btModeMultiplayer.Visible = false;
-            btModeRealMulti.Visible = false;
+            btnSettings.Visible = false;
             lbTitel.Text = "Multiplayer";
             btnKlassiek.Visible = true;
             btnChess960.Visible = true;
@@ -68,14 +67,12 @@ namespace Schaakproject
             txtSpeler2Naam.Visible = true;
             btnBegin.Visible = false;
             Mode = "Multiplayer";
-            hLabel.Visible = false;
         }
 
         private void btModeComputer_Click(object sender, EventArgs e)
         {
             btModeComputer.Visible = false;
             btModeMultiplayer.Visible = false;
-            btModeRealMulti.Visible = false;
             lbTitel.Text = "Single Player";
             btnKlassiek.Visible = true;
             btnChess960.Visible = true;
@@ -85,7 +82,6 @@ namespace Schaakproject
             txtSpeler2Naam.Visible = false;
             btnBegin.Visible = false;
             Mode = "Singleplayer";
-            hLabel.Visible = false;
 
         }
 
@@ -94,7 +90,6 @@ namespace Schaakproject
             Mode = "Online";
             btModeComputer.Visible = false;
             btModeMultiplayer.Visible = false;
-            btModeRealMulti.Visible = false;
             lbTitel.Text = "Online";
             btnKlassiek.Visible = false;
             btnChess960.Visible = false;
@@ -105,13 +100,12 @@ namespace Schaakproject
             LoginForm Login = new LoginForm();
             //Login.Visible = true;
             Login.ShowDialog();
-            hLabel.Visible = false;
             if (Login.login == true)
             {
                 _username = Login.username;
                 Console.WriteLine("Test Naaminvoer: " + _username);
                 btnKlassiek.Visible = true;
-                btnChess960.Visible = true;   
+                btnChess960.Visible = true;
             }
         }
 
@@ -137,19 +131,6 @@ namespace Schaakproject
             this.btModeMultiplayer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button1KladClick);
 
         }
-
-        private void btModeRealMulti_MouseEnter(object sender, EventArgs e)
-        {
-            this.btModeRealMulti.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button3KladClick);
-
-        }
-
-        private void btModeRealMulti_MouseLeave(object sender, EventArgs e)
-        {
-            this.btModeRealMulti.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button3Klad);
-
-        }
-
         private void btnBegin_MouseEnter(object sender, EventArgs e)
         {
             this.btnBegin.BackgroundImage = (System.Drawing.Image)(Properties.Resources.buttonBeginClick);
@@ -175,7 +156,7 @@ namespace Schaakproject
                 // Maak mode buttons niet zichtbaar
                 btModeComputer.Visible = true;
                 btModeMultiplayer.Visible = true;
-                btModeRealMulti.Visible = true;
+                btnSettings.Visible = true;
                 lbTitel.Text = "Selecteer een schaakmode";
 
                 lblSpeler1Naam.Visible = false;
@@ -185,7 +166,6 @@ namespace Schaakproject
                 btnBegin.Visible = false;
                 btnKlassiek.Visible = false;
                 btnChess960.Visible = false;
-                hLabel.Visible = true;
             }
         }
 
@@ -246,12 +226,64 @@ namespace Schaakproject
             {
                 this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960);
             }
-            
+
         }
 
         private void btnChess960_MouseEnter(object sender, EventArgs e)
         {
             this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960_click);
+        }
+
+        private void btnSettings_MouseEnter(object sender, EventArgs e)
+        {
+            btnSettings.BackgroundImage = Properties.Resources.button_settings_click;
+        }
+
+        private void btnSettings_MouseLeave(object sender, EventArgs e)
+        {
+            btnSettings.BackgroundImage = Properties.Resources.button_settings;
+        }
+
+        private void btnborder_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            DialogResult result = colorDialog.ShowDialog();
+            // See if user pressed ok.
+            if (result == DialogResult.OK)
+            {
+                _bordercolor = colorDialog.Color;
+            }
+            else
+            {
+                _bordercolor = Color.RosyBrown;
+            }
+
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            lbTitel.Text = "Settings";
+            btModeComputer.Visible = false;
+            btModeMultiplayer.Visible = false;
+            btnSettings.Visible = false;
+            lblSpeler1Naam.Visible = false;
+            lblSpeler2Naam.Visible = false;
+            txtSpeler1Naam.Visible = false;
+            txtSpeler2Naam.Visible = false;
+            btnBegin.Visible = false;
+            btnKlassiek.Visible = false;
+            btnChess960.Visible = false;
+            btnborder.Visible = true;
+        }
+
+        private void btnborder_MouseEnter(object sender, EventArgs e)
+        {
+            btnborder.BackgroundImage = Properties.Resources.button_bordercolor_click;
+        }
+
+        private void btnborder_MouseLeave(object sender, EventArgs e)
+        {
+            btnborder.BackgroundImage = Properties.Resources.button_bordercolor;
         }
     }
 }

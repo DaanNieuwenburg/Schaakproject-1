@@ -21,14 +21,15 @@ namespace Schaakproject
         private int clicks { get; set; }                    //voor het laten zien van de uitleg
         public string variant { get; set; }                //string voor spelvariant
         private bool _witaanzet { get; set; }
+        private Color _bordercolor { get; set; }
         private int optie { get; set; }
-        public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2, Computer computerSpeler, string Variant)
+        public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2, Computer computerSpeler, string Variant, Color border)
         {
             clicks = 0;
             _SpelMode = SpelMode;
             variant = Variant;
             InitializeComponent();
-
+            _bordercolor = border;
             _speler1 = Speler1;
             _speler2 = Speler2;
             if (_speler1.Naam == "")
@@ -75,7 +76,8 @@ namespace Schaakproject
 
             }
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1.BackgroundImage = Properties.Resources.border2;
+            this.pictureBox1.BackgroundImage = Properties.Resources.border_transparent;
+            pictureBox1.BackColor = _bordercolor;
             this.pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(1, 36);
             this.pictureBox1.Name = "pictureBox1";

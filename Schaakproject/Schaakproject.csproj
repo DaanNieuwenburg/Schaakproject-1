@@ -502,6 +502,21 @@
   <ItemGroup>
     <None Include="Resources\border3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button settings click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button bordercolor click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button bordercolor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\border_transparent.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

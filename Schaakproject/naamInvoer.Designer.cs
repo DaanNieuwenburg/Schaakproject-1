@@ -36,12 +36,12 @@
             this.lblSpeler2Naam = new System.Windows.Forms.Label();
             this.btModeMultiplayer = new System.Windows.Forms.Button();
             this.btModeComputer = new System.Windows.Forms.Button();
-            this.btModeRealMulti = new System.Windows.Forms.Button();
             this.lbTitel = new System.Windows.Forms.Label();
             this.btTerug = new System.Windows.Forms.Button();
-            this.hLabel = new System.Windows.Forms.Label();
             this.btnKlassiek = new System.Windows.Forms.Button();
             this.btnChess960 = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnborder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtSpeler1Naam
@@ -141,24 +141,6 @@
             this.btModeComputer.MouseEnter += new System.EventHandler(this.btModeComputer_MouseEnter);
             this.btModeComputer.MouseLeave += new System.EventHandler(this.btModeComputer_MouseLeave);
             // 
-            // btModeRealMulti
-            // 
-            this.btModeRealMulti.BackColor = System.Drawing.Color.Transparent;
-            this.btModeRealMulti.BackgroundImage = global::Schaakproject.Properties.Resources.button3Klad;
-            this.btModeRealMulti.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btModeRealMulti.FlatAppearance.BorderSize = 0;
-            this.btModeRealMulti.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btModeRealMulti.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btModeRealMulti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btModeRealMulti.Location = new System.Drawing.Point(185, 142);
-            this.btModeRealMulti.Name = "btModeRealMulti";
-            this.btModeRealMulti.Size = new System.Drawing.Size(150, 63);
-            this.btModeRealMulti.TabIndex = 7;
-            this.btModeRealMulti.UseVisualStyleBackColor = false;
-            this.btModeRealMulti.Click += new System.EventHandler(this.btModeRealMulti_Click);
-            this.btModeRealMulti.MouseEnter += new System.EventHandler(this.btModeRealMulti_MouseEnter);
-            this.btModeRealMulti.MouseLeave += new System.EventHandler(this.btModeRealMulti_MouseLeave);
-            // 
             // lbTitel
             // 
             this.lbTitel.BackColor = System.Drawing.Color.Transparent;
@@ -188,15 +170,6 @@
             this.btTerug.Click += new System.EventHandler(this.button1_Click);
             this.btTerug.MouseEnter += new System.EventHandler(this.btTerug_MouseEnter);
             this.btTerug.MouseLeave += new System.EventHandler(this.btTerug_MouseLeave);
-            // 
-            // hLabel
-            // 
-            this.hLabel.AutoSize = true;
-            this.hLabel.Location = new System.Drawing.Point(216, 173);
-            this.hLabel.Name = "hLabel";
-            this.hLabel.Size = new System.Drawing.Size(82, 13);
-            this.hLabel.TabIndex = 13;
-            this.hLabel.Text = "Hidden function";
             // 
             // btnKlassiek
             // 
@@ -236,6 +209,44 @@
             this.btnChess960.MouseEnter += new System.EventHandler(this.btnChess960_MouseEnter);
             this.btnChess960.MouseLeave += new System.EventHandler(this.btnChess960_MouseLeave);
             // 
+            // btnSettings
+            // 
+            this.btnSettings.BackColor = System.Drawing.Color.Transparent;
+            this.btnSettings.BackgroundImage = global::Schaakproject.Properties.Resources.button_settings;
+            this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.ForeColor = System.Drawing.Color.Transparent;
+            this.btnSettings.Location = new System.Drawing.Point(185, 152);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(150, 63);
+            this.btnSettings.TabIndex = 16;
+            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            this.btnSettings.MouseEnter += new System.EventHandler(this.btnSettings_MouseEnter);
+            this.btnSettings.MouseLeave += new System.EventHandler(this.btnSettings_MouseLeave);
+            // 
+            // btnborder
+            // 
+            this.btnborder.BackColor = System.Drawing.Color.Transparent;
+            this.btnborder.BackgroundImage = global::Schaakproject.Properties.Resources.button_bordercolor;
+            this.btnborder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnborder.FlatAppearance.BorderSize = 0;
+            this.btnborder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnborder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnborder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnborder.Location = new System.Drawing.Point(158, 32);
+            this.btnborder.Name = "btnborder";
+            this.btnborder.Size = new System.Drawing.Size(200, 66);
+            this.btnborder.TabIndex = 17;
+            this.btnborder.UseVisualStyleBackColor = false;
+            this.btnborder.Visible = false;
+            this.btnborder.Click += new System.EventHandler(this.btnborder_Click);
+            this.btnborder.MouseEnter += new System.EventHandler(this.btnborder_MouseEnter);
+            this.btnborder.MouseLeave += new System.EventHandler(this.btnborder_MouseLeave);
+            // 
             // NaamInvoer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,12 +254,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(514, 455);
+            this.Controls.Add(this.btnborder);
+            this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnChess960);
             this.Controls.Add(this.btnKlassiek);
-            this.Controls.Add(this.hLabel);
             this.Controls.Add(this.btTerug);
             this.Controls.Add(this.txtSpeler1Naam);
-            this.Controls.Add(this.btModeRealMulti);
             this.Controls.Add(this.btModeComputer);
             this.Controls.Add(this.btModeMultiplayer);
             this.Controls.Add(this.lblSpeler2Naam);
@@ -272,11 +283,11 @@
         public System.Windows.Forms.TextBox txtSpeler2Naam;
         private System.Windows.Forms.Button btModeMultiplayer;
         private System.Windows.Forms.Button btModeComputer;
-        private System.Windows.Forms.Button btModeRealMulti;
         private System.Windows.Forms.Label lbTitel;
         private System.Windows.Forms.Button btTerug;
-        private System.Windows.Forms.Label hLabel;
         private System.Windows.Forms.Button btnKlassiek;
         private System.Windows.Forms.Button btnChess960;
+        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnborder;
     }
 }
