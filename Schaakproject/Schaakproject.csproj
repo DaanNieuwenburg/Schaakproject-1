@@ -445,6 +445,63 @@
   <ItemGroup>
     <None Include="Resources\button terug click 2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels enpassant click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels enpassant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels promoveren click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels promoveren.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels rokeren click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels rokeren.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels stukken click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels stukken.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button spel 1 click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button spel 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels mat click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels mat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels schaak click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels schaak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels zetten click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button regels zetten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\border.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\border2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\border3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

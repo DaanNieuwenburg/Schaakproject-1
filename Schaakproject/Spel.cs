@@ -256,10 +256,11 @@ namespace Schaakproject
             }
         }
 
-        public void updateAantalStukken(Speler speler)
+        public void updateAantalStukken(Mens speler)
         {
             if (SpelMode != "Singleplayer")
             {
+                speler.resterendestukken = speler.resterendestukken - 1;
                 if (speler.Kleur == "wit")
                 {
                     speelbord.lblaantal2.Text = Convert.ToString(Speler1.resterendestukken); //onlogisch, speler1 = label 2

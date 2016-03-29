@@ -239,6 +239,10 @@ namespace Schaakproject
             {
                 if (vorige.buurNoord == nieuwVakje)
                 {
+                    if (vorige.buurNoord.schaakstuk != null && vorige.buurNoord.schaakstuk.kleur != speler.Kleur)
+                    {
+                        spel.updateAantalStukken(speler);
+                    }
                     mogelijk = true;
                     mogelijkloop = true;
                 }
@@ -256,6 +260,10 @@ namespace Schaakproject
                 {
                     if (vorige.buurOost == nieuwVakje)
                     {
+                        if (vorige.buurOost.schaakstuk != null && vorige.buurOost.schaakstuk.kleur != speler.Kleur)
+                        {
+                            spel.updateAantalStukken(speler);
+                        }
                         mogelijk = true;
                         mogelijkloop = true;
                     }
@@ -274,9 +282,12 @@ namespace Schaakproject
                 {
                     if (vorige.buurZuid == nieuwVakje)
                     {
+                        if (vorige.buurZuid.schaakstuk != null && vorige.buurZuid.schaakstuk.kleur != speler.Kleur)
+                        {
+                            spel.updateAantalStukken(speler);
+                        }
                         mogelijk = true;
                         mogelijkloop = true;
-
                     }
                     else if (vorige.buurZuid == null || vorige.buurZuid.schaakstuk != null)
                     {
@@ -293,6 +304,10 @@ namespace Schaakproject
                 {
                     if (vorige.buurWest == nieuwVakje)
                     {
+                        if (vorige.buurWest.schaakstuk != null && vorige.buurWest.schaakstuk.kleur != speler.Kleur)
+                        {
+                            spel.updateAantalStukken(speler);
+                        }
                         mogelijk = true;
                         mogelijkloop = true;
                     }
@@ -311,6 +326,10 @@ namespace Schaakproject
             {
                 if (vorige.buurNoordoost == nieuwVakje)
                 {
+                    if (vorige.buurNoordoost.schaakstuk != null && vorige.buurNoordoost.schaakstuk.kleur != speler.Kleur)
+                    {
+                        spel.updateAantalStukken(speler);
+                    }
                     mogelijk = true;
                     mogelijkloop = true;
                 }
@@ -328,6 +347,10 @@ namespace Schaakproject
                 {
                     if (vorige.buurNoordwest == nieuwVakje)
                     {
+                        if (vorige.buurNoordwest.schaakstuk != null && vorige.buurNoordwest.schaakstuk.kleur != speler.Kleur)
+                        {
+                            spel.updateAantalStukken(speler);
+                        }
                         mogelijk = true;
                         mogelijkloop = true;
                     }
@@ -346,6 +369,10 @@ namespace Schaakproject
                 {
                     if (vorige.buurZuidoost == nieuwVakje)
                     {
+                        if (vorige.buurZuidoost.schaakstuk != null && vorige.buurZuidoost.schaakstuk.kleur != speler.Kleur)
+                        {
+                            spel.updateAantalStukken(speler);
+                        }
                         mogelijk = true;
                         mogelijkloop = true;
 
@@ -365,6 +392,10 @@ namespace Schaakproject
                 {
                     if (vorige.buurZuidwest == nieuwVakje)
                     {
+                        if (vorige.buurZuidwest.schaakstuk != null && vorige.buurZuidwest.schaakstuk.kleur != speler.Kleur)
+                        {
+                            spel.updateAantalStukken(speler);
+                        }
                         mogelijk = true;
                         mogelijkloop = true;
                     }

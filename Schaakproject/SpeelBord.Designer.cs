@@ -58,7 +58,7 @@
             this.lblPlayer1.BackColor = System.Drawing.Color.Transparent;
             this.lblPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer1.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPlayer1.Location = new System.Drawing.Point(68, 493);
+            this.lblPlayer1.Location = new System.Drawing.Point(68, 504);
             this.lblPlayer1.Name = "lblPlayer1";
             this.lblPlayer1.Size = new System.Drawing.Size(26, 18);
             this.lblPlayer1.TabIndex = 0;
@@ -99,7 +99,7 @@
             this.lblResterend1.BackColor = System.Drawing.Color.Transparent;
             this.lblResterend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResterend1.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblResterend1.Location = new System.Drawing.Point(260, 493);
+            this.lblResterend1.Location = new System.Drawing.Point(260, 504);
             this.lblResterend1.Name = "lblResterend1";
             this.lblResterend1.Size = new System.Drawing.Size(146, 18);
             this.lblResterend1.TabIndex = 3;
@@ -135,7 +135,7 @@
             this.lblaantal1.BackColor = System.Drawing.Color.Transparent;
             this.lblaantal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblaantal1.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblaantal1.Location = new System.Drawing.Point(406, 493);
+            this.lblaantal1.Location = new System.Drawing.Point(406, 504);
             this.lblaantal1.Name = "lblaantal1";
             this.lblaantal1.Size = new System.Drawing.Size(0, 18);
             this.lblaantal1.TabIndex = 6;
@@ -402,5 +402,6 @@
         public System.Windows.Forms.Label lblbeurt;
         public System.Windows.Forms.Label lblaantal2;
         public System.Windows.Forms.Label lblaantal1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
