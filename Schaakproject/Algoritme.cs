@@ -35,15 +35,13 @@ namespace Schaakproject
             Console.WriteLine("-------------------------------------");
             if (slaanmogelijkheden.Count > 0)
             {
-                Console.WriteLine("SLA EEN STUK");
                 slaEenStuk();
             }
             else
             {
-                Console.WriteLine("Verplaats een stuk verder");
                 Random rnd = new Random();
-                int percentage = 1;
-                //int percentage = rnd.Next(1, 4);
+                //int percentage = 1;
+                int percentage = rnd.Next(1, 4);
                 if (percentage == 1)
                 {
                     verplaatsNieuwStuk();
@@ -54,7 +52,7 @@ namespace Schaakproject
                 }
                 else
                 {
-                   //Algoritme();
+                    verplaatsNieuwStuk();
                 }
             }
         }
@@ -97,7 +95,6 @@ namespace Schaakproject
             // Kijk nu per verplaatst stuk of er geslagen kan worden
             foreach (Vakje verplaatststuk in _computer.verplaatsingsLijst)
             {
-                verplaatststuk.pbox.BackColor = System.Drawing.Color.Aqua;
                 Console.WriteLine("Zoekt in verplaatst");
                 if (verplaatststuk.schaakstuk is Pion)
                 {
@@ -229,7 +226,7 @@ namespace Schaakproject
                 }
                 else
                 {
-                    verplaatsNieuwStuk();
+                    verplaatsVerplaatstStuk();
                 }
             }
 
@@ -254,7 +251,7 @@ namespace Schaakproject
                 }
                 else
                 {
-                    verplaatsNieuwStuk();
+                    verplaatsVerplaatstStuk();
                 }
             }
 
@@ -279,7 +276,7 @@ namespace Schaakproject
                 }
                 else
                 {
-                    verplaatsNieuwStuk();
+                    verplaatsVerplaatstStuk();
                 }
             }
 
@@ -304,7 +301,7 @@ namespace Schaakproject
                 }
                 else
                 {
-                    verplaatsNieuwStuk();
+                    verplaatsVerplaatstStuk();
                 }
             }
 
@@ -344,7 +341,7 @@ namespace Schaakproject
                 else
                 {
                     Console.WriteLine("Algoritme got brainfucked :(");
-                    verplaatsNieuwStuk();
+                    verplaatsVerplaatstStuk();
                 }
             }
         }
@@ -352,18 +349,38 @@ namespace Schaakproject
         {
             Console.WriteLine("Verplaatst verplaatst stuk");
             // Kijk nu per verplaatst stuk of er geslagen kan worden
-            foreach (Vakje verplaatststuk in _computer.verplaatsingsLijst)
+            bool alVerplaatst = false;
+            for (int i = 0; i < _computer.verplaatsingsLijst.Count; i++)
             {
-                verplaatststuk.pbox.BackColor = System.Drawing.Color.Aqua;
-                Console.WriteLine("Zoekt in verplaatst");
-                if (verplaatststuk.schaakstuk is Pion)
+                Console.WriteLine("IN DE LOOP");
+                Schaakstuk schaakstuk = _computer.verplaatsingsLijst[i].schaakstuk;
+                if (schaakstuk is Pion && alVerplaatst == false)
                 {
-                    if (verplaatststuk.buurZuid.schaakstuk == null)
+                    Console.WriteLine("Verplaats Pion");
+                    _geselecteerdStuk = _computer.verplaatsingsLijst[i];  // geselecteerd stuk
+                    if (_geselecteerdStuk.buurZuid != null && _geselecteerdStuk.buurZuid.schaakstuk == null)
                     {
-                        _geselecteerdStuk = verplaatststuk;             // geselecteerd stuk
-                        _geselecteerdVakje = verplaatststuk.buurZuid;    // geselecteerd vak
-                        _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                        if(_geselecteerdStuk.buurZuid.buurZuidoost != null && _geselecteerdStuk.buurZuid.buurZuidoost.schaakstuk == null && _geselecteerdStuk.buurZuid.buurZuidwest != null && _geselecteerdStuk.buurZuid.buurZuidwest.schaakstuk == null)
+                        {
+                            _geselecteerdVakje = _computer.verplaatsingsLijst[i].buurZuid;       // geselecteerd vak
+                            alVerplaatst = true;
+                            _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                        }
+                        else
+                        {
+                            verplaatsNieuwStuk();
+                            alVerplaatst = true;
+                        }
                     }
+                    else
+                    {
+                        verplaatsNieuwStuk();
+                        alVerplaatst = true;
+                    }
+                }
+                else if(i + 1 == _computer.verplaatsingsLijst.Count && alVerplaatst == false)
+                {
+                    verplaatsNieuwStuk();
                 }
             }
         }
