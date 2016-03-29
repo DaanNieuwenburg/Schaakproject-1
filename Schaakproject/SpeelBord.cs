@@ -74,6 +74,19 @@ namespace Schaakproject
                 }
 
             }
+            // pictureBox1
+            // 
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1.BackgroundImage = Image.FromFile(@"D:\HBO-ICT Periode 3\Project\border2.png");
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox1.Location = new System.Drawing.Point(1, 39);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(459, 460);
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            this.Controls.Add(pictureBox1);
+            
+            // 
 
             // Het spel is singleplayer of multiplayer
             if (_SpelMode.Equals("Singleplayer"))
