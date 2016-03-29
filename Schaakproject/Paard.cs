@@ -102,7 +102,6 @@ namespace Schaakproject
                 {
                     if(nieuwVakje.schaakstuk != null)
                     {
-                        speler.resterendestukken = speler.resterendestukken - 1;
                         spel.updateAantalStukken(speler);
                         Console.WriteLine("SLAAT");
                     }
@@ -112,7 +111,6 @@ namespace Schaakproject
                 {
                     if (nieuwVakje.schaakstuk != null)
                     {
-                        speler.resterendestukken = speler.resterendestukken - 1;
                         spel.updateAantalStukken(speler);
                         Console.WriteLine("SLAAT");
                     }
@@ -125,7 +123,6 @@ namespace Schaakproject
                 {
                     if (nieuwVakje.schaakstuk != null)
                     {
-                        speler.resterendestukken = speler.resterendestukken - 1;
                         spel.updateAantalStukken(speler);
                         Console.WriteLine("SLAAT");
                     }
@@ -135,7 +132,6 @@ namespace Schaakproject
                 {
                     if (nieuwVakje.schaakstuk != null)
                     {
-                        speler.resterendestukken = speler.resterendestukken - 1;
                         spel.updateAantalStukken(speler);
                         Console.WriteLine("SLAAT");
                     }
@@ -148,7 +144,6 @@ namespace Schaakproject
                 {
                     if (nieuwVakje.schaakstuk != null)
                     {
-                        speler.resterendestukken = speler.resterendestukken - 1;
                         spel.updateAantalStukken(speler);
                         Console.WriteLine("SLAAT");
                     }
@@ -158,7 +153,6 @@ namespace Schaakproject
                 {
                     if (nieuwVakje.schaakstuk != null)
                     {
-                        speler.resterendestukken = speler.resterendestukken - 1;
                         spel.updateAantalStukken(speler);
                         Console.WriteLine("SLAAT");
                     }
@@ -171,7 +165,6 @@ namespace Schaakproject
                 {
                     if (nieuwVakje.schaakstuk != null)
                     {
-                        speler.resterendestukken = speler.resterendestukken - 1;
                         spel.updateAantalStukken(speler);
                         Console.WriteLine("SLAAT");
                     }
@@ -182,7 +175,6 @@ namespace Schaakproject
                 {
                     if (nieuwVakje.schaakstuk != null)
                     {
-                        speler.resterendestukken = speler.resterendestukken - 1;
                         spel.updateAantalStukken(speler);
                         Console.WriteLine("SLAAT");
                     }

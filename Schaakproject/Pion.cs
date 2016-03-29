@@ -141,6 +141,7 @@ namespace Schaakproject
                 // Slaan naar zuidoost voor een zwarte pion
                 else if (selected.buurZuidoost == nieuwVakje && kleur == "zwart" && nieuwVakje.schaakstuk != null)
                 {
+                    Console.WriteLine("ZWARTSLAANZO");
                     spel.updateAantalStukken(speler);
                     mogelijk = true;
                 }
@@ -148,6 +149,7 @@ namespace Schaakproject
                 // Slaan naar zuidwest voor een zwarte pion
                 else if (selected.buurZuidwest == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
+                    Console.WriteLine("ZWARTSLAANZW");
                     spel.updateAantalStukken(speler);
                     mogelijk = true;
                 }
@@ -182,6 +184,7 @@ namespace Schaakproject
                     //en-passant slaan naar zuidoost
                     if (selected.buurZuidoost == nieuwVakje && base.speler.enPassantPion == selected.buurOost.schaakstuk && base.speler.enPassantPion != null)
                     {
+                        Console.WriteLine("ENPASSANTZO");
                         spel.updateAantalStukken(speler);
                         locatie = false;
                         tempPion = selected.buurOost.schaakstuk;
