@@ -42,6 +42,7 @@
             this.btnChess960 = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnborder = new System.Windows.Forms.Button();
+            this.btnselect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtSpeler1Naam
@@ -232,7 +233,7 @@
             // 
             this.btnborder.BackColor = System.Drawing.Color.Transparent;
             this.btnborder.BackgroundImage = global::Schaakproject.Properties.Resources.button_bordercolor;
-            this.btnborder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnborder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnborder.FlatAppearance.BorderSize = 0;
             this.btnborder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnborder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -247,6 +248,25 @@
             this.btnborder.MouseEnter += new System.EventHandler(this.btnborder_MouseEnter);
             this.btnborder.MouseLeave += new System.EventHandler(this.btnborder_MouseLeave);
             // 
+            // btnselect
+            // 
+            this.btnselect.BackColor = System.Drawing.Color.Transparent;
+            this.btnselect.BackgroundImage = global::Schaakproject.Properties.Resources.button_selectedcolor;
+            this.btnselect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnselect.FlatAppearance.BorderSize = 0;
+            this.btnselect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnselect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnselect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnselect.Location = new System.Drawing.Point(158, 87);
+            this.btnselect.Name = "btnselect";
+            this.btnselect.Size = new System.Drawing.Size(200, 66);
+            this.btnselect.TabIndex = 18;
+            this.btnselect.UseVisualStyleBackColor = false;
+            this.btnselect.Visible = false;
+            this.btnselect.Click += new System.EventHandler(this.btnselect_Click);
+            this.btnselect.MouseEnter += new System.EventHandler(this.btnselect_MouseEnter);
+            this.btnselect.MouseLeave += new System.EventHandler(this.btnselect_MouseLeave);
+            // 
             // NaamInvoer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,6 +274,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(514, 455);
+            this.Controls.Add(this.btnselect);
             this.Controls.Add(this.btnborder);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnChess960);
@@ -289,5 +310,6 @@
         private System.Windows.Forms.Button btnChess960;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnborder;
+        private System.Windows.Forms.Button btnselect;
     }
 }

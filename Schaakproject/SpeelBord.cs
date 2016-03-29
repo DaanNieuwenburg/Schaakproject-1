@@ -73,7 +73,6 @@ namespace Schaakproject
 
                     pictureBox.Click += new EventHandler((o, a) => select(pictureBox));
                 }
-
             }
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1.BackgroundImage = Properties.Resources.border_transparent;
@@ -236,7 +235,7 @@ namespace Schaakproject
 
         private void btnvariant_Click(object sender, EventArgs e)
         {
-            if (clicks == 2 && optie == 2)
+            if (clicks == 2 && optie == 1)
             {
                 clicks++;
                 lbluitleg.Visible = true;
@@ -278,6 +277,7 @@ namespace Schaakproject
                 this.btndame.Visible = false;
                 btnpaard.BackgroundImage = Properties.Resources.button_regels_schaak;
                 btntoren.BackgroundImage = Properties.Resources.button_regels_mat;
+                btnloper.BackgroundImage = Properties.Resources.button_regels_remise;
                 this.btnkoning.Visible = false;
                 this.btntoren.Visible = true;
                 this.btnloper.Visible = true;
@@ -741,12 +741,28 @@ namespace Schaakproject
 
         private void btnloper_MouseEnter(object sender, EventArgs e)
         {
-            btnloper.BackgroundImage = Properties.Resources.button_regels_loper_click1;
+            if (optie == 1)
+            {
+                btnloper.BackgroundImage = Properties.Resources.button_regels_remise_click;
+            }
+            else
+            {
+                btnloper.BackgroundImage = Properties.Resources.button_regels_loper_click1;
+
+            }
         }
 
         private void btnloper_MouseLeave(object sender, EventArgs e)
         {
-            btnloper.BackgroundImage = Properties.Resources.button_regels_loper1;
+            if (optie == 1)
+            {
+                btnloper.BackgroundImage = Properties.Resources.button_regels_remise;
+            }
+            else
+            {
+                btnloper.BackgroundImage = Properties.Resources.button_regels_loper1;
+
+            }
         }
 
         private void btndame_MouseEnter(object sender, EventArgs e)

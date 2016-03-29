@@ -18,40 +18,31 @@ namespace Schaakproject
         public string Variant { get; set; }    //Klassiek of Chess960
         public Schaakbord schaakbord { get; set; }
         private Color _bordercolor { get; set; }
+        private Color _selectcolor { get; set; }
         public SpeelBord speelbord { get; set; }
 
-        public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant, Color bordercolor)
+        public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant, Color bordercolor, Color select)
         {
+            _selectcolor = select;
             _bordercolor = bordercolor;
             SpelMode = Mode;
             this.Variant = Variant;
             if (SpelMode == "Singleplayer")
             {
-                Mens speler1 = new Mens(NaamSpeler1, "wit", this);
-                Computer computerSpeler = new Computer(NaamSpeler2, "zwart");
+                Mens speler1 = new Mens(NaamSpeler1, "wit", this, _selectcolor);
+                Computer computerSpeler = new Computer(NaamSpeler2, "zwart", _selectcolor);
                 Speler1 = speler1;
                 Speler2 = null;
                 this.computerSpeler = computerSpeler;
             }
             else if (Mode == "Multiplayer")
             {
-                Mens speler1 = new Mens(NaamSpeler1, "wit", this);
-                Mens speler2 = new Mens(NaamSpeler2, "zwart", this);
+                Mens speler1 = new Mens(NaamSpeler1, "wit", this, _selectcolor);
+                Mens speler2 = new Mens(NaamSpeler2, "zwart", this, _selectcolor);
                 Speler1 = speler1;
                 Speler2 = speler2;
                 computerSpeler = null;
             }
-            else if (Mode == "Online")
-            {
-                Mens speler1 = new Mens(NaamSpeler1, "wit", this);
-                Console.WriteLine("Test Spel Naamspeler1: " + NaamSpeler1);
-                Mens speler2 = new Mens(NaamSpeler2, "zwart", this);
-                Speler1 = speler1;
-                Speler2 = speler2;
-                computerSpeler = null;
-            }
-            spelerAanZet = Speler1;
-            Start();
         }
 
         public void Start()
@@ -68,11 +59,11 @@ namespace Schaakproject
         {
             if (spelMode == "Multiplayer" || SpelMode == "Online")
             {
-                Spel spel = new Spel(spelMode, speler1Naam, speler2Naam, Variant, _bordercolor);
+                Spel spel = new Spel(spelMode, speler1Naam, speler2Naam, Variant, _bordercolor, _selectcolor);
             }
             else
             {
-                Spel spel = new Spel(spelMode, speler1Naam, "comp", Variant, _bordercolor);
+                Spel spel = new Spel(spelMode, speler1Naam, "comp", Variant, _bordercolor, _selectcolor);
             }
         }
         public void veranderlbltext()

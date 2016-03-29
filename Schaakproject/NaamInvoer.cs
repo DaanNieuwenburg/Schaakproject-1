@@ -19,7 +19,8 @@ namespace Schaakproject
         private string Speler2 { get; set; }
         private bool click { get; set; }
         private string _username { get; set; }
-        public Color _bordercolor { get; set; }
+        public Color bordercolor { get; set; }
+        public Color selectcolor { get; set; }
         private bool click2 { get; set; }
         public NaamInvoer()
         {
@@ -35,19 +36,19 @@ namespace Schaakproject
             {
                 Speler1 = txtSpeler1Naam.Text;
                 Speler2 = txtSpeler2Naam.Text;
-                Spel spel = new Spel(Mode, Speler1, Speler2, Variant, _bordercolor);
+                Spel spel = new Spel(Mode, Speler1, Speler2, Variant, bordercolor, selectcolor);
             }
             else if (Mode == "Multiplayer")
             {
                 Speler1 = txtSpeler1Naam.Text;
                 Speler2 = txtSpeler2Naam.Text;
-                Spel spel = new Spel(Mode, Speler1, Speler2, Variant, _bordercolor);
+                Spel spel = new Spel(Mode, Speler1, Speler2, Variant, bordercolor, selectcolor);
             }
             else if (Mode == "Online")
             {
                 Speler1 = _username;
                 Speler2 = txtSpeler2Naam.Text;
-                Spel spel = new Spel(Mode, _username, Speler2, Variant, _bordercolor);
+                Spel spel = new Spel(Mode, _username, Speler2, Variant, bordercolor, selectcolor);
             }
 
         }
@@ -73,6 +74,7 @@ namespace Schaakproject
         {
             btModeComputer.Visible = false;
             btModeMultiplayer.Visible = false;
+            btnSettings.Visible = false;
             lbTitel.Text = "Single Player";
             btnKlassiek.Visible = true;
             btnChess960.Visible = true;
@@ -140,7 +142,6 @@ namespace Schaakproject
         private void btnBegin_MouseLeave(object sender, EventArgs e)
         {
             this.btnBegin.BackgroundImage = (System.Drawing.Image)(Properties.Resources.buttonBegin);
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -158,7 +159,8 @@ namespace Schaakproject
                 btModeMultiplayer.Visible = true;
                 btnSettings.Visible = true;
                 lbTitel.Text = "Selecteer een schaakmode";
-
+                btnborder.Visible = false;
+                btnselect.Visible = false;
                 lblSpeler1Naam.Visible = false;
                 lblSpeler2Naam.Visible = false;
                 txtSpeler1Naam.Visible = false;
@@ -248,14 +250,14 @@ namespace Schaakproject
         {
             ColorDialog colorDialog = new ColorDialog();
             DialogResult result = colorDialog.ShowDialog();
-            // See if user pressed ok.
+            // Kijk of gebruiker op OK drukt
             if (result == DialogResult.OK)
             {
-                _bordercolor = colorDialog.Color;
+                bordercolor = colorDialog.Color;
             }
             else
             {
-                _bordercolor = Color.RosyBrown;
+                bordercolor = Color.RosyBrown;
             }
 
         }
@@ -274,6 +276,7 @@ namespace Schaakproject
             btnKlassiek.Visible = false;
             btnChess960.Visible = false;
             btnborder.Visible = true;
+            btnselect.Visible = true;
         }
 
         private void btnborder_MouseEnter(object sender, EventArgs e)
@@ -284,6 +287,31 @@ namespace Schaakproject
         private void btnborder_MouseLeave(object sender, EventArgs e)
         {
             btnborder.BackgroundImage = Properties.Resources.button_bordercolor;
+        }
+
+        private void btnselect_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            DialogResult result = colorDialog.ShowDialog();
+            // Kijk of gebruiker op OK drukt
+            if (result == DialogResult.OK)
+            {
+                selectcolor = colorDialog.Color;
+            }
+            else
+            {
+                selectcolor = Color.HotPink;
+            }
+        }
+
+        private void btnselect_MouseEnter(object sender, EventArgs e)
+        {
+            btnselect.BackgroundImage = Properties.Resources.button_selectedcolor_click;
+        }
+
+        private void btnselect_MouseLeave(object sender, EventArgs e)
+        {
+            btnselect.BackgroundImage = Properties.Resources.button_selectedcolor;
         }
     }
 }

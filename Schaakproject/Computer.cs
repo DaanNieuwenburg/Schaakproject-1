@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading; // voor testen
+using System.Drawing;
 
 namespace Schaakproject
 {
@@ -14,6 +15,7 @@ namespace Schaakproject
         private Schaakstuk _vorigschaakstuk { get; set; }
         private Mens _tegenspeler { get; set; }
         private Spel _spel { get; set; }
+        private Color _selectedcolor { get; set; }
 
         private List<Vakje> _nietverplaatstlijst = new List<Vakje>();
         public List<Vakje> nietverplaatstlijst
@@ -30,8 +32,9 @@ namespace Schaakproject
         }
         private int _positieZuid { get; set; }
         private int _positieWest { get; set; }
-        public Computer(string naam, string kleur)
+        public Computer(string naam, string kleur, Color selectcolor)
         {
+            _selectedcolor = selectcolor;
             Naam = naam;
             Kleur = kleur;
         }
@@ -89,7 +92,7 @@ namespace Schaakproject
         {
             Console.WriteLine("UITVOEREN VAN ZET");
             verplaatsingsLijst.Add(geselecteerdVakje);       // slaat de positie van de computerszet in lijst op 
-            Mens hierhoortgeenmens = new Mens("ikhoorhierniet", "zwart", spel);
+            Mens hierhoortgeenmens = new Mens("ikhoorhierniet", "zwart", spel, _selectedcolor);
             hierhoortgeenmens.resterendestukken = 16;
             hierhoortgeenmens.Koning = Koning;
             hierhoortgeenmens.selected = geselecteerdStuk;

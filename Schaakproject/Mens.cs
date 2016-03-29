@@ -11,8 +11,10 @@ namespace Schaakproject
         public Vakje selected { get; set; }
         public bool validezet { get; set; }
         public int resterendestukken { get; set; }
-        public Mens(string naam, string kleur, Spel _spel)
+        private Color _selectcolor { get; set; }
+        public Mens(string naam, string kleur, Spel _spel, Color select)
         {
+            _selectcolor = select;
             Naam = naam;
             Kleur = kleur;
             spel = _spel;
@@ -51,7 +53,7 @@ namespace Schaakproject
                             DeselecteerStuk();
                         }
                     this.selected = clicked; //het stuk waarop geklikt is wordt geselecteerd
-                    clicked.pbox.BackColor = Color.HotPink; //de kleur van het vakje veranderd
+                    clicked.pbox.BackColor = _selectcolor; //de kleur van het vakje veranderd
 
                     }
                 }
