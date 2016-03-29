@@ -19,24 +19,24 @@ namespace Schaakproject
         public void Slaan()
         {
             speler.aantalstukken[5]--;
-            if (this is Pion)
+            if (this is Pion && speler != null)
             {
                 speler.aantalstukken[0]--;
                 geslagen = true;
             }
-            else if (this is Toren)
+            else if (this is Toren && speler != null)
             {
                 speler.aantalstukken[1]--;
             }
-            else if (this is Paard)
+            else if (this is Paard && speler != null)
             {
                 speler.aantalstukken[2]--;
             }
-            else if (this is Loper)
+            else if (this is Loper && speler != null)
             {
                 speler.aantalstukken[3]--;
             }
-            else if (this is Dame)
+            else if (this is Dame && speler != null)
             {
                 speler.aantalstukken[4]--;
             }

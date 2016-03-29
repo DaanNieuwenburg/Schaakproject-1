@@ -187,10 +187,14 @@ namespace Schaakproject
                             schaakarray[x, y].schaakstuk = new Pion(kleurstuk, schaakarray[x, y], voorDitStuk);
                             if (kleurstuk == "zwart")
                             {
-                                Speler2.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                //Speler2.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
                                 if (Spel.SpelMode == "Singleplayer")
                                 {
                                     Spel.computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                }
+                                else
+                                {
+                                    Speler2.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
                                 }
                             }
                             else
