@@ -40,9 +40,10 @@ namespace Schaakproject
             }
             else
             {
+                Console.WriteLine("Verplaats een stuk verder");
                 Random rnd = new Random();
-                //int percentage = 1;
-                int percentage = rnd.Next(1, 4);
+                int percentage = 1;
+                //int percentage = rnd.Next(1, 4);
                 if (percentage == 1)
                 {
                     verplaatsNieuwStuk();
@@ -137,6 +138,7 @@ namespace Schaakproject
 
         private void slaEenStuk()
         {
+            Console.WriteLine("slaEenStuk");
             bool alGeslagen = false;
             for (int i = 0; i < slaanmogelijkheden.Count; i++)
             {
@@ -348,6 +350,7 @@ namespace Schaakproject
         }
         private void verplaatsVerplaatstStuk()
         {
+            Console.WriteLine("Verplaatst verplaatst stuk");
             // Kijk nu per verplaatst stuk of er geslagen kan worden
             foreach (Vakje verplaatststuk in _computer.verplaatsingsLijst)
             {

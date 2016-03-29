@@ -153,11 +153,11 @@ namespace Schaakproject
                 {
                     if (SpelMode == "Singleplayer")
                     {
-                        mat = schaakbord.CheckMat(computerSpeler.Koning);
-                        if (mat == true)
-                        {
-                            Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
-                        }
+                        //mat = schaakbord.CheckMat(computerSpeler.Koning);
+                        //if (mat == true)
+                        //{
+                          //  Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
+                        //}
                     }
                     else
                     {
@@ -176,11 +176,11 @@ namespace Schaakproject
                 {
                     if (SpelMode == "Singleplayer")
                     {
-                        pat = schaakbord.CheckPat(computerSpeler.Koning);
-                        if (pat == true)
-                        {
-                            Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Purple;
-                        }
+                        //pat = schaakbord.CheckPat(computerSpeler.Koning);
+                        //if (pat == true)
+                        //{
+                        //    Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Purple;
+                       // }
                     }
                     else
                     {

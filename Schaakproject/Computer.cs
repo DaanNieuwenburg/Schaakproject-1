@@ -38,6 +38,7 @@ namespace Schaakproject
 
         public void Zet(Vakje _pictures, Spel spel, Mens tegenspeler)
         {
+            Console.WriteLine("COMPUTERS BEURT");
             _spel = spel;
             _vorigvakje = _spel.selected;                   // slaat het door de speler geselecteerde vakje op
             _vorigschaakstuk = _spel.selected.schaakstuk;   // slaat het door de speler geselecteerde schaakstuk op     -- dit moet ook vanuit vorigvakje kunnen, scheelt code?
