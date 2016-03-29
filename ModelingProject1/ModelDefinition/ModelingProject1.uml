@@ -3,6 +3,19 @@
   dslVersion="1.0.0.0"
   Id="de569ad7-15f5-468e-875f-a53a5601e060"
   name="ModelingProject1" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="a8a9d0ed-beef-475e-8d25-97a4f6ad6a47">
+      <body>Buurnoord
+Buurnoordoost
+buurnoordwest
+buuroost
+buurwest
+buurzuid
+buurzuidoost
+buurzuidwest</body>
+    </comment>
+  </ownedCommentsInternal>
   <appliedStereotypesInternal>
     <stereotypeInstance
       Id="dc5a29c7-9d7d-4d56-8303-f2da8848217f"
@@ -864,14 +877,6 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
-          <operation
-            Id="f0db06ba-ea72-438d-b8fc-1dcff10cf546"
-            name="Schaakbord"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1109,65 +1114,6 @@
                     Id="004f31f0-4801-42dc-9f14-4e3b0e260237">
                     <propertyInstance
                       Id="9754d5b4-8f84-4afe-aef5-e85dfa265661"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-          </operation>
-          <operation
-            Id="2b1ea21c-703c-4bb0-9f76-0b774847bc8d"
-            name="Slaan"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="a7bb6a98-245b-4c91-aca5-d88abc96ffdc"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="920b432c-2c0a-4c52-9107-450d01da2458">
-                    <propertyInstance
-                      Id="f5c9a75b-ed7b-4745-80d2-6b8bc78a0d67"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="30ec9883-f7ca-4534-bbd6-1d4659222870">
-                    <propertyInstance
-                      Id="d0a2313f-7c73-470c-82f8-c24a5964d771"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="58460a8d-1bad-4df8-aecf-da00ecea8a76">
-                    <propertyInstance
-                      Id="1251f3d0-e063-435b-ba8a-870ac24affc7"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="60f20baf-ccda-4361-81fd-b0d16a80b2f4">
-                    <propertyInstance
-                      Id="6f2ec122-e428-475a-840a-ead69322adfe"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="6346d0ba-042e-449f-b523-c8a3c4681296">
-                    <propertyInstance
-                      Id="5af393df-6148-4c0f-a299-d06ffdbd7dd0"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="8c793a6c-ee3a-46a5-9862-855f61e89b4a">
-                    <propertyInstance
-                      Id="bc2ec5e8-6c6d-42a6-85e1-d280dc4f7472"
                       name="params"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
@@ -1609,16 +1555,6 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="6a53e2ed-961c-45dc-964a-ea1e214b5428"
-            name="Vakje"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -2946,57 +2882,6 @@
         </suppliersInternal>
         <targetEnds>
           <association
-            Id="2be035fb-ad67-4f51-ba94-f413d62fcfd9"
-            isDerived="false"
-            sourceEndRoleName=""
-            targetEndRoleName=""
-            isLeaf="false"
-            name="Heeft"
-            isAbstract="false">
-            <classMoniker
-              Id="1930fb1b-c192-4fac-821b-775cf2dbbb42"
-              LastKnownName="Speler"
-              LastKnownLocation="ModelingProject1.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="8970ffa6-1351-4871-8880-306cc0656eb7"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="ed846679-66d3-4ec9-910b-90bed3eadf94"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="81015ec1-fc39-4c76-9cdd-5fa842b202c1"
-                      name="Lower"
-                      value="2" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="c55d6be8-39d9-4cc1-a559-40a6cf0df872"
-                      name="Upper"
-                      value="2" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
             Id="043cb824-712a-4f91-9a8d-e42ae2ec9649"
             isDerived="false"
             sourceEndRoleName=""
@@ -3068,6 +2953,84 @@
                   aggregation="None"
                   isComposite="false"
                   isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="bbd171c8-8857-40a6-9cf2-a78f2218b2fc"
+            isDerived="false"
+            sourceEndRoleName="Spel"
+            targetEndRoleName="Computer"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="19f9934e-f970-46f6-998b-13a15ad234f5"
+              LastKnownName="Computer"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="35132ca8-031a-4880-8914-b9863003c4e1"
+                  name="Spel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3b36a44e-f51e-4122-aab1-8e05309b7522"
+                  name="Computer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="87996be8-ff3a-4395-bdd2-8bf7deed9345"
+            isDerived="false"
+            sourceEndRoleName="Spel"
+            targetEndRoleName="Mens"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="cc73c737-077a-466e-b963-71e8f50e75d4"
+              LastKnownName="Mens"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c4b67317-dc70-4df2-afbc-c114b7ef4b8d"
+                  name="Spel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9747eb3c-29c9-466b-8cf7-8aa3e3c2edfc"
+                  name="Mens"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -3483,14 +3446,6 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
-          <operation
-            Id="3e8c5b50-bd8c-4ca3-9f7d-dd54cf973084"
-            name="Spel"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -3556,7 +3511,7 @@
         </appliedStereotypesInternal>
         <generalsInternal>
           <generalization
-            Id="2ba38283-63de-40fd-a441-b8c136096570"
+            Id="892f4cbf-edd0-461a-af2b-fa97ff0b5179"
             isSubstitutable="false">
             <classMoniker
               Id="1930fb1b-c192-4fac-821b-775cf2dbbb42"
@@ -3784,14 +3739,6 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
-          <operation
-            Id="fa8326a6-d047-460f-bdcc-ab4552c2d4df"
-            name="Mens"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -3847,7 +3794,7 @@
         </appliedStereotypesInternal>
         <generalsInternal>
           <generalization
-            Id="72cc26f0-a975-4c9e-8c74-e27db23617b6"
+            Id="71036414-48a0-413a-8021-4cee0ab69370"
             isSubstitutable="false">
             <classMoniker
               Id="1930fb1b-c192-4fac-821b-775cf2dbbb42"
@@ -4087,14 +4034,6 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation
-            Id="3c23148e-05da-44c3-8301-75848aeafe7f"
-            name="Computer"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
           <operation
             Id="974b8b97-4a48-41c7-afab-c12b0d262fb8"
             name="bepaalMensPositie"
@@ -5792,8 +5731,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
@@ -6462,14 +6400,6 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation
-            Id="959ee573-cdfb-4572-87a4-d438008416a1"
-            name="Algoritme"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
           <operation
             Id="357f1433-1b11-4569-bcd6-7e7d6f3ae37b"
             name="controleeropSlaan"

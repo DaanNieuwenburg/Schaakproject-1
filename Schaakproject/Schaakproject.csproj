@@ -104,12 +104,6 @@
       <DependentUpon>PromoveerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RemiseMelding.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RemiseMelding.Designer.cs">
-      <DependentUpon>RemiseMelding.cs</DependentUpon>
-    </Compile>
     <Compile Include="Rokerenmelding.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,9 +168,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RemiseMelding.resx">
-      <DependentUpon>RemiseMelding.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Rokerenmelding.resx">
       <DependentUpon>Rokerenmelding.cs</DependentUpon>
     </EmbeddedResource>
