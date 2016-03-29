@@ -22,8 +22,10 @@ namespace Schaakproject
         public string variant { get; set; }                //string voor spelvariant
         private bool _witaanzet { get; set; }
         private int optie { get; set; }
-        public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2, Computer computerSpeler, string Variant)
+        private Color _bordercolor { get; set; }
+        public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2, Computer computerSpeler, string Variant, Color border)
         {
+            _bordercolor = border;
             clicks = 0;
             _SpelMode = SpelMode;
             variant = Variant;
@@ -75,7 +77,16 @@ namespace Schaakproject
 
             }
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1.BackgroundImage = Properties.Resources.border2;
+            this.pictureBox1.BackgroundImage = Properties.Resources.border_transparent;
+            // ↓↓↓ deze regel is voor de kleur van de border ↓↓↓
+            if(_bordercolor != Color.FromArgb(255,255,255))
+            {
+                this.pictureBox1.BackColor = _bordercolor;
+            }
+            else
+            {
+                this.pictureBox1.BackColor = Color.RosyBrown;
+            }
             this.pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(1, 36);
             this.pictureBox1.Name = "pictureBox1";
@@ -276,6 +287,7 @@ namespace Schaakproject
                 this.btndame.Visible = false;
                 btnpaard.BackgroundImage = Properties.Resources.button_regels_schaak;
                 btntoren.BackgroundImage = Properties.Resources.button_regels_mat;
+                btnloper.BackgroundImage = Properties.Resources.button_regels_remise;
                 this.btnkoning.Visible = false;
                 this.btntoren.Visible = true;
                 this.btnloper.Visible = true;
@@ -739,12 +751,26 @@ namespace Schaakproject
 
         private void btnloper_MouseEnter(object sender, EventArgs e)
         {
-            btnloper.BackgroundImage = Properties.Resources.button_regels_loper_click1;
+            if (clicks == 2 && optie == 1)
+            {
+                btnloper.BackgroundImage = Properties.Resources.button_regels_remise_click;
+            }
+            else
+            {
+                btnloper.BackgroundImage = Properties.Resources.button_regels_loper_click1;
+            }         
         }
 
         private void btnloper_MouseLeave(object sender, EventArgs e)
         {
-            btnloper.BackgroundImage = Properties.Resources.button_regels_loper1;
+            if (clicks == 2 && optie == 1)
+            {
+                btnloper.BackgroundImage = Properties.Resources.button_regels_remise;
+            }
+            else
+            {
+                btnloper.BackgroundImage = Properties.Resources.button_regels_loper1;
+            }
         }
 
         private void btndame_MouseEnter(object sender, EventArgs e)
