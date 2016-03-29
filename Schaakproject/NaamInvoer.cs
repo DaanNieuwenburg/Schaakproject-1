@@ -22,8 +22,11 @@ namespace Schaakproject
         public Color bordercolor { get; set; }
         public Color selectcolor { get; set; }
         private bool click2 { get; set; }
+        private bool borderchanged { get; set; }
+        private bool selectchanged { get; set; }
         public NaamInvoer()
         {
+            
             //lblNotImplented.Visible = true;
             InitializeComponent();
             this.CenterToScreen();
@@ -31,6 +34,14 @@ namespace Schaakproject
 
         private void btnNaamSubmit_Click(object sender, EventArgs e)
         {
+            if (borderchanged == false)
+            {
+                bordercolor = Color.SandyBrown;
+            }
+            if (selectchanged == false)
+            {
+                selectcolor = Color.HotPink;
+            }
             DialogResult = DialogResult.Yes;
             if (Mode == "Singleplayer")
             {
@@ -224,11 +235,8 @@ namespace Schaakproject
             // Kijk of gebruiker op OK drukt
             if (result == DialogResult.OK)
             {
+                borderchanged = true;
                 bordercolor = colorDialog.Color;
-            }
-            else
-            {
-                bordercolor = Color.RosyBrown;
             }
 
         }
@@ -268,10 +276,7 @@ namespace Schaakproject
             if (result == DialogResult.OK)
             {
                 selectcolor = colorDialog.Color;
-            }
-            else
-            {
-                selectcolor = Color.HotPink;
+                selectchanged = true;
             }
         }
 
