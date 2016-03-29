@@ -41,15 +41,19 @@ namespace Schaakproject
             else
             {
                 Random rnd = new Random();
-                int percentage = 1;
-                //int percentage = rnd.Next(1, 4);
+                //int percentage = 1;
+                int percentage = rnd.Next(1, 4);
                 if (percentage == 1)
                 {
                     verplaatsNieuwStuk();
                 }
-                else if (percentage > 1)
+                else if (percentage > 1 && computer.verplaatsingsLijst.Count > 0)
                 {
-                    //verplaatsVerplaatstStuk();
+                    verplaatsVerplaatstStuk();
+                }
+                else
+                {
+                   //Algoritme();
                 }
             }
         }
@@ -344,7 +348,21 @@ namespace Schaakproject
         }
         private void verplaatsVerplaatstStuk()
         {
-            Console.WriteLine("VERPLAATS VERPLAATST STUK");
+            // Kijk nu per verplaatst stuk of er geslagen kan worden
+            foreach (Vakje verplaatststuk in _computer.verplaatsingsLijst)
+            {
+                verplaatststuk.pbox.BackColor = System.Drawing.Color.Aqua;
+                Console.WriteLine("Zoekt in verplaatst");
+                if (verplaatststuk.schaakstuk is Pion)
+                {
+                    if (verplaatststuk.buurZuid.schaakstuk == null)
+                    {
+                        _geselecteerdStuk = verplaatststuk;             // geselecteerd stuk
+                        _geselecteerdVakje = verplaatststuk.buurZuid;    // geselecteerd vak
+                        _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                    }
+                }
+            }
         }
     }
 }
