@@ -1439,7 +1439,6 @@ namespace Schaakproject
             bool mogelijk = false;
 
             string kleur = koning.kleur;
-            Schaakstuk bewaar = null;
             Vakje koningVakje = koning.vakje;
 
             //bekijk of de koning schaak staat als hij naar noord zou bewegen
