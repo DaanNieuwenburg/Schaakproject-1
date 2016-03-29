@@ -242,9 +242,9 @@ namespace Schaakproject
                 }
                 else
                 {
-                    if (nieuwVakje.schaakstuk != null)
+                    if (temp != null)
                     {
-                        nieuwVakje.schaakstuk.Slaan();
+                        temp.Slaan();
                     }
                     eersteZet = true;
                     speler.validezet = true;

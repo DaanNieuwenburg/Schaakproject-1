@@ -902,7 +902,6 @@ namespace Schaakproject
                 pat = false;
             }
             
-
             return pat;
         }
 
