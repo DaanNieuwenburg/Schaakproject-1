@@ -30,6 +30,7 @@ namespace Schaakproject
             variant = Variant;
             InitializeComponent();
             _bordercolor = border;
+            Console.WriteLine("OL L " + Speler1.Kleur);
             _speler1 = Speler1;
             _speler2 = Speler2;
             if (_speler1.Naam == "")
@@ -110,6 +111,7 @@ namespace Schaakproject
             {
                 if (_spel.spelerAanZet == _speler1)
                 {
+                    Console.WriteLine("SP1 SPB = " + _speler1.Kleur);
                     if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler1.Kleur)
                     {
                         _speler1.SelecteerStuk(pictureBox.vakje, _spel);

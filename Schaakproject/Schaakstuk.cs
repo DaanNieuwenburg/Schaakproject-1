@@ -18,27 +18,30 @@ namespace Schaakproject
         public abstract void kanStukSlaan(Algoritme algoritme, Vakje geselecteerdStuk);
         public void Slaan()
         {
-            speler.aantalstukken[5]--;
-            if (this is Pion && speler != null)
+            if (speler != null)
             {
-                speler.aantalstukken[0]--;
-                geslagen = true;
-            }
-            else if (this is Toren && speler != null)
-            {
-                speler.aantalstukken[1]--;
-            }
-            else if (this is Paard && speler != null)
-            {
-                speler.aantalstukken[2]--;
-            }
-            else if (this is Loper && speler != null)
-            {
-                speler.aantalstukken[3]--;
-            }
-            else if (this is Dame && speler != null)
-            {
-                speler.aantalstukken[4]--;
+                speler.aantalstukken[5]--;
+                if (this is Pion )
+                {
+                    speler.aantalstukken[0]--;
+                    geslagen = true;
+                }
+                else if (this is Toren )
+                {
+                    speler.aantalstukken[1]--;
+                }
+                else if (this is Paard )
+                {
+                    speler.aantalstukken[2]--;
+                }
+                else if (this is Loper )
+                {
+                    speler.aantalstukken[3]--;
+                }
+                else if (this is Dame )
+                {
+                    speler.aantalstukken[4]--;
+                }
             }
         }
     }
