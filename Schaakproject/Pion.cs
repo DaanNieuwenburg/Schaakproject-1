@@ -47,8 +47,21 @@ namespace Schaakproject
             }
         }
 
-        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler, Spel spel)
+        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Spel spel)
         {
+            if (spel.spelerAanZet == spel.Speler1)
+            {
+                speler = spel.Speler1;
+            }
+            else if (spel.spelerAanZet == spel.Speler2)
+            {
+                speler = spel.Speler2;
+            }
+            else if (spel.SpelMode == "Singleplayer")
+            {
+                speler = spel.computerSpeler;
+            }
+
             Schaakstuk tempPion = null;
             bool locatie = false;
             bool mogelijk = false;
@@ -64,14 +77,14 @@ namespace Schaakproject
                 // Slaan naar noordoost voor een witte pion
                 else if (selected.buurNoordoost == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
-                    spel.updateAantalStukken(speler);
+                    spel.updateAantalStukken(spel.spelerAanZet);
                     mogelijk = true;
                 }
 
                 // Slaan naar noordwest voor een witte pion
                 else if (selected.buurNoordwest == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
-                    spel.updateAantalStukken(speler);
+                    spel.updateAantalStukken(spel.spelerAanZet);
                     mogelijk = true;
                 }
 
@@ -103,7 +116,7 @@ namespace Schaakproject
                     //en-passant slaan naar noordoost
                     if (selected.buurNoordoost == nieuwVakje && base.speler.enPassantPion == selected.buurOost.schaakstuk && base.speler.enPassantPion != null)
                     {
-                        spel.updateAantalStukken(speler);
+                        spel.updateAantalStukken(spel.spelerAanZet);
                         tempPion = selected.buurOost.schaakstuk;
                         locatie = false;
                         selected.buurOost.schaakstuk.Slaan();
@@ -117,7 +130,7 @@ namespace Schaakproject
                     //en-passant slaan naar noordwest
                     if (selected.buurNoordwest == nieuwVakje && base.speler.enPassantPion == selected.buurWest.schaakstuk && base.speler.enPassantPion != null)
                     {
-                        spel.updateAantalStukken(speler);
+                        spel.updateAantalStukken(spel.spelerAanZet);
                         tempPion = selected.buurWest.schaakstuk;
                         locatie = true;
                         selected.buurWest.schaakstuk.Slaan();
@@ -140,14 +153,14 @@ namespace Schaakproject
                 // Slaan naar zuidoost voor een zwarte pion
                 else if (selected.buurZuidoost == nieuwVakje && kleur == "zwart" && nieuwVakje.schaakstuk != null)
                 {
-                    spel.updateAantalStukken(speler);
+                    spel.updateAantalStukken(spel.spelerAanZet);
                     mogelijk = true;
                 }
 
                 // Slaan naar zuidwest voor een zwarte pion
                 else if (selected.buurZuidwest == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
-                    spel.updateAantalStukken(speler);
+                    spel.updateAantalStukken(spel.spelerAanZet);
                     mogelijk = true;
                 }
 
@@ -181,14 +194,13 @@ namespace Schaakproject
                     //en-passant slaan naar zuidoost
                     if (selected.buurZuidoost == nieuwVakje && base.speler.enPassantPion == selected.buurOost.schaakstuk && base.speler.enPassantPion != null)
                     {
-                        spel.updateAantalStukken(speler);
+                        spel.updateAantalStukken(spel.spelerAanZet);
                         locatie = false;
                         tempPion = selected.buurOost.schaakstuk;
                         selected.buurOost.schaakstuk.Slaan();
                         selected.buurOost.schaakstuk = null; //De andere pion verdwijnt
                         selected.buurOost.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
                         mogelijk = true;
-                        speler.resterendestukken = speler.resterendestukken - 1;
                     }
                 }
 
@@ -200,14 +212,13 @@ namespace Schaakproject
                         //en-passant slaan naar zuidwest
                         if (selected.buurZuidwest == nieuwVakje && base.speler.enPassantPion == selected.buurWest.schaakstuk && base.speler.enPassantPion != null)
                         {
-                            spel.updateAantalStukken(speler);
+                            spel.updateAantalStukken(spel.spelerAanZet);
                             locatie = true;
                             tempPion = selected.buurWest.schaakstuk;
                             selected.buurWest.schaakstuk.Slaan();
                             selected.buurWest.schaakstuk = null; //De andere pion verdwijnt
                             selected.buurWest.pbox.update(); // update deze pbox zodat je de pion niet meer ziet
                             mogelijk = true;
-                            speler.resterendestukken = speler.resterendestukken - 1;
                         }
                     }
                 }

@@ -44,8 +44,8 @@ namespace Schaakproject
                 Speler2 = speler2;
             }
 
-            Start();
-        }
+                Start();
+            }
 
         public void Start()
         {
@@ -76,16 +76,16 @@ namespace Schaakproject
             //Hier wordt de label met daarin welke speler aan zet is aangepast wanneer de speler wisselt;
             if (SpelMode == "Multiplayer")
             {
-                if (witaanzet == false)
-                {
-                    speelbord.lblbeurt.Text = Speler2.Naam + " is aan zet";
+                    if (witaanzet == false)
+                    {
+                        speelbord.lblbeurt.Text = Speler2.Naam + " is aan zet";
+                    }
+                    else
+                    {
+                        speelbord.lblbeurt.Text = Speler1.Naam + " is aan zet";
+                    }
                 }
-                else
-                {
-                    speelbord.lblbeurt.Text = Speler1.Naam + " is aan zet";
-                }
-            }
-        }
+                    }
 
         public void VeranderSpeler()
         {
@@ -146,7 +146,7 @@ namespace Schaakproject
                         //mat = schaakbord.CheckMat(computerSpeler.Koning);
                         //if (mat == true)
                         //{
-                        //  Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
+                          //  Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
                         //}
                     }
                     else
@@ -170,7 +170,7 @@ namespace Schaakproject
                         //if (pat == true)
                         //{
                         //    Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Purple;
-                        // }
+                       // }
                     }
                     else
                     {
@@ -216,17 +216,18 @@ namespace Schaakproject
             }
         }
 
-        public void updateAantalStukken(Mens speler)
+        public void updateAantalStukken(Speler speler)
         {
-            if (SpelMode != "Singleplayer")
-            {
-                speler.resterendestukken = speler.resterendestukken - 1;
                 if (speler.Kleur == "wit")
                 {
+                Speler1.resterendestukken = Speler1.resterendestukken - 1;
                     speelbord.lblaantal2.Text = Convert.ToString(Speler1.resterendestukken); //onlogisch, speler1 = label 2
                 }
                 else
                 {
+                if (SpelMode != "Singleplayer")
+                {
+                    Speler2.resterendestukken = Speler2.resterendestukken - 1;
                     speelbord.lblaantal1.Text = Convert.ToString(Speler2.resterendestukken); //onlogisch, speler2 = label 1
                 }
             }

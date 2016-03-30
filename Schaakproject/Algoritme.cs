@@ -95,6 +95,7 @@ namespace Schaakproject
             // Kijk nu per verplaatst stuk of er geslagen kan worden
             foreach (Vakje verplaatststuk in _computer.verplaatsingsLijst)
             {
+                verplaatststuk.pbox.BackColor = System.Drawing.Color.CadetBlue;
                 Console.WriteLine("Zoekt in verplaatst");
                 if (verplaatststuk.schaakstuk is Pion)
                 {
@@ -109,25 +110,21 @@ namespace Schaakproject
                 else if (verplaatststuk.schaakstuk is Toren)
                 {
                     Console.WriteLine("FOUND");
-
                     verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
                 }
                 else if (verplaatststuk.schaakstuk is Paard)
                 {
                     Console.WriteLine("FOUND");
-
                     verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
                 }
                 else if (verplaatststuk.schaakstuk is Dame)
                 {
                     Console.WriteLine("FOUND");
-
                     verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
                 }
                 else if (verplaatststuk.schaakstuk is Koning)
                 {
                     Console.WriteLine("FOUND");
-
                     verplaatststuk.schaakstuk.kanStukSlaan(this, verplaatststuk);
                 }
             }
