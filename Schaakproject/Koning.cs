@@ -433,8 +433,7 @@ namespace Schaakproject
                     _Rokerenmelding.ShowDialog();
                 }
 
-                // voor oost
-
+                /*// voor oost
                 else if (vakjeKoning.buurOost == vakjeToren)
                 {
                     aantalplaatsenoost = 1;
@@ -526,7 +525,7 @@ namespace Schaakproject
                     _magRokeren = true;
                 }
 
-
+                */
 
                 if (_wilRokeren == true && _magRokeren == true)
                 {
@@ -542,15 +541,20 @@ namespace Schaakproject
                     {
                         _torenoud = vakjeToren;
                         _koningoud = vakjeKoning;
-                        this.vakje.pbox.update();
-                        vakjeToren.pbox.update();
                         _Randwest.buurOost.buurOost.schaakstuk = _koningoud.schaakstuk;
                         _Randwest.buurOost.buurOost.buurOost.schaakstuk = _torenoud.schaakstuk;
                         _Randwest.buurOost.pbox.update();
+                        _Randwest.buurOost.buurOost.schaakstuk = null;
                         _Randwest.buurOost.buurOost.pbox.update();
-                        _Randwest.buurOost.buurOost.buurOost.pbox.update();
                         _koningoud.schaakstuk = null;
                         _torenoud.schaakstuk = null;
+                        vakjeToren.schaakstuk = null;
+                        this.vakje.pbox.update();
+                        vakjeToren.pbox.update();
+                        _torenoud.pbox.update();
+                        _Randwest.buurOost.schaakstuk = vakje.schaakstuk as Koning;
+                        _Randwest.buurOost.buurOost.buurOost.pbox.update();
+
 
                     }
 
