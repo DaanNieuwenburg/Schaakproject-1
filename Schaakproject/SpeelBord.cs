@@ -600,7 +600,7 @@ namespace Schaakproject
             if(optie == 1)
             {
                 clicks++;
-                lbluitleg.Text = ("" /*HIER DE UITLEG VOOR REMISE*/);
+                lbluitleg.Text = ("Remise\nDit schaakspel kent 2 vormen van remise:\n- Schaak pat: Bij pat staan de stukken zo opgesteld\ndat de koning niet schaak staat, maar ook niet\nkan bewegen zonder schaak te komen staan.\nVerder zijn er geen stukken die je kan verplaatsen.\n- Te weinig stukken: Bij deze vorm van remise\nhebben beide spelers nog te weinig stukken om\nde ander schaakmat te zetten. Hierbij eindigt\nhet ook met gelijkspel.");
                 lbluitleg.Visible = true;
                 pbuitleg.BackgroundImage = Properties.Resources.uitleg_remise;
                 this.btndame.Visible = false;
