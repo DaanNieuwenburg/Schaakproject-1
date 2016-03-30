@@ -1630,17 +1630,21 @@ namespace Schaakproject
                     List<Schaakstuk> Lijst = Stukvoorkomen;
                     for (int i = 0; i < Lijst.Count; i++)
                     {
-                        Schaakstuk temp = Lijst[i];                        
-                        temp.vakje.schaakstuk = null;
-                        tempgezet.vakje.schaakstuk = temp;
+                        Schaakstuk temp = Lijst[i];
+                        Vakje tempvakje = temp.vakje;
+                        Vakje tempgezetvakje = tempgezet.vakje;                     
+                        tempvakje.schaakstuk = null;
+                        temp.vakje = tempgezetvakje;
+                        tempgezetvakje.schaakstuk = temp;
 
                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                         if (check == false)
                         {
                             magnietslaan = true;
                         }
-                        temp.vakje.schaakstuk = temp;
-                        tempgezet.vakje.schaakstuk = tempgezet;
+                        tempvakje.schaakstuk = temp;
+                        temp.vakje = tempvakje;
+                        tempgezetvakje.schaakstuk = tempgezet;
 
                     }
                     if (magnietslaan == true)
@@ -1649,6 +1653,7 @@ namespace Schaakproject
                     }
                 }
 
+                Stukvoorkomen.Clear();
                 Vakje vorige = koningVakje;
                 pionvoormat = true;
 
@@ -1663,8 +1668,33 @@ namespace Schaakproject
                                 checkschaak = CheckSchaak(vorige.buurNoord, kleur);
                                 if (checkschaak == true)
                                 {
-                                    mat = false;
-                                    mogelijk = true;
+                                    bool magnietslaan = false;
+                                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                                    for (int i = 0; i < Lijst.Count; i++)
+                                    {
+                                        Schaakstuk temp = Lijst[i];
+                                        Vakje tempvakje = temp.vakje;
+
+                                        tempvakje.schaakstuk = null;
+                                        temp.vakje = vorige.buurNoord;
+                                        vorige.buurNoord.schaakstuk = temp;
+
+                                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                                        if (check == false)
+                                        {
+                                            magnietslaan = true;
+                                        }
+
+                                        tempvakje.schaakstuk = temp;
+                                        vorige.buurNoord.schaakstuk = null;
+                                        temp.vakje = tempvakje;
+
+                                    }
+                                    if (magnietslaan == true)
+                                    {
+                                        mat = false;
+                                        mogelijk = true;
+                                    }
                                 }
                             }
                             else
@@ -1684,8 +1714,33 @@ namespace Schaakproject
                                 checkschaak = CheckSchaak(vorige.buurOost, kleur);
                                 if (checkschaak == true)
                                 {
-                                    mat = false;
-                                    mogelijk = true;
+                                    bool magnietslaan = false;
+                                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                                    for (int i = 0; i < Lijst.Count; i++)
+                                    {
+                                        Schaakstuk temp = Lijst[i];
+                                        Vakje tempvakje = temp.vakje;
+
+                                        tempvakje.schaakstuk = null;
+                                        temp.vakje = vorige.buurOost;
+                                        vorige.buurOost.schaakstuk = temp;
+
+                                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                                        if (check == false)
+                                        {
+                                            magnietslaan = true;
+                                        }
+
+                                        tempvakje.schaakstuk = temp;
+                                        vorige.buurOost.schaakstuk = null;
+                                        temp.vakje = tempvakje;
+
+                                    }
+                                    if (magnietslaan == true)
+                                    {
+                                        mat = false;
+                                        mogelijk = true;
+                                    }
                                 }
                             }
                             else
@@ -1705,8 +1760,33 @@ namespace Schaakproject
                                 checkschaak = CheckSchaak(vorige.buurZuid, kleur);
                                 if (checkschaak == true)
                                 {
-                                    mat = false;
-                                    mogelijk = true;
+                                    bool magnietslaan = false;
+                                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                                    for (int i = 0; i < Lijst.Count; i++)
+                                    {
+                                        Schaakstuk temp = Lijst[i];
+                                        Vakje tempvakje = temp.vakje;
+
+                                        tempvakje.schaakstuk = null;
+                                        temp.vakje = vorige.buurZuid;
+                                        vorige.buurZuid.schaakstuk = temp;
+
+                                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                                        if (check == false)
+                                        {
+                                            magnietslaan = true;
+                                        }
+
+                                        tempvakje.schaakstuk = temp;
+                                        vorige.buurZuid.schaakstuk = null;
+                                        temp.vakje = tempvakje;
+
+                                    }
+                                    if (magnietslaan == true)
+                                    {
+                                        mat = false;
+                                        mogelijk = true;
+                                    }
                                 }
                             }
                             else
@@ -1726,8 +1806,33 @@ namespace Schaakproject
                                 checkschaak = CheckSchaak(vorige.buurWest, kleur);
                                 if (checkschaak == true)
                                 {
-                                    mat = false;
-                                    mogelijk = true;
+                                    bool magnietslaan = false;
+                                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                                    for (int i = 0; i < Lijst.Count; i++)
+                                    {
+                                        Schaakstuk temp = Lijst[i];
+                                        Vakje tempvakje = temp.vakje;
+
+                                        tempvakje.schaakstuk = null;
+                                        temp.vakje = vorige.buurWest;
+                                        vorige.buurWest.schaakstuk = temp;
+
+                                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                                        if (check == false)
+                                        {
+                                            magnietslaan = true;
+                                        }
+
+                                        tempvakje.schaakstuk = temp;
+                                        vorige.buurWest.schaakstuk = null;
+                                        temp.vakje = tempvakje;
+
+                                    }
+                                    if (magnietslaan == true)
+                                    {
+                                        mat = false;
+                                        mogelijk = true;
+                                    }
                                 }
                             }
                             else
@@ -1747,8 +1852,33 @@ namespace Schaakproject
                                 checkschaak = CheckSchaak(vorige.buurNoordoost, kleur);
                                 if (checkschaak == true)
                                 {
-                                    mat = false;
-                                    mogelijk = true;
+                                    bool magnietslaan = false;
+                                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                                    for (int i = 0; i < Lijst.Count; i++)
+                                    {
+                                        Schaakstuk temp = Lijst[i];
+                                        Vakje tempvakje = temp.vakje;
+
+                                        tempvakje.schaakstuk = null;
+                                        temp.vakje = vorige.buurNoordoost;
+                                        vorige.buurNoordoost.schaakstuk = temp;
+
+                                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                                        if (check == false)
+                                        {
+                                            magnietslaan = true;
+                                        }
+
+                                        tempvakje.schaakstuk = temp;
+                                        vorige.buurNoordoost.schaakstuk = null;
+                                        temp.vakje = tempvakje;
+
+                                    }
+                                    if (magnietslaan == true)
+                                    {
+                                        mat = false;
+                                        mogelijk = true;
+                                    }
                                 }
                             }
                             else
@@ -1768,8 +1898,33 @@ namespace Schaakproject
                                 checkschaak = CheckSchaak(vorige.buurNoordwest, kleur);
                                 if (checkschaak == true)
                                 {
-                                    mat = false;
-                                    mogelijk = true;
+                                    bool magnietslaan = false;
+                                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                                    for (int i = 0; i < Lijst.Count; i++)
+                                    {
+                                        Schaakstuk temp = Lijst[i];
+                                        Vakje tempvakje = temp.vakje;
+
+                                        tempvakje.schaakstuk = null;
+                                        temp.vakje = vorige.buurNoordwest;
+                                        vorige.buurNoordwest.schaakstuk = temp;
+
+                                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                                        if (check == false)
+                                        {
+                                            magnietslaan = true;
+                                        }
+
+                                        tempvakje.schaakstuk = temp;
+                                        vorige.buurNoordwest.schaakstuk = null;
+                                        temp.vakje = tempvakje;
+
+                                    }
+                                    if (magnietslaan == true)
+                                    {
+                                        mat = false;
+                                        mogelijk = true;
+                                    }
                                 }
                             }
                             else
@@ -1789,8 +1944,33 @@ namespace Schaakproject
                                 checkschaak = CheckSchaak(vorige.buurZuidoost, kleur);
                                 if (checkschaak == true)
                                 {
-                                    mat = false;
-                                    mogelijk = true;
+                                    bool magnietslaan = false;
+                                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                                    for (int i = 0; i < Lijst.Count; i++)
+                                    {
+                                        Schaakstuk temp = Lijst[i];
+                                        Vakje tempvakje = temp.vakje;
+
+                                        tempvakje.schaakstuk = null;
+                                        temp.vakje = vorige.buurZuidoost;
+                                        vorige.buurZuidoost.schaakstuk = temp;
+
+                                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                                        if (check == false)
+                                        {
+                                            magnietslaan = true;
+                                        }
+
+                                        tempvakje.schaakstuk = temp;
+                                        vorige.buurZuidoost.schaakstuk = null;
+                                        temp.vakje = tempvakje;
+
+                                    }
+                                    if (magnietslaan == true)
+                                    {
+                                        mat = false;
+                                        mogelijk = true;
+                                    }
                                 }
                             }
                             else
@@ -1810,8 +1990,33 @@ namespace Schaakproject
                                 checkschaak = CheckSchaak(vorige.buurZuidwest, kleur);
                                 if (checkschaak == true)
                                 {
-                                    mat = false;
-                                    mogelijk = true;
+                                    bool magnietslaan = false;
+                                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                                    for (int i = 0; i < Lijst.Count; i++)
+                                    {
+                                        Schaakstuk temp = Lijst[i];
+                                        Vakje tempvakje = temp.vakje;
+
+                                        tempvakje.schaakstuk = null;
+                                        temp.vakje = vorige.buurZuidwest;
+                                        vorige.buurZuidwest.schaakstuk = temp;
+
+                                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                                        if (check == false)
+                                        {
+                                            magnietslaan = true;
+                                        }
+
+                                        tempvakje.schaakstuk = temp;
+                                        vorige.buurZuidwest.schaakstuk = null;
+                                        temp.vakje = tempvakje;
+
+                                    }
+                                    if (magnietslaan == true)
+                                    {
+                                        mat = false;
+                                        mogelijk = true;
+                                    }
                                 }
                             }
                             else
