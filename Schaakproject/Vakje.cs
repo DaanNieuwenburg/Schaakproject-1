@@ -21,15 +21,17 @@ namespace Schaakproject
         public Vakje buurNoordwest { get; set; }
         public Vakje buurZuidwest { get; set; }
 
-        public Vakje(bool Kleur)
+        public Vakje(bool Kleur, Color _color1, Color _color2)
         {
             if (Kleur == false)
             {
-                kleur = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+                kleur = _color1;
+                //kleur = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             }
             else
             {
-                kleur = Color.SaddleBrown;
+                kleur = _color2;
+                //kleur = Color.SaddleBrown;
             }
         }
 

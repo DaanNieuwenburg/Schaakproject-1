@@ -17,12 +17,16 @@ namespace Schaakproject
         public Vakje selected { get; set; }                     //Maakt de computer gebruik van
         public string Variant { get; private set; }             //Klassiek of Chess960
         public Schaakbord schaakbord { get; private set; }      //Het schaakbord wordt onthouden
-        public Color _bordercolor { get; private set; }                //De kleur voor de rand
-        public Color _selectcolor { get; private set; }                //De kleur voor het selecteren
+        public Color _bordercolor { get; private set; }         //De kleur voor de rand
+        public Color _selectcolor { get; private set; }         //De kleur voor het selecteren
         public SpeelBord speelbord { get; private set; }        //Het speelbord window
+        public Color _colorvakje1 { get; private set; }
+        public Color _colorvakje2 { get; private set; }
 
-        public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant, Color borderColor, Color selectColor)
+        public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant, Color borderColor, Color selectColor, Color vakje1, Color vakje2)
         {
+            _colorvakje1 = vakje1;
+            _colorvakje2 = vakje2;
             _selectcolor = selectColor;
             _bordercolor = borderColor;
             SpelMode = Mode;
@@ -50,7 +54,7 @@ namespace Schaakproject
         public void Start()
         {
             //Hij maakt een nieuw schaakbord waarin de logica zit
-            Schaakbord schaakbord = new Schaakbord(Variant, this, Speler1, Speler2);
+            Schaakbord schaakbord = new Schaakbord(Variant, this, Speler1, Speler2, _colorvakje1, _colorvakje2);
             this.schaakbord = schaakbord;
 
             //Hij maakt een nieuw speelbord (een window)
@@ -63,11 +67,11 @@ namespace Schaakproject
         {
             if (spelMode == "Multiplayer")
             {
-                Spel spel = new Spel(spelMode, speler1Naam, speler2Naam, Variant, _bordercolor, _selectcolor);
+                Spel spel = new Spel(spelMode, speler1Naam, speler2Naam, Variant, _bordercolor, _selectcolor, _colorvakje1, _colorvakje2);
             }
             else
             {
-                Spel spel = new Spel(spelMode, speler1Naam, "comp", Variant, _bordercolor, _selectcolor);
+                Spel spel = new Spel(spelMode, speler1Naam, "comp", Variant, _bordercolor, _selectcolor, _colorvakje1, _colorvakje2);
             }
         }
 

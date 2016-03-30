@@ -68,10 +68,14 @@ namespace Schaakproject
         private Schaakstuk schaakGezet { get; set; }        //Het schaakstuk dat de koning schaak heeft gezet
         private string richting { get; set; }               //De richting waar het schaakstuk dat de koning schaak heeft gezet staat
         private bool pionvoormat { get; set; }              //om te kijken of er een pion gezet kan worden tussen de koning en een stuk
+        public Color _colorvakje1 { get; private set; }
+        public Color _colorvakje2 { get; private set; }
 
 
-        public Schaakbord(string _Variant, Spel Spel, Speler Speler1, Speler Speler2)
+        public Schaakbord(string _Variant, Spel Spel, Speler Speler1, Speler Speler2, Color vakje1, Color vakje2)
         {
+            _colorvakje1 = vakje1;
+            _colorvakje2 = vakje2;
             aantal1 = 16;
             aantal2 = 16;
             schaakarray = new Vakje[8, 8];
@@ -90,7 +94,7 @@ namespace Schaakproject
             {
                 for (int y = 0; y < 8; y++)
                 {
-                    schaakarray[x, y] = new Vakje(kleurvakje);
+                    schaakarray[x, y] = new Vakje(kleurvakje, _colorvakje1, _colorvakje2);
 
                     kleurvakje = !kleurvakje;
                 }
