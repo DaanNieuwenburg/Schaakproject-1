@@ -17,8 +17,8 @@ namespace Schaakproject
         public Vakje selected { get; set; }                     //Maakt de computer gebruik van
         public string Variant { get; private set; }             //Klassiek of Chess960
         public Schaakbord schaakbord { get; private set; }      //Het schaakbord wordt onthouden
-        private Color _bordercolor { get; set; }                //De kleur voor de rand
-        private Color _selectcolor { get; set; }                //De kleur voor het selecteren
+        public Color _bordercolor { get; private set; }                //De kleur voor de rand
+        public Color _selectcolor { get; private set; }                //De kleur voor het selecteren
         public SpeelBord speelbord { get; private set; }        //Het speelbord window
 
         public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant, Color borderColor, Color selectColor)

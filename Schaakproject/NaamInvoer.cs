@@ -13,12 +13,12 @@ namespace Schaakproject
         private Color bordercolor { get; set; }     //Je kunt de kleur voor de rand veranderen
         private Color selectcolor { get; set; }     //Je kunt de kleur voor een geselecteerd vakje veranderen
 
-        public NaamInvoer()
+        public NaamInvoer(Color border, Color select)
         {
             InitializeComponent();
             this.CenterToScreen();
-            bordercolor = Color.SandyBrown;
-            selectcolor = Color.HotPink;
+            bordercolor = border;
+            selectcolor = select;            
         }
 
         private void btnNaamSubmit_Click(object sender, EventArgs e)

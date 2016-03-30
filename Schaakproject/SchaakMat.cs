@@ -32,7 +32,7 @@ namespace Schaakproject
             Hide();
             DialogResult = DialogResult.Yes;
             spel.speelbord.Hide();
-            NaamInvoer menu = new NaamInvoer();
+            NaamInvoer menu = new NaamInvoer(spel._bordercolor, spel._selectcolor);
             menu.ShowDialog();
         }
     }

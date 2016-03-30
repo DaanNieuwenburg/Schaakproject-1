@@ -398,7 +398,7 @@ namespace Schaakproject
             this.btnterug.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //transparent bordercolor (Color.Transparent is unsupported)
             if (clicks == 0)
             {
-                TerugMelding menu = new TerugMelding(this);
+                TerugMelding menu = new TerugMelding(this, _spel);
                 menu.ShowDialog();
             }
             else if (clicks == 1)

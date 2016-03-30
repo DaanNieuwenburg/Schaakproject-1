@@ -13,8 +13,10 @@ namespace Schaakproject
     public partial class TerugMelding : Form
     {
         public SpeelBord _speelbord { get; set; }
-        public TerugMelding(SpeelBord speelbord)
+        public Spel spel { get; set; }
+        public TerugMelding(SpeelBord speelbord, Spel spel)
         {
+            this.spel = spel;
             _speelbord = speelbord;
             InitializeComponent();
         }
@@ -23,7 +25,7 @@ namespace Schaakproject
         {
             Hide();
             _speelbord.Hide();
-            NaamInvoer naaminvoerdialog = new NaamInvoer();
+            NaamInvoer naaminvoerdialog = new NaamInvoer(spel._bordercolor, spel._selectcolor);
             naaminvoerdialog.ShowDialog();
             
         }
