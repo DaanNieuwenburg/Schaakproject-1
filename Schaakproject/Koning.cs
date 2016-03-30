@@ -515,9 +515,6 @@ namespace Schaakproject
 
                 if (_wilRokeren == true && _magRokeren == true)
                 {
-                    int j = 0;
-
-
                     this.vakje.pbox.update();
                     this.vakje.buurWest.buurWest.pbox.update();
                     this.vakje.buurWest.pbox.update();
