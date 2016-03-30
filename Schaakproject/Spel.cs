@@ -23,6 +23,7 @@ namespace Schaakproject
 
         public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant, Color bordercolor, Color select)
         {
+            
             _selectcolor = select;
             _bordercolor = bordercolor;
             SpelMode = Mode;
@@ -42,9 +43,10 @@ namespace Schaakproject
                 Mens speler2 = new Mens(NaamSpeler2, "zwart", this, _selectcolor);
                 Speler1 = speler1;
                 Speler2 = speler2;
-                computerSpeler = null;
+                computerSpeler = null;                
                 Start();
             }
+            spelerAanZet = Speler1;
         }
 
         public void Start()
