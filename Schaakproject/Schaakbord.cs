@@ -291,7 +291,15 @@ namespace Schaakproject
                             }
                             else
                             {
-                                Speler2.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                if (Spel.SpelMode == "Singleplayer")
+                                {
+                                    Spel.computerSpeler.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                }
+                                else
+                                {
+                                    Spel.Speler2.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                }
+                                
                             }
                         }
                     }

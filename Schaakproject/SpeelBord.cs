@@ -30,7 +30,6 @@ namespace Schaakproject
             variant = Variant;
             InitializeComponent();
             _bordercolor = border;
-            Console.WriteLine("OL L " + Speler1.Kleur);
             _speler1 = Speler1;
             _speler2 = Speler2;
             if (_speler1.Naam == "")
@@ -263,7 +262,9 @@ namespace Schaakproject
             {
                 clicks++;
                 pbuitleg.Image = Properties.Resources.uitleg_promoveren;
+                lbluitleg.Text = ("Promoveren\nWanneer een pion het einde van\nhet bord bereikt heeft, mag hij\npromoveren. Dit houd in dat de\npion vervangen mag worden door\neen paard, dame, loper of toren.\nhet is niet mogelijk om naar een\nkoning of pion te promoveren.");
                 this.btndame.Visible = false;
+                lbluitleg.Visible = true;
                 pbuitleg.Visible = true;
                 this.btnkoning.Visible = false;
                 this.btntoren.Visible = false;
@@ -340,7 +341,7 @@ namespace Schaakproject
                 //schaak uitleg
                 clicks++;
                 lbluitleg.Visible = true;
-                lbluitleg.Text = (/* HIER NOG UITLEG VOOR SCHAAK*/"");
+                lbluitleg.Text = ("Schaak\nSchaak is een opstelling waarbij\nde koning geslagen kan worden, maar\nde schaak nog kan worden opgeheven.\ndit kan op 3 manieren:\n - het verplaatsen van de koning\n - het schaakzettende stuk slaan\n - een stuk tussen de koning en\nhet schaakzettende stuk plaatsen.");
                 this.btndame.Visible = false;
                 pbuitleg.BackgroundImage = Properties.Resources.uitleg_schaak;
                 pbuitleg.Visible = true;
@@ -376,7 +377,7 @@ namespace Schaakproject
                 //Rokeren uitleg
                 clicks++;
                 lbluitleg.Visible = true;
-                lbluitleg.Text = (/* HIER NOG UITLEG VOOR ROKEREN*/"");
+                lbluitleg.Text = ("Rokeren\nEr zijn 2 rokades mogelijk in een spel.\nEen lange en een korte rokade. Bij\nrokeren mag zowel de koning als de\nbetreffende toren niet verplaatst zijn.\nOok mogen de vlakken tussen te koning\nen de toren niet geslagen kunnen worden\ntijdens de rokade. De koning en toren\nveranderen van plaats.Hierna is een\nandere rokade niet meer mogelijk voor\ndie speler.");
                 this.btndame.Visible = false;
                 pbuitleg.BackgroundImage = Properties.Resources.uitleg_rokeren;
                 pbuitleg.Visible = true;
@@ -545,7 +546,7 @@ namespace Schaakproject
                 //schaakmat uitleg
                 clicks++;
                 lbluitleg.Visible = true;
-                lbluitleg.Text = (/* HIER NOG UITLEG VOOR SCHAAKMAT*/"");
+                lbluitleg.Text = ("Schaakmat\nBij schaakmat staat de koning schaak\nhet enige verschil is dat de koning ook\nnergens meer heen kan verplaatsen \nzonder schaak te blijven staan. Dit\nis schaakmat. Bij schaakmat is het \nspel afgelopen en heeft de speler die mat\nstaat verloren.");
                 this.btndame.Visible = false;
                 pbuitleg.BackgroundImage = Properties.Resources.uitlegmat;
                 pbuitleg.Visible = true;
@@ -580,7 +581,7 @@ namespace Schaakproject
                 //En-passant uitleg
                 clicks++;
                 lbluitleg.Visible = true;
-                lbluitleg.Text = (/* HIER NOG UITLEG VOOR ENPASSANT */"");
+                lbluitleg.Text = ("En - Passant\nAls een pion 2 vlakken naar voren\nwordt gezet, kan deze en-passant\ngeslagen worden. Dit kan doordat\nde tegenstander dan het vlakje aanvalt\nwaar de pion op zou staan, als die maar\n1 vakje naar voren was gegaan.Dit \nmoet wel in de eerst volgende zet gebeuren.\nGebeurt dit niet, dan is de pion veilig.");
                 this.btndame.Visible = false;
                 pbuitleg.BackgroundImage = Properties.Resources.uitleg_enpassant;
                 pbuitleg.Visible = true;
@@ -592,15 +593,14 @@ namespace Schaakproject
                 this.btnterug.Visible = true;
                 this.btnregels.Visible = false;
                 this.btnvariant.Visible = false;
-            }
-        }
+            }}
 
         private void btnloper_Click(object sender, EventArgs e)
         {
             if(optie == 1)
             {
                 clicks++;
-                lbluitleg.Text = ("" /*HIER DE UITLEG VOOR REMISE*/);
+                lbluitleg.Text = ("Remise\nDit schaakspel kent 2 vormen van remise:\n- Schaak pat: Bij pat staan de stukken zo opgesteld\ndat de koning niet schaak staat, maar ook niet\nkan bewegen zonder schaak te komen staan.\nVerder zijn er geen stukken die je kan verplaatsen.\n- Te weinig stukken: Bij deze vorm van remise\nhebben beide spelers nog te weinig stukken om\nde ander schaakmat te zetten. Hierbij eindigt\nhet ook met gelijkspel.");
                 lbluitleg.Visible = true;
                 pbuitleg.BackgroundImage = Properties.Resources.uitleg_remise;
                 this.btndame.Visible = false;

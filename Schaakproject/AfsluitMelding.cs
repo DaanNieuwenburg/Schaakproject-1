@@ -12,11 +12,11 @@ namespace Schaakproject
 {
     public partial class AfsluitMelding : Form
     {
-        public bool Sure;
+        public bool Sure { get; private set; }
+
         public AfsluitMelding()
         {
             InitializeComponent();
-            DialogResult = DialogResult.Yes;
         }
 
 

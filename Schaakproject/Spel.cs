@@ -8,52 +8,52 @@ namespace Schaakproject
 {
     public class Spel
     {
-        public string SpelMode { get; set; }  //Singleplayer of multiplayer
-        public bool witaanzet { get; set; }     //Wie is aan zet
-        public Mens Speler1 { get; set; }     //De speler (is er altijd)
-        public Mens Speler2 { get; set; }     //De tweede speler voor multiplayer
-        public Computer computerSpeler { get; set; }  //De computer voor singleplayer
-        public Speler spelerAanZet { get; private set; } //welke speler is aan zet
-        public Vakje selected { get; set; } //Maakt de computer gebruik van
-        public string Variant { get; set; }    //Klassiek of Chess960
-        public Schaakbord schaakbord { get; set; }
-        private Color _bordercolor { get; set; }
-        private Color _selectcolor { get; set; }
-        public SpeelBord speelbord { get; set; }
+        public string SpelMode { get; private set; }            //Singleplayer of multiplayer
+        private bool witaanzet { get; set; }                    //Wie is aan zet
+        public Mens Speler1 { get; private set; }               //De speler (is er altijd)
+        public Mens Speler2 { get; private set; }               //De tweede speler voor multiplayer
+        public Computer computerSpeler { get; private set; }    //De computer voor singleplayer
+        public Speler spelerAanZet { get; private set; }        //welke speler is aan zet
+        public Vakje selected { get; set; }                     //Maakt de computer gebruik van
+        public string Variant { get; private set; }             //Klassiek of Chess960
+        public Schaakbord schaakbord { get; private set; }      //Het schaakbord wordt onthouden
+        private Color _bordercolor { get; set; }                //De kleur voor de rand
+        private Color _selectcolor { get; set; }                //De kleur voor het selecteren
+        public SpeelBord speelbord { get; private set; }        //Het speelbord window
 
-        public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant, Color bordercolor, Color select)
+        public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant, Color borderColor, Color selectColor)
         {
-
-            _selectcolor = select;
-            _bordercolor = bordercolor;
+            _selectcolor = selectColor;
+            _bordercolor = borderColor;
             SpelMode = Mode;
             this.Variant = Variant;
+
+            Mens speler1 = new Mens(NaamSpeler1, "wit", this, _selectcolor);
+            Speler1 = speler1;
+            spelerAanZet = Speler1;
+
             if (SpelMode == "Singleplayer")
             {
-                Mens speler1 = new Mens(NaamSpeler1, "wit", this, _selectcolor);
                 Computer computerSpeler = new Computer(NaamSpeler2, "zwart", _selectcolor);
-                Speler1 = speler1;
-                Speler2 = null;
                 this.computerSpeler = computerSpeler;
-                Start();
             }
+
             else if (Mode == "Multiplayer")
             {
-                Mens speler1 = new Mens(NaamSpeler1, "wit", this, _selectcolor);
                 Mens speler2 = new Mens(NaamSpeler2, "zwart", this, _selectcolor);
-                Speler1 = speler1;
                 Speler2 = speler2;
-                computerSpeler = null;
+            }
+
                 Start();
             }
-            spelerAanZet = Speler1;
-        }
 
         public void Start()
         {
-            Console.WriteLine("start");
+            //Hij maakt een nieuw schaakbord waarin de logica zit
             Schaakbord schaakbord = new Schaakbord(Variant, this, Speler1, Speler2);
             this.schaakbord = schaakbord;
+
+            //Hij maakt een nieuw speelbord (een window)
             SpeelBord speelbord = new SpeelBord(this, schaakbord, SpelMode, Speler1, Speler2, computerSpeler, Variant, _bordercolor);
             this.speelbord = speelbord;
             speelbord.Show();
@@ -61,7 +61,7 @@ namespace Schaakproject
 
         public void Herstart(string spelMode, string speler1Naam, string speler2Naam)
         {
-            if (spelMode == "Multiplayer" || SpelMode == "Online")
+            if (spelMode == "Multiplayer")
             {
                 Spel spel = new Spel(spelMode, speler1Naam, speler2Naam, Variant, _bordercolor, _selectcolor);
             }
@@ -70,12 +70,12 @@ namespace Schaakproject
                 Spel spel = new Spel(spelMode, speler1Naam, "comp", Variant, _bordercolor, _selectcolor);
             }
         }
+
         public void veranderlbltext()
         {
+            //Hier wordt de label met daarin welke speler aan zet is aangepast wanneer de speler wisselt;
             if (SpelMode == "Multiplayer")
             {
-                if (Speler1.Naam != "" && Speler2.Naam != "")
-                {
                     if (witaanzet == false)
                     {
                         speelbord.lblbeurt.Text = Speler2.Naam + " is aan zet";
@@ -85,21 +85,13 @@ namespace Schaakproject
                         speelbord.lblbeurt.Text = Speler1.Naam + " is aan zet";
                     }
                 }
-                else
-                {
-                    if (witaanzet == false)
-                    {
-                        speelbord.lblbeurt.Text = "Zwart is aan zet";
                     }
-                    else
-                    {
-                        speelbord.lblbeurt.Text = "Wit is aan zet";
-                    }
-                }
-            }
-        }
+
         public void VeranderSpeler()
         {
+            //Iedere keer dat een legale zet gedaan is, wordt de speler gewisseld
+
+            //Bekijk of het spel remise is doordat er te weinig stukken zijn
             if (SpelMode == "Multiplayer")
             {
                 if (Speler1.aantalstukken[5] < 3 && Speler2.aantalstukken[5] < 3)
@@ -126,11 +118,14 @@ namespace Schaakproject
                     }
                 }
             }
+            
+            //zodat je ziet wie er aan zet is
             veranderlbltext();
+
             bool schaak;
             bool mat;
             bool pat;
-            //Console.WriteLine("VeranderSpeler");
+            
             if (spelerAanZet == Speler1)
             {
                 witaanzet = true;
@@ -151,7 +146,7 @@ namespace Schaakproject
                         //mat = schaakbord.CheckMat(computerSpeler.Koning);
                         //if (mat == true)
                         //{
-                        //  Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
+                          //  Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
                         //}
                     }
                     else
@@ -175,7 +170,7 @@ namespace Schaakproject
                         //if (pat == true)
                         //{
                         //    Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Purple;
-                        // }
+                       // }
                     }
                     else
                     {
@@ -219,74 +214,17 @@ namespace Schaakproject
                     }
                 }
             }
-
-        }
-        public void controleerOpSchaak()
-        {
-            Console.WriteLine("Controleer op schaak");
-            // kijk waar de koning staat
-            bool koningGevonden = false;
-            bool koningNietGevonden = true;
-            Vakje vorigvakjeHO = selected;  // Horizontaal oost
-            Vakje vorigvakjeVZ = selected; // Verticaal noord
-
-            // Loop tot het meest linker vakje gevonden is
-            while (vorigvakjeHO != null)
-            {
-                vorigvakjeHO = vorigvakjeHO.buurOost;
-            }
-
-            // Loop tot het meest onderste vakje gevonden is
-            while (vorigvakjeVZ != null)
-            {
-                vorigvakjeVZ = vorigvakjeHO.buurZuid;
-            }
-
-
-            // Loop tot de koning gevonden is
-            while (koningGevonden == false)
-            {
-                // loop naar boven
-                // loop naar oost
-                while (koningNietGevonden == true)
-                {
-                    if (vorigvakjeHO.schaakstuk is Koning && vorigvakjeHO.schaakstuk.kleur != selected.schaakstuk.kleur)
-                    {
-                        vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Pink;
-                        koningNietGevonden = false;
-                    }
-                    else
-                    {
-                        vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Pink;
-                        vorigvakjeHO = vorigvakjeHO.buurWest;
-                    }
-                }
-                // loop naar west
-                while (koningNietGevonden == true)
-                {
-                    if (vorigvakjeVZ.schaakstuk is Koning && vorigvakjeVZ.schaakstuk.kleur != selected.schaakstuk.kleur)
-                    {
-                        vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Pink;
-                        koningNietGevonden = false;
-                    }
-                    else
-                    {
-                        vorigvakjeHO.pbox.BackColor = System.Drawing.Color.Pink;
-                        vorigvakjeVZ = vorigvakjeVZ.buurNoord;
-                    }
-                }
-            }
         }
 
         public void updateAantalStukken(Speler speler)
         {
-            if (speler.Kleur == "wit")
-            {
+                if (speler.Kleur == "wit")
+                {
                 Speler1.resterendestukken = Speler1.resterendestukken - 1;
-                speelbord.lblaantal2.Text = Convert.ToString(Speler1.resterendestukken); //onlogisch, speler1 = label 2
-            }
-            else
-            {
+                    speelbord.lblaantal2.Text = Convert.ToString(Speler1.resterendestukken); //onlogisch, speler1 = label 2
+                }
+                else
+                {
                 if (SpelMode != "Singleplayer")
                 {
                     Speler2.resterendestukken = Speler2.resterendestukken - 1;
