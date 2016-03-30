@@ -240,7 +240,7 @@ namespace Schaakproject
             {
                 if (vorige.buurNoord == nieuwVakje)
                 {
-                    if (vorige.buurNoord.schaakstuk != null && vorige.buurNoord.schaakstuk.kleur != speler.Kleur)
+                    if (vorige.buurNoord.schaakstuk != null && vorige.buurNoord.schaakstuk.kleur == "Wit")
                     {
                        spel.updateAantalStukken(spel.spelerAanZet);
                     }
@@ -261,7 +261,7 @@ namespace Schaakproject
                 {
                     if (vorige.buurOost == nieuwVakje)
                     {
-                        if (vorige.buurOost.schaakstuk != null && vorige.buurOost.schaakstuk.kleur != speler.Kleur)
+                        if (vorige.buurOost.schaakstuk != null && vorige.buurOost.schaakstuk.kleur == "Wit")
                         {
                            spel.updateAantalStukken(spel.spelerAanZet);
                         }
@@ -283,7 +283,7 @@ namespace Schaakproject
                 {
                     if (vorige.buurZuid == nieuwVakje)
                     {
-                        if (vorige.buurZuid.schaakstuk != null && vorige.buurZuid.schaakstuk.kleur != speler.Kleur)
+                        if (vorige.buurZuid.schaakstuk != null && vorige.buurZuid.schaakstuk.kleur == "Wit")
                         {
                            spel.updateAantalStukken(spel.spelerAanZet);
                         }
@@ -305,7 +305,7 @@ namespace Schaakproject
                 {
                     if (vorige.buurWest == nieuwVakje)
                     {
-                        if (vorige.buurWest.schaakstuk != null && vorige.buurWest.schaakstuk.kleur != speler.Kleur)
+                        if (vorige.buurWest.schaakstuk != null && vorige.buurWest.schaakstuk.kleur == "Wit")
                         {
                            spel.updateAantalStukken(spel.spelerAanZet);
                         }
@@ -327,7 +327,7 @@ namespace Schaakproject
             {
                 if (vorige.buurNoordoost == nieuwVakje)
                 {
-                    if (vorige.buurNoordoost.schaakstuk != null && vorige.buurNoordoost.schaakstuk.kleur != speler.Kleur)
+                    if (vorige.buurNoordoost.schaakstuk != null && vorige.buurNoordoost.schaakstuk.kleur == "Wit")
                     {
                        spel.updateAantalStukken(spel.spelerAanZet);
                     }
@@ -348,7 +348,7 @@ namespace Schaakproject
                 {
                     if (vorige.buurNoordwest == nieuwVakje)
                     {
-                        if (vorige.buurNoordwest.schaakstuk != null && vorige.buurNoordwest.schaakstuk.kleur != speler.Kleur)
+                        if (vorige.buurNoordwest.schaakstuk != null && vorige.buurNoordwest.schaakstuk.kleur == "Wit")
                         {
                            spel.updateAantalStukken(spel.spelerAanZet);
                         }
@@ -370,7 +370,7 @@ namespace Schaakproject
                 {
                     if (vorige.buurZuidoost == nieuwVakje)
                     {
-                        if (vorige.buurZuidoost.schaakstuk != null && vorige.buurZuidoost.schaakstuk.kleur != speler.Kleur)
+                        if (vorige.buurZuidoost.schaakstuk != null && vorige.buurZuidoost.schaakstuk.kleur == "Wit")
                         {
                            spel.updateAantalStukken(spel.spelerAanZet);
                         }
@@ -393,7 +393,7 @@ namespace Schaakproject
                 {
                     if (vorige.buurZuidwest == nieuwVakje)
                     {
-                        if (vorige.buurZuidwest.schaakstuk != null && vorige.buurZuidwest.schaakstuk.kleur != speler.Kleur)
+                        if (vorige.buurZuidwest.schaakstuk != null && vorige.buurZuidwest.schaakstuk.kleur == "Wit")
                         {
                            spel.updateAantalStukken(spel.spelerAanZet);
                         }
@@ -414,7 +414,7 @@ namespace Schaakproject
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
                 this.vakje = nieuwVakje;
-                bool checkSchaak = spel.schaakbord.CheckSchaak(speler.Koning.vakje, speler.Koning.kleur);
+                bool checkSchaak = spel.schaakbord.CheckSchaak(spel.spelerAanZet.Koning.vakje, spel.spelerAanZet.Koning.kleur);
                 if (checkSchaak == true)
                 {
                     selected.schaakstuk = this;
@@ -427,7 +427,7 @@ namespace Schaakproject
                     {
                         temp.Slaan();
                     }
-                    speler.validezet = true;
+                    spel.spelerAanZet.validezet = true;
                 }
             }
         }
