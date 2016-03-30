@@ -15,7 +15,8 @@ namespace Schaakproject
         private int _positiewest { get; set; }
         private bool _wilRokeren { get; set; }      //Als je op ja drukt als er gevraagd wordt of je wilt rokeren
         private bool _magRokeren { get; set; }
-
+        private Vakje _koningoud { get; set; }
+        public Vakje _torenoud { get; set; }
         public Koning(string kleur, Vakje vakje, Speler speler)
         {
 
@@ -322,9 +323,17 @@ namespace Schaakproject
                     {
                         aantalplaatsenwest = west;
                     }
-                    _vorigwest = _vorigwest.buurWest;
+                    if (_vorigwest.buurWest != null)
+                    {
+                        _vorigwest = _vorigwest.buurWest;
+                    }
+                    else
+                    {
+                        break;
+                    }
+
                 }
-                _Randwest = _vorigwest.buurOost;
+                _Randwest = _vorigwest;
                 Console.WriteLine("west: " + west);
                 Console.WriteLine("aantal " + aantalplaatsenwest);
                 // voor west
@@ -345,9 +354,8 @@ namespace Schaakproject
                         if (_vorigvakje.schaakstuk == null)
                         {
                             _vorigvakje = _vorigvakje.buurWest;
-                            i++;
-
                         }
+                        i++;
                     }
                     _magRokeren = true;
                 }
@@ -359,9 +367,9 @@ namespace Schaakproject
                         if (_vorigvakje.schaakstuk == null)
                         {
                             _vorigvakje = _vorigvakje.buurWest;
-                            i++;
 
                         }
+                        i++;
                     }
                     _magRokeren = true;
                 }
@@ -373,8 +381,9 @@ namespace Schaakproject
                         if (_vorigvakje.schaakstuk == null)
                         {
                             _vorigvakje = _vorigvakje.buurWest;
-                            i++;
+
                         }
+                        i++;
                     }
                     _magRokeren = true;
                 }
@@ -386,8 +395,8 @@ namespace Schaakproject
                         if (_vorigvakje.schaakstuk == null)
                         {
                             _vorigvakje = _vorigvakje.buurWest;
-                            i++;
                         }
+                        i++;
                     }
                     _magRokeren = true;
                 }
@@ -399,8 +408,8 @@ namespace Schaakproject
                         if (_vorigvakje.schaakstuk == null)
                         {
                             _vorigvakje = _vorigvakje.buurWest;
-                            i++;
                         }
+                        i++;
                     }
                     _magRokeren = true;
                 }
@@ -412,10 +421,16 @@ namespace Schaakproject
                         if (_vorigvakje.schaakstuk == null)
                         {
                             _vorigvakje = _vorigvakje.buurWest;
-                            i++;
                         }
+                        i++;
                     }
                     _magRokeren = true;
+                }
+                if (_magRokeren == true)
+                {
+                    // popup voor rokeren
+                    Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
+                    _Rokerenmelding.ShowDialog();
                 }
 
                 // voor oost
@@ -515,10 +530,29 @@ namespace Schaakproject
 
                 if (_wilRokeren == true && _magRokeren == true)
                 {
-                    this.vakje.pbox.update();
-                    this.vakje.buurWest.buurWest.pbox.update();
-                    this.vakje.buurWest.pbox.update();
-                    this.vakje.buurOost.pbox.update();
+                    if (spel.Variant == "Klassiek")
+                    {
+                        this.vakje.pbox.update();
+                        this.vakje.buurWest.buurWest.pbox.update();
+                        this.vakje.buurWest.pbox.update();
+                        this.vakje.buurOost.pbox.update();
+
+                    }
+                    else
+                    {
+                        _torenoud = vakjeToren;
+                        _koningoud = vakjeKoning;
+                        this.vakje.pbox.update();
+                        vakjeToren.pbox.update();
+                        _Randwest.buurOost.buurOost.schaakstuk = _koningoud.schaakstuk;
+                        _Randwest.buurOost.buurOost.buurOost.schaakstuk = _torenoud.schaakstuk;
+                        _Randwest.buurOost.pbox.update();
+                        _Randwest.buurOost.buurOost.pbox.update();
+                        _Randwest.buurOost.buurOost.buurOost.pbox.update();
+                        _koningoud.schaakstuk = null;
+                        _torenoud.schaakstuk = null;
+
+                    }
 
                     speler.validezet = true;
                     _eersteZet = true;
@@ -535,10 +569,13 @@ namespace Schaakproject
                     }
                     else
                     {
+                        _Randwest.buurOost.buurOost = vakjeKoning;
+                        vakjeKoning.schaakstuk = this;
+                        _Randwest.buurOost.buurOost = vakjeToren;
                         _Randwest.buurOost.buurOost.schaakstuk = null;
                         _Randwest.buurOost.buurOost.buurOost.schaakstuk = null;
-                        _Randwest.buurOost.buurOost.buurOost.buurOost = null;
-                        
+                        _Randwest.buurOost.buurOost.buurOost.buurOost.schaakstuk = null;
+
                     }
                 }
             }

@@ -331,6 +331,7 @@
             this.Controls.Add(this.lblSpeler1Naam);
             this.Controls.Add(this.lbTitel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "NaamInvoer";
             this.Text = "Voer je naam in";
             this.ResumeLayout(false);
