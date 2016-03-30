@@ -112,17 +112,13 @@ namespace Schaakproject
                 {
                     if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler1.Kleur)
                     {
+                        Console.WriteLine("Speler selecteert stuk");
                         _speler1.SelecteerStuk(pictureBox.vakje, _spel);
                     }
                     else
                     {
-                        _speler1.SelecteerVakje(pictureBox.vakje, _spel);
-                        _computerSpeler.Zet(pictureBox.vakje, _spel, _speler1);
+                        _speler1.SelecteerVakje(pictureBox.vakje, _spel);                
                     }
-                }
-                else
-                {
-                    //_computerSpeler.Zet(pictureBox.vakje, _spel, _speler1);
                 }
             }
 
