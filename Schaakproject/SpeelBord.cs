@@ -181,6 +181,7 @@ namespace Schaakproject
 
         private void SpeelBord_Load(object sender, EventArgs e)
         {
+            btHerstart.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //transparent bordercolor (Color.Transparent is unsupported)
             //hierdoor zijn de plaatjes ook zichtbaar zonder er eerst overheen te hoveren met je muis
             btnregels.BackgroundImage = Properties.Resources.button_regels_2;
             btnterug.BackgroundImage = Properties.Resources.button_terug_2;
@@ -398,7 +399,7 @@ namespace Schaakproject
             this.btnterug.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //transparent bordercolor (Color.Transparent is unsupported)
             if (clicks == 0)
             {
-                TerugMelding menu = new TerugMelding(this);
+                TerugMelding menu = new TerugMelding(this, _spel);
                 menu.ShowDialog();
             }
             else if (clicks == 1)

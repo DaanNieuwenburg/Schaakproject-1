@@ -68,10 +68,16 @@ namespace Schaakproject
         private Schaakstuk schaakGezet { get; set; }        //Het schaakstuk dat de koning schaak heeft gezet
         private string richting { get; set; }               //De richting waar het schaakstuk dat de koning schaak heeft gezet staat
         private bool pionvoormat { get; set; }              //om te kijken of er een pion gezet kan worden tussen de koning en een stuk
+        public Color _colorvakje1 { get; private set; }
+        public Color _colorvakje2 { get; private set; }
+        private List<Schaakstuk> Stukvoorkomen { get; set; }
 
 
-        public Schaakbord(string _Variant, Spel Spel, Speler Speler1, Speler Speler2)
+        public Schaakbord(string _Variant, Spel Spel, Speler Speler1, Speler Speler2, Color vakje1, Color vakje2)
         {
+            _colorvakje1 = vakje1;
+            _colorvakje2 = vakje2;
+            Stukvoorkomen = new List<Schaakstuk>();
             aantal1 = 16;
             aantal2 = 16;
             schaakarray = new Vakje[8, 8];
@@ -90,7 +96,7 @@ namespace Schaakproject
             {
                 for (int y = 0; y < 8; y++)
                 {
-                    schaakarray[x, y] = new Vakje(kleurvakje);
+                    schaakarray[x, y] = new Vakje(kleurvakje, _colorvakje1, _colorvakje2);
 
                     kleurvakje = !kleurvakje;
                 }
@@ -918,6 +924,7 @@ namespace Schaakproject
 
         public bool CheckSchaak(Vakje ditvakje, string kleur)
         {
+            Stukvoorkomen.Clear();
             bool mogelijkloop = false;
             staatschaak = false;
             Schaakstuk zetSchaak = null;
@@ -936,6 +943,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurNoord.schaakstuk;
+                        Stukvoorkomen.Add(zetSchaak);
                         richting = "noord";
                     }
                     mogelijkloop = true;
@@ -962,6 +970,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurZuid.schaakstuk;
+                        Stukvoorkomen.Add(zetSchaak);
                         richting = "zuid";
                     }
                     mogelijkloop = true;
@@ -988,6 +997,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurOost.schaakstuk;
+                        Stukvoorkomen.Add(zetSchaak);
                         richting = "oost";
                     }
                     mogelijkloop = true;
@@ -1014,6 +1024,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurWest.schaakstuk;
+                        Stukvoorkomen.Add(zetSchaak);
                         richting = "west";
                     }
                     mogelijkloop = true;
@@ -1041,6 +1052,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurNoordoost.schaakstuk;
+                        Stukvoorkomen.Add(zetSchaak);
                         richting = "noordoost";
                     }
                     mogelijkloop = true;
@@ -1067,6 +1079,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurZuidoost.schaakstuk;
+                        Stukvoorkomen.Add(zetSchaak);
                         richting = "zuidoost";
                     }
                     mogelijkloop = true;
@@ -1093,6 +1106,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurZuidwest.schaakstuk;
+                        Stukvoorkomen.Add(zetSchaak);
                         richting = "zuidwest";
                     }
                     mogelijkloop = true;
@@ -1119,6 +1133,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurNoordwest.schaakstuk;
+                        Stukvoorkomen.Add(zetSchaak);
                         richting = "noordwest";
                     }
                     mogelijkloop = true;
@@ -1140,6 +1155,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurNoord.buurNoordwest.schaakstuk;
+                        Stukvoorkomen.Add(zetSchaak);
                     }
                 }
             }
@@ -1152,6 +1168,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurNoord.buurNoordoost.schaakstuk;
+                        Stukvoorkomen.Add(zetSchaak);
                     }
                 }
             }
@@ -1164,6 +1181,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurOost.buurNoordoost.schaakstuk;
+                        Stukvoorkomen.Add(zetSchaak);
                     }
                 }
             }
@@ -1176,6 +1194,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurOost.buurZuidoost.schaakstuk;
+                        Stukvoorkomen.Add(zetSchaak);
                     }
                 }
             }
@@ -1188,6 +1207,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurZuid.buurZuidoost.schaakstuk;
+                        Stukvoorkomen.Add(zetSchaak);
                     }
                 }
             }
@@ -1200,6 +1220,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurZuid.buurZuidwest.schaakstuk;
+                        Stukvoorkomen.Add(zetSchaak);
                     }
                 }
             }
@@ -1212,6 +1233,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurWest.buurNoordwest.schaakstuk;
+                        Stukvoorkomen.Add(zetSchaak);
                     }
                 }
             }
@@ -1224,6 +1246,7 @@ namespace Schaakproject
                     {
                         staatschaak = true;
                         zetSchaak = vorige.buurWest.buurZuidwest.schaakstuk;
+                        Stukvoorkomen.Add(zetSchaak);
                     }
                 }
             }
@@ -1235,6 +1258,7 @@ namespace Schaakproject
                     if (vorige.buurNoord.schaakstuk is Koning && vorige.buurNoord.schaakstuk.kleur != kleur)
                     {
                         staatschaak = true;
+                        Stukvoorkomen.Add(vorige.buurNoord.schaakstuk);
                     }
                 }
                 //kijk of er oost een koning staat
@@ -1243,6 +1267,7 @@ namespace Schaakproject
                     if (vorige.buurOost.schaakstuk is Koning && vorige.buurOost.schaakstuk.kleur != kleur)
                     {
                         staatschaak = true;
+                        Stukvoorkomen.Add(vorige.buurOost.schaakstuk);
                     }
                 }
                 //kijk of er zuid een koning staat
@@ -1251,6 +1276,7 @@ namespace Schaakproject
                     if (vorige.buurZuid.schaakstuk is Koning && vorige.buurZuid.schaakstuk.kleur != kleur)
                     {
                         staatschaak = true;
+                        Stukvoorkomen.Add(vorige.buurZuid.schaakstuk);
                     }
                 }
                 //kijk of er west een koning staat
@@ -1259,6 +1285,7 @@ namespace Schaakproject
                     if (vorige.buurWest.schaakstuk is Koning && vorige.buurWest.schaakstuk.kleur != kleur)
                     {
                         staatschaak = true;
+                        Stukvoorkomen.Add(vorige.buurWest.schaakstuk);
                     }
                 }
                 //kijk of er noordoost een koning staat
@@ -1267,6 +1294,7 @@ namespace Schaakproject
                     if (vorige.buurNoordoost.schaakstuk is Koning && vorige.buurNoordoost.schaakstuk.kleur != kleur)
                     {
                         staatschaak = true;
+                        Stukvoorkomen.Add(vorige.buurNoordoost.schaakstuk);
                     }
                 }
                 //kijk of er noordwest een koning staat
@@ -1275,6 +1303,7 @@ namespace Schaakproject
                     if (vorige.buurNoordwest.schaakstuk is Koning && vorige.buurNoordwest.schaakstuk.kleur != kleur)
                     {
                         staatschaak = true;
+                        Stukvoorkomen.Add(vorige.buurNoordwest.schaakstuk);
                     }
                 }
                 //kijk of er zuidoost een koning staat
@@ -1283,6 +1312,7 @@ namespace Schaakproject
                     if (vorige.buurZuidoost.schaakstuk is Koning && vorige.buurZuidoost.schaakstuk.kleur != kleur)
                     {
                         staatschaak = true;
+                        Stukvoorkomen.Add(vorige.buurZuidoost.schaakstuk);
                     }
                 }
                 //kijk of er zuidwest een koning staat
@@ -1291,6 +1321,7 @@ namespace Schaakproject
                     if (vorige.buurZuidwest.schaakstuk is Koning && vorige.buurZuidwest.schaakstuk.kleur != kleur)
                     {
                         staatschaak = true;
+                        Stukvoorkomen.Add(vorige.buurZuidwest.schaakstuk);
                     }
                 }
 
@@ -1303,6 +1334,7 @@ namespace Schaakproject
                         {
                             staatschaak = true;
                             zetSchaak = vorige.buurNoordoost.schaakstuk;
+                            Stukvoorkomen.Add(zetSchaak);
                         }
                     }
                     if (vorige.buurNoordwest != null)
@@ -1311,6 +1343,7 @@ namespace Schaakproject
                         {
                             staatschaak = true;
                             zetSchaak = vorige.buurNoordwest.schaakstuk;
+                            Stukvoorkomen.Add(zetSchaak);
                         }
                     }
                 }
@@ -1323,6 +1356,7 @@ namespace Schaakproject
                         {
                             staatschaak = true;
                             zetSchaak = vorige.buurZuidoost.schaakstuk;
+                            Stukvoorkomen.Add(zetSchaak);
                         }
                     }
                     if (vorige.buurZuidwest != null)
@@ -1331,6 +1365,7 @@ namespace Schaakproject
                         {
                             staatschaak = true;
                             zetSchaak = vorige.buurZuidwest.schaakstuk;
+                            Stukvoorkomen.Add(zetSchaak);
                         }
                     }
                 }
@@ -1345,6 +1380,7 @@ namespace Schaakproject
                         if (vorige.buurNoord.schaakstuk is Pion && vorige.buurNoord.schaakstuk.kleur == "zwart")
                         {
                             staatschaak = true;
+                            Stukvoorkomen.Add(vorige.buurNoord.schaakstuk);
                         }
 
                         if (vorige.buurNoord.buurNoord != null)
@@ -1354,11 +1390,13 @@ namespace Schaakproject
                                 if ((vorige.buurNoord.buurNoord.schaakstuk as Pion).eersteZet == true)
                                 {
                                     staatschaak = true;
+                                    Stukvoorkomen.Add(vorige.buurNoord.buurNoord.schaakstuk);
                                 }
                             }
                         }
                     }
                 }
+
                 //alleen een zwarte koning hoeft uit te kijken voor pionnen die zuid staan
                 if (kleur == "zwart")
                 {
@@ -1367,6 +1405,7 @@ namespace Schaakproject
                         if (vorige.buurZuid.schaakstuk is Pion && vorige.buurZuid.schaakstuk.kleur == "wit")
                         {
                             staatschaak = true;
+                            Stukvoorkomen.Add(vorige.buurZuid.schaakstuk);
                         }
 
                         if (vorige.buurZuid.buurZuid != null)
@@ -1376,6 +1415,7 @@ namespace Schaakproject
                                 if ((vorige.buurZuid.buurZuid.schaakstuk as Pion).eersteZet == true)
                                 {
                                     staatschaak = true;
+                                    Stukvoorkomen.Add(vorige.buurZuid.buurZuid.schaakstuk);
                                 }
                             }
                         }
@@ -1583,7 +1623,25 @@ namespace Schaakproject
                 bool checkschaak = CheckSchaak(schaakGezet.vakje, kleur);
                 if (checkschaak == true)
                 {
+                    bool magnietslaan = false;
+                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                    for (int i = 0; i < Lijst.Count; i++)
+                    {
+
+                        Schaakstuk temp = Lijst[i];
+                        temp.vakje.schaakstuk = null;
+                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                        if (check == false)
+                        {
+                            magnietslaan = true;
+                        }
+                        temp.vakje.schaakstuk = temp;
+
+                    }
+                    if (magnietslaan == true)
+                    {
                     mat = false;
+                }
                 }
 
                 Vakje vorige = koningVakje;

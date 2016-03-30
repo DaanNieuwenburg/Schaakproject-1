@@ -12,13 +12,17 @@ namespace Schaakproject
         private bool buttonClick2 { get; set; }    
         private Color bordercolor { get; set; }     //Je kunt de kleur voor de rand veranderen
         private Color selectcolor { get; set; }     //Je kunt de kleur voor een geselecteerd vakje veranderen
+        private Color vakje1color { get; set; }     //Je kunt de kleur voor de zwarte vakjes veranderen
+        private Color vakje2color { get; set; }     //Je kunt de kleur voor de witte vakjes veranderen
 
-        public NaamInvoer()
+        public NaamInvoer(Color border, Color select)
         {
             InitializeComponent();
             this.CenterToScreen();
-            bordercolor = Color.SandyBrown;
-            selectcolor = Color.HotPink;
+            bordercolor = border;
+            selectcolor = select;         
+            vakje1color = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            vakje2color = Color.SaddleBrown;
         }
 
         private void btnNaamSubmit_Click(object sender, EventArgs e)
@@ -26,7 +30,7 @@ namespace Schaakproject
             //Als je op deze knop drukt, wordt het spel opgestart          
               
             DialogResult = DialogResult.Yes;
-            Spel spel = new Spel(Mode, txtSpeler1Naam.Text, txtSpeler2Naam.Text, Variant, bordercolor, selectcolor);
+            Spel spel = new Spel(Mode, txtSpeler1Naam.Text, txtSpeler2Naam.Text, Variant, bordercolor, selectcolor, vakje1color, vakje2color);
         }
 
         private void btModeMultiplayer_Click(object sender, EventArgs e)
@@ -109,6 +113,8 @@ namespace Schaakproject
                 btnSettings.Visible = true;
                 lbTitel.Text = "Selecteer een schaakmode";
                 btnborder.Visible = false;
+                btnvakje1.Visible = false;
+                btnvakje2.Visible = false;
                 btnselect.Visible = false;
                 lblSpeler1Naam.Visible = false;
                 lblSpeler2Naam.Visible = false;
@@ -217,6 +223,8 @@ namespace Schaakproject
             txtSpeler1Naam.Visible = false;
             txtSpeler2Naam.Visible = false;
             btnBegin.Visible = false;
+            btnvakje1.Visible = true;
+            btnvakje2.Visible = true;
             btnKlassiek.Visible = false;
             btnChess960.Visible = false;
             btnborder.Visible = true;
@@ -253,6 +261,51 @@ namespace Schaakproject
         private void btnselect_MouseLeave(object sender, EventArgs e)
         {
             btnselect.BackgroundImage = Properties.Resources.button_selectedcolor;
+        }
+
+        private void btnvakje1_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            DialogResult result = colorDialog.ShowDialog();
+
+            // Kijk of gebruiker op OK drukt
+            if (result == DialogResult.OK)
+            {
+                vakje1color = colorDialog.Color;
+            }
+        }
+    
+
+        private void btnvakje2_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            DialogResult result = colorDialog.ShowDialog();
+
+            // Kijk of gebruiker op OK drukt
+            if (result == DialogResult.OK)
+            {
+                vakje2color = colorDialog.Color;
+            }
+        }
+
+        private void btnvakje1_MouseEnter(object sender, EventArgs e)
+        {
+            btnvakje1.BackgroundImage = Properties.Resources.button_vakje1color_click;
+        }
+
+        private void btnvakje1_MouseLeave(object sender, EventArgs e)
+        {
+            btnvakje1.BackgroundImage = Properties.Resources.button_vakje1color;
+        }
+
+        private void btnvakje2_MouseEnter(object sender, EventArgs e)
+        {
+            btnvakje2.BackgroundImage = Properties.Resources.button_vakje2color_click;
+        }
+
+        private void btnvakje2_MouseLeave(object sender, EventArgs e)
+        {
+            btnvakje2.BackgroundImage = Properties.Resources.button_vakje2color;
         }
     }
 }
