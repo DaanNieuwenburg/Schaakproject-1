@@ -23,10 +23,13 @@ namespace Schaakproject
         }
         public override void kanStukSlaan(Algoritme algoritme, Vakje geselecteerdStuk)
         {
-            loopStukSlaan("Noordwest", algoritme, geselecteerdStuk);
-            loopStukSlaan("Noordoost", algoritme, geselecteerdStuk);
-            loopStukSlaan("Zuidwest", algoritme, geselecteerdStuk);
-            loopStukSlaan("Zuidoost", algoritme, geselecteerdStuk);
+            if (geselecteerdStuk.schaakstuk.kleur == "Zwart")
+            {
+                loopStukSlaan("Noordwest", algoritme, geselecteerdStuk);
+                loopStukSlaan("Noordoost", algoritme, geselecteerdStuk);
+                loopStukSlaan("Zuidwest", algoritme, geselecteerdStuk);
+                loopStukSlaan("Zuidoost", algoritme, geselecteerdStuk);
+            }
         }
 
         public void loopStukSlaan(string richting, Algoritme algoritme, Vakje geselecteerdStuk)

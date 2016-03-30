@@ -24,10 +24,13 @@ namespace Schaakproject
         }
         public override void kanStukSlaan(Algoritme algoritme, Vakje geselecteerdStuk)
         {
-            loopStukSlaan("Noord", algoritme, geselecteerdStuk);
-            loopStukSlaan("West", algoritme, geselecteerdStuk);
-            loopStukSlaan("Zuid", algoritme, geselecteerdStuk);
-            loopStukSlaan("Oost", algoritme, geselecteerdStuk);
+            if (geselecteerdStuk.schaakstuk.kleur == "Zwart")
+            {
+                loopStukSlaan("Noord", algoritme, geselecteerdStuk);
+                loopStukSlaan("West", algoritme, geselecteerdStuk);
+                loopStukSlaan("Zuid", algoritme, geselecteerdStuk);
+                loopStukSlaan("Oost", algoritme, geselecteerdStuk);
+            }
         }
 
         public void loopStukSlaan(string richting, Algoritme algoritme, Vakje geselecteerdStuk)
@@ -45,7 +48,7 @@ namespace Schaakproject
             {
                 volgendVakje = geselecteerdStuk.buurZuid;
             }
-            else if(richting == "buurOost")
+            else if (richting == "buurOost")
             {
                 volgendVakje = geselecteerdStuk.buurOost;
             }
@@ -98,7 +101,7 @@ namespace Schaakproject
                     {
                         volgendVakje = volgendVakje.buurZuid;
                     }
-                    else if(richting == "Oost")
+                    else if (richting == "Oost")
                     {
                         volgendVakje = volgendVakje.buurOost;
                     }
@@ -135,7 +138,7 @@ namespace Schaakproject
                 {
                     if (vorige.buurNoord.schaakstuk != null && vorige.buurNoord.schaakstuk.kleur == "Wit")
                     {
-                       spel.updateAantalStukken(spel.spelerAanZet);
+                        spel.updateAantalStukken(spel.spelerAanZet);
                     }
                     mogelijk = true;
                     mogelijkloop = true;
@@ -156,7 +159,7 @@ namespace Schaakproject
                     {
                         if (vorige.buurOost.schaakstuk != null && vorige.buurOost.schaakstuk.kleur == "Wit")
                         {
-                           spel.updateAantalStukken(spel.spelerAanZet);
+                            spel.updateAantalStukken(spel.spelerAanZet);
                         }
                         mogelijk = true;
                         mogelijkloop = true;
@@ -178,7 +181,7 @@ namespace Schaakproject
                     {
                         if (vorige.buurZuid.schaakstuk != null && vorige.buurZuid.schaakstuk.kleur == "Wit")
                         {
-                           spel.updateAantalStukken(spel.spelerAanZet);
+                            spel.updateAantalStukken(spel.spelerAanZet);
                         }
                         mogelijk = true;
                         mogelijkloop = true;
@@ -200,7 +203,7 @@ namespace Schaakproject
                     {
                         if (vorige.buurWest.schaakstuk != null && vorige.buurWest.schaakstuk.kleur == "Wit")
                         {
-                           spel.updateAantalStukken(spel.spelerAanZet);
+                            spel.updateAantalStukken(spel.spelerAanZet);
                         }
                         mogelijk = true;
                         mogelijkloop = true;
@@ -222,7 +225,7 @@ namespace Schaakproject
                 {
                     if (vorige.buurNoordoost.schaakstuk != null && vorige.buurNoordoost.schaakstuk.kleur == "Wit")
                     {
-                       spel.updateAantalStukken(spel.spelerAanZet);
+                        spel.updateAantalStukken(spel.spelerAanZet);
                     }
                     mogelijk = true;
                     mogelijkloop = true;
@@ -243,7 +246,7 @@ namespace Schaakproject
                     {
                         if (vorige.buurNoordwest.schaakstuk != null && vorige.buurNoordwest.schaakstuk.kleur == "Wit")
                         {
-                           spel.updateAantalStukken(spel.spelerAanZet);
+                            spel.updateAantalStukken(spel.spelerAanZet);
                         }
                         mogelijk = true;
                         mogelijkloop = true;
@@ -265,7 +268,7 @@ namespace Schaakproject
                     {
                         if (vorige.buurZuidoost.schaakstuk != null && vorige.buurZuidoost.schaakstuk.kleur == "Wit")
                         {
-                           spel.updateAantalStukken(spel.spelerAanZet);
+                            spel.updateAantalStukken(spel.spelerAanZet);
                         }
                         mogelijk = true;
                         mogelijkloop = true;
@@ -288,7 +291,7 @@ namespace Schaakproject
                     {
                         if (vorige.buurZuidwest.schaakstuk != null && vorige.buurZuidwest.schaakstuk.kleur == "Wit")
                         {
-                           spel.updateAantalStukken(spel.spelerAanZet);
+                            spel.updateAantalStukken(spel.spelerAanZet);
                         }
                         mogelijk = true;
                         mogelijkloop = true;
