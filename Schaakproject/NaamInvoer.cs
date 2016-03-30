@@ -15,14 +15,15 @@ namespace Schaakproject
         private Color vakje1color { get; set; }     //Je kunt de kleur voor de zwarte vakjes veranderen
         private Color vakje2color { get; set; }     //Je kunt de kleur voor de witte vakjes veranderen
 
-        public NaamInvoer(Color border, Color select)
+        public NaamInvoer(Color border, Color select, Color vakje1color, Color vakje2color)
         {
             InitializeComponent();
             this.CenterToScreen();
             bordercolor = border;
-            selectcolor = select;         
-            vakje1color = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            vakje2color = Color.SaddleBrown;
+            selectcolor = select;
+            this.vakje1color = vakje1color;
+            this.vakje2color = vakje2color;         
+            
         }
 
         private void btnNaamSubmit_Click(object sender, EventArgs e)

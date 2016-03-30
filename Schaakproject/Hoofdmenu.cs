@@ -21,7 +21,7 @@ namespace Schaakproject
         private void startButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            NaamInvoer naaminvoerdialog = new NaamInvoer(Color.SandyBrown, Color.HotPink);
+            NaamInvoer naaminvoerdialog = new NaamInvoer(Color.SandyBrown, Color.HotPink, Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192))))), Color.SaddleBrown);
             naaminvoerdialog.ShowDialog();
         }
 
