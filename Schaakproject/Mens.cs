@@ -90,6 +90,7 @@ namespace Schaakproject
                 {
                     spel.selected = clicked;    //voor de singleplayer
                     spel.VeranderSpeler();      //de andere speler is aan zet
+                    spel.computerSpeler.Zet(clicked, spel, this);  // laat de computer op de mens reageren
 
                     // De pion voor en-passant wordt weer vergeten.
                     enPassantPion = null;
