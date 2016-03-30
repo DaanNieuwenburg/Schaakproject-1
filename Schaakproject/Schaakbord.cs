@@ -305,7 +305,7 @@ namespace Schaakproject
                                 {
                                     Spel.Speler2.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
                                 }
-                                
+
                             }
                         }
                     }
@@ -1434,6 +1434,8 @@ namespace Schaakproject
 
             string kleur = koning.kleur;
             Vakje koningVakje = koning.vakje;
+            
+            koning.vakje.schaakstuk = null;
 
             //bekijk of de koning schaak staat als hij naar noord zou bewegen
             if (koningVakje.buurNoord != null)
@@ -1604,6 +1606,7 @@ namespace Schaakproject
                 }
                 mogelijk = false;
             }
+            koning.vakje.schaakstuk = koning;
 
             schaakGezet = null;
             richting = null;
@@ -1619,7 +1622,7 @@ namespace Schaakproject
                 {
                     kleur = "wit";
                 }
-
+                Schaakstuk tempgezet = schaakGezet;
                 bool checkschaak = CheckSchaak(schaakGezet.vakje, kleur);
                 if (checkschaak == true)
                 {
@@ -1627,21 +1630,23 @@ namespace Schaakproject
                     List<Schaakstuk> Lijst = Stukvoorkomen;
                     for (int i = 0; i < Lijst.Count; i++)
                     {
-
-                        Schaakstuk temp = Lijst[i];
+                        Schaakstuk temp = Lijst[i];                        
                         temp.vakje.schaakstuk = null;
+                        tempgezet.vakje.schaakstuk = temp;
+
                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                         if (check == false)
                         {
                             magnietslaan = true;
                         }
                         temp.vakje.schaakstuk = temp;
+                        tempgezet.vakje.schaakstuk = tempgezet;
 
                     }
                     if (magnietslaan == true)
                     {
-                    mat = false;
-                }
+                        mat = false;
+                    }
                 }
 
                 Vakje vorige = koningVakje;
@@ -1831,7 +1836,7 @@ namespace Schaakproject
             {
                 return false;
             }
-            
+
             // Als beide spelers niet meer hebben dan een koning en 1 loper/paard is het remise
             else
             {
