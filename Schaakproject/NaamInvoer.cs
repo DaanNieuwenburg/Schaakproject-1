@@ -287,5 +287,25 @@ namespace Schaakproject
                 vakje2color = colorDialog.Color;
             }
         }
+
+        private void btnvakje1_MouseEnter(object sender, EventArgs e)
+        {
+            btnvakje1.BackgroundImage = Properties.Resources.button_vakje1color_click;
+        }
+
+        private void btnvakje1_MouseLeave(object sender, EventArgs e)
+        {
+            btnvakje1.BackgroundImage = Properties.Resources.button_vakje1color;
+        }
+
+        private void btnvakje2_MouseEnter(object sender, EventArgs e)
+        {
+            btnvakje2.BackgroundImage = Properties.Resources.button_vakje2color_click;
+        }
+
+        private void btnvakje2_MouseLeave(object sender, EventArgs e)
+        {
+            btnvakje2.BackgroundImage = Properties.Resources.button_vakje2color;
+        }
     }
 }

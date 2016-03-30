@@ -240,9 +240,9 @@
             this.btnborder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnborder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnborder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnborder.Location = new System.Drawing.Point(158, 32);
+            this.btnborder.Location = new System.Drawing.Point(181, 35);
             this.btnborder.Name = "btnborder";
-            this.btnborder.Size = new System.Drawing.Size(200, 66);
+            this.btnborder.Size = new System.Drawing.Size(177, 56);
             this.btnborder.TabIndex = 17;
             this.btnborder.UseVisualStyleBackColor = false;
             this.btnborder.Visible = false;
@@ -259,9 +259,9 @@
             this.btnselect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnselect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnselect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnselect.Location = new System.Drawing.Point(158, 87);
+            this.btnselect.Location = new System.Drawing.Point(181, 77);
             this.btnselect.Name = "btnselect";
-            this.btnselect.Size = new System.Drawing.Size(200, 66);
+            this.btnselect.Size = new System.Drawing.Size(177, 54);
             this.btnselect.TabIndex = 18;
             this.btnselect.UseVisualStyleBackColor = false;
             this.btnselect.Visible = false;
@@ -272,36 +272,40 @@
             // btnvakje1
             // 
             this.btnvakje1.BackColor = System.Drawing.Color.Transparent;
-            this.btnvakje1.BackgroundImage = global::Schaakproject.Properties.Resources.button_selectedcolor;
+            this.btnvakje1.BackgroundImage = global::Schaakproject.Properties.Resources.button_vakje1color;
             this.btnvakje1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnvakje1.FlatAppearance.BorderSize = 0;
             this.btnvakje1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnvakje1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnvakje1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnvakje1.Location = new System.Drawing.Point(158, 150);
+            this.btnvakje1.Location = new System.Drawing.Point(181, 119);
             this.btnvakje1.Name = "btnvakje1";
-            this.btnvakje1.Size = new System.Drawing.Size(200, 66);
+            this.btnvakje1.Size = new System.Drawing.Size(177, 54);
             this.btnvakje1.TabIndex = 19;
             this.btnvakje1.UseVisualStyleBackColor = false;
             this.btnvakje1.Visible = false;
             this.btnvakje1.Click += new System.EventHandler(this.btnvakje1_Click);
+            this.btnvakje1.MouseEnter += new System.EventHandler(this.btnvakje1_MouseEnter);
+            this.btnvakje1.MouseLeave += new System.EventHandler(this.btnvakje1_MouseLeave);
             // 
             // btnvakje2
             // 
             this.btnvakje2.BackColor = System.Drawing.Color.Transparent;
-            this.btnvakje2.BackgroundImage = global::Schaakproject.Properties.Resources.button_selectedcolor;
+            this.btnvakje2.BackgroundImage = global::Schaakproject.Properties.Resources.button_vakje2color;
             this.btnvakje2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnvakje2.FlatAppearance.BorderSize = 0;
             this.btnvakje2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnvakje2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnvakje2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnvakje2.Location = new System.Drawing.Point(158, 206);
+            this.btnvakje2.Location = new System.Drawing.Point(181, 161);
             this.btnvakje2.Name = "btnvakje2";
-            this.btnvakje2.Size = new System.Drawing.Size(200, 66);
+            this.btnvakje2.Size = new System.Drawing.Size(177, 54);
             this.btnvakje2.TabIndex = 20;
             this.btnvakje2.UseVisualStyleBackColor = false;
             this.btnvakje2.Visible = false;
             this.btnvakje2.Click += new System.EventHandler(this.btnvakje2_Click);
+            this.btnvakje2.MouseEnter += new System.EventHandler(this.btnvakje2_MouseEnter);
+            this.btnvakje2.MouseLeave += new System.EventHandler(this.btnvakje2_MouseLeave);
             // 
             // NaamInvoer
             // 
