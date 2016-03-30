@@ -134,6 +134,8 @@ namespace Schaakproject
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
                     alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                    _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Green;
+                    _geselecteerdVakje.pbox.BackColor = System.Drawing.Color.Yellow;
                 }
 
                 else if (schaakstuk is Pion && schaakstuk.kleur == "wit" && alGeslagen == false)
@@ -143,6 +145,8 @@ namespace Schaakproject
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
                     alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                    _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Green;
+                    _geselecteerdVakje.pbox.BackColor = System.Drawing.Color.Yellow;
                 }
 
                 else if (schaakstuk is Toren && schaakstuk.kleur == "wit" && alGeslagen == false)
@@ -152,6 +156,8 @@ namespace Schaakproject
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
                     alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                    _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Green;
+                    _geselecteerdVakje.pbox.BackColor = System.Drawing.Color.Yellow;
                 }
 
                 else if (schaakstuk is Paard && schaakstuk.kleur == "wit" && alGeslagen == false)
@@ -161,6 +167,8 @@ namespace Schaakproject
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
                     alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                    _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Green;
+                    _geselecteerdVakje.pbox.BackColor = System.Drawing.Color.Yellow;
                 }
 
                 else if (schaakstuk is Loper && schaakstuk.kleur == "wit" && alGeslagen == false)
@@ -170,6 +178,8 @@ namespace Schaakproject
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
                     alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                    _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Green;
+                    _geselecteerdVakje.pbox.BackColor = System.Drawing.Color.Yellow;
                 }
                 else if (schaakstuk is Dame && schaakstuk.kleur == "wit" && alGeslagen == false)
                 {
@@ -178,6 +188,8 @@ namespace Schaakproject
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
                     alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                    _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Green;
+                    _geselecteerdVakje.pbox.BackColor = System.Drawing.Color.Yellow;
                 }
             }
         }
@@ -330,6 +342,9 @@ namespace Schaakproject
             bool alVerplaatst = false;
             for (int i = 0; i < _computer.verplaatsingsLijst.Count; i++)
             {
+                _computer.verplaatsingsLijst[i].pbox.BackColor = System.Drawing.Color.AntiqueWhite;
+
+                Console.WriteLine("Teller " + i);
                 Schaakstuk schaakstuk = _computer.verplaatsingsLijst[i].schaakstuk;
                 if (schaakstuk is Pion && alVerplaatst == false)
                 {
@@ -343,33 +358,30 @@ namespace Schaakproject
                             alVerplaatst = true;
                             _geselecteerdVakje = _computer.verplaatsingsLijst[i].buurZuid;       // geselecteerd vak
                             _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                            _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Azure;
                         }
                         else if(_geselecteerdStuk.buurZuid.buurZuidwest != null && _geselecteerdStuk.buurZuid.buurZuidwest.schaakstuk == null)
                         {
+                            _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Azure;
                             Console.WriteLine("Verplaats de pion");
                             alVerplaatst = true;
                             _geselecteerdVakje = _computer.verplaatsingsLijst[i].buurZuid;       // geselecteerd vak
                             _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                            _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Azure;
                         }
-                        else
-                        {
-                            Console.WriteLine("Er staat een pion buurzuid.zuidoost of zuidwest");
-                            alVerplaatst = true;
-                            verplaatsNieuwStuk();
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Er staat een pion buurzuid");
-                        //alVerplaatst = true;
-                        //verplaatsNieuwStuk();
                     }
                 }
-                else if (i + 1 == _computer.verplaatsingsLijst.Count && alVerplaatst == false)
+
+                // Als er niets verplaatst kan worden, verplaats nieuw stuk
+                if (i + 1 == _computer.verplaatsingsLijst.Count && alVerplaatst == false)
                 {
                     Console.WriteLine("Er zijn geen verplaatsingen meer en verplaats nieuw stuk");
                     alVerplaatst = true;
                     verplaatsNieuwStuk();
+                }
+                else
+                {
+                    Console.WriteLine("Einde loop");
                 }
             }
         }
