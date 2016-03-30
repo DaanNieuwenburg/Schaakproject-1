@@ -262,6 +262,21 @@ namespace Schaakproject
                 this.btnregels.Visible = false;
                 this.btnvariant.Visible = false;
             }
+            else if (clicks == 2 && optie == 3)
+            {
+                clicks++;
+                pbuitleg.Image = Properties.Resources.uitleg_promoveren;
+                this.btndame.Visible = false;
+                pbuitleg.Visible = true;
+                this.btnkoning.Visible = false;
+                this.btntoren.Visible = false;
+                this.btnloper.Visible = false;
+                this.btnpaard.Visible = false;
+                this.btnpion.Visible = false;
+                this.btnterug.Visible = true;
+                this.btnregels.Visible = false;
+                this.btnvariant.Visible = false;
+            }
             else if (clicks == 1)
             {
                 optie = 1;
@@ -330,7 +345,7 @@ namespace Schaakproject
                 lbluitleg.Visible = true;
                 lbluitleg.Text = (/* HIER NOG UITLEG VOOR SCHAAK*/"");
                 this.btndame.Visible = false;
-                pbuitleg.BackgroundImage = Properties.Resources.zettenpaard; //HIER NOG UITLEG VOOR SCHAAK
+                pbuitleg.BackgroundImage = Properties.Resources.uitleg_schaak;
                 pbuitleg.Visible = true;
                 this.btnkoning.Visible = false;
                 this.btntoren.Visible = false;
@@ -366,7 +381,7 @@ namespace Schaakproject
                 lbluitleg.Visible = true;
                 lbluitleg.Text = (/* HIER NOG UITLEG VOOR ROKEREN*/"");
                 this.btndame.Visible = false;
-                pbuitleg.BackgroundImage = Properties.Resources.zettenpaard; //HIER NOG UITLEG VOOR ROKEREN
+                pbuitleg.BackgroundImage = Properties.Resources.uitleg_rokeren;
                 pbuitleg.Visible = true;
                 this.btnkoning.Visible = false;
                 this.btntoren.Visible = false;
@@ -535,7 +550,7 @@ namespace Schaakproject
                 lbluitleg.Visible = true;
                 lbluitleg.Text = (/* HIER NOG UITLEG VOOR SCHAAKMAT*/"");
                 this.btndame.Visible = false;
-                pbuitleg.BackgroundImage = Properties.Resources.uitlegmat; //HIER NOG UITLEG VOOR SCHAAKMAT
+                pbuitleg.BackgroundImage = Properties.Resources.uitlegmat;
                 pbuitleg.Visible = true;
                 this.btnkoning.Visible = false;
                 this.btntoren.Visible = false;
@@ -563,24 +578,63 @@ namespace Schaakproject
                 this.btnvariant.Visible = false;
                 pbuitleg.Visible = true;
             }
+            else if (clicks == 2 && optie == 3)
+            {
+                //En-passant uitleg
+                clicks++;
+                lbluitleg.Visible = true;
+                lbluitleg.Text = (/* HIER NOG UITLEG VOOR ENPASSANT */"");
+                this.btndame.Visible = false;
+                pbuitleg.BackgroundImage = Properties.Resources.uitleg_enpassant;
+                pbuitleg.Visible = true;
+                this.btnkoning.Visible = false;
+                this.btntoren.Visible = false;
+                this.btnloper.Visible = false;
+                this.btnpaard.Visible = false;
+                this.btnpion.Visible = false;
+                this.btnterug.Visible = true;
+                this.btnregels.Visible = false;
+                this.btnvariant.Visible = false;
+            }
         }
 
         private void btnloper_Click(object sender, EventArgs e)
         {
-            clicks++;
-            lbluitleg.Text = ("Loper\nDe loper beweegt diagonaal over\nhet bord. Net als de toren mag de\nloper niet over andere stukken springen.");
-            lbluitleg.Visible = true;
-            pbuitleg.BackgroundImage = Properties.Resources.zettenloper;
-            this.btndame.Visible = false;
-            this.btnkoning.Visible = false;
-            this.btntoren.Visible = false;
-            this.btnloper.Visible = false;
-            this.btnpaard.Visible = false;
-            this.btnpion.Visible = false;
-            this.btnterug.Visible = true;
-            pbuitleg.Visible = true;
-            this.btnvariant.Visible = false;
-            this.btnregels.Visible = false;
+            if(optie == 1)
+            {
+                clicks++;
+                lbluitleg.Text = ("" /*HIER DE UITLEG VOOR REMISE*/);
+                lbluitleg.Visible = true;
+                pbuitleg.BackgroundImage = Properties.Resources.uitleg_remise;
+                this.btndame.Visible = false;
+                this.btnkoning.Visible = false;
+                this.btntoren.Visible = false;
+                this.btnloper.Visible = false;
+                this.btnpaard.Visible = false;
+                this.btnpion.Visible = false;
+                this.btnterug.Visible = true;
+                pbuitleg.Visible = true;
+                this.btnvariant.Visible = false;
+                this.btnregels.Visible = false;
+            }
+            else
+            {
+                clicks++;
+                lbluitleg.Text = ("Loper\nDe loper beweegt diagonaal over\nhet bord. Net als de toren mag de\nloper niet over andere stukken springen.");
+                lbluitleg.Visible = true;
+                pbuitleg.BackgroundImage = Properties.Resources.zettenloper;
+                this.btndame.Visible = false;
+                this.btnkoning.Visible = false;
+                this.btntoren.Visible = false;
+                this.btnloper.Visible = false;
+                this.btnpaard.Visible = false;
+                this.btnpion.Visible = false;
+                this.btnterug.Visible = true;
+                pbuitleg.Visible = true;
+                this.btnvariant.Visible = false;
+                this.btnregels.Visible = false;
+            }
+            
         }
 
         private void btnpion_Click(object sender, EventArgs e)
