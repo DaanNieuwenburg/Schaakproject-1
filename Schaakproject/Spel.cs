@@ -23,7 +23,7 @@ namespace Schaakproject
 
         public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant, Color bordercolor, Color select)
         {
-            
+
             _selectcolor = select;
             _bordercolor = bordercolor;
             SpelMode = Mode;
@@ -151,7 +151,7 @@ namespace Schaakproject
                         //mat = schaakbord.CheckMat(computerSpeler.Koning);
                         //if (mat == true)
                         //{
-                          //  Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
+                        //  Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
                         //}
                     }
                     else
@@ -175,7 +175,7 @@ namespace Schaakproject
                         //if (pat == true)
                         //{
                         //    Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Purple;
-                       // }
+                        // }
                     }
                     else
                     {
@@ -278,17 +278,18 @@ namespace Schaakproject
             }
         }
 
-        public void updateAantalStukken(Mens speler)
+        public void updateAantalStukken(Speler speler)
         {
-            if (SpelMode != "Singleplayer")
+            if (speler.Kleur == "wit")
             {
-                speler.resterendestukken = speler.resterendestukken - 1;
-                if (speler.Kleur == "wit")
+                Speler1.resterendestukken = Speler1.resterendestukken - 1;
+                speelbord.lblaantal2.Text = Convert.ToString(Speler1.resterendestukken); //onlogisch, speler1 = label 2
+            }
+            else
+            {
+                if (SpelMode != "Singleplayer")
                 {
-                    speelbord.lblaantal2.Text = Convert.ToString(Speler1.resterendestukken); //onlogisch, speler1 = label 2
-                }
-                else
-                {
+                    Speler2.resterendestukken = Speler2.resterendestukken - 1;
                     speelbord.lblaantal1.Text = Convert.ToString(Speler2.resterendestukken); //onlogisch, speler2 = label 1
                 }
             }

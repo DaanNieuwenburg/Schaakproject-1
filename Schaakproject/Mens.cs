@@ -9,7 +9,6 @@ namespace Schaakproject
     public class Mens : Speler
     {
         public Vakje selected { get; set; }
-        public bool validezet { get; set; }
         public int resterendestukken { get; set; }
         private Color _selectcolor { get; set; }
         public Mens(string naam, string kleur, Spel _spel, Color select)
@@ -80,7 +79,7 @@ namespace Schaakproject
             if (selected != null) //alleen als er al iets is geselecteerd
             {
                 Vakje clicked = nieuwVakje;   //voor de singleplayer
-                selected.schaakstuk.Verplaats(nieuwVakje, selected, this, spel); //probeer het schaakstuk te verplaatsen
+                selected.schaakstuk.Verplaats(nieuwVakje, selected, spel); //probeer het schaakstuk te verplaatsen
                 
                 selected.pbox.update();    //update het eerste vakje
                 nieuwVakje.pbox.update();         //update het tweede vakje
@@ -90,7 +89,11 @@ namespace Schaakproject
                 {
                     spel.selected = clicked;    //voor de singleplayer
                     spel.VeranderSpeler();      //de andere speler is aan zet
-                    spel.computerSpeler.Zet(clicked, spel, this);  // laat de computer op de mens reageren
+                    if(spel.SpelMode == "Singleplayer")
+                    {
+                        clicked.pbox.BackColor = System.Drawing.Color.Black;
+                        spel.computerSpeler.Zet(clicked, spel);  // laat de computer op de mens reageren
+                    }
 
                     // De pion voor en-passant wordt weer vergeten.
                     enPassantPion = null;

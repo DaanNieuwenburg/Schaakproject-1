@@ -8,7 +8,7 @@ namespace Schaakproject
     public abstract class Speler
     {
         public string Naam { get; set; }
-
+        public bool validezet { get; set; }
         public string Kleur { get; set; }
 
         public Spel spel { get; set; }

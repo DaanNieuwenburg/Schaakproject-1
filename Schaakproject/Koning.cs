@@ -109,7 +109,7 @@ namespace Schaakproject
             }
         }
 
-        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Mens speler, Spel spel)
+        public override void Verplaats(Vakje nieuwVakje, Vakje selected, Spel spel)
         {
 
             bool gevonden = false;
@@ -117,7 +117,7 @@ namespace Schaakproject
             {
                 if (selected.buurNoord.schaakstuk != null && selected.buurNoord.schaakstuk.kleur != speler.Kleur)
                 {
-                    spel.updateAantalStukken(speler);
+                    spel.updateAantalStukken(spel.spelerAanZet);
                 }
                 gevonden = true;
             }
@@ -125,7 +125,7 @@ namespace Schaakproject
             {
                 if (selected.buurOost.schaakstuk != null && selected.buurOost.schaakstuk.kleur != speler.Kleur)
                 {
-                    spel.updateAantalStukken(speler);
+                    spel.updateAantalStukken(spel.spelerAanZet);
                 }
                 gevonden = true;
             }
@@ -133,7 +133,7 @@ namespace Schaakproject
             {
                 if (selected.buurZuid.schaakstuk != null && selected.buurZuid.schaakstuk.kleur != speler.Kleur)
                 {
-                    spel.updateAantalStukken(speler);
+                    spel.updateAantalStukken(spel.spelerAanZet);
                 }
                 gevonden = true;
             }
@@ -141,7 +141,7 @@ namespace Schaakproject
             {
                 if (selected.buurWest.schaakstuk != null && selected.buurWest.schaakstuk.kleur != speler.Kleur)
                 {
-                    spel.updateAantalStukken(speler);
+                    spel.updateAantalStukken(spel.spelerAanZet);
                 }
                 gevonden = true;
             }
@@ -149,7 +149,7 @@ namespace Schaakproject
             {
                 if (selected.buurNoordoost.schaakstuk != null && selected.buurNoordoost.schaakstuk.kleur != speler.Kleur)
                 {
-                    spel.updateAantalStukken(speler);
+                    spel.updateAantalStukken(spel.spelerAanZet);
                 }
                 gevonden = true;
             }
@@ -157,7 +157,7 @@ namespace Schaakproject
             {
                 if (selected.buurNoordwest.schaakstuk != null && selected.buurNoordwest.schaakstuk.kleur != speler.Kleur)
                 {
-                    spel.updateAantalStukken(speler);
+                    spel.updateAantalStukken(spel.spelerAanZet);
                 }
                 gevonden = true;
             }
@@ -165,7 +165,7 @@ namespace Schaakproject
             {
                 if (selected.buurZuidoost.schaakstuk != null && selected.buurZuidoost.schaakstuk.kleur != speler.Kleur)
                 {
-                    spel.updateAantalStukken(speler);
+                    spel.updateAantalStukken(spel.spelerAanZet);
                 }
                 gevonden = true;
             }
@@ -173,7 +173,7 @@ namespace Schaakproject
             {
                 if (selected.buurZuidwest.schaakstuk != null && selected.buurZuidwest.schaakstuk.kleur != speler.Kleur)
                 {
-                    spel.updateAantalStukken(speler);
+                    spel.updateAantalStukken(spel.spelerAanZet);
                 }
                 gevonden = true;
             }
@@ -197,8 +197,7 @@ namespace Schaakproject
                     {
                         temp.Slaan();
                     }
-
-                    speler.validezet = true;
+                    spel.spelerAanZet.validezet = true;
                 }
             }
         }

@@ -13,7 +13,6 @@ namespace Schaakproject
     {
         private Vakje _vorigvakje { get; set; }
         private Schaakstuk _vorigschaakstuk { get; set; }
-        private Mens _tegenspeler { get; set; }
         private Spel _spel { get; set; }
         private Color _selectedcolor { get; set; }
 
@@ -39,7 +38,7 @@ namespace Schaakproject
             Kleur = kleur;
         }
 
-        public void Zet(Vakje _pictures, Spel spel, Mens tegenspeler)
+        public void Zet(Vakje _pictures, Spel spel)
         {
             Console.WriteLine("COMPUTERS BEURT");
             _spel = spel;
@@ -93,13 +92,9 @@ namespace Schaakproject
         {
             Console.WriteLine("UITVOEREN VAN ZET");
             verplaatsingsLijst.Add(geselecteerdVakje);       // slaat de positie van de computerszet in lijst op 
-            Mens hierhoortgeenmens = new Mens("ikhoorhierniet", "zwart", spel, _selectedcolor);
-            hierhoortgeenmens.resterendestukken = 16;
-            hierhoortgeenmens.Koning = Koning;
-            hierhoortgeenmens.selected = geselecteerdStuk;
             try
             {
-                geselecteerdStuk.schaakstuk.Verplaats(geselecteerdVakje, geselecteerdStuk, hierhoortgeenmens, _spel);
+                geselecteerdStuk.schaakstuk.Verplaats(geselecteerdVakje, geselecteerdStuk, _spel);
                 geselecteerdStuk.pbox.update();                 //update het eerste vakje
                 geselecteerdVakje.pbox.update();                 //update het tweede vakje
                 geselecteerdStuk = null;                        //niets is meer geselecteerd
