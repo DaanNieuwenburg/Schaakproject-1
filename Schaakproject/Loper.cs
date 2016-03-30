@@ -23,69 +23,104 @@ namespace Schaakproject
         }
         public override void kanStukSlaan(Algoritme algoritme, Vakje geselecteerdStuk)
         {
-            if (geselecteerdStuk.schaakstuk.kleur == "Zwart")
+            if (geselecteerdStuk.schaakstuk.kleur == "zwart")
             {
-                loopStukSlaan("Noordwest", algoritme, geselecteerdStuk);
-                loopStukSlaan("Noordoost", algoritme, geselecteerdStuk);
-                loopStukSlaan("Zuidwest", algoritme, geselecteerdStuk);
-                loopStukSlaan("Zuidoost", algoritme, geselecteerdStuk);
-            }
-        }
-
-        public void loopStukSlaan(string richting, Algoritme algoritme, Vakje geselecteerdStuk)
-        {
-            Vakje volgendVakje;
-            if (richting == "Noordwest")
-            {
-                volgendVakje = geselecteerdStuk.buurNoordwest;
-            }
-            else if (richting == "Noordoost")
-            {
-                volgendVakje = geselecteerdStuk.buurNoordoost;
-            }
-            else if (richting == "Zuidwest")
-            {
-                volgendVakje = geselecteerdStuk.buurZuidwest;
-            }
-            else
-            {
-                volgendVakje = geselecteerdStuk.buurZuidoost;
-            }
-
-            bool mogelijkloop = false;
-            while (mogelijkloop == false)
-            {
-                if (volgendVakje == null)
+                // Kijkt of er noordwest geslagen kan worden
+                bool mogelijkloop = false;
+                Vakje volgendVakje = geselecteerdStuk.buurNoordwest;
+                while (mogelijkloop == false)
                 {
-                    mogelijkloop = true;
-                }
-                else
-                {
-                    if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                    if (volgendVakje == null)
                     {
                         mogelijkloop = true;
-                        algoritme.slaanmogelijkheden.Add(volgendVakje);
-                        algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
-                    }
-                    else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
-                    {
-                        mogelijkloop = true;
-                    }
-
-                    if (richting == "Noordwest")
-                    {
-                        volgendVakje = volgendVakje.buurNoordwest;
-                    }
-                    else if (richting == "Noordoost")
-                    {
-                        volgendVakje = volgendVakje.buurNoordoost;
-                    }
-                    else if (richting == "Zuidwest")
-                    {
-                        volgendVakje = volgendVakje.buurZuidwest;
                     }
                     else
                     {
+                        if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                        {
+                            mogelijkloop = true;
+                            algoritme.slaanmogelijkheden.Add(volgendVakje);
+                            algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                        }
+                        else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
+                        {
+                            mogelijkloop = true;
+                        }
+                        volgendVakje = volgendVakje.buurNoordwest;
+                    }
+                }
+
+                // Kijkt of er noordoost geslagen kan worden
+                mogelijkloop = false;
+                volgendVakje = geselecteerdStuk.buurNoordoost;
+                while (mogelijkloop == false)
+                {
+                    if (volgendVakje == null)
+                    {
+                        mogelijkloop = true;
+                    }
+                    else
+                    {
+                        if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                        {
+                            mogelijkloop = true;
+                            algoritme.slaanmogelijkheden.Add(volgendVakje);
+                            algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                        }
+                        else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
+                        {
+                            mogelijkloop = true;
+                        }
+                        volgendVakje = volgendVakje.buurNoordoost;
+                    }
+                }
+
+                // Kijkt of er Zuidwest geslagen kan worden
+                mogelijkloop = false;
+                volgendVakje = geselecteerdStuk.buurZuidwest;
+                while (mogelijkloop == false)
+                {
+                    if (volgendVakje == null)
+                    {
+                        mogelijkloop = true;
+                    }
+                    else
+                    {
+                        if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                        {
+                            mogelijkloop = true;
+                            algoritme.slaanmogelijkheden.Add(volgendVakje);
+                            algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                        }
+                        else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
+                        {
+                            mogelijkloop = true;
+                        }
+                        volgendVakje = volgendVakje.buurZuidwest;
+                    }
+                }
+
+                // Kijkt of er Zuidoost geslagen kan worden
+                mogelijkloop = false;
+                volgendVakje = geselecteerdStuk.buurZuidoost;
+                while (mogelijkloop == false)
+                {
+                    if (volgendVakje == null)
+                    {
+                        mogelijkloop = true;
+                    }
+                    else
+                    {
+                        if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "wit")
+                        {
+                            mogelijkloop = true;
+                            algoritme.slaanmogelijkheden.Add(volgendVakje);
+                            algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
+                        }
+                        else if (volgendVakje.schaakstuk != null && volgendVakje.schaakstuk.kleur == "zwart")
+                        {
+                            mogelijkloop = true;
+                        }
                         volgendVakje = volgendVakje.buurZuidoost;
                     }
                 }
