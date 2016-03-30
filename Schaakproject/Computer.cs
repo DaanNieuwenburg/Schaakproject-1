@@ -15,7 +15,7 @@ namespace Schaakproject
         private Schaakstuk _vorigschaakstuk { get; set; }
         private Spel _spel { get; set; }
         private Color _selectedcolor { get; set; }
-
+        public int ronde { get; set; }
         private List<Vakje> _nietverplaatstlijst = new List<Vakje>();
         public List<Vakje> nietverplaatstlijst
         {

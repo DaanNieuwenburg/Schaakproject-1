@@ -25,37 +25,40 @@ namespace Schaakproject
         private Schaakstuk _koning;
         private Vakje _geselecteerdStuk;
         private Vakje _geselecteerdVakje;
-
         public Algoritme(Computer computer)
         {
             _computer = computer;
             _koning = computer.Koning;
-            // kijk of er geslagen kan worden
+            //kijk of er geslagen kan worden
             controleerOpSlaan();
             Console.WriteLine("-------------------------------------");
             if (slaanmogelijkheden.Count > 0)
             {
-                slaEenStuk();
+            slaEenStuk();
             }
             else
             {
-                Random rnd = new Random();
-                //int percentage = 1;
-                int percentage = rnd.Next(1, 4);
-                Console.WriteLine("PERCENTAGE = " + percentage);
-                if (percentage == 1)
-                {
-                    verplaatsNieuwStuk();
-                }
-                else if (percentage > 1 && computer.verplaatsingsLijst.Count > 0)
-                {
-                    verplaatsVerplaatstStuk();
-                }
-                else
-                {
-                    verplaatsNieuwStuk();
-                }
+            Random rnd = new Random();
+            //int percentage = 1337;
+            int percentage = rnd.Next(1, 4);
+            Console.WriteLine("PERCENTAGE = " + percentage);
+            if (percentage == 1)
+            {
+                verplaatsNieuwStuk();
             }
+            else if (percentage > 1 && computer.verplaatsingsLijst.Count > 0)
+            {
+              verplaatsVerplaatstStuk();
+            }
+            else if (percentage == 1337)
+            {
+                Console.WriteLine("HIER");
+            }
+            else
+            {
+                verplaatsNieuwStuk();
+            }
+             }
         }
 
         private void controleerOpSlaan()
@@ -360,7 +363,7 @@ namespace Schaakproject
                             _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                             _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Azure;
                         }
-                        else if(_geselecteerdStuk.buurZuid.buurZuidwest != null && _geselecteerdStuk.buurZuid.buurZuidwest.schaakstuk == null)
+                        else if (_geselecteerdStuk.buurZuid.buurZuidwest != null && _geselecteerdStuk.buurZuid.buurZuidwest.schaakstuk == null)
                         {
                             _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Azure;
                             Console.WriteLine("Verplaats de pion");
