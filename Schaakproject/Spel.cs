@@ -34,15 +34,19 @@ namespace Schaakproject
                 Speler1 = speler1;
                 Speler2 = null;
                 this.computerSpeler = computerSpeler;
+                spelerAanZet = speler1;
                 Start();
             }
             else if (Mode == "Multiplayer")
             {
                 Mens speler1 = new Mens(NaamSpeler1, "wit", this, _selectcolor);
+                Console.WriteLine("SP1 = " + speler1.Kleur);
                 Mens speler2 = new Mens(NaamSpeler2, "zwart", this, _selectcolor);
+                Console.WriteLine("SP2 = " + speler2.Kleur);
                 Speler1 = speler1;
                 Speler2 = speler2;
                 computerSpeler = null;
+                spelerAanZet = speler1;
                 Start();
             }
         }
@@ -128,9 +132,10 @@ namespace Schaakproject
             bool schaak;
             bool mat;
             bool pat;
-            //Console.WriteLine("VeranderSpeler");
+            Console.WriteLine("VeranderSpeler");
             if (spelerAanZet == Speler1)
             {
+                Console.WriteLine("SPELERS 1 beurt");
                 witaanzet = true;
                 if (SpelMode == "Singleplayer")
                 {
@@ -190,6 +195,7 @@ namespace Schaakproject
             }
             else
             {
+                Console.WriteLine("SPELERS 2 beurt");
                 witaanzet = false;
                 spelerAanZet = Speler1;
                 schaak = schaakbord.CheckSchaak(Speler1.Koning.vakje, Speler1.Koning.kleur);
