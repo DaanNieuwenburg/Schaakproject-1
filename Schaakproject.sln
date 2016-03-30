@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schaakproject", "Schaakproj
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject1", "ModelingProject1\ModelingProject1.modelproj", "{E55BC61D-918C-48A4-A21D-4AB1A6CDAF97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginProject", "..\..\..\Documents\Visual Studio 2015\Projects\LoginProject\LoginProject\LoginProject.csproj", "{8FAFA26E-C941-4FE6-8501-2927AE8B29E4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{E55BC61D-918C-48A4-A21D-4AB1A6CDAF97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E55BC61D-918C-48A4-A21D-4AB1A6CDAF97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E55BC61D-918C-48A4-A21D-4AB1A6CDAF97}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8FAFA26E-C941-4FE6-8501-2927AE8B29E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8FAFA26E-C941-4FE6-8501-2927AE8B29E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8FAFA26E-C941-4FE6-8501-2927AE8B29E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8FAFA26E-C941-4FE6-8501-2927AE8B29E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

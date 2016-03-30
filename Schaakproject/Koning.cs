@@ -9,6 +9,7 @@ namespace Schaakproject
     {
         private Vakje _vorigvakje { get; set; }
         private Vakje _vorigwest { get; set; }
+        private Vakje _Randwest { get; set; }
         private bool _staatschaak { get; set; }     //Staat de koning schaak
         private bool _eersteZet { get; set; }       //Is de koning al verzet
         private int _positiewest { get; set; }
@@ -307,20 +308,30 @@ namespace Schaakproject
             // Rokeren voor 960 schaakvariant
             else if (spel.Variant == "Chess960")
             {
-                int i = 0;
-                int west = 0;
-                while (_vorigwest != null)                      //bepaald locatie van de koning a.d.v. het aantal buren links
-                {
-                    _vorigwest = _vorigwest.buurWest;
-                    west++;
-                }
-                Console.WriteLine("west: " + west);
-                // voor west
                 int aantalplaatsenwest = 0;                     // aantal plaatsen tussen koning en linker toren
                 int aantalplaatsenoost = 0;                     // aantal plaatsen tussen koning en rechter toren
+                int i = 0;
+                int west = 0;
+                _vorigwest = vakjeKoning.buurWest;
+                _vorigvakje = vakjeKoning.buurWest;
+
+                while (_vorigwest != null)                      //bepaald locatie van de koning a.d.v. het aantal buren links
+                {
+                    west++;
+                    if (_vorigwest.schaakstuk is Toren)
+                    {
+                        aantalplaatsenwest = west;
+                    }
+                    _vorigwest = _vorigwest.buurWest;
+                }
+                _Randwest = _vorigwest.buurOost;
+                Console.WriteLine("west: " + west);
+                Console.WriteLine("aantal " + aantalplaatsenwest);
+                // voor west
+
                 if (vakjeKoning.buurWest == vakjeToren)
                 {
-                    aantalplaatsenwest = 1;
+
                     if (_vorigvakje.schaakstuk == null)
                     {
                         _vorigvakje = _vorigvakje.buurWest;
@@ -329,8 +340,7 @@ namespace Schaakproject
                 }
                 else if (vakjeKoning.buurWest.buurWest == vakjeToren)
                 {
-                    aantalplaatsenwest = 2;
-                    while (i < aantalplaatsenwest)
+                    while (i < aantalplaatsenwest - 1)
                     {
                         if (_vorigvakje.schaakstuk == null)
                         {
@@ -410,7 +420,7 @@ namespace Schaakproject
 
                 // voor oost
 
-                if (vakjeKoning.buurOost == vakjeToren)
+                else if (vakjeKoning.buurOost == vakjeToren)
                 {
                     aantalplaatsenoost = 1;
                     if (_vorigvakje.schaakstuk == null)
@@ -518,11 +528,21 @@ namespace Schaakproject
                 }
                 else
                 {
-                    this.vakje = vakjeKoning;
-                    vakjeKoning.schaakstuk = this;
-                    vakjeKoning.buurWest.buurWest.schaakstuk = null;
-                    vakjeKoning.buurWest.schaakstuk = null;
-                    vakjeToren.buurOost.schaakstuk = null;
+                    if (spel.Variant == "Klassiek")
+                    {
+                        this.vakje = vakjeKoning;
+                        vakjeKoning.schaakstuk = this;
+                        vakjeKoning.buurWest.buurWest.schaakstuk = null;
+                        vakjeKoning.buurWest.schaakstuk = null;
+                        vakjeToren.buurOost.schaakstuk = null;
+                    }
+                    else
+                    {
+                        _Randwest.buurOost.buurOost.schaakstuk = null;
+                        _Randwest.buurOost.buurOost.buurOost.schaakstuk = null;
+                        _Randwest.buurOost.buurOost.buurOost.buurOost = null;
+                        
+                    }
                 }
             }
         }
