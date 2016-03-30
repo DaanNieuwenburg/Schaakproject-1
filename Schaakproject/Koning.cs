@@ -9,6 +9,7 @@ namespace Schaakproject
     {
         private Vakje _vorigvakje { get; set; }
         private Vakje _vorigwest { get; set; }
+        private Vakje _vorigoost { get; set; }
         private Vakje _Randwest { get; set; }
         private bool _staatschaak { get; set; }     //Staat de koning schaak
         private bool _eersteZet { get; set; }       //Is de koning al verzet
@@ -206,11 +207,12 @@ namespace Schaakproject
 
         public void Rokeren(Vakje vakjeToren, Vakje vakjeKoning, Mens speler, Spel spel)
         {
+            bool rokeerwest = true;
             _vorigvakje = spel.selected;
             Schaakstuk tempToren = vakjeToren.schaakstuk;
+            Vakje _Randoost;
             Vakje vorige = vakjeKoning;
             bool checkschaak = false;
-
             // Rokeren voor klassieke schaakvariant
             if (spel.Variant == "Klassiek")
             {
@@ -334,22 +336,29 @@ namespace Schaakproject
 
                 }
                 _Randwest = _vorigwest;
+                _vorigoost = _Randwest;
+                for (int k = 0; k < 8; k++)
+                {
+                    _vorigoost = _vorigoost.buurOost;
+                }
+                _Randoost = _vorigoost;
                 Console.WriteLine("west: " + west);
                 Console.WriteLine("aantal " + aantalplaatsenwest);
                 // voor west
 
                 if (vakjeKoning.buurWest == vakjeToren)
                 {
-
+                    rokeerwest = true;
                     if (_vorigvakje.schaakstuk == null)
                     {
                         _vorigvakje = _vorigvakje.buurWest;
                         _magRokeren = true;
                     }
                 }
-                else if (vakjeKoning.buurWest.buurWest == vakjeToren)
+                else if (vakjeKoning.buurWest.buurWest == vakjeToren/* && vakjeToren == selected*/)
                 {
-                    while (i < aantalplaatsenwest - 1)
+                    rokeerwest = true;
+                    while (i < aantalplaatsenwest)
                     {
                         if (_vorigvakje.schaakstuk == null)
                         {
@@ -361,6 +370,7 @@ namespace Schaakproject
                 }
                 else if (vakjeKoning.buurWest.buurWest.buurWest == vakjeToren)
                 {
+                    rokeerwest = true;
                     aantalplaatsenwest = 3;
                     while (i < aantalplaatsenwest)
                     {
@@ -375,6 +385,7 @@ namespace Schaakproject
                 }
                 else if (vakjeKoning.buurWest.buurWest.buurWest.buurWest == vakjeToren)
                 {
+                    rokeerwest = true;
                     aantalplaatsenwest = 4;
                     while (i < aantalplaatsenwest)
                     {
@@ -389,6 +400,7 @@ namespace Schaakproject
                 }
                 else if (vakjeKoning.buurWest.buurWest.buurWest.buurWest.buurWest == vakjeToren)
                 {
+                    rokeerwest = true;
                     aantalplaatsenwest = 5;
                     while (i < aantalplaatsenwest)
                     {
@@ -402,6 +414,7 @@ namespace Schaakproject
                 }
                 else if (vakjeKoning.buurWest.buurWest.buurWest.buurWest.buurWest.buurWest == vakjeToren)
                 {
+                    rokeerwest = true;
                     aantalplaatsenwest = 6;
                     while (i < aantalplaatsenwest)
                     {
@@ -415,6 +428,7 @@ namespace Schaakproject
                 }
                 else if (vakjeKoning.buurWest.buurWest.buurWest.buurWest.buurWest.buurWest.buurWest == vakjeToren)
                 {
+                    rokeerwest = true;
                     aantalplaatsenwest = 7;
                     while (i < aantalplaatsenwest)
                     {
@@ -426,106 +440,116 @@ namespace Schaakproject
                     }
                     _magRokeren = true;
                 }
-                if (_magRokeren == true)
-                {
-                    // popup voor rokeren
-                    Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
-                    _Rokerenmelding.ShowDialog();
-                }
+                
 
-                /*// voor oost
+                // voor oost
                 else if (vakjeKoning.buurOost == vakjeToren)
                 {
+                rokeerwest = false;
                     aantalplaatsenoost = 1;
                     if (_vorigvakje.schaakstuk == null)
                     {
                         _vorigvakje = _vorigvakje.buurOost;
-                        i++;
+                        
                         _magRokeren = true;
                     }
+                    i++;
                 }
                 else if (vakjeKoning.buurOost.buurOost == vakjeToren)
                 {
+                rokeerwest = false;
                     aantalplaatsenoost = 2;
                     while (i < aantalplaatsenoost)
                     {
                         if (_vorigvakje.schaakstuk == null)
                         {
                             _vorigvakje = _vorigvakje.buurOost;
-                            i++;
+                            
 
                         }
+                        i++;
                     }
                     _magRokeren = true;
                 }
                 else if (vakjeKoning.buurOost.buurOost.buurOost == vakjeToren)
                 {
+                rokeerwest = false;
                     aantalplaatsenoost = 3;
                     while (i < aantalplaatsenoost)
                     {
                         if (_vorigvakje.schaakstuk == null)
                         {
                             _vorigvakje = _vorigvakje.buurOost;
-                            i++;
-
                         }
+                        i++;
                     }
+                    
                     _magRokeren = true;
                 }
                 else if (vakjeKoning.buurOost.buurOost.buurOost.buurOost == vakjeToren)
                 {
+                rokeerwest = false;
                     aantalplaatsenoost = 4;
                     while (i < aantalplaatsenoost)
                     {
                         if (_vorigvakje.schaakstuk == null)
                         {
                             _vorigvakje = _vorigvakje.buurOost;
-                            i++;
+                            
                         }
+                        i++;
                     }
                     _magRokeren = true;
                 }
                 else if (vakjeKoning.buurOost.buurOost.buurOost.buurOost.buurOost == vakjeToren)
                 {
+                rokeerwest = false;
                     aantalplaatsenoost = 5;
                     while (i < aantalplaatsenoost)
                     {
                         if (_vorigvakje.schaakstuk == null)
                         {
                             _vorigvakje = _vorigvakje.buurOost;
-                            i++;
                         }
+                        i++;
                     }
                     _magRokeren = true;
                 }
                 else if (vakjeKoning.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost == vakjeToren)
                 {
+                rokeerwest = false;
                     aantalplaatsenoost = 6;
                     while (i < aantalplaatsenoost)
                     {
                         if (_vorigvakje.schaakstuk == null)
                         {
                             _vorigvakje = _vorigvakje.buurOost;
-                            i++;
                         }
+                        i++;
                     }
                     _magRokeren = true;
                 }
                 else if (vakjeKoning.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost == vakjeToren)
                 {
+                rokeerwest = false;
                     aantalplaatsenoost = 7;
                     while (i < aantalplaatsenoost)
                     {
                         if (_vorigvakje.schaakstuk == null)
                         {
                             _vorigvakje = _vorigvakje.buurOost;
-                            i++;
                         }
+                        i++;
                     }
                     _magRokeren = true;
                 }
 
-                */
+                if (_magRokeren == true)
+                {
+                    // popup voor rokeren
+                    Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
+                    _Rokerenmelding.ShowDialog();
+                }
 
                 if (_wilRokeren == true && _magRokeren == true)
                 {
@@ -539,22 +563,44 @@ namespace Schaakproject
                     }
                     else
                     {
-                        _torenoud = vakjeToren;
-                        _koningoud = vakjeKoning;
-                        _Randwest.buurOost.buurOost.schaakstuk = _koningoud.schaakstuk;
-                        _Randwest.buurOost.buurOost.buurOost.schaakstuk = _torenoud.schaakstuk;
-                        _Randwest.buurOost.pbox.update();
-                        _Randwest.buurOost.buurOost.schaakstuk = null;
-                        _Randwest.buurOost.buurOost.pbox.update();
-                        _koningoud.schaakstuk = null;
-                        _torenoud.schaakstuk = null;
-                        vakjeToren.schaakstuk = null;
-                        this.vakje.pbox.update();
-                        vakjeToren.pbox.update();
-                        _torenoud.pbox.update();
-                        _Randwest.buurOost.schaakstuk = vakje.schaakstuk as Koning;
-                        _Randwest.buurOost.buurOost.buurOost.pbox.update();
-
+                        if (rokeerwest == true)
+                        {
+                            _torenoud = vakjeToren;
+                            _koningoud = vakjeKoning;
+                            _Randwest.buurOost.buurOost.schaakstuk = _koningoud.schaakstuk;
+                            _Randwest.buurOost.buurOost.buurOost.schaakstuk = _torenoud.schaakstuk;
+                            _Randwest.buurOost.pbox.update();
+                            _Randwest.buurOost.buurOost.schaakstuk = null;
+                            _Randwest.buurOost.buurOost.pbox.update();
+                            _koningoud.schaakstuk = null;
+                            _torenoud.schaakstuk = null;
+                            vakjeToren.schaakstuk = null;
+                            this.vakje.pbox.update();
+                            vakjeToren.pbox.update();
+                            _torenoud.pbox.update();
+                            _Randwest.buurOost.schaakstuk = vakje.schaakstuk as Koning;
+                            _Randwest.buurOost.buurOost.buurOost.pbox.update();
+                        }
+                        else
+                        {
+                            _torenoud = vakjeToren;
+                            _koningoud = vakjeKoning;
+                            Schaakstuk Tempkoning = vakjeKoning.schaakstuk;
+                            _Randwest.buurOost.buurOost.buurOost.schaakstuk = tempToren;
+                            _Randwest.buurOost.buurOost.schaakstuk = Tempkoning;
+                            _Randwest.buurOost.pbox.update();
+                            _Randwest.buurOost.buurOost.schaakstuk = null;
+                            _Randwest.buurOost.buurOost.pbox.update();
+                            _koningoud.schaakstuk = null;
+                            _torenoud.schaakstuk = null;
+                            vakjeToren.schaakstuk = null;
+                            this.vakje.pbox.update();
+                            vakjeToren.pbox.update();
+                            _torenoud.pbox.update();
+                            _Randwest.buurOost.buurOost.schaakstuk = Tempkoning;
+                            _Randwest.buurOost.buurOost.buurOost.schaakstuk = tempToren;
+                            _Randwest.buurOost.buurOost.buurOost.pbox.update();
+                        }
 
                     }
 
