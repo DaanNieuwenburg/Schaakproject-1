@@ -32,9 +32,6 @@ namespace Schaakproject
                 kleur = Color.SaddleBrown;
             }
         }
-
-        
-
     }
 }
 
