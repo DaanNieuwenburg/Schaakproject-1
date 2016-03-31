@@ -513,27 +513,35 @@ namespace Schaakproject
                         vakjesleeg = true;
                         if (vakjeKoning.buurOost == vakjeToren)
                         {
-                            while (i < aantalplaatsenoost)
+                            rokeerwest = false;
+                            _magRokeren = true;
+                            while (i <= aantalplaatsenoost)
                             {
-                                rokeerwest = false;
-                                _vorigvakje = _vorigvakje.buurOost;
-                                if (koningnieuw_O.schaakstuk == null || koningnieuw_O == vakjeKoning || koningnieuw_O == vakjeToren)
+                                if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
-                                    if (torennieuw_O.schaakstuk == null || torennieuw_O == vakjeKoning || torennieuw_O == vakjeToren)
+                                    _vorigvakje = _vorigvakje.buurOost;
+                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O.schaakstuk is Toren)
                                     {
-                                        vakjesleeg = true;
+                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O.schaakstuk is Toren)
+                                        {
+                                            vakjesleeg = true;
+                                        }
+                                        else
+                                        {
+                                            vakjesleeg = false;
+                                        }
                                     }
                                     else
                                     {
                                         vakjesleeg = false;
                                     }
+                                    
                                 }
                                 else
                                 {
                                     vakjesleeg = false;
                                 }
                                 i++;
-                                
                             }
                             _magRokeren = true;
                         }
