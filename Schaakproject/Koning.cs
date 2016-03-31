@@ -156,7 +156,7 @@ namespace Schaakproject
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
                 this.vakje = nieuwVakje;
-                bool checkSchaak = spel.schaakbord.CheckSchaak(speler.Koning.vakje, speler.Koning.kleur);
+                bool checkSchaak = spel.schaakbord.CheckSchaak(spel.spelerAanZet.Koning.vakje, spel.spelerAanZet.Koning.kleur);
                 if (checkSchaak == true)
                 {
                     selected.schaakstuk = this;
@@ -186,6 +186,7 @@ namespace Schaakproject
             Vakje _Randoost;
             Vakje vorige = vakjeKoning;
             bool checkschaak = false;
+            Console.WriteLine("MAG ROKEREN = " + _eersteZet);
             // Rokeren voor klassieke schaakvariant
             if (spel.Variant == "Klassiek")
             {
@@ -330,13 +331,15 @@ namespace Schaakproject
                     Console.WriteLine("aantal " + aantalplaatsenwest);
                     // voor west
 
+                    vakjesleeg = true;
+
                     if (vakjeKoning.buurWest.schaakstuk is Toren)
                     {
                         if (vakjeKoning.buurWest == vakjeToren)
                         {
                             aantalplaatsenwest = 1;
                             rokeerwest = true;
-                            vakjesleeg = true;
+                            
                             while (i < aantalplaatsenwest)
                             {
                                 if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)

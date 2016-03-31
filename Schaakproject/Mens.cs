@@ -76,7 +76,6 @@ namespace Schaakproject
 
         public void SelecteerVakje(Vakje nieuwVakje, Spel spel)
         {
-            Console.WriteLine("MENS");
             if (spel.spelerAanZet == spel.Speler1)
             {
                 Console.WriteLine("HUIDIGE SPELER IS SPELER 1");

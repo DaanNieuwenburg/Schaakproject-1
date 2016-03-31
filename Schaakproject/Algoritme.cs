@@ -25,6 +25,7 @@ namespace Schaakproject
         private Schaakstuk _koning;
         private Vakje _geselecteerdStuk;
         private Vakje _geselecteerdVakje;
+        public bool StaatSchaak;
         public Algoritme(Computer computer)
         {
             _computer = computer;
@@ -32,7 +33,7 @@ namespace Schaakproject
             // kijk of er geslagen kan worden
             controleerOpSlaan();
             Console.WriteLine("-------------------------------------");
-            if (slaanmogelijkheden.Count > 0)
+            if (slaanmogelijkheden.Count > 0 && StaatSchaak == false)
             {
                 slaEenStuk();
             }
@@ -42,15 +43,15 @@ namespace Schaakproject
                 // percentage = 1337;
                 int percentage = rnd.Next(1, 4);
                 Console.WriteLine("PERCENTAGE = " + percentage);
-                if (percentage == 1)
+                if (percentage == 1 && StaatSchaak == false)
                 {
                     Console.WriteLine("VPN");
                     verplaatsNieuwStuk();
                 }
                 //else if (percentage > 1 && computer.verplaatsingsLijst.Count > 0)
                 //{
-                    //Console.WriteLine("VPS");
-                    //verplaatsVerplaatstStuk();
+                //Console.WriteLine("VPS");
+                //verplaatsVerplaatstStuk();
                 //}
                 /*else if (percentage == 1337)
                 {
@@ -82,6 +83,11 @@ namespace Schaakproject
                     Console.WriteLine("RONDE " + computer.ronde);
                     computer.ronde++;
                 }*/
+                else if (StaatSchaak == true)
+                {
+                    Console.WriteLine("STAAT SCHAAK");
+                    reageerOpSchaak();
+                }
                 else
                 {
                     Console.WriteLine("VPN");
@@ -402,6 +408,79 @@ namespace Schaakproject
                 {
                     Console.WriteLine("Einde loop");
                 }
+            }
+        }
+
+        public void reageerOpSchaak()
+        {
+            bool reactie = false;
+
+            // verplaats schaakstuk naar een leeg vak wanneer mogelijk
+            if (reactie == false)
+            {
+                Console.WriteLine("Reageer op schaak in algoritme");
+                if (_koning.vakje.buurNoord != null && _koning.vakje.buurNoord.schaakstuk == null)
+                {
+                    Console.WriteLine("noord");
+                    _geselecteerdStuk = _koning.vakje;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.vakje.buurNoord;    // geselecteerd vak
+                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                }
+                else if (_koning.vakje.buurNoordoost != null && _koning.vakje.buurNoordoost.schaakstuk == null)
+                {
+                    Console.WriteLine("noordoost");
+                    _geselecteerdStuk = _koning.vakje;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.vakje.buurNoordoost;    // geselecteerd vak
+                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                }
+                else if (_koning.vakje.buurNoordwest != null && _koning.vakje.buurNoordwest.schaakstuk == null)
+                {
+                    Console.WriteLine("noordwest");
+                    _geselecteerdStuk = _koning.vakje;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.vakje.buurNoordwest;    // geselecteerd vak
+                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                }
+                else if (_koning.vakje.buurWest != null && _koning.vakje.buurWest.schaakstuk == null)
+                {
+                    Console.WriteLine("west");
+                    _geselecteerdStuk = _koning.vakje;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.vakje.buurWest;    // geselecteerd vak
+                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                }
+                else if (_koning.vakje.buurOost != null && _koning.vakje.buurOost.schaakstuk == null)
+                {
+                    Console.WriteLine("oost");
+                    _geselecteerdStuk = _koning.vakje;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.vakje.buurOost;    // geselecteerd vak
+                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                }
+                else if (_koning.vakje.buurZuid != null && _koning.vakje.buurZuid.schaakstuk == null)
+                {
+                    Console.WriteLine("zuid");
+                    _geselecteerdStuk = _koning.vakje;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.vakje.buurZuid;    // geselecteerd vak
+                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                }
+                else if (_koning.vakje.buurZuidoost != null && _koning.vakje.buurZuidoost.schaakstuk == null)
+                {
+                    Console.WriteLine("zuidoost");
+                    _geselecteerdStuk = _koning.vakje;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.vakje.buurZuidoost;    // geselecteerd vak
+                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                }
+                else if (_koning.vakje.buurZuidwest != null && _koning.vakje.buurZuidwest.schaakstuk == null)
+                {
+                    Console.WriteLine("zuidwest");
+                    _geselecteerdStuk = _koning.vakje;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.vakje.buurZuidwest;    // geselecteerd vak
+                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                }
+            }
+
+            // verplaats een nieuw stuk
+            if(reactie == false)
+            {
+
             }
         }
     }
