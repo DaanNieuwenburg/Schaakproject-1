@@ -333,7 +333,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "NaamInvoer";
-            this.Text = "Voer je naam in";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Menu";
             this.ResumeLayout(false);
             this.PerformLayout();
 

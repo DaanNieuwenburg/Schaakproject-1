@@ -328,13 +328,15 @@ namespace Schaakproject
                     Console.WriteLine("aantal " + aantalplaatsenwest);
                     // voor west
 
+                    vakjesleeg = true;
+
                     if (vakjeKoning.buurWest.schaakstuk is Toren)
                     {
                         if (vakjeKoning.buurWest == vakjeToren)
                         {
                             aantalplaatsenwest = 1;
                             rokeerwest = true;
-                            vakjesleeg = true;
+                            
                             while (i < aantalplaatsenwest)
                             {
                                 if (_vorigvakje.schaakstuk == null)
