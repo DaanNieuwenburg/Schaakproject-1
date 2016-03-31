@@ -166,8 +166,7 @@ namespace Schaakproject
                             // computer reageert op schaak
                             Console.WriteLine("REAGEER OP SCHAAK " + spelerAanZet.Kleur);
                             computerSpeler.algoritme.StaatSchaak = true;
-                            computerSpeler.algoritme.reageerOpSchaak();
-                            //computerSpeler.algoritme.StaatSchaak = true;
+                            computerSpeler.algoritme.reageerOpSchaak(selected);
                         }
                     }
                     else
