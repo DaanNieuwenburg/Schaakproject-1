@@ -165,6 +165,7 @@ namespace Schaakproject
                         {
                             // computer reageert op schaak
                             Console.WriteLine("REAGEER OP SCHAAK " + SpelerAanZet.Kleur);
+                            Selected.Pbox.BackColor = Color.Blue;
                             ComputerSpeler.algoritme.StaatSchaak = true;
                             ComputerSpeler.algoritme.reageerOpSchaak(Selected);
                         }
