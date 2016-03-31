@@ -365,6 +365,7 @@ namespace Schaakproject
                         {
                             aantalplaatsenwest = 1;
                             rokeerwest = true;
+                            vakjesleeg = true;
                             while (i < aantalplaatsenwest)
                             {
                                 if (_vorigvakje.schaakstuk == null)
@@ -409,7 +410,7 @@ namespace Schaakproject
                         {
                             rokeerwest = true;
                             aantalplaatsenwest = 3;
-                            while (i < aantalplaatsenwest)
+                            while (i < aantalplaatsenwest -1 )
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -433,7 +434,7 @@ namespace Schaakproject
                         {
                             rokeerwest = true;
                             aantalplaatsenwest = 4;
-                            while (i < aantalplaatsenwest)
+                            while (i < aantalplaatsenwest -1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -457,7 +458,7 @@ namespace Schaakproject
                         {
                             rokeerwest = true;
                             aantalplaatsenwest = 5;
-                            while (i < aantalplaatsenwest)
+                            while (i < aantalplaatsenwest -1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -480,7 +481,7 @@ namespace Schaakproject
                         {
                             rokeerwest = true;
                             aantalplaatsenwest = 6;
-                            while (i < aantalplaatsenwest)
+                            while (i < aantalplaatsenwest-1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -503,7 +504,7 @@ namespace Schaakproject
                         {
                             rokeerwest = true;
                             aantalplaatsenwest = 7;
-                            while (i < aantalplaatsenwest)
+                            while (i < aantalplaatsenwest-1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -526,9 +527,9 @@ namespace Schaakproject
                         // voor oost
                         if (vakjeKoning.buurOost == vakjeToren)
                         {
-                            aantalplaatsenwest = 1;
+                            aantalplaatsenoost = 1;
                             rokeerwest = false;
-                            while (i < (aantalplaatsenwest-1))
+                            while (i < aantalplaatsenoost)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -547,7 +548,7 @@ namespace Schaakproject
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 2;
-                            while (i < aantalplaatsenoost)
+                            while (i < aantalplaatsenoost-1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -566,7 +567,7 @@ namespace Schaakproject
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 3;
-                            while (i < aantalplaatsenoost)
+                            while (i < aantalplaatsenoost-1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -586,7 +587,7 @@ namespace Schaakproject
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 4;
-                            while (i < aantalplaatsenoost)
+                            while (i < aantalplaatsenoost-1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -605,7 +606,7 @@ namespace Schaakproject
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 5;
-                            while (i < aantalplaatsenoost)
+                            while (i < aantalplaatsenoost-1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -624,7 +625,7 @@ namespace Schaakproject
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 6;
-                            while (i < aantalplaatsenoost)
+                            while (i < aantalplaatsenoost-1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -643,7 +644,7 @@ namespace Schaakproject
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 7;
-                            while (i < aantalplaatsenoost)
+                            while (i < aantalplaatsenoost-1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
