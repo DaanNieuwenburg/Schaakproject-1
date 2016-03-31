@@ -148,11 +148,7 @@ namespace Schaakproject
             while (mogelijkloop == false)
             {
                 if (vorige.buurNoordoost == nieuwVakje)
-                {
-                    if (vorige.buurNoordoost.schaakstuk != null && vorige.buurNoordoost.schaakstuk.kleur != speler.Kleur)
-                    {
-                        spel.updateAantalStukken(spel.spelerAanZet);
-                    }
+                {                    
                     mogelijk = true;
                     mogelijkloop = true;
                 }
@@ -169,11 +165,7 @@ namespace Schaakproject
                 while (mogelijkloop == false)
                 {
                     if (vorige.buurNoordwest == nieuwVakje)
-                    {
-                        if (vorige.buurNoordwest.schaakstuk != null && vorige.buurNoordwest.schaakstuk.kleur != speler.Kleur)
-                        {
-                            spel.updateAantalStukken(spel.spelerAanZet);
-                        }
+                    {                        
                         mogelijk = true;
                         mogelijkloop = true;
                     }
@@ -192,10 +184,6 @@ namespace Schaakproject
                 {
                     if (vorige.buurZuidoost == nieuwVakje)
                     {
-                        if (vorige.buurZuidoost.schaakstuk != null && vorige.buurZuidoost.schaakstuk.kleur != speler.Kleur)
-                        {
-                            spel.updateAantalStukken(spel.spelerAanZet);
-                        }
                         mogelijk = true;
                         mogelijkloop = true;
 
@@ -215,10 +203,6 @@ namespace Schaakproject
                 {
                     if (vorige.buurZuidwest == nieuwVakje)
                     {
-                        if (vorige.buurZuidwest.schaakstuk != null && vorige.buurZuidwest.schaakstuk.kleur != speler.Kleur)
-                        {
-                            spel.updateAantalStukken(spel.spelerAanZet);
-                        }
                         mogelijk = true;
                         mogelijkloop = true;
                     }
@@ -247,6 +231,7 @@ namespace Schaakproject
                 {
                     if (temp != null)
                     {
+                        spel.updateAantalStukken(spel.spelerAanZet);
                         temp.Slaan();
                     }
                     speler.validezet = true;

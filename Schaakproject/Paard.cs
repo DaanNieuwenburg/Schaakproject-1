@@ -113,19 +113,11 @@ namespace Schaakproject
             if (selected.buurNoord != null)
             {
                 if (selected.buurNoord.buurNoordoost == nieuwVakje)
-                {
-                    if(nieuwVakje.schaakstuk != null)
-                    {
-                        spel.updateAantalStukken(spel.spelerAanZet);
-                    }
+                {                    
                     gevonden = true;
                 }
                 else if (selected.buurNoord.buurNoordwest == nieuwVakje)
-                {
-                    if (nieuwVakje.schaakstuk != null)
-                    {
-                        spel.updateAantalStukken(spel.spelerAanZet);
-                    }
+                {                    
                     gevonden = true;
                 }
             }
@@ -133,18 +125,10 @@ namespace Schaakproject
             {
                 if (selected.buurOost.buurNoordoost == nieuwVakje)
                 {
-                    if (nieuwVakje.schaakstuk != null)
-                    {
-                        spel.updateAantalStukken(spel.spelerAanZet);
-                    }
                     gevonden = true;
                 }
                 else if (selected.buurOost.buurZuidoost == nieuwVakje)
                 {
-                    if (nieuwVakje.schaakstuk != null)
-                    {
-                        spel.updateAantalStukken(spel.spelerAanZet);
-                    }
                     gevonden = true;
                 }
             }
@@ -152,18 +136,10 @@ namespace Schaakproject
             {
                 if (selected.buurZuid.buurZuidoost == nieuwVakje)
                 {
-                    if (nieuwVakje.schaakstuk != null)
-                    {
-                        spel.updateAantalStukken(spel.spelerAanZet);
-                    }
                     gevonden = true;
                 }
                 else if (selected.buurZuid.buurZuidwest == nieuwVakje)
                 {
-                    if (nieuwVakje.schaakstuk != null)
-                    {
-                        spel.updateAantalStukken(spel.spelerAanZet);
-                    }
                     gevonden = true;
                 }
             }
@@ -171,19 +147,11 @@ namespace Schaakproject
             {
                 if (selected.buurWest.buurZuidwest == nieuwVakje)
                 {
-                    if (nieuwVakje.schaakstuk != null)
-                    {
-                        spel.updateAantalStukken(spel.spelerAanZet);
-                    }
                     gevonden = true;
                 }
 
                 else if (selected.buurWest.buurNoordwest == nieuwVakje)
                 {
-                    if (nieuwVakje.schaakstuk != null)
-                    {
-                        spel.updateAantalStukken(spel.spelerAanZet);
-                    }
                     gevonden = true;
                 }
             }
@@ -205,6 +173,7 @@ namespace Schaakproject
                 {
                     if (temp != null)
                     {
+                        spel.updateAantalStukken(spel.spelerAanZet);
                         temp.Slaan();
                     }
                     speler.validezet = true;
