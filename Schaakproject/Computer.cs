@@ -40,7 +40,6 @@ namespace Schaakproject
 
         public void Zet(Vakje _pictures, Spel spel)
         {
-            Console.WriteLine("COMPUTERS BEURT");
             _spel = spel;
             _vorigVakje = _spel.Selected;                   // slaat het door de speler geselecteerde vakje op
             _vorigSchaakstuk = _spel.Selected.schaakstuk;   // slaat het door de speler geselecteerde schaakstuk op     -- dit moet ook vanuit vorigvakje kunnen, scheelt code?
@@ -49,16 +48,6 @@ namespace Schaakproject
 
         private void bepaalMensPositie()
         {
-            Console.WriteLine("COMPUTER");
-            if (_spel.SpelerAanZet == _spel.Speler1)
-            {
-                Console.WriteLine("HUIDIGE SPELER IS SPELER 1");
-            }
-            else if (_spel.SpelerAanZet == _spel.ComputerSpeler)
-            {
-                Console.WriteLine("HUIDIGE SPELER IS COMP SPELER");
-            }
-
             // kijk naar welke positie de mens zijn schaakstuk heeft verplaats
             bool buurzuid = false;
             int zuidteller = 0;
@@ -101,6 +90,7 @@ namespace Schaakproject
 
         public void voerZetUit(Vakje geselecteerdStuk, Vakje geselecteerdVakje)
         {
+            Console.WriteLine("Voer zet uit");
             VerplaatsingsLijst.Add(geselecteerdVakje);       // slaat de positie van de computerszet in lijst op 
 
             geselecteerdStuk.schaakstuk.Verplaats(geselecteerdVakje, geselecteerdStuk, _spel);
