@@ -208,6 +208,8 @@ namespace Schaakproject
 
         public void Rokeren(Vakje vakjeToren, Vakje vakjeKoning, Mens speler, Spel spel)
         {
+            Vakje toren1 = vakjeToren;
+            Vakje koning1 = vakjeKoning;
             bool rokeerwest = true;
             _vorigvakje = spel.selected;
             Schaakstuk tempToren = vakjeToren.schaakstuk;
@@ -349,15 +351,21 @@ namespace Schaakproject
 
                 if (vakjeKoning.buurWest == vakjeToren)
                 {
+                    aantalplaatsenwest = 1;
                     rokeerwest = true;
-                    if (_vorigvakje.schaakstuk == null)
+                    while (i < aantalplaatsenwest)
                     {
-                        _vorigvakje = _vorigvakje.buurWest;
-                        _magRokeren = true;
+                        if (_vorigvakje.schaakstuk == null)
+                        {
+                            _vorigvakje = _vorigvakje.buurWest;
+                        }
+                        i++;
                     }
+                    _magRokeren = true;
                 }
                 else if (vakjeKoning.buurWest.buurWest == vakjeToren/* && vakjeToren == selected*/)
                 {
+                    aantalplaatsenwest = 2;
                     rokeerwest = true;
                     while (i < aantalplaatsenwest)
                     {
@@ -441,31 +449,31 @@ namespace Schaakproject
                     }
                     _magRokeren = true;
                 }
-                
+
 
                 // voor oost
                 else if (vakjeKoning.buurOost == vakjeToren)
                 {
-                rokeerwest = false;
+                    rokeerwest = false;
                     aantalplaatsenoost = 1;
                     if (_vorigvakje.schaakstuk == null)
                     {
                         _vorigvakje = _vorigvakje.buurOost;
-                        
+
                         _magRokeren = true;
                     }
                     i++;
                 }
                 else if (vakjeKoning.buurOost.buurOost == vakjeToren)
                 {
-                rokeerwest = false;
+                    rokeerwest = false;
                     aantalplaatsenoost = 2;
                     while (i < aantalplaatsenoost)
                     {
                         if (_vorigvakje.schaakstuk == null)
                         {
                             _vorigvakje = _vorigvakje.buurOost;
-                            
+
 
                         }
                         i++;
@@ -474,7 +482,7 @@ namespace Schaakproject
                 }
                 else if (vakjeKoning.buurOost.buurOost.buurOost == vakjeToren)
                 {
-                rokeerwest = false;
+                    rokeerwest = false;
                     aantalplaatsenoost = 3;
                     while (i < aantalplaatsenoost)
                     {
@@ -484,19 +492,19 @@ namespace Schaakproject
                         }
                         i++;
                     }
-                    
+
                     _magRokeren = true;
                 }
                 else if (vakjeKoning.buurOost.buurOost.buurOost.buurOost == vakjeToren)
                 {
-                rokeerwest = false;
+                    rokeerwest = false;
                     aantalplaatsenoost = 4;
                     while (i < aantalplaatsenoost)
                     {
                         if (_vorigvakje.schaakstuk == null)
                         {
                             _vorigvakje = _vorigvakje.buurOost;
-                            
+
                         }
                         i++;
                     }
@@ -504,7 +512,7 @@ namespace Schaakproject
                 }
                 else if (vakjeKoning.buurOost.buurOost.buurOost.buurOost.buurOost == vakjeToren)
                 {
-                rokeerwest = false;
+                    rokeerwest = false;
                     aantalplaatsenoost = 5;
                     while (i < aantalplaatsenoost)
                     {
@@ -518,7 +526,7 @@ namespace Schaakproject
                 }
                 else if (vakjeKoning.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost == vakjeToren)
                 {
-                rokeerwest = false;
+                    rokeerwest = false;
                     aantalplaatsenoost = 6;
                     while (i < aantalplaatsenoost)
                     {
@@ -532,7 +540,7 @@ namespace Schaakproject
                 }
                 else if (vakjeKoning.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost == vakjeToren)
                 {
-                rokeerwest = false;
+                    rokeerwest = false;
                     aantalplaatsenoost = 7;
                     while (i < aantalplaatsenoost)
                     {
@@ -564,29 +572,45 @@ namespace Schaakproject
                     }
                     else
                     {
-                        if (rokeerwest == true)
+                        if (rokeerwest == false)
                         {
-                            _torenoud = vakjeToren;
+                            vakjeKoning = this.vakje;
+                            /*vakjeKoning.schaakstuk = this.vakje.schaakstuk;
+                            /*_torenoud = vakjeToren;
                             _koningoud = vakjeKoning;
-                            _Randwest.buurOost.buurOost.schaakstuk = _koningoud.schaakstuk;
-                            _Randwest.buurOost.buurOost.buurOost.schaakstuk = _torenoud.schaakstuk;
-                            _Randwest.buurOost.pbox.update();
-                            _Randwest.buurOost.buurOost.schaakstuk = null;
+                            toren1.pbox.BackColor = System.Drawing.Color.Purple;
+                            koning1.pbox.BackColor = System.Drawing.Color.Yellow;
+                            _Randwest.buurOost.buurOost.schaakstuk = vakjeKoning.schaakstuk;
                             _Randwest.buurOost.buurOost.pbox.update();
-                            _koningoud.schaakstuk = null;
-                            _torenoud.schaakstuk = null;
-                            vakjeToren.schaakstuk = null;
-                            this.vakje.pbox.update();
-                            vakjeToren.pbox.update();
-                            _torenoud.pbox.update();
-                            _Randwest.buurOost.schaakstuk = vakje.schaakstuk as Koning;
+                            _Randwest.buurOost.buurOost.buurOost.schaakstuk = vakjeToren.schaakstuk;
                             _Randwest.buurOost.buurOost.buurOost.pbox.update();
+                            _Randwest.buurOost.pbox.update();
+                            koning1.schaakstuk = null;
+                            /*_torenoud.schaakstuk = null;
+                            vakjeKoning.schaakstuk = null;
+                            toren1.schaakstuk = null;
+                            this.vakje.pbox.update();
+                            vakjeKoning.pbox.update();
+                            vakjeToren.pbox.update();
+                            toren1.pbox.update();
+                            koning1.pbox.update();*/
+
+
+
+                            _Randwest.buurOost.buurOost.schaakstuk = koning1.schaakstuk;
+                            _Randwest.buurOost.buurOost.buurOost.schaakstuk = toren1.schaakstuk;
+                            toren1.schaakstuk = null;
+                            koning1.schaakstuk = null;
+                            _Randwest.buurOost.buurOost.pbox.update();
+                            _Randwest.buurOost.buurOost.buurOost.pbox.update();
+                            toren1.pbox.update();
+                            koning1.pbox.update();
                         }
                         else
                         {
                             _torenoud = vakjeToren;
                             _koningoud = vakjeKoning;
-                            Schaakstuk Tempkoning = vakjeKoning.schaakstuk;
+                            Schaakstuk Tempkoning = new Koning(kleur, vakje, speler);
                             _Randwest.buurOost.buurOost.buurOost.schaakstuk = tempToren;
                             _Randwest.buurOost.buurOost.schaakstuk = Tempkoning;
                             _Randwest.buurOost.pbox.update();
@@ -599,7 +623,10 @@ namespace Schaakproject
                             vakjeToren.pbox.update();
                             _torenoud.pbox.update();
                             _Randwest.buurOost.buurOost.schaakstuk = Tempkoning;
+                            _Randwest.buurOost.buurOost.pbox.update();
+                            _Randwest.buurOost.buurOost.pbox.BackColor = System.Drawing.Color.Red;
                             _Randwest.buurOost.buurOost.buurOost.schaakstuk = tempToren;
+                            _Randwest.buurOost.buurOost.buurOost.pbox.BackColor = System.Drawing.Color.Blue;
                             _Randwest.buurOost.buurOost.buurOost.pbox.update();
                         }
 
