@@ -374,10 +374,24 @@ namespace Schaakproject
                             rokeerwest = true;
                             while (i < aantalplaatsenwest - 1)
                             {
-                                if (_vorigvakje.schaakstuk == null)
+                                if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurWest;
-                                    vakjesleeg = true;
+                                    if (koningnieuw_W.schaakstuk == null || koningnieuw_W == vakjeKoning || koningnieuw_W == vakjeToren)
+                                    {
+                                        if (torennieuw_W.schaakstuk == null || torennieuw_W == vakjeKoning || torennieuw_W == vakjeToren)
+                                        {
+                                            vakjesleeg = true;
+                                        }
+                                        else
+                                        {
+                                            vakjesleeg = false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        vakjesleeg = false;
+                                    }
                                 }
                                 else
                                 {
@@ -396,11 +410,24 @@ namespace Schaakproject
                             aantalplaatsenwest = 3;
                             while (i < aantalplaatsenwest - 1)
                             {
-                                if (_vorigvakje.schaakstuk == null)
+                                if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurWest;
-                                    vakjesleeg = true;
-
+                                    if (koningnieuw_W.schaakstuk == null || koningnieuw_W == vakjeKoning || koningnieuw_W == vakjeToren)
+                                    {
+                                        if (torennieuw_W.schaakstuk == null || torennieuw_W == vakjeKoning || torennieuw_W == vakjeToren)
+                                        {
+                                            vakjesleeg = true;
+                                        }
+                                        else
+                                        {
+                                            vakjesleeg = false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        vakjesleeg = false;
+                                    }
                                 }
                                 else
                                 {
@@ -420,11 +447,24 @@ namespace Schaakproject
                             aantalplaatsenwest = 4;
                             while (i < aantalplaatsenwest - 1)
                             {
-                                if (_vorigvakje.schaakstuk == null)
+                                if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurWest;
-                                    vakjesleeg = true;
-
+                                    if (koningnieuw_W.schaakstuk == null || koningnieuw_W == vakjeKoning || koningnieuw_W == vakjeToren)
+                                    {
+                                        if (torennieuw_W.schaakstuk == null || torennieuw_W == vakjeKoning || torennieuw_W == vakjeToren)
+                                        {
+                                            vakjesleeg = true;
+                                        }
+                                        else
+                                        {
+                                            vakjesleeg = false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        vakjesleeg = false;
+                                    }
                                 }
                                 else
                                 {
@@ -444,10 +484,24 @@ namespace Schaakproject
                             aantalplaatsenwest = 5;
                             while (i < aantalplaatsenwest - 1)
                             {
-                                if (_vorigvakje.schaakstuk == null)
+                                if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurWest;
-                                    vakjesleeg = true;
+                                    if (koningnieuw_W.schaakstuk == null || koningnieuw_W == vakjeKoning || koningnieuw_W == vakjeToren)
+                                    {
+                                        if (torennieuw_W.schaakstuk == null || torennieuw_W == vakjeKoning || torennieuw_W == vakjeToren)
+                                        {
+                                            vakjesleeg = true;
+                                        }
+                                        else
+                                        {
+                                            vakjesleeg = false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        vakjesleeg = false;
+                                    }
                                 }
                                 else
                                 {
@@ -467,10 +521,24 @@ namespace Schaakproject
                             aantalplaatsenwest = 6;
                             while (i < aantalplaatsenwest - 1)
                             {
-                                if (_vorigvakje.schaakstuk == null)
+                                if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurWest;
-                                    vakjesleeg = true;
+                                    if (koningnieuw_W.schaakstuk == null || koningnieuw_W == vakjeKoning || koningnieuw_W == vakjeToren)
+                                    {
+                                        if (torennieuw_W.schaakstuk == null || torennieuw_W == vakjeKoning || torennieuw_W == vakjeToren)
+                                        {
+                                            vakjesleeg = true;
+                                        }
+                                        else
+                                        {
+                                            vakjesleeg = false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        vakjesleeg = false;
+                                    }
                                 }
                                 else
                                 {
@@ -490,10 +558,24 @@ namespace Schaakproject
                             aantalplaatsenwest = 7;
                             while (i < aantalplaatsenwest - 1)
                             {
-                                if (_vorigvakje.schaakstuk == null)
+                                if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurWest;
-                                    vakjesleeg = true;
+                                    if (koningnieuw_W.schaakstuk == null || koningnieuw_W == vakjeKoning || koningnieuw_W == vakjeToren)
+                                    {
+                                        if (torennieuw_W.schaakstuk == null || torennieuw_W == vakjeKoning || torennieuw_W == vakjeToren)
+                                        {
+                                            vakjesleeg = true;
+                                        }
+                                        else
+                                        {
+                                            vakjesleeg = false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        vakjesleeg = false;
+                                    }
                                 }
                                 else
                                 {
@@ -551,10 +633,25 @@ namespace Schaakproject
                             aantalplaatsenoost = 2;
                             while (i < aantalplaatsenoost - 1)
                             {
-                                if (_vorigvakje.schaakstuk == null)
+                                if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurOost;
-                                    vakjesleeg = true;
+                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O.schaakstuk is Toren)
+                                    {
+                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O.schaakstuk is Toren)
+                                        {
+                                            vakjesleeg = true;
+                                        }
+                                        else
+                                        {
+                                            vakjesleeg = false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        vakjesleeg = false;
+                                    }
+
                                 }
                                 else
                                 {
@@ -570,10 +667,25 @@ namespace Schaakproject
                             aantalplaatsenoost = 3;
                             while (i < aantalplaatsenoost - 1)
                             {
-                                if (_vorigvakje.schaakstuk == null)
+                                if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurOost;
-                                    vakjesleeg = true;
+                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O.schaakstuk is Toren)
+                                    {
+                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O.schaakstuk is Toren)
+                                        {
+                                            vakjesleeg = true;
+                                        }
+                                        else
+                                        {
+                                            vakjesleeg = false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        vakjesleeg = false;
+                                    }
+
                                 }
                                 else
                                 {
@@ -590,10 +702,25 @@ namespace Schaakproject
                             aantalplaatsenoost = 4;
                             while (i < aantalplaatsenoost - 1)
                             {
-                                if (_vorigvakje.schaakstuk == null)
+                                if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurOost;
-                                    vakjesleeg = true;
+                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O.schaakstuk is Toren)
+                                    {
+                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O.schaakstuk is Toren)
+                                        {
+                                            vakjesleeg = true;
+                                        }
+                                        else
+                                        {
+                                            vakjesleeg = false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        vakjesleeg = false;
+                                    }
+
                                 }
                                 else
                                 {
@@ -609,10 +736,25 @@ namespace Schaakproject
                             aantalplaatsenoost = 5;
                             while (i < aantalplaatsenoost - 1)
                             {
-                                if (_vorigvakje.schaakstuk == null)
+                                if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurOost;
-                                    vakjesleeg = true;
+                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O.schaakstuk is Toren)
+                                    {
+                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O.schaakstuk is Toren)
+                                        {
+                                            vakjesleeg = true;
+                                        }
+                                        else
+                                        {
+                                            vakjesleeg = false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        vakjesleeg = false;
+                                    }
+
                                 }
                                 else
                                 {
@@ -628,10 +770,25 @@ namespace Schaakproject
                             aantalplaatsenoost = 6;
                             while (i < aantalplaatsenoost - 1)
                             {
-                                if (_vorigvakje.schaakstuk == null)
+                                if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurOost;
-                                    vakjesleeg = true;
+                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O.schaakstuk is Toren)
+                                    {
+                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O.schaakstuk is Toren)
+                                        {
+                                            vakjesleeg = true;
+                                        }
+                                        else
+                                        {
+                                            vakjesleeg = false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        vakjesleeg = false;
+                                    }
+
                                 }
                                 else
                                 {
@@ -647,10 +804,25 @@ namespace Schaakproject
                             aantalplaatsenoost = 7;
                             while (i < aantalplaatsenoost - 1)
                             {
-                                if (_vorigvakje.schaakstuk == null)
+                                if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurOost;
-                                    vakjesleeg = true;
+                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O.schaakstuk is Toren)
+                                    {
+                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O.schaakstuk is Toren)
+                                        {
+                                            vakjesleeg = true;
+                                        }
+                                        else
+                                        {
+                                            vakjesleeg = false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        vakjesleeg = false;
+                                    }
+
                                 }
                                 else
                                 {
