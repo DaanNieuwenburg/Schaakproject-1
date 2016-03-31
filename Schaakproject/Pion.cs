@@ -266,6 +266,7 @@ namespace Schaakproject
             {
                 if (spel.SpelMode != "Singleplayer")
                 {
+                    Console.WriteLine("Hoort te promoveren");
                     nieuwVakje.Pbox.update();
                     selected.Pbox.update();
                     Vakje.schaakstuk = new Dame(Kleur, Vakje, base.Speler);
