@@ -108,7 +108,6 @@ namespace Schaakproject
             geselecteerdStuk.pbox.update();                 //update het eerste vakje
             geselecteerdVakje.pbox.update();                 //update het tweede vakje
             geselecteerdStuk = null;                        //niets is meer geselecteerd
-                                                            // _spel.VeranderSpeler();
         }
     }
 }

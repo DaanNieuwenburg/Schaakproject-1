@@ -33,7 +33,7 @@ namespace Schaakproject
             // kijk of er geslagen kan worden
             controleerOpSlaan();
             Console.WriteLine("-------------------------------------");
-            if (slaanmogelijkheden.Count > 0 && StaatSchaak == false)
+            if (slaanmogelijkheden.Count > 0)
             {
                 slaEenStuk();
             }
@@ -43,7 +43,7 @@ namespace Schaakproject
                 //int percentage = 1337;
                 int percentage = rnd.Next(1, 4);
                 Console.WriteLine("PERCENTAGE = " + percentage);
-                if (percentage == 1 && StaatSchaak == false)
+                if (percentage == 1)
                 {
                     Console.WriteLine("6 NIEUW STUK");
                     verplaatsNieuwStuk();

@@ -9,7 +9,7 @@ namespace Schaakproject
     public class Spel
     {
         public string SpelMode { get; private set; }            //Singleplayer of multiplayer
-        private bool witaanzet { get; set; }                    //Wie is aan zet
+        private bool _witaanzet { get; set; }                    //Wie is aan zet
         public Mens Speler1 { get; private set; }               //De speler (is er altijd)
         public Mens Speler2 { get; private set; }               //De tweede speler voor multiplayer
         public Computer computerSpeler { get; private set; }    //De computer voor singleplayer
@@ -17,34 +17,34 @@ namespace Schaakproject
         public Vakje selected { get; set; }                     //Maakt de computer gebruik van
         public string Variant { get; private set; }             //Klassiek of Chess960
         public Schaakbord schaakbord { get; private set; }      //Het schaakbord wordt onthouden
-        public Color _bordercolor { get; private set; }         //De kleur voor de rand
-        public Color _selectcolor { get; private set; }         //De kleur voor het selecteren
+        public Color Bordercolor { get; private set; }         //De kleur voor de rand
+        public Color Selectcolor { get; private set; }         //De kleur voor het selecteren
         public SpeelBord speelbord { get; private set; }        //Het speelbord window
-        public Color _colorvakje1 { get; private set; }
-        public Color _colorvakje2 { get; private set; }
+        public Color Colorvakje1 { get; private set; }
+        public Color Colorvakje2 { get; private set; }
 
         public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant, Color borderColor, Color selectColor, Color vakje1, Color vakje2)
         {
-            _colorvakje1 = vakje1;
-            _colorvakje2 = vakje2;
-            _selectcolor = selectColor;
-            _bordercolor = borderColor;
+            Colorvakje1 = vakje1;
+            Colorvakje2 = vakje2;
+            Selectcolor = selectColor;
+            Bordercolor = borderColor;
             SpelMode = Mode;
             this.Variant = Variant;
 
-            Mens speler1 = new Mens(NaamSpeler1, "wit", this, _selectcolor);
+            Mens speler1 = new Mens(NaamSpeler1, "wit", this, Selectcolor);
             Speler1 = speler1;
             spelerAanZet = Speler1;
 
             if (SpelMode == "Singleplayer")
             {
-                Computer computerSpeler = new Computer(NaamSpeler2, "zwart", _selectcolor);
+                Computer computerSpeler = new Computer(NaamSpeler2, "zwart", Selectcolor);
                 this.computerSpeler = computerSpeler;
             }
 
             else if (Mode == "Multiplayer")
             {
-                Mens speler2 = new Mens(NaamSpeler2, "zwart", this, _selectcolor);
+                Mens speler2 = new Mens(NaamSpeler2, "zwart", this, Selectcolor);
                 Speler2 = speler2;
             }
 
@@ -54,11 +54,11 @@ namespace Schaakproject
         public void Start()
         {
             //Hij maakt een nieuw schaakbord waarin de logica zit
-            Schaakbord schaakbord = new Schaakbord(Variant, this, Speler1, Speler2, _colorvakje1, _colorvakje2);
+            Schaakbord schaakbord = new Schaakbord(Variant, this, Speler1, Speler2, Colorvakje1, Colorvakje2);
             this.schaakbord = schaakbord;
 
             //Hij maakt een nieuw speelbord (een window)
-            SpeelBord speelbord = new SpeelBord(this, schaakbord, SpelMode, Speler1, Speler2, computerSpeler, Variant, _bordercolor);
+            SpeelBord speelbord = new SpeelBord(this, schaakbord, SpelMode, Speler1, Speler2, computerSpeler, Variant, Bordercolor);
             this.speelbord = speelbord;
             speelbord.Show();
         }
@@ -67,11 +67,11 @@ namespace Schaakproject
         {
             if (spelMode == "Multiplayer")
             {
-                Spel spel = new Spel(spelMode, speler1Naam, speler2Naam, Variant, _bordercolor, _selectcolor, _colorvakje1, _colorvakje2);
+                Spel spel = new Spel(spelMode, speler1Naam, speler2Naam, Variant, Bordercolor, Selectcolor, Colorvakje1, Colorvakje2);
             }
             else
             {
-                Spel spel = new Spel(spelMode, speler1Naam, "comp", Variant, _bordercolor, _selectcolor, _colorvakje1, _colorvakje2);
+                Spel spel = new Spel(spelMode, speler1Naam, "comp", Variant, Bordercolor, Selectcolor, Colorvakje1, Colorvakje2);
             }
         }
 
@@ -80,7 +80,7 @@ namespace Schaakproject
             //Hier wordt de label met daarin welke speler aan zet is aangepast wanneer de speler wisselt;
             if (SpelMode == "Multiplayer")
             {
-                if (witaanzet == false)
+                if (_witaanzet == false)
                 {
                     speelbord.lblbeurt.Text = Speler2.Naam + " is aan zet";
                 }
@@ -134,7 +134,7 @@ namespace Schaakproject
             if (spelerAanZet == Speler1)
             {
                 Console.WriteLine("Speleraanzet == speler1");
-                witaanzet = true;
+                _witaanzet = true;
                 if (SpelMode == "Singleplayer")
                 {
                     //Console.WriteLine("Check schaak1");
@@ -207,7 +207,7 @@ namespace Schaakproject
             }
             else
             {
-                witaanzet = false;
+                _witaanzet = false;
                 spelerAanZet = Speler1;
                 schaak = schaakbord.CheckSchaak(Speler1.Koning.vakje, Speler1.Koning.kleur);
                 if (schaak == true)
