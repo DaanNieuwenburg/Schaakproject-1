@@ -536,6 +536,8 @@ namespace Schaakproject
             bool loop = false;
             bool juisteKleur = false;
             Vakje vorige = koningVakje;
+            Schaakstuk tempPion = null;
+            List<Schaakstuk> dubbelpion = new List<Schaakstuk>();
 
             //voor noord
             while (loop == false)
@@ -553,6 +555,10 @@ namespace Schaakproject
                             if (juisteKleur == false)
                             {
                                 juisteKleur = true;
+                                if (vorige.buurNoord.schaakstuk is Pion)
+                                {
+                                    tempPion = vorige.buurNoord.schaakstuk;
+                                }
                             }
                             else
                             {
@@ -568,6 +574,10 @@ namespace Schaakproject
                                 if (juisteKleur == true)
                                 {
                                     blokkeert++;
+                                    if (tempPion != null)
+                                    {
+                                        dubbelpion.Add(tempPion);
+                                    }
                                 }
                             }
                         }
@@ -578,6 +588,7 @@ namespace Schaakproject
             loop = false;
             juisteKleur = false;
             vorige = koningVakje;
+            tempPion = null;
 
             //voor oost
             while (loop == false)
@@ -595,6 +606,10 @@ namespace Schaakproject
                             if (juisteKleur == false)
                             {
                                 juisteKleur = true;
+                                if (vorige.buurOost.schaakstuk is Pion)
+                                {
+                                    tempPion = vorige.buurOost.schaakstuk;
+                                }
                             }
                             else
                             {
@@ -610,6 +625,10 @@ namespace Schaakproject
                                 if (juisteKleur == true)
                                 {
                                     blokkeert++;
+                                    if (tempPion != null)
+                                    {
+                                        dubbelpion.Add(tempPion);
+                                    }
                                 }
                             }
                         }
@@ -620,6 +639,7 @@ namespace Schaakproject
             loop = false;
             juisteKleur = false;
             vorige = koningVakje;
+            tempPion = null;
 
             //voor zuid
             while (loop == false)
@@ -637,6 +657,10 @@ namespace Schaakproject
                             if (juisteKleur == false)
                             {
                                 juisteKleur = true;
+                                if (vorige.buurZuid.schaakstuk is Pion)
+                                {
+                                    tempPion = vorige.buurZuid.schaakstuk;
+                                }
                             }
                             else
                             {
@@ -652,6 +676,10 @@ namespace Schaakproject
                                 if (juisteKleur == true)
                                 {
                                     blokkeert++;
+                                    if (tempPion != null)
+                                    {
+                                        dubbelpion.Add(tempPion);
+                                    }
                                 }
                             }
                         }
@@ -662,6 +690,7 @@ namespace Schaakproject
             loop = false;
             juisteKleur = false;
             vorige = koningVakje;
+            tempPion = null;
 
             //voor west
             while (loop == false)
@@ -679,6 +708,10 @@ namespace Schaakproject
                             if (juisteKleur == false)
                             {
                                 juisteKleur = true;
+                                if (vorige.buurWest.schaakstuk is Pion)
+                                {
+                                    tempPion = vorige.buurWest.schaakstuk;
+                                }
                             }
                             else
                             {
@@ -694,6 +727,10 @@ namespace Schaakproject
                                 if (juisteKleur == true)
                                 {
                                     blokkeert++;
+                                    if (tempPion != null)
+                                    {
+                                        dubbelpion.Add(tempPion);
+                                    }
                                 }
                             }
                         }
@@ -704,6 +741,7 @@ namespace Schaakproject
             loop = false;
             juisteKleur = false;
             vorige = koningVakje;
+            tempPion = null;
 
             //voor noordoost
             while (loop == false)
@@ -721,6 +759,10 @@ namespace Schaakproject
                             if (juisteKleur == false)
                             {
                                 juisteKleur = true;
+                                if (vorige.buurNoordoost.schaakstuk is Pion)
+                                {
+                                    tempPion = vorige.buurNoordoost.schaakstuk;
+                                }
                             }
                             else
                             {
@@ -736,6 +778,10 @@ namespace Schaakproject
                                 if (juisteKleur == true)
                                 {
                                     blokkeert++;
+                                    if (tempPion != null)
+                                    {
+                                        dubbelpion.Add(tempPion);
+                                    }
                                 }
                             }
                         }
@@ -746,6 +792,7 @@ namespace Schaakproject
             loop = false;
             juisteKleur = false;
             vorige = koningVakje;
+            tempPion = null;
 
             //voor noordwest
             while (loop == false)
@@ -763,6 +810,10 @@ namespace Schaakproject
                             if (juisteKleur == false)
                             {
                                 juisteKleur = true;
+                                if (vorige.buurNoordwest.schaakstuk is Pion)
+                                {
+                                    tempPion = vorige.buurNoordwest.schaakstuk;
+                                }
                             }
                             else
                             {
@@ -778,6 +829,10 @@ namespace Schaakproject
                                 if (juisteKleur == true)
                                 {
                                     blokkeert++;
+                                    if (tempPion != null)
+                                    {
+                                        dubbelpion.Add(tempPion);
+                                    }
                                 }
                             }
                         }
@@ -788,6 +843,7 @@ namespace Schaakproject
             loop = false;
             juisteKleur = false;
             vorige = koningVakje;
+            tempPion = null;
 
             //voor zuidoost
             while (loop == false)
@@ -805,6 +861,10 @@ namespace Schaakproject
                             if (juisteKleur == false)
                             {
                                 juisteKleur = true;
+                                if (vorige.buurZuidoost.schaakstuk is Pion)
+                                {
+                                    tempPion = vorige.buurZuidoost.schaakstuk;
+                                }
                             }
                             else
                             {
@@ -820,6 +880,10 @@ namespace Schaakproject
                                 if (juisteKleur == true)
                                 {
                                     blokkeert++;
+                                    if (tempPion != null)
+                                    {
+                                        dubbelpion.Add(tempPion);
+                                    }
                                 }
                             }
                         }
@@ -830,6 +894,7 @@ namespace Schaakproject
             loop = false;
             juisteKleur = false;
             vorige = koningVakje;
+            tempPion = null;
 
             //voor zuidwest
             while (loop == false)
@@ -847,6 +912,10 @@ namespace Schaakproject
                             if (juisteKleur == false)
                             {
                                 juisteKleur = true;
+                                if (vorige.buurZuidwest.schaakstuk is Pion)
+                                {
+                                    tempPion = vorige.buurZuidwest.schaakstuk;
+                                }
                             }
                             else
                             {
@@ -862,6 +931,10 @@ namespace Schaakproject
                                 if (juisteKleur == true)
                                 {
                                     blokkeert++;
+                                    if (tempPion != null)
+                                    {
+                                        dubbelpion.Add(tempPion);
+                                    }
                                 }
                             }
                         }
@@ -871,10 +944,21 @@ namespace Schaakproject
             }
             Pion bekijk;
             bool kanVerplaatsen = false;
+            bool isdubbel;
             for (int i = 0; i < 8; i++)
             {
+                isdubbel = false;
                 bekijk = koning.speler.pionnen[i];
-                if (bekijk.geslagen == false)
+
+                for (int j = 0; j < dubbelpion.Count; j++)
+                {
+                    if (bekijk == dubbelpion[j])
+                    {
+                        isdubbel = true;
+                    }
+                }
+
+                if (bekijk.geslagen == false && isdubbel == false)
                 {
                     if (bekijk.kleur == "wit")
                     {
@@ -1435,7 +1519,7 @@ namespace Schaakproject
 
             string kleur = koning.kleur;
             Vakje koningVakje = koning.vakje;
-            
+
             koning.vakje.schaakstuk = null;
 
             //bekijk of de koning schaak staat als hij naar noord zou bewegen
@@ -1633,7 +1717,7 @@ namespace Schaakproject
                     {
                         Schaakstuk temp = Lijst[i];
                         Vakje tempvakje = temp.vakje;
-                        Vakje tempgezetvakje = tempgezet.vakje;                     
+                        Vakje tempgezetvakje = tempgezet.vakje;
                         tempvakje.schaakstuk = null;
                         temp.vakje = tempgezetvakje;
                         tempgezetvakje.schaakstuk = temp;
@@ -1679,7 +1763,7 @@ namespace Schaakproject
                                         tempvakje.schaakstuk = null;
                                         temp.vakje = vorige.buurNoord;
                                         vorige.buurNoord.schaakstuk = temp;
-
+                                        pionvoormat = false;
                                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                                         if (check == false)
                                         {
@@ -1725,6 +1809,7 @@ namespace Schaakproject
                                         tempvakje.schaakstuk = null;
                                         temp.vakje = vorige.buurOost;
                                         vorige.buurOost.schaakstuk = temp;
+                                        pionvoormat = false;
 
                                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                                         if (check == false)
@@ -1771,6 +1856,7 @@ namespace Schaakproject
                                         tempvakje.schaakstuk = null;
                                         temp.vakje = vorige.buurZuid;
                                         vorige.buurZuid.schaakstuk = temp;
+                                        pionvoormat = false;
 
                                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                                         if (check == false)
@@ -1817,6 +1903,7 @@ namespace Schaakproject
                                         tempvakje.schaakstuk = null;
                                         temp.vakje = vorige.buurWest;
                                         vorige.buurWest.schaakstuk = temp;
+                                        pionvoormat = false;
 
                                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                                         if (check == false)
@@ -1863,6 +1950,7 @@ namespace Schaakproject
                                         tempvakje.schaakstuk = null;
                                         temp.vakje = vorige.buurNoordoost;
                                         vorige.buurNoordoost.schaakstuk = temp;
+                                        pionvoormat = false;
 
                                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                                         if (check == false)
@@ -1909,6 +1997,7 @@ namespace Schaakproject
                                         tempvakje.schaakstuk = null;
                                         temp.vakje = vorige.buurNoordwest;
                                         vorige.buurNoordwest.schaakstuk = temp;
+                                        pionvoormat = false;
 
                                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                                         if (check == false)
@@ -1955,6 +2044,7 @@ namespace Schaakproject
                                         tempvakje.schaakstuk = null;
                                         temp.vakje = vorige.buurZuidoost;
                                         vorige.buurZuidoost.schaakstuk = temp;
+                                        pionvoormat = false;
 
                                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                                         if (check == false)
@@ -2001,6 +2091,7 @@ namespace Schaakproject
                                         tempvakje.schaakstuk = null;
                                         temp.vakje = vorige.buurZuidwest;
                                         vorige.buurZuidwest.schaakstuk = temp;
+                                        pionvoormat = false;
 
                                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                                         if (check == false)

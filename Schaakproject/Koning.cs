@@ -200,6 +200,7 @@ namespace Schaakproject
                     {
                         temp.Slaan();
                     }
+                    _eersteZet = true;
                     spel.spelerAanZet.validezet = true;
                 }
             }
