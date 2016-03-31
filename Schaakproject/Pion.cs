@@ -8,11 +8,9 @@ namespace Schaakproject
     public class Pion : Schaakstuk
     {
         public bool eersteZet { get; private set; }        //is de pion al eens verzet
-        private bool _magEnpassant { get; set; }            //mag de pion en-passant slaan
 
         public Pion(string kleur, Vakje vakje, Speler speler)
         {
-            _magEnpassant = true;
             this.speler = speler;
             this.vakje = vakje;
             this.kleur = kleur;
@@ -76,14 +74,12 @@ namespace Schaakproject
                 // Slaan naar noordoost voor een witte pion
                 else if (selected.buurNoordoost == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
-                    spel.updateAantalStukken(spel.spelerAanZet);
                     mogelijk = true;
                 }
 
                 // Slaan naar noordwest voor een witte pion
                 else if (selected.buurNoordwest == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
-                    spel.updateAantalStukken(spel.spelerAanZet);
                     mogelijk = true;
                 }
 
@@ -151,15 +147,13 @@ namespace Schaakproject
 
                 // Slaan naar zuidoost voor een zwarte pion
                 else if (selected.buurZuidoost == nieuwVakje && kleur == "zwart" && nieuwVakje.schaakstuk != null)
-                {
-                    spel.updateAantalStukken(spel.spelerAanZet);
+                {                    
                     mogelijk = true;
                 }
 
                 // Slaan naar zuidwest voor een zwarte pion
                 else if (selected.buurZuidwest == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
-                    spel.updateAantalStukken(spel.spelerAanZet);
                     mogelijk = true;
                 }
 
@@ -259,6 +253,7 @@ namespace Schaakproject
                     if (temp != null)
                     {
                         temp.Slaan();
+                        spel.updateAantalStukken(spel.spelerAanZet);
                     }
                     eersteZet = true;
                     speler.validezet = true;

@@ -337,7 +337,7 @@
             this.lblbeurt.BackColor = System.Drawing.Color.Transparent;
             this.lblbeurt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblbeurt.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblbeurt.Location = new System.Drawing.Point(518, 9);
+            this.lblbeurt.Location = new System.Drawing.Point(570, 9);
             this.lblbeurt.Name = "lblbeurt";
             this.lblbeurt.Size = new System.Drawing.Size(0, 18);
             this.lblbeurt.TabIndex = 19;
@@ -369,9 +369,12 @@
             this.Controls.Add(this.btHerstart);
             this.Controls.Add(this.lblPlayer2);
             this.Controls.Add(this.lblPlayer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "SpeelBord";
-            this.Text = "SpeelBord";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Schaken";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SpeelBord_FormClosed);
             this.Load += new System.EventHandler(this.SpeelBord_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbuitleg)).EndInit();
