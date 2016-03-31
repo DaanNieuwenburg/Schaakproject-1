@@ -2494,7 +2494,7 @@ buurzuidwest</body>
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="d311a9e1-167c-4bba-9b67-4bc16f518a0d" name="Algoritme" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <memberEnd Id="d311a9e1-167c-4bba-9b67-4bc16f518a0d" name="Algoritme" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
                   <elementDefinition Id="723d0627-eedf-432b-9889-5f57155acecc" />
                 </memberEnd>
               </associationHasOwnedEnds>
