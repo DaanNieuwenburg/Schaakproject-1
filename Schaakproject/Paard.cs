@@ -117,7 +117,6 @@ namespace Schaakproject
                     if(nieuwVakje.schaakstuk != null)
                     {
                         spel.updateAantalStukken(spel.spelerAanZet);
-                        Console.WriteLine("SLAAT");
                     }
                     gevonden = true;
                 }
@@ -126,7 +125,6 @@ namespace Schaakproject
                     if (nieuwVakje.schaakstuk != null)
                     {
                         spel.updateAantalStukken(spel.spelerAanZet);
-                        Console.WriteLine("SLAAT");
                     }
                     gevonden = true;
                 }
@@ -138,7 +136,6 @@ namespace Schaakproject
                     if (nieuwVakje.schaakstuk != null)
                     {
                         spel.updateAantalStukken(spel.spelerAanZet);
-                        Console.WriteLine("SLAAT");
                     }
                     gevonden = true;
                 }
@@ -147,7 +144,6 @@ namespace Schaakproject
                     if (nieuwVakje.schaakstuk != null)
                     {
                         spel.updateAantalStukken(spel.spelerAanZet);
-                        Console.WriteLine("SLAAT");
                     }
                     gevonden = true;
                 }
@@ -159,7 +155,6 @@ namespace Schaakproject
                     if (nieuwVakje.schaakstuk != null)
                     {
                         spel.updateAantalStukken(spel.spelerAanZet);
-                        Console.WriteLine("SLAAT");
                     }
                     gevonden = true;
                 }
@@ -168,7 +163,6 @@ namespace Schaakproject
                     if (nieuwVakje.schaakstuk != null)
                     {
                         spel.updateAantalStukken(spel.spelerAanZet);
-                        Console.WriteLine("SLAAT");
                     }
                     gevonden = true;
                 }
@@ -180,7 +174,6 @@ namespace Schaakproject
                     if (nieuwVakje.schaakstuk != null)
                     {
                         spel.updateAantalStukken(spel.spelerAanZet);
-                        Console.WriteLine("SLAAT");
                     }
                     gevonden = true;
                 }
@@ -190,7 +183,6 @@ namespace Schaakproject
                     if (nieuwVakje.schaakstuk != null)
                     {
                         spel.updateAantalStukken(spel.spelerAanZet);
-                        Console.WriteLine("SLAAT");
                     }
                     gevonden = true;
                 }

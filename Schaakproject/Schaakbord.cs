@@ -536,6 +536,7 @@ namespace Schaakproject
             bool loop = false;
             bool juisteKleur = false;
             Vakje vorige = koningVakje;
+            bool onthouden = false;
 
             //voor noord
             while (loop == false)
@@ -550,9 +551,22 @@ namespace Schaakproject
                     {
                         if (vorige.buurNoord.schaakstuk.kleur == koning.kleur)
                         {
+                            
                             if (juisteKleur == false)
                             {
-                                juisteKleur = true;
+                                if (vorige.buurNoord.schaakstuk is Toren || vorige.buurNoord.schaakstuk is Dame)
+                                {
+                                    onthouden = true;
+                                }
+                                
+                                else if (vorige.buurNoord.schaakstuk is Pion)
+                                {
+                                    loop = true;
+                                }
+                                else
+                                {
+                                    juisteKleur = true;
+                                }
                             }
                             else
                             {
@@ -567,6 +581,10 @@ namespace Schaakproject
                             {
                                 if (juisteKleur == true)
                                 {
+                                    if (onthouden == true)
+                                    {
+                                        return false;
+                                    }
                                     blokkeert++;
                                 }
                             }
@@ -575,6 +593,7 @@ namespace Schaakproject
                     vorige = vorige.buurNoord;
                 }
             }
+            onthouden = false;
             loop = false;
             juisteKleur = false;
             vorige = koningVakje;
@@ -594,7 +613,18 @@ namespace Schaakproject
                         {
                             if (juisteKleur == false)
                             {
-                                juisteKleur = true;
+                                if (vorige.buurOost.schaakstuk is Toren || vorige.buurOost.schaakstuk is Dame)
+                                {
+                                    onthouden = true;
+                                }
+                                else if (vorige.buurOost.schaakstuk is Pion)
+                                {
+                                    loop = true;
+                                }
+                                else
+                                {
+                                    juisteKleur = true;
+                                }
                             }
                             else
                             {
@@ -609,7 +639,11 @@ namespace Schaakproject
                             {
                                 if (juisteKleur == true)
                                 {
-                                    blokkeert++;
+                                    if (onthouden == true)
+                                    {
+                                        return false;
+                                    }
+                                    blokkeert++;                                    
                                 }
                             }
                         }
@@ -617,6 +651,7 @@ namespace Schaakproject
                     vorige = vorige.buurOost;
                 }
             }
+            onthouden = false;
             loop = false;
             juisteKleur = false;
             vorige = koningVakje;
@@ -636,7 +671,18 @@ namespace Schaakproject
                         {
                             if (juisteKleur == false)
                             {
-                                juisteKleur = true;
+                                if (vorige.buurZuid.schaakstuk is Toren || vorige.buurZuid.schaakstuk is Dame)
+                                {
+                                    onthouden = true;
+                                }
+                                else if (vorige.buurZuid.schaakstuk is Pion)
+                                {
+                                    loop = true;
+                                }
+                                else
+                                {
+                                    juisteKleur = true;
+                                }
                             }
                             else
                             {
@@ -651,7 +697,11 @@ namespace Schaakproject
                             {
                                 if (juisteKleur == true)
                                 {
-                                    blokkeert++;
+                                    if (onthouden == true)
+                                    {
+                                        return false;
+                                    }
+                                    blokkeert++;                                    
                                 }
                             }
                         }
@@ -659,6 +709,7 @@ namespace Schaakproject
                     vorige = vorige.buurZuid;
                 }
             }
+            onthouden = false;
             loop = false;
             juisteKleur = false;
             vorige = koningVakje;
@@ -678,7 +729,18 @@ namespace Schaakproject
                         {
                             if (juisteKleur == false)
                             {
-                                juisteKleur = true;
+                                if (vorige.buurWest.schaakstuk is Toren || vorige.buurWest.schaakstuk is Dame)
+                                {
+                                    onthouden = true;
+                                }
+                                else if (vorige.buurWest.schaakstuk is Pion)
+                                {
+                                    loop = true;
+                                }
+                                else
+                                {
+                                    juisteKleur = true;
+                                }
                             }
                             else
                             {
@@ -693,7 +755,11 @@ namespace Schaakproject
                             {
                                 if (juisteKleur == true)
                                 {
-                                    blokkeert++;
+                                    if (onthouden == true)
+                                    {
+                                        return false;
+                                    }
+                                    blokkeert++;                                    
                                 }
                             }
                         }
@@ -701,6 +767,7 @@ namespace Schaakproject
                     vorige = vorige.buurWest;
                 }
             }
+            onthouden = false;
             loop = false;
             juisteKleur = false;
             vorige = koningVakje;
@@ -720,7 +787,18 @@ namespace Schaakproject
                         {
                             if (juisteKleur == false)
                             {
-                                juisteKleur = true;
+                                if (vorige.buurNoordoost.schaakstuk is Loper || vorige.buurNoordoost.schaakstuk is Dame)
+                                {
+                                    onthouden = true;
+                                }
+                                else if (vorige.buurNoordoost.schaakstuk is Pion)
+                                {
+                                    loop = true;
+                                }
+                                else
+                                {
+                                    juisteKleur = true;
+                                }
                             }
                             else
                             {
@@ -735,6 +813,10 @@ namespace Schaakproject
                             {
                                 if (juisteKleur == true)
                                 {
+                                    if (onthouden == true)
+                                    {
+                                        return false;
+                                    }
                                     blokkeert++;
                                 }
                             }
@@ -743,6 +825,7 @@ namespace Schaakproject
                     vorige = vorige.buurNoordoost;
                 }
             }
+            onthouden = false;
             loop = false;
             juisteKleur = false;
             vorige = koningVakje;
@@ -762,7 +845,18 @@ namespace Schaakproject
                         {
                             if (juisteKleur == false)
                             {
-                                juisteKleur = true;
+                                if (vorige.buurNoordwest.schaakstuk is Loper || vorige.buurNoordwest.schaakstuk is Dame)
+                                {
+                                    onthouden = true;
+                                }
+                                else if (vorige.buurNoordwest.schaakstuk is Pion)
+                                {
+                                    loop = true;
+                                }
+                                else
+                                {
+                                    juisteKleur = true;
+                                }
                             }
                             else
                             {
@@ -777,6 +871,10 @@ namespace Schaakproject
                             {
                                 if (juisteKleur == true)
                                 {
+                                    if (onthouden == true)
+                                    {
+                                        return false;
+                                    }
                                     blokkeert++;
                                 }
                             }
@@ -785,6 +883,7 @@ namespace Schaakproject
                     vorige = vorige.buurNoordwest;
                 }
             }
+            onthouden = false;
             loop = false;
             juisteKleur = false;
             vorige = koningVakje;
@@ -804,7 +903,18 @@ namespace Schaakproject
                         {
                             if (juisteKleur == false)
                             {
-                                juisteKleur = true;
+                                if (vorige.buurZuidoost.schaakstuk is Loper || vorige.buurZuidoost.schaakstuk is Dame)
+                                {
+                                    onthouden = true;
+                                }
+                                else if (vorige.buurZuidoost.schaakstuk is Pion)
+                                {
+                                    loop = true;
+                                }
+                                else
+                                {
+                                    juisteKleur = true;
+                                }
                             }
                             else
                             {
@@ -819,6 +929,10 @@ namespace Schaakproject
                             {
                                 if (juisteKleur == true)
                                 {
+                                    if (onthouden == true)
+                                    {
+                                        return false;
+                                    }
                                     blokkeert++;
                                 }
                             }
@@ -827,6 +941,7 @@ namespace Schaakproject
                     vorige = vorige.buurZuidoost;
                 }
             }
+            onthouden = false;
             loop = false;
             juisteKleur = false;
             vorige = koningVakje;
@@ -846,7 +961,18 @@ namespace Schaakproject
                         {
                             if (juisteKleur == false)
                             {
-                                juisteKleur = true;
+                                if (vorige.buurZuidwest.schaakstuk is Loper || vorige.buurZuidwest.schaakstuk is Dame)
+                                {
+                                    onthouden = true;
+                                }
+                                else if (vorige.buurZuidwest.schaakstuk is Pion)
+                                {
+                                    loop = true;
+                                }
+                                else
+                                {
+                                    juisteKleur = true;
+                                }
                             }
                             else
                             {
@@ -861,6 +987,10 @@ namespace Schaakproject
                             {
                                 if (juisteKleur == true)
                                 {
+                                    if (onthouden == true)
+                                    {
+                                        return false;
+                                    }
                                     blokkeert++;
                                 }
                             }
@@ -869,46 +999,141 @@ namespace Schaakproject
                     vorige = vorige.buurZuidwest;
                 }
             }
+
             Pion bekijk;
             bool kanVerplaatsen = false;
             for (int i = 0; i < 8; i++)
             {
                 bekijk = koning.speler.pionnen[i];
+
                 if (bekijk.geslagen == false)
                 {
                     if (bekijk.kleur == "wit")
                     {
                         if (bekijk.vakje.buurNoord != null && bekijk.vakje.buurNoord.schaakstuk == null)
                         {
-                            kanVerplaatsen = true;
+                            Vakje bekijkvakje = bekijk.vakje;
+                            Vakje andervakje = bekijk.vakje.buurNoord;
+
+                            bekijk.vakje = andervakje;
+                            andervakje.schaakstuk = bekijk;
+                            bekijkvakje.schaakstuk = null;
+                            
+                            bool check = CheckSchaak(koningVakje, bekijk.kleur);
+                            if (check == false)
+                            {
+                                kanVerplaatsen = true;
+                            }
+                            bekijk.vakje = bekijkvakje;
+                            bekijkvakje.schaakstuk = bekijk;
+                            andervakje.schaakstuk = null;
+
                         }
-                        else if (bekijk.vakje.buurNoordoost != null && bekijk.vakje.buurNoordoost.schaakstuk != null)
+                        if (bekijk.vakje.buurNoordoost != null && bekijk.vakje.buurNoordoost.schaakstuk != null)
                         {
-                            kanVerplaatsen = true;
+                            Vakje bekijkvakje = bekijk.vakje;
+                            Vakje andervakje = bekijk.vakje.buurNoordoost;
+                            Schaakstuk anderstuk = andervakje.schaakstuk;
+
+                            bekijk.vakje = andervakje;
+                            andervakje.schaakstuk = bekijk;
+                            bekijkvakje.schaakstuk = null;
+
+                            bool check = CheckSchaak(koningVakje, bekijk.kleur);
+                            if (check == false)
+                            {
+                                kanVerplaatsen = true;
+                            }
+                            bekijk.vakje = bekijkvakje;
+                            bekijkvakje.schaakstuk = bekijk;
+                            andervakje.schaakstuk = anderstuk;
                         }
-                        else if (bekijk.vakje.buurNoordwest != null && bekijk.vakje.buurNoordwest.schaakstuk != null)
+                        if (bekijk.vakje.buurNoordwest != null && bekijk.vakje.buurNoordwest.schaakstuk != null)
                         {
-                            kanVerplaatsen = true;
+                            Vakje bekijkvakje = bekijk.vakje;
+                            Vakje andervakje = bekijk.vakje.buurNoordwest;
+                            Schaakstuk anderstuk = andervakje.schaakstuk;
+
+                            bekijk.vakje = andervakje;
+                            andervakje.schaakstuk = bekijk;
+                            bekijkvakje.schaakstuk = null;
+
+                            bool check = CheckSchaak(koningVakje, bekijk.kleur);
+                            if (check == false)
+                            {
+                                kanVerplaatsen = true;
+                            }
+                            bekijk.vakje = bekijkvakje;
+                            bekijkvakje.schaakstuk = bekijk;
+                            andervakje.schaakstuk = anderstuk;
                         }
                     }
                     else
                     {
                         if (bekijk.vakje.buurZuid != null && bekijk.vakje.buurZuid.schaakstuk == null)
                         {
-                            kanVerplaatsen = true;
+                            Vakje bekijkvakje = bekijk.vakje;
+                            Vakje andervakje = bekijk.vakje.buurZuid;
+
+                            bekijk.vakje = andervakje;
+                            andervakje.schaakstuk = bekijk;
+                            bekijkvakje.schaakstuk = null;
+
+                            bool check = CheckSchaak(koningVakje, bekijk.kleur);
+                            if (check == false)
+                            {
+                                kanVerplaatsen = true;
+                            }
+                            bekijk.vakje = bekijkvakje;
+                            bekijkvakje.schaakstuk = bekijk;
+                            andervakje.schaakstuk = null;
                         }
                         else if (bekijk.vakje.buurZuidoost != null && bekijk.vakje.buurZuidoost.schaakstuk != null)
                         {
-                            kanVerplaatsen = true;
+                            Vakje bekijkvakje = bekijk.vakje;
+                            Vakje andervakje = bekijk.vakje.buurZuidoost;
+                            Schaakstuk anderstuk = andervakje.schaakstuk;
+
+                            bekijk.vakje = andervakje;
+                            andervakje.schaakstuk = bekijk;
+                            bekijkvakje.schaakstuk = null;
+
+                            bool check = CheckSchaak(koningVakje, bekijk.kleur);
+                            if (check == false)
+                            {
+                                kanVerplaatsen = true;
+                            }
+                            bekijk.vakje = bekijkvakje;
+                            bekijkvakje.schaakstuk = bekijk;
+                            andervakje.schaakstuk = anderstuk;
                         }
                         else if (bekijk.vakje.buurZuidwest != null && bekijk.vakje.buurZuidwest.schaakstuk != null)
                         {
-                            kanVerplaatsen = true;
+                            Vakje bekijkvakje = bekijk.vakje;
+                            Vakje andervakje = bekijk.vakje.buurZuidwest;
+                            Schaakstuk anderstuk = andervakje.schaakstuk;
+
+                            bekijk.vakje = andervakje;
+                            andervakje.schaakstuk = bekijk;
+                            bekijkvakje.schaakstuk = null;
+
+                            bool check = CheckSchaak(koningVakje, bekijk.kleur);
+                            if (check == false)
+                            {
+                                kanVerplaatsen = true;
+                            }
+                            bekijk.vakje = bekijkvakje;
+                            bekijkvakje.schaakstuk = bekijk;
+                            andervakje.schaakstuk = anderstuk;
                         }
                     }
                     if (kanVerplaatsen == false)
                     {
                         stillePion++;
+                    }
+                    else
+                    {
+                        return false;
                     }
                     kanVerplaatsen = false;
                 }
@@ -1435,7 +1660,7 @@ namespace Schaakproject
 
             string kleur = koning.kleur;
             Vakje koningVakje = koning.vakje;
-            
+
             koning.vakje.schaakstuk = null;
 
             //bekijk of de koning schaak staat als hij naar noord zou bewegen
@@ -1633,7 +1858,7 @@ namespace Schaakproject
                     {
                         Schaakstuk temp = Lijst[i];
                         Vakje tempvakje = temp.vakje;
-                        Vakje tempgezetvakje = tempgezet.vakje;                     
+                        Vakje tempgezetvakje = tempgezet.vakje;
                         tempvakje.schaakstuk = null;
                         temp.vakje = tempgezetvakje;
                         tempgezetvakje.schaakstuk = temp;
@@ -1679,7 +1904,7 @@ namespace Schaakproject
                                         tempvakje.schaakstuk = null;
                                         temp.vakje = vorige.buurNoord;
                                         vorige.buurNoord.schaakstuk = temp;
-
+                                        pionvoormat = false;
                                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                                         if (check == false)
                                         {
@@ -1725,6 +1950,7 @@ namespace Schaakproject
                                         tempvakje.schaakstuk = null;
                                         temp.vakje = vorige.buurOost;
                                         vorige.buurOost.schaakstuk = temp;
+                                        pionvoormat = false;
 
                                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                                         if (check == false)
@@ -1771,6 +1997,7 @@ namespace Schaakproject
                                         tempvakje.schaakstuk = null;
                                         temp.vakje = vorige.buurZuid;
                                         vorige.buurZuid.schaakstuk = temp;
+                                        pionvoormat = false;
 
                                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                                         if (check == false)
@@ -1817,6 +2044,7 @@ namespace Schaakproject
                                         tempvakje.schaakstuk = null;
                                         temp.vakje = vorige.buurWest;
                                         vorige.buurWest.schaakstuk = temp;
+                                        pionvoormat = false;
 
                                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                                         if (check == false)
@@ -1863,6 +2091,7 @@ namespace Schaakproject
                                         tempvakje.schaakstuk = null;
                                         temp.vakje = vorige.buurNoordoost;
                                         vorige.buurNoordoost.schaakstuk = temp;
+                                        pionvoormat = false;
 
                                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                                         if (check == false)
@@ -1909,6 +2138,7 @@ namespace Schaakproject
                                         tempvakje.schaakstuk = null;
                                         temp.vakje = vorige.buurNoordwest;
                                         vorige.buurNoordwest.schaakstuk = temp;
+                                        pionvoormat = false;
 
                                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                                         if (check == false)
@@ -1955,6 +2185,7 @@ namespace Schaakproject
                                         tempvakje.schaakstuk = null;
                                         temp.vakje = vorige.buurZuidoost;
                                         vorige.buurZuidoost.schaakstuk = temp;
+                                        pionvoormat = false;
 
                                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                                         if (check == false)
@@ -2001,6 +2232,7 @@ namespace Schaakproject
                                         tempvakje.schaakstuk = null;
                                         temp.vakje = vorige.buurZuidwest;
                                         vorige.buurZuidwest.schaakstuk = temp;
+                                        pionvoormat = false;
 
                                         bool check = CheckSchaak(koning.vakje, koning.kleur);
                                         if (check == false)

@@ -24,7 +24,14 @@ namespace Schaakproject
         private void btn_ja_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Yes;
-            spel.Herstart(spel.SpelMode, spel.Speler1.Naam, spel.Speler2.Naam);
+            if (spel.SpelMode == "Singleplayer")
+            {
+                spel.Herstart(spel.SpelMode, spel.Speler1.Naam, spel.computerSpeler.Naam);
+            }
+            else
+            {
+                spel.Herstart(spel.SpelMode, spel.Speler1.Naam, spel.Speler2.Naam);
+            }
         }
 
         private void btn_nee_Click(object sender, EventArgs e)
