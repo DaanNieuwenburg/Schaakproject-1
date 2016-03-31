@@ -118,19 +118,19 @@ namespace Schaakproject
 
             bool gevonden = false;
             if (selected.buurNoord == nieuwVakje)
-            {               
+            {
                 gevonden = true;
             }
             else if (selected.buurOost == nieuwVakje)
-            {                
+            {
                 gevonden = true;
             }
             else if (selected.buurZuid == nieuwVakje)
-            {                
+            {
                 gevonden = true;
             }
             else if (selected.buurWest == nieuwVakje)
-            {                
+            {
                 gevonden = true;
             }
             else if (selected.buurNoordoost == nieuwVakje)
@@ -187,6 +187,7 @@ namespace Schaakproject
             Vakje vorige = vakjeKoning;
             bool checkschaak = false;
             Console.WriteLine("MAG ROKEREN = " + _eersteZet);
+            
             // Rokeren voor klassieke schaakvariant
             if (spel.Variant == "Klassiek")
             {
@@ -293,7 +294,6 @@ namespace Schaakproject
                     int aantalplaatsenwest = 0;                     // aantal plaatsen tussen koning en linker toren
                     int aantalplaatsenoost = 0;                     // aantal plaatsen tussen koning en rechter toren
                     int i = 0;
-
                     int west = 0;
                     _vorigwest = vakjeKoning.buurWest;
                     _vorigvakje = vakjeKoning.buurWest;
@@ -320,11 +320,8 @@ namespace Schaakproject
                     _Randoost = _Randwest.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost.buurOost;
                     Vakje koningnieuw_W = _Randwest.buurOost.buurOost;
                     Vakje torennieuw_W = _Randwest.buurOost.buurOost.buurOost;
-                    /*for (int k = 0; k < 8; k++)
-                    {
-                        _vorigoost = _vorigoost.buurOost;
-                    }
-                    _Randoost = _vorigoost;*/
+                    Vakje koningnieuw_O = _Randoost.buurWest;
+                    Vakje torennieuw_O = _Randoost.buurWest.buurWest;
                     Console.WriteLine("west: " + west);
                     Console.WriteLine("aantal " + aantalplaatsenwest);
                     // voor west
@@ -343,12 +340,27 @@ namespace Schaakproject
                                 if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurWest;
-                                    vakjesleeg = true;
+                                    if (koningnieuw_W.schaakstuk == null || koningnieuw_W == vakjeKoning || koningnieuw_W == vakjeToren)
+                                    {
+                                        if (torennieuw_W.schaakstuk == null || torennieuw_W == vakjeKoning || torennieuw_W == vakjeToren)
+                                        {
+                                            vakjesleeg = true;
+                                        }
+                                        else
+                                        {
+                                            vakjesleeg = false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        vakjesleeg = false;
+                                    }
                                 }
                                 else
                                 {
                                     vakjesleeg = false;
                                 }
+
                                 i++;
                             }
                             _magRokeren = true;
@@ -382,7 +394,7 @@ namespace Schaakproject
                         {
                             rokeerwest = true;
                             aantalplaatsenwest = 3;
-                            while (i < aantalplaatsenwest -1 )
+                            while (i < aantalplaatsenwest - 1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -406,7 +418,7 @@ namespace Schaakproject
                         {
                             rokeerwest = true;
                             aantalplaatsenwest = 4;
-                            while (i < aantalplaatsenwest -1)
+                            while (i < aantalplaatsenwest - 1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -430,7 +442,7 @@ namespace Schaakproject
                         {
                             rokeerwest = true;
                             aantalplaatsenwest = 5;
-                            while (i < aantalplaatsenwest -1)
+                            while (i < aantalplaatsenwest - 1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -453,7 +465,7 @@ namespace Schaakproject
                         {
                             rokeerwest = true;
                             aantalplaatsenwest = 6;
-                            while (i < aantalplaatsenwest-1)
+                            while (i < aantalplaatsenwest - 1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -476,7 +488,7 @@ namespace Schaakproject
                         {
                             rokeerwest = true;
                             aantalplaatsenwest = 7;
-                            while (i < aantalplaatsenwest-1)
+                            while (i < aantalplaatsenwest - 1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -501,20 +513,27 @@ namespace Schaakproject
                         vakjesleeg = true;
                         if (vakjeKoning.buurOost == vakjeToren)
                         {
-                            aantalplaatsenoost = 1;
-                            rokeerwest = false;
                             while (i < aantalplaatsenoost)
                             {
-                                if (_vorigvakje.schaakstuk == null)
+                                rokeerwest = false;
+                                _vorigvakje = _vorigvakje.buurOost;
+                                if (koningnieuw_O.schaakstuk == null || koningnieuw_O == vakjeKoning || koningnieuw_O == vakjeToren)
                                 {
-                                    _vorigvakje = _vorigvakje.buurWest;
-                                    vakjesleeg = true;
+                                    if (torennieuw_O.schaakstuk == null || torennieuw_O == vakjeKoning || torennieuw_O == vakjeToren)
+                                    {
+                                        vakjesleeg = true;
+                                    }
+                                    else
+                                    {
+                                        vakjesleeg = false;
+                                    }
                                 }
                                 else
                                 {
                                     vakjesleeg = false;
                                 }
                                 i++;
+                                
                             }
                             _magRokeren = true;
                         }
@@ -522,7 +541,7 @@ namespace Schaakproject
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 2;
-                            while (i < aantalplaatsenoost-1)
+                            while (i < aantalplaatsenoost - 1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -541,7 +560,7 @@ namespace Schaakproject
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 3;
-                            while (i < aantalplaatsenoost-1)
+                            while (i < aantalplaatsenoost - 1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -561,7 +580,7 @@ namespace Schaakproject
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 4;
-                            while (i < aantalplaatsenoost-1)
+                            while (i < aantalplaatsenoost - 1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -580,7 +599,7 @@ namespace Schaakproject
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 5;
-                            while (i < aantalplaatsenoost-1)
+                            while (i < aantalplaatsenoost - 1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -599,7 +618,7 @@ namespace Schaakproject
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 6;
-                            while (i < aantalplaatsenoost-1)
+                            while (i < aantalplaatsenoost - 1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -618,7 +637,7 @@ namespace Schaakproject
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 7;
-                            while (i < aantalplaatsenoost-1)
+                            while (i < aantalplaatsenoost - 1)
                             {
                                 if (_vorigvakje.schaakstuk == null)
                                 {
@@ -633,114 +652,85 @@ namespace Schaakproject
                             }
                             _magRokeren = true;
                         }
+                }
+                
+
+                if (_magRokeren == true)
+                {
+                    if (vakjesleeg == true)
+                    {
+                        // popup voor rokeren
+                        Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
+                        _Rokerenmelding.ShowDialog();
+                    }
+                }
+
+                if (_wilRokeren == true && _magRokeren == true)
+                {
+                    if (vakjesleeg == true)
+                    {
+                        // ROKEREN NAAR OOST KANT
+                        if (rokeerwest == false)
+                        {
+                            _torenoud = vakjeToren;
+                            _koningoud = vakjeKoning;
+                            Schaakstuk Tempkoning = vakjeKoning.schaakstuk;
+                            _Randoost.buurWest.buurWest.schaakstuk = tempToren;
+                            _Randoost.buurWest.schaakstuk = Tempkoning;
+                            _Randoost.buurWest.pbox.update();
+                            _Randoost.buurWest.pbox.update();
+                            _koningoud.schaakstuk = null;
+                            _torenoud.schaakstuk = null;
+                            vakjeToren.schaakstuk = null;
+                            this.vakje.pbox.update();
+                            vakjeToren.pbox.update();
+                            _torenoud.pbox.update();
+                            _Randoost.buurWest.schaakstuk = Tempkoning;
+                            _Randoost.buurWest.pbox.update();
+                            //_Randwest.buurOost.buurOost.pbox.BackColor = System.Drawing.Color.Red;
+                            _Randoost.buurWest.buurWest.schaakstuk = tempToren;
+                            //_Randwest.buurOost.buurOost.buurOost.pbox.BackColor = System.Drawing.Color.Blue;
+                            _Randoost.buurWest.buurWest.pbox.update();
+                            _eersteZet = true;
+                        }
+                        else // ROKEREN NAAR WEST KANT
+                        {
+                            _torenoud = vakjeToren;
+                            _koningoud = vakjeKoning;
+                            Schaakstuk Tempkoning = vakjeKoning.schaakstuk;
+                            _Randwest.buurOost.buurOost.buurOost.schaakstuk = tempToren;
+                            _Randwest.buurOost.buurOost.schaakstuk = Tempkoning;
+                            _Randwest.buurOost.pbox.update();
+                            _Randwest.buurOost.buurOost.schaakstuk = null;
+                            _Randwest.buurOost.buurOost.pbox.update();
+                            _koningoud.schaakstuk = null;
+                            _torenoud.schaakstuk = null;
+                            vakjeToren.schaakstuk = null;
+                            this.vakje.pbox.update();
+                            vakjeToren.pbox.update();
+                            _torenoud.pbox.update();
+                            _Randwest.buurOost.buurOost.schaakstuk = Tempkoning;
+                            _Randwest.buurOost.buurOost.pbox.update();
+                            //_Randwest.buurOost.buurOost.pbox.BackColor = System.Drawing.Color.Red;
+                            _Randwest.buurOost.buurOost.buurOost.schaakstuk = tempToren;
+                            //_Randwest.buurOost.buurOost.buurOost.pbox.BackColor = System.Drawing.Color.Blue;
+                            _Randwest.buurOost.buurOost.buurOost.pbox.update();
+                            _eersteZet = true;
+                        }
                     }
 
-                    if (_magRokeren == true)
-                    {
-                        if(vakjesleeg == true)
-                        {
-                            // popup voor rokeren
-                            Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
-                            _Rokerenmelding.ShowDialog();
-                        }
-                    }
-
-                    if (_wilRokeren == true && _magRokeren == true)
-                    {
-                        if (vakjesleeg == true)
-                        {
-                            if (rokeerwest == false)
-                            {
-                                _torenoud = vakjeToren;
-                                _koningoud = vakjeKoning;
-                                Schaakstuk Tempkoning = vakjeKoning.schaakstuk;
-                                _Randoost.buurWest.buurWest.schaakstuk = tempToren;
-                                _Randoost.buurWest.schaakstuk = Tempkoning;
-                                _Randoost.buurWest.pbox.update();
-                                _Randoost.buurWest.pbox.update();
-                                _koningoud.schaakstuk = null;
-                                _torenoud.schaakstuk = null;
-                                vakjeToren.schaakstuk = null;
-                                this.vakje.pbox.update();
-                                vakjeToren.pbox.update();
-                                _torenoud.pbox.update();
-                                _Randoost.buurWest.schaakstuk = Tempkoning;
-                                _Randoost.buurWest.pbox.update();
-                                //_Randwest.buurOost.buurOost.pbox.BackColor = System.Drawing.Color.Red;
-                                _Randoost.buurWest.buurWest.schaakstuk = tempToren;
-                                //_Randwest.buurOost.buurOost.buurOost.pbox.BackColor = System.Drawing.Color.Blue;
-                                _Randoost.buurWest.buurWest.pbox.update();
-                                _eersteZet = true;
-                            }
-                            else // ROKEREN NAAR WEST KANT
-                            {
-                                _torenoud = vakjeToren;
-                                _koningoud = vakjeKoning;
-                                Schaakstuk Tempkoning = vakjeKoning.schaakstuk;
-                                _Randwest.buurOost.buurOost.buurOost.schaakstuk = tempToren;
-                                _Randwest.buurOost.buurOost.schaakstuk = Tempkoning;
-                                _Randwest.buurOost.pbox.update();
-                                _Randwest.buurOost.buurOost.schaakstuk = null;
-                                _Randwest.buurOost.buurOost.pbox.update();
-                                _koningoud.schaakstuk = null;
-                                _torenoud.schaakstuk = null;
-                                vakjeToren.schaakstuk = null;
-                                this.vakje.pbox.update();
-                                vakjeToren.pbox.update();
-                                _torenoud.pbox.update();
-                                _Randwest.buurOost.buurOost.schaakstuk = Tempkoning;
-                                _Randwest.buurOost.buurOost.pbox.update();
-                                //_Randwest.buurOost.buurOost.pbox.BackColor = System.Drawing.Color.Red;
-                                _Randwest.buurOost.buurOost.buurOost.schaakstuk = tempToren;
-                                //_Randwest.buurOost.buurOost.buurOost.pbox.BackColor = System.Drawing.Color.Blue;
-                                _Randwest.buurOost.buurOost.buurOost.pbox.update();
-                                _eersteZet = true;
-                            }
-                        }
-                        
-                        speler.validezet = true;
-                        _eersteZet = true;
-                    }
-                    /*else
-                    {
-                        if (spel.Variant == "Klassiek")
-                        {
-                            this.vakje = vakjeKoning;
-                            vakjeKoning.schaakstuk = this;
-                            vakjeKoning.buurWest.buurWest.schaakstuk = null;
-                            vakjeKoning.buurWest.schaakstuk = null;
-                            vakjeToren.buurOost.schaakstuk = null;
-                        }
-                        else
-                        {
-                            if(rokeerwest == true)
-                            {
-                                _Randwest.buurOost.buurOost = vakjeKoning;
-                                vakjeKoning.schaakstuk = this;
-                                _Randwest.buurOost.buurOost = vakjeToren;
-                                _Randwest.buurOost.buurOost.schaakstuk = null;
-                                _Randwest.buurOost.buurOost.buurOost.schaakstuk = null;
-                                _Randwest.buurOost.buurOost.buurOost.buurOost.schaakstuk = null;
-                            }
-                            else
-                            {
-                                _Randoost.buurWest = vakjeKoning;
-                                vakjeKoning.schaakstuk = this;
-                                _Randoost.buurWest.buurWest
-                            }
-
-
-                        }
-                    }*/
+                    speler.validezet = true;
+                    _eersteZet = true;
                 }
             }
         }
-
-
-        public void Wilrokeren()
-        {
-            _wilRokeren = true;
-        }
     }
+
+
+    public void Wilrokeren()
+    {
+        _wilRokeren = true;
+    }
+}
 }
 
