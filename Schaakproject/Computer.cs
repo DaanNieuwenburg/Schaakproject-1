@@ -14,6 +14,7 @@ namespace Schaakproject
         private Vakje _vorigvakje { get; set; }
         private Schaakstuk _vorigschaakstuk { get; set; }
         private Spel _spel { get; set; }
+        public Algoritme algoritme { get; set; }
         private Color _selectedcolor { get; set; }
         public int ronde { get; set; }
         private List<Vakje> _nietverplaatstlijst = new List<Vakje>();
@@ -95,19 +96,19 @@ namespace Schaakproject
             }
 
             // begin met het algoritme
-            Algoritme algoritme = new Algoritme(this);
+            Algoritme Calgoritme = new Algoritme(this);
+            algoritme = Calgoritme;
         }
 
         public void voerZetUit(Vakje geselecteerdStuk, Vakje geselecteerdVakje)
         {
             verplaatsingsLijst.Add(geselecteerdVakje);       // slaat de positie van de computerszet in lijst op 
 
-                geselecteerdStuk.schaakstuk.Verplaats(geselecteerdVakje, geselecteerdStuk, _spel);
-                geselecteerdStuk.pbox.update();                 //update het eerste vakje
-                geselecteerdVakje.pbox.update();                 //update het tweede vakje
-                geselecteerdStuk = null;                        //niets is meer geselecteerd
-               // _spel.VeranderSpeler();
-
+            geselecteerdStuk.schaakstuk.Verplaats(geselecteerdVakje, geselecteerdStuk, _spel);
+            geselecteerdStuk.pbox.update();                 //update het eerste vakje
+            geselecteerdVakje.pbox.update();                 //update het tweede vakje
+            geselecteerdStuk = null;                        //niets is meer geselecteerd
+                                                            // _spel.VeranderSpeler();
         }
     }
 }

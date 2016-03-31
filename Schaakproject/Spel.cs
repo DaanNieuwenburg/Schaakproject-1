@@ -151,14 +151,23 @@ namespace Schaakproject
                    // Console.WriteLine("schaak is " + schaak);
                     if (SpelMode == "Singleplayer")
                     {
-                       // Console.WriteLine("Check schaak2");
                         mat = schaakbord.CheckMat(computerSpeler.Koning);
                         if (mat == true)
                         {
+                            Console.WriteLine("HUIDIGE SPELER  = " + computerSpeler.Kleur);
+                            Console.WriteLine("MAT IS TRUE");
                             computerSpeler.Koning.vakje.pbox.Image = Properties.Resources.ZwartMat1;
                             SchaakMat _SchaakMat = new SchaakMat(Speler1.Naam, this);
                             _SchaakMat.ShowDialog();
                             speelbord.Hide();
+                        }
+                        else
+                        {
+                            // computer reageert op schaak
+                            Console.WriteLine("REAGEER OP SCHAAK " + spelerAanZet.Kleur);
+                            computerSpeler.algoritme.StaatSchaak = true;
+                            computerSpeler.algoritme.reageerOpSchaak();
+                            //computerSpeler.algoritme.StaatSchaak = true;
                         }
                     }
                     else

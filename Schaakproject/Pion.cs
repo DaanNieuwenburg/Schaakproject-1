@@ -65,7 +65,6 @@ namespace Schaakproject
             Schaakstuk tempPion = null;
             bool locatie = false;
             bool mogelijk = false;
-            Console.WriteLine("Verplaats");
             if (kleur == "wit")
             {
                 // Witte pion een stapje naar voren
