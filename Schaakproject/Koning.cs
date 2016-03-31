@@ -602,9 +602,9 @@ namespace Schaakproject
                                 if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurOost;
-                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O.schaakstuk is Toren)
+                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O == vakjeToren)
                                     {
-                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O.schaakstuk is Toren)
+                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O == vakjeToren)
                                         {
                                             vakjesleeg = true;
                                         }
@@ -636,9 +636,9 @@ namespace Schaakproject
                                 if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurOost;
-                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O.schaakstuk is Toren)
+                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O == vakjeToren)
                                     {
-                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O.schaakstuk is Toren)
+                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O == vakjeToren)
                                         {
                                             vakjesleeg = true;
                                         }
@@ -670,9 +670,9 @@ namespace Schaakproject
                                 if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurOost;
-                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O.schaakstuk is Toren)
+                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O == vakjeToren)
                                     {
-                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O.schaakstuk is Toren)
+                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O == vakjeToren)
                                         {
                                             vakjesleeg = true;
                                         }
@@ -705,9 +705,9 @@ namespace Schaakproject
                                 if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurOost;
-                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O.schaakstuk is Toren)
+                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O == vakjeToren)
                                     {
-                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O.schaakstuk is Toren)
+                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O == vakjeToren)
                                         {
                                             vakjesleeg = true;
                                         }
@@ -739,9 +739,9 @@ namespace Schaakproject
                                 if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurOost;
-                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O.schaakstuk is Toren)
+                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O == vakjeToren)
                                     {
-                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O.schaakstuk is Toren)
+                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O == vakjeToren)
                                         {
                                             vakjesleeg = true;
                                         }
@@ -773,9 +773,9 @@ namespace Schaakproject
                                 if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurOost;
-                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O.schaakstuk is Toren)
+                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O == vakjeToren)
                                     {
-                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O.schaakstuk is Toren)
+                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O == vakjeToren)
                                         {
                                             vakjesleeg = true;
                                         }
@@ -807,9 +807,9 @@ namespace Schaakproject
                                 if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurOost;
-                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O.schaakstuk is Toren)
+                                    if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O == vakjeToren)
                                     {
-                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O.schaakstuk is Toren)
+                                        if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O == vakjeToren)
                                         {
                                             vakjesleeg = true;
                                         }
