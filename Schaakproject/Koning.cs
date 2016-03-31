@@ -187,6 +187,7 @@ namespace Schaakproject
             Vakje vorige = vakjeKoning;
             bool checkschaak = false;
             Console.WriteLine("MAG ROKEREN = " + _eersteZet);
+            
             // Rokeren voor klassieke schaakvariant
             if (spel.Variant == "Klassiek")
             {
@@ -293,7 +294,6 @@ namespace Schaakproject
                     int aantalplaatsenwest = 0;                     // aantal plaatsen tussen koning en linker toren
                     int aantalplaatsenoost = 0;                     // aantal plaatsen tussen koning en rechter toren
                     int i = 0;
-
                     int west = 0;
                     _vorigwest = vakjeKoning.buurWest;
                     _vorigvakje = vakjeKoning.buurWest;
@@ -322,11 +322,6 @@ namespace Schaakproject
                     Vakje torennieuw_W = _Randwest.buurOost.buurOost.buurOost;
                     Vakje koningnieuw_O = _Randoost.buurWest;
                     Vakje torennieuw_O = _Randoost.buurWest.buurWest;
-                    /*for (int k = 0; k < 8; k++)
-                    {
-                        _vorigoost = _vorigoost.buurOost;
-                    }
-                    _Randoost = _vorigoost;*/
                     Console.WriteLine("west: " + west);
                     Console.WriteLine("aantal " + aantalplaatsenwest);
                     // voor west
@@ -727,37 +722,6 @@ namespace Schaakproject
                     speler.validezet = true;
                     _eersteZet = true;
                 }
-                /*else
-                {
-                    if (spel.Variant == "Klassiek")
-                    {
-                        this.vakje = vakjeKoning;
-                        vakjeKoning.schaakstuk = this;
-                        vakjeKoning.buurWest.buurWest.schaakstuk = null;
-                        vakjeKoning.buurWest.schaakstuk = null;
-                        vakjeToren.buurOost.schaakstuk = null;
-                    }
-                    else
-                    {
-                        if(rokeerwest == true)
-                        {
-                            _Randwest.buurOost.buurOost = vakjeKoning;
-                            vakjeKoning.schaakstuk = this;
-                            _Randwest.buurOost.buurOost = vakjeToren;
-                            _Randwest.buurOost.buurOost.schaakstuk = null;
-                            _Randwest.buurOost.buurOost.buurOost.schaakstuk = null;
-                            _Randwest.buurOost.buurOost.buurOost.buurOost.schaakstuk = null;
-                        }
-                        else
-                        {
-                            _Randoost.buurWest = vakjeKoning;
-                            vakjeKoning.schaakstuk = this;
-                            _Randoost.buurWest.buurWest
-                        }
-
-
-                    }
-                }*/
             }
         }
     }
