@@ -101,8 +101,8 @@ namespace Schaakproject
                     spel.VeranderSpeler();      //de andere speler is aan zet
                     if (spel.SpelMode == "Singleplayer")
                     {
-                        spel.VeranderSpeler();
                         spel.computerSpeler.Zet(clicked, spel);  // laat de computer op de mens reageren
+                        spel.VeranderSpeler();
                     }
 
                     // De pion voor en-passant wordt weer vergeten.

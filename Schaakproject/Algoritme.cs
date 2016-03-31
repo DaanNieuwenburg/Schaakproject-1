@@ -39,33 +39,32 @@ namespace Schaakproject
             else
             {
                 Random rnd = new Random();
-                //int percentage = 1337;
-                int percentage = rnd.Next(1, 4);
+                int percentage = 1337;
+                //int percentage = rnd.Next(1, 4);
                 Console.WriteLine("PERCENTAGE = " + percentage);
                 if (percentage == 1)
                 {
                     Console.WriteLine("VPN");
                     verplaatsNieuwStuk();
                 }
-                else if (percentage > 1 && computer.verplaatsingsLijst.Count > 0)
-                {
-                    Console.WriteLine("VPS");
-                    verplaatsVerplaatstStuk();
-                }
+                //else if (percentage > 1 && computer.verplaatsingsLijst.Count > 0)
+                //{
+                    //Console.WriteLine("VPS");
+                    //verplaatsVerplaatstStuk();
+                //}
                 else if (percentage == 1337)
                 {
-                    Console.WriteLine("HIER");
+                    Console.WriteLine("1337");
                     if (computer.ronde == 0)
                     {
-                        _geselecteerdStuk = _koning.vakje.buurWest.buurWest.buurZuid;  // geselecteerd stuk
-                        _geselecteerdVakje = _koning.vakje.buurWest.buurWest.buurZuid.buurZuid;       // geselecteerd vak
+                        _geselecteerdStuk = _koning.vakje.buurZuidoost;  // geselecteerd stuk
+                        _geselecteerdVakje = _koning.vakje.buurZuidoost.buurZuid;       // geselecteerd vak
                         _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                     }
                     else if (computer.ronde == 1)
                     {
-                        Console.WriteLine("BEWEEGT DAME");
-                        _geselecteerdStuk = _koning.vakje.buurWest;  // geselecteerd stuk
-                        _geselecteerdVakje = _koning.vakje.buurWest.buurZuidwest.buurZuidwest.buurZuidwest;       // geselecteerd vak
+                        _geselecteerdStuk = _koning.vakje.buurOost.buurOost.buurZuid;  // geselecteerd stuk
+                        _geselecteerdVakje = _koning.vakje.buurOost.buurOost.buurZuid.buurZuid.buurZuid;       // geselecteerd vak
                         _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                     }
                     else if (computer.ronde == 2)
@@ -158,8 +157,6 @@ namespace Schaakproject
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
                     alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                    _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Green;
-                    _geselecteerdVakje.pbox.BackColor = System.Drawing.Color.Yellow;
                 }
 
                 else if (schaakstuk is Pion && schaakstuk.kleur == "wit" && alGeslagen == false)
@@ -169,8 +166,6 @@ namespace Schaakproject
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
                     alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                    _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Green;
-                    _geselecteerdVakje.pbox.BackColor = System.Drawing.Color.Yellow;
                 }
 
                 else if (schaakstuk is Toren && schaakstuk.kleur == "wit" && alGeslagen == false)
@@ -180,8 +175,6 @@ namespace Schaakproject
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
                     alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                    _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Green;
-                    _geselecteerdVakje.pbox.BackColor = System.Drawing.Color.Yellow;
                 }
 
                 else if (schaakstuk is Paard && schaakstuk.kleur == "wit" && alGeslagen == false)
@@ -191,8 +184,6 @@ namespace Schaakproject
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
                     alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                    _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Green;
-                    _geselecteerdVakje.pbox.BackColor = System.Drawing.Color.Yellow;
                 }
 
                 else if (schaakstuk is Loper && schaakstuk.kleur == "wit" && alGeslagen == false)
@@ -202,8 +193,6 @@ namespace Schaakproject
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
                     alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                    _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Green;
-                    _geselecteerdVakje.pbox.BackColor = System.Drawing.Color.Yellow;
                 }
                 else if (schaakstuk is Dame && schaakstuk.kleur == "wit" && alGeslagen == false)
                 {
@@ -212,8 +201,6 @@ namespace Schaakproject
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
                     alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                    _geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Green;
-                    _geselecteerdVakje.pbox.BackColor = System.Drawing.Color.Yellow;
                 }
             }
         }
@@ -366,7 +353,6 @@ namespace Schaakproject
             bool alVerplaatst = false;
             for (int i = 0; i < _computer.verplaatsingsLijst.Count; i++)
             {
-                _computer.verplaatsingsLijst[i].pbox.BackColor = System.Drawing.Color.AntiqueWhite;
 
                 Console.WriteLine("Teller " + i);
                 Schaakstuk schaakstuk = _computer.verplaatsingsLijst[i].schaakstuk;
