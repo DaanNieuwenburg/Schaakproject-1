@@ -32,94 +32,54 @@ namespace Schaakproject
             // kijk of er geslagen kan worden
             //controleerOpSlaan();
             Console.WriteLine("-------------------------------------");
-            //if (slaanmogelijkheden.Count > 0)
-            //{
-            //  slaEenStuk();
-            // }
-            //else
-            // {
-            Random rnd = new Random();
-            int percentage = 1337;
-            //int percentage = rnd.Next(1, 4);
-            Console.WriteLine("PERCENTAGE = " + percentage);
-            if (percentage == 1)
+            if (slaanmogelijkheden.Count > 0)
             {
-                verplaatsNieuwStuk();
-            }
-            //else if (percentage > 1 && computer.verplaatsingsLijst.Count > 0)
-            //{
-            //  verplaatsVerplaatstStuk();
-            //}
-            else if (percentage == 1337)
-            {
-                Console.WriteLine("HIER");
-                if (computer.ronde == 0)
-                {
-                    _geselecteerdStuk = _koning.vakje.buurWest.buurWest.buurZuid;  // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurWest.buurWest.buurZuid.buurZuid.buurZuid;       // geselecteerd vak
-                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                }
-                else if (computer.ronde == 1)
-                {
-                    _geselecteerdStuk = _koning.vakje.buurWest.buurZuid;  // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurWest.buurZuid.buurZuid.buurZuid;       // geselecteerd vak
-                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                }
-                else if(computer.ronde == 2)
-                {
-                    _geselecteerdStuk = _koning.vakje.buurWest.buurWest.buurZuid.buurZuid.buurZuid;  // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurWest.buurWest.buurZuid.buurZuid.buurZuid.buurZuidoost;       // geselecteerd vak
-                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                }
-                else if (computer.ronde == 3)
-                {
-                    _geselecteerdStuk = _koning.vakje.buurWest.buurZuid.buurZuid.buurZuid;  // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurWest.buurZuid.buurZuid.buurZuid.buurZuidoost;       // geselecteerd vak
-                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                }
-                else if (computer.ronde == 4)
-                {
-                    _geselecteerdStuk = _koning.vakje.buurWest.buurWest;  // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurWest.buurZuid;       // geselecteerd vak
-                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                }
-                else if (computer.ronde == 5)
-                {
-                    _geselecteerdStuk = _koning.vakje.buurZuid.buurZuid.buurZuid.buurZuid;  // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurZuid.buurZuid.buurZuid.buurZuid.buurZuid;       // geselecteerd vak
-                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                }
-                else if (computer.ronde == 6)
-                {
-                    _geselecteerdStuk = _koning.vakje.buurZuid.buurZuid.buurZuid.buurZuid.buurZuid;  // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurZuid.buurZuid.buurZuid.buurZuid.buurZuid.buurZuid;       // geselecteerd vak
-                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                }
-                else if (computer.ronde == 7)
-                {
-                    _geselecteerdStuk = _koning.vakje.buurOost.buurOost.buurZuid;  // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurOost.buurOost.buurZuid.buurZuid;       // geselecteerd vak
-                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                }
-                else if (computer.ronde == 8)
-                {
-                    _geselecteerdStuk = _koning.vakje.buurWest.buurZuid;  // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurWest.buurZuid.buurZuidwest.buurZuidwest.buurZuidwest;       // geselecteerd vak
-                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                }
-                else if (computer.ronde == 9)
-                {
-                    _geselecteerdStuk = _koning.vakje.buurWest;  // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurWest.buurZuidwest.buurZuidwest.buurZuidwest;       // geselecteerd vak
-                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                }
-                computer.ronde++;
+                slaEenStuk();
             }
             else
             {
-                //verplaatsNieuwStuk();
+                Random rnd = new Random();
+                //int percentage = 1337;
+                int percentage = rnd.Next(1, 4);
+                Console.WriteLine("PERCENTAGE = " + percentage);
+                if (percentage == 1)
+                {
+                    Console.WriteLine("VPN");
+                    verplaatsNieuwStuk();
+                }
+                else if (percentage > 1 && computer.verplaatsingsLijst.Count > 0)
+                {
+                    Console.WriteLine("VPS");
+                    verplaatsVerplaatstStuk();
+                }
+                else if (percentage == 1337)
+                {
+                    Console.WriteLine("HIER");
+                    if (computer.ronde == 0)
+                    {
+                        _geselecteerdStuk = _koning.vakje.buurWest.buurWest.buurZuid;  // geselecteerd stuk
+                        _geselecteerdVakje = _koning.vakje.buurWest.buurWest.buurZuid.buurZuid;       // geselecteerd vak
+                        _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                    }
+                    else if (computer.ronde == 1)
+                    {
+                        Console.WriteLine("BEWEEGT DAME");
+                        _geselecteerdStuk = _koning.vakje.buurWest;  // geselecteerd stuk
+                        _geselecteerdVakje = _koning.vakje.buurWest.buurZuidwest.buurZuidwest.buurZuidwest;       // geselecteerd vak
+                        _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                    }
+                    else if (computer.ronde == 2)
+                    {
+                    }
+                    Console.WriteLine("RONDE " + computer.ronde);
+                    computer.ronde++;
+                }
+                else
+                {
+                    Console.WriteLine("VPN");
+                    verplaatsNieuwStuk();
+                }
             }
-            // }
         }
 
         private void controleerOpSlaan()

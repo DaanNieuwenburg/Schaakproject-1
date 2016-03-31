@@ -48,8 +48,8 @@ namespace Schaakproject
                 Speler2 = speler2;
             }
 
-                Start();
-            }
+            Start();
+        }
 
         public void Start()
         {
@@ -80,19 +80,20 @@ namespace Schaakproject
             //Hier wordt de label met daarin welke speler aan zet is aangepast wanneer de speler wisselt;
             if (SpelMode == "Multiplayer")
             {
-                    if (witaanzet == false)
-                    {
-                        speelbord.lblbeurt.Text = Speler2.Naam + " is aan zet";
-                    }
-                    else
-                    {
-                        speelbord.lblbeurt.Text = Speler1.Naam + " is aan zet";
-                    }
+                if (witaanzet == false)
+                {
+                    speelbord.lblbeurt.Text = Speler2.Naam + " is aan zet";
                 }
-                    }
+                else
+                {
+                    speelbord.lblbeurt.Text = Speler1.Naam + " is aan zet";
+                }
+            }
+        }
 
         public void VeranderSpeler()
         {
+            Console.WriteLine("VeranderSPELER");
             //Iedere keer dat een legale zet gedaan is, wordt de speler gewisseld
 
             //Bekijk of het spel remise is doordat er te weinig stukken zijn
@@ -122,21 +123,21 @@ namespace Schaakproject
                     }
                 }
             }
-            
+
             //zodat je ziet wie er aan zet is
             veranderlbltext();
 
             bool schaak;
             bool mat;
             bool pat;
-            
+
             if (spelerAanZet == Speler1)
             {
                 Console.WriteLine("Speleraanzet == speler1");
                 witaanzet = true;
                 if (SpelMode == "Singleplayer")
                 {
-                    Console.WriteLine("Check schaak1");
+                    //Console.WriteLine("Check schaak1");
                     spelerAanZet = computerSpeler;
                     schaak = schaakbord.CheckSchaak(computerSpeler.Koning.vakje, computerSpeler.Koning.kleur);
                 }
@@ -147,13 +148,17 @@ namespace Schaakproject
                 }
                 if (schaak == true)
                 {
+                   // Console.WriteLine("schaak is " + schaak);
                     if (SpelMode == "Singleplayer")
                     {
-                        Console.WriteLine("Check schaak2");
+                       // Console.WriteLine("Check schaak2");
                         mat = schaakbord.CheckMat(computerSpeler.Koning);
                         if (mat == true)
                         {
-                            Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
+                            computerSpeler.Koning.vakje.pbox.Image = Properties.Resources.ZwartMat1;
+                            SchaakMat _SchaakMat = new SchaakMat(Speler1.Naam, this);
+                            _SchaakMat.ShowDialog();
+                            speelbord.Hide();
                         }
                     }
                     else
@@ -177,7 +182,7 @@ namespace Schaakproject
                         //if (pat == true)
                         //{
                         //    Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Purple;
-                       // }
+                        // }
                     }
                     else
                     {
@@ -194,16 +199,16 @@ namespace Schaakproject
             }
             else
             {
-                Console.WriteLine("Speleraanzet == speler2");
+                //Console.WriteLine("Speleraanzet == speler2");
                 witaanzet = false;
                 spelerAanZet = Speler1;
                 schaak = schaakbord.CheckSchaak(Speler1.Koning.vakje, Speler1.Koning.kleur);
-                Console.WriteLine("Schaak is " + schaak);
+                //Console.WriteLine("Schaak is " + schaak);
                 if (schaak == true)
                 {
 
                     mat = schaakbord.CheckMat(Speler1.Koning);
-                    Console.WriteLine("MAT is " + mat);
+                    //Console.WriteLine("MAT is " + mat);
                     if (mat == true)
                     {
 
@@ -228,13 +233,13 @@ namespace Schaakproject
 
         public void updateAantalStukken(Speler speler)
         {
-                if (speler.Kleur == "wit")
-                {
+            if (speler.Kleur == "wit")
+            {
                 Speler1.resterendestukken = Speler1.resterendestukken - 1;
-                    speelbord.lblaantal2.Text = Convert.ToString(Speler1.resterendestukken); //onlogisch, speler1 = label 2
-                }
-                else
-                {
+                speelbord.lblaantal2.Text = Convert.ToString(Speler1.resterendestukken); //onlogisch, speler1 = label 2
+            }
+            else
+            {
                 if (SpelMode != "Singleplayer")
                 {
                     Speler2.resterendestukken = Speler2.resterendestukken - 1;

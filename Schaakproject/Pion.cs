@@ -285,9 +285,20 @@ namespace Schaakproject
                 }
                 else
                 {
-                    nieuwVakje.pbox.update();
-                    selected.pbox.update();
-                    vakje.schaakstuk = new Dame(kleur, vakje, base.speler);
+                    if (spel.spelerAanZet == spel.computerSpeler)
+                    {
+                        nieuwVakje.pbox.update();
+                        selected.pbox.update();
+                        vakje.schaakstuk = new Dame(kleur, vakje, base.speler);
+                    }
+                    else
+                    {
+                        nieuwVakje.pbox.update();
+                        selected.pbox.update();
+                        vakje.schaakstuk = new Dame(kleur, vakje, base.speler);
+                        PromoveerForm promoveerform = new PromoveerForm(this, kleur);
+                        promoveerform.ShowDialog();
+                    }
                 }
             }
 
