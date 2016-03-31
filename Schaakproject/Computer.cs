@@ -11,30 +11,29 @@ namespace Schaakproject
 {
     public class Computer : Speler
     {
-        private Vakje _vorigvakje { get; set; }
-        private Schaakstuk _vorigschaakstuk { get; set; }
+        private Vakje _vorigVakje { get; set; }
+        private Schaakstuk _vorigSchaakstuk { get; set; }
         private Spel _spel { get; set; }
         public Algoritme algoritme { get; set; }
-        private Color _selectedcolor { get; set; }
-        public int ronde { get; set; }
-        private List<Vakje> _nietverplaatstlijst = new List<Vakje>();
-        public List<Vakje> nietverplaatstlijst
+        private Color _selectedColor { get; set; }
+        private List<Vakje> _nietVerplaatstLijst = new List<Vakje>();
+        public List<Vakje> NietVerplaatstLijst
         {
-            get { return _nietverplaatstlijst; }
-            set { _nietverplaatstlijst = value; }
+            get { return _nietVerplaatstLijst; }
+            set { _nietVerplaatstLijst = value; }
         }
 
-        private List<Vakje> _verplaatsingslijst = new List<Vakje>();
-        public List<Vakje> verplaatsingsLijst
+        private List<Vakje> _verplaatsingsLijst = new List<Vakje>();
+        public List<Vakje> VerplaatsingsLijst
         {
-            get { return _verplaatsingslijst; }
-            set { _verplaatsingslijst = value; }
+            get { return _verplaatsingsLijst; }
+            set { _verplaatsingsLijst = value; }
         }
         private int _positieZuid { get; set; }
         private int _positieWest { get; set; }
         public Computer(string naam, string kleur, Color selectcolor)
         {
-            _selectedcolor = selectcolor;
+            _selectedColor = selectcolor;
             Naam = naam;
             Kleur = kleur;
         }
@@ -43,19 +42,19 @@ namespace Schaakproject
         {
             Console.WriteLine("COMPUTERS BEURT");
             _spel = spel;
-            _vorigvakje = _spel.selected;                   // slaat het door de speler geselecteerde vakje op
-            _vorigschaakstuk = _spel.selected.schaakstuk;   // slaat het door de speler geselecteerde schaakstuk op     -- dit moet ook vanuit vorigvakje kunnen, scheelt code?
+            _vorigVakje = _spel.Selected;                   // slaat het door de speler geselecteerde vakje op
+            _vorigSchaakstuk = _spel.Selected.schaakstuk;   // slaat het door de speler geselecteerde schaakstuk op     -- dit moet ook vanuit vorigvakje kunnen, scheelt code?
             bepaalMensPositie();
         }
 
         private void bepaalMensPositie()
         {
             Console.WriteLine("COMPUTER");
-            if (_spel.spelerAanZet == _spel.Speler1)
+            if (_spel.SpelerAanZet == _spel.Speler1)
             {
                 Console.WriteLine("HUIDIGE SPELER IS SPELER 1");
             }
-            else if (_spel.spelerAanZet == _spel.computerSpeler)
+            else if (_spel.SpelerAanZet == _spel.ComputerSpeler)
             {
                 Console.WriteLine("HUIDIGE SPELER IS COMP SPELER");
             }
@@ -63,12 +62,12 @@ namespace Schaakproject
             // kijk naar welke positie de mens zijn schaakstuk heeft verplaats
             bool buurzuid = false;
             int zuidteller = 0;
-            _vorigvakje = _spel.selected;
+            _vorigVakje = _spel.Selected;
             while (buurzuid == false)
             {
-                if (buurzuid == false && _vorigvakje != null)
+                if (buurzuid == false && _vorigVakje != null)
                 {
-                    _vorigvakje = _vorigvakje.buurZuid;
+                    _vorigVakje = _vorigVakje.buurZuid;
                     zuidteller++;
                 }
                 else
@@ -80,12 +79,12 @@ namespace Schaakproject
 
             bool buurwest = false;
             int westteller = 0;
-            _vorigvakje = _spel.selected; // reset vakje
+            _vorigVakje = _spel.Selected; // reset vakje
             while (buurwest == false)
             {
-                if (buurwest == false && _vorigvakje != null)
+                if (buurwest == false && _vorigVakje != null)
                 {
-                    _vorigvakje = _vorigvakje.buurWest;
+                    _vorigVakje = _vorigVakje.buurWest;
                     westteller++;
                 }
                 else
@@ -102,7 +101,7 @@ namespace Schaakproject
 
         public void voerZetUit(Vakje geselecteerdStuk, Vakje geselecteerdVakje)
         {
-            verplaatsingsLijst.Add(geselecteerdVakje);       // slaat de positie van de computerszet in lijst op 
+            VerplaatsingsLijst.Add(geselecteerdVakje);       // slaat de positie van de computerszet in lijst op 
 
             geselecteerdStuk.schaakstuk.Verplaats(geselecteerdVakje, geselecteerdStuk, _spel);
             geselecteerdStuk.pbox.update();                 //update het eerste vakje

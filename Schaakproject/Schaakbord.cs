@@ -124,7 +124,7 @@ namespace Schaakproject
                                 {
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel.computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                        Spel.ComputerSpeler.NietVerplaatstLijst.Add(schaakarray[x, y].schaakstuk.vakje);
                                     }
                                 }
                             }
@@ -137,7 +137,7 @@ namespace Schaakproject
 
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel.computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                        Spel.ComputerSpeler.NietVerplaatstLijst.Add(schaakarray[x, y].schaakstuk.vakje);
                                     }
                                 }
                             }
@@ -149,7 +149,7 @@ namespace Schaakproject
                                 {
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel.computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                        Spel.ComputerSpeler.NietVerplaatstLijst.Add(schaakarray[x, y].schaakstuk.vakje);
                                     }
                                 }
                             }
@@ -161,7 +161,7 @@ namespace Schaakproject
                                 {
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel.computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                        Spel.ComputerSpeler.NietVerplaatstLijst.Add(schaakarray[x, y].schaakstuk.vakje);
                                     }
                                 }
                             }
@@ -172,17 +172,17 @@ namespace Schaakproject
 
                                 if (kleurstuk == "wit")
                                 {
-                                    Spel.Speler1.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                    Spel.Speler1.koning = schaakarray[x, y].schaakstuk as Koning;
                                 }
                                 else
                                 {
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel.computerSpeler.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                        Spel.ComputerSpeler.koning = schaakarray[x, y].schaakstuk as Koning;
                                     }
                                     else
                                     {
-                                        Spel.Speler2.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                        Spel.Speler2.koning = schaakarray[x, y].schaakstuk as Koning;
                                     }
                                 }
                             }
@@ -195,16 +195,16 @@ namespace Schaakproject
                                 //Speler2.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
                                 if (Spel.SpelMode == "Singleplayer")
                                 {
-                                    Spel.computerSpeler.nietverplaatstlijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                    Spel.ComputerSpeler.NietVerplaatstLijst.Add(schaakarray[x, y].schaakstuk.vakje);
                                 }
                                 else
                                 {
-                                    Speler2.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                    Speler2.Pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
                                 }
                             }
                             else
                             {
-                                Speler1.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                Speler1.Pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
                             }
                         }
                     }
@@ -272,17 +272,17 @@ namespace Schaakproject
                                 schaakarray[x, y].schaakstuk = new Koning(kleurstuk, schaakarray[x, y], voorDitStuk);
                                 if (kleurstuk == "wit")
                                 {
-                                    Spel.Speler1.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                    Spel.Speler1.koning = schaakarray[x, y].schaakstuk as Koning;
                                 }
                                 else
                                 {
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel.computerSpeler.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                        Spel.ComputerSpeler.koning = schaakarray[x, y].schaakstuk as Koning;
                                     }
                                     else
                                     {
-                                        Spel.Speler2.Koning = schaakarray[x, y].schaakstuk as Koning;
+                                        Spel.Speler2.koning = schaakarray[x, y].schaakstuk as Koning;
                                     }
                                 }
 
@@ -293,17 +293,17 @@ namespace Schaakproject
                             schaakarray[x, y].schaakstuk = new Pion(kleurstuk, schaakarray[x, y], voorDitStuk);
                             if (kleurstuk == "wit")
                             {
-                                Speler1.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                Speler1.Pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
                             }
                             else
                             {
                                 if (Spel.SpelMode == "Singleplayer")
                                 {
-                                    Spel.computerSpeler.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                    Spel.ComputerSpeler.Pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
                                 }
                                 else
                                 {
-                                    Spel.Speler2.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                    Spel.Speler2.Pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
                                 }
 
                             }
@@ -1004,7 +1004,7 @@ namespace Schaakproject
             bool kanVerplaatsen = false;
             for (int i = 0; i < 8; i++)
             {
-                bekijk = koning.speler.pionnen[i];
+                bekijk = koning.speler.Pionnen[i];
 
                 if (bekijk.geslagen == false)
                 {
@@ -1139,7 +1139,7 @@ namespace Schaakproject
                 }
 
             }
-            if (koning.speler.aantalstukken[5] > 1 + blokkeert + stillePion)
+            if (koning.speler.AantalStukken[5] > 1 + blokkeert + stillePion)
             {
                 pat = false;
             }
@@ -2270,7 +2270,7 @@ namespace Schaakproject
             // Dit wordt alleen bekeken wanneer beide spelers minder dan 3 stukken hebben
 
             //  Een van de spelers heeft nog een pion                           Een van de spelers heeft nog een toren                          Een van de spelers heeft nog een dame
-            if (speler1.aantalstukken[0] > 0 || speler2.aantalstukken[0] > 0 || speler1.aantalstukken[1] > 0 || speler2.aantalstukken[1] > 0 || speler1.aantalstukken[4] > 0 || speler2.aantalstukken[4] > 0)
+            if (speler1.AantalStukken[0] > 0 || speler2.AantalStukken[0] > 0 || speler1.AantalStukken[1] > 0 || speler2.AantalStukken[1] > 0 || speler1.AantalStukken[4] > 0 || speler2.AantalStukken[4] > 0)
             {
                 return false;
             }

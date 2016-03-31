@@ -383,7 +383,7 @@ namespace Schaakproject
                 selected.schaakstuk = null;
                 this.vakje = nieuwVakje;
                 Console.WriteLine("Checkschaak");
-                bool checkSchaak = spel.schaakbord.CheckSchaak(spel.spelerAanZet.Koning.vakje, spel.spelerAanZet.Koning.kleur);
+                bool checkSchaak = spel.SchaakBord.CheckSchaak(spel.SpelerAanZet.koning.vakje, spel.SpelerAanZet.koning.kleur);
                 if (checkSchaak == true)
                 {
                     Console.WriteLine("schaak is true");
@@ -396,10 +396,10 @@ namespace Schaakproject
                     Console.WriteLine("schaak is false");
                     if (temp != null)
                     {
-                        spel.updateAantalStukken(spel.spelerAanZet);
+                        spel.updateAantalStukken(spel.SpelerAanZet);
                         temp.Slaan();
                     }
-                    spel.spelerAanZet.validezet = true;
+                    spel.SpelerAanZet.ValideZet = true;
                 }
             }
         }

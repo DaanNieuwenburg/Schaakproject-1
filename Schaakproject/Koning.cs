@@ -156,7 +156,7 @@ namespace Schaakproject
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
                 this.vakje = nieuwVakje;
-                bool checkSchaak = spel.schaakbord.CheckSchaak(spel.spelerAanZet.Koning.vakje, spel.spelerAanZet.Koning.kleur);
+                bool checkSchaak = spel.SchaakBord.CheckSchaak(spel.SpelerAanZet.koning.vakje, spel.SpelerAanZet.koning.kleur);
                 if (checkSchaak == true)
                 {
                     selected.schaakstuk = this;
@@ -167,11 +167,11 @@ namespace Schaakproject
                 {
                     if (temp != null)
                     {
-                        spel.updateAantalStukken(spel.spelerAanZet);
+                        spel.updateAantalStukken(spel.SpelerAanZet);
                         temp.Slaan();
                     }
                     _eersteZet = true;
-                    spel.spelerAanZet.validezet = true;
+                    spel.SpelerAanZet.ValideZet = true;
                 }
             }
         }
@@ -181,7 +181,7 @@ namespace Schaakproject
             Vakje toren1 = vakjeToren;
             Vakje koning1 = vakjeKoning;
             bool rokeerwest = true;
-            _vorigvakje = spel.selected;
+            _vorigvakje = spel.Selected;
             Schaakstuk tempToren = vakjeToren.schaakstuk;
             Vakje _Randoost;
             Vakje vorige = vakjeKoning;
@@ -200,7 +200,7 @@ namespace Schaakproject
                     {
                         while (vorige != null)
                         {
-                            checkschaak = spel.schaakbord.CheckSchaak(vorige, speler.Koning.kleur);
+                            checkschaak = spel.SchaakBord.CheckSchaak(vorige, speler.koning.kleur);
                             if (checkschaak == true)
                             {
                                 magrokeren = false;
@@ -232,7 +232,7 @@ namespace Schaakproject
                         this.vakje.buurWest.pbox.update();
                         this.vakje.buurOost.pbox.update();
 
-                        speler.validezet = true;
+                        speler.ValideZet = true;
                         _eersteZet = true;
                     }
 
@@ -244,7 +244,7 @@ namespace Schaakproject
                     {
                         while (vorige != null)
                         {
-                            checkschaak = spel.schaakbord.CheckSchaak(vorige, speler.Koning.kleur);
+                            checkschaak = spel.SchaakBord.CheckSchaak(vorige, speler.koning.kleur);
                             if (checkschaak == true)
                             {
                                 magrokeren = false;
@@ -278,7 +278,7 @@ namespace Schaakproject
                         this.vakje.buurOost.pbox.update();
                         this.vakje.buurOost.buurOost.pbox.update();
 
-                        speler.validezet = true;
+                        speler.ValideZet = true;
                         _eersteZet = true;
                     }
                 }
@@ -727,7 +727,7 @@ namespace Schaakproject
                         }
                     }
 
-                    speler.validezet = true;
+                    speler.ValideZet = true;
                     _eersteZet = true;
                 }
             }

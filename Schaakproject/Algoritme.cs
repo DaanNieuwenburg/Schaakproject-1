@@ -29,7 +29,7 @@ namespace Schaakproject
         public Algoritme(Computer computer)
         {
             _computer = computer;
-            _koning = computer.Koning;
+            _koning = computer.koning;
             // kijk of er geslagen kan worden
             controleerOpSlaan();
             Console.WriteLine("-------------------------------------");
@@ -48,7 +48,7 @@ namespace Schaakproject
                     Console.WriteLine("6 NIEUW STUK");
                     verplaatsNieuwStuk();
                 }
-                else if (percentage > 1 && computer.verplaatsingsLijst.Count > 0)
+                else if (percentage > 1 && computer.VerplaatsingsLijst.Count > 0)
                 {
                     Console.WriteLine("6 VERPLAATS STUK");
                     verplaatsVerplaatstStuk();
@@ -67,7 +67,7 @@ namespace Schaakproject
             slaanmogelijkheden.Clear();
             slaanmogelijkhedenVanaf.Clear();
             // Kijk nu per niet verplaatst stuk of er geslagen kan worden
-            foreach (Vakje nietverplaatststuk in _computer.nietverplaatstlijst)
+            foreach (Vakje nietverplaatststuk in _computer.NietVerplaatstLijst)
             {
                 if (nietverplaatststuk.schaakstuk is Pion)
                 {
@@ -92,7 +92,7 @@ namespace Schaakproject
             }
 
             // Kijk nu per verplaatst stuk of er geslagen kan worden
-            foreach (Vakje verplaatststuk in _computer.verplaatsingsLijst)
+            foreach (Vakje verplaatststuk in _computer.VerplaatsingsLijst)
             {
                 if (verplaatststuk.schaakstuk is Pion)
                 {
@@ -314,10 +314,10 @@ namespace Schaakproject
         {
             // Kijk nu per verplaatst stuk of er geslagen kan worden
             bool alVerplaatst = false;
-            for (int i = 0; i < _computer.verplaatsingsLijst.Count; i++)
+            for (int i = 0; i < _computer.VerplaatsingsLijst.Count; i++)
             {
-                _geselecteerdStuk = _computer.verplaatsingsLijst[i];  // geselecteerd stuk
-                Schaakstuk schaakstuk = _computer.verplaatsingsLijst[i].schaakstuk;
+                _geselecteerdStuk = _computer.VerplaatsingsLijst[i];  // geselecteerd stuk
+                Schaakstuk schaakstuk = _computer.VerplaatsingsLijst[i].schaakstuk;
                 if (schaakstuk is Pion && alVerplaatst == false)
                 {
                     if (_geselecteerdStuk.buurZuid != null && _geselecteerdStuk.buurZuid.schaakstuk == null)
@@ -325,13 +325,13 @@ namespace Schaakproject
                         if (_geselecteerdStuk.buurZuid.buurZuidoost != null && _geselecteerdStuk.buurZuid.buurZuidoost.schaakstuk == null)
                         {
                             alVerplaatst = true;
-                            _geselecteerdVakje = _computer.verplaatsingsLijst[i].buurZuid;       // geselecteerd vak
+                            _geselecteerdVakje = _computer.VerplaatsingsLijst[i].buurZuid;       // geselecteerd vak
                             _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                         }
                         else if (_geselecteerdStuk.buurZuid.buurZuidwest != null && _geselecteerdStuk.buurZuid.buurZuidwest.schaakstuk == null)
                         {
                             alVerplaatst = true;
-                            _geselecteerdVakje = _computer.verplaatsingsLijst[i].buurZuid;       // geselecteerd vak
+                            _geselecteerdVakje = _computer.VerplaatsingsLijst[i].buurZuid;       // geselecteerd vak
                             _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                         }
                     }
@@ -356,7 +356,7 @@ namespace Schaakproject
                 }*/
 
                 // Als er niets verplaatst kan worden, verplaats nieuw stuk
-                if (i + 1 == _computer.verplaatsingsLijst.Count && alVerplaatst == false)
+                if (i + 1 == _computer.VerplaatsingsLijst.Count && alVerplaatst == false)
                 {
                     Console.WriteLine("Er zijn geen verplaatsingen meer en verplaats nieuw stuk");
                     alVerplaatst = true;

@@ -354,7 +354,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="93effd5f-3795-4120-9b9b-07469bc55180"
-            name="enPassantPion"
+            name="EnPassantPion"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -385,6 +385,60 @@ buurzuidwest</body>
               <classMoniker
                 Id="bf50c40b-7eff-4bae-bf79-01cca456b99e"
                 LastKnownName="Koning"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="289b0dd9-f434-41fb-98b6-a730a87f30af"
+            name="ValideZet"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
+                LastKnownName="bool"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f3d00b4d-efc0-4185-aaa4-f9466acabb19"
+            name="AantalStukken"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="65222ed8-1538-40ce-9336-4272e33f9956"
+                LastKnownName="int[]"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="25b482b6-4ec0-4e06-8b44-f8cc7eb03175"
+            name="Pionnen"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="3b0fe785-233d-42fa-86d8-291e5ffbb322"
+                LastKnownName="Pion[]"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -3065,7 +3119,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="86f20630-688d-42d4-93de-a3547b394e67"
-            name="Spelmode"
+            name="SpelMode"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3119,7 +3173,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="ff46d95e-db84-427f-b591-82f1b95632e4"
-            name="_witaanzet"
+            name="_witAanZet"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -3138,7 +3192,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="78bd29e9-6c81-4a55-93ff-e07f94b07883"
-            name="computerSpeler"
+            name="ComputerSpeler"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3156,7 +3210,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="de4bdf7f-ee76-414a-8d3e-0179ae867dce"
-            name="selected"
+            name="Selected"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3228,7 +3282,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="d9b4a0c3-d7ed-4e2c-9a33-876760d02f2d"
-            name="Bordercolor"
+            name="BorderColor"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3246,7 +3300,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="6aa15a69-b99f-400a-b30c-4a3509a2b5e3"
-            name="Selectcolor"
+            name="SelectColor"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3264,7 +3318,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="dde479ac-6e65-4352-aca2-1008fece8111"
-            name="Colorvakje1"
+            name="ColorVakje1"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3282,7 +3336,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="24b4bf5d-9272-484b-8b98-a67842c400b8"
-            name="Colorvakje2"
+            name="ColorVakje2"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3553,25 +3607,7 @@ buurzuidwest</body>
         <ownedAttributesInternal>
           <property
             Id="0002d84b-eb4c-4c26-bc8e-1df71d6924c9"
-            name="validezet"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
-                LastKnownName="bool"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="c491a7e3-fe2f-4231-8a84-61e45a80cb80"
-            name="Selected"
+            name="selectColor"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -3583,14 +3619,32 @@ buurzuidwest</body>
             isComposite="false">
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="251151ad-f9bf-45f5-bafc-3fbbaf16f5e0"
-                LastKnownName="SpelcialPB"
+                Id="8447702a-94be-413e-8fb0-396f6da26750"
+                LastKnownName="Color"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c491a7e3-fe2f-4231-8a84-61e45a80cb80"
+            name="Selected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="024322af-78d3-4585-b41a-c447535ff75d"
+                LastKnownName="SpecialPB"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
           <property
             Id="105a1482-4506-4ec3-b734-01d5761aa234"
-            name="resterendestukken"
+            name="ResterendeStukken"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3896,7 +3950,7 @@ buurzuidwest</body>
         <ownedAttributesInternal>
           <property
             Id="2b4a9907-858a-40a7-8bd2-90c46ecace9a"
-            name="_vorigvakje"
+            name="_vorigVakje"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -3915,7 +3969,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="4f81a5c6-dbc7-4543-86a3-cc456c8b34ce"
-            name="_vorigschaakstuk"
+            name="_vorigSchaakstuk"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -3934,7 +3988,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="5cdbcf00-8303-459c-8e08-82e92ef1fd56"
-            name="_tegenspeler"
+            name="_tegenSpeler"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -3972,7 +4026,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="4cb0d859-be67-4264-a4a8-57d81cfd13d8"
-            name="_nietverplaatstlijst"
+            name="_nietVerplaatstLijst"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -3991,7 +4045,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="d53b3707-c228-4c91-a92b-af8a923fe348"
-            name="nietverplaatstlijst"
+            name="NietVerplaatstLijst"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -4009,7 +4063,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="eae508bf-72ce-4c57-a3b8-e1631df49a4b"
-            name="_verplaatsingslijst"
+            name="_verplaatsingsLijst"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -4028,7 +4082,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="4e092962-9f4d-46b2-8c65-a3fd78426722"
-            name="verplaatsingsLijst"
+            name="VerplaatsingsLijst"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -4101,7 +4155,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="1d6313da-42c8-4606-8f98-30fe440f3832"
-            name="_selectedcolor"
+            name="_selectedColor"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -6407,6 +6461,16 @@ buurzuidwest</body>
             isQuery="false" />
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="65222ed8-1538-40ce-9336-4272e33f9956"
+        name="int[]" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="3b0fe785-233d-42fa-86d8-291e5ffbb322"
+        name="Pion[]" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

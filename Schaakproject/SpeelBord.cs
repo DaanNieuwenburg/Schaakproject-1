@@ -46,10 +46,10 @@ namespace Schaakproject
             _computerSpeler = computerSpeler;
             _spel = spel;
             this.CenterToScreen();
-            lblaantal1.Text = Convert.ToString(_speler1.resterendestukken); //hier moet de variabele komen voor het aantal van wit
+            lblaantal1.Text = Convert.ToString(_speler1.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
             if (spel.SpelMode != "Singleplayer")
             {
-                lblaantal2.Text = Convert.ToString(_speler2.resterendestukken); //hier moet de variabele komen voor het aantal van wit
+                lblaantal2.Text = Convert.ToString(_speler2.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
             }
             for (int x = 0; x < 8; x++)
             {
@@ -108,7 +108,7 @@ namespace Schaakproject
         {
             if (_SpelMode == "Singleplayer")
             {
-                if (_spel.spelerAanZet == _speler1)
+                if (_spel.SpelerAanZet == _speler1)
                 {
                     if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler1.Kleur)
                     {
@@ -124,7 +124,7 @@ namespace Schaakproject
 
             else if (_SpelMode == "Multiplayer")
             {
-                if (_spel.spelerAanZet == _speler1)
+                if (_spel.SpelerAanZet == _speler1)
                 {
                     //_spel.controleerOpSchaak();
                     //als de picturebox waarop gedrukt is wel een schaakstuk heeft en dit schaakstuk de kleur heeft van de speler
@@ -153,7 +153,7 @@ namespace Schaakproject
             else if (_SpelMode == "Online")
             {
 
-                if (_spel.spelerAanZet == _speler1)
+                if (_spel.SpelerAanZet == _speler1)
                 {
                     //als de picturebox waarop gedrukt is wel een schaakstuk heeft en dit schaakstuk de kleur heeft van de speler
                     if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler1.Kleur)
