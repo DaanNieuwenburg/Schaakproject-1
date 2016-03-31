@@ -3264,7 +3264,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="54aaf4b7-4e8d-4585-a669-6d66aafff325"
-            name="speelBord"
+            name="speelbord"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -5150,26 +5150,6 @@ buurzuidwest</body>
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="82570281-a505-4677-b4af-f149d9c7ec0e"
-            name="btnYes_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="cf61bdf4-f6bc-4167-81ef-2cff0b1eaa95"
-            name="btnNo_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -5208,7 +5188,8 @@ buurzuidwest</body>
         <ownedAttributesInternal>
           <property
             Id="51dd4b7c-1592-4034-a27d-ef2cdc78e638"
-            name="Mode"
+            name="_mode"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -5226,7 +5207,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="92bf62f2-dae7-4ef4-bcdf-3bf993c25687"
-            name="Speler1"
+            name="_borderColor"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -5238,33 +5219,15 @@ buurzuidwest</body>
             isComposite="false">
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="9ae72030-5b19-4f74-b8af-7fbbca35c802"
-                LastKnownName="string"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="aa14e3b0-6db3-4b75-abeb-c2b912be8078"
-            name="Speler2"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="9ae72030-5b19-4f74-b8af-7fbbca35c802"
-                LastKnownName="string"
+                Id="8447702a-94be-413e-8fb0-396f6da26750"
+                LastKnownName="Color"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
           <property
             Id="12bbdecb-7ebb-43ee-b046-4fd2ff893887"
-            name="Variant"
+            name="_variant"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -5282,7 +5245,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="f49e2d9d-da82-4c21-8747-93ce6e1a0528"
-            name="click"
+            name="_buttonClick"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -5296,31 +5259,12 @@ buurzuidwest</body>
               <undefinedTypeMoniker
                 Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
                 LastKnownName="bool"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="802d9358-f90f-4555-acff-a17f4ab600b8"
-            name="_username"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="9ae72030-5b19-4f74-b8af-7fbbca35c802"
-                LastKnownName="string"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
           <property
             Id="87dc2c31-c042-4c58-b977-143bb7f59663"
-            name="click2"
+            name="_buttonClick2"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -5337,79 +5281,83 @@ buurzuidwest</body>
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="68b3d54b-2e43-4cfe-abef-4a3972b7fa42"
+            name="_borderColor2"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="b7e72923-43d7-4d43-9feb-801dafb5a682"
+                LastKnownName="color"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="804b93b5-67c7-4866-9749-156cca2a72ee"
+            name="_selectColor"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="8447702a-94be-413e-8fb0-396f6da26750"
+                LastKnownName="Color"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="cb7ee6c3-4f24-4bcb-9ed2-67b5e0e064f7"
+            name="_vakje1Color"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="8447702a-94be-413e-8fb0-396f6da26750"
+                LastKnownName="Color"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="dd051f1d-5691-4d04-946f-3d51c881a33b"
+            name="_vakje2Color"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="8447702a-94be-413e-8fb0-396f6da26750"
+                LastKnownName="Color"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="0ce47abf-fbd4-4d05-a738-c861a6b750a6"
-            name="btnNaamSubmit_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="ecf91b9b-b9e6-4136-af5b-fde6be751fbf"
-            name="NaamInvoer_Load"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="6ada15fd-d026-43a1-b82f-fd571415cee7"
-            name="NaamInvoer"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="3a563959-5578-4f77-aa6e-852e0c648534"
-            name="btModeMultiplayer_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="843e6fa7-9d3b-4151-b706-2c15876c73ae"
-            name="btModeComputer_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="482d8a04-2a70-44eb-a06b-e87dd3e69b4b"
-            name="btModeRealMulti_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="32dcffad-76f5-44d9-9535-035c2b5c9c0f"
-            name="btModeComputer_MouseEnter"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="01abba03-1a26-4a30-acf0-ac87325f6323"
-            name="btModel"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -5578,7 +5526,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="531ee03e-d188-4617-b0a7-6edec95ded1e"
-            name="clicks"
+            name="_clicks"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -5597,7 +5545,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="c26a0b30-3c87-49b6-a1ce-eb24515ab753"
-            name="variant"
+            name="Variant"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -5629,6 +5577,44 @@ buurzuidwest</body>
               <undefinedTypeMoniker
                 Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
                 LastKnownName="bool"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4c0f7ad6-982c-4fa8-853d-1b92cf7e3d3e"
+            name="_borderColor"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="8447702a-94be-413e-8fb0-396f6da26750"
+                LastKnownName="Color"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="dc2066ae-db3e-4a18-b5ea-7cabb3186077"
+            name="_optie"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="27bf647c-b259-4212-9525-4a079cf968d1"
+                LastKnownName="int"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -5837,26 +5823,6 @@ buurzuidwest</body>
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="6376edd3-847d-4a05-8955-f961f6890e7d"
-            name="btnYes_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="171374c6-2787-4a6e-921e-56a9423d66ae"
-            name="btnNo_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>

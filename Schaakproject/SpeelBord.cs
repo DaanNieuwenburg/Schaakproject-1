@@ -12,24 +12,24 @@ namespace Schaakproject
 {
     public partial class SpeelBord : Form
     {
-        private string _SpelMode { get; set; }              //Singleplayer of multiplayer
+        private string _spelMode { get; set; }              //Singleplayer of multiplayer
         private Schaakbord _schaakbord { get; set; }        //Een schaakbord
         private Mens _speler1 { get; set; }                 //Speler1
         private Mens _speler2 { get; set; }                 //Speler2
         private Computer _computerSpeler { get; set; }      //Computer
         private Spel _spel { get; set; }                    //Een spel
-        private int clicks { get; set; }                    //voor het laten zien van de uitleg
-        public string variant { get; set; }                //string voor spelvariant
-        private bool _witaanzet { get; set; }
-        private Color _bordercolor { get; set; }
-        private int optie { get; set; }
+        private int _clicks { get; set; }                    //voor het laten zien van de uitleg
+        public string Variant { get; set; }                //string voor spelvariant
+        private bool _witAanzet { get; set; }
+        private Color _borderColor { get; set; }
+        private int _optie { get; set; }
         public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2, Computer computerSpeler, string Variant, Color border)
         {
-            clicks = 0;
-            _SpelMode = SpelMode;
-            variant = Variant;
+            _clicks = 0;
+            _spelMode = SpelMode;
+            this.Variant = Variant;
             InitializeComponent();
-            _bordercolor = border;
+            _borderColor = border;
             _speler1 = Speler1;
             _speler2 = Speler2;
             if (_speler1.Naam == "")
@@ -76,7 +76,7 @@ namespace Schaakproject
             }
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1.BackgroundImage = Properties.Resources.border_transparent;
-            pictureBox1.BackColor = _bordercolor;
+            pictureBox1.BackColor = _borderColor;
             this.pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(1, 36);
             this.pictureBox1.Name = "pictureBox1";
@@ -86,18 +86,18 @@ namespace Schaakproject
             this.Controls.Add(pictureBox1);
 
             // Het spel is singleplayer of multiplayer
-            if (_SpelMode.Equals("Singleplayer"))
+            if (_spelMode.Equals("Singleplayer"))
             {
                 lblPlayer1.Text = _speler1.Naam;
                 lblPlayer2.Text = "COMP";
             }
-            else if (_SpelMode.Equals("Multiplayer"))
+            else if (_spelMode.Equals("Multiplayer"))
             {
                 Console.WriteLine("tlest " + _speler1.Naam);
                 lblPlayer1.Text = "P1: " + _speler1.Naam;
                 lblPlayer2.Text = "P2: " + _speler2.Naam;
             }
-            else if (_SpelMode.Equals("Online"))
+            else if (_spelMode.Equals("Online"))
             {
                 Console.WriteLine("tlest " + _speler1.Naam);
                 lblPlayer1.Text = "P1: " + Speler1.Naam;
@@ -106,7 +106,7 @@ namespace Schaakproject
 
         private void select(SpecialPB pictureBox) //click event voor alle pictureboxes
         {
-            if (_SpelMode == "Singleplayer")
+            if (_spelMode == "Singleplayer")
             {
                 if (_spel.SpelerAanZet == _speler1)
                 {
@@ -122,7 +122,7 @@ namespace Schaakproject
                 }
             }
 
-            else if (_SpelMode == "Multiplayer")
+            else if (_spelMode == "Multiplayer")
             {
                 if (_spel.SpelerAanZet == _speler1)
                 {
@@ -150,7 +150,7 @@ namespace Schaakproject
                     }
                 }
             }
-            else if (_SpelMode == "Online")
+            else if (_spelMode == "Online")
             {
 
                 if (_spel.SpelerAanZet == _speler1)
@@ -207,12 +207,12 @@ namespace Schaakproject
             Console.WriteLine("HERSTART");
             HerstartMelding Warning = new HerstartMelding();
             Warning.ShowDialog();
-            if (_SpelMode == "Singleplayer")
+            if (_spelMode == "Singleplayer")
             {
                 if (Warning.Sure == true)
                 {
                     this.Hide();
-                    _spel.Herstart(_SpelMode, _speler1.Naam, "COMP");
+                    _spel.Herstart(_spelMode, _speler1.Naam, "COMP");
                 }
             }
             else
@@ -220,7 +220,7 @@ namespace Schaakproject
                 if (Warning.Sure == true)
                 {
                     this.Hide();
-                    _spel.Herstart(_SpelMode, _speler1.Naam, _speler2.Naam);
+                    _spel.Herstart(_spelMode, _speler1.Naam, _speler2.Naam);
                 }
             }
         }
@@ -232,11 +232,11 @@ namespace Schaakproject
 
         private void btnvariant_Click(object sender, EventArgs e)
         {
-            if (clicks == 2 && optie == 1)
+            if (_clicks == 2 && _optie == 1)
             {
-                clicks++;
+                _clicks++;
                 lbluitleg.Visible = true;
-                if (variant == "Chess960")
+                if (Variant == "Chess960")
                 {
                     pbuitleg.Image = Properties.Resources.chess960_uitleg_2;
                     pbuitleg.Visible = true;
@@ -259,9 +259,9 @@ namespace Schaakproject
                 this.btnregels.Visible = false;
                 this.btnvariant.Visible = false;
             }
-            else if (clicks == 2 && optie == 3)
+            else if (_clicks == 2 && _optie == 3)
             {
-                clicks++;
+                _clicks++;
                 pbuitleg.Image = Properties.Resources.uitleg_promoveren;
                 lbluitleg.Text = ("Promoveren\nWanneer een pion het einde van\nhet bord bereikt heeft, mag hij\npromoveren. Dit houd in dat de\npion vervangen mag worden door\neen paard, dame, loper of toren.\nhet is niet mogelijk om naar een\nkoning of pion te promoveren.");
                 this.btndame.Visible = false;
@@ -276,11 +276,11 @@ namespace Schaakproject
                 this.btnregels.Visible = false;
                 this.btnvariant.Visible = false;
             }
-            else if (clicks == 1)
+            else if (_clicks == 1)
             {
-                optie = 1;
-                clicks++;
-                if (variant == "Chess960")
+                _optie = 1;
+                _clicks++;
+                if (Variant == "Chess960")
                 {
                     btnvariant.BackgroundImage = Properties.Resources.button_regels_chess960;
                 }
@@ -308,8 +308,8 @@ namespace Schaakproject
             btnvariant.BackgroundImage = Properties.Resources.button_spel_1;
             btnpaard.BackgroundImage = Properties.Resources.button_regels_stukken;
             btntoren.BackgroundImage = Properties.Resources.button_regels_zetten;
-            optie = 0;
-            clicks = 1;
+            _optie = 0;
+            _clicks = 1;
             this.btndame.Visible = false;
             this.btnkoning.Visible = false;
             this.btntoren.Visible = true;
@@ -323,10 +323,10 @@ namespace Schaakproject
 
         private void btnpaard_Click(object sender, EventArgs e)
         {
-            if (clicks == 1)
+            if (_clicks == 1)
             {
-                optie = 2;
-                clicks++;
+                _optie = 2;
+                _clicks++;
                 this.btnkoning.Visible = true;
                 this.btndame.Visible = true;
                 this.btntoren.Visible = true;
@@ -337,10 +337,10 @@ namespace Schaakproject
                 this.btnregels.Visible = false;
                 this.btnvariant.Visible = false;
             }
-            else if (clicks == 2 && optie == 1)
+            else if (_clicks == 2 && _optie == 1)
             {
                 //schaak uitleg
-                clicks++;
+                _clicks++;
                 lbluitleg.Visible = true;
                 lbluitleg.Text = ("Schaak\nSchaak is een opstelling waarbij\nde koning geslagen kan worden, maar\nde schaak nog kan worden opgeheven.\ndit kan op 3 manieren:\n - het verplaatsen van de koning\n - het schaakzettende stuk slaan\n - een stuk tussen de koning en\nhet schaakzettende stuk plaatsen.");
                 this.btndame.Visible = false;
@@ -355,9 +355,9 @@ namespace Schaakproject
                 this.btnregels.Visible = false;
                 this.btnvariant.Visible = false;
             }
-            else if (clicks == 2 && optie == 2)
+            else if (_clicks == 2 && _optie == 2)
             {
-                clicks++;
+                _clicks++;
                 lbluitleg.Visible = true;
                 lbluitleg.Text = ("Paard\nHet paard maakt een beweging die een \ncombinatie is van 1 vlakje horizontaal of \nvertikaal, en 1 vlakje diagonaal.\nHet paard is het enige stuk dat kan \nspringen over andere stukken,\nd.w.z.het paard mag over andere \nstukken bewegen om van het ene \nnaar het andere vlakje te komen.\nDe stukken waar het paard tijdens \nzijn zet overheen springt worden \nniet beïnvloed.");
                 this.btndame.Visible = false;
@@ -372,11 +372,11 @@ namespace Schaakproject
                 this.btnregels.Visible = false;
                 this.btnvariant.Visible = false;
             }
-            else if (clicks == 2 && optie == 3)
+            else if (_clicks == 2 && _optie == 3)
             {
 
                 //Rokeren uitleg
-                clicks++;
+                _clicks++;
                 lbluitleg.Visible = true;
                 lbluitleg.Text = ("Rokeren\nEr zijn 2 rokades mogelijk in een spel.\nEen lange en een korte rokade. Bij\nrokeren mag zowel de koning als de\nbetreffende toren niet verplaatst zijn.\nOok mogen de vlakken tussen te koning\nen de toren niet geslagen kunnen worden\ntijdens de rokade. De koning en toren\nveranderen van plaats.Hierna is een\nandere rokade niet meer mogelijk voor\ndie speler.");
                 this.btndame.Visible = false;
@@ -397,14 +397,14 @@ namespace Schaakproject
         private void btnterug_Click(object sender, EventArgs e)
         {
             this.btnterug.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //transparent bordercolor (Color.Transparent is unsupported)
-            if (clicks == 0)
+            if (_clicks == 0)
             {
                 TerugMelding menu = new TerugMelding(this, _spel);
                 menu.ShowDialog();
             }
-            else if (clicks == 1)
+            else if (_clicks == 1)
             {
-                clicks--;
+                _clicks--;
                 this.btndame.Visible = false;
                 this.btnkoning.Visible = false;
                 pbuitleg.Visible = false;
@@ -417,13 +417,13 @@ namespace Schaakproject
                 this.btnvariant.Visible = false;
                 pbuitleg.Image = null;
             }
-            else if (clicks == 2)
+            else if (_clicks == 2)
             {
-                optie = 0;
+                _optie = 0;
                 btnvariant.BackgroundImage = Properties.Resources.button_spel_1;
                 btntoren.BackgroundImage = Properties.Resources.button_regels_zetten;
                 btnpaard.BackgroundImage = Properties.Resources.button_regels_stukken;
-                clicks--;
+                _clicks--;
                 this.btndame.Visible = false;
                 this.btnkoning.Visible = false;
                 pbuitleg.Visible = false;
@@ -436,11 +436,11 @@ namespace Schaakproject
                 this.btnvariant.Visible = true;
                 pbuitleg.Image = null;
             }
-            else if (clicks == 3)
+            else if (_clicks == 3)
             {
-                if (optie == 1)
+                if (_optie == 1)
                 {
-                    clicks--;
+                    _clicks--;
                     this.btndame.Visible = false;
                     pbuitleg.Visible = false;
                     this.btnkoning.Visible = false;
@@ -453,9 +453,9 @@ namespace Schaakproject
                     this.btnvariant.Visible = true;
                     pbuitleg.Image = null;
                 }
-                else if (optie == 2)
+                else if (_optie == 2)
                 {
-                    clicks--;
+                    _clicks--;
                     this.btndame.Visible = true;
                     pbuitleg.Visible = false;
                     this.btnkoning.Visible = true;
@@ -468,9 +468,9 @@ namespace Schaakproject
                     this.btnvariant.Visible = false;
                     pbuitleg.Image = null;
                 }
-                else if (optie == 3)
+                else if (_optie == 3)
                 {
-                    clicks--;
+                    _clicks--;
                     this.btndame.Visible = false;
                     pbuitleg.Visible = false;
                     this.btnkoning.Visible = false;
@@ -489,7 +489,7 @@ namespace Schaakproject
 
         private void btnkoning_Click(object sender, EventArgs e)
         {
-            clicks++;
+            _clicks++;
             lbluitleg.Text = ("Koning\nDe Koning mag vertikaal, horizontaal en \ndiagonaal bewegen op dezelfde manier \nals de Dame, maar slechts met 1 stapje tegelijk.\nDe Koning mag nooit een vlakje \nbetreden wat een (mogelijk) eindpunt zou \nkunnen zijn van een stuk van de tegenstander. In \nandere woorden, je kunt de Koning nooit op \neen vlakje zetten waar hij direct daarop geslagen zou \nkunnen worden door de tegenstander.");
             lbluitleg.Visible = true;
             pbuitleg.BackgroundImage = Properties.Resources.zettenkoning;
@@ -508,7 +508,7 @@ namespace Schaakproject
         private void btndame_Click(object sender, EventArgs e)
         {
             pbuitleg.Visible = true;
-            clicks++;
+            _clicks++;
             lbluitleg.Text = ("Dame\nDe dame combineert de zetten\nvan de Toren en de Loper en is\ndaarmee het stuk met de grootste \nbewegingsvrijheid.De Dame mag \nhorizontaal, vertikaal en diagonaal \nbewegen in een rechte lijn en mag \nhierbij niet over andere stukken springen.");
             this.btnregels.Visible = false;
             lbluitleg.Visible = true;
@@ -525,10 +525,10 @@ namespace Schaakproject
 
         private void btntoren_Click(object sender, EventArgs e)
         {
-            if (clicks == 1)
+            if (_clicks == 1)
             {
-                optie = 3;
-                clicks++;
+                _optie = 3;
+                _clicks++;
                 btnpaard.BackgroundImage = Properties.Resources.button_regels_rokeren;
                 btntoren.BackgroundImage = Properties.Resources.button_regels_enpassant;
                 btnvariant.BackgroundImage = Properties.Resources.button_regels_promoveren;
@@ -542,10 +542,10 @@ namespace Schaakproject
                 this.btnregels.Visible = false;
                 this.btnvariant.Visible = true;
             }
-            else if (clicks == 2 && optie == 1)
+            else if (_clicks == 2 && _optie == 1)
             {
                 //schaakmat uitleg
-                clicks++;
+                _clicks++;
                 lbluitleg.Visible = true;
                 lbluitleg.Text = ("Schaakmat\nBij schaakmat staat de koning schaak\nhet enige verschil is dat de koning ook\nnergens meer heen kan verplaatsen \nzonder schaak te blijven staan. Dit\nis schaakmat. Bij schaakmat is het \nspel afgelopen en heeft de speler die mat\nstaat verloren.");
                 this.btndame.Visible = false;
@@ -560,9 +560,9 @@ namespace Schaakproject
                 this.btnregels.Visible = false;
                 this.btnvariant.Visible = false;
             }
-            else if (clicks == 2 && optie == 2)
+            else if (_clicks == 2 && _optie == 2)
             {
-                clicks++;
+                _clicks++;
                 lbluitleg.Text = ("Toren\nDe toren beweegt vertikaal of horizontaal\nin een rechte lijn. De toren mag niet over\nandere stukken springen, alle vlakken\ntussen het begin en eindpunt van een\nzet dienen leeg te zijn.");
                 lbluitleg.Visible = true;
                 this.btndame.Visible = false;
@@ -577,10 +577,10 @@ namespace Schaakproject
                 this.btnvariant.Visible = false;
                 pbuitleg.Visible = true;
             }
-            else if (clicks == 2 && optie == 3)
+            else if (_clicks == 2 && _optie == 3)
             {
                 //En-passant uitleg
-                clicks++;
+                _clicks++;
                 lbluitleg.Visible = true;
                 lbluitleg.Text = ("En - Passant\nAls een pion 2 vlakken naar voren\nwordt gezet, kan deze en-passant\ngeslagen worden. Dit kan doordat\nde tegenstander dan het vlakje aanvalt\nwaar de pion op zou staan, als die maar\n1 vakje naar voren was gegaan.Dit \nmoet wel in de eerst volgende zet gebeuren.\nGebeurt dit niet, dan is de pion veilig.");
                 this.btndame.Visible = false;
@@ -598,9 +598,9 @@ namespace Schaakproject
 
         private void btnloper_Click(object sender, EventArgs e)
         {
-            if(optie == 1)
+            if(_optie == 1)
             {
-                clicks++;
+                _clicks++;
                 lbluitleg.Text = ("Remise\nDit schaakspel kent 2 vormen van remise:\n- Schaak pat: Bij pat staan de stukken zo opgesteld\ndat de koning niet schaak staat, maar ook niet\nkan bewegen zonder schaak te komen staan.\nVerder zijn er geen stukken die je kan verplaatsen.\n- Te weinig stukken: Bij deze vorm van remise\nhebben beide spelers nog te weinig stukken om\nde ander schaakmat te zetten. Hierbij eindigt\nhet ook met gelijkspel.");
                 lbluitleg.Visible = true;
                 pbuitleg.BackgroundImage = Properties.Resources.uitleg_remise;
@@ -617,7 +617,7 @@ namespace Schaakproject
             }
             else
             {
-                clicks++;
+                _clicks++;
                 lbluitleg.Text = ("Loper\nDe loper beweegt diagonaal over\nhet bord. Net als de toren mag de\nloper niet over andere stukken springen.");
                 lbluitleg.Visible = true;
                 pbuitleg.BackgroundImage = Properties.Resources.zettenloper;
@@ -637,7 +637,7 @@ namespace Schaakproject
 
         private void btnpion_Click(object sender, EventArgs e)
         {
-            clicks++;
+            _clicks++;
             lbluitleg.Visible = true;
             lbluitleg.Text = ("Pion\nDe pion mag in princiepe alleen vooruit lopen.\nPer beurt mag de pion 1 vakje verplaatsen, \ntenzij de pion nog nooit is verplaatst dan mag \ndie 2 vakjes verplaatsen. Verder mag de pion alleen \nschuin slaan. Als de pion aan de andere kant van het\nbord is gekomen mag die promoveren tot\neen ander schaakstuk naar keuze.");
             this.btndame.Visible = false;
@@ -655,13 +655,13 @@ namespace Schaakproject
 
         private void btnvariant_MouseEnter(object sender, EventArgs e)
         {
-            if (optie == 0)
+            if (_optie == 0)
             {
                 btnvariant.BackgroundImage = Properties.Resources.button_spel_1_click;
             }
-            else if (optie == 1)
+            else if (_optie == 1)
             {
-                if (variant == "Chess960")
+                if (Variant == "Chess960")
                 {
                     btnvariant.BackgroundImage = Properties.Resources.button_regels_chess960_click;
                 }
@@ -670,7 +670,7 @@ namespace Schaakproject
                     btnvariant.BackgroundImage = Properties.Resources.button_klassiekregels_click;
                 }
             }
-            else if (optie == 3)
+            else if (_optie == 3)
             {
                 btnvariant.BackgroundImage = Properties.Resources.button_regels_promoveren_click;
             }
@@ -678,13 +678,13 @@ namespace Schaakproject
 
         private void btnvariant_MouseLeave(object sender, EventArgs e)
         {
-            if (optie == 0)
+            if (_optie == 0)
             {
                 btnvariant.BackgroundImage = Properties.Resources.button_spel_1;
             }
-            else if (optie == 1)
+            else if (_optie == 1)
             {
-                if (variant == "Chess960")
+                if (Variant == "Chess960")
                 {
                     btnvariant.BackgroundImage = Properties.Resources.button_regels_chess960;
                 }
@@ -693,7 +693,7 @@ namespace Schaakproject
                     btnvariant.BackgroundImage = Properties.Resources.button_klassiekregels;
                 }
             }
-            else if (optie == 3)
+            else if (_optie == 3)
             {
                 btnvariant.BackgroundImage = Properties.Resources.button_regels_promoveren;
             }
@@ -701,15 +701,15 @@ namespace Schaakproject
 
         private void btnpaard_MouseEnter(object sender, EventArgs e)
         {
-            if (optie == 0)
+            if (_optie == 0)
             {
                 btnpaard.BackgroundImage = Properties.Resources.button_regels_stukken_click;
             }
-            else if (optie == 1)
+            else if (_optie == 1)
             {
                 btnpaard.BackgroundImage = Properties.Resources.button_regels_schaak_click;
             }
-            else if (optie == 3)
+            else if (_optie == 3)
             {
                 btnpaard.BackgroundImage = Properties.Resources.button_regels_rokeren_click;
             }
@@ -722,15 +722,15 @@ namespace Schaakproject
 
         private void btnpaard_MouseLeave(object sender, EventArgs e)
         {
-            if (optie == 0)
+            if (_optie == 0)
             {
                 btnpaard.BackgroundImage = Properties.Resources.button_regels_stukken;
             }
-            else if (optie == 1)
+            else if (_optie == 1)
             {
                 btnpaard.BackgroundImage = Properties.Resources.button_regels_schaak;
             }
-            else if (optie == 3)
+            else if (_optie == 3)
             {
                 btnpaard.BackgroundImage = Properties.Resources.button_regels_rokeren;
             }
@@ -753,19 +753,19 @@ namespace Schaakproject
 
         private void btntoren_MouseEnter(object sender, EventArgs e)
         {
-            if (optie == 0)
+            if (_optie == 0)
             {
                 btntoren.BackgroundImage = Properties.Resources.button_regels_zetten_click;
             }
-            else if (optie == 1)
+            else if (_optie == 1)
             {
                 btntoren.BackgroundImage = Properties.Resources.button_regels_mat_click;
             }
-            else if (optie == 2)
+            else if (_optie == 2)
             {
                 btntoren.BackgroundImage = Properties.Resources.button_regels_toren_click;
             }
-            else if (optie == 3)
+            else if (_optie == 3)
             {
                 btntoren.BackgroundImage = Properties.Resources.button_regels_enpassant_click;
             }
@@ -773,19 +773,19 @@ namespace Schaakproject
 
         private void btntoren_MouseLeave(object sender, EventArgs e)
         {
-            if (optie == 0)
+            if (_optie == 0)
             {
                 btntoren.BackgroundImage = Properties.Resources.button_regels_zetten;
             }
-            else if (optie == 1)
+            else if (_optie == 1)
             {
                 btntoren.BackgroundImage = Properties.Resources.button_regels_mat;
             }
-            else if (optie == 2)
+            else if (_optie == 2)
             {
                 btntoren.BackgroundImage = Properties.Resources.button_regels_toren;
             }
-            else if (optie == 3)
+            else if (_optie == 3)
             {
                 btntoren.BackgroundImage = Properties.Resources.button_regels_enpassant;
             }
@@ -793,7 +793,7 @@ namespace Schaakproject
 
         private void btnloper_MouseEnter(object sender, EventArgs e)
         {
-            if (optie == 1)
+            if (_optie == 1)
             {
                 btnloper.BackgroundImage = Properties.Resources.button_regels_remise_click;
             }
@@ -806,7 +806,7 @@ namespace Schaakproject
 
         private void btnloper_MouseLeave(object sender, EventArgs e)
         {
-            if (optie == 1)
+            if (_optie == 1)
             {
                 btnloper.BackgroundImage = Properties.Resources.button_regels_remise;
             }

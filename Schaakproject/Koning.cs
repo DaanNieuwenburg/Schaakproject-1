@@ -156,7 +156,7 @@ namespace Schaakproject
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
                 this.vakje = nieuwVakje;
-                bool checkSchaak = spel.SchaakBord.CheckSchaak(spel.SpelerAanZet.koning.vakje, spel.SpelerAanZet.koning.kleur);
+                bool checkSchaak = spel.schaakbord.CheckSchaak(spel.SpelerAanZet.koning.vakje, spel.SpelerAanZet.koning.kleur);
                 if (checkSchaak == true)
                 {
                     selected.schaakstuk = this;
@@ -200,7 +200,7 @@ namespace Schaakproject
                     {
                         while (vorige != null)
                         {
-                            checkschaak = spel.SchaakBord.CheckSchaak(vorige, speler.koning.kleur);
+                            checkschaak = spel.schaakbord.CheckSchaak(vorige, speler.koning.kleur);
                             if (checkschaak == true)
                             {
                                 magrokeren = false;
@@ -244,7 +244,7 @@ namespace Schaakproject
                     {
                         while (vorige != null)
                         {
-                            checkschaak = spel.SchaakBord.CheckSchaak(vorige, speler.koning.kleur);
+                            checkschaak = spel.schaakbord.CheckSchaak(vorige, speler.koning.kleur);
                             if (checkschaak == true)
                             {
                                 magrokeren = false;

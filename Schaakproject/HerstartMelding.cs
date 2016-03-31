@@ -12,7 +12,7 @@ namespace Schaakproject
 {
     public partial class HerstartMelding : Form
     {
-        public bool Sure;
+        public bool Sure { get; private set; }
         public HerstartMelding()
         {
             InitializeComponent();

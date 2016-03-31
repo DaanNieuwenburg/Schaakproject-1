@@ -225,7 +225,7 @@ namespace Schaakproject
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
                 this.vakje = nieuwVakje;
-                bool checkSchaak = spel.SchaakBord.CheckSchaak(speler.koning.vakje, speler.koning.kleur);
+                bool checkSchaak = spel.schaakbord.CheckSchaak(speler.koning.vakje, speler.koning.kleur);
                 if (checkSchaak == true)
                 {
                     selected.schaakstuk = this;

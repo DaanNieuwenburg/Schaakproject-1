@@ -6,23 +6,23 @@ namespace Schaakproject
 {
     public partial class NaamInvoer : Form
     {
-        private string Mode { get; set; }           //Is het Singleplayer of Multiplayer
-        private string Variant { get; set; }        //Is het klassiek schaak of chess960
-        private bool buttonClick { get; set; }      // Door buttonClick en buttonClick2 werken de knoppen in het menu
-        private bool buttonClick2 { get; set; }    
-        private Color bordercolor { get; set; }     //Je kunt de kleur voor de rand veranderen
-        private Color selectcolor { get; set; }     //Je kunt de kleur voor een geselecteerd vakje veranderen
-        private Color vakje1color { get; set; }     //Je kunt de kleur voor de zwarte vakjes veranderen
-        private Color vakje2color { get; set; }     //Je kunt de kleur voor de witte vakjes veranderen
+        private string _mode { get; set; }           //Is het Singleplayer of Multiplayer
+        private string _variant { get; set; }        //Is het klassiek schaak of chess960
+        private bool _buttonClick { get; set; }      // Door buttonClick en buttonClick2 werken de knoppen in het menu
+        private bool _buttonClick2 { get; set; }    
+        private Color _borderColor { get; set; }     //Je kunt de kleur voor de rand veranderen
+        private Color _selectColor { get; set; }     //Je kunt de kleur voor een geselecteerd vakje veranderen
+        private Color _vakje1Color { get; set; }     //Je kunt de kleur voor de zwarte vakjes veranderen
+        private Color _vakje2Color { get; set; }     //Je kunt de kleur voor de witte vakjes veranderen
 
         public NaamInvoer(Color border, Color select, Color vakje1color, Color vakje2color)
         {
             InitializeComponent();
             this.CenterToScreen();
-            bordercolor = border;
-            selectcolor = select;
-            this.vakje1color = vakje1color;
-            this.vakje2color = vakje2color;         
+            _borderColor = border;
+            _selectColor = select;
+            this._vakje1Color = vakje1color;
+            this._vakje2Color = vakje2color;         
             
         }
 
@@ -31,7 +31,7 @@ namespace Schaakproject
             //Als je op deze knop drukt, wordt het spel opgestart          
               
             DialogResult = DialogResult.Yes;
-            Spel spel = new Spel(Mode, txtSpeler1Naam.Text, txtSpeler2Naam.Text, Variant, bordercolor, selectcolor, vakje1color, vakje2color);
+            Spel spel = new Spel(_mode, txtSpeler1Naam.Text, txtSpeler2Naam.Text, _variant, _borderColor, _selectColor, _vakje1Color, _vakje2Color);
         }
 
         private void btModeMultiplayer_Click(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace Schaakproject
             txtSpeler1Naam.Visible = true;
             txtSpeler2Naam.Visible = true;
             btnBegin.Visible = false;
-            Mode = "Multiplayer"; // Hierdoor krijgt het speelbord te weten dat het multiplayer is.
+            _mode = "Multiplayer"; // Hierdoor krijgt het speelbord te weten dat het multiplayer is.
         }
 
         private void btModeComputer_Click(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace Schaakproject
             txtSpeler1Naam.Visible = true;
             txtSpeler2Naam.Visible = false;
             btnBegin.Visible = false;
-            Mode = "Singleplayer"; // Hierdoor krijgt het speelbord te weten dat het singleplayer is.
+            _mode = "Singleplayer"; // Hierdoor krijgt het speelbord te weten dat het singleplayer is.
         }
 
         private void btModeComputer_MouseEnter(object sender, EventArgs e)
@@ -139,21 +139,21 @@ namespace Schaakproject
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Variant = "Klassiek";
+            _variant = "Klassiek";
             this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek_click);
             this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960);
-            buttonClick2 = false;
-            buttonClick = true;
+            _buttonClick2 = false;
+            _buttonClick = true;
             btnBegin.Visible = true;
         }
 
         private void btnChess960_Click(object sender, EventArgs e)
         {
-            Variant = "Chess960";
+            _variant = "Chess960";
             this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek);
             this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960_click);
-            buttonClick = false;
-            buttonClick2 = true;
+            _buttonClick = false;
+            _buttonClick2 = true;
             btnBegin.Visible = true;
         }
 
@@ -164,7 +164,7 @@ namespace Schaakproject
 
         private void btnKlassiek_MouseLeave(object sender, EventArgs e)
         {
-            if (buttonClick == true)
+            if (_buttonClick == true)
             {
                 this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek_click);
             }
@@ -176,7 +176,7 @@ namespace Schaakproject
 
         private void btnChess960_MouseLeave(object sender, EventArgs e)
         {
-            if (buttonClick2 == true)
+            if (_buttonClick2 == true)
             {
                 this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960_click);
             }
@@ -209,7 +209,7 @@ namespace Schaakproject
             // Kijk of gebruiker op OK drukt
             if (result == DialogResult.OK)
             {
-                bordercolor = colorDialog.Color;
+                _borderColor = colorDialog.Color;
             }
         }
 
@@ -250,7 +250,7 @@ namespace Schaakproject
             // Kijk of gebruiker op OK drukt
             if (result == DialogResult.OK)
             {
-                selectcolor = colorDialog.Color;
+                _selectColor = colorDialog.Color;
             }
         }
 
@@ -272,7 +272,7 @@ namespace Schaakproject
             // Kijk of gebruiker op OK drukt
             if (result == DialogResult.OK)
             {
-                vakje1color = colorDialog.Color;
+                _vakje1Color = colorDialog.Color;
             }
         }
     
@@ -285,7 +285,7 @@ namespace Schaakproject
             // Kijk of gebruiker op OK drukt
             if (result == DialogResult.OK)
             {
-                vakje2color = colorDialog.Color;
+                _vakje2Color = colorDialog.Color;
             }
         }
 
