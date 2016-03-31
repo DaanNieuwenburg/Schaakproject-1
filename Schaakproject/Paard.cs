@@ -9,82 +9,82 @@ namespace Schaakproject
     {
         public Paard(string kleur, Vakje vakje, Speler speler)
         {
-            this.vakje = vakje;
-            this.kleur = kleur;
-            this.speler = speler;
+            this.Vakje = vakje;
+            this.Kleur = kleur;
+            this.Speler = speler;
             if (kleur == "wit")
             {
-                afbeelding = Properties.Resources.PaardWit;
+                Afbeelding = Properties.Resources.PaardWit;
             }
             else
             {
-                afbeelding = Properties.Resources.PaardZwart;
+                Afbeelding = Properties.Resources.PaardZwart;
             }
         }
         public override void kanStukSlaan(Algoritme algoritme, Vakje geselecteerdStuk)
         {
             Vakje geselecteerdVak = geselecteerdStuk;
-            if (geselecteerdStuk.schaakstuk.kleur == "zwart" && geselecteerdStuk.schaakstuk != null)
+            if (geselecteerdStuk.schaakstuk.Kleur == "zwart" && geselecteerdStuk.schaakstuk != null)
             {
-                if (geselecteerdVak.buurNoord != null && geselecteerdVak.buurNoord.buurNoordoost != null && geselecteerdVak.buurNoord.buurNoordwest != null)
+                if (geselecteerdVak.BuurNoord != null && geselecteerdVak.BuurNoord.BuurNoordoost != null && geselecteerdVak.BuurNoord.BuurNoordWest != null)
                 {
-                    if (geselecteerdVak.buurNoord.buurNoordoost.schaakstuk != null && geselecteerdVak.buurNoord.buurNoordoost.schaakstuk != null  && geselecteerdVak.buurNoord.buurNoordoost.schaakstuk.kleur == "wit")
+                    if (geselecteerdVak.BuurNoord.BuurNoordoost.schaakstuk != null && geselecteerdVak.BuurNoord.BuurNoordoost.schaakstuk != null  && geselecteerdVak.BuurNoord.BuurNoordoost.schaakstuk.Kleur == "wit")
                     {
-                        geselecteerdVak.buurNoord.buurNoordoost.pbox.BackColor = System.Drawing.Color.Red;
-                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurNoord.buurNoordoost);
+                        geselecteerdVak.BuurNoord.BuurNoordoost.Pbox.BackColor = System.Drawing.Color.Red;
+                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurNoord.BuurNoordoost);
                         algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
-                    else if (geselecteerdVak.buurNoord.buurNoordwest != null && geselecteerdVak.buurNoord.buurNoordwest.schaakstuk != null && geselecteerdVak.buurNoord.buurNoordwest.schaakstuk.kleur == "wit")
+                    else if (geselecteerdVak.BuurNoord.BuurNoordWest != null && geselecteerdVak.BuurNoord.BuurNoordWest.schaakstuk != null && geselecteerdVak.BuurNoord.BuurNoordWest.schaakstuk.Kleur == "wit")
                     {
-                        geselecteerdVak.buurNoord.buurNoordwest.pbox.BackColor = System.Drawing.Color.Red;
-                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurNoord.buurNoordwest);
+                        geselecteerdVak.BuurNoord.BuurNoordWest.Pbox.BackColor = System.Drawing.Color.Red;
+                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurNoord.BuurNoordWest);
                         algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
                 }
 
-                if (geselecteerdVak.buurZuid != null && geselecteerdStuk.schaakstuk != null)
+                if (geselecteerdVak.BuurZuid != null && geselecteerdStuk.schaakstuk != null)
                 {
-                    if (geselecteerdVak.buurZuid.buurZuidwest != null && geselecteerdVak.buurZuid.buurZuidwest.schaakstuk != null && geselecteerdVak.buurZuid.buurZuidwest.schaakstuk.kleur == "wit")
+                    if (geselecteerdVak.BuurZuid.BuurZuidWest != null && geselecteerdVak.BuurZuid.BuurZuidWest.schaakstuk != null && geselecteerdVak.BuurZuid.BuurZuidWest.schaakstuk.Kleur == "wit")
                     {
-                        geselecteerdVak.buurZuid.buurZuidwest.pbox.BackColor = System.Drawing.Color.Red;
-                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurZuid.buurZuidwest);
+                        geselecteerdVak.BuurZuid.BuurZuidWest.Pbox.BackColor = System.Drawing.Color.Red;
+                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurZuid.BuurZuidWest);
                         algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
-                    else if (geselecteerdVak.buurZuid.buurZuidoost != null && geselecteerdVak.buurZuid.buurZuidoost.schaakstuk != null && geselecteerdVak.buurZuid.buurZuidoost.schaakstuk.kleur == "wit")
+                    else if (geselecteerdVak.BuurZuid.BuurZuidOost != null && geselecteerdVak.BuurZuid.BuurZuidOost.schaakstuk != null && geselecteerdVak.BuurZuid.BuurZuidOost.schaakstuk.Kleur == "wit")
                     {
-                        geselecteerdVak.buurZuid.buurZuidoost.pbox.BackColor = System.Drawing.Color.Red;
-                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurZuid.buurZuidoost);
+                        geselecteerdVak.BuurZuid.BuurZuidOost.Pbox.BackColor = System.Drawing.Color.Red;
+                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurZuid.BuurZuidOost);
                         algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
                 }
 
-                if (geselecteerdVak.buurWest != null && geselecteerdStuk.schaakstuk != null)
+                if (geselecteerdVak.BuurWest != null && geselecteerdStuk.schaakstuk != null)
                 {
-                    if (geselecteerdVak.buurWest.buurNoordwest != null && geselecteerdVak.buurWest.buurNoordwest.schaakstuk != null && geselecteerdVak.buurWest.buurNoordwest.schaakstuk.kleur == "wit")
+                    if (geselecteerdVak.BuurWest.BuurNoordWest != null && geselecteerdVak.BuurWest.BuurNoordWest.schaakstuk != null && geselecteerdVak.BuurWest.BuurNoordWest.schaakstuk.Kleur == "wit")
                     {
-                        geselecteerdVak.buurWest.buurNoordwest.pbox.BackColor = System.Drawing.Color.Red;
-                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurWest.buurNoordwest);
+                        geselecteerdVak.BuurWest.BuurNoordWest.Pbox.BackColor = System.Drawing.Color.Red;
+                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurWest.BuurNoordWest);
                         algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
-                    else if (geselecteerdVak.buurWest.buurZuidwest != null && geselecteerdVak.buurWest.buurZuidwest.schaakstuk != null && geselecteerdVak.buurWest.buurZuidwest.schaakstuk.kleur == "wit")
+                    else if (geselecteerdVak.BuurWest.BuurZuidWest != null && geselecteerdVak.BuurWest.BuurZuidWest.schaakstuk != null && geselecteerdVak.BuurWest.BuurZuidWest.schaakstuk.Kleur == "wit")
                     {
-                        geselecteerdVak.buurWest.buurZuidwest.pbox.BackColor = System.Drawing.Color.Red;
-                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurWest.buurZuidwest);
+                        geselecteerdVak.BuurWest.BuurZuidWest.Pbox.BackColor = System.Drawing.Color.Red;
+                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurWest.BuurZuidWest);
                         algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
                 }
-                if (geselecteerdVak.buurOost != null)
+                if (geselecteerdVak.BuurOost != null)
                 {
-                    if (geselecteerdVak.buurOost.buurNoordwest != null && geselecteerdVak.buurOost.buurNoordwest.schaakstuk != null && geselecteerdVak.buurOost.buurNoordwest.schaakstuk.kleur == "wit")
+                    if (geselecteerdVak.BuurOost.BuurNoordWest != null && geselecteerdVak.BuurOost.BuurNoordWest.schaakstuk != null && geselecteerdVak.BuurOost.BuurNoordWest.schaakstuk.Kleur == "wit")
                     {
-                        geselecteerdVak.buurOost.buurNoordwest.pbox.BackColor = System.Drawing.Color.Red;
-                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurOost.buurNoordwest);
+                        geselecteerdVak.BuurOost.BuurNoordWest.Pbox.BackColor = System.Drawing.Color.Red;
+                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurOost.BuurNoordWest);
                         algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
-                    else if (geselecteerdVak.buurOost.buurZuidwest != null && geselecteerdVak.buurOost.buurZuidwest.schaakstuk != null && geselecteerdVak.buurOost.buurZuidwest.schaakstuk.kleur == "wit")
+                    else if (geselecteerdVak.BuurOost.BuurZuidWest != null && geselecteerdVak.BuurOost.BuurZuidWest.schaakstuk != null && geselecteerdVak.BuurOost.BuurZuidWest.schaakstuk.Kleur == "wit")
                     {
-                        geselecteerdVak.buurOost.buurZuidwest.pbox.BackColor = System.Drawing.Color.Red;
-                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.buurOost.buurZuidwest);
+                        geselecteerdVak.BuurOost.BuurZuidWest.Pbox.BackColor = System.Drawing.Color.Red;
+                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurOost.BuurZuidWest);
                         algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
                 }
@@ -98,59 +98,59 @@ namespace Schaakproject
         {
             if (spel.SpelerAanZet == spel.Speler1)
             {
-                speler = spel.Speler1;
+                Speler = spel.Speler1;
             }
             else if (spel.SpelerAanZet == spel.Speler2)
             {
-                speler = spel.Speler2;
+                Speler = spel.Speler2;
             }
             else if (spel.SpelMode == "Singleplayer")
             {
-                speler = spel.ComputerSpeler;
+                Speler = spel.ComputerSpeler;
             }
 
             bool gevonden = false;
-            if (selected.buurNoord != null)
+            if (selected.BuurNoord != null)
             {
-                if (selected.buurNoord.buurNoordoost == nieuwVakje)
+                if (selected.BuurNoord.BuurNoordoost == nieuwVakje)
                 {                    
                     gevonden = true;
                 }
-                else if (selected.buurNoord.buurNoordwest == nieuwVakje)
+                else if (selected.BuurNoord.BuurNoordWest == nieuwVakje)
                 {                    
                     gevonden = true;
                 }
             }
-            if (selected.buurOost != null)
+            if (selected.BuurOost != null)
             {
-                if (selected.buurOost.buurNoordoost == nieuwVakje)
+                if (selected.BuurOost.BuurNoordoost == nieuwVakje)
                 {
                     gevonden = true;
                 }
-                else if (selected.buurOost.buurZuidoost == nieuwVakje)
+                else if (selected.BuurOost.BuurZuidOost == nieuwVakje)
                 {
                     gevonden = true;
                 }
             }
-            if (selected.buurZuid != null)
+            if (selected.BuurZuid != null)
             {
-                if (selected.buurZuid.buurZuidoost == nieuwVakje)
+                if (selected.BuurZuid.BuurZuidOost == nieuwVakje)
                 {
                     gevonden = true;
                 }
-                else if (selected.buurZuid.buurZuidwest == nieuwVakje)
+                else if (selected.BuurZuid.BuurZuidWest == nieuwVakje)
                 {
                     gevonden = true;
                 }
             }
-            if (selected.buurWest != null)
+            if (selected.BuurWest != null)
             {
-                if (selected.buurWest.buurZuidwest == nieuwVakje)
+                if (selected.BuurWest.BuurZuidWest == nieuwVakje)
                 {
                     gevonden = true;
                 }
 
-                else if (selected.buurWest.buurNoordwest == nieuwVakje)
+                else if (selected.BuurWest.BuurNoordWest == nieuwVakje)
                 {
                     gevonden = true;
                 }
@@ -161,13 +161,13 @@ namespace Schaakproject
                 Schaakstuk temp = nieuwVakje.schaakstuk;
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
-                this.vakje = nieuwVakje;
-                bool checkSchaak = spel.schaakbord.CheckSchaak(speler.koning.vakje, speler.koning.kleur);
+                this.Vakje = nieuwVakje;
+                bool checkSchaak = spel.schaakbord.CheckSchaak(Speler.koning.Vakje, Speler.koning.Kleur);
                 if (checkSchaak == true)
                 {
                     selected.schaakstuk = this;
                     nieuwVakje.schaakstuk = temp;
-                    this.vakje = selected;
+                    this.Vakje = selected;
                 }
                 else
                 {
@@ -176,7 +176,7 @@ namespace Schaakproject
                         spel.updateAantalStukken(spel.SpelerAanZet);
                         temp.Slaan();
                     }
-                    speler.ValideZet = true;
+                    Speler.ValideZet = true;
                 }
             }
         }

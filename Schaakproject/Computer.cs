@@ -67,7 +67,7 @@ namespace Schaakproject
             {
                 if (buurzuid == false && _vorigVakje != null)
                 {
-                    _vorigVakje = _vorigVakje.buurZuid;
+                    _vorigVakje = _vorigVakje.BuurZuid;
                     zuidteller++;
                 }
                 else
@@ -84,7 +84,7 @@ namespace Schaakproject
             {
                 if (buurwest == false && _vorigVakje != null)
                 {
-                    _vorigVakje = _vorigVakje.buurWest;
+                    _vorigVakje = _vorigVakje.BuurWest;
                     westteller++;
                 }
                 else
@@ -104,8 +104,8 @@ namespace Schaakproject
             VerplaatsingsLijst.Add(geselecteerdVakje);       // slaat de positie van de computerszet in lijst op 
 
             geselecteerdStuk.schaakstuk.Verplaats(geselecteerdVakje, geselecteerdStuk, _spel);
-            geselecteerdStuk.pbox.update();                 //update het eerste vakje
-            geselecteerdVakje.pbox.update();                 //update het tweede vakje
+            geselecteerdStuk.Pbox.update();                 //update het eerste vakje
+            geselecteerdVakje.Pbox.update();                 //update het tweede vakje
             geselecteerdStuk = null;                        //niets is meer geselecteerd
         }
     }

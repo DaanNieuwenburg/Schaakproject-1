@@ -15,13 +15,13 @@ namespace Schaakproject
         {
             if (vakje.schaakstuk != null)
             {
-                Image = vakje.schaakstuk.afbeelding;
-                BackColor = vakje.kleur;
+                Image = vakje.schaakstuk.Afbeelding;
+                BackColor = vakje.Kleur;
             }
             else
             {
                 Image = null;
-                BackColor = vakje.kleur;
+                BackColor = vakje.Kleur;
             }
         }
     }

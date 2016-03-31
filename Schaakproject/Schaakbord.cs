@@ -59,29 +59,29 @@ namespace Schaakproject
 
     public class Schaakbord
     {
-        public Vakje[,] schaakarray { get; private set; }   //Een array van vakjes zodat het schaakbord kan worden opgezet
-        public Color _kleur { get; private set; }
-        private int aantal1 { get; set; }                   //Het aantal schaakstukken wordt ingesteld voor wit
-        private int aantal2 { get; set; }                   //Het aantal schaakstukken wordt ingesteld voor zwart
-        private bool staatschaak { get; set; }              //Staat er iemand schaak?
-        private string variant { get; set; }                //Klassiek of Chess960
-        private Schaakstuk schaakGezet { get; set; }        //Het schaakstuk dat de koning schaak heeft gezet
-        private string richting { get; set; }               //De richting waar het schaakstuk dat de koning schaak heeft gezet staat
-        private bool pionvoormat { get; set; }              //om te kijken of er een pion gezet kan worden tussen de koning en een stuk
-        public Color _colorvakje1 { get; private set; }
-        public Color _colorvakje2 { get; private set; }
-        private List<Schaakstuk> Stukvoorkomen { get; set; }
+        public Vakje[,] SchaakArray { get; private set; }   //Een array van vakjes zodat het schaakbord kan worden opgezet
+        public Color Kleur { get; private set; }
+        private int _aantal1 { get; set; }                   //Het aantal schaakstukken wordt ingesteld voor wit
+        private int _aantal2 { get; set; }                   //Het aantal schaakstukken wordt ingesteld voor zwart
+        private bool _staatSchaak { get; set; }              //Staat er iemand schaak?
+        private string _variant { get; set; }                //Klassiek of Chess960
+        private Schaakstuk _schaakGezet { get; set; }        //Het schaakstuk dat de koning schaak heeft gezet
+        private string _richting { get; set; }               //De richting waar het schaakstuk dat de koning schaak heeft gezet staat
+        private bool _pionVoorMat { get; set; }              //om te kijken of er een pion gezet kan worden tussen de koning en een stuk
+        public Color ColorVakje1 { get; private set; }
+        public Color ColorVakje2 { get; private set; }
+        private List<Schaakstuk> _stukVoorKomen { get; set; }
 
 
         public Schaakbord(string _Variant, Spel Spel, Speler Speler1, Speler Speler2, Color vakje1, Color vakje2)
         {
-            _colorvakje1 = vakje1;
-            _colorvakje2 = vakje2;
-            Stukvoorkomen = new List<Schaakstuk>();
-            aantal1 = 16;
-            aantal2 = 16;
-            schaakarray = new Vakje[8, 8];
-            variant = _Variant;
+            ColorVakje1 = vakje1;
+            ColorVakje2 = vakje2;
+            _stukVoorKomen = new List<Schaakstuk>();
+            _aantal1 = 16;
+            _aantal2 = 16;
+            SchaakArray = new Vakje[8, 8];
+            _variant = _Variant;
             string kleurstuk;
             bool kleurvakje = false; //zwart of wit
             kleurstuk = "zwart";
@@ -96,7 +96,7 @@ namespace Schaakproject
             {
                 for (int y = 0; y < 8; y++)
                 {
-                    schaakarray[x, y] = new Vakje(kleurvakje, _colorvakje1, _colorvakje2);
+                    SchaakArray[x, y] = new Vakje(kleurvakje, ColorVakje1, ColorVakje2);
 
                     kleurvakje = !kleurvakje;
                 }
@@ -104,7 +104,7 @@ namespace Schaakproject
             }
 
             //voeg schaakstukken aan vakjes toe
-            if (variant == "Klassiek")
+            if (_variant == "Klassiek")
             {
                 for (int x = 0; x < 8; x++)
                 {
@@ -119,98 +119,98 @@ namespace Schaakproject
                         {
                             if (y == 0 || y == 7)
                             {
-                                schaakarray[x, y].schaakstuk = new Toren(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                SchaakArray[x, y].schaakstuk = new Toren(kleurstuk, SchaakArray[x, y], voorDitStuk);
                                 if (kleurstuk == "zwart")
                                 {
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel.ComputerSpeler.NietVerplaatstLijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                        Spel.ComputerSpeler.NietVerplaatstLijst.Add(SchaakArray[x, y].schaakstuk.Vakje);
                                     }
                                 }
                             }
 
                             else if (y == 1 || y == 6)
                             {
-                                schaakarray[x, y].schaakstuk = new Paard(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                SchaakArray[x, y].schaakstuk = new Paard(kleurstuk, SchaakArray[x, y], voorDitStuk);
                                 if (kleurstuk == "zwart")
                                 {
 
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel.ComputerSpeler.NietVerplaatstLijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                        Spel.ComputerSpeler.NietVerplaatstLijst.Add(SchaakArray[x, y].schaakstuk.Vakje);
                                     }
                                 }
                             }
 
                             else if (y == 2 || y == 5)
                             {
-                                schaakarray[x, y].schaakstuk = new Loper(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                SchaakArray[x, y].schaakstuk = new Loper(kleurstuk, SchaakArray[x, y], voorDitStuk);
                                 if (kleurstuk == "zwart")
                                 {
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel.ComputerSpeler.NietVerplaatstLijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                        Spel.ComputerSpeler.NietVerplaatstLijst.Add(SchaakArray[x, y].schaakstuk.Vakje);
                                     }
                                 }
                             }
 
                             else if (y == 3)
                             {
-                                schaakarray[x, y].schaakstuk = new Dame(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                SchaakArray[x, y].schaakstuk = new Dame(kleurstuk, SchaakArray[x, y], voorDitStuk);
                                 if (kleurstuk == "zwart")
                                 {
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel.ComputerSpeler.NietVerplaatstLijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                        Spel.ComputerSpeler.NietVerplaatstLijst.Add(SchaakArray[x, y].schaakstuk.Vakje);
                                     }
                                 }
                             }
 
                             else if (y == 4)
                             {
-                                schaakarray[x, y].schaakstuk = new Koning(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                SchaakArray[x, y].schaakstuk = new Koning(kleurstuk, SchaakArray[x, y], voorDitStuk);
 
                                 if (kleurstuk == "wit")
                                 {
-                                    Spel.Speler1.koning = schaakarray[x, y].schaakstuk as Koning;
+                                    Spel.Speler1.koning = SchaakArray[x, y].schaakstuk as Koning;
                                 }
                                 else
                                 {
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel.ComputerSpeler.koning = schaakarray[x, y].schaakstuk as Koning;
+                                        Spel.ComputerSpeler.koning = SchaakArray[x, y].schaakstuk as Koning;
                                     }
                                     else
                                     {
-                                        Spel.Speler2.koning = schaakarray[x, y].schaakstuk as Koning;
+                                        Spel.Speler2.koning = SchaakArray[x, y].schaakstuk as Koning;
                                     }
                                 }
                             }
                         }
                         else if (x == 1 || x == 6)
                         {
-                            schaakarray[x, y].schaakstuk = new Pion(kleurstuk, schaakarray[x, y], voorDitStuk);
+                            SchaakArray[x, y].schaakstuk = new Pion(kleurstuk, SchaakArray[x, y], voorDitStuk);
                             if (kleurstuk == "zwart")
                             {
                                 //Speler2.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
                                 if (Spel.SpelMode == "Singleplayer")
                                 {
-                                    Spel.ComputerSpeler.NietVerplaatstLijst.Add(schaakarray[x, y].schaakstuk.vakje);
+                                    Spel.ComputerSpeler.NietVerplaatstLijst.Add(SchaakArray[x, y].schaakstuk.Vakje);
                                 }
                                 else
                                 {
-                                    Speler2.Pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                    Speler2.Pionnen[y] = SchaakArray[x, y].schaakstuk as Pion;
                                 }
                             }
                             else
                             {
-                                Speler1.Pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                Speler1.Pionnen[y] = SchaakArray[x, y].schaakstuk as Pion;
                             }
                         }
                     }
                 }
             }
-            else if (variant == "Chess960")
+            else if (_variant == "Chess960")
             {
                 int aantallopers = 0;
                 for (int x = 0; x < 8; x++)
@@ -247,42 +247,42 @@ namespace Schaakproject
                                 }
                                 else if ((array[0] < array[7] && array[1] > array[7]) || (array[0] > array[7] && array[1] < array[7]))
                                 {
-                                    schaakarray[x, y].schaakstuk = new Toren(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                    SchaakArray[x, y].schaakstuk = new Toren(kleurstuk, SchaakArray[x, y], voorDitStuk);
                                 }
                             }
 
                             else if (y == array[2] || y == array[3])
                             {
-                                schaakarray[x, y].schaakstuk = new Paard(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                SchaakArray[x, y].schaakstuk = new Paard(kleurstuk, SchaakArray[x, y], voorDitStuk);
                             }
 
                             else if (y == array[4] || y == array[5])
                             {
                                 aantallopers++;
-                                schaakarray[x, y].schaakstuk = new Loper(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                SchaakArray[x, y].schaakstuk = new Loper(kleurstuk, SchaakArray[x, y], voorDitStuk);
                             }
 
                             else if (y == array[6])
                             {
-                                schaakarray[x, y].schaakstuk = new Dame(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                SchaakArray[x, y].schaakstuk = new Dame(kleurstuk, SchaakArray[x, y], voorDitStuk);
                             }
 
                             else if (y == array[7])
                             {
-                                schaakarray[x, y].schaakstuk = new Koning(kleurstuk, schaakarray[x, y], voorDitStuk);
+                                SchaakArray[x, y].schaakstuk = new Koning(kleurstuk, SchaakArray[x, y], voorDitStuk);
                                 if (kleurstuk == "wit")
                                 {
-                                    Spel.Speler1.koning = schaakarray[x, y].schaakstuk as Koning;
+                                    Spel.Speler1.koning = SchaakArray[x, y].schaakstuk as Koning;
                                 }
                                 else
                                 {
                                     if (Spel.SpelMode == "Singleplayer")
                                     {
-                                        Spel.ComputerSpeler.koning = schaakarray[x, y].schaakstuk as Koning;
+                                        Spel.ComputerSpeler.koning = SchaakArray[x, y].schaakstuk as Koning;
                                     }
                                     else
                                     {
-                                        Spel.Speler2.koning = schaakarray[x, y].schaakstuk as Koning;
+                                        Spel.Speler2.koning = SchaakArray[x, y].schaakstuk as Koning;
                                     }
                                 }
 
@@ -290,20 +290,20 @@ namespace Schaakproject
                         }
                         else if (x == 1 || x == 6)
                         {
-                            schaakarray[x, y].schaakstuk = new Pion(kleurstuk, schaakarray[x, y], voorDitStuk);
+                            SchaakArray[x, y].schaakstuk = new Pion(kleurstuk, SchaakArray[x, y], voorDitStuk);
                             if (kleurstuk == "wit")
                             {
-                                Speler1.Pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                Speler1.Pionnen[y] = SchaakArray[x, y].schaakstuk as Pion;
                             }
                             else
                             {
                                 if (Spel.SpelMode == "Singleplayer")
                                 {
-                                    Spel.ComputerSpeler.Pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                    Spel.ComputerSpeler.Pionnen[y] = SchaakArray[x, y].schaakstuk as Pion;
                                 }
                                 else
                                 {
-                                    Spel.Speler2.Pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
+                                    Spel.Speler2.Pionnen[y] = SchaakArray[x, y].schaakstuk as Pion;
                                 }
 
                             }
@@ -319,35 +319,35 @@ namespace Schaakproject
                 {
                     if (x != 0)
                     {
-                        schaakarray[x, y].buurNoord = schaakarray[x - 1, y];
+                        SchaakArray[x, y].BuurNoord = SchaakArray[x - 1, y];
                     }
                     if (x != 7)
                     {
-                        schaakarray[x, y].buurZuid = schaakarray[x + 1, y];
+                        SchaakArray[x, y].BuurZuid = SchaakArray[x + 1, y];
                     }
                     if (y != 7)
                     {
-                        schaakarray[x, y].buurOost = schaakarray[x, y + 1];
+                        SchaakArray[x, y].BuurOost = SchaakArray[x, y + 1];
                     }
                     if (y != 0)
                     {
-                        schaakarray[x, y].buurWest = schaakarray[x, y - 1];
+                        SchaakArray[x, y].BuurWest = SchaakArray[x, y - 1];
                     }
                     if (x != 0 && y != 0)
                     {
-                        schaakarray[x, y].buurNoordwest = schaakarray[x - 1, y - 1];
+                        SchaakArray[x, y].BuurNoordWest = SchaakArray[x - 1, y - 1];
                     }
                     if (x != 7 && y != 7)
                     {
-                        schaakarray[x, y].buurZuidoost = schaakarray[x + 1, y + 1];
+                        SchaakArray[x, y].BuurZuidOost = SchaakArray[x + 1, y + 1];
                     }
                     if (x != 7 && y != 0)
                     {
-                        schaakarray[x, y].buurZuidwest = schaakarray[x + 1, y - 1];
+                        SchaakArray[x, y].BuurZuidWest = SchaakArray[x + 1, y - 1];
                     }
                     if (x != 0 && y != 7)
                     {
-                        schaakarray[x, y].buurNoordoost = schaakarray[x - 1, y + 1];
+                        SchaakArray[x, y].BuurNoordoost = SchaakArray[x - 1, y + 1];
                     }
                 }
             }
@@ -355,28 +355,28 @@ namespace Schaakproject
 
         public bool CheckPat(Koning koning)
         {
-            Vakje koningVakje = koning.vakje;
+            Vakje koningVakje = koning.Vakje;
             bool mogelijk = false;
-            string kleur = koning.kleur;
+            string kleur = koning.Kleur;
             bool pat = true;
             int blokkeert = 0;
             int stillePion = 0;
 
             //bekijk of de koning schaak staat als hij naar noord zou bewegen
-            if (koningVakje.buurNoord != null)
+            if (koningVakje.BuurNoord != null)
             {
-                if (koningVakje.buurNoord.schaakstuk == null)
+                if (koningVakje.BuurNoord.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
-                else if (koningVakje.buurNoord.schaakstuk.kleur != kleur)
+                else if (koningVakje.BuurNoord.schaakstuk.Kleur != kleur)
                 {
                     mogelijk = true;
                 }
 
                 if (mogelijk == true)
                 {
-                    bool checkschaak = CheckSchaak(koningVakje.buurNoord, kleur);
+                    bool checkschaak = CheckSchaak(koningVakje.BuurNoord, kleur);
                     if (checkschaak == false)
                     {
                         pat = false;
@@ -385,19 +385,19 @@ namespace Schaakproject
                 mogelijk = false;
             }
             //bekijk of de koning schaak staat als hij naar oost zou bewegen
-            if (koningVakje.buurOost != null)
+            if (koningVakje.BuurOost != null)
             {
-                if (koningVakje.buurOost.schaakstuk == null)
+                if (koningVakje.BuurOost.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
-                else if (koningVakje.buurOost.schaakstuk.kleur != kleur)
+                else if (koningVakje.BuurOost.schaakstuk.Kleur != kleur)
                 {
                     mogelijk = true;
                 }
                 if (mogelijk == true)
                 {
-                    bool checkschaak = CheckSchaak(koningVakje.buurOost, kleur);
+                    bool checkschaak = CheckSchaak(koningVakje.BuurOost, kleur);
                     if (checkschaak == false)
                     {
                         pat = false;
@@ -406,19 +406,19 @@ namespace Schaakproject
                 mogelijk = false;
             }
             //bekijk of de koning schaak staat als hij naar zuid zou bewegen
-            if (koningVakje.buurZuid != null)
+            if (koningVakje.BuurZuid != null)
             {
-                if (koningVakje.buurZuid.schaakstuk == null)
+                if (koningVakje.BuurZuid.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
-                else if (koningVakje.buurZuid.schaakstuk.kleur != kleur)
+                else if (koningVakje.BuurZuid.schaakstuk.Kleur != kleur)
                 {
                     mogelijk = true;
                 }
                 if (mogelijk == true)
                 {
-                    bool checkschaak = CheckSchaak(koningVakje.buurZuid, kleur);
+                    bool checkschaak = CheckSchaak(koningVakje.BuurZuid, kleur);
                     if (checkschaak == false)
                     {
                         pat = false;
@@ -427,19 +427,19 @@ namespace Schaakproject
                 mogelijk = false;
             }
             //bekijk of de koning schaak staat als hij naar west zou bewegen
-            if (koningVakje.buurWest != null)
+            if (koningVakje.BuurWest != null)
             {
-                if (koningVakje.buurWest.schaakstuk == null)
+                if (koningVakje.BuurWest.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
-                else if (koningVakje.buurWest.schaakstuk.kleur != kleur)
+                else if (koningVakje.BuurWest.schaakstuk.Kleur != kleur)
                 {
                     mogelijk = true;
                 }
                 if (mogelijk == true)
                 {
-                    bool checkschaak = CheckSchaak(koningVakje.buurWest, kleur);
+                    bool checkschaak = CheckSchaak(koningVakje.BuurWest, kleur);
                     if (checkschaak == false)
                     {
                         pat = false;
@@ -448,19 +448,19 @@ namespace Schaakproject
                 mogelijk = false;
             }
             //bekijk of de koning schaak staat als hij naar noordoost zou bewegen
-            if (koningVakje.buurNoordoost != null)
+            if (koningVakje.BuurNoordoost != null)
             {
-                if (koningVakje.buurNoordoost.schaakstuk == null)
+                if (koningVakje.BuurNoordoost.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
-                else if (koningVakje.buurNoordoost.schaakstuk.kleur != kleur)
+                else if (koningVakje.BuurNoordoost.schaakstuk.Kleur != kleur)
                 {
                     mogelijk = true;
                 }
                 if (mogelijk == true)
                 {
-                    bool checkschaak = CheckSchaak(koningVakje.buurNoordoost, kleur);
+                    bool checkschaak = CheckSchaak(koningVakje.BuurNoordoost, kleur);
                     if (checkschaak == false)
                     {
                         pat = false;
@@ -469,19 +469,19 @@ namespace Schaakproject
                 mogelijk = false;
             }
             //bekijk of de koning schaak staat als hij naar noordwest zou bewegen
-            if (koningVakje.buurNoordwest != null)
+            if (koningVakje.BuurNoordWest != null)
             {
-                if (koningVakje.buurNoordwest.schaakstuk == null)
+                if (koningVakje.BuurNoordWest.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
-                else if (koningVakje.buurNoordwest.schaakstuk.kleur != kleur)
+                else if (koningVakje.BuurNoordWest.schaakstuk.Kleur != kleur)
                 {
                     mogelijk = true;
                 }
                 if (mogelijk == true)
                 {
-                    bool checkschaak = CheckSchaak(koningVakje.buurNoordwest, kleur);
+                    bool checkschaak = CheckSchaak(koningVakje.BuurNoordWest, kleur);
                     if (checkschaak == false)
                     {
                         pat = false;
@@ -491,19 +491,19 @@ namespace Schaakproject
                 mogelijk = false;
             }
             //bekijk of de koning schaak staat als hij naar zuidoost zou bewegen
-            if (koningVakje.buurZuidoost != null)
+            if (koningVakje.BuurZuidOost != null)
             {
-                if (koningVakje.buurZuidoost.schaakstuk == null)
+                if (koningVakje.BuurZuidOost.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
-                else if (koningVakje.buurZuidoost.schaakstuk.kleur != kleur)
+                else if (koningVakje.BuurZuidOost.schaakstuk.Kleur != kleur)
                 {
                     mogelijk = true;
                 }
                 if (mogelijk == true)
                 {
-                    bool checkschaak = CheckSchaak(koningVakje.buurZuidoost, kleur);
+                    bool checkschaak = CheckSchaak(koningVakje.BuurZuidOost, kleur);
                     if (checkschaak == false)
                     {
                         pat = false;
@@ -512,19 +512,19 @@ namespace Schaakproject
                 mogelijk = false;
             }
             //bekijk of de koning schaak staat als hij naar zuidwest zou bewegen
-            if (koningVakje.buurZuidwest != null)
+            if (koningVakje.BuurZuidWest != null)
             {
-                if (koningVakje.buurZuidwest.schaakstuk == null)
+                if (koningVakje.BuurZuidWest.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
-                else if (koningVakje.buurZuidwest.schaakstuk.kleur != kleur)
+                else if (koningVakje.BuurZuidWest.schaakstuk.Kleur != kleur)
                 {
                     mogelijk = true;
                 }
                 if (mogelijk == true)
                 {
-                    bool checkschaak = CheckSchaak(koningVakje.buurZuidwest, kleur);
+                    bool checkschaak = CheckSchaak(koningVakje.BuurZuidWest, kleur);
                     if (checkschaak == false)
                     {
                         pat = false;
@@ -541,25 +541,25 @@ namespace Schaakproject
             //voor noord
             while (loop == false)
             {
-                if (vorige.buurNoord == null)
+                if (vorige.BuurNoord == null)
                 {
                     loop = true;
                 }
                 else
                 {
-                    if (vorige.buurNoord.schaakstuk != null)
+                    if (vorige.BuurNoord.schaakstuk != null)
                     {
-                        if (vorige.buurNoord.schaakstuk.kleur == koning.kleur)
+                        if (vorige.BuurNoord.schaakstuk.Kleur == koning.Kleur)
                         {
                             
                             if (juisteKleur == false)
                             {
-                                if (vorige.buurNoord.schaakstuk is Toren || vorige.buurNoord.schaakstuk is Dame)
+                                if (vorige.BuurNoord.schaakstuk is Toren || vorige.BuurNoord.schaakstuk is Dame)
                                 {
                                     onthouden = true;
                                 }
                                 
-                                else if (vorige.buurNoord.schaakstuk is Pion)
+                                else if (vorige.BuurNoord.schaakstuk is Pion)
                                 {
                                     loop = true;
                                 }
@@ -577,7 +577,7 @@ namespace Schaakproject
                         else {
                             loop = true;
 
-                            if (vorige.buurNoord.schaakstuk is Toren || vorige.buurNoord.schaakstuk is Dame)
+                            if (vorige.BuurNoord.schaakstuk is Toren || vorige.BuurNoord.schaakstuk is Dame)
                             {
                                 if (juisteKleur == true)
                                 {
@@ -590,7 +590,7 @@ namespace Schaakproject
                             }
                         }
                     }
-                    vorige = vorige.buurNoord;
+                    vorige = vorige.BuurNoord;
                 }
             }
             onthouden = false;
@@ -601,23 +601,23 @@ namespace Schaakproject
             //voor oost
             while (loop == false)
             {
-                if (vorige.buurOost == null)
+                if (vorige.BuurOost == null)
                 {
                     loop = true;
                 }
                 else
                 {
-                    if (vorige.buurOost.schaakstuk != null)
+                    if (vorige.BuurOost.schaakstuk != null)
                     {
-                        if (vorige.buurOost.schaakstuk.kleur == koning.kleur)
+                        if (vorige.BuurOost.schaakstuk.Kleur == koning.Kleur)
                         {
                             if (juisteKleur == false)
                             {
-                                if (vorige.buurOost.schaakstuk is Toren || vorige.buurOost.schaakstuk is Dame)
+                                if (vorige.BuurOost.schaakstuk is Toren || vorige.BuurOost.schaakstuk is Dame)
                                 {
                                     onthouden = true;
                                 }
-                                else if (vorige.buurOost.schaakstuk is Pion)
+                                else if (vorige.BuurOost.schaakstuk is Pion)
                                 {
                                     loop = true;
                                 }
@@ -635,7 +635,7 @@ namespace Schaakproject
                         else {
                             loop = true;
 
-                            if (vorige.buurOost.schaakstuk is Toren || vorige.buurOost.schaakstuk is Dame)
+                            if (vorige.BuurOost.schaakstuk is Toren || vorige.BuurOost.schaakstuk is Dame)
                             {
                                 if (juisteKleur == true)
                                 {
@@ -648,7 +648,7 @@ namespace Schaakproject
                             }
                         }
                     }
-                    vorige = vorige.buurOost;
+                    vorige = vorige.BuurOost;
                 }
             }
             onthouden = false;
@@ -659,23 +659,23 @@ namespace Schaakproject
             //voor zuid
             while (loop == false)
             {
-                if (vorige.buurZuid == null)
+                if (vorige.BuurZuid == null)
                 {
                     loop = true;
                 }
                 else
                 {
-                    if (vorige.buurZuid.schaakstuk != null)
+                    if (vorige.BuurZuid.schaakstuk != null)
                     {
-                        if (vorige.buurZuid.schaakstuk.kleur == koning.kleur)
+                        if (vorige.BuurZuid.schaakstuk.Kleur == koning.Kleur)
                         {
                             if (juisteKleur == false)
                             {
-                                if (vorige.buurZuid.schaakstuk is Toren || vorige.buurZuid.schaakstuk is Dame)
+                                if (vorige.BuurZuid.schaakstuk is Toren || vorige.BuurZuid.schaakstuk is Dame)
                                 {
                                     onthouden = true;
                                 }
-                                else if (vorige.buurZuid.schaakstuk is Pion)
+                                else if (vorige.BuurZuid.schaakstuk is Pion)
                                 {
                                     loop = true;
                                 }
@@ -693,7 +693,7 @@ namespace Schaakproject
                         else {
                             loop = true;
 
-                            if (vorige.buurZuid.schaakstuk is Toren || vorige.buurZuid.schaakstuk is Dame)
+                            if (vorige.BuurZuid.schaakstuk is Toren || vorige.BuurZuid.schaakstuk is Dame)
                             {
                                 if (juisteKleur == true)
                                 {
@@ -706,7 +706,7 @@ namespace Schaakproject
                             }
                         }
                     }
-                    vorige = vorige.buurZuid;
+                    vorige = vorige.BuurZuid;
                 }
             }
             onthouden = false;
@@ -717,23 +717,23 @@ namespace Schaakproject
             //voor west
             while (loop == false)
             {
-                if (vorige.buurWest == null)
+                if (vorige.BuurWest == null)
                 {
                     loop = true;
                 }
                 else
                 {
-                    if (vorige.buurWest.schaakstuk != null)
+                    if (vorige.BuurWest.schaakstuk != null)
                     {
-                        if (vorige.buurWest.schaakstuk.kleur == koning.kleur)
+                        if (vorige.BuurWest.schaakstuk.Kleur == koning.Kleur)
                         {
                             if (juisteKleur == false)
                             {
-                                if (vorige.buurWest.schaakstuk is Toren || vorige.buurWest.schaakstuk is Dame)
+                                if (vorige.BuurWest.schaakstuk is Toren || vorige.BuurWest.schaakstuk is Dame)
                                 {
                                     onthouden = true;
                                 }
-                                else if (vorige.buurWest.schaakstuk is Pion)
+                                else if (vorige.BuurWest.schaakstuk is Pion)
                                 {
                                     loop = true;
                                 }
@@ -751,7 +751,7 @@ namespace Schaakproject
                         else {
                             loop = true;
 
-                            if (vorige.buurWest.schaakstuk is Toren || vorige.buurWest.schaakstuk is Dame)
+                            if (vorige.BuurWest.schaakstuk is Toren || vorige.BuurWest.schaakstuk is Dame)
                             {
                                 if (juisteKleur == true)
                                 {
@@ -764,7 +764,7 @@ namespace Schaakproject
                             }
                         }
                     }
-                    vorige = vorige.buurWest;
+                    vorige = vorige.BuurWest;
                 }
             }
             onthouden = false;
@@ -775,23 +775,23 @@ namespace Schaakproject
             //voor noordoost
             while (loop == false)
             {
-                if (vorige.buurNoordoost == null)
+                if (vorige.BuurNoordoost == null)
                 {
                     loop = true;
                 }
                 else
                 {
-                    if (vorige.buurNoordoost.schaakstuk != null)
+                    if (vorige.BuurNoordoost.schaakstuk != null)
                     {
-                        if (vorige.buurNoordoost.schaakstuk.kleur == koning.kleur)
+                        if (vorige.BuurNoordoost.schaakstuk.Kleur == koning.Kleur)
                         {
                             if (juisteKleur == false)
                             {
-                                if (vorige.buurNoordoost.schaakstuk is Loper || vorige.buurNoordoost.schaakstuk is Dame)
+                                if (vorige.BuurNoordoost.schaakstuk is Loper || vorige.BuurNoordoost.schaakstuk is Dame)
                                 {
                                     onthouden = true;
                                 }
-                                else if (vorige.buurNoordoost.schaakstuk is Pion)
+                                else if (vorige.BuurNoordoost.schaakstuk is Pion)
                                 {
                                     loop = true;
                                 }
@@ -809,7 +809,7 @@ namespace Schaakproject
                         else {
                             loop = true;
 
-                            if (vorige.buurNoordoost.schaakstuk is Loper || vorige.buurNoordoost.schaakstuk is Dame)
+                            if (vorige.BuurNoordoost.schaakstuk is Loper || vorige.BuurNoordoost.schaakstuk is Dame)
                             {
                                 if (juisteKleur == true)
                                 {
@@ -822,7 +822,7 @@ namespace Schaakproject
                             }
                         }
                     }
-                    vorige = vorige.buurNoordoost;
+                    vorige = vorige.BuurNoordoost;
                 }
             }
             onthouden = false;
@@ -833,23 +833,23 @@ namespace Schaakproject
             //voor noordwest
             while (loop == false)
             {
-                if (vorige.buurNoordwest == null)
+                if (vorige.BuurNoordWest == null)
                 {
                     loop = true;
                 }
                 else
                 {
-                    if (vorige.buurNoordwest.schaakstuk != null)
+                    if (vorige.BuurNoordWest.schaakstuk != null)
                     {
-                        if (vorige.buurNoordwest.schaakstuk.kleur == koning.kleur)
+                        if (vorige.BuurNoordWest.schaakstuk.Kleur == koning.Kleur)
                         {
                             if (juisteKleur == false)
                             {
-                                if (vorige.buurNoordwest.schaakstuk is Loper || vorige.buurNoordwest.schaakstuk is Dame)
+                                if (vorige.BuurNoordWest.schaakstuk is Loper || vorige.BuurNoordWest.schaakstuk is Dame)
                                 {
                                     onthouden = true;
                                 }
-                                else if (vorige.buurNoordwest.schaakstuk is Pion)
+                                else if (vorige.BuurNoordWest.schaakstuk is Pion)
                                 {
                                     loop = true;
                                 }
@@ -867,7 +867,7 @@ namespace Schaakproject
                         else {
                             loop = true;
 
-                            if (vorige.buurNoordwest.schaakstuk is Loper || vorige.buurNoordwest.schaakstuk is Dame)
+                            if (vorige.BuurNoordWest.schaakstuk is Loper || vorige.BuurNoordWest.schaakstuk is Dame)
                             {
                                 if (juisteKleur == true)
                                 {
@@ -880,7 +880,7 @@ namespace Schaakproject
                             }
                         }
                     }
-                    vorige = vorige.buurNoordwest;
+                    vorige = vorige.BuurNoordWest;
                 }
             }
             onthouden = false;
@@ -891,23 +891,23 @@ namespace Schaakproject
             //voor zuidoost
             while (loop == false)
             {
-                if (vorige.buurZuidoost == null)
+                if (vorige.BuurZuidOost == null)
                 {
                     loop = true;
                 }
                 else
                 {
-                    if (vorige.buurZuidoost.schaakstuk != null)
+                    if (vorige.BuurZuidOost.schaakstuk != null)
                     {
-                        if (vorige.buurZuidoost.schaakstuk.kleur == koning.kleur)
+                        if (vorige.BuurZuidOost.schaakstuk.Kleur == koning.Kleur)
                         {
                             if (juisteKleur == false)
                             {
-                                if (vorige.buurZuidoost.schaakstuk is Loper || vorige.buurZuidoost.schaakstuk is Dame)
+                                if (vorige.BuurZuidOost.schaakstuk is Loper || vorige.BuurZuidOost.schaakstuk is Dame)
                                 {
                                     onthouden = true;
                                 }
-                                else if (vorige.buurZuidoost.schaakstuk is Pion)
+                                else if (vorige.BuurZuidOost.schaakstuk is Pion)
                                 {
                                     loop = true;
                                 }
@@ -925,7 +925,7 @@ namespace Schaakproject
                         else {
                             loop = true;
 
-                            if (vorige.buurZuidoost.schaakstuk is Loper || vorige.buurZuidoost.schaakstuk is Dame)
+                            if (vorige.BuurZuidOost.schaakstuk is Loper || vorige.BuurZuidOost.schaakstuk is Dame)
                             {
                                 if (juisteKleur == true)
                                 {
@@ -938,7 +938,7 @@ namespace Schaakproject
                             }
                         }
                     }
-                    vorige = vorige.buurZuidoost;
+                    vorige = vorige.BuurZuidOost;
                 }
             }
             onthouden = false;
@@ -949,23 +949,23 @@ namespace Schaakproject
             //voor zuidwest
             while (loop == false)
             {
-                if (vorige.buurZuidwest == null)
+                if (vorige.BuurZuidWest == null)
                 {
                     loop = true;
                 }
                 else
                 {
-                    if (vorige.buurZuidwest.schaakstuk != null)
+                    if (vorige.BuurZuidWest.schaakstuk != null)
                     {
-                        if (vorige.buurZuidwest.schaakstuk.kleur == koning.kleur)
+                        if (vorige.BuurZuidWest.schaakstuk.Kleur == koning.Kleur)
                         {
                             if (juisteKleur == false)
                             {
-                                if (vorige.buurZuidwest.schaakstuk is Loper || vorige.buurZuidwest.schaakstuk is Dame)
+                                if (vorige.BuurZuidWest.schaakstuk is Loper || vorige.BuurZuidWest.schaakstuk is Dame)
                                 {
                                     onthouden = true;
                                 }
-                                else if (vorige.buurZuidwest.schaakstuk is Pion)
+                                else if (vorige.BuurZuidWest.schaakstuk is Pion)
                                 {
                                     loop = true;
                                 }
@@ -983,7 +983,7 @@ namespace Schaakproject
                         else {
                             loop = true;
 
-                            if (vorige.buurZuidwest.schaakstuk is Loper || vorige.buurZuidwest.schaakstuk is Dame)
+                            if (vorige.BuurZuidWest.schaakstuk is Loper || vorige.BuurZuidWest.schaakstuk is Dame)
                             {
                                 if (juisteKleur == true)
                                 {
@@ -996,7 +996,7 @@ namespace Schaakproject
                             }
                         }
                     }
-                    vorige = vorige.buurZuidwest;
+                    vorige = vorige.BuurZuidWest;
                 }
             }
 
@@ -1004,125 +1004,125 @@ namespace Schaakproject
             bool kanVerplaatsen = false;
             for (int i = 0; i < 8; i++)
             {
-                bekijk = koning.speler.Pionnen[i];
+                bekijk = koning.Speler.Pionnen[i];
 
-                if (bekijk.geslagen == false)
+                if (bekijk.Geslagen == false)
                 {
-                    if (bekijk.kleur == "wit")
+                    if (bekijk.Kleur == "wit")
                     {
-                        if (bekijk.vakje.buurNoord != null && bekijk.vakje.buurNoord.schaakstuk == null)
+                        if (bekijk.Vakje.BuurNoord != null && bekijk.Vakje.BuurNoord.schaakstuk == null)
                         {
-                            Vakje bekijkvakje = bekijk.vakje;
-                            Vakje andervakje = bekijk.vakje.buurNoord;
+                            Vakje bekijkvakje = bekijk.Vakje;
+                            Vakje andervakje = bekijk.Vakje.BuurNoord;
 
-                            bekijk.vakje = andervakje;
+                            bekijk.Vakje = andervakje;
                             andervakje.schaakstuk = bekijk;
                             bekijkvakje.schaakstuk = null;
                             
-                            bool check = CheckSchaak(koningVakje, bekijk.kleur);
+                            bool check = CheckSchaak(koningVakje, bekijk.Kleur);
                             if (check == false)
                             {
                                 kanVerplaatsen = true;
                             }
-                            bekijk.vakje = bekijkvakje;
+                            bekijk.Vakje = bekijkvakje;
                             bekijkvakje.schaakstuk = bekijk;
                             andervakje.schaakstuk = null;
 
                         }
-                        if (bekijk.vakje.buurNoordoost != null && bekijk.vakje.buurNoordoost.schaakstuk != null)
+                        if (bekijk.Vakje.BuurNoordoost != null && bekijk.Vakje.BuurNoordoost.schaakstuk != null)
                         {
-                            Vakje bekijkvakje = bekijk.vakje;
-                            Vakje andervakje = bekijk.vakje.buurNoordoost;
+                            Vakje bekijkvakje = bekijk.Vakje;
+                            Vakje andervakje = bekijk.Vakje.BuurNoordoost;
                             Schaakstuk anderstuk = andervakje.schaakstuk;
 
-                            bekijk.vakje = andervakje;
+                            bekijk.Vakje = andervakje;
                             andervakje.schaakstuk = bekijk;
                             bekijkvakje.schaakstuk = null;
 
-                            bool check = CheckSchaak(koningVakje, bekijk.kleur);
+                            bool check = CheckSchaak(koningVakje, bekijk.Kleur);
                             if (check == false)
                             {
                                 kanVerplaatsen = true;
                             }
-                            bekijk.vakje = bekijkvakje;
+                            bekijk.Vakje = bekijkvakje;
                             bekijkvakje.schaakstuk = bekijk;
                             andervakje.schaakstuk = anderstuk;
                         }
-                        if (bekijk.vakje.buurNoordwest != null && bekijk.vakje.buurNoordwest.schaakstuk != null)
+                        if (bekijk.Vakje.BuurNoordWest != null && bekijk.Vakje.BuurNoordWest.schaakstuk != null)
                         {
-                            Vakje bekijkvakje = bekijk.vakje;
-                            Vakje andervakje = bekijk.vakje.buurNoordwest;
+                            Vakje bekijkvakje = bekijk.Vakje;
+                            Vakje andervakje = bekijk.Vakje.BuurNoordWest;
                             Schaakstuk anderstuk = andervakje.schaakstuk;
 
-                            bekijk.vakje = andervakje;
+                            bekijk.Vakje = andervakje;
                             andervakje.schaakstuk = bekijk;
                             bekijkvakje.schaakstuk = null;
 
-                            bool check = CheckSchaak(koningVakje, bekijk.kleur);
+                            bool check = CheckSchaak(koningVakje, bekijk.Kleur);
                             if (check == false)
                             {
                                 kanVerplaatsen = true;
                             }
-                            bekijk.vakje = bekijkvakje;
+                            bekijk.Vakje = bekijkvakje;
                             bekijkvakje.schaakstuk = bekijk;
                             andervakje.schaakstuk = anderstuk;
                         }
                     }
                     else
                     {
-                        if (bekijk.vakje.buurZuid != null && bekijk.vakje.buurZuid.schaakstuk == null)
+                        if (bekijk.Vakje.BuurZuid != null && bekijk.Vakje.BuurZuid.schaakstuk == null)
                         {
-                            Vakje bekijkvakje = bekijk.vakje;
-                            Vakje andervakje = bekijk.vakje.buurZuid;
+                            Vakje bekijkvakje = bekijk.Vakje;
+                            Vakje andervakje = bekijk.Vakje.BuurZuid;
 
-                            bekijk.vakje = andervakje;
+                            bekijk.Vakje = andervakje;
                             andervakje.schaakstuk = bekijk;
                             bekijkvakje.schaakstuk = null;
 
-                            bool check = CheckSchaak(koningVakje, bekijk.kleur);
+                            bool check = CheckSchaak(koningVakje, bekijk.Kleur);
                             if (check == false)
                             {
                                 kanVerplaatsen = true;
                             }
-                            bekijk.vakje = bekijkvakje;
+                            bekijk.Vakje = bekijkvakje;
                             bekijkvakje.schaakstuk = bekijk;
                             andervakje.schaakstuk = null;
                         }
-                        else if (bekijk.vakje.buurZuidoost != null && bekijk.vakje.buurZuidoost.schaakstuk != null)
+                        else if (bekijk.Vakje.BuurZuidOost != null && bekijk.Vakje.BuurZuidOost.schaakstuk != null)
                         {
-                            Vakje bekijkvakje = bekijk.vakje;
-                            Vakje andervakje = bekijk.vakje.buurZuidoost;
+                            Vakje bekijkvakje = bekijk.Vakje;
+                            Vakje andervakje = bekijk.Vakje.BuurZuidOost;
                             Schaakstuk anderstuk = andervakje.schaakstuk;
 
-                            bekijk.vakje = andervakje;
+                            bekijk.Vakje = andervakje;
                             andervakje.schaakstuk = bekijk;
                             bekijkvakje.schaakstuk = null;
 
-                            bool check = CheckSchaak(koningVakje, bekijk.kleur);
+                            bool check = CheckSchaak(koningVakje, bekijk.Kleur);
                             if (check == false)
                             {
                                 kanVerplaatsen = true;
                             }
-                            bekijk.vakje = bekijkvakje;
+                            bekijk.Vakje = bekijkvakje;
                             bekijkvakje.schaakstuk = bekijk;
                             andervakje.schaakstuk = anderstuk;
                         }
-                        else if (bekijk.vakje.buurZuidwest != null && bekijk.vakje.buurZuidwest.schaakstuk != null)
+                        else if (bekijk.Vakje.BuurZuidWest != null && bekijk.Vakje.BuurZuidWest.schaakstuk != null)
                         {
-                            Vakje bekijkvakje = bekijk.vakje;
-                            Vakje andervakje = bekijk.vakje.buurZuidwest;
+                            Vakje bekijkvakje = bekijk.Vakje;
+                            Vakje andervakje = bekijk.Vakje.BuurZuidWest;
                             Schaakstuk anderstuk = andervakje.schaakstuk;
 
-                            bekijk.vakje = andervakje;
+                            bekijk.Vakje = andervakje;
                             andervakje.schaakstuk = bekijk;
                             bekijkvakje.schaakstuk = null;
 
-                            bool check = CheckSchaak(koningVakje, bekijk.kleur);
+                            bool check = CheckSchaak(koningVakje, bekijk.Kleur);
                             if (check == false)
                             {
                                 kanVerplaatsen = true;
                             }
-                            bekijk.vakje = bekijkvakje;
+                            bekijk.Vakje = bekijkvakje;
                             bekijkvakje.schaakstuk = bekijk;
                             andervakje.schaakstuk = anderstuk;
                         }
@@ -1139,7 +1139,7 @@ namespace Schaakproject
                 }
 
             }
-            if (koning.speler.AantalStukken[5] > 1 + blokkeert + stillePion)
+            if (koning.Speler.AantalStukken[5] > 1 + blokkeert + stillePion)
             {
                 pat = false;
             }
@@ -1149,35 +1149,35 @@ namespace Schaakproject
 
         public bool CheckSchaak(Vakje ditvakje, string kleur)
         {
-            Stukvoorkomen.Clear();
+            _stukVoorKomen.Clear();
             bool mogelijkloop = false;
-            staatschaak = false;
+            _staatSchaak = false;
             Schaakstuk zetSchaak = null;
             Vakje vorige = ditvakje;
 
             //kijk of er noord van de koning een toren of dame staat
             while (mogelijkloop == false)
             {
-                if (vorige.buurNoord == null)
+                if (vorige.BuurNoord == null)
                 {
                     mogelijkloop = true;
                 }
-                else if (vorige.buurNoord.schaakstuk is Toren || vorige.buurNoord.schaakstuk is Dame)
+                else if (vorige.BuurNoord.schaakstuk is Toren || vorige.BuurNoord.schaakstuk is Dame)
                 {
-                    if (vorige.buurNoord.schaakstuk.kleur != kleur)
+                    if (vorige.BuurNoord.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurNoord.schaakstuk;
-                        Stukvoorkomen.Add(zetSchaak);
-                        richting = "noord";
+                        _staatSchaak = true;
+                        zetSchaak = vorige.BuurNoord.schaakstuk;
+                        _stukVoorKomen.Add(zetSchaak);
+                        _richting = "noord";
                     }
                     mogelijkloop = true;
                 }
-                else if (vorige.buurNoord.schaakstuk != null)
+                else if (vorige.BuurNoord.schaakstuk != null)
                 {
                     mogelijkloop = true;
                 }
-                vorige = vorige.buurNoord;
+                vorige = vorige.BuurNoord;
             }
             mogelijkloop = false;
             vorige = ditvakje;
@@ -1185,26 +1185,26 @@ namespace Schaakproject
             //kijk of er zuid van de koning een toren of dame staat
             while (mogelijkloop == false)
             {
-                if (vorige.buurZuid == null)
+                if (vorige.BuurZuid == null)
                 {
                     mogelijkloop = true;
                 }
-                else if (vorige.buurZuid.schaakstuk is Toren || vorige.buurZuid.schaakstuk is Dame)
+                else if (vorige.BuurZuid.schaakstuk is Toren || vorige.BuurZuid.schaakstuk is Dame)
                 {
-                    if (vorige.buurZuid.schaakstuk.kleur != kleur)
+                    if (vorige.BuurZuid.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurZuid.schaakstuk;
-                        Stukvoorkomen.Add(zetSchaak);
-                        richting = "zuid";
+                        _staatSchaak = true;
+                        zetSchaak = vorige.BuurZuid.schaakstuk;
+                        _stukVoorKomen.Add(zetSchaak);
+                        _richting = "zuid";
                     }
                     mogelijkloop = true;
                 }
-                else if (vorige.buurZuid.schaakstuk != null)
+                else if (vorige.BuurZuid.schaakstuk != null)
                 {
                     mogelijkloop = true;
                 }
-                vorige = vorige.buurZuid;
+                vorige = vorige.BuurZuid;
             }
             mogelijkloop = false;
             vorige = ditvakje;
@@ -1212,26 +1212,26 @@ namespace Schaakproject
             //kijk of er oost van de koning een toren of dame staat
             while (mogelijkloop == false)
             {
-                if (vorige.buurOost == null)
+                if (vorige.BuurOost == null)
                 {
                     mogelijkloop = true;
                 }
-                else if (vorige.buurOost.schaakstuk is Toren || vorige.buurOost.schaakstuk is Dame)
+                else if (vorige.BuurOost.schaakstuk is Toren || vorige.BuurOost.schaakstuk is Dame)
                 {
-                    if (vorige.buurOost.schaakstuk.kleur != kleur)
+                    if (vorige.BuurOost.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurOost.schaakstuk;
-                        Stukvoorkomen.Add(zetSchaak);
-                        richting = "oost";
+                        _staatSchaak = true;
+                        zetSchaak = vorige.BuurOost.schaakstuk;
+                        _stukVoorKomen.Add(zetSchaak);
+                        _richting = "oost";
                     }
                     mogelijkloop = true;
                 }
-                else if (vorige.buurOost.schaakstuk != null)
+                else if (vorige.BuurOost.schaakstuk != null)
                 {
                     mogelijkloop = true;
                 }
-                vorige = vorige.buurOost;
+                vorige = vorige.BuurOost;
             }
             mogelijkloop = false;
             vorige = ditvakje;
@@ -1239,26 +1239,26 @@ namespace Schaakproject
             //kijk of er west van de koning een toren of dame staat
             while (mogelijkloop == false)
             {
-                if (vorige.buurWest == null)
+                if (vorige.BuurWest == null)
                 {
                     mogelijkloop = true;
                 }
-                else if (vorige.buurWest.schaakstuk is Toren || vorige.buurWest.schaakstuk is Dame)
+                else if (vorige.BuurWest.schaakstuk is Toren || vorige.BuurWest.schaakstuk is Dame)
                 {
-                    if (vorige.buurWest.schaakstuk.kleur != kleur)
+                    if (vorige.BuurWest.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurWest.schaakstuk;
-                        Stukvoorkomen.Add(zetSchaak);
-                        richting = "west";
+                        _staatSchaak = true;
+                        zetSchaak = vorige.BuurWest.schaakstuk;
+                        _stukVoorKomen.Add(zetSchaak);
+                        _richting = "west";
                     }
                     mogelijkloop = true;
                 }
-                else if (vorige.buurWest.schaakstuk != null)
+                else if (vorige.BuurWest.schaakstuk != null)
                 {
                     mogelijkloop = true;
                 }
-                vorige = vorige.buurWest;
+                vorige = vorige.BuurWest;
             }
 
             mogelijkloop = false;
@@ -1267,26 +1267,26 @@ namespace Schaakproject
             //kijk of er noordoost van de koning een loper of dame staat
             while (mogelijkloop == false)
             {
-                if (vorige.buurNoordoost == null)
+                if (vorige.BuurNoordoost == null)
                 {
                     mogelijkloop = true;
                 }
-                else if (vorige.buurNoordoost.schaakstuk is Loper || vorige.buurNoordoost.schaakstuk is Dame)
+                else if (vorige.BuurNoordoost.schaakstuk is Loper || vorige.BuurNoordoost.schaakstuk is Dame)
                 {
-                    if (vorige.buurNoordoost.schaakstuk.kleur != kleur)
+                    if (vorige.BuurNoordoost.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurNoordoost.schaakstuk;
-                        Stukvoorkomen.Add(zetSchaak);
-                        richting = "noordoost";
+                        _staatSchaak = true;
+                        zetSchaak = vorige.BuurNoordoost.schaakstuk;
+                        _stukVoorKomen.Add(zetSchaak);
+                        _richting = "noordoost";
                     }
                     mogelijkloop = true;
                 }
-                else if (vorige.buurNoordoost.schaakstuk != null)
+                else if (vorige.BuurNoordoost.schaakstuk != null)
                 {
                     mogelijkloop = true;
                 }
-                vorige = vorige.buurNoordoost;
+                vorige = vorige.BuurNoordoost;
             }
             mogelijkloop = false;
             vorige = ditvakje;
@@ -1294,26 +1294,26 @@ namespace Schaakproject
             //kijk of er zuidoost van de koning een loper of dame staat
             while (mogelijkloop == false)
             {
-                if (vorige.buurZuidoost == null)
+                if (vorige.BuurZuidOost == null)
                 {
                     mogelijkloop = true;
                 }
-                else if (vorige.buurZuidoost.schaakstuk is Loper || vorige.buurZuidoost.schaakstuk is Dame)
+                else if (vorige.BuurZuidOost.schaakstuk is Loper || vorige.BuurZuidOost.schaakstuk is Dame)
                 {
-                    if (vorige.buurZuidoost.schaakstuk.kleur != kleur)
+                    if (vorige.BuurZuidOost.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurZuidoost.schaakstuk;
-                        Stukvoorkomen.Add(zetSchaak);
-                        richting = "zuidoost";
+                        _staatSchaak = true;
+                        zetSchaak = vorige.BuurZuidOost.schaakstuk;
+                        _stukVoorKomen.Add(zetSchaak);
+                        _richting = "zuidoost";
                     }
                     mogelijkloop = true;
                 }
-                else if (vorige.buurZuidoost.schaakstuk != null)
+                else if (vorige.BuurZuidOost.schaakstuk != null)
                 {
                     mogelijkloop = true;
                 }
-                vorige = vorige.buurZuidoost;
+                vorige = vorige.BuurZuidOost;
             }
             mogelijkloop = false;
             vorige = ditvakje;
@@ -1321,26 +1321,26 @@ namespace Schaakproject
             //kijk of er zuidwest van de koning een loper of dame staat
             while (mogelijkloop == false)
             {
-                if (vorige.buurZuidwest == null)
+                if (vorige.BuurZuidWest == null)
                 {
                     mogelijkloop = true;
                 }
-                else if (vorige.buurZuidwest.schaakstuk is Loper || vorige.buurZuidwest.schaakstuk is Dame)
+                else if (vorige.BuurZuidWest.schaakstuk is Loper || vorige.BuurZuidWest.schaakstuk is Dame)
                 {
-                    if (vorige.buurZuidwest.schaakstuk.kleur != kleur)
+                    if (vorige.BuurZuidWest.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurZuidwest.schaakstuk;
-                        Stukvoorkomen.Add(zetSchaak);
-                        richting = "zuidwest";
+                        _staatSchaak = true;
+                        zetSchaak = vorige.BuurZuidWest.schaakstuk;
+                        _stukVoorKomen.Add(zetSchaak);
+                        _richting = "zuidwest";
                     }
                     mogelijkloop = true;
                 }
-                else if (vorige.buurZuidwest.schaakstuk != null)
+                else if (vorige.BuurZuidWest.schaakstuk != null)
                 {
                     mogelijkloop = true;
                 }
-                vorige = vorige.buurZuidwest;
+                vorige = vorige.BuurZuidWest;
             }
             mogelijkloop = false;
             vorige = ditvakje;
@@ -1348,249 +1348,249 @@ namespace Schaakproject
             //kijk of er noordwest van de koning een loper of dame staat
             while (mogelijkloop == false)
             {
-                if (vorige.buurNoordwest == null)
+                if (vorige.BuurNoordWest == null)
                 {
                     mogelijkloop = true;
                 }
-                else if (vorige.buurNoordwest.schaakstuk is Loper || vorige.buurNoordwest.schaakstuk is Dame)
+                else if (vorige.BuurNoordWest.schaakstuk is Loper || vorige.BuurNoordWest.schaakstuk is Dame)
                 {
-                    if (vorige.buurNoordwest.schaakstuk.kleur != kleur)
+                    if (vorige.BuurNoordWest.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurNoordwest.schaakstuk;
-                        Stukvoorkomen.Add(zetSchaak);
-                        richting = "noordwest";
+                        _staatSchaak = true;
+                        zetSchaak = vorige.BuurNoordWest.schaakstuk;
+                        _stukVoorKomen.Add(zetSchaak);
+                        _richting = "noordwest";
                     }
                     mogelijkloop = true;
                 }
-                else if (vorige.buurNoordwest.schaakstuk != null)
+                else if (vorige.BuurNoordWest.schaakstuk != null)
                 {
                     mogelijkloop = true;
                 }
-                vorige = vorige.buurNoordwest;
+                vorige = vorige.BuurNoordWest;
             }
             vorige = ditvakje;
 
             //kijk of er noord-noordwest een paard staat
-            if (vorige.buurNoord != null)
+            if (vorige.BuurNoord != null)
             {
-                if (vorige.buurNoord.buurNoordwest != null)
+                if (vorige.BuurNoord.BuurNoordWest != null)
                 {
-                    if (vorige.buurNoord.buurNoordwest.schaakstuk is Paard && vorige.buurNoord.buurNoordwest.schaakstuk.kleur != kleur)
+                    if (vorige.BuurNoord.BuurNoordWest.schaakstuk is Paard && vorige.BuurNoord.BuurNoordWest.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurNoord.buurNoordwest.schaakstuk;
-                        Stukvoorkomen.Add(zetSchaak);
+                        _staatSchaak = true;
+                        zetSchaak = vorige.BuurNoord.BuurNoordWest.schaakstuk;
+                        _stukVoorKomen.Add(zetSchaak);
                     }
                 }
             }
             //kijk of er noord-noordoost een paard staat
-            if (vorige.buurNoord != null)
+            if (vorige.BuurNoord != null)
             {
-                if (vorige.buurNoord.buurNoordoost != null)
+                if (vorige.BuurNoord.BuurNoordoost != null)
                 {
-                    if (vorige.buurNoord.buurNoordoost.schaakstuk is Paard && vorige.buurNoord.buurNoordoost.schaakstuk.kleur != kleur)
+                    if (vorige.BuurNoord.BuurNoordoost.schaakstuk is Paard && vorige.BuurNoord.BuurNoordoost.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurNoord.buurNoordoost.schaakstuk;
-                        Stukvoorkomen.Add(zetSchaak);
+                        _staatSchaak = true;
+                        zetSchaak = vorige.BuurNoord.BuurNoordoost.schaakstuk;
+                        _stukVoorKomen.Add(zetSchaak);
                     }
                 }
             }
             //kijk of er oost-noordoost een paard staat
-            if (vorige.buurOost != null)
+            if (vorige.BuurOost != null)
             {
-                if (vorige.buurOost.buurNoordoost != null)
+                if (vorige.BuurOost.BuurNoordoost != null)
                 {
-                    if (vorige.buurOost.buurNoordoost.schaakstuk is Paard && vorige.buurOost.buurNoordoost.schaakstuk.kleur != kleur)
+                    if (vorige.BuurOost.BuurNoordoost.schaakstuk is Paard && vorige.BuurOost.BuurNoordoost.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurOost.buurNoordoost.schaakstuk;
-                        Stukvoorkomen.Add(zetSchaak);
+                        _staatSchaak = true;
+                        zetSchaak = vorige.BuurOost.BuurNoordoost.schaakstuk;
+                        _stukVoorKomen.Add(zetSchaak);
                     }
                 }
             }
             //kijk of er oost-zuidoost een paard staat
-            if (vorige.buurOost != null)
+            if (vorige.BuurOost != null)
             {
-                if (vorige.buurOost.buurZuidoost != null)
+                if (vorige.BuurOost.BuurZuidOost != null)
                 {
-                    if (vorige.buurOost.buurZuidoost.schaakstuk is Paard && vorige.buurOost.buurZuidoost.schaakstuk.kleur != kleur)
+                    if (vorige.BuurOost.BuurZuidOost.schaakstuk is Paard && vorige.BuurOost.BuurZuidOost.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurOost.buurZuidoost.schaakstuk;
-                        Stukvoorkomen.Add(zetSchaak);
+                        _staatSchaak = true;
+                        zetSchaak = vorige.BuurOost.BuurZuidOost.schaakstuk;
+                        _stukVoorKomen.Add(zetSchaak);
                     }
                 }
             }
             //kijk of er zuid-zuidoost een paard staat
-            if (vorige.buurZuid != null)
+            if (vorige.BuurZuid != null)
             {
-                if (vorige.buurZuid.buurZuidoost != null)
+                if (vorige.BuurZuid.BuurZuidOost != null)
                 {
-                    if (vorige.buurZuid.buurZuidoost.schaakstuk is Paard && vorige.buurZuid.buurZuidoost.schaakstuk.kleur != kleur)
+                    if (vorige.BuurZuid.BuurZuidOost.schaakstuk is Paard && vorige.BuurZuid.BuurZuidOost.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurZuid.buurZuidoost.schaakstuk;
-                        Stukvoorkomen.Add(zetSchaak);
+                        _staatSchaak = true;
+                        zetSchaak = vorige.BuurZuid.BuurZuidOost.schaakstuk;
+                        _stukVoorKomen.Add(zetSchaak);
                     }
                 }
             }
             //kijk of er zuid-zuidwest een paard staat
-            if (vorige.buurZuid != null)
+            if (vorige.BuurZuid != null)
             {
-                if (vorige.buurZuid.buurZuidwest != null)
+                if (vorige.BuurZuid.BuurZuidWest != null)
                 {
-                    if (vorige.buurZuid.buurZuidwest.schaakstuk is Paard && vorige.buurZuid.buurZuidwest.schaakstuk.kleur != kleur)
+                    if (vorige.BuurZuid.BuurZuidWest.schaakstuk is Paard && vorige.BuurZuid.BuurZuidWest.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurZuid.buurZuidwest.schaakstuk;
-                        Stukvoorkomen.Add(zetSchaak);
+                        _staatSchaak = true;
+                        zetSchaak = vorige.BuurZuid.BuurZuidWest.schaakstuk;
+                        _stukVoorKomen.Add(zetSchaak);
                     }
                 }
             }
             //kijk of er west-noordwest een paard staat
-            if (vorige.buurWest != null)
+            if (vorige.BuurWest != null)
             {
-                if (vorige.buurWest.buurNoordwest != null)
+                if (vorige.BuurWest.BuurNoordWest != null)
                 {
-                    if (vorige.buurWest.buurNoordwest.schaakstuk is Paard && vorige.buurWest.buurNoordwest.schaakstuk.kleur != kleur)
+                    if (vorige.BuurWest.BuurNoordWest.schaakstuk is Paard && vorige.BuurWest.BuurNoordWest.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurWest.buurNoordwest.schaakstuk;
-                        Stukvoorkomen.Add(zetSchaak);
+                        _staatSchaak = true;
+                        zetSchaak = vorige.BuurWest.BuurNoordWest.schaakstuk;
+                        _stukVoorKomen.Add(zetSchaak);
                     }
                 }
             }
             //kijk of er west-zuidwest een paard staat
-            if (vorige.buurWest != null)
+            if (vorige.BuurWest != null)
             {
-                if (vorige.buurWest.buurZuidwest != null)
+                if (vorige.BuurWest.BuurZuidWest != null)
                 {
-                    if (vorige.buurWest.buurZuidwest.schaakstuk is Paard && vorige.buurWest.buurZuidwest.schaakstuk.kleur != kleur)
+                    if (vorige.BuurWest.BuurZuidWest.schaakstuk is Paard && vorige.BuurWest.BuurZuidWest.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        zetSchaak = vorige.buurWest.buurZuidwest.schaakstuk;
-                        Stukvoorkomen.Add(zetSchaak);
+                        _staatSchaak = true;
+                        zetSchaak = vorige.BuurWest.BuurZuidWest.schaakstuk;
+                        _stukVoorKomen.Add(zetSchaak);
                     }
                 }
             }
-            if (pionvoormat == false)
+            if (_pionVoorMat == false)
             {
                 //kijk of er noord een koning staat
-                if (vorige.buurNoord != null)
+                if (vorige.BuurNoord != null)
                 {
-                    if (vorige.buurNoord.schaakstuk is Koning && vorige.buurNoord.schaakstuk.kleur != kleur)
+                    if (vorige.BuurNoord.schaakstuk is Koning && vorige.BuurNoord.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        Stukvoorkomen.Add(vorige.buurNoord.schaakstuk);
+                        _staatSchaak = true;
+                        _stukVoorKomen.Add(vorige.BuurNoord.schaakstuk);
                     }
                 }
                 //kijk of er oost een koning staat
-                if (vorige.buurOost != null)
+                if (vorige.BuurOost != null)
                 {
-                    if (vorige.buurOost.schaakstuk is Koning && vorige.buurOost.schaakstuk.kleur != kleur)
+                    if (vorige.BuurOost.schaakstuk is Koning && vorige.BuurOost.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        Stukvoorkomen.Add(vorige.buurOost.schaakstuk);
+                        _staatSchaak = true;
+                        _stukVoorKomen.Add(vorige.BuurOost.schaakstuk);
                     }
                 }
                 //kijk of er zuid een koning staat
-                if (vorige.buurZuid != null)
+                if (vorige.BuurZuid != null)
                 {
-                    if (vorige.buurZuid.schaakstuk is Koning && vorige.buurZuid.schaakstuk.kleur != kleur)
+                    if (vorige.BuurZuid.schaakstuk is Koning && vorige.BuurZuid.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        Stukvoorkomen.Add(vorige.buurZuid.schaakstuk);
+                        _staatSchaak = true;
+                        _stukVoorKomen.Add(vorige.BuurZuid.schaakstuk);
                     }
                 }
                 //kijk of er west een koning staat
-                if (vorige.buurWest != null)
+                if (vorige.BuurWest != null)
                 {
-                    if (vorige.buurWest.schaakstuk is Koning && vorige.buurWest.schaakstuk.kleur != kleur)
+                    if (vorige.BuurWest.schaakstuk is Koning && vorige.BuurWest.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        Stukvoorkomen.Add(vorige.buurWest.schaakstuk);
+                        _staatSchaak = true;
+                        _stukVoorKomen.Add(vorige.BuurWest.schaakstuk);
                     }
                 }
                 //kijk of er noordoost een koning staat
-                if (vorige.buurNoordoost != null)
+                if (vorige.BuurNoordoost != null)
                 {
-                    if (vorige.buurNoordoost.schaakstuk is Koning && vorige.buurNoordoost.schaakstuk.kleur != kleur)
+                    if (vorige.BuurNoordoost.schaakstuk is Koning && vorige.BuurNoordoost.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        Stukvoorkomen.Add(vorige.buurNoordoost.schaakstuk);
+                        _staatSchaak = true;
+                        _stukVoorKomen.Add(vorige.BuurNoordoost.schaakstuk);
                     }
                 }
                 //kijk of er noordwest een koning staat
-                if (vorige.buurNoordwest != null)
+                if (vorige.BuurNoordWest != null)
                 {
-                    if (vorige.buurNoordwest.schaakstuk is Koning && vorige.buurNoordwest.schaakstuk.kleur != kleur)
+                    if (vorige.BuurNoordWest.schaakstuk is Koning && vorige.BuurNoordWest.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        Stukvoorkomen.Add(vorige.buurNoordwest.schaakstuk);
+                        _staatSchaak = true;
+                        _stukVoorKomen.Add(vorige.BuurNoordWest.schaakstuk);
                     }
                 }
                 //kijk of er zuidoost een koning staat
-                if (vorige.buurZuidoost != null)
+                if (vorige.BuurZuidOost != null)
                 {
-                    if (vorige.buurZuidoost.schaakstuk is Koning && vorige.buurZuidoost.schaakstuk.kleur != kleur)
+                    if (vorige.BuurZuidOost.schaakstuk is Koning && vorige.BuurZuidOost.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        Stukvoorkomen.Add(vorige.buurZuidoost.schaakstuk);
+                        _staatSchaak = true;
+                        _stukVoorKomen.Add(vorige.BuurZuidOost.schaakstuk);
                     }
                 }
                 //kijk of er zuidwest een koning staat
-                if (vorige.buurZuidwest != null)
+                if (vorige.BuurZuidWest != null)
                 {
-                    if (vorige.buurZuidwest.schaakstuk is Koning && vorige.buurZuidwest.schaakstuk.kleur != kleur)
+                    if (vorige.BuurZuidWest.schaakstuk is Koning && vorige.BuurZuidWest.schaakstuk.Kleur != kleur)
                     {
-                        staatschaak = true;
-                        Stukvoorkomen.Add(vorige.buurZuidwest.schaakstuk);
+                        _staatSchaak = true;
+                        _stukVoorKomen.Add(vorige.BuurZuidWest.schaakstuk);
                     }
                 }
 
                 //alleen een witte koning hoeft uit te kijken voor pionnen die noord staan
                 if (kleur == "wit")
                 {
-                    if (vorige.buurNoordoost != null)
+                    if (vorige.BuurNoordoost != null)
                     {
-                        if (vorige.buurNoordoost.schaakstuk is Pion && vorige.buurNoordoost.schaakstuk.kleur == "zwart")
+                        if (vorige.BuurNoordoost.schaakstuk is Pion && vorige.BuurNoordoost.schaakstuk.Kleur == "zwart")
                         {
-                            staatschaak = true;
-                            zetSchaak = vorige.buurNoordoost.schaakstuk;
-                            Stukvoorkomen.Add(zetSchaak);
+                            _staatSchaak = true;
+                            zetSchaak = vorige.BuurNoordoost.schaakstuk;
+                            _stukVoorKomen.Add(zetSchaak);
                         }
                     }
-                    if (vorige.buurNoordwest != null)
+                    if (vorige.BuurNoordWest != null)
                     {
-                        if (vorige.buurNoordwest.schaakstuk is Pion && vorige.buurNoordwest.schaakstuk.kleur == "zwart")
+                        if (vorige.BuurNoordWest.schaakstuk is Pion && vorige.BuurNoordWest.schaakstuk.Kleur == "zwart")
                         {
-                            staatschaak = true;
-                            zetSchaak = vorige.buurNoordwest.schaakstuk;
-                            Stukvoorkomen.Add(zetSchaak);
+                            _staatSchaak = true;
+                            zetSchaak = vorige.BuurNoordWest.schaakstuk;
+                            _stukVoorKomen.Add(zetSchaak);
                         }
                     }
                 }
                 //alleen een zwarte koning hoeft uit te kijken voor pionnen die zuid staan
                 if (kleur == "zwart")
                 {
-                    if (vorige.buurZuidoost != null)
+                    if (vorige.BuurZuidOost != null)
                     {
-                        if (vorige.buurZuidoost.schaakstuk is Pion && vorige.buurZuidoost.schaakstuk.kleur == "wit")
+                        if (vorige.BuurZuidOost.schaakstuk is Pion && vorige.BuurZuidOost.schaakstuk.Kleur == "wit")
                         {
-                            staatschaak = true;
-                            zetSchaak = vorige.buurZuidoost.schaakstuk;
-                            Stukvoorkomen.Add(zetSchaak);
+                            _staatSchaak = true;
+                            zetSchaak = vorige.BuurZuidOost.schaakstuk;
+                            _stukVoorKomen.Add(zetSchaak);
                         }
                     }
-                    if (vorige.buurZuidwest != null)
+                    if (vorige.BuurZuidWest != null)
                     {
-                        if (vorige.buurZuidwest.schaakstuk is Pion && vorige.buurZuidwest.schaakstuk.kleur == "wit")
+                        if (vorige.BuurZuidWest.schaakstuk is Pion && vorige.BuurZuidWest.schaakstuk.Kleur == "wit")
                         {
-                            staatschaak = true;
-                            zetSchaak = vorige.buurZuidwest.schaakstuk;
-                            Stukvoorkomen.Add(zetSchaak);
+                            _staatSchaak = true;
+                            zetSchaak = vorige.BuurZuidWest.schaakstuk;
+                            _stukVoorKomen.Add(zetSchaak);
                         }
                     }
                 }
@@ -1600,22 +1600,22 @@ namespace Schaakproject
                 //alleen een witte koning hoeft uit te kijken voor pionnen die noord staan
                 if (kleur == "wit")
                 {
-                    if (vorige.buurNoord != null)
+                    if (vorige.BuurNoord != null)
                     {
-                        if (vorige.buurNoord.schaakstuk is Pion && vorige.buurNoord.schaakstuk.kleur == "zwart")
+                        if (vorige.BuurNoord.schaakstuk is Pion && vorige.BuurNoord.schaakstuk.Kleur == "zwart")
                         {
-                            staatschaak = true;
-                            Stukvoorkomen.Add(vorige.buurNoord.schaakstuk);
+                            _staatSchaak = true;
+                            _stukVoorKomen.Add(vorige.BuurNoord.schaakstuk);
                         }
 
-                        if (vorige.buurNoord.buurNoord != null)
+                        if (vorige.BuurNoord.BuurNoord != null)
                         {
-                            if (vorige.buurNoord.buurNoord.schaakstuk is Pion && vorige.buurNoord.buurNoord.schaakstuk.kleur == "zwart")
+                            if (vorige.BuurNoord.BuurNoord.schaakstuk is Pion && vorige.BuurNoord.BuurNoord.schaakstuk.Kleur == "zwart")
                             {
-                                if ((vorige.buurNoord.buurNoord.schaakstuk as Pion).eersteZet == true)
+                                if ((vorige.BuurNoord.BuurNoord.schaakstuk as Pion).eersteZet == true)
                                 {
-                                    staatschaak = true;
-                                    Stukvoorkomen.Add(vorige.buurNoord.buurNoord.schaakstuk);
+                                    _staatSchaak = true;
+                                    _stukVoorKomen.Add(vorige.BuurNoord.BuurNoord.schaakstuk);
                                 }
                             }
                         }
@@ -1625,22 +1625,22 @@ namespace Schaakproject
                 //alleen een zwarte koning hoeft uit te kijken voor pionnen die zuid staan
                 if (kleur == "zwart")
                 {
-                    if (vorige.buurZuid != null)
+                    if (vorige.BuurZuid != null)
                     {
-                        if (vorige.buurZuid.schaakstuk is Pion && vorige.buurZuid.schaakstuk.kleur == "wit")
+                        if (vorige.BuurZuid.schaakstuk is Pion && vorige.BuurZuid.schaakstuk.Kleur == "wit")
                         {
-                            staatschaak = true;
-                            Stukvoorkomen.Add(vorige.buurZuid.schaakstuk);
+                            _staatSchaak = true;
+                            _stukVoorKomen.Add(vorige.BuurZuid.schaakstuk);
                         }
 
-                        if (vorige.buurZuid.buurZuid != null)
+                        if (vorige.BuurZuid.BuurZuid != null)
                         {
-                            if (vorige.buurZuid.buurZuid.schaakstuk is Pion && vorige.buurZuid.buurZuid.schaakstuk.kleur == "wit")
+                            if (vorige.BuurZuid.BuurZuid.schaakstuk is Pion && vorige.BuurZuid.BuurZuid.schaakstuk.Kleur == "wit")
                             {
-                                if ((vorige.buurZuid.buurZuid.schaakstuk as Pion).eersteZet == true)
+                                if ((vorige.BuurZuid.BuurZuid.schaakstuk as Pion).eersteZet == true)
                                 {
-                                    staatschaak = true;
-                                    Stukvoorkomen.Add(vorige.buurZuid.buurZuid.schaakstuk);
+                                    _staatSchaak = true;
+                                    _stukVoorKomen.Add(vorige.BuurZuid.BuurZuid.schaakstuk);
                                 }
                             }
                         }
@@ -1648,8 +1648,8 @@ namespace Schaakproject
                 }
 
             }
-            schaakGezet = zetSchaak;
-            return staatschaak;
+            _schaakGezet = zetSchaak;
+            return _staatSchaak;
         }
 
         public bool CheckMat(Koning koning)
@@ -1658,26 +1658,26 @@ namespace Schaakproject
             bool mat = true;
             bool mogelijk = false;
 
-            string kleur = koning.kleur;
-            Vakje koningVakje = koning.vakje;
+            string kleur = koning.Kleur;
+            Vakje koningVakje = koning.Vakje;
 
-            koning.vakje.schaakstuk = null;
+            koning.Vakje.schaakstuk = null;
 
             //bekijk of de koning schaak staat als hij naar noord zou bewegen
-            if (koningVakje.buurNoord != null)
+            if (koningVakje.BuurNoord != null)
             {
-                if (koningVakje.buurNoord.schaakstuk == null)
+                if (koningVakje.BuurNoord.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
-                else if (koningVakje.buurNoord.schaakstuk.kleur != kleur)
+                else if (koningVakje.BuurNoord.schaakstuk.Kleur != kleur)
                 {
                     mogelijk = true;
                 }
 
                 if (mogelijk == true)
                 {
-                    bool checkschaak = CheckSchaak(koningVakje.buurNoord, kleur);
+                    bool checkschaak = CheckSchaak(koningVakje.BuurNoord, kleur);
                     if (checkschaak == false)
                     {
                         mat = false;
@@ -1686,19 +1686,19 @@ namespace Schaakproject
                 mogelijk = false;
             }
             //bekijk of de koning schaak staat als hij naar oost zou bewegen
-            if (koningVakje.buurOost != null)
+            if (koningVakje.BuurOost != null)
             {
-                if (koningVakje.buurOost.schaakstuk == null)
+                if (koningVakje.BuurOost.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
-                else if (koningVakje.buurOost.schaakstuk.kleur != kleur)
+                else if (koningVakje.BuurOost.schaakstuk.Kleur != kleur)
                 {
                     mogelijk = true;
                 }
                 if (mogelijk == true)
                 {
-                    bool checkschaak = CheckSchaak(koningVakje.buurOost, kleur);
+                    bool checkschaak = CheckSchaak(koningVakje.BuurOost, kleur);
                     if (checkschaak == false)
                     {
                         mat = false;
@@ -1707,19 +1707,19 @@ namespace Schaakproject
                 mogelijk = false;
             }
             //bekijk of de koning schaak staat als hij naar zuid zou bewegen
-            if (koningVakje.buurZuid != null)
+            if (koningVakje.BuurZuid != null)
             {
-                if (koningVakje.buurZuid.schaakstuk == null)
+                if (koningVakje.BuurZuid.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
-                else if (koningVakje.buurZuid.schaakstuk.kleur != kleur)
+                else if (koningVakje.BuurZuid.schaakstuk.Kleur != kleur)
                 {
                     mogelijk = true;
                 }
                 if (mogelijk == true)
                 {
-                    bool checkschaak = CheckSchaak(koningVakje.buurZuid, kleur);
+                    bool checkschaak = CheckSchaak(koningVakje.BuurZuid, kleur);
                     if (checkschaak == false)
                     {
                         mat = false;
@@ -1728,19 +1728,19 @@ namespace Schaakproject
                 mogelijk = false;
             }
             //bekijk of de koning schaak staat als hij naar west zou bewegen
-            if (koningVakje.buurWest != null)
+            if (koningVakje.BuurWest != null)
             {
-                if (koningVakje.buurWest.schaakstuk == null)
+                if (koningVakje.BuurWest.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
-                else if (koningVakje.buurWest.schaakstuk.kleur != kleur)
+                else if (koningVakje.BuurWest.schaakstuk.Kleur != kleur)
                 {
                     mogelijk = true;
                 }
                 if (mogelijk == true)
                 {
-                    bool checkschaak = CheckSchaak(koningVakje.buurWest, kleur);
+                    bool checkschaak = CheckSchaak(koningVakje.BuurWest, kleur);
                     if (checkschaak == false)
                     {
                         mat = false;
@@ -1749,19 +1749,19 @@ namespace Schaakproject
                 mogelijk = false;
             }
             //bekijk of de koning schaak staat als hij naar noordoost zou bewegen
-            if (koningVakje.buurNoordoost != null)
+            if (koningVakje.BuurNoordoost != null)
             {
-                if (koningVakje.buurNoordoost.schaakstuk == null)
+                if (koningVakje.BuurNoordoost.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
-                else if (koningVakje.buurNoordoost.schaakstuk.kleur != kleur)
+                else if (koningVakje.BuurNoordoost.schaakstuk.Kleur != kleur)
                 {
                     mogelijk = true;
                 }
                 if (mogelijk == true)
                 {
-                    bool checkschaak = CheckSchaak(koningVakje.buurNoordoost, kleur);
+                    bool checkschaak = CheckSchaak(koningVakje.BuurNoordoost, kleur);
                     if (checkschaak == false)
                     {
                         mat = false;
@@ -1770,19 +1770,19 @@ namespace Schaakproject
                 mogelijk = false;
             }
             //bekijk of de koning schaak staat als hij naar noordwest zou bewegen
-            if (koningVakje.buurNoordwest != null)
+            if (koningVakje.BuurNoordWest != null)
             {
-                if (koningVakje.buurNoordwest.schaakstuk == null)
+                if (koningVakje.BuurNoordWest.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
-                else if (koningVakje.buurNoordwest.schaakstuk.kleur != kleur)
+                else if (koningVakje.BuurNoordWest.schaakstuk.Kleur != kleur)
                 {
                     mogelijk = true;
                 }
                 if (mogelijk == true)
                 {
-                    bool checkschaak = CheckSchaak(koningVakje.buurNoordwest, kleur);
+                    bool checkschaak = CheckSchaak(koningVakje.BuurNoordWest, kleur);
                     if (checkschaak == false)
                     {
                         mat = false;
@@ -1791,19 +1791,19 @@ namespace Schaakproject
                 mogelijk = false;
             }
             //bekijk of de koning schaak staat als hij naar zuidoost zou bewegen
-            if (koningVakje.buurZuidoost != null)
+            if (koningVakje.BuurZuidOost != null)
             {
-                if (koningVakje.buurZuidoost.schaakstuk == null)
+                if (koningVakje.BuurZuidOost.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
-                else if (koningVakje.buurZuidoost.schaakstuk.kleur != kleur)
+                else if (koningVakje.BuurZuidOost.schaakstuk.Kleur != kleur)
                 {
                     mogelijk = true;
                 }
                 if (mogelijk == true)
                 {
-                    bool checkschaak = CheckSchaak(koningVakje.buurZuidoost, kleur);
+                    bool checkschaak = CheckSchaak(koningVakje.BuurZuidOost, kleur);
                     if (checkschaak == false)
                     {
                         mat = false;
@@ -1812,19 +1812,19 @@ namespace Schaakproject
                 mogelijk = false;
             }
             //bekijk of de koning schaak staat als hij naar zuidwest zou bewegen
-            if (koningVakje.buurZuidwest != null)
+            if (koningVakje.BuurZuidWest != null)
             {
-                if (koningVakje.buurZuidwest.schaakstuk == null)
+                if (koningVakje.BuurZuidWest.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
-                else if (koningVakje.buurZuidwest.schaakstuk.kleur != kleur)
+                else if (koningVakje.BuurZuidWest.schaakstuk.Kleur != kleur)
                 {
                     mogelijk = true;
                 }
                 if (mogelijk == true)
                 {
-                    bool checkschaak = CheckSchaak(koningVakje.buurZuidwest, kleur);
+                    bool checkschaak = CheckSchaak(koningVakje.BuurZuidWest, kleur);
                     if (checkschaak == false)
                     {
                         mat = false;
@@ -1832,13 +1832,13 @@ namespace Schaakproject
                 }
                 mogelijk = false;
             }
-            koning.vakje.schaakstuk = koning;
+            koning.Vakje.schaakstuk = koning;
 
-            schaakGezet = null;
-            richting = null;
+            _schaakGezet = null;
+            _richting = null;
 
-            CheckSchaak(koning.vakje, koning.kleur);
-            if (schaakGezet != null)
+            CheckSchaak(koning.Vakje, koning.Kleur);
+            if (_schaakGezet != null)
             {
                 if (kleur == "wit")
                 {
@@ -1848,28 +1848,28 @@ namespace Schaakproject
                 {
                     kleur = "wit";
                 }
-                Schaakstuk tempgezet = schaakGezet;
-                bool checkschaak = CheckSchaak(schaakGezet.vakje, kleur);
+                Schaakstuk tempgezet = _schaakGezet;
+                bool checkschaak = CheckSchaak(_schaakGezet.Vakje, kleur);
                 if (checkschaak == true)
                 {
                     bool magnietslaan = false;
-                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                    List<Schaakstuk> Lijst = _stukVoorKomen;
                     for (int i = 0; i < Lijst.Count; i++)
                     {
                         Schaakstuk temp = Lijst[i];
-                        Vakje tempvakje = temp.vakje;
-                        Vakje tempgezetvakje = tempgezet.vakje;
+                        Vakje tempvakje = temp.Vakje;
+                        Vakje tempgezetvakje = tempgezet.Vakje;
                         tempvakje.schaakstuk = null;
-                        temp.vakje = tempgezetvakje;
+                        temp.Vakje = tempgezetvakje;
                         tempgezetvakje.schaakstuk = temp;
 
-                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                        bool check = CheckSchaak(koning.Vakje, koning.Kleur);
                         if (check == false)
                         {
                             magnietslaan = true;
                         }
                         tempvakje.schaakstuk = temp;
-                        temp.vakje = tempvakje;
+                        temp.Vakje = tempvakje;
                         tempgezetvakje.schaakstuk = tempgezet;
 
                     }
@@ -1879,41 +1879,41 @@ namespace Schaakproject
                     }
                 }
 
-                Stukvoorkomen.Clear();
+                _stukVoorKomen.Clear();
                 Vakje vorige = koningVakje;
-                pionvoormat = true;
+                _pionVoorMat = true;
 
-                if (mat == true && richting != null)
+                if (mat == true && _richting != null)
                 {
-                    if (richting == "noord")
+                    if (_richting == "noord")
                     {
                         while (mogelijk == false)
                         {
-                            if (vorige.buurNoord.schaakstuk == null)
+                            if (vorige.BuurNoord.schaakstuk == null)
                             {
-                                checkschaak = CheckSchaak(vorige.buurNoord, kleur);
+                                checkschaak = CheckSchaak(vorige.BuurNoord, kleur);
                                 if (checkschaak == true)
                                 {
                                     bool magnietslaan = false;
-                                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                                    List<Schaakstuk> Lijst = _stukVoorKomen;
                                     for (int i = 0; i < Lijst.Count; i++)
                                     {
                                         Schaakstuk temp = Lijst[i];
-                                        Vakje tempvakje = temp.vakje;
+                                        Vakje tempvakje = temp.Vakje;
 
                                         tempvakje.schaakstuk = null;
-                                        temp.vakje = vorige.buurNoord;
-                                        vorige.buurNoord.schaakstuk = temp;
-                                        pionvoormat = false;
-                                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                                        temp.Vakje = vorige.BuurNoord;
+                                        vorige.BuurNoord.schaakstuk = temp;
+                                        _pionVoorMat = false;
+                                        bool check = CheckSchaak(koning.Vakje, koning.Kleur);
                                         if (check == false)
                                         {
                                             magnietslaan = true;
                                         }
 
                                         tempvakje.schaakstuk = temp;
-                                        vorige.buurNoord.schaakstuk = null;
-                                        temp.vakje = tempvakje;
+                                        vorige.BuurNoord.schaakstuk = null;
+                                        temp.Vakje = tempvakje;
 
                                     }
                                     if (magnietslaan == true)
@@ -1927,40 +1927,40 @@ namespace Schaakproject
                             {
                                 mogelijk = true;
                             }
-                            vorige = vorige.buurNoord;
+                            vorige = vorige.BuurNoord;
                         }
                     }
 
-                    else if (richting == "oost")
+                    else if (_richting == "oost")
                     {
                         while (mogelijk == false)
                         {
-                            if (vorige.buurOost.schaakstuk == null)
+                            if (vorige.BuurOost.schaakstuk == null)
                             {
-                                checkschaak = CheckSchaak(vorige.buurOost, kleur);
+                                checkschaak = CheckSchaak(vorige.BuurOost, kleur);
                                 if (checkschaak == true)
                                 {
                                     bool magnietslaan = false;
-                                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                                    List<Schaakstuk> Lijst = _stukVoorKomen;
                                     for (int i = 0; i < Lijst.Count; i++)
                                     {
                                         Schaakstuk temp = Lijst[i];
-                                        Vakje tempvakje = temp.vakje;
+                                        Vakje tempvakje = temp.Vakje;
 
                                         tempvakje.schaakstuk = null;
-                                        temp.vakje = vorige.buurOost;
-                                        vorige.buurOost.schaakstuk = temp;
-                                        pionvoormat = false;
+                                        temp.Vakje = vorige.BuurOost;
+                                        vorige.BuurOost.schaakstuk = temp;
+                                        _pionVoorMat = false;
 
-                                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                                        bool check = CheckSchaak(koning.Vakje, koning.Kleur);
                                         if (check == false)
                                         {
                                             magnietslaan = true;
                                         }
 
                                         tempvakje.schaakstuk = temp;
-                                        vorige.buurOost.schaakstuk = null;
-                                        temp.vakje = tempvakje;
+                                        vorige.BuurOost.schaakstuk = null;
+                                        temp.Vakje = tempvakje;
 
                                     }
                                     if (magnietslaan == true)
@@ -1974,40 +1974,40 @@ namespace Schaakproject
                             {
                                 mogelijk = true;
                             }
-                            vorige = vorige.buurOost;
+                            vorige = vorige.BuurOost;
                         }
                     }
 
-                    else if (richting == "zuid")
+                    else if (_richting == "zuid")
                     {
                         while (mogelijk == false)
                         {
-                            if (vorige.buurZuid.schaakstuk == null)
+                            if (vorige.BuurZuid.schaakstuk == null)
                             {
-                                checkschaak = CheckSchaak(vorige.buurZuid, kleur);
+                                checkschaak = CheckSchaak(vorige.BuurZuid, kleur);
                                 if (checkschaak == true)
                                 {
                                     bool magnietslaan = false;
-                                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                                    List<Schaakstuk> Lijst = _stukVoorKomen;
                                     for (int i = 0; i < Lijst.Count; i++)
                                     {
                                         Schaakstuk temp = Lijst[i];
-                                        Vakje tempvakje = temp.vakje;
+                                        Vakje tempvakje = temp.Vakje;
 
                                         tempvakje.schaakstuk = null;
-                                        temp.vakje = vorige.buurZuid;
-                                        vorige.buurZuid.schaakstuk = temp;
-                                        pionvoormat = false;
+                                        temp.Vakje = vorige.BuurZuid;
+                                        vorige.BuurZuid.schaakstuk = temp;
+                                        _pionVoorMat = false;
 
-                                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                                        bool check = CheckSchaak(koning.Vakje, koning.Kleur);
                                         if (check == false)
                                         {
                                             magnietslaan = true;
                                         }
 
                                         tempvakje.schaakstuk = temp;
-                                        vorige.buurZuid.schaakstuk = null;
-                                        temp.vakje = tempvakje;
+                                        vorige.BuurZuid.schaakstuk = null;
+                                        temp.Vakje = tempvakje;
 
                                     }
                                     if (magnietslaan == true)
@@ -2021,40 +2021,40 @@ namespace Schaakproject
                             {
                                 mogelijk = true;
                             }
-                            vorige = vorige.buurZuid;
+                            vorige = vorige.BuurZuid;
                         }
                     }
 
-                    else if (richting == "west")
+                    else if (_richting == "west")
                     {
                         while (mogelijk == false)
                         {
-                            if (vorige.buurWest.schaakstuk == null)
+                            if (vorige.BuurWest.schaakstuk == null)
                             {
-                                checkschaak = CheckSchaak(vorige.buurWest, kleur);
+                                checkschaak = CheckSchaak(vorige.BuurWest, kleur);
                                 if (checkschaak == true)
                                 {
                                     bool magnietslaan = false;
-                                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                                    List<Schaakstuk> Lijst = _stukVoorKomen;
                                     for (int i = 0; i < Lijst.Count; i++)
                                     {
                                         Schaakstuk temp = Lijst[i];
-                                        Vakje tempvakje = temp.vakje;
+                                        Vakje tempvakje = temp.Vakje;
 
                                         tempvakje.schaakstuk = null;
-                                        temp.vakje = vorige.buurWest;
-                                        vorige.buurWest.schaakstuk = temp;
-                                        pionvoormat = false;
+                                        temp.Vakje = vorige.BuurWest;
+                                        vorige.BuurWest.schaakstuk = temp;
+                                        _pionVoorMat = false;
 
-                                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                                        bool check = CheckSchaak(koning.Vakje, koning.Kleur);
                                         if (check == false)
                                         {
                                             magnietslaan = true;
                                         }
 
                                         tempvakje.schaakstuk = temp;
-                                        vorige.buurWest.schaakstuk = null;
-                                        temp.vakje = tempvakje;
+                                        vorige.BuurWest.schaakstuk = null;
+                                        temp.Vakje = tempvakje;
 
                                     }
                                     if (magnietslaan == true)
@@ -2068,40 +2068,40 @@ namespace Schaakproject
                             {
                                 mogelijk = true;
                             }
-                            vorige = vorige.buurWest;
+                            vorige = vorige.BuurWest;
                         }
                     }
 
-                    else if (richting == "noordoost")
+                    else if (_richting == "noordoost")
                     {
                         while (mogelijk == false)
                         {
-                            if (vorige.buurNoordoost.schaakstuk == null)
+                            if (vorige.BuurNoordoost.schaakstuk == null)
                             {
-                                checkschaak = CheckSchaak(vorige.buurNoordoost, kleur);
+                                checkschaak = CheckSchaak(vorige.BuurNoordoost, kleur);
                                 if (checkschaak == true)
                                 {
                                     bool magnietslaan = false;
-                                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                                    List<Schaakstuk> Lijst = _stukVoorKomen;
                                     for (int i = 0; i < Lijst.Count; i++)
                                     {
                                         Schaakstuk temp = Lijst[i];
-                                        Vakje tempvakje = temp.vakje;
+                                        Vakje tempvakje = temp.Vakje;
 
                                         tempvakje.schaakstuk = null;
-                                        temp.vakje = vorige.buurNoordoost;
-                                        vorige.buurNoordoost.schaakstuk = temp;
-                                        pionvoormat = false;
+                                        temp.Vakje = vorige.BuurNoordoost;
+                                        vorige.BuurNoordoost.schaakstuk = temp;
+                                        _pionVoorMat = false;
 
-                                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                                        bool check = CheckSchaak(koning.Vakje, koning.Kleur);
                                         if (check == false)
                                         {
                                             magnietslaan = true;
                                         }
 
                                         tempvakje.schaakstuk = temp;
-                                        vorige.buurNoordoost.schaakstuk = null;
-                                        temp.vakje = tempvakje;
+                                        vorige.BuurNoordoost.schaakstuk = null;
+                                        temp.Vakje = tempvakje;
 
                                     }
                                     if (magnietslaan == true)
@@ -2115,40 +2115,40 @@ namespace Schaakproject
                             {
                                 mogelijk = true;
                             }
-                            vorige = vorige.buurNoordoost;
+                            vorige = vorige.BuurNoordoost;
                         }
                     }
 
-                    else if (richting == "noordwest")
+                    else if (_richting == "noordwest")
                     {
                         while (mogelijk == false)
                         {
-                            if (vorige.buurNoordwest.schaakstuk == null)
+                            if (vorige.BuurNoordWest.schaakstuk == null)
                             {
-                                checkschaak = CheckSchaak(vorige.buurNoordwest, kleur);
+                                checkschaak = CheckSchaak(vorige.BuurNoordWest, kleur);
                                 if (checkschaak == true)
                                 {
                                     bool magnietslaan = false;
-                                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                                    List<Schaakstuk> Lijst = _stukVoorKomen;
                                     for (int i = 0; i < Lijst.Count; i++)
                                     {
                                         Schaakstuk temp = Lijst[i];
-                                        Vakje tempvakje = temp.vakje;
+                                        Vakje tempvakje = temp.Vakje;
 
                                         tempvakje.schaakstuk = null;
-                                        temp.vakje = vorige.buurNoordwest;
-                                        vorige.buurNoordwest.schaakstuk = temp;
-                                        pionvoormat = false;
+                                        temp.Vakje = vorige.BuurNoordWest;
+                                        vorige.BuurNoordWest.schaakstuk = temp;
+                                        _pionVoorMat = false;
 
-                                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                                        bool check = CheckSchaak(koning.Vakje, koning.Kleur);
                                         if (check == false)
                                         {
                                             magnietslaan = true;
                                         }
 
                                         tempvakje.schaakstuk = temp;
-                                        vorige.buurNoordwest.schaakstuk = null;
-                                        temp.vakje = tempvakje;
+                                        vorige.BuurNoordWest.schaakstuk = null;
+                                        temp.Vakje = tempvakje;
 
                                     }
                                     if (magnietslaan == true)
@@ -2162,40 +2162,40 @@ namespace Schaakproject
                             {
                                 mogelijk = true;
                             }
-                            vorige = vorige.buurNoordwest;
+                            vorige = vorige.BuurNoordWest;
                         }
                     }
 
-                    else if (richting == "zuidoost")
+                    else if (_richting == "zuidoost")
                     {
                         while (mogelijk == false)
                         {
-                            if (vorige.buurZuidoost.schaakstuk == null)
+                            if (vorige.BuurZuidOost.schaakstuk == null)
                             {
-                                checkschaak = CheckSchaak(vorige.buurZuidoost, kleur);
+                                checkschaak = CheckSchaak(vorige.BuurZuidOost, kleur);
                                 if (checkschaak == true)
                                 {
                                     bool magnietslaan = false;
-                                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                                    List<Schaakstuk> Lijst = _stukVoorKomen;
                                     for (int i = 0; i < Lijst.Count; i++)
                                     {
                                         Schaakstuk temp = Lijst[i];
-                                        Vakje tempvakje = temp.vakje;
+                                        Vakje tempvakje = temp.Vakje;
 
                                         tempvakje.schaakstuk = null;
-                                        temp.vakje = vorige.buurZuidoost;
-                                        vorige.buurZuidoost.schaakstuk = temp;
-                                        pionvoormat = false;
+                                        temp.Vakje = vorige.BuurZuidOost;
+                                        vorige.BuurZuidOost.schaakstuk = temp;
+                                        _pionVoorMat = false;
 
-                                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                                        bool check = CheckSchaak(koning.Vakje, koning.Kleur);
                                         if (check == false)
                                         {
                                             magnietslaan = true;
                                         }
 
                                         tempvakje.schaakstuk = temp;
-                                        vorige.buurZuidoost.schaakstuk = null;
-                                        temp.vakje = tempvakje;
+                                        vorige.BuurZuidOost.schaakstuk = null;
+                                        temp.Vakje = tempvakje;
 
                                     }
                                     if (magnietslaan == true)
@@ -2209,40 +2209,40 @@ namespace Schaakproject
                             {
                                 mogelijk = true;
                             }
-                            vorige = vorige.buurZuidoost;
+                            vorige = vorige.BuurZuidOost;
                         }
                     }
 
-                    else if (richting == "zuidwest")
+                    else if (_richting == "zuidwest")
                     {
                         while (mogelijk == false)
                         {
-                            if (vorige.buurZuidwest.schaakstuk == null)
+                            if (vorige.BuurZuidWest.schaakstuk == null)
                             {
-                                checkschaak = CheckSchaak(vorige.buurZuidwest, kleur);
+                                checkschaak = CheckSchaak(vorige.BuurZuidWest, kleur);
                                 if (checkschaak == true)
                                 {
                                     bool magnietslaan = false;
-                                    List<Schaakstuk> Lijst = Stukvoorkomen;
+                                    List<Schaakstuk> Lijst = _stukVoorKomen;
                                     for (int i = 0; i < Lijst.Count; i++)
                                     {
                                         Schaakstuk temp = Lijst[i];
-                                        Vakje tempvakje = temp.vakje;
+                                        Vakje tempvakje = temp.Vakje;
 
                                         tempvakje.schaakstuk = null;
-                                        temp.vakje = vorige.buurZuidwest;
-                                        vorige.buurZuidwest.schaakstuk = temp;
-                                        pionvoormat = false;
+                                        temp.Vakje = vorige.BuurZuidWest;
+                                        vorige.BuurZuidWest.schaakstuk = temp;
+                                        _pionVoorMat = false;
 
-                                        bool check = CheckSchaak(koning.vakje, koning.kleur);
+                                        bool check = CheckSchaak(koning.Vakje, koning.Kleur);
                                         if (check == false)
                                         {
                                             magnietslaan = true;
                                         }
 
                                         tempvakje.schaakstuk = temp;
-                                        vorige.buurZuidwest.schaakstuk = null;
-                                        temp.vakje = tempvakje;
+                                        vorige.BuurZuidWest.schaakstuk = null;
+                                        temp.Vakje = tempvakje;
 
                                     }
                                     if (magnietslaan == true)
@@ -2256,12 +2256,12 @@ namespace Schaakproject
                             {
                                 mogelijk = true;
                             }
-                            vorige = vorige.buurZuidwest;
+                            vorige = vorige.BuurZuidWest;
                         }
                     }
                 }
             }
-            pionvoormat = false;
+            _pionVoorMat = false;
             return mat;
         }
 

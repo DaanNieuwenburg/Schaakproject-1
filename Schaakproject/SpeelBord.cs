@@ -65,9 +65,9 @@ namespace Schaakproject
                     this.Controls.Add(pictureBox);
 
                     // Koppel SpecialPB aan Vakje
-                    pictureBox.vakje = schaakbord.schaakarray[x, y];
-                    pictureBox.BackColor = pictureBox.vakje.kleur;
-                    schaakbord.schaakarray[x, y].pbox = pictureBox;
+                    pictureBox.vakje = schaakbord.SchaakArray[x, y];
+                    pictureBox.BackColor = pictureBox.vakje.Kleur;
+                    schaakbord.SchaakArray[x, y].Pbox = pictureBox;
 
                     pictureBox.update(); // Laat schaakstukken zien
 
@@ -110,7 +110,7 @@ namespace Schaakproject
             {
                 if (_spel.SpelerAanZet == _speler1)
                 {
-                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler1.Kleur)
+                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.Kleur == _speler1.Kleur)
                     {
                         Console.WriteLine("Speler selecteert stuk");
                         _speler1.SelecteerStuk(pictureBox.vakje, _spel);
@@ -128,7 +128,7 @@ namespace Schaakproject
                 {
                     //_spel.controleerOpSchaak();
                     //als de picturebox waarop gedrukt is wel een schaakstuk heeft en dit schaakstuk de kleur heeft van de speler
-                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler1.Kleur)
+                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.Kleur == _speler1.Kleur)
                     {
                         _speler1.SelecteerStuk(pictureBox.vakje, _spel);
                     }
@@ -140,7 +140,7 @@ namespace Schaakproject
                 else
                 {
                     //_spel.controleerOpSchaak();
-                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler2.Kleur)
+                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.Kleur == _speler2.Kleur)
                     {
                         _speler2.SelecteerStuk(pictureBox.vakje, _spel);
                     }
@@ -156,7 +156,7 @@ namespace Schaakproject
                 if (_spel.SpelerAanZet == _speler1)
                 {
                     //als de picturebox waarop gedrukt is wel een schaakstuk heeft en dit schaakstuk de kleur heeft van de speler
-                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler1.Kleur)
+                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.Kleur == _speler1.Kleur)
                     {
                         _speler1.SelecteerStuk(pictureBox.vakje, _spel);
                     }
@@ -167,7 +167,7 @@ namespace Schaakproject
                 }
                 else
                 {
-                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.kleur == _speler2.Kleur)
+                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.Kleur == _speler2.Kleur)
                     {
                         _speler2.SelecteerStuk(pictureBox.vakje, _spel);
                     }

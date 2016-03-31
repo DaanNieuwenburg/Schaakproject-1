@@ -52,7 +52,7 @@ namespace Schaakproject
                         DeselecteerStuk();
                     }
                     this.Selected = clicked; //het stuk waarop geklikt is wordt geselecteerd
-                    clicked.pbox.BackColor = _selectColor; //de kleur van het vakje veranderd
+                    clicked.Pbox.BackColor = _selectColor; //de kleur van het vakje veranderd
 
                 }
             }
@@ -70,7 +70,7 @@ namespace Schaakproject
 
         private void DeselecteerStuk()
         {
-            Selected.pbox.update();     //de picturebox updatet zodat de kleur weer normaal wordt.
+            Selected.Pbox.update();     //de picturebox updatet zodat de kleur weer normaal wordt.
             Selected = null;            //er staat niets meer geselecteerd
         }
 
@@ -90,8 +90,8 @@ namespace Schaakproject
                 Vakje clicked = nieuwVakje;   //voor de singleplayer
                 Selected.schaakstuk.Verplaats(nieuwVakje, Selected, spel); //probeer het schaakstuk te verplaatsen
 
-                Selected.pbox.update();    //update het eerste vakje
-                nieuwVakje.pbox.update();         //update het tweede vakje
+                Selected.Pbox.update();    //update het eerste vakje
+                nieuwVakje.Pbox.update();         //update het tweede vakje
                 Selected = null;            //niets is meer geselecteerd
 
                 if (ValideZet == true)          //als het schaakstuk daar heen mag

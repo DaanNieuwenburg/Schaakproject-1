@@ -127,7 +127,7 @@ namespace Schaakproject
             for (int i = 0; i < slaanmogelijkheden.Count; i++)
             {
                 Schaakstuk schaakstuk = slaanmogelijkheden[i].schaakstuk;
-                if (schaakstuk is Koning && schaakstuk.kleur == "wit" && alGeslagen == false)
+                if (schaakstuk is Koning && schaakstuk.Kleur == "wit" && alGeslagen == false)
                 {
                     _geselecteerdStuk = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
@@ -135,7 +135,7 @@ namespace Schaakproject
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
 
-                else if (schaakstuk is Pion && schaakstuk.kleur == "wit" && alGeslagen == false)
+                else if (schaakstuk is Pion && schaakstuk.Kleur == "wit" && alGeslagen == false)
                 {
                     _geselecteerdStuk = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
@@ -143,7 +143,7 @@ namespace Schaakproject
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
 
-                else if (schaakstuk is Toren && schaakstuk.kleur == "wit" && alGeslagen == false)
+                else if (schaakstuk is Toren && schaakstuk.Kleur == "wit" && alGeslagen == false)
                 {
                     _geselecteerdStuk = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
@@ -151,7 +151,7 @@ namespace Schaakproject
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
 
-                else if (schaakstuk is Paard && schaakstuk.kleur == "wit" && alGeslagen == false)
+                else if (schaakstuk is Paard && schaakstuk.Kleur == "wit" && alGeslagen == false)
                 {
                     _geselecteerdStuk = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
@@ -159,14 +159,14 @@ namespace Schaakproject
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
 
-                else if (schaakstuk is Loper && schaakstuk.kleur == "wit" && alGeslagen == false)
+                else if (schaakstuk is Loper && schaakstuk.Kleur == "wit" && alGeslagen == false)
                 {
                     _geselecteerdStuk = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
                     alGeslagen = true;
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (schaakstuk is Dame && schaakstuk.kleur == "wit" && alGeslagen == false)
+                else if (schaakstuk is Dame && schaakstuk.Kleur == "wit" && alGeslagen == false)
                 {
                     _geselecteerdStuk = slaanmogelijkhedenVanaf[i];  // geselecteerd stuk
                     _geselecteerdVakje = slaanmogelijkheden[i];       // geselecteerd vak
@@ -186,22 +186,22 @@ namespace Schaakproject
             if (randomgetal == 1)
             {
                 int randomstuk = rnd.Next(1, 4);
-                if (randomstuk == 1 && _koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null && _koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.schaakstuk != null)
+                if (randomstuk == 1 && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.schaakstuk != null)
                 {
-                    _geselecteerdStuk = _koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid;                // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid;                // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid;      // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (randomstuk == 2 && _koning.vakje.buurWest.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null && _koning.vakje.buurWest.buurWest.buurWest.buurZuid.schaakstuk != null)
+                else if (randomstuk == 2 && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid.schaakstuk != null)
                 {
-                    _geselecteerdStuk = _koning.vakje.buurWest.buurWest.buurWest.buurZuid;                // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid;                // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid;      // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (randomstuk == 3 && _koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null && _koning.vakje.buurWest.buurWest.buurWest.schaakstuk != null)
+                else if (randomstuk == 3 && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurWest.BuurWest.BuurWest.schaakstuk != null)
                 {
-                    _geselecteerdStuk = _koning.vakje.buurWest.buurWest.buurWest;                                   // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurWest.buurWest.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje.BuurWest.BuurWest.BuurWest;                                   // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid;      // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
                 else
@@ -214,16 +214,16 @@ namespace Schaakproject
             else if (randomgetal == 2)
             {
                 int randomstuk = rnd.Next(1, 3);
-                if (randomstuk == 1 && _koning.vakje.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null && _koning.vakje.buurWest.buurWest.buurWest.schaakstuk != null)
+                if (randomstuk == 1 && _koning.Vakje.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurWest.BuurWest.BuurWest.schaakstuk != null)
                 {
-                    _geselecteerdStuk = _koning.vakje.buurWest.buurWest.buurWest;                // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje.BuurWest.BuurWest.BuurWest;                // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurWest.BuurWest.BuurZuid.BuurZuid;      // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (randomstuk == 2 && _koning.vakje.buurWest.buurWest.buurZuid.buurZuid.schaakstuk == null && _koning.vakje.buurWest.buurWest.buurZuid.schaakstuk != null)
+                else if (randomstuk == 2 && _koning.Vakje.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurWest.BuurWest.BuurZuid.schaakstuk != null)
                 {
-                    _geselecteerdStuk = _koning.vakje.buurWest.buurWest.buurZuid;                // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurWest.buurWest.buurZuid.buurZuid;      // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje.BuurWest.BuurWest.BuurZuid;                // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurWest.BuurWest.BuurZuid.BuurZuid;      // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
                 else
@@ -236,16 +236,16 @@ namespace Schaakproject
             else if (randomgetal == 3)
             {
                 int randomstuk = rnd.Next(1, 3);
-                if (randomstuk == 1 && _koning.vakje.buurWest.buurZuid.buurZuid.schaakstuk == null && _koning.vakje.buurWest.buurZuid.schaakstuk != null)
+                if (randomstuk == 1 && _koning.Vakje.BuurWest.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurWest.BuurZuid.schaakstuk != null)
                 {
-                    _geselecteerdStuk = _koning.vakje.buurWest.buurZuid;          // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurWest.buurZuid.buurZuid; // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje.BuurWest.BuurZuid;          // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurWest.BuurZuid.BuurZuid; // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (randomstuk == 2 && _koning.vakje.buurZuid.buurZuid.schaakstuk == null && _koning.vakje.buurZuid.schaakstuk != null)
+                else if (randomstuk == 2 && _koning.Vakje.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurZuid.schaakstuk != null)
                 {
-                    _geselecteerdStuk = _koning.vakje.buurZuid;           // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurZuid.buurZuid;  // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje.BuurZuid;           // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurZuid.BuurZuid;  // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
                 else
@@ -258,16 +258,16 @@ namespace Schaakproject
             else if (randomgetal == 4)
             {
                 int randomstuk = rnd.Next(1, 3);
-                if (randomstuk == 1 && _koning.vakje.buurOost.buurZuid.buurZuid.schaakstuk == null && _koning.vakje.buurOost.buurZuid.schaakstuk != null)
+                if (randomstuk == 1 && _koning.Vakje.BuurOost.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurOost.BuurZuid.schaakstuk != null)
                 {
-                    _geselecteerdStuk = _koning.vakje.buurOost.buurZuid;                   // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurOost.buurZuid.buurZuid;          // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje.BuurOost.BuurZuid;                   // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurOost.BuurZuid.BuurZuid;          // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (randomstuk == 2 && _koning.vakje.buurOost.buurZuid.buurZuid.schaakstuk == null && _koning.vakje.buurOost.buurOost.schaakstuk != null)
+                else if (randomstuk == 2 && _koning.Vakje.BuurOost.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurOost.BuurOost.schaakstuk != null)
                 {
-                    _geselecteerdStuk = _koning.vakje.buurOost.buurOost;                // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurOost.buurZuid.buurZuid;      // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje.BuurOost.BuurOost;                // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurOost.BuurZuid.BuurZuid;      // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
                 else
@@ -280,28 +280,28 @@ namespace Schaakproject
             else if (randomgetal == 5)
             {
                 int randomstuk = rnd.Next(1, 4);
-                if (randomstuk == 1 && _koning.vakje.buurOost.buurZuid.buurZuid.schaakstuk == null && _koning.vakje.buurOost.buurZuid.schaakstuk != null)
+                if (randomstuk == 1 && _koning.Vakje.BuurOost.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurOost.BuurZuid.schaakstuk != null)
                 {
-                    _geselecteerdStuk = _koning.vakje.buurOost.buurZuid;                // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurOost.buurZuid.buurZuid;      // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje.BuurOost.BuurZuid;                // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurOost.BuurZuid.BuurZuid;      // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (randomstuk == 2 && _koning.vakje.buurOost.buurOost.buurOost.buurZuid.buurZuid.schaakstuk == null && _koning.vakje.buurOost.buurOost.buurOost.buurZuid.schaakstuk != null)
+                else if (randomstuk == 2 && _koning.Vakje.BuurOost.BuurOost.BuurOost.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurOost.BuurOost.BuurOost.BuurZuid.schaakstuk != null)
                 {
-                    _geselecteerdStuk = _koning.vakje.buurOost.buurOost.buurOost.buurZuid;            // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurOost.buurOost.buurOost.buurZuid.buurZuid;   // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje.BuurOost.BuurOost.BuurOost.BuurZuid;            // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurOost.BuurOost.BuurOost.BuurZuid.BuurZuid;   // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (randomstuk == 3 && _koning.vakje.buurOost.buurOost.buurOost.buurZuid.buurZuid.schaakstuk == null && _koning.vakje.buurOost.buurOost.schaakstuk != null)
+                else if (randomstuk == 3 && _koning.Vakje.BuurOost.BuurOost.BuurOost.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurOost.BuurOost.schaakstuk != null)
                 {
-                    _geselecteerdStuk = _koning.vakje.buurOost.buurOost;                              // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurOost.buurOost.buurOost.buurZuid.buurZuid;   // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje.BuurOost.BuurOost;                              // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurOost.BuurOost.BuurOost.BuurZuid.BuurZuid;   // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (randomstuk == 4 && _koning.vakje.buurOost.buurOost.buurZuid.buurZuid.schaakstuk == null && _koning.vakje.buurOost.buurOost.buurZuid.schaakstuk != null)
+                else if (randomstuk == 4 && _koning.Vakje.BuurOost.BuurOost.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurOost.BuurOost.BuurZuid.schaakstuk != null)
                 {
-                    _geselecteerdStuk = _koning.vakje.buurOost.buurOost.buurZuid;             // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurOost.buurOost.buurZuid.buurZuid;    // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje.BuurOost.BuurOost.BuurZuid;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurOost.BuurOost.BuurZuid.BuurZuid;    // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
                 else
@@ -320,18 +320,18 @@ namespace Schaakproject
                 Schaakstuk schaakstuk = _computer.VerplaatsingsLijst[i].schaakstuk;
                 if (schaakstuk is Pion && alVerplaatst == false)
                 {
-                    if (_geselecteerdStuk.buurZuid != null && _geselecteerdStuk.buurZuid.schaakstuk == null)
+                    if (_geselecteerdStuk.BuurZuid != null && _geselecteerdStuk.BuurZuid.schaakstuk == null)
                     {
-                        if (_geselecteerdStuk.buurZuid.buurZuidoost != null && _geselecteerdStuk.buurZuid.buurZuidoost.schaakstuk == null)
+                        if (_geselecteerdStuk.BuurZuid.BuurZuidOost != null && _geselecteerdStuk.BuurZuid.BuurZuidOost.schaakstuk == null)
                         {
                             alVerplaatst = true;
-                            _geselecteerdVakje = _computer.VerplaatsingsLijst[i].buurZuid;       // geselecteerd vak
+                            _geselecteerdVakje = _computer.VerplaatsingsLijst[i].BuurZuid;       // geselecteerd vak
                             _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                         }
-                        else if (_geselecteerdStuk.buurZuid.buurZuidwest != null && _geselecteerdStuk.buurZuid.buurZuidwest.schaakstuk == null)
+                        else if (_geselecteerdStuk.BuurZuid.BuurZuidWest != null && _geselecteerdStuk.BuurZuid.BuurZuidWest.schaakstuk == null)
                         {
                             alVerplaatst = true;
-                            _geselecteerdVakje = _computer.VerplaatsingsLijst[i].buurZuid;       // geselecteerd vak
+                            _geselecteerdVakje = _computer.VerplaatsingsLijst[i].BuurZuid;       // geselecteerd vak
                             _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                         }
                     }
@@ -374,60 +374,60 @@ namespace Schaakproject
             if (reactie == false)
             {
                 Console.WriteLine("Reageer op schaak in algoritme");
-                if (_koning.vakje.buurNoord != null && _koning.vakje.buurNoord.schaakstuk == null)
+                if (_koning.Vakje.BuurNoord != null && _koning.Vakje.BuurNoord.schaakstuk == null)
                 {
                     Console.WriteLine("noord");
-                    _geselecteerdStuk = _koning.vakje;             // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurNoord;    // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurNoord;    // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (_koning.vakje.buurNoordoost != null && _koning.vakje.buurNoordoost.schaakstuk == null)
+                else if (_koning.Vakje.BuurNoordoost != null && _koning.Vakje.BuurNoordoost.schaakstuk == null)
                 {
                     Console.WriteLine("noordoost");
-                    _geselecteerdStuk = _koning.vakje;             // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurNoordoost;    // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurNoordoost;    // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (_koning.vakje.buurNoordwest != null && _koning.vakje.buurNoordwest.schaakstuk == null)
+                else if (_koning.Vakje.BuurNoordWest != null && _koning.Vakje.BuurNoordWest.schaakstuk == null)
                 {
                     Console.WriteLine("noordwest");
-                    _geselecteerdStuk = _koning.vakje;             // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurNoordwest;    // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurNoordWest;    // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (_koning.vakje.buurWest != null && _koning.vakje.buurWest.schaakstuk == null)
+                else if (_koning.Vakje.BuurWest != null && _koning.Vakje.BuurWest.schaakstuk == null)
                 {
                     Console.WriteLine("west");
-                    _geselecteerdStuk = _koning.vakje;             // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurWest;    // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurWest;    // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (_koning.vakje.buurOost != null && _koning.vakje.buurOost.schaakstuk == null)
+                else if (_koning.Vakje.BuurOost != null && _koning.Vakje.BuurOost.schaakstuk == null)
                 {
                     Console.WriteLine("oost");
-                    _geselecteerdStuk = _koning.vakje;             // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurOost;    // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurOost;    // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (_koning.vakje.buurZuid != null && _koning.vakje.buurZuid.schaakstuk == null)
+                else if (_koning.Vakje.BuurZuid != null && _koning.Vakje.BuurZuid.schaakstuk == null)
                 {
                     Console.WriteLine("zuid");
-                    _geselecteerdStuk = _koning.vakje;             // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurZuid;    // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurZuid;    // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (_koning.vakje.buurZuidoost != null && _koning.vakje.buurZuidoost.schaakstuk == null)
+                else if (_koning.Vakje.BuurZuidOost != null && _koning.Vakje.BuurZuidOost.schaakstuk == null)
                 {
                     Console.WriteLine("zuidoost");
-                    _geselecteerdStuk = _koning.vakje;             // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurZuidoost;    // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurZuidOost;    // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (_koning.vakje.buurZuidwest != null && _koning.vakje.buurZuidwest.schaakstuk == null)
+                else if (_koning.Vakje.BuurZuidWest != null && _koning.Vakje.BuurZuidWest.schaakstuk == null)
                 {
                     Console.WriteLine("zuidwest");
-                    _geselecteerdStuk = _koning.vakje;             // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurZuidwest;    // geselecteerd vak
+                    _geselecteerdStuk = _koning.Vakje;             // geselecteerd stuk
+                    _geselecteerdVakje = _koning.Vakje.BuurZuidWest;    // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
             }

@@ -139,12 +139,12 @@ namespace Schaakproject
                 {
                     //Console.WriteLine("Check schaak1");
                     SpelerAanZet = ComputerSpeler;
-                    schaak = schaakbord.CheckSchaak(ComputerSpeler.koning.vakje, ComputerSpeler.koning.kleur);
+                    schaak = schaakbord.CheckSchaak(ComputerSpeler.koning.Vakje, ComputerSpeler.koning.Kleur);
                 }
                 else
                 {
                     SpelerAanZet = Speler2;
-                    schaak = schaakbord.CheckSchaak(Speler2.koning.vakje, Speler2.koning.kleur);
+                    schaak = schaakbord.CheckSchaak(Speler2.koning.Vakje, Speler2.koning.Kleur);
                 }
                 if (schaak == true)
                 {
@@ -156,7 +156,7 @@ namespace Schaakproject
                         {
                             Console.WriteLine("HUIDIGE SPELER  = " + ComputerSpeler.Kleur);
                             Console.WriteLine("MAT IS TRUE");
-                            ComputerSpeler.koning.vakje.pbox.Image = Properties.Resources.ZwartMat1;
+                            ComputerSpeler.koning.Vakje.Pbox.Image = Properties.Resources.ZwartMat1;
                             SchaakMat _SchaakMat = new SchaakMat(Speler1.Naam, this);
                             _SchaakMat.ShowDialog();
                             speelbord.Hide();
@@ -175,7 +175,7 @@ namespace Schaakproject
                         mat = schaakbord.CheckMat(Speler2.koning);
                         if (mat == true)
                         {
-                            Speler2.koning.vakje.pbox.Image = Properties.Resources.ZwartMat1;
+                            Speler2.koning.Vakje.Pbox.Image = Properties.Resources.ZwartMat1;
                             SchaakMat _SchaakMat = new SchaakMat(Speler1.Naam, this);
                             _SchaakMat.ShowDialog();
                             speelbord.Hide();
@@ -209,7 +209,7 @@ namespace Schaakproject
             {
                 _witAanzet = false;
                 SpelerAanZet = Speler1;
-                schaak = schaakbord.CheckSchaak(Speler1.koning.vakje, Speler1.koning.kleur);
+                schaak = schaakbord.CheckSchaak(Speler1.koning.Vakje, Speler1.koning.Kleur);
                 if (schaak == true)
                 {
                     mat = schaakbord.CheckMat(Speler1.koning);
@@ -217,14 +217,14 @@ namespace Schaakproject
                     {
                         if(SpelMode == "Singleplayer")
                         {
-                            Speler1.koning.vakje.pbox.Image = Properties.Resources.WitMat1;
+                            Speler1.koning.Vakje.Pbox.Image = Properties.Resources.WitMat1;
                             SchaakMat _SchaakMat = new SchaakMat("De computer ", this);
                             _SchaakMat.ShowDialog();
                             speelbord.Hide();
                         }
                         else
                         {
-                            Speler1.koning.vakje.pbox.Image = Properties.Resources.WitMat1;
+                            Speler1.koning.Vakje.Pbox.Image = Properties.Resources.WitMat1;
                             SchaakMat _SchaakMat = new SchaakMat(Speler2.Naam, this);
                             _SchaakMat.ShowDialog();
                             speelbord.Hide();

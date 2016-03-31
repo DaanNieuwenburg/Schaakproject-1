@@ -551,7 +551,7 @@ buurzuidwest</body>
         <ownedAttributesInternal>
           <property
             Id="4c66e6aa-4cf6-4981-a230-8fcf5561619d"
-            name="schaakarray"
+            name="SchaakArray"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -581,7 +581,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="77c4ddca-5280-4154-893c-9b16c447ae85"
-            name="kleur"
+            name="Kleur"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -599,7 +599,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="408bb774-d505-4954-984c-cd97bc428b04"
-            name="aantal1"
+            name="_aantal1"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -618,7 +618,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="8fd71663-905c-4610-8da2-0059659ae240"
-            name="aantal2"
+            name="_aantal2"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -637,7 +637,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="47173eb6-e3c6-428f-859a-ac1c94a3b57d"
-            name="staatschaak"
+            name="_staatSchaak"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -656,7 +656,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="100e2193-30c7-49ef-acdd-54129eb92694"
-            name="kleurstuk"
+            name="_kleurStuk"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -675,7 +675,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="a3821c01-bd41-4e24-a45c-05a483fda3d1"
-            name="variant"
+            name="_variant"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -694,7 +694,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="6ec25cfa-6a2c-4988-8bb0-70b6653efd6c"
-            name="schaakgezet"
+            name="_schaakGezet"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -713,7 +713,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="4f1b22f3-5b51-4e26-b965-e0290647b5c1"
-            name="richting"
+            name="_richting"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -732,7 +732,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="e6d36206-bca0-403a-b705-914fc52e073b"
-            name="pionvoormat"
+            name="_pionVoorMat"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -987,7 +987,7 @@ buurzuidwest</body>
         <ownedAttributesInternal>
           <property
             Id="1743bfe8-11c1-4513-a13a-35075ac0020d"
-            name="kleur"
+            name="Kleur"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1062,7 +1062,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="0652ffec-c7a4-4ed3-ab26-10dfb9f5b1fe"
-            name="afbeelding"
+            name="Afbeelding"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1080,7 +1080,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="29b89274-0868-4c74-b4d9-e0ffa47682ce"
-            name="vakje"
+            name="Vakje"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1098,7 +1098,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="049d4693-e605-4346-898e-da71ba4ae9c2"
-            name="speler"
+            name="Speler"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1355,7 +1355,7 @@ buurzuidwest</body>
         <ownedAttributesInternal>
           <property
             Id="ef7b270e-5ec6-4c82-b6da-fe5d52609de4"
-            name="kleur"
+            name="Kleur"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1448,7 +1448,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="51b81a10-4416-4e96-86c5-c4a92d3f7fe1"
-            name="pbox"
+            name="Pbox"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1466,7 +1466,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="6142ea8d-6a60-4c98-aa10-77d90c8b0ba7"
-            name="Buurnoord"
+            name="BuurNoord"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1484,7 +1484,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="5148a9bd-b6e3-4961-9457-72c040676855"
-            name="Buurzuid"
+            name="BuurZuid"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1502,7 +1502,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="c1436902-48e3-4186-b6af-ee655ac42aa5"
-            name="Buuroost"
+            name="BuurOost"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1520,7 +1520,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="43e04127-7e13-4d4e-ad2a-81b1cddda5c4"
-            name="Buurwest"
+            name="BuurWest"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1538,7 +1538,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="16f075bd-596e-4b32-9f57-2f612163da63"
-            name="Buurnoordoost"
+            name="BuurNoordOost"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1556,7 +1556,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="58f498cd-e376-413f-95c8-213fa838e105"
-            name="Buurzuidoost"
+            name="BuurZuidOost"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1574,7 +1574,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="10212bd7-ccfe-4431-920f-5185a1edb048"
-            name="Buurnoordwest"
+            name="BuurNoordWest"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1592,7 +1592,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="00a4d10c-60dd-4a3a-95b0-aab3a30c7549"
-            name="Buurzuidwest"
+            name="BuurZuidWest"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -2435,7 +2435,7 @@ buurzuidwest</body>
         <ownedAttributesInternal>
           <property
             Id="2da2c202-ee94-4026-b477-d9859c366496"
-            name="_staatschaak"
+            name="_staatSchaak"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -2587,7 +2587,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="186d8e24-a49b-4903-a65c-1fb42cd5b3f0"
-            name="_vorigvakje"
+            name="_vorigVakje"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -2606,7 +2606,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="9dbe831f-99dc-48c8-9953-c8e4c7962610"
-            name="_vorigwest"
+            name="_vorigWest"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -2625,7 +2625,7 @@ buurzuidwest</body>
           </property>
           <property
             Id="a242e65f-9019-4232-9153-888f492cd47a"
-            name="_positiewest"
+            name="_positieWest"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -2677,6 +2677,120 @@ buurzuidwest</body>
               <undefinedTypeMoniker
                 Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
                 LastKnownName="bool"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="cd507f41-c4b1-4a69-8ca8-b681a00ef76d"
+            name="_vorigWest"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
+                LastKnownName="Vakje"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a03a3a6b-a441-4967-9e55-4a554daee16e"
+            name="_vorigOost"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
+                LastKnownName="Vakje"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="08bb7603-1059-4949-948b-4b1ff33bca10"
+            name="_randWest"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
+                LastKnownName="Vakje"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="18374af0-fe39-4969-ada1-6689ac2c7632"
+            name="_randOost"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
+                LastKnownName="Vakje"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="737630c6-0d24-456e-b361-283786717603"
+            name="_koningOud"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
+                LastKnownName="Vakje"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3b18d0b7-ed75-405e-8129-21275a701215"
+            name="_torenOud"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
+                LastKnownName="Vakje"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
