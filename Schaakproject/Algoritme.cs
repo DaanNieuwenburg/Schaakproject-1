@@ -53,7 +53,7 @@ namespace Schaakproject
                 {
                     verplaatsVerplaatstStuk();
                 }
-                else if(_koningVerplaats == true)
+                else if (_koningVerplaats == true)
                 {
                     verplaatsVerplaatstStuk();
                 }
@@ -311,7 +311,16 @@ namespace Schaakproject
                 }
                 else
                 {
-                    verplaatsVerplaatstStuk();
+                    // vangt een eventuele stack overflow af
+                    if (_recursieTeller > 100)
+                    {
+                        voorkomStackOverflow();
+                    }
+                    else
+                    {
+                        _recursieTeller++;
+                        verplaatsVerplaatstStuk();
+                    }
                 }
             }
         }
@@ -371,7 +380,35 @@ namespace Schaakproject
                 {
                     Console.WriteLine("Er zijn geen verplaatsingen meer en verplaats nieuw stuk");
                     alVerplaatst = true;
-                    verplaatsNieuwStuk();
+                    // vangt een eventuele stack overflow af
+                    if (_recursieTeller > 100)
+                    {
+                        voorkomStackOverflow();
+                    }
+                    else
+                    {
+                        _recursieTeller++;
+                        verplaatsNieuwStuk();
+                    }
+                }
+            }
+        }
+
+        private void voorkomStackOverflow()
+        {
+            Console.WriteLine("Voorkom Stack Overflow");
+            bool verplaatst = false;
+            int teller = 0;
+            // voorkom een stack overflow door een domme zet te doen
+            while (verplaatst == false)
+            {
+                teller++;
+                Vakje vakje = _computer.VerplaatsingsLijst[teller];
+                Schaakstuk schaakstuk = _computer.VerplaatsingsLijst[teller].schaakstuk;
+                if (schaakstuk is Pion && vakje.BuurZuid != null && vakje.BuurZuid.schaakstuk == null)
+                {
+                    _computer.voerZetUit(vakje, vakje.BuurZuid);
+                    verplaatst = true;
                 }
             }
         }
@@ -445,7 +482,7 @@ namespace Schaakproject
                 _koningVerplaats = true;
             }
 
-            
+
         }
     }
 }
