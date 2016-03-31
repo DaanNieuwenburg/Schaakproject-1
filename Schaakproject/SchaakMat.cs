@@ -26,7 +26,7 @@ namespace Schaakproject
             DialogResult = DialogResult.Yes;
             if (spel.SpelMode == "Singleplayer")
             {
-                spel.Herstart(spel.SpelMode, spel.Speler1.Naam, spel.computerSpeler.Naam);
+                spel.Herstart(spel.SpelMode, spel.Speler1.Naam, spel.ComputerSpeler.Naam);
             }
             else
             {
@@ -38,8 +38,8 @@ namespace Schaakproject
         {
             Hide();
             DialogResult = DialogResult.Yes;
-            spel.speelbord.Hide();
-            NaamInvoer menu = new NaamInvoer(spel.Bordercolor, spel.Selectcolor, spel.Colorvakje1, spel.Colorvakje2);
+            spel.SpeelBord.Hide();
+            NaamInvoer menu = new NaamInvoer(spel.BorderColor, spel.SelectColor, spel.ColorVakje1, spel.ColorVakje2);
             menu.ShowDialog();
         }
     }

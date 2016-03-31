@@ -20,27 +20,27 @@ namespace Schaakproject
         {
             if (speler != null)
             {
-                speler.aantalstukken[5]--;
+                speler.AantalStukken[5]--;
                 if (this is Pion )
                 {
-                    speler.aantalstukken[0]--;
+                    speler.AantalStukken[0]--;
                     geslagen = true;
                 }
                 else if (this is Toren )
                 {
-                    speler.aantalstukken[1]--;
+                    speler.AantalStukken[1]--;
                 }
                 else if (this is Paard )
                 {
-                    speler.aantalstukken[2]--;
+                    speler.AantalStukken[2]--;
                 }
                 else if (this is Loper )
                 {
-                    speler.aantalstukken[3]--;
+                    speler.AantalStukken[3]--;
                 }
                 else if (this is Dame )
                 {
-                    speler.aantalstukken[4]--;
+                    speler.AantalStukken[4]--;
                 }
             }
         }

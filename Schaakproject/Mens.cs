@@ -8,51 +8,51 @@ namespace Schaakproject
 {
     public class Mens : Speler
     {
-        public Vakje selected { get; set; }
-        public int resterendestukken { get; set; }
-        private Color _selectcolor { get; set; }
+        public Vakje Selected { get; set; }
+        public int ResterendeStukken { get; set; }
+        private Color _selectColor { get; set; }
         public Mens(string naam, string kleur, Spel _spel, Color select)
         {
-            _selectcolor = select;
+            _selectColor = select;
             Naam = naam;
             Kleur = kleur;
             spel = _spel;
-            resterendestukken = 16;
+            ResterendeStukken = 16;
         }
 
         public void SelecteerStuk(Vakje clicked, Spel spel)
         {
-            if (selected != null) //alleen als er al een stuk is geselecteerd
+            if (Selected != null) //alleen als er al een stuk is geselecteerd
             {
-                if (selected.schaakstuk is Toren && clicked.schaakstuk is Koning)
+                if (Selected.schaakstuk is Toren && clicked.schaakstuk is Koning)
                 {
                     //als het eerste stuk een toren is en het tweede een koning probeer dan te rokeren
-                    (clicked.schaakstuk as Koning).Rokeren(selected, clicked, this, spel);
+                    (clicked.schaakstuk as Koning).Rokeren(Selected, clicked, this, spel);
                     DeselecteerStuk();
                 }
 
-                else if (selected.schaakstuk is Koning && clicked.schaakstuk is Toren)
+                else if (Selected.schaakstuk is Koning && clicked.schaakstuk is Toren)
                 {
                     //als het eerste stuk een koning is en het tweede een toren probeer dan te rokeren
-                    (selected.schaakstuk as Koning).Rokeren(clicked, selected, this, spel);
+                    (Selected.schaakstuk as Koning).Rokeren(clicked, Selected, this, spel);
                     DeselecteerStuk();
                 }
             }
 
-            if (validezet == false) //als hij niet gerokeerd heeft
+            if (ValideZet == false) //als hij niet gerokeerd heeft
             {
-                if (clicked == selected) //als het stuk waarop geklikt is al geselecteerd was
+                if (clicked == Selected) //als het stuk waarop geklikt is al geselecteerd was
                 {
                     DeselecteerStuk();
                 }
                 else
                 {
-                    if (selected != null) //als er al een stuk geselecteerd staat
+                    if (Selected != null) //als er al een stuk geselecteerd staat
                     {
                         DeselecteerStuk();
                     }
-                    this.selected = clicked; //het stuk waarop geklikt is wordt geselecteerd
-                    clicked.pbox.BackColor = _selectcolor; //de kleur van het vakje veranderd
+                    this.Selected = clicked; //het stuk waarop geklikt is wordt geselecteerd
+                    clicked.pbox.BackColor = _selectColor; //de kleur van het vakje veranderd
 
                 }
             }
@@ -61,53 +61,53 @@ namespace Schaakproject
                 spel.VeranderSpeler(); //De speler veranderd;
 
                 // De pion voor en-passant wordt weer vergeten.               
-                enPassantPion = null;
+                EnPassantPion = null;
 
             }
 
-            validezet = false;
+            ValideZet = false;
         }
 
         private void DeselecteerStuk()
         {
-            selected.pbox.update();     //de picturebox updatet zodat de kleur weer normaal wordt.
-            selected = null;            //er staat niets meer geselecteerd
+            Selected.pbox.update();     //de picturebox updatet zodat de kleur weer normaal wordt.
+            Selected = null;            //er staat niets meer geselecteerd
         }
 
         public void SelecteerVakje(Vakje nieuwVakje, Spel spel)
         {
-            if (spel.spelerAanZet == spel.Speler1)
+            if (spel.SpelerAanZet == spel.Speler1)
             {
                 Console.WriteLine("HUIDIGE SPELER IS SPELER 1");
             }
-            else if (spel.spelerAanZet == spel.computerSpeler)
+            else if (spel.SpelerAanZet == spel.ComputerSpeler)
             {
                 Console.WriteLine("HUIDIGE SPELER IS COMP SPELER");
             }
 
-            if (selected != null) //alleen als er al iets is geselecteerd
+            if (Selected != null) //alleen als er al iets is geselecteerd
             {
                 Vakje clicked = nieuwVakje;   //voor de singleplayer
-                selected.schaakstuk.Verplaats(nieuwVakje, selected, spel); //probeer het schaakstuk te verplaatsen
+                Selected.schaakstuk.Verplaats(nieuwVakje, Selected, spel); //probeer het schaakstuk te verplaatsen
 
-                selected.pbox.update();    //update het eerste vakje
+                Selected.pbox.update();    //update het eerste vakje
                 nieuwVakje.pbox.update();         //update het tweede vakje
-                selected = null;            //niets is meer geselecteerd
+                Selected = null;            //niets is meer geselecteerd
 
-                if (validezet == true)          //als het schaakstuk daar heen mag
+                if (ValideZet == true)          //als het schaakstuk daar heen mag
                 {
-                    spel.selected = clicked;    //voor de singleplayer
+                    spel.Selected = clicked;    //voor de singleplayer
                     spel.VeranderSpeler();      //de andere speler is aan zet
                     if (spel.SpelMode == "Singleplayer")
                     {
-                        spel.computerSpeler.Zet(clicked, spel);  // laat de computer op de mens reageren
+                        spel.ComputerSpeler.Zet(clicked, spel);  // laat de computer op de mens reageren
                         spel.VeranderSpeler();
                     }
 
                     // De pion voor en-passant wordt weer vergeten.
-                    enPassantPion = null;
+                    EnPassantPion = null;
                 }
-                validezet = false;
+                ValideZet = false;
             }
         }
 

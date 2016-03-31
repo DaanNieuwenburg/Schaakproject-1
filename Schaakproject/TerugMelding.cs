@@ -25,7 +25,7 @@ namespace Schaakproject
         {
             Hide();
             _speelbord.Hide();
-            NaamInvoer naaminvoerdialog = new NaamInvoer(spel.Bordercolor, spel.Selectcolor, spel.Colorvakje1, spel.Colorvakje2);
+            NaamInvoer naaminvoerdialog = new NaamInvoer(spel.BorderColor, spel.SelectColor, spel.ColorVakje1, spel.ColorVakje2);
             naaminvoerdialog.ShowDialog();
             
         }

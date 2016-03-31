@@ -96,17 +96,17 @@ namespace Schaakproject
 
         public override void Verplaats(Vakje nieuwVakje, Vakje selected, Spel spel)
         {
-            if (spel.spelerAanZet == spel.Speler1)
+            if (spel.SpelerAanZet == spel.Speler1)
             {
                 speler = spel.Speler1;
             }
-            else if (spel.spelerAanZet == spel.Speler2)
+            else if (spel.SpelerAanZet == spel.Speler2)
             {
                 speler = spel.Speler2;
             }
             else if (spel.SpelMode == "Singleplayer")
             {
-                speler = spel.computerSpeler;
+                speler = spel.ComputerSpeler;
             }
 
             bool gevonden = false;
@@ -162,7 +162,7 @@ namespace Schaakproject
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
                 this.vakje = nieuwVakje;
-                bool checkSchaak = spel.schaakbord.CheckSchaak(speler.Koning.vakje, speler.Koning.kleur);
+                bool checkSchaak = spel.SchaakBord.CheckSchaak(speler.koning.vakje, speler.koning.kleur);
                 if (checkSchaak == true)
                 {
                     selected.schaakstuk = this;
@@ -173,10 +173,10 @@ namespace Schaakproject
                 {
                     if (temp != null)
                     {
-                        spel.updateAantalStukken(spel.spelerAanZet);
+                        spel.updateAantalStukken(spel.SpelerAanZet);
                         temp.Slaan();
                     }
-                    speler.validezet = true;
+                    speler.ValideZet = true;
                 }
             }
         }
