@@ -38,61 +38,71 @@ namespace Schaakproject
                     DeselecteerStuk();
                 }
             }
-            
+
             if (validezet == false) //als hij niet gerokeerd heeft
-                {
+            {
                 if (clicked == selected) //als het stuk waarop geklikt is al geselecteerd was
+                {
+                    DeselecteerStuk();
+                }
+                else
+                {
+                    if (selected != null) //als er al een stuk geselecteerd staat
                     {
                         DeselecteerStuk();
                     }
-                    else
-                    {
-                    if (selected != null) //als er al een stuk geselecteerd staat
-                        {
-                            DeselecteerStuk();
-                        }
                     this.selected = clicked; //het stuk waarop geklikt is wordt geselecteerd
                     clicked.pbox.BackColor = _selectcolor; //de kleur van het vakje veranderd
 
-                    }
                 }
+            }
             else // als het rokeren gelukt is
             {
                 spel.VeranderSpeler(); //De speler veranderd;
 
                 // De pion voor en-passant wordt weer vergeten.               
                 enPassantPion = null;
-                
+
             }
-            
+
             validezet = false;
         }
-        
+
         private void DeselecteerStuk()
         {
             selected.pbox.update();     //de picturebox updatet zodat de kleur weer normaal wordt.
             selected = null;            //er staat niets meer geselecteerd
         }
 
-        public void SelecteerVakje(Vakje nieuwVakje,  Spel spel)
+        public void SelecteerVakje(Vakje nieuwVakje, Spel spel)
         {
+            Console.WriteLine("MENS");
+            if (spel.spelerAanZet == spel.Speler1)
+            {
+                Console.WriteLine("HUIDIGE SPELER IS SPELER 1");
+            }
+            else if (spel.spelerAanZet == spel.computerSpeler)
+            {
+                Console.WriteLine("HUIDIGE SPELER IS COMP SPELER");
+            }
+
             if (selected != null) //alleen als er al iets is geselecteerd
             {
                 Vakje clicked = nieuwVakje;   //voor de singleplayer
                 selected.schaakstuk.Verplaats(nieuwVakje, selected, spel); //probeer het schaakstuk te verplaatsen
-                
+
                 selected.pbox.update();    //update het eerste vakje
                 nieuwVakje.pbox.update();         //update het tweede vakje
                 selected = null;            //niets is meer geselecteerd
-                
+
                 if (validezet == true)          //als het schaakstuk daar heen mag
                 {
                     spel.selected = clicked;    //voor de singleplayer
                     spel.VeranderSpeler();      //de andere speler is aan zet
-                    if(spel.SpelMode == "Singleplayer")
+                    if (spel.SpelMode == "Singleplayer")
                     {
-                        clicked.pbox.BackColor = System.Drawing.Color.Black;
                         spel.computerSpeler.Zet(clicked, spel);  // laat de computer op de mens reageren
+                        spel.VeranderSpeler();
                     }
 
                     // De pion voor en-passant wordt weer vergeten.

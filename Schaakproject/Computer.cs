@@ -49,6 +49,16 @@ namespace Schaakproject
 
         private void bepaalMensPositie()
         {
+            Console.WriteLine("COMPUTER");
+            if (_spel.spelerAanZet == _spel.Speler1)
+            {
+                Console.WriteLine("HUIDIGE SPELER IS SPELER 1");
+            }
+            else if (_spel.spelerAanZet == _spel.computerSpeler)
+            {
+                Console.WriteLine("HUIDIGE SPELER IS COMP SPELER");
+            }
+
             // kijk naar welke positie de mens zijn schaakstuk heeft verplaats
             bool buurzuid = false;
             int zuidteller = 0;
@@ -90,21 +100,14 @@ namespace Schaakproject
 
         public void voerZetUit(Vakje geselecteerdStuk, Vakje geselecteerdVakje)
         {
-            Console.WriteLine("UITVOEREN VAN ZET");
             verplaatsingsLijst.Add(geselecteerdVakje);       // slaat de positie van de computerszet in lijst op 
-            try
-            {
+
                 geselecteerdStuk.schaakstuk.Verplaats(geselecteerdVakje, geselecteerdStuk, _spel);
                 geselecteerdStuk.pbox.update();                 //update het eerste vakje
                 geselecteerdVakje.pbox.update();                 //update het tweede vakje
                 geselecteerdStuk = null;                        //niets is meer geselecteerd
-                _spel.VeranderSpeler();
-            }
-            catch
-            {
-                geselecteerdStuk.pbox.BackColor = System.Drawing.Color.Red;
-                geselecteerdVakje.pbox.BackColor = System.Drawing.Color.Blue;
-            }
+               // _spel.VeranderSpeler();
+
         }
     }
 }

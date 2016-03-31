@@ -414,15 +414,30 @@ namespace Schaakproject
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
                 this.vakje = nieuwVakje;
+                Console.WriteLine("Checkschaak");
+                if(spel.spelerAanZet == spel.Speler1)
+                {
+                    Console.WriteLine("Speler1 is aan zet");
+                }
+                else if(spel.spelerAanZet == spel.computerSpeler)
+                {
+                    Console.WriteLine("Speler computer is aan zet");
+                }
+                else
+                {
+                    Console.WriteLine("WTF");
+                }
                 bool checkSchaak = spel.schaakbord.CheckSchaak(spel.spelerAanZet.Koning.vakje, spel.spelerAanZet.Koning.kleur);
                 if (checkSchaak == true)
                 {
+                    Console.WriteLine("schaak is true");
                     selected.schaakstuk = this;
                     nieuwVakje.schaakstuk = temp;
                     this.vakje = selected;
                 }
                 else
                 {
+                    Console.WriteLine("schaak is false");
                     if (temp != null)
                     {
                         temp.Slaan();

@@ -232,14 +232,9 @@ namespace Schaakproject
                 this.vakje = nieuwVakje;
                 Console.WriteLine("Check schaak1");
                 bool checkSchaak;
-                if (spel.SpelMode == "Singleplayer")
-                {
-                    checkSchaak = spel.schaakbord.CheckSchaak(spel.computerSpeler.Koning.vakje, spel.computerSpeler.Koning.kleur);
-                }
-                else
-                {
-                    checkSchaak = spel.schaakbord.CheckSchaak(speler.Koning.vakje, speler.Koning.kleur);
-                }
+                checkSchaak = spel.schaakbord.CheckSchaak(spel.spelerAanZet.Koning.vakje, spel.spelerAanZet.Koning.kleur);
+
+                Console.WriteLine("Schaak is " + checkSchaak);
 
                 if (checkSchaak == true)
                 {
@@ -285,9 +280,20 @@ namespace Schaakproject
                 }
                 else
                 {
-                    nieuwVakje.pbox.update();
-                    selected.pbox.update();
-                    vakje.schaakstuk = new Dame(kleur, vakje, base.speler);
+                    if (spel.spelerAanZet == spel.computerSpeler)
+                    {
+                        nieuwVakje.pbox.update();
+                        selected.pbox.update();
+                        vakje.schaakstuk = new Dame(kleur, vakje, base.speler);
+                    }
+                    else
+                    {
+                        nieuwVakje.pbox.update();
+                        selected.pbox.update();
+                        vakje.schaakstuk = new Dame(kleur, vakje, base.speler);
+                        PromoveerForm promoveerform = new PromoveerForm(this, kleur);
+                        promoveerform.ShowDialog();
+                    }
                 }
             }
 
