@@ -1698,14 +1698,6 @@ buurzuidwest</body>
             </appliedStereotypesInternal>
           </operation>
           <operation
-            Id="f6cc81af-14ea-407e-8632-78fc0861affc"
-            name="Pion"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
             Id="1a96baf1-7fc5-452f-a939-6214bc4b009d"
             name="Promoveert"
             isLeaf="false"
@@ -1923,14 +1915,6 @@ buurzuidwest</body>
             </appliedStereotypesInternal>
           </operation>
           <operation
-            Id="dc48ebdd-d7c4-44ae-9cb4-15d6e093e3ba"
-            name="Toren"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
             Id="6519acec-f579-439f-aa66-c204f805bd77"
             name="kanStukSlaan"
             isLeaf="false"
@@ -2061,14 +2045,6 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
-          <operation
-            Id="ea75400b-3a17-420b-9861-05ef2d461c58"
-            name="Loper"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
           <operation
             Id="a18f3b04-e5e6-4642-a8fc-07b1d1264872"
             name="kanStukSlaan"
@@ -2201,14 +2177,6 @@ buurzuidwest</body>
             </appliedStereotypesInternal>
           </operation>
           <operation
-            Id="82c70c0b-78c3-4874-9875-a62bb048576a"
-            name="Paard"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
             Id="e8f85adf-8255-4306-abff-9f8436d7d2a8"
             name="kanStukSlaan"
             isLeaf="false"
@@ -2339,14 +2307,6 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
-          <operation
-            Id="bc0ac576-8e5b-4ae2-be59-0413f712023a"
-            name="Dame"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
           <operation
             Id="e8b1db8f-2551-4d48-a4a8-8f39a597a129"
             name="kanStukSlaan"
@@ -2787,14 +2747,6 @@ buurzuidwest</body>
             </appliedStereotypesInternal>
           </operation>
           <operation
-            Id="a5341f25-81cc-4b8b-bb88-4b06e84d6edd"
-            name="Koning"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
             Id="d8d5e7ad-0674-4c05-a5ec-e195972a676f"
             name="kanStukSlaan"
             isLeaf="false"
@@ -3038,7 +2990,7 @@ buurzuidwest</body>
         <ownedAttributesInternal>
           <property
             Id="5d633e13-3f77-479b-b4cd-16a15edc2df1"
-            name="speleraanzet : string"
+            name="spelerAanZet"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3104,6 +3056,12 @@ buurzuidwest</body>
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="9ae72030-5b19-4f74-b8af-7fbbca35c802"
+                LastKnownName="string"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
           </property>
           <property
             Id="86f20630-688d-42d4-93de-a3547b394e67"
@@ -3161,7 +3119,8 @@ buurzuidwest</body>
           </property>
           <property
             Id="ff46d95e-db84-427f-b591-82f1b95632e4"
-            name="witaanzet"
+            name="_witaanzet"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3264,6 +3223,78 @@ buurzuidwest</body>
               <undefinedTypeMoniker
                 Id="c1de82da-15d9-450b-8222-c45d91a84440"
                 LastKnownName="Speelbord"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d9b4a0c3-d7ed-4e2c-9a33-876760d02f2d"
+            name="Bordercolor"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="8447702a-94be-413e-8fb0-396f6da26750"
+                LastKnownName="Color"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="6aa15a69-b99f-400a-b30c-4a3509a2b5e3"
+            name="Selectcolor"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="8447702a-94be-413e-8fb0-396f6da26750"
+                LastKnownName="Color"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="dde479ac-6e65-4352-aca2-1008fece8111"
+            name="Colorvakje1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="8447702a-94be-413e-8fb0-396f6da26750"
+                LastKnownName="Color"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="24b4bf5d-9272-484b-8b98-a67842c400b8"
+            name="Colorvakje2"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="8447702a-94be-413e-8fb0-396f6da26750"
+                LastKnownName="Color"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -3554,6 +3585,24 @@ buurzuidwest</body>
               <undefinedTypeMoniker
                 Id="251151ad-f9bf-45f5-bafc-3fbbaf16f5e0"
                 LastKnownName="SpelcialPB"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="105a1482-4506-4ec3-b734-01d5761aa234"
+            name="resterendestukken"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="27bf647c-b259-4212-9525-4a079cf968d1"
+                LastKnownName="int"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -4029,6 +4078,43 @@ buurzuidwest</body>
               <undefinedTypeMoniker
                 Id="27bf647c-b259-4212-9525-4a079cf968d1"
                 LastKnownName="int"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="cfbf1c5e-d812-4c22-811b-38dff5f07d88"
+            name="algoritme"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="df1ab9c3-b190-4d2e-8ef0-7d402bc3886d"
+                LastKnownName="Algoritme"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1d6313da-42c8-4606-8f98-30fe440f3832"
+            name="_selectedcolor"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="8447702a-94be-413e-8fb0-396f6da26750"
+                LastKnownName="Color"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -5495,133 +5581,8 @@ buurzuidwest</body>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="668ea117-60f9-467e-8ea2-ee64a83ea82b"
-            name="SpeelBord"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="ba6d8599-b023-426d-8501-66e0d98a38bd"
-            name="SpeelBord_FormClosed"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="a560b73a-4415-4e52-9860-1f7a3b7f24e1"
-            name="SpeelBord_Load"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
             Id="112cb932-bf1f-4e1f-8c44-822c0f9faf24"
             name="select"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="1ae32f5a-9978-4a33-8f77-a80297707ec3"
-            name="btHerstart_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="2b98f597-4cd6-4941-9824-4d827b274e9e"
-            name="label1_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="f39ed2a9-c8ad-4926-a80c-d19b683034e0"
-            name="btnvariant_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="a008c8f3-57e9-4ac0-a538-fdd53b62c986"
-            name="btnregels_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="eb397a02-9b73-434d-a03c-005fec58d257"
-            name="btnpaard_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="e0e312d4-d740-42a5-8592-a8b0a16474c3"
-            name="btnterug_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="d4ede0a0-e7ee-4a16-97c8-e173494001ae"
-            name="btnkoning_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="a73139ec-c131-4673-ad50-6f953d357e9d"
-            name="btndame_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="1fb256ec-f6fe-4a16-ab4d-84e4f848f08d"
-            name="btntoren_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="a9cc1b85-c9eb-4c85-8b7e-2750e2516fe5"
-            name="btnloper_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="3d693f93-fe0e-4147-b4b6-ea8470bef660"
-            name="btnpion_Click"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -6431,6 +6392,14 @@ buurzuidwest</body>
             Id="e2daed5c-f10c-4743-84d8-a7cecd5e8642"
             name="verplaatsVerplaatstStuk"
             visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="d84ef97e-9d9e-4977-8cb5-33a9d65628f1"
+            name="reageerOpSchaak"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
