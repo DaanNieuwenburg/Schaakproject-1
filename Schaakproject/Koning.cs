@@ -339,7 +339,7 @@ namespace Schaakproject
                             
                             while (i < aantalplaatsenwest)
                             {
-                                if (_vorigvakje.schaakstuk == null)
+                                if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
                                     _vorigvakje = _vorigvakje.buurWest;
                                     vakjesleeg = true;
@@ -495,7 +495,9 @@ namespace Schaakproject
 
                     if (rokeerwest == false)
                     {
+                        _vorigvakje = vakjeKoning.buurOost;
                         // voor oost
+                        vakjesleeg = true;
                         if (vakjeKoning.buurOost == vakjeToren)
                         {
                             aantalplaatsenoost = 1;
