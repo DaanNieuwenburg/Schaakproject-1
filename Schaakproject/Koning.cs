@@ -335,7 +335,7 @@ namespace Schaakproject
                             aantalplaatsenwest = 1;
                             rokeerwest = true;
                             
-                            while (i < aantalplaatsenwest)
+                            while (i <= aantalplaatsenwest)
                             {
                                 if (_vorigvakje.schaakstuk == null || _vorigvakje.schaakstuk is Toren)
                                 {
