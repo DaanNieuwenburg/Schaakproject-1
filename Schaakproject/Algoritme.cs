@@ -21,11 +21,12 @@ namespace Schaakproject
             get { return _slaanmogelijkhedenVanaf; }
             set { _slaanmogelijkhedenVanaf = value; }
         }
-        private Computer _computer;
-        private Schaakstuk _koning;
-        private Vakje _geselecteerdStuk;
-        private Vakje _geselecteerdVakje;
-        public bool StaatSchaak;
+        private Computer _computer { get; set; }
+        private Schaakstuk _koning { get; set; }
+        private Vakje _geselecteerdStuk { get; set; }
+        private Vakje _geselecteerdVakje { get; set; }
+        private bool _koningVerplaats { get; set; }
+        public bool StaatSchaak { get; set; }
         public Algoritme(Computer computer)
         {
             Console.WriteLine("-------------------------------------");
@@ -191,13 +192,13 @@ namespace Schaakproject
                     _geselecteerdVakje = _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid;      // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (randomstuk == 2 && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk != null)
+                else if (randomstuk == 2 && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid.schaakstuk != null)
                 {
                     _geselecteerdStuk = _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid;                // geselecteerd stuk
                     _geselecteerdVakje = _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid;      // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (randomstuk == 3 && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk != null)
+                else if (randomstuk == 3 && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurWest.BuurWest.BuurWest.schaakstuk != null)
                 {
                     _geselecteerdStuk = _koning.Vakje.BuurWest.BuurWest.BuurWest;                                   // geselecteerd stuk
                     _geselecteerdVakje = _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid;      // geselecteerd vak
@@ -331,7 +332,7 @@ namespace Schaakproject
                         {
                             if (_geselecteerdStuk.BuurZuid.BuurZuidOost != null && _geselecteerdStuk.BuurZuid.BuurZuidOost.schaakstuk == null && _geselecteerdStuk.BuurZuid.BuurZuidWest != null && _geselecteerdStuk.BuurZuid.BuurZuidWest.schaakstuk == null)
                             {
-                                Console.WriteLine("Buur verplaatst zuid");
+                                Console.WriteLine("BuurZuid verplaatst");
                                 alVerplaatst = true;
                                 _geselecteerdVakje = _computer.VerplaatsingsLijst[i].BuurZuid;       // geselecteerd vak
                                 _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
