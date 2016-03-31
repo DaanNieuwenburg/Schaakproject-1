@@ -65,31 +65,49 @@ namespace Schaakproject
                     _geselecteerdVakje = _koning.vakje.buurWest.buurZuid.buurZuid.buurZuid;       // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (computer.ronde == 2)
+                else if(computer.ronde == 2)
+                {
+                    _geselecteerdStuk = _koning.vakje.buurWest.buurWest.buurZuid.buurZuid.buurZuid;  // geselecteerd stuk
+                    _geselecteerdVakje = _koning.vakje.buurWest.buurWest.buurZuid.buurZuid.buurZuid.buurZuidoost;       // geselecteerd vak
+                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                }
+                else if (computer.ronde == 3)
+                {
+                    _geselecteerdStuk = _koning.vakje.buurWest.buurZuid.buurZuid.buurZuid;  // geselecteerd stuk
+                    _geselecteerdVakje = _koning.vakje.buurWest.buurZuid.buurZuid.buurZuid.buurZuidoost;       // geselecteerd vak
+                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                }
+                else if (computer.ronde == 4)
                 {
                     _geselecteerdStuk = _koning.vakje.buurWest.buurWest;  // geselecteerd stuk
                     _geselecteerdVakje = _koning.vakje.buurWest.buurZuid;       // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (computer.ronde == 3)
+                else if (computer.ronde == 5)
+                {
+                    _geselecteerdStuk = _koning.vakje.buurZuid.buurZuid.buurZuid.buurZuid;  // geselecteerd stuk
+                    _geselecteerdVakje = _koning.vakje.buurZuid.buurZuid.buurZuid.buurZuid.buurZuid;       // geselecteerd vak
+                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                }
+                else if (computer.ronde == 6)
+                {
+                    _geselecteerdStuk = _koning.vakje.buurZuid.buurZuid.buurZuid.buurZuid.buurZuid;  // geselecteerd stuk
+                    _geselecteerdVakje = _koning.vakje.buurZuid.buurZuid.buurZuid.buurZuid.buurZuid.buurZuid;       // geselecteerd vak
+                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                }
+                else if (computer.ronde == 7)
+                {
+                    _geselecteerdStuk = _koning.vakje.buurOost.buurOost.buurZuid;  // geselecteerd stuk
+                    _geselecteerdVakje = _koning.vakje.buurOost.buurOost.buurZuid.buurZuid;       // geselecteerd vak
+                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                }
+                else if (computer.ronde == 8)
                 {
                     _geselecteerdStuk = _koning.vakje.buurWest.buurZuid;  // geselecteerd stuk
                     _geselecteerdVakje = _koning.vakje.buurWest.buurZuid.buurZuidwest.buurZuidwest.buurZuidwest;       // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (computer.ronde == 4)
-                {
-                    _geselecteerdStuk = _koning.vakje.buurZuid;  // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurZuid.buurZuid;       // geselecteerd vak
-                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                }
-                else if (computer.ronde == 5)
-                {
-                    _geselecteerdStuk = _koning.vakje.buurZuid.buurZuid;  // geselecteerd stuk
-                    _geselecteerdVakje = _koning.vakje.buurZuid.buurZuid.buurZuid;       // geselecteerd vak
-                    _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                }
-                else if (computer.ronde == 6)
+                else if (computer.ronde == 9)
                 {
                     _geselecteerdStuk = _koning.vakje.buurWest;  // geselecteerd stuk
                     _geselecteerdVakje = _koning.vakje.buurWest.buurZuidwest.buurZuidwest.buurZuidwest;       // geselecteerd vak

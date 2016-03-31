@@ -132,9 +132,11 @@ namespace Schaakproject
             
             if (spelerAanZet == Speler1)
             {
+                Console.WriteLine("Speleraanzet == speler1");
                 witaanzet = true;
                 if (SpelMode == "Singleplayer")
                 {
+                    Console.WriteLine("Check schaak1");
                     spelerAanZet = computerSpeler;
                     schaak = schaakbord.CheckSchaak(computerSpeler.Koning.vakje, computerSpeler.Koning.kleur);
                 }
@@ -147,11 +149,12 @@ namespace Schaakproject
                 {
                     if (SpelMode == "Singleplayer")
                     {
-                        //mat = schaakbord.CheckMat(computerSpeler.Koning);
-                        //if (mat == true)
-                        //{
-                          //  Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
-                        //}
+                        Console.WriteLine("Check schaak2");
+                        mat = schaakbord.CheckMat(computerSpeler.Koning);
+                        if (mat == true)
+                        {
+                            Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Green;
+                        }
                     }
                     else
                     {
@@ -191,13 +194,16 @@ namespace Schaakproject
             }
             else
             {
+                Console.WriteLine("Speleraanzet == speler2");
                 witaanzet = false;
                 spelerAanZet = Speler1;
                 schaak = schaakbord.CheckSchaak(Speler1.Koning.vakje, Speler1.Koning.kleur);
+                Console.WriteLine("Schaak is " + schaak);
                 if (schaak == true)
                 {
 
                     mat = schaakbord.CheckMat(Speler1.Koning);
+                    Console.WriteLine("MAT is " + mat);
                     if (mat == true)
                     {
 

@@ -1429,6 +1429,7 @@ namespace Schaakproject
 
         public bool CheckMat(Koning koning)
         {
+            Console.WriteLine("VERDERR");
             bool mat = true;
             bool mogelijk = false;
 
