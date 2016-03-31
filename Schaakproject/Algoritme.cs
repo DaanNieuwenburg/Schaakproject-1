@@ -26,6 +26,7 @@ namespace Schaakproject
         private Vakje _geselecteerdStuk { get; set; }
         private Vakje _geselecteerdVakje { get; set; }
         private bool _koningVerplaats { get; set; }
+        private int _recursieTeller { get; set; }
         public bool StaatSchaak { get; set; }
         public Algoritme(Computer computer)
         {
@@ -44,11 +45,15 @@ namespace Schaakproject
                 Random rnd = new Random();
                 //int percentage = 1337;
                 int percentage = rnd.Next(1, 4);
-                if (percentage == 1)
+                if (percentage == 1 && _koningVerplaats == false)
                 {
                     verplaatsNieuwStuk();
                 }
                 else if (percentage > 1 && computer.VerplaatsingsLijst.Count > 0)
+                {
+                    verplaatsVerplaatstStuk();
+                }
+                else if(_koningVerplaats == true)
                 {
                     verplaatsVerplaatstStuk();
                 }
@@ -437,13 +442,10 @@ namespace Schaakproject
                     _geselecteerdVakje = _koning.Vakje.BuurZuidWest;    // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
+                _koningVerplaats = true;
             }
 
-            // verplaats een nieuw stuk
-            if (reactie == false)
-            {
-
-            }
+            
         }
     }
 }
