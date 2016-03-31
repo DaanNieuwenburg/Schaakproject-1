@@ -199,23 +199,28 @@ namespace Schaakproject
             }
             else
             {
-                //Console.WriteLine("Speleraanzet == speler2");
                 witaanzet = false;
                 spelerAanZet = Speler1;
                 schaak = schaakbord.CheckSchaak(Speler1.Koning.vakje, Speler1.Koning.kleur);
-                //Console.WriteLine("Schaak is " + schaak);
                 if (schaak == true)
                 {
-
                     mat = schaakbord.CheckMat(Speler1.Koning);
-                    //Console.WriteLine("MAT is " + mat);
                     if (mat == true)
                     {
-
-                        Speler1.Koning.vakje.pbox.Image = Properties.Resources.WitMat1;
-                        SchaakMat _SchaakMat = new SchaakMat(Speler2.Naam, this);
-                        _SchaakMat.ShowDialog();
-                        speelbord.Hide();
+                        if(SpelMode == "Singleplayer")
+                        {
+                            Speler1.Koning.vakje.pbox.Image = Properties.Resources.WitMat1;
+                            SchaakMat _SchaakMat = new SchaakMat("De computer ", this);
+                            _SchaakMat.ShowDialog();
+                            speelbord.Hide();
+                        }
+                        else
+                        {
+                            Speler1.Koning.vakje.pbox.Image = Properties.Resources.WitMat1;
+                            SchaakMat _SchaakMat = new SchaakMat(Speler2.Naam, this);
+                            _SchaakMat.ShowDialog();
+                            speelbord.Hide();
+                        }
                     }
                 }
                 else

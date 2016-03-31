@@ -30,7 +30,7 @@ namespace Schaakproject
             _computer = computer;
             _koning = computer.Koning;
             // kijk of er geslagen kan worden
-            //controleerOpSlaan();
+            controleerOpSlaan();
             Console.WriteLine("-------------------------------------");
             if (slaanmogelijkheden.Count > 0)
             {
@@ -39,8 +39,8 @@ namespace Schaakproject
             else
             {
                 Random rnd = new Random();
-                int percentage = 1337;
-                //int percentage = rnd.Next(1, 4);
+                // percentage = 1337;
+                int percentage = rnd.Next(1, 4);
                 Console.WriteLine("PERCENTAGE = " + percentage);
                 if (percentage == 1)
                 {
@@ -52,27 +52,36 @@ namespace Schaakproject
                     //Console.WriteLine("VPS");
                     //verplaatsVerplaatstStuk();
                 //}
-                else if (percentage == 1337)
+                /*else if (percentage == 1337)
                 {
                     Console.WriteLine("1337");
                     if (computer.ronde == 0)
                     {
-                        _geselecteerdStuk = _koning.vakje.buurZuidoost;  // geselecteerd stuk
-                        _geselecteerdVakje = _koning.vakje.buurZuidoost.buurZuid;       // geselecteerd vak
+                        _geselecteerdStuk = _koning.vakje.buurWest.buurZuid;  // geselecteerd stuk
+                        _geselecteerdVakje = _koning.vakje.buurWest.buurZuid.buurZuid.buurZuid;       // geselecteerd vak
                         _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                     }
                     else if (computer.ronde == 1)
                     {
-                        _geselecteerdStuk = _koning.vakje.buurOost.buurOost.buurZuid;  // geselecteerd stuk
-                        _geselecteerdVakje = _koning.vakje.buurOost.buurOost.buurZuid.buurZuid.buurZuid;       // geselecteerd vak
+                        _geselecteerdStuk = _koning.vakje.buurWest.buurWest.buurZuid;  // geselecteerd stuk
+                        _geselecteerdVakje = _koning.vakje.buurWest.buurWest.buurZuid.buurZuid.buurZuid;       // geselecteerd vak
                         _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                     }
                     else if (computer.ronde == 2)
                     {
+                        _geselecteerdStuk = _koning.vakje.buurZuid;  // geselecteerd stuk
+                        _geselecteerdVakje = _koning.vakje.buurZuid.buurZuid;       // geselecteerd vak
+                        _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
+                    }
+                    else if (computer.ronde == 3)
+                    {
+                        _geselecteerdStuk = _koning.vakje.buurWest;  // geselecteerd stuk
+                        _geselecteerdVakje = _koning.vakje.buurWest.buurZuidoost.buurZuidoost.buurZuidoost.buurZuidoost;       // geselecteerd vak
+                        _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                     }
                     Console.WriteLine("RONDE " + computer.ronde);
                     computer.ronde++;
-                }
+                }*/
                 else
                 {
                     Console.WriteLine("VPN");
