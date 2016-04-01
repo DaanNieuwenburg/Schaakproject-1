@@ -3310,6 +3310,22 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
+          <operation
+            Id="43f13f24-716a-430c-b99c-b39ae3b72890"
+            name="updateAantalStukken"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="71314c3e-bddf-4dbe-b4aa-d5a4c03e6f43"
+            name="veranderlbltext"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>

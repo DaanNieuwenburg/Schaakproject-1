@@ -2091,6 +2091,12 @@ buurzuidwest</body>
             </appliedStereotypesInternal>
             <elementDefinition Id="e7e6a845-077e-4c46-9eaf-52291db96815" />
           </operation>
+          <operation Id="311169a9-a686-4cc3-9190-43dd92278ddc" name="updateAantalStukken" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="43f13f24-716a-430c-b99c-b39ae3b72890" />
+          </operation>
+          <operation Id="953af91e-76ab-49ce-9bf4-4d85b9430051" name="veranderlbltext" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="71314c3e-bddf-4dbe-b4aa-d5a4c03e6f43" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
