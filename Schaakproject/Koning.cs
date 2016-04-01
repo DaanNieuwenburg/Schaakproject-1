@@ -7,18 +7,10 @@ namespace Schaakproject
 {
     public class Koning : Schaakstuk
     {
-        private Vakje _vorigVakje { get; set; }
-        private Vakje _vorigWest { get; set; }
-        private Vakje _vorigOost { get; set; }
-        private Vakje _randWest { get; set; }
-        private Vakje _randOost { get; set; }
-        private bool _staatSchaak { get; set; }     //Staat de koning schaak
         private bool _eersteZet { get; set; }       //Is de koning al verzet
-        private int _positieWest { get; set; }
         private bool _wilRokeren { get; set; }      //Als je op ja drukt als er gevraagd wordt of je wilt rokeren
-        private bool _magRokeren { get; set; }
-        private Vakje _koningOud { get; set; }
-        public Vakje _torenOud { get; set; }
+        private bool _magRokeren { get; set; }      //wanneer het mogelijk is om te rokeren verschijnt een melding of je wilt rokeren
+
         public Koning(string kleur, Vakje vakje, Speler speler)
         {
 
@@ -34,6 +26,7 @@ namespace Schaakproject
                 Afbeelding = Properties.Resources.KoningZwart;
             }
         }
+
         public override void kanStukSlaan(Algoritme algoritme, Vakje geselecteerdStuk)
         {
             if (geselecteerdStuk.schaakstuk.Kleur == "zwart")
@@ -181,7 +174,6 @@ namespace Schaakproject
             Vakje toren1 = vakjeToren;
             Vakje koning1 = vakjeKoning;
             bool rokeerwest = true;
-            _vorigVakje = spel.Selected;
             Schaakstuk tempToren = vakjeToren.schaakstuk;
             Vakje _Randoost;
             Vakje vorige = vakjeKoning;
@@ -306,8 +298,8 @@ namespace Schaakproject
                     int aantalplaatsenoost = 0;                     // aantal plaatsen tussen koning en rechter toren
                     int i = 0;
                     int west = 0;
-                    _vorigWest = vakjeKoning.BuurWest;
-                    _vorigVakje = vakjeKoning.BuurWest;
+                    Vakje _vorigWest = vakjeKoning.BuurWest;
+                    Vakje _vorigVakje = vakjeKoning.BuurWest;
 
                     while (_vorigWest != null)                      //bepaald locatie van de koning a.d.v. het aantal buren links
                     {
@@ -326,8 +318,8 @@ namespace Schaakproject
                         }
 
                     }
-                    _randWest = _vorigWest;
-                    _vorigOost = _randWest;
+                    Vakje _randWest = _vorigWest;
+                    Vakje _vorigOost = _randWest;
                     _Randoost = _randWest.BuurOost.BuurOost.BuurOost.BuurOost.BuurOost.BuurOost.BuurOost;
                     Vakje koningnieuw_W = _randWest.BuurOost.BuurOost;
                     Vakje torennieuw_W = _randWest.BuurOost.BuurOost.BuurOost;
@@ -862,8 +854,8 @@ namespace Schaakproject
                             // ROKEREN NAAR OOST KANT
                             if (rokeerwest == false)
                             {
-                                _torenOud = vakjeToren;
-                                _koningOud = vakjeKoning;
+                                Vakje _torenOud = vakjeToren;
+                                Vakje _koningOud = vakjeKoning;
                                 Schaakstuk Tempkoning = vakjeKoning.schaakstuk;
                                 _Randoost.BuurWest.BuurWest.schaakstuk = tempToren;
                                 _Randoost.BuurWest.schaakstuk = Tempkoning;
@@ -885,8 +877,8 @@ namespace Schaakproject
                             }
                             else // ROKEREN NAAR WEST KANT
                             {
-                                _torenOud = vakjeToren;
-                                _koningOud = vakjeKoning;
+                                Vakje _torenOud = vakjeToren;
+                                Vakje _koningOud = vakjeKoning;
                                 Schaakstuk Tempkoning = vakjeKoning.schaakstuk;
                                 _randWest.BuurOost.BuurOost.BuurOost.schaakstuk = tempToren;
                                 _randWest.BuurOost.BuurOost.schaakstuk = Tempkoning;
@@ -915,7 +907,6 @@ namespace Schaakproject
                 }
             }
         }
-
 
         public void Wilrokeren()
         {

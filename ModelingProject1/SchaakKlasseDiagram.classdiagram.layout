@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 25.25, 19.5" name="SchaakKlasseDiagram">
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 25.25, 17.75" name="SchaakKlasseDiagram">
   <logicalClassDesignerModelMoniker Id="59986595-ab6f-432c-b6ad-b93a9a30056e" />
   <nestedChildShapes>
     <classShape Id="a370da55-b499-4bab-a653-7c17aa5e75fc" absoluteBounds="19.75, 1, 1.5, 2.3089293346802391" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
@@ -135,11 +135,11 @@
         <classShapeMoniker Id="c9714525-5575-43d1-8b89-1ee7ada052e2" />
       </nodes>
     </generalizationConnector>
-    <classShape Id="d30f798f-3e76-4e75-a6ab-2856e74e9360" absoluteBounds="14.5, 15.375, 1.5, 3.9104917850097003" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
+    <classShape Id="d30f798f-3e76-4e75-a6ab-2856e74e9360" absoluteBounds="14.5, 15.375, 1.5, 2.1487730896472961" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
       <classMoniker Id="2356085b-d0d4-4e21-a8b6-688c9ad57da1" LastKnownName="Koning" />
       <nestedChildShapes>
-        <AttributeElementListCompartment Id="4be37a39-b069-4def-90fa-b6c5980a4383" absoluteBounds="14.515, 15.890335639317831, 1.4700000000000002, 2.2832030529777207" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="33b209c7-f714-474e-bc52-06bb59ee44a3" absoluteBounds="14.515, 18.183538692295549, 1.4700000000000002, 1.0019530927141509" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <AttributeElementListCompartment Id="4be37a39-b069-4def-90fa-b6c5980a4383" absoluteBounds="14.515, 15.890335639317831, 1.4700000000000002, 0.68164060264825821" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="33b209c7-f714-474e-bc52-06bb59ee44a3" absoluteBounds="14.515, 16.581976241966089, 1.4700000000000002, 0.84179684768120444" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <generalizationConnector edgePoints="[(15.25 : 15.375); (15.25 : 14.6136168446143); (9.75 : 14.6136168446143); (9.75 : 14.2386168446143)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110">
