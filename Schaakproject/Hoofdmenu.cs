@@ -13,20 +13,29 @@ namespace Schaakproject
 {
     public partial class Hoofdmenu : Form
     {
-        public Hoofdmenu()
+        private Color _borderColor { get; set; }     //Je kunt de kleur voor de rand veranderen
+        private Color _selectColor { get; set; }     //Je kunt de kleur voor een geselecteerd vakje veranderen
+        private Color _vakje1Color { get; set; }     //Je kunt de kleur voor de zwarte vakjes veranderen
+        private Color _vakje2Color { get; set; }     //Je kunt de kleur voor de witte vakjes veranderen
+        public Hoofdmenu(Color border, Color select, Color vakje1color, Color vakje2color)
         {
             InitializeComponent();
+            _borderColor = border;
+            _selectColor = select;
+            this._vakje1Color = vakje1color;
+            this._vakje2Color = vakje2color;
         }
 
         private void startButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            NaamInvoer naaminvoerdialog = new NaamInvoer(Color.SandyBrown, Color.HotPink, Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192))))), Color.SaddleBrown);
+            NaamInvoer naaminvoerdialog = new NaamInvoer(_borderColor, _selectColor, _vakje1Color, _vakje2Color);
             naaminvoerdialog.ShowDialog();
         }
 
         private void Hoofdmenu_Load(object sender, EventArgs e)
         {
+            btnafsluiten.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //transparent bordercolor (Color.Transparent is unsupported)
             BackgroundImageLayout = ImageLayout.Stretch;
             startButton.BackgroundImageLayout = ImageLayout.Stretch;
         }

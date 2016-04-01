@@ -57,13 +57,14 @@ namespace Schaakproject
             btModeMultiplayer.Visible = false;
             btnSettings.Visible = false;
             lbTitel.Text = "Single Player";
-            btnKlassiek.Visible = true;
-            btnChess960.Visible = true;
+            btnKlassiek.Visible = false;
+            btnChess960.Visible = false;
             lblSpeler1Naam.Visible = true;
             lblSpeler2Naam.Visible = false;
             txtSpeler1Naam.Visible = true;
             txtSpeler2Naam.Visible = false;
-            btnBegin.Visible = false;
+            btnBegin.Visible = true;
+            _variant = "Klassiek";
             _mode = "Singleplayer"; // Hierdoor krijgt het speelbord te weten dat het singleplayer is.
         }
 
@@ -102,7 +103,7 @@ namespace Schaakproject
             if (lbTitel.Text == "Selecteer een schaakmode")
             {
                 this.Hide();
-                Hoofdmenu hoofdmenu = new Hoofdmenu();
+                Hoofdmenu hoofdmenu = new Hoofdmenu(_borderColor, _selectColor, _vakje1Color, _vakje2Color);
                 hoofdmenu.Show();
             }
 
