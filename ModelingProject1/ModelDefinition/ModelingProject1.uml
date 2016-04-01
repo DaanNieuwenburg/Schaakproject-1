@@ -1114,6 +1114,24 @@ buurzuidwest</body>
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="3255920a-2919-4028-8b2f-9d399bf7fa84"
+            name="Geslagen"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
+                LastKnownName="bool"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -1309,8 +1327,7 @@ buurzuidwest</body>
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false">
+                  isComposite="false">
                   <lowerValueInternal>
                     <literalString
                       Id="b9e5352c-5877-481b-a58f-d8703214a453"
@@ -1423,8 +1440,8 @@ buurzuidwest</body>
             </appliedStereotypesInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="b7e72923-43d7-4d43-9feb-801dafb5a682"
-                LastKnownName="color"
+                Id="8447702a-94be-413e-8fb0-396f6da26750"
+                LastKnownName="Color"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -2434,82 +2451,6 @@ buurzuidwest</body>
         </generalsInternal>
         <ownedAttributesInternal>
           <property
-            Id="2da2c202-ee94-4026-b477-d9859c366496"
-            name="_staatSchaak"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="10750c61-a531-4d3e-8049-a490e1f15f81"
-                name="property"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="9ec1896b-35f9-41af-9c52-30c864f6b56b">
-                    <propertyInstance
-                      Id="7b6afcb4-4d5a-47ce-8c0c-36f6f2042067"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="8d41f5ea-2f17-4225-af9c-f96507827122">
-                    <propertyInstance
-                      Id="18fd10a0-321b-492f-ac25-f79164346479"
-                      name="Get"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="2da0ea7e-a256-4d04-95d8-22f41160767a">
-                    <propertyInstance
-                      Id="655e0e27-8712-4225-87af-84136c9338eb"
-                      name="HasBody"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="705547a5-b7e6-41b2-a961-abd02fa0f396">
-                    <propertyInstance
-                      Id="1e13c255-0d29-40ea-9cec-480f30adaaa8"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="4fb5c315-683f-4c8e-bcbf-b4a14d872bf8">
-                    <propertyInstance
-                      Id="b36ed88d-600f-48f9-973c-07b665a34716"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="47fdc6b1-74fe-4587-9b42-a87f2cfa0c7e">
-                    <propertyInstance
-                      Id="9ec397e2-f09c-441e-9513-d77b53858491"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="bb37e754-94e5-4f78-ad8a-ac3610ca324b">
-                    <propertyInstance
-                      Id="370185b7-4b15-43ef-b75c-05cc6273f8f1"
-                      name="Set"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
-                LastKnownName="bool"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="d65108c3-48d6-4cb3-ba49-9ca76b002628"
             name="_eersteZet"
             visibility="Private"
@@ -2586,63 +2527,6 @@ buurzuidwest</body>
             </type_NamedElement>
           </property>
           <property
-            Id="186d8e24-a49b-4903-a65c-1fb42cd5b3f0"
-            name="_vorigVakje"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="9dbe831f-99dc-48c8-9953-c8e4c7962610"
-            name="_vorigWest"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="a242e65f-9019-4232-9153-888f492cd47a"
-            name="_positieWest"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="27bf647c-b259-4212-9525-4a079cf968d1"
-                LastKnownName="int"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="c6fa2303-492f-4db8-b39d-4fb1af93e6fa"
             name="_wilRokeren"
             visibility="Private"
@@ -2677,120 +2561,6 @@ buurzuidwest</body>
               <undefinedTypeMoniker
                 Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
                 LastKnownName="bool"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="cd507f41-c4b1-4a69-8ca8-b681a00ef76d"
-            name="_vorigWest"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="a03a3a6b-a441-4967-9e55-4a554daee16e"
-            name="_vorigOost"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="08bb7603-1059-4949-948b-4b1ff33bca10"
-            name="_randWest"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="18374af0-fe39-4969-ada1-6689ac2c7632"
-            name="_randOost"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="737630c6-0d24-456e-b361-283786717603"
-            name="_koningOud"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="3b18d0b7-ed75-405e-8129-21275a701215"
-            name="_torenOud"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -2925,14 +2695,6 @@ buurzuidwest</body>
           <operation
             Id="62267847-483a-4954-9508-6bb5b83d6655"
             name="Wilrokeren"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="10f310b9-95b7-4c70-8c86-8e53e1ade425"
-            name="Checkschaak"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"

@@ -672,6 +672,12 @@ buurzuidwest</body>
               <referencedTypeMoniker Id="a35d6f22-f9f4-49bf-8493-19ec1e86175d" LastKnownName="Speler" />
             </type_NamedElement>
           </property>
+          <property Id="5f74983e-5312-485d-9bfe-451053ef7a65" name="Geslagen" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3255920a-2919-4028-8b2f-9d399bf7fa84" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="b75f5e36-e7b3-477b-8657-d985f4bf8d95" name="Verplaats" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
@@ -797,7 +803,7 @@ buurzuidwest</body>
             <classMoniker Id="f45ba02b-44ef-4c06-b616-eb9a70d05827" LastKnownName="Schaakstuk" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="848795cc-b94d-4abf-8d3b-8d5e42223c5e" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="848795cc-b94d-4abf-8d3b-8d5e42223c5e" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <lowerValueInternal>
                     <literalString Id="87fd1bfb-0db2-4f7b-b777-3a64d2806d22" name="Lower" value="0">
                       <elementDefinition Id="b9e5352c-5877-481b-a58f-d8703214a453" />
@@ -1559,61 +1565,6 @@ buurzuidwest</body>
           </generalization>
         </generalsInternal>
         <ownedAttributesInternal>
-          <property Id="9fb5904f-e92d-4df0-98ad-adbee22da38e" name="_staatSchaak" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance Id="e205604f-bd8f-4b9e-9d62-76e86f2ec9db" name="property" profile="CSharpProfile">
-                <elementDefinition Id="10750c61-a531-4d3e-8049-a490e1f15f81" />
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="7b3ddd03-dbf6-4de6-b6f9-ad836e3ef957">
-                    <propertyInstance Id="76f24700-b8a4-45a1-9cbf-3323fbbed12f" name="ClrAttributes">
-                      <elementDefinition Id="7b6afcb4-4d5a-47ce-8c0c-36f6f2042067" />
-                    </propertyInstance>
-                    <elementDefinition Id="9ec1896b-35f9-41af-9c52-30c864f6b56b" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="9326cb3b-00cf-42a4-9ba7-13a62a028cad">
-                    <propertyInstance Id="c4014c13-0978-4672-aad5-f71158ea2c0f" name="Get" value="none">
-                      <elementDefinition Id="18fd10a0-321b-492f-ac25-f79164346479" />
-                    </propertyInstance>
-                    <elementDefinition Id="8d41f5ea-2f17-4225-af9c-f96507827122" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="18f2a9af-d56b-4996-8b6c-aa20cc1ea016">
-                    <propertyInstance Id="d55f4693-8a6a-45e2-a4ed-33d4adfba95d" name="HasBody" value="false">
-                      <elementDefinition Id="655e0e27-8712-4225-87af-84136c9338eb" />
-                    </propertyInstance>
-                    <elementDefinition Id="2da0ea7e-a256-4d04-95d8-22f41160767a" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="111549a5-a987-43aa-8cff-05694abafe47">
-                    <propertyInstance Id="51210577-face-4c84-96db-0580e2c107b4" name="IsUnsafe" value="false">
-                      <elementDefinition Id="1e13c255-0d29-40ea-9cec-480f30adaaa8" />
-                    </propertyInstance>
-                    <elementDefinition Id="705547a5-b7e6-41b2-a961-abd02fa0f396" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="5a5211af-6696-462c-8226-1e317aa5e1e4">
-                    <propertyInstance Id="3b413acf-7325-415b-abbf-75f2a74c3a56" name="Inheritance" value="none">
-                      <elementDefinition Id="b36ed88d-600f-48f9-973c-07b665a34716" />
-                    </propertyInstance>
-                    <elementDefinition Id="4fb5c315-683f-4c8e-bcbf-b4a14d872bf8" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="3831cbdf-92af-423d-a5ff-802b9da1e6f7">
-                    <propertyInstance Id="69d32dd2-3e8d-4c78-839e-cc2bf3aecaed" name="PackageVisibility" value="internal">
-                      <elementDefinition Id="9ec397e2-f09c-441e-9513-d77b53858491" />
-                    </propertyInstance>
-                    <elementDefinition Id="47fdc6b1-74fe-4587-9b42-a87f2cfa0c7e" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="188a9839-d06d-46cf-9906-525df51b0e7d">
-                    <propertyInstance Id="7071e2cd-e3ff-4e92-a8fb-f19cafffa022" name="Set" value="none">
-                      <elementDefinition Id="370185b7-4b15-43ef-b75c-05cc6273f8f1" />
-                    </propertyInstance>
-                    <elementDefinition Id="bb37e754-94e5-4f78-ad8a-ac3610ca324b" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <elementDefinition Id="2da2c202-ee94-4026-b477-d9859c366496" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="e638a9c7-bc02-42b7-92ce-0ae82efbbfca" LastKnownName="bool" />
-            </type_NamedElement>
-          </property>
           <property Id="152d529a-9a63-4a47-93c8-02323acea5e4" name="_eersteZet" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="8faf6a98-7769-4304-bb4d-19d0a1c5804a" name="property" profile="CSharpProfile">
@@ -1669,24 +1620,6 @@ buurzuidwest</body>
               <referencedTypeMoniker Id="3bb58100-f5ab-4d3f-aad6-2075c4a387e9" LastKnownName="bool" />
             </type_NamedElement>
           </property>
-          <property Id="f79835b2-5598-434c-8e88-f87804baaa31" name="_vorigVakje" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="186d8e24-a49b-4903-a65c-1fb42cd5b3f0" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
-            </type_NamedElement>
-          </property>
-          <property Id="bb6369d1-fdc1-4b90-b7f5-8f0c3f062333" name="_vorigWest" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="9dbe831f-99dc-48c8-9953-c8e4c7962610" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
-            </type_NamedElement>
-          </property>
-          <property Id="02ee9ac6-1db2-49b5-aa8e-87af62a3ce03" name="_positieWest" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="a242e65f-9019-4232-9153-888f492cd47a" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="7822eb03-f8a8-478c-bc88-7be9bab2eedb" LastKnownName="int" />
-            </type_NamedElement>
-          </property>
           <property Id="9adcdaf3-4ec5-4825-93a6-74429a28e20d" name="_wilRokeren" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="c6fa2303-492f-4db8-b39d-4fb1af93e6fa" />
             <type_NamedElement>
@@ -1697,42 +1630,6 @@ buurzuidwest</body>
             <elementDefinition Id="dd386dcf-c6b9-431c-8059-3b0a7e995b7a" />
             <type_NamedElement>
               <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
-            </type_NamedElement>
-          </property>
-          <property Id="835177de-1ca1-4c2f-a2d7-28c2ec7f09c4" name="_vorigWest" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="cd507f41-c4b1-4a69-8ca8-b681a00ef76d" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
-            </type_NamedElement>
-          </property>
-          <property Id="0ab774b0-55e4-46af-9438-a8593ea3413e" name="_vorigOost" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="a03a3a6b-a441-4967-9e55-4a554daee16e" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
-            </type_NamedElement>
-          </property>
-          <property Id="373230d8-060e-495d-813f-36ab83a881c6" name="_randWest" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="08bb7603-1059-4949-948b-4b1ff33bca10" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
-            </type_NamedElement>
-          </property>
-          <property Id="09e74592-eead-4902-b0f2-f57e077b6e75" name="_randOost" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="18374af0-fe39-4969-ada1-6689ac2c7632" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
-            </type_NamedElement>
-          </property>
-          <property Id="730aa4fd-c701-4094-b0ce-cc614e6d58b3" name="_koningOud" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="737630c6-0d24-456e-b361-283786717603" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
-            </type_NamedElement>
-          </property>
-          <property Id="928f6f60-44dd-438f-b5f7-20d84273aa27" name="_torenOud" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="3b18d0b7-ed75-405e-8129-21275a701215" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -1834,9 +1731,6 @@ buurzuidwest</body>
           </operation>
           <operation Id="43f8f6bc-7aa5-47d3-91e1-6486929ffc41" name="Wilrokeren" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="62267847-483a-4954-9508-6bb5b83d6655" />
-          </operation>
-          <operation Id="70a0cb77-a42a-49bf-8f66-7b50daec4937" name="Checkschaak" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="10f310b9-95b7-4c70-8c86-8e53e1ade425" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -2598,11 +2492,6 @@ buurzuidwest</body>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="3bb58100-f5ab-4d3f-aad6-2075c4a387e9" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
-        <elementDefinition Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="e638a9c7-bc02-42b7-92ce-0ae82efbbfca" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
         <elementDefinition Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f" />
       </referencedType>
     </packageHasNamedElement>
