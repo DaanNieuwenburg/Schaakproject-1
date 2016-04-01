@@ -4915,26 +4915,6 @@ buurzuidwest</body>
               LastKnownLocation="ModelingProject1.uml" />
           </generalization>
         </generalsInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="96d02552-79ac-4d52-ba46-ec0d42002464"
-            name="herstartButton_MouseClick"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="6a0f4e5a-dead-4a49-bd80-794f8fa8cfd3"
-            name="startButton_Click"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -5235,25 +5215,6 @@ buurzuidwest</body>
         </generalsInternal>
         <ownedAttributesInternal>
           <property
-            Id="df9d5a5b-2563-42d1-9163-fd6feb83f5ce"
-            name="_schaakbord"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="b8e9c20a-28d5-451e-b9a2-31a75299b217"
-                LastKnownName="Schaakbord"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="33ce525f-47e0-457a-afd0-47d9e20f3b4f"
             name="_spel"
             visibility="Private"
@@ -5293,7 +5254,8 @@ buurzuidwest</body>
           </property>
           <property
             Id="c26a0b30-3c87-49b6-a1ce-eb24515ab753"
-            name="Variant"
+            name="_variant"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -5306,25 +5268,6 @@ buurzuidwest</body>
               <undefinedTypeMoniker
                 Id="9ae72030-5b19-4f74-b8af-7fbbca35c802"
                 LastKnownName="string"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="4c0f7ad6-982c-4fa8-853d-1b92cf7e3d3e"
-            name="_borderColor"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="8447702a-94be-413e-8fb0-396f6da26750"
-                LastKnownName="Color"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>

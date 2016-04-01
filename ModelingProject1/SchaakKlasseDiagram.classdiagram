@@ -2513,14 +2513,6 @@ buurzuidwest</body>
             <elementDefinition Id="6b9a91d0-9c29-4098-9614-6d1d9977effd" />
           </generalization>
         </generalsInternal>
-        <ownedOperationsInternal>
-          <operation Id="fd6c5132-5a71-40f1-84a8-93acb1c561f9" name="herstartButton_MouseClick" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="96d02552-79ac-4d52-ba46-ec0d42002464" />
-          </operation>
-          <operation Id="85a453ab-dff7-46f6-89e5-a6996f426175" name="startButton_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="6a0f4e5a-dead-4a49-bd80-794f8fa8cfd3" />
-          </operation>
-        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -2641,12 +2633,6 @@ buurzuidwest</body>
           </generalization>
         </generalsInternal>
         <ownedAttributesInternal>
-          <property Id="c57c6217-6e13-4499-8fd2-fc46fa8ee7c3" name="_schaakbord" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="df9d5a5b-2563-42d1-9163-fd6feb83f5ce" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="74d128f9-abf0-40d3-b5aa-cb433a2b3cba" LastKnownName="Schaakbord" />
-            </type_NamedElement>
-          </property>
           <property Id="4604002a-68ee-4dd6-996e-42cd1db6633b" name="_spel" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="33ce525f-47e0-457a-afd0-47d9e20f3b4f" />
             <type_NamedElement>
@@ -2659,16 +2645,10 @@ buurzuidwest</body>
               <referencedTypeMoniker Id="037b2e4b-1372-46dc-b67e-b4af903c7272" LastKnownName="int" />
             </type_NamedElement>
           </property>
-          <property Id="8fc48972-d090-45f5-b9f9-a979ee83f18c" name="Variant" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="8fc48972-d090-45f5-b9f9-a979ee83f18c" name="_variant" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="c26a0b30-3c87-49b6-a1ce-eb24515ab753" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="fc25a9a7-ead6-4d74-9b52-d3595637df61" LastKnownName="string" />
-            </type_NamedElement>
-          </property>
-          <property Id="9a6d5aa2-adc5-4430-a0f5-921607b2a233" name="_borderColor" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="4c0f7ad6-982c-4fa8-853d-1b92cf7e3d3e" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="b044c879-d644-4515-830b-e50d1b7a9e01" LastKnownName="Color" />
+              <referencedTypeMoniker Id="a322be3a-8196-4679-8d9c-24978ff8bc5b" LastKnownName="string" />
             </type_NamedElement>
           </property>
           <property Id="69f6a031-dcc1-4bb3-a3c0-98836e8bf951" name="_optie" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -3030,18 +3010,8 @@ buurzuidwest</body>
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="fc25a9a7-ead6-4d74-9b52-d3595637df61" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
-        <elementDefinition Id="9ae72030-5b19-4f74-b8af-7fbbca35c802" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="037b2e4b-1372-46dc-b67e-b4af903c7272" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
         <elementDefinition Id="27bf647c-b259-4212-9525-4a079cf968d1" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="b044c879-d644-4515-830b-e50d1b7a9e01" name="Color" isAbstract="false" isLeaf="false" cachedFullName="Color">
-        <elementDefinition Id="8447702a-94be-413e-8fb0-396f6da26750" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -3183,6 +3153,11 @@ buurzuidwest</body>
     <packageHasNamedElement>
       <referencedType Id="fcf70e7f-4d1c-4c08-879c-9901b6c0315a" name="Color" isAbstract="false" isLeaf="false" cachedFullName="Color">
         <elementDefinition Id="8447702a-94be-413e-8fb0-396f6da26750" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a322be3a-8196-4679-8d9c-24978ff8bc5b" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="9ae72030-5b19-4f74-b8af-7fbbca35c802" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

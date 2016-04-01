@@ -14,16 +14,15 @@ namespace Schaakproject
     {
         private Spel _spel { get; set; }                    //Een spel
         private int _clicks { get; set; }                    //voor het laten zien van de uitleg
-        public string Variant { get; set; }                //string voor spelvariant
-        private Color _borderColor { get; set; } 
+        private string _variant { get; set; }                //string voor spelvariant
         private int _optie { get; set; }                   //int die bijhoud welk menu van regels je zit
-        public SpeelBord(Spel spel, Schaakbord schaakbord, string Variant, Color border)
+
+        public SpeelBord(Spel spel, Schaakbord schaakbord, string Variant, Color borderColor)
         {
             _spel = spel;
             _clicks = 0;
-            this.Variant = Variant;
+            this._variant = Variant;
             InitializeComponent();
-            _borderColor = border;
             if (_spel.Speler1.Naam == "")
             {
                 _spel.Speler1.Naam = "Wit";
@@ -65,7 +64,7 @@ namespace Schaakproject
             }
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1.BackgroundImage = Properties.Resources.border_transparent;
-            pictureBox1.BackColor = _borderColor;
+            pictureBox1.BackColor = borderColor;
             this.pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(1, 36);
             this.pictureBox1.Name = "pictureBox1";
@@ -226,7 +225,7 @@ namespace Schaakproject
             {
                 _clicks++;
                 lbluitleg.Visible = true;
-                if (Variant == "Chess960")
+                if (_variant == "Chess960")
                 {
                     pbuitleg.Image = Properties.Resources.chess960_uitleg_2;
                     pbuitleg.Visible = true;
@@ -270,7 +269,7 @@ namespace Schaakproject
             {
                 _optie = 1;
                 _clicks++;
-                if (Variant == "Chess960")
+                if (_variant == "Chess960")
                 {
                     btnvariant.BackgroundImage = Properties.Resources.button_regels_chess960;
                 }
@@ -662,7 +661,7 @@ namespace Schaakproject
             }
             else if (_optie == 1)
             {
-                if (Variant == "Chess960")
+                if (_variant == "Chess960")
                 {
                     btnvariant.BackgroundImage = Properties.Resources.button_regels_chess960_click;
                 }
@@ -685,7 +684,7 @@ namespace Schaakproject
             }
             else if (_optie == 1)
             {
-                if (Variant == "Chess960")
+                if (_variant == "Chess960")
                 {
                     btnvariant.BackgroundImage = Properties.Resources.button_regels_chess960;
                 }
