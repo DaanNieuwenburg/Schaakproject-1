@@ -40,7 +40,7 @@ namespace Schaakproject
 
             if (SpelMode == "Singleplayer")
             {
-                Computer computerSpeler = new Computer(NaamSpeler2, "zwart", SelectColor);
+                Computer computerSpeler = new Computer(NaamSpeler2, "zwart", SelectColor, this);
                 this.ComputerSpeler = computerSpeler;
             }
 
