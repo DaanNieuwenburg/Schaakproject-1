@@ -385,18 +385,15 @@ namespace Schaakproject
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
                 this.Vakje = nieuwVakje;
-                Console.WriteLine("Checkschaak");
                 bool checkSchaak = spel.schaakbord.CheckSchaak(spel.SpelerAanZet.koning.Vakje, spel.SpelerAanZet.koning.Kleur);
                 if (checkSchaak == true)
                 {
-                    Console.WriteLine("schaak is true");
                     selected.schaakstuk = this;
                     nieuwVakje.schaakstuk = temp;
                     this.Vakje = selected;
                 }
                 else
                 {
-                    Console.WriteLine("schaak is false");
                     if (temp != null)
                     {
                         spel.updateAantalStukken(spel.SpelerAanZet);

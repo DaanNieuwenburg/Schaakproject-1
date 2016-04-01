@@ -33,6 +33,10 @@ namespace Schaakproject
             {
                 lblaantal1.Text = Convert.ToString(_spel.Speler2.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
             }
+            else
+            {
+                lblaantal1.Text = Convert.ToString(_spel.ComputerSpeler.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
+            }
             for (int x = 0; x < 8; x++)
             {
                 for (int y = 0; y < 8; y++)

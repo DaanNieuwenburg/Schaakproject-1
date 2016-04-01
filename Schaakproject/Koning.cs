@@ -182,7 +182,6 @@ namespace Schaakproject
             Vakje _Randoost;
             Vakje vorige = vakjeKoning;
             bool checkschaak = false;
-            Console.WriteLine("MAG ROKEREN = " + _eersteZet);
 
             // Rokeren voor klassieke schaakvariant
             if (spel.Variant == "Klassiek")
@@ -207,8 +206,6 @@ namespace Schaakproject
 
                         if (magrokeren == true)
                         {
-                            Console.WriteLine("Rokeert");
-
                             // popup voor rokeren
                             Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
                             _Rokerenmelding.ShowDialog();
@@ -261,8 +258,6 @@ namespace Schaakproject
 
                         if (magrokeren == true)
                         {
-                            Console.WriteLine("Rokeert");
-    
                             // popup voor rokeren
                             Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
                             _Rokerenmelding.ShowDialog();
@@ -332,8 +327,6 @@ namespace Schaakproject
                     Vakje torennieuw_W = _randWest.BuurOost.BuurOost.BuurOost;
                     Vakje koningnieuw_O = _Randoost.BuurWest;
                     Vakje torennieuw_O = _Randoost.BuurWest.BuurWest;
-                    Console.WriteLine("west: " + west);
-                    Console.WriteLine("aantal " + aantalplaatsenwest);
                     // voor west
 
                     vakjesleeg = true;

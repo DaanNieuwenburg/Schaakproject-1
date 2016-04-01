@@ -2648,6 +2648,24 @@ buurzuidwest</body>
               <referencedTypeMoniker Id="ec1df4ff-e07c-4404-95d6-833465b35472" LastKnownName="Color" />
             </type_NamedElement>
           </property>
+          <property Id="790ac5be-12d3-49e4-a561-5e381f73cb35" name="ResterendeStukken" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ce42e298-3e3e-4f22-9a7a-aa5390c7774f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7822eb03-f8a8-478c-bc88-7be9bab2eedb" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="7fd13b5f-1059-44bb-9053-b3820bbd8ae7" name="ZojuistSchaak" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="da2f212c-bda7-4d9f-9c70-9571b12529db" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="81707974-dda0-4dda-9d89-9e4cc54565bf" name="KoningVerplaats" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a62be9d9-0349-4f64-8fa0-13d1373a2730" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="881fa832-c59b-490b-87b6-d4e8939f288e" name="bepaalMensPositie" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -3088,6 +3106,24 @@ buurzuidwest</body>
               <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
             </type_NamedElement>
           </property>
+          <property Id="29f8df01-28d8-4076-bc9d-10fe21f6cd4f" name="_recursieTeller" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e9616f27-8879-4250-ba09-34a9bf4fd87a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7822eb03-f8a8-478c-bc88-7be9bab2eedb" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="d4b98cab-1a48-414a-abdd-3789d5f98809" name="_slaanRichting" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d37a7d3a-a865-4095-a576-9913fb3a10c0" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="ad85b8cc-775e-41c4-aabe-d7b93ece8466" name="StaatSchaak" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="03b8ee28-a2ff-4ec2-8a9f-9b8d899b3c94" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2a015f45-f155-47c3-9d37-d34651f5d50f" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="ea1f4ef7-c70e-412a-801c-044fe9cb73cd" name="controleeropSlaan" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -3104,6 +3140,12 @@ buurzuidwest</body>
           </operation>
           <operation Id="5897f0ab-44ce-4ba8-b9a1-0c2c863471cd" name="reageerOpSchaak" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="d84ef97e-9d9e-4977-8cb5-33a9d65628f1" />
+          </operation>
+          <operation Id="c3dcb29b-079c-4225-91c0-fab8a5c042ca" name="voorkomStackOverflow" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="97fe9dd8-4bdd-4beb-bf17-0230058719f2" />
+          </operation>
+          <operation Id="8dace206-e0e5-4b8c-9979-6c6808a9874a" name="controleerBurenSchaak" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1fa30caf-4b4b-4ffe-b247-0d11de5645db" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -3530,6 +3572,11 @@ buurzuidwest</body>
     <packageHasNamedElement>
       <referencedType Id="79aebf07-08d7-4f69-ac18-38fb5501159a" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
         <elementDefinition Id="27bf647c-b259-4212-9525-4a079cf968d1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2a015f45-f155-47c3-9d37-d34651f5d50f" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

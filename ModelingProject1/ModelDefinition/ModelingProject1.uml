@@ -4376,6 +4376,60 @@ buurzuidwest</body>
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="ce42e298-3e3e-4f22-9a7a-aa5390c7774f"
+            name="ResterendeStukken"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="27bf647c-b259-4212-9525-4a079cf968d1"
+                LastKnownName="int"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="da2f212c-bda7-4d9f-9c70-9571b12529db"
+            name="ZojuistSchaak"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
+                LastKnownName="bool"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a62be9d9-0349-4f64-8fa0-13d1373a2730"
+            name="KoningVerplaats"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
+                LastKnownName="bool"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -6524,6 +6578,62 @@ buurzuidwest</body>
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="e9616f27-8879-4250-ba09-34a9bf4fd87a"
+            name="_recursieTeller"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="27bf647c-b259-4212-9525-4a079cf968d1"
+                LastKnownName="int"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d37a7d3a-a865-4095-a576-9913fb3a10c0"
+            name="_slaanRichting"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="9ae72030-5b19-4f74-b8af-7fbbca35c802"
+                LastKnownName="string"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="03b8ee28-a2ff-4ec2-8a9f-9b8d899b3c94"
+            name="StaatSchaak"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
+                LastKnownName="bool"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -6565,6 +6675,24 @@ buurzuidwest</body>
           <operation
             Id="d84ef97e-9d9e-4977-8cb5-33a9d65628f1"
             name="reageerOpSchaak"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="97fe9dd8-4bdd-4beb-bf17-0230058719f2"
+            name="voorkomStackOverflow"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="1fa30caf-4b4b-4ffe-b247-0d11de5645db"
+            name="controleerBurenSchaak"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"

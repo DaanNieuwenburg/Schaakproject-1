@@ -73,15 +73,6 @@ namespace Schaakproject
 
         public void SelecteerVakje(Vakje nieuwVakje, Spel spel)
         {
-            if (spel.SpelerAanZet == spel.Speler1)
-            {
-                Console.WriteLine("HUIDIGE SPELER IS SPELER 1");
-            }
-            else if (spel.SpelerAanZet == spel.ComputerSpeler)
-            {
-                Console.WriteLine("HUIDIGE SPELER IS COMP SPELER");
-            }
-
             if (Selected != null) //alleen als er al iets is geselecteerd
             {
                 Vakje clicked = nieuwVakje;   //voor de singleplayer
@@ -97,7 +88,6 @@ namespace Schaakproject
                     spel.VeranderSpeler();      //de andere speler is aan zet
                     if (spel.SpelMode == "Singleplayer")
                     {
-                        Console.WriteLine("SPELERRONDE");
                         spel.ComputerSpeler.Zet(clicked);  // laat de computer op de mens reageren
                         spel.VeranderSpeler();
                     }

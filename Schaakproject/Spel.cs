@@ -92,7 +92,6 @@ namespace Schaakproject
 
         public void VeranderSpeler()
         {
-            Console.WriteLine("VeranderSPELER");
             //Iedere keer dat een legale zet gedaan is, wordt de speler gewisseld
 
             //Bekijk of het spel remise is doordat er te weinig stukken zijn
@@ -132,7 +131,6 @@ namespace Schaakproject
 
             if (SpelerAanZet == Speler1)
             {
-                Console.WriteLine("Speleraanzet == speler1");
                 _witAanzet = true;
                 if (SpelMode == "Singleplayer")
                 {
@@ -179,16 +177,8 @@ namespace Schaakproject
                 }
                 else
                 {
-                    if (SpelMode == "Singleplayer")
+                    if (SpelMode != "Singleplayer")
                     {
-                        //pat = schaakbord.CheckPat(computerSpeler.Koning);
-                        //if (pat == true)
-                        //{
-                        // }
-                    }
-                    else
-                    {
-
                         pat = schaakbord.CheckPat(Speler2.koning);
                         if (pat == true)
                         {
@@ -209,7 +199,7 @@ namespace Schaakproject
                     mat = schaakbord.CheckMat(Speler1.koning);
                     if (mat == true)
                     {
-                        if(SpelMode == "Singleplayer")
+                        if (SpelMode == "Singleplayer")
                         {
                             Speler1.koning.Vakje.Pbox.Image = Properties.Resources.WitMat1;
                             SchaakMat _SchaakMat = new SchaakMat("De computer ", this);
@@ -242,6 +232,7 @@ namespace Schaakproject
         {
             if (speler.Kleur == "wit")
             {
+                Console.WriteLine("KOMT HIER NIET");
                 Speler1.ResterendeStukken = Speler1.ResterendeStukken - 1;
                 speelbord.lblaantal1.Text = Convert.ToString(Speler1.ResterendeStukken);
             }
@@ -251,6 +242,11 @@ namespace Schaakproject
                 {
                     Speler2.ResterendeStukken = Speler2.ResterendeStukken - 1;
                     speelbord.lblaantal2.Text = Convert.ToString(Speler2.ResterendeStukken);
+                }
+                else
+                {
+                    ComputerSpeler.ResterendeStukken = ComputerSpeler.ResterendeStukken - 1;
+                    speelbord.lblaantal2.Text = Convert.ToString(ComputerSpeler.ResterendeStukken);
                 }
             }
         }

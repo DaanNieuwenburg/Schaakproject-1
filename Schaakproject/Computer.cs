@@ -11,7 +11,9 @@ namespace Schaakproject
         private Vakje _vorigVakje { get; set; }
         private Schaakstuk _vorigSchaakstuk { get; set; }
         public Algoritme algoritme { get; set; }
-        public bool zojuistSchaak { get; set; }
+        public int ResterendeStukken { get; set; }
+        public bool ZojuistSchaak { get; set; }
+        public bool KoningVerplaats { get; set; }
         private Color _selectedColor { get; set; }
         private List<Vakje> _nietVerplaatstLijst = new List<Vakje>();
         public List<Vakje> NietVerplaatstLijst
@@ -30,6 +32,7 @@ namespace Schaakproject
         private int _positieWest { get; set; }
         public Computer(string naam, string kleur, Color selectcolor, Spel _spel)
         {
+            ResterendeStukken = 16;
             _selectedColor = selectcolor;
             Naam = naam;
             Kleur = kleur;
@@ -87,7 +90,6 @@ namespace Schaakproject
 
         public void voerZetUit(Vakje geselecteerdStuk, Vakje geselecteerdVakje)
         {
-            Console.WriteLine("Voer zet uit");
             VerplaatsingsLijst.Add(geselecteerdVakje);       // slaat de positie van de computerszet in lijst op 
 
             geselecteerdStuk.schaakstuk.Verplaats(geselecteerdVakje, geselecteerdStuk, spel);
