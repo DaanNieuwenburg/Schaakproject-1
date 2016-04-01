@@ -672,6 +672,12 @@ buurzuidwest</body>
               <referencedTypeMoniker Id="a35d6f22-f9f4-49bf-8493-19ec1e86175d" LastKnownName="Speler" />
             </type_NamedElement>
           </property>
+          <property Id="5c0e8637-4104-483d-8cd5-771472f56342" name="Geslagen" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3255920a-2919-4028-8b2f-9d399bf7fa84" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="b75f5e36-e7b3-477b-8657-d985f4bf8d95" name="Verplaats" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
@@ -797,7 +803,7 @@ buurzuidwest</body>
             <classMoniker Id="f45ba02b-44ef-4c06-b616-eb9a70d05827" LastKnownName="Schaakstuk" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="848795cc-b94d-4abf-8d3b-8d5e42223c5e" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="848795cc-b94d-4abf-8d3b-8d5e42223c5e" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <lowerValueInternal>
                     <literalString Id="87fd1bfb-0db2-4f7b-b777-3a64d2806d22" name="Lower" value="0">
                       <elementDefinition Id="b9e5352c-5877-481b-a58f-d8703214a453" />
@@ -883,7 +889,7 @@ buurzuidwest</body>
             </appliedStereotypesInternal>
             <elementDefinition Id="ef7b270e-5ec6-4c82-b6da-fe5d52609de4" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="62f61ac0-9028-438d-80f9-d1ceaa36deb8" LastKnownName="color" />
+              <referencedTypeMoniker Id="acaebee4-49c4-47b0-88ff-a979f754a673" LastKnownName="Color" />
             </type_NamedElement>
           </property>
           <property Id="b01a7f92-3839-4002-86a6-e00898c010c8" name="schaakstuk" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -3165,11 +3171,6 @@ buurzuidwest</body>
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="62f61ac0-9028-438d-80f9-d1ceaa36deb8" name="color" isAbstract="false" isLeaf="false" cachedFullName="color">
-        <elementDefinition Id="b7e72923-43d7-4d43-9feb-801dafb5a682" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="73a383b3-ff15-415a-9395-4245680b27f4" name="SpecialPB" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::SpecialPB">
         <elementDefinition Id="024322af-78d3-4585-b41a-c447535ff75d" />
       </referencedType>
@@ -3222,6 +3223,11 @@ buurzuidwest</body>
     <packageHasNamedElement>
       <referencedType Id="588e82b2-1924-424e-a3f2-8fa3a93457d2" name="Schaakstuk" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Schaakstuk">
         <elementDefinition Id="5707d178-3d72-4f4a-9f04-b079d5842eb3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="acaebee4-49c4-47b0-88ff-a979f754a673" name="Color" isAbstract="false" isLeaf="false" cachedFullName="Color">
+        <elementDefinition Id="8447702a-94be-413e-8fb0-396f6da26750" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
