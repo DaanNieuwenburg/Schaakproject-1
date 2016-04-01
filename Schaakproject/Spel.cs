@@ -164,6 +164,7 @@ namespace Schaakproject
                         else
                         {
                             // computer reageert op schaak
+                            ComputerSpeler.algoritme.zojuistSchaak = true;
                             Console.WriteLine("REAGEER OP SCHAAK " + SpelerAanZet.Kleur);
                             Selected.Pbox.BackColor = Color.Blue;
                             ComputerSpeler.algoritme.StaatSchaak = true;

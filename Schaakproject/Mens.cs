@@ -100,6 +100,7 @@ namespace Schaakproject
                     spel.VeranderSpeler();      //de andere speler is aan zet
                     if (spel.SpelMode == "Singleplayer")
                     {
+                        Console.WriteLine("SPELERRONDE");
                         spel.ComputerSpeler.Zet(clicked, spel);  // laat de computer op de mens reageren
                         spel.VeranderSpeler();
                     }
