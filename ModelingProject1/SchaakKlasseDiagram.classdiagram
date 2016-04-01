@@ -2494,7 +2494,7 @@ buurzuidwest</body>
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="d311a9e1-167c-4bba-9b67-4bc16f518a0d" name="Algoritme" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <memberEnd Id="d311a9e1-167c-4bba-9b67-4bc16f518a0d" name="Algoritme" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
                   <elementDefinition Id="723d0627-eedf-432b-9889-5f57155acecc" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -2753,34 +2753,10 @@ buurzuidwest</body>
           </generalization>
         </generalsInternal>
         <ownedAttributesInternal>
-          <property Id="b334fecf-2b08-4c99-9c43-4ce3a2526051" name="_SpelMode" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="4848a679-bd24-434b-94a7-089f8497d685" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
-            </type_NamedElement>
-          </property>
           <property Id="c57c6217-6e13-4499-8fd2-fc46fa8ee7c3" name="_schaakbord" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="df9d5a5b-2563-42d1-9163-fd6feb83f5ce" />
             <type_NamedElement>
               <referencedTypeMoniker Id="74d128f9-abf0-40d3-b5aa-cb433a2b3cba" LastKnownName="Schaakbord" />
-            </type_NamedElement>
-          </property>
-          <property Id="f6d5d864-f355-4176-b651-451ac860b5d4" name="_speler1" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="82d0b952-d596-4924-a865-8903248058a4" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="9a5efb97-c456-4d06-a680-f481a84924a9" LastKnownName="Mens" />
-            </type_NamedElement>
-          </property>
-          <property Id="fec65eab-cfd3-46f7-acd3-20ba18a077a2" name="_speler2" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="e6884f26-1689-44e2-887b-8c4869e7ba96" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="9a5efb97-c456-4d06-a680-f481a84924a9" LastKnownName="Mens" />
-            </type_NamedElement>
-          </property>
-          <property Id="025ec2a1-55cc-4e15-a2b6-ab7f154cd58f" name="_computerSpeler" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="0393a848-d248-4a88-97bb-77c989880f8e" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="518e744b-b76c-4e4b-af12-8b1df90be91c" LastKnownName="Computer" />
             </type_NamedElement>
           </property>
           <property Id="4604002a-68ee-4dd6-996e-42cd1db6633b" name="_spel" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -2799,12 +2775,6 @@ buurzuidwest</body>
             <elementDefinition Id="c26a0b30-3c87-49b6-a1ce-eb24515ab753" />
             <type_NamedElement>
               <referencedTypeMoniker Id="fc25a9a7-ead6-4d74-9b52-d3595637df61" LastKnownName="string" />
-            </type_NamedElement>
-          </property>
-          <property Id="e29a5cfd-a80f-401e-81b6-54f1780d31f6" name="_witaanzet" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="cebf7d3a-390a-4684-812f-8379b6e5b252" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="be871497-f5ad-4406-a38d-dc4547912cdd" LastKnownName="bool" />
             </type_NamedElement>
           </property>
           <property Id="9a6d5aa2-adc5-4430-a0f5-921607b2a233" name="_borderColor" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">

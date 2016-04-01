@@ -12,22 +12,15 @@ namespace Schaakproject
 {
     public partial class SpeelBord : Form
     {
-        private string _spelMode { get; set; }              //Singleplayer of multiplayer
-        private Schaakbord _schaakbord { get; set; }        //Een schaakbord
-        private Mens _speler1 { get; set; }                 //Speler1
-        private Mens _speler2 { get; set; }                 //Speler2
-        private Computer _computerSpeler { get; set; }      //Computer
         private Spel _spel { get; set; }                    //Een spel
         private int _clicks { get; set; }                    //voor het laten zien van de uitleg
         public string Variant { get; set; }                //string voor spelvariant
-        private bool _witAanzet { get; set; }
         private Color _borderColor { get; set; }
         private int _optie { get; set; }
-        public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, string Variant, Color border)
+        public SpeelBord(Spel spel, Schaakbord schaakbord, string Variant, Color border)
         {
             _spel = spel;
             _clicks = 0;
-            _spelMode = SpelMode;
             this.Variant = Variant;
             InitializeComponent();
             _borderColor = border;
@@ -82,18 +75,18 @@ namespace Schaakproject
             this.Controls.Add(pictureBox1);
 
             // Het spel is singleplayer of multiplayer
-            if (_spelMode.Equals("Singleplayer"))
+            if (_spel.SpelMode.Equals("Singleplayer"))
             {
                 lblPlayer1.Text = _spel.Speler1.Naam;
                 lblPlayer2.Text = "COMP";
             }
-            else if (_spelMode.Equals("Multiplayer"))
+            else if (_spel.SpelMode.Equals("Multiplayer"))
             {
                 Console.WriteLine("tlest " + _spel.Speler1.Naam);
                 lblPlayer1.Text = "P1: " + _spel.Speler1.Naam;
                 lblPlayer2.Text = "P2: " + _spel.Speler2.Naam;
             }
-            else if (_spelMode.Equals("Online"))
+            else if (_spel.SpelMode.Equals("Online"))
             {
                 Console.WriteLine("tlest " + _spel.Speler1.Naam);
                 lblPlayer1.Text = "P1: " + _spel.Speler1.Naam;
@@ -102,7 +95,7 @@ namespace Schaakproject
 
         private void select(SpecialPB pictureBox) //click event voor alle pictureboxes
         {
-            if (_spelMode == "Singleplayer")
+            if (_spel.SpelMode == "Singleplayer")
             {
                 if (_spel.SpelerAanZet == _spel.Speler1)
                 {
@@ -118,7 +111,7 @@ namespace Schaakproject
                 }
             }
 
-            else if (_spelMode == "Multiplayer")
+            else if (_spel.SpelMode == "Multiplayer")
             {
                 if (_spel.SpelerAanZet == _spel.Speler1)
                 {
@@ -146,7 +139,7 @@ namespace Schaakproject
                     }
                 }
             }
-            else if (_spelMode == "Online")
+            else if (_spel.SpelMode == "Online")
             {
 
                 if (_spel.SpelerAanZet == _spel.Speler1)
@@ -203,12 +196,12 @@ namespace Schaakproject
             Console.WriteLine("HERSTART");
             HerstartMelding Warning = new HerstartMelding();
             Warning.ShowDialog();
-            if (_spelMode == "Singleplayer")
+            if (_spel.SpelMode == "Singleplayer")
             {
                 if (Warning.Sure == true)
                 {
                     this.Hide();
-                    _spel.Herstart(_spelMode, _spel.Speler1.Naam, "COMP");
+                    _spel.Herstart(_spel.SpelMode, _spel.Speler1.Naam, "COMP");
                 }
             }
             else
@@ -216,7 +209,7 @@ namespace Schaakproject
                 if (Warning.Sure == true)
                 {
                     this.Hide();
-                    _spel.Herstart(_spelMode, _spel.Speler1.Naam, _spel.Speler2.Naam);
+                    _spel.Herstart(_spel.SpelMode, _spel.Speler1.Naam, _spel.Speler2.Naam);
                 }
             }
         }

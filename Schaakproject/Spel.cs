@@ -58,7 +58,7 @@ namespace Schaakproject
             this.schaakbord = schaakbord;
 
             //Hij maakt een nieuw speelbord (een window)
-            SpeelBord speelbord = new SpeelBord(this, schaakbord, SpelMode, Variant, BorderColor);
+            SpeelBord speelbord = new SpeelBord(this, schaakbord, Variant, BorderColor);
             this.speelbord = speelbord;
             speelbord.Show();
         }
@@ -164,7 +164,9 @@ namespace Schaakproject
                         else
                         {
                             // computer reageert op schaak
+                            ComputerSpeler.algoritme.zojuistSchaak = true;
                             Console.WriteLine("REAGEER OP SCHAAK " + SpelerAanZet.Kleur);
+                            Selected.Pbox.BackColor = Color.Blue;
                             ComputerSpeler.algoritme.StaatSchaak = true;
                             ComputerSpeler.algoritme.reageerOpSchaak(Selected);
                         }

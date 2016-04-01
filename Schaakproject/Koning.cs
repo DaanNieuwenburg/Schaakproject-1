@@ -210,7 +210,8 @@ namespace Schaakproject
 
                         if (magrokeren == true)
                         {
-                            Console.WriteLine("IK KOM HIERT");
+                            Console.WriteLine("Rokeert");
+
                             // popup voor rokeren
                             Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
                             _Rokerenmelding.ShowDialog();
@@ -235,6 +236,12 @@ namespace Schaakproject
 
                         speler.ValideZet = true;
                         _eersteZet = true;
+
+                        if (spel.SpelMode == "Singleplayer")
+                        {
+                            spel.ComputerSpeler.Zet(tempToren.Vakje, spel);  // laat de computer op de mens reageren
+                            spel.VeranderSpeler();
+                        }
                     }
 
                 }
@@ -255,10 +262,12 @@ namespace Schaakproject
 
                         if (magrokeren == true)
                         {
-                            //spel.VeranderSpeler();
+                            Console.WriteLine("Rokeert");
+    
                             // popup voor rokeren
                             Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
                             _Rokerenmelding.ShowDialog();
+                            spel.VeranderSpeler();
                         }
 
                     }
@@ -841,8 +850,6 @@ namespace Schaakproject
                     {
                         if (vakjesleeg == true)
                         {
-                            Console.WriteLine("IK KOM HIERT");
-                            // popup voor rokeren
                             Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
                             _Rokerenmelding.ShowDialog();
                         }
