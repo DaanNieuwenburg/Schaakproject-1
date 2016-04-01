@@ -98,7 +98,7 @@ namespace Schaakproject
             this.btnBegin.BackgroundImage = (System.Drawing.Image)(Properties.Resources.buttonBegin);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btTerug_Click(object sender, EventArgs e)
         {
             if (lbTitel.Text == "Selecteer een schaakmode")
             {

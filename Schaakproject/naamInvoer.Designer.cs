@@ -170,7 +170,7 @@
             this.btTerug.Size = new System.Drawing.Size(41, 32);
             this.btTerug.TabIndex = 12;
             this.btTerug.UseVisualStyleBackColor = false;
-            this.btTerug.Click += new System.EventHandler(this.button1_Click);
+            this.btTerug.Click += new System.EventHandler(this.btTerug_Click);
             this.btTerug.MouseEnter += new System.EventHandler(this.btTerug_MouseEnter);
             this.btTerug.MouseLeave += new System.EventHandler(this.btTerug_MouseLeave);
             // 
