@@ -59,29 +59,19 @@ namespace Schaakproject
 
     public class Schaakbord
     {
-        public Vakje[,] SchaakArray { get; private set; }   //Een array van vakjes zodat het schaakbord kan worden opgezet
-        public Color Kleur { get; private set; }
-        private int _aantal1 { get; set; }                   //Het aantal schaakstukken wordt ingesteld voor wit
-        private int _aantal2 { get; set; }                   //Het aantal schaakstukken wordt ingesteld voor zwart
-        private bool _staatSchaak { get; set; }              //Staat er iemand schaak?
-        private string _variant { get; set; }                //Klassiek of Chess960
-        private Schaakstuk _schaakGezet { get; set; }        //Het schaakstuk dat de koning schaak heeft gezet
-        private string _richting { get; set; }               //De richting waar het schaakstuk dat de koning schaak heeft gezet staat
-        private bool _pionVoorMat { get; set; }              //om te kijken of er een pion gezet kan worden tussen de koning en een stuk
-        public Color ColorVakje1 { get; private set; }
-        public Color ColorVakje2 { get; private set; }
-        private List<Schaakstuk> _stukVoorKomen { get; set; }
+        public Vakje[,] SchaakArray { get; private set; }       //Een array van vakjes zodat het schaakbord kan worden opgezet
+        private Schaakstuk _schaakGezet { get; set; }           //Het schaakstuk dat de koning schaak heeft gezet
+        private string _richting { get; set; }                  //De richting waar het schaakstuk dat de koning schaak heeft gezet staat
+        private bool _pionVoorMat { get; set; }                 //om te kijken of er een pion gezet kan worden tussen de koning en een stuk
+        private List<Schaakstuk> _stukVoorKomen { get; set; }   //een lijst om bij te houden welke stukken mogen verplaatsen om geen schaak te hebben voor het bekijken van schaakmat
 
-
-        public Schaakbord(string _Variant, Spel Spel, Speler Speler1, Speler Speler2, Color vakje1, Color vakje2)
+        public Schaakbord(string _variant, Spel Spel, Speler Speler1, Speler Speler2, Color vakje1, Color vakje2)
         {
-            ColorVakje1 = vakje1;
-            ColorVakje2 = vakje2;
+            Color ColorVakje1 = vakje1;
+            Color ColorVakje2 = vakje2;
             _stukVoorKomen = new List<Schaakstuk>();
-            _aantal1 = 16;
-            _aantal2 = 16;
+
             SchaakArray = new Vakje[8, 8];
-            _variant = _Variant;
             string kleurstuk;
             bool kleurvakje = false; //zwart of wit
             kleurstuk = "zwart";
@@ -1151,7 +1141,7 @@ namespace Schaakproject
         {
             _stukVoorKomen.Clear();
             bool mogelijkloop = false;
-            _staatSchaak = false;
+            bool _staatSchaak = false;
             Schaakstuk zetSchaak = null;
             Vakje vorige = ditvakje;
 

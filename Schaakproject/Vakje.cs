@@ -12,6 +12,7 @@ namespace Schaakproject
         public Color Kleur { get; private set; }
         public Schaakstuk schaakstuk { get; set; }
         public SpecialPB Pbox { get; set; }
+
         public Vakje BuurNoord { get; set; }
         public Vakje BuurZuid { get; set; }
         public Vakje BuurOost { get; set; }

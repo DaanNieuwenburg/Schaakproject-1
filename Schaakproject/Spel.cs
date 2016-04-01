@@ -9,7 +9,7 @@ namespace Schaakproject
     public class Spel
     {
         public string SpelMode { get; private set; }            //Singleplayer of multiplayer
-        private bool _witAanzet { get; set; }                    //Wie is aan zet
+        private bool _witAanzet { get; set; }                   //Wie is aan zet
         public Mens Speler1 { get; private set; }               //De speler (is er altijd)
         public Mens Speler2 { get; private set; }               //De tweede speler voor multiplayer
         public Computer ComputerSpeler { get; private set; }    //De computer voor singleplayer
@@ -17,11 +17,13 @@ namespace Schaakproject
         public Vakje Selected { get; set; }                     //Maakt de computer gebruik van
         public string Variant { get; private set; }             //Klassiek of Chess960
         public Schaakbord schaakbord { get; private set; }      //Het schaakbord wordt onthouden
+
         public Color BorderColor { get; private set; }         //De kleur voor de rand
         public Color SelectColor { get; private set; }         //De kleur voor het selecteren
+        public Color ColorVakje1 { get; private set; }         //De kleur van het eerste vakje
+        public Color ColorVakje2 { get; private set; }         //De kleur van het tweede vakje
+
         public SpeelBord speelbord { get; private set; }        //Het speelbord window
-        public Color ColorVakje1 { get; private set; }
-        public Color ColorVakje2 { get; private set; }
 
         public Spel(string Mode, string NaamSpeler1, string NaamSpeler2, string Variant, Color borderColor, Color selectColor, Color vakje1, Color vakje2)
         {
@@ -48,17 +50,17 @@ namespace Schaakproject
                 Speler2 = speler2;
             }
 
-            Start();
+            Start(BorderColor);
         }
 
-        public void Start()
+        public void Start(Color BorderColor)
         {
             //Hij maakt een nieuw schaakbord waarin de logica zit
             Schaakbord schaakbord = new Schaakbord(Variant, this, Speler1, Speler2, ColorVakje1, ColorVakje2);
             this.schaakbord = schaakbord;
 
             //Hij maakt een nieuw speelbord (een window)
-            SpeelBord speelbord = new SpeelBord(this, schaakbord, SpelMode, Speler1, Speler2, ComputerSpeler, Variant, BorderColor);
+            SpeelBord speelbord = new SpeelBord(this, schaakbord, Variant, BorderColor);
             this.speelbord = speelbord;
             speelbord.Show();
         }
