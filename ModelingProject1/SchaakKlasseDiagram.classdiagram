@@ -316,6 +316,16 @@ buurzuidwest</body>
           </stereotypeInstance>
         </appliedStereotypesInternal>
         <elementDefinition Id="b8e9c20a-28d5-451e-b9a2-31a75299b217" />
+        <suppliersInternal>
+          <dependency Id="a7192104-529a-45b4-9eca-664e5d9c1c48">
+            <classMoniker Id="eec39189-5a2f-4615-a4c2-6442e30b5789" LastKnownName="RemiseMelding" />
+            <elementDefinition Id="cac826e1-8e31-4b04-970c-ba72bd0c0832" />
+          </dependency>
+          <dependency Id="18f28231-a980-4445-81dc-6a640a017413">
+            <classMoniker Id="8337edd5-a9bc-48f6-a1b6-6d58abc83edb" LastKnownName="SchaakMat" />
+            <elementDefinition Id="b80f50a9-bd34-4e34-81ef-b40958914352" />
+          </dependency>
+        </suppliersInternal>
         <targetEnds>
           <association Id="32931fd0-635e-4477-afa7-b7e9de8316b5" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="Heeft" isAbstract="false">
             <classMoniker Id="3049ff15-194f-420a-acc7-84426536a346" LastKnownName="Vakje" />
@@ -968,6 +978,12 @@ buurzuidwest</body>
           </stereotypeInstance>
         </appliedStereotypesInternal>
         <elementDefinition Id="cb86e7b4-7294-4ba3-b736-a8fe06520d6e" />
+        <suppliersInternal>
+          <dependency Id="9ae3086d-a5b3-404e-ae2a-f623664e4dd9">
+            <classMoniker Id="d116dce1-f47f-4472-8614-2f02fa2d615b" LastKnownName="PromoveerForm" />
+            <elementDefinition Id="9c2dbfb8-eaf4-4de2-ad7c-fb626c175590" />
+          </dependency>
+        </suppliersInternal>
         <generalsInternal>
           <generalization Id="b66f6948-a88b-42b8-98c6-47e73bbcb0ec" isSubstitutable="false">
             <classMoniker Id="f45ba02b-44ef-4c06-b616-eb9a70d05827" LastKnownName="Schaakstuk" />
@@ -1531,6 +1547,12 @@ buurzuidwest</body>
           </stereotypeInstance>
         </appliedStereotypesInternal>
         <elementDefinition Id="bf50c40b-7eff-4bae-bf79-01cca456b99e" />
+        <suppliersInternal>
+          <dependency Id="877dc3f5-39c3-421f-9e95-51bc0c50d770">
+            <classMoniker Id="c7f1a179-47c3-49a4-870f-6002e291a692" LastKnownName="Rokerenmelding" />
+            <elementDefinition Id="89ad588d-a26f-48b7-8b6c-087a4286ed84" />
+          </dependency>
+        </suppliersInternal>
         <generalsInternal>
           <generalization Id="25a4518a-b636-489a-9e20-51d26f141ab8" isSubstitutable="false">
             <classMoniker Id="f45ba02b-44ef-4c06-b616-eb9a70d05827" LastKnownName="Schaakstuk" />
@@ -2583,7 +2605,7 @@ buurzuidwest</body>
           <property Id="bd61f01f-9492-485f-943a-34e9215ed572" name="_borderColor2" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="68b3d54b-2e43-4cfe-abef-4a3972b7fa42" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="38c8f3c3-c1c5-47ef-9ed0-7fff5b15b36f" LastKnownName="color" />
+              <referencedTypeMoniker Id="75c8e705-0bfb-4992-9780-f63199390a42" LastKnownName="Color" />
             </type_NamedElement>
           </property>
           <property Id="b89f08e4-0486-49ca-9a92-a2017a1af67e" name="_selectColor" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -2770,11 +2792,6 @@ buurzuidwest</body>
     <packageHasNamedElement>
       <referencedType Id="7822eb03-f8a8-478c-bc88-7be9bab2eedb" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
         <elementDefinition Id="27bf647c-b259-4212-9525-4a079cf968d1" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="38c8f3c3-c1c5-47ef-9ed0-7fff5b15b36f" name="color" isAbstract="false" isLeaf="false" cachedFullName="color">
-        <elementDefinition Id="b7e72923-43d7-4d43-9feb-801dafb5a682" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -3160,6 +3177,92 @@ buurzuidwest</body>
         <elementDefinition Id="9ae72030-5b19-4f74-b8af-7fbbca35c802" />
       </referencedType>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="75c8e705-0bfb-4992-9780-f63199390a42" name="Color" isAbstract="false" isLeaf="false" cachedFullName="Color">
+        <elementDefinition Id="8447702a-94be-413e-8fb0-396f6da26750" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d116dce1-f47f-4472-8614-2f02fa2d615b" name="PromoveerForm" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="14e76a22-3035-42c8-913b-d9733c388e60" />
+        <generalsInternal>
+          <generalization Id="b26ac996-a96d-4fdb-922c-35d7d7a05b26" isSubstitutable="false">
+            <classMoniker Id="f9a424aa-877b-4745-834a-07bfc5ceeb60" LastKnownName="Form" />
+            <elementDefinition Id="639f2fb2-e40c-48b8-98a8-cafac12aefaa" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="93f202c0-49c3-415a-83c1-2002c65cd6b5" name="_pion" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3e18347c-ce2a-4791-94d3-1c76b27e9326" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f4fb8f9c-449a-461d-949e-c565755e79ad" LastKnownName="Pion" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c7f1a179-47c3-49a4-870f-6002e291a692" name="Rokerenmelding" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e240a6c5-c123-4772-ac85-a55a03e51483" />
+        <generalsInternal>
+          <generalization Id="b6b1196d-a939-4ea5-8e5b-a80a9c967690" isSubstitutable="false">
+            <classMoniker Id="f9a424aa-877b-4745-834a-07bfc5ceeb60" LastKnownName="Form" />
+            <elementDefinition Id="f1306332-7d39-48bd-89bb-b15920b2eb56" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="af4d7cc2-eabf-4ee2-a654-9bde89f75c48" name="_koning" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b25f058d-95ff-4e63-b849-b8cb7c998e66" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="cb0e4d77-1532-4fd5-9abb-3a84d5d4e9c6" LastKnownName="Koning" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="cb0e4d77-1532-4fd5-9abb-3a84d5d4e9c6" name="Koning" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Koning">
+        <elementDefinition Id="bf50c40b-7eff-4bae-bf79-01cca456b99e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="eec39189-5a2f-4615-a4c2-6442e30b5789" name="RemiseMelding" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e10bc908-234c-4050-9380-22303eb2190a" />
+        <generalsInternal>
+          <generalization Id="4061d24c-4865-4a29-9946-d8b9b2255bf3" isSubstitutable="false">
+            <classMoniker Id="f9a424aa-877b-4745-834a-07bfc5ceeb60" LastKnownName="Form" />
+            <elementDefinition Id="21746b43-1b49-4fdf-81b7-724638aec253" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="7a9d491d-ea02-46ee-95c8-b8fc9f9df577" name="_spel" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0451a68f-d935-41ae-a32a-db36b1d3e248" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8337edd5-a9bc-48f6-a1b6-6d58abc83edb" name="SchaakMat" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="da40bb43-cbfd-4eb5-96b3-e85d1c565bc6" />
+        <generalsInternal>
+          <generalization Id="8e09a090-839f-4e41-8242-bdba4ce2642b" isSubstitutable="false">
+            <classMoniker Id="f9a424aa-877b-4745-834a-07bfc5ceeb60" LastKnownName="Form" />
+            <elementDefinition Id="c371300b-ae66-4bd2-936f-d602e569d1a4" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="4353a85e-ef3c-44a6-9caa-685681450abd" name="_spel" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="947d3b19-2cc6-4b88-8460-c90551c0caf6" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="b1492d3f-3f34-46c2-94ce-5dad21715151" name="ModelingProject1">
     <elementDefinition Id="de569ad7-15f5-468e-875f-a53a5601e060" />

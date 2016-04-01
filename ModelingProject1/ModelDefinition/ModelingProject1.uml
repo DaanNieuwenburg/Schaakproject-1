@@ -495,6 +495,22 @@ buurzuidwest</body>
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <suppliersInternal>
+          <dependency
+            Id="cac826e1-8e31-4b04-970c-ba72bd0c0832">
+            <classMoniker
+              Id="e10bc908-234c-4050-9380-22303eb2190a"
+              LastKnownName="RemiseMelding"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+          <dependency
+            Id="b80f50a9-bd34-4e34-81ef-b40958914352">
+            <classMoniker
+              Id="da40bb43-cbfd-4eb5-96b3-e85d1c565bc6"
+              LastKnownName="SchaakMat"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
         <targetEnds>
           <association
             Id="e14356db-1d7f-4835-aeea-a9e18a01a475"
@@ -1589,6 +1605,15 @@ buurzuidwest</body>
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <suppliersInternal>
+          <dependency
+            Id="9c2dbfb8-eaf4-4de2-ad7c-fb626c175590">
+            <classMoniker
+              Id="14e76a22-3035-42c8-913b-d9733c388e60"
+              LastKnownName="PromoveerForm"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
         <generalsInternal>
           <generalization
             Id="3f08a596-189e-4a07-893b-fe7702adcfe1"
@@ -2350,6 +2375,15 @@ buurzuidwest</body>
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <suppliersInternal>
+          <dependency
+            Id="89ad588d-a26f-48b7-8b6c-087a4286ed84">
+            <classMoniker
+              Id="e240a6c5-c123-4772-ac85-a55a03e51483"
+              LastKnownName="Rokerenmelding"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
         <generalsInternal>
           <generalization
             Id="740ebdc6-0b69-4627-aad5-eec80a9c6c82"
@@ -5099,8 +5133,8 @@ buurzuidwest</body>
             isComposite="false">
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="b7e72923-43d7-4d43-9feb-801dafb5a682"
-                LastKnownName="color"
+                Id="8447702a-94be-413e-8fb0-396f6da26750"
+                LastKnownName="Color"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -6132,6 +6166,166 @@ buurzuidwest</body>
       <undefinedType
         Id="0487e777-feaf-4ea7-a4dc-ef2cad1868ea"
         name="List" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="14e76a22-3035-42c8-913b-d9733c388e60"
+        name="PromoveerForm"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="639f2fb2-e40c-48b8-98a8-cafac12aefaa"
+            isSubstitutable="false">
+            <classMoniker
+              Id="ba2a7835-0ead-4db6-8a39-81a54042fe92"
+              LastKnownName="Form"
+              LastKnownLocation="ModelingProject1.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="3e18347c-ce2a-4791-94d3-1c76b27e9326"
+            name="_pion"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="cb86e7b4-7294-4ba3-b736-a8fe06520d6e"
+                LastKnownName="Pion"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e240a6c5-c123-4772-ac85-a55a03e51483"
+        name="Rokerenmelding"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="f1306332-7d39-48bd-89bb-b15920b2eb56"
+            isSubstitutable="false">
+            <classMoniker
+              Id="ba2a7835-0ead-4db6-8a39-81a54042fe92"
+              LastKnownName="Form"
+              LastKnownLocation="ModelingProject1.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="b25f058d-95ff-4e63-b849-b8cb7c998e66"
+            name="_koning"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="bf50c40b-7eff-4bae-bf79-01cca456b99e"
+                LastKnownName="Koning"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e10bc908-234c-4050-9380-22303eb2190a"
+        name="RemiseMelding"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="21746b43-1b49-4fdf-81b7-724638aec253"
+            isSubstitutable="false">
+            <classMoniker
+              Id="ba2a7835-0ead-4db6-8a39-81a54042fe92"
+              LastKnownName="Form"
+              LastKnownLocation="ModelingProject1.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="0451a68f-d935-41ae-a32a-db36b1d3e248"
+            name="_spel"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="640d89f1-83bc-4809-a5e9-83abdc7fec33"
+                LastKnownName="Spel"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="da40bb43-cbfd-4eb5-96b3-e85d1c565bc6"
+        name="SchaakMat"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="c371300b-ae66-4bd2-936f-d602e569d1a4"
+            isSubstitutable="false">
+            <classMoniker
+              Id="ba2a7835-0ead-4db6-8a39-81a54042fe92"
+              LastKnownName="Form"
+              LastKnownLocation="ModelingProject1.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="947d3b19-2cc6-4b88-8460-c90551c0caf6"
+            name="_spel"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="640d89f1-83bc-4809-a5e9-83abdc7fec33"
+                LastKnownName="Spel"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
