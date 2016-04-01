@@ -6,6 +6,7 @@ namespace Schaakproject
 {
     public static class MSSystemExtenstions
     {
+        //Dit shuffled de stukken voor Chess960
         static bool shuffle = true;
         public static bool IsOdd(int value)
         {
@@ -348,8 +349,8 @@ namespace Schaakproject
             bool mogelijk = false;
             string kleur = koning.Kleur;
             bool pat = true;
-            int blokkeert = 0;
-            int stillePion = 0;
+            int blokkeert = 0;  //het aantal schaakstukken die niet mogen bewegen, omdat de koning dan schaak komt te staan
+            int stillePion = 0; //hoeveel pionnen er zijn die niet kunnen bewegen
 
             //bekijk of de koning schaak staat als hij naar noord zou bewegen
             if (koningVakje.BuurNoord != null)
@@ -527,7 +528,7 @@ namespace Schaakproject
             Vakje vorige = koningVakje;
             bool onthouden = false;
 
-            //voor noord
+            //bekijk of er noord een schaakstuk staat tussen de koning en een schaakstuk dat de koning zou kunnen slaan
             while (loop == false)
             {
                 if (vorige.BuurNoord == null)
@@ -587,7 +588,7 @@ namespace Schaakproject
             juisteKleur = false;
             vorige = koningVakje;
 
-            //voor oost
+            //bekijk of er oost een schaakstuk staat tussen de koning en een schaakstuk dat de koning zou kunnen slaan
             while (loop == false)
             {
                 if (vorige.BuurOost == null)
@@ -645,7 +646,7 @@ namespace Schaakproject
             juisteKleur = false;
             vorige = koningVakje;
 
-            //voor zuid
+            //bekijk of er zuid een schaakstuk staat tussen de koning en een schaakstuk dat de koning zou kunnen slaan
             while (loop == false)
             {
                 if (vorige.BuurZuid == null)
@@ -703,7 +704,7 @@ namespace Schaakproject
             juisteKleur = false;
             vorige = koningVakje;
 
-            //voor west
+            //bekijk of er west een schaakstuk staat tussen de koning en een schaakstuk dat de koning zou kunnen slaan
             while (loop == false)
             {
                 if (vorige.BuurWest == null)
@@ -761,7 +762,7 @@ namespace Schaakproject
             juisteKleur = false;
             vorige = koningVakje;
 
-            //voor noordoost
+            //bekijk of er noordoost een schaakstuk staat tussen de koning en een schaakstuk dat de koning zou kunnen slaan
             while (loop == false)
             {
                 if (vorige.BuurNoordoost == null)
@@ -819,7 +820,7 @@ namespace Schaakproject
             juisteKleur = false;
             vorige = koningVakje;
 
-            //voor noordwest
+            //bekijk of er noordwest een schaakstuk staat tussen de koning en een schaakstuk dat de koning zou kunnen slaan
             while (loop == false)
             {
                 if (vorige.BuurNoordWest == null)
@@ -877,7 +878,7 @@ namespace Schaakproject
             juisteKleur = false;
             vorige = koningVakje;
 
-            //voor zuidoost
+            //bekijk of er zuidoost een schaakstuk staat tussen de koning en een schaakstuk dat de koning zou kunnen slaan
             while (loop == false)
             {
                 if (vorige.BuurZuidOost == null)
@@ -935,7 +936,7 @@ namespace Schaakproject
             juisteKleur = false;
             vorige = koningVakje;
 
-            //voor zuidwest
+            //bekijk of er zuidwest een schaakstuk staat tussen de koning en een schaakstuk dat de koning zou kunnen slaan
             while (loop == false)
             {
                 if (vorige.BuurZuidWest == null)
@@ -989,6 +990,7 @@ namespace Schaakproject
                 }
             }
 
+            //Kijk of er pionnen zijn die kunnen bewegen, want als dit zo is dan sta je niet pat
             Pion bekijk;
             bool kanVerplaatsen = false;
             for (int i = 0; i < 8; i++)
@@ -1128,6 +1130,9 @@ namespace Schaakproject
                 }
 
             }
+            //Als er nog meer stukken zijn dan de koning
+            //+ het aantal stukken die niet mogen bewegen omdat de koning dan schaak staat
+            //+ het aantal pionnen die niet kunnen bewegen, dan is het niet pat.
             if (koning.Speler.AantalStukken[5] > 1 + blokkeert + stillePion)
             {
                 pat = false;
@@ -1464,7 +1469,7 @@ namespace Schaakproject
                     }
                 }
             }
-            if (_pionVoorMat == false)
+            if (_pionVoorMat == false) //_pionVoorMat is bijna in alle gevallen false
             {
                 //kijk of er noord een koning staat
                 if (vorige.BuurNoord != null)
@@ -1584,7 +1589,7 @@ namespace Schaakproject
                     }
                 }
             }
-            else
+            else //_pionVoorMat is true wanneer er gekeken moet worden of een pion op een leeg vakje gezet kan worden in plaats van schuin slaan
             {
                 //alleen een witte koning hoeft uit te kijken voor pionnen die noord staan
                 if (kleur == "wit")
@@ -1643,7 +1648,6 @@ namespace Schaakproject
 
         public bool CheckMat(Koning koning)
         {
-            Console.WriteLine("VERDERR");
             bool mat = true;
             bool mogelijk = false;
 
@@ -1821,6 +1825,7 @@ namespace Schaakproject
                 }
                 mogelijk = false;
             }
+            //Bekijk of het stuk dat de koning schaak heeft gezet geslagen kan worden, zonder dat de koning schaak komt te staan
             koning.Vakje.schaakstuk = koning;
 
             _schaakGezet = null;
@@ -1868,6 +1873,7 @@ namespace Schaakproject
                     }
                 }
 
+                //Bekijk of er een schaakstuk gezet kan worden tussen de koning en het stuk dat de koning schaak heeft gezet
                 _stukVoorKomen.Clear();
                 Vakje vorige = koningVakje;
                 _pionVoorMat = true;
@@ -2251,6 +2257,8 @@ namespace Schaakproject
                 }
             }
             _pionVoorMat = false;
+
+            //Als er geen enkele mogelijkheid gevonden is om een zet te doen, waardoor de koning niet meer schaak staat, is mat true.
             return mat;
         }
 

@@ -141,6 +141,8 @@
             {
                 Speler = spel.ComputerSpeler;
             }
+            //Kijk of het schaakstuk het geselecteerde vakje kan vinden,
+            //door alle vakjes waar heen bewogen mag worden te vergelijken met het geselecteerde vakje
 
             bool mogelijk = false;
             bool mogelijkloop = false;
@@ -215,6 +217,11 @@
             }
             if (mogelijk == true)
             {
+                //Als het schaakstuk het vakje kan bereiken, wordt het schaakstuk verplaatst.
+                //Hierna wordt gekeken of de koning schaak staat.
+                //Als de koning schaak staat, dan wordt het schaakstuk weer terug geplaatst waar die stond.
+                //Staat de koning niet schaak, dan is de zet definitief en is de andere speler aan de beurt.
+
                 Schaakstuk temp = nieuwVakje.schaakstuk;
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
