@@ -126,6 +126,50 @@ buurzuidwest</body>
           </stereotypeInstance>
         </appliedStereotypesInternal>
         <elementDefinition Id="1930fb1b-c192-4fac-821b-775cf2dbbb42" />
+        <targetEnds>
+          <association Id="4e7734b3-252a-4f99-a684-0a0c7b4432b2" isDerived="false" sourceEndRoleName="Speler" targetEndRoleName="Pion" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0f9387a3-bdc6-4970-bbca-10886943c3cd" LastKnownName="Pion" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ec6aff27-c418-441c-a8c3-be9368b52fad" name="Speler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1a053ad7-a5e2-420a-b0a8-131b04f6ec8f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1ee0f0fc-e949-4dc5-b35a-3006a87674d9" name="Pion" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="3506b986-cbe3-4a52-a7b8-3dc7b1dcfb34" name="Lower" value="8">
+                      <elementDefinition Id="ecbdfdcc-168c-4cb5-be20-6bdac1ac31bd" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="f755a9e7-0fa4-4c06-b54e-5c2e0c7c9cbc" name="Upper" value="8">
+                      <elementDefinition Id="4ae18a60-5a6d-4243-b23f-33dbec4fa8e3" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="0639d0e0-1617-4009-b6d3-dc23da92e359" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="39dac9dd-4bac-471e-b9d2-525c1d427ebe" />
+          </association>
+          <association Id="0c1833cc-360e-405f-97da-d7fb9a03af28" isDerived="false" sourceEndRoleName="Speler" targetEndRoleName="Koning" isLeaf="false" isAbstract="false">
+            <classMoniker Id="2356085b-d0d4-4e21-a8b6-688c9ad57da1" LastKnownName="Koning" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="564ff99a-6b55-4878-883c-729de82d3ee4" name="Speler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="56a3d684-92fc-494c-8aa3-34b1b38d71ac" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ee4e6e27-f8e3-4ca3-a1a2-5b93a468ec22" name="Koning" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8e4708cb-84b2-4d4d-a69e-33169a9c0e25" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a56aea90-7257-4353-ad71-6109baf89cf0" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="ac7f2225-0a48-4803-8661-7944f69b6204" name="spel" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
@@ -353,6 +397,22 @@ buurzuidwest</body>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="e14356db-1d7f-4835-aeea-a9e18a01a475" />
           </association>
+          <association Id="ef66bf90-cc57-4f7d-bf4d-2e5848131b49" isDerived="false" sourceEndRoleName="Schaakbord" targetEndRoleName="Schaakstuk" isLeaf="false" isAbstract="false">
+            <classMoniker Id="f45ba02b-44ef-4c06-b616-eb9a70d05827" LastKnownName="Schaakstuk" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0aa06bec-de4b-4f3f-8252-6b9525ec1a8a" name="Schaakbord" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="aff0747d-42f2-45cd-a4d3-f4cead1eff7e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0877fb98-3c2c-44a4-bdbd-d45d254dc69f" name="Schaakstuk" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="db0e2600-ed89-4817-bfd1-7a09a4ed2705" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0ee21215-ceba-49bf-9318-180c37d6de21" />
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property Id="2db48271-e750-4e8a-98f6-68a7cfc359fd" name="SchaakArray" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -578,6 +638,24 @@ buurzuidwest</body>
           </stereotypeInstance>
         </appliedStereotypesInternal>
         <elementDefinition Id="5707d178-3d72-4f4a-9f04-b079d5842eb3" />
+        <targetEnds>
+          <association Id="6584ae24-c302-40fa-b672-4673ba783e51" isDerived="false" sourceEndRoleName="Schaakstuk" targetEndRoleName="Speler" isLeaf="false" isAbstract="false">
+            <classMoniker Id="a6ab3289-6d91-4f2d-b031-2d3339dec844" LastKnownName="Speler" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="537be3fc-047d-4962-a48d-d88f7fd89c39" name="Schaakstuk" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1dba13df-02ef-4cb5-a064-2a5b99161a78" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c1a7e708-b7c6-4a27-923f-df042446f2ea" name="Speler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4907709f-3ff2-41c8-bca2-76b438f1deea" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f74a4cd3-63be-4316-8ec6-c12a09afd089" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="e66fa43d-11fe-4926-a5dd-47781903703f" name="Kleur" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
@@ -788,7 +866,7 @@ buurzuidwest</body>
               <associationHasOwnedEnds>
                 <memberEnd Id="848795cc-b94d-4abf-8d3b-8d5e42223c5e" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <lowerValueInternal>
-                    <literalString Id="87fd1bfb-0db2-4f7b-b777-3a64d2806d22" name="Lower" value="0">
+                    <literalString Id="87fd1bfb-0db2-4f7b-b777-3a64d2806d22" name="Lower" value="1">
                       <elementDefinition Id="b9e5352c-5877-481b-a58f-d8703214a453" />
                     </literalString>
                   </lowerValueInternal>
@@ -1861,6 +1939,22 @@ buurzuidwest</body>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="87996be8-ff3a-4395-bdd2-8bf7deed9345" />
           </association>
+          <association Id="eba1b4e3-b991-4a6d-860d-15bf61b3dc01" isDerived="false" sourceEndRoleName="Spel" targetEndRoleName="Vakje" isLeaf="false" isAbstract="false">
+            <classMoniker Id="3049ff15-194f-420a-acc7-84426536a346" LastKnownName="Vakje" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b9848402-4d5b-4b75-ad5d-fa2c78d0218a" name="Spel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="646b5fd7-af95-4b5b-9393-048ad769925d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="703a4b9f-d80b-476a-bb3f-7d1b0dd902fd" name="Vakje" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="37569b71-25b8-4c02-b982-9fd5da14dc70" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a8527493-b6f4-4fcd-8af2-bae9225965ad" />
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property Id="381ce8d6-4658-40e1-87fb-5172e6a3caba" name="spelerAanZet" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -2191,6 +2285,24 @@ buurzuidwest</body>
             <elementDefinition Id="892f4cbf-edd0-461a-af2b-fa97ff0b5179" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association Id="63715ad4-43a3-45f8-ac96-acd7d2d8804b" isDerived="false" sourceEndRoleName="Mens" targetEndRoleName="SpecialPB" isLeaf="false" isAbstract="false">
+            <classMoniker Id="70de252b-1b06-4480-8108-b28dbdf56e7a" LastKnownName="SpecialPB" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="62ffa01d-ca70-43d7-b1c9-6357a4006111" name="Mens" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="192e0ce5-cbd7-48ad-a8a3-bdc8b9530ded" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="66ed8ad3-7211-46b3-94df-a055f5f2e743" name="SpecialPB" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a0daf6ee-9f66-470d-96de-78714a90e750" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="be3b1423-68ca-46c1-a323-c4272a2ae43a" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="c97c7f45-dcf5-4611-b6c0-7b51d065188e" name="_selectColor" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="0002d84b-eb4c-4c26-bc8e-1df71d6924c9" />
@@ -2416,6 +2528,64 @@ buurzuidwest</body>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="78745042-4d37-496b-86df-2847ce38c9f8" />
           </association>
+          <association Id="db9b2620-b9de-49b3-b7cb-a747de7593f8" isDerived="false" sourceEndRoleName="Computer" targetEndRoleName="Vakje" isLeaf="false" isAbstract="false">
+            <classMoniker Id="3049ff15-194f-420a-acc7-84426536a346" LastKnownName="Vakje" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dbd60b61-96b4-4ec6-8986-926c8dbfb936" name="Computer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f249e0d0-431a-4804-b806-46f7ec9b7999" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5b655340-3382-4035-99ce-dac60d8450d9" name="Vakje" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="a06aa3b0-6c03-4503-99d8-39d3b3d5ab3b" name="Lower" value="*">
+                      <elementDefinition Id="7238e65c-78c0-488b-8bf6-35e5dcefd9d7" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="7b01d083-d4a0-4091-b1bd-4cc7c241e6c6" name="Upper" value="*">
+                      <elementDefinition Id="5ad4afb2-3ac0-4b9b-a225-e47f7a53bce4" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="171ccf3b-7d0b-4fc2-9563-ae930f261412" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="768ec011-5578-4682-9503-e34c19985701" />
+          </association>
+          <association Id="3189647e-6723-4727-b6b0-1e4ac66be6fa" isDerived="false" sourceEndRoleName="Computer" targetEndRoleName="Mens" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0b7a218b-1fe1-4adc-928d-a4595fc28eee" LastKnownName="Mens" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d580996c-0cc7-4f8f-bb23-12ba361b5f8f" name="Computer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="34c94884-1a57-4a1d-9904-f4408f6cbfc6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="55d72f66-54f0-4bcf-abca-de57e1c8f5e4" name="Mens" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ba5a433b-de2c-4ade-be2c-1dd4ddf5c68c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0ce1b68a-94b0-400c-87cf-5782d17508fe" />
+          </association>
+          <association Id="56eae006-856f-4e73-8f30-a0477f3e856f" isDerived="false" sourceEndRoleName="Computer" targetEndRoleName="Schaakstuk" isLeaf="false" isAbstract="false">
+            <classMoniker Id="f45ba02b-44ef-4c06-b616-eb9a70d05827" LastKnownName="Schaakstuk" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="17ceac67-3fdf-4b45-86a3-8c2640742f08" name="Computer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b8b2dcd3-ca63-4c7d-b1a0-346f900f27b8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f21e2c76-35ce-43f2-8e30-c15128bd758f" name="Schaakstuk" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="67b67a99-5753-471a-be77-468e8dd6ccfe" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fa3b9ffe-b02e-4d30-88b8-8f3a651b4ff5" />
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property Id="07e901eb-d790-4b6d-b76d-44f3e5d3d083" name="_vorigVakje" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -2428,18 +2598,6 @@ buurzuidwest</body>
             <elementDefinition Id="4f81a5c6-dbc7-4543-86a3-cc456c8b34ce" />
             <type_NamedElement>
               <referencedTypeMoniker Id="a2e40e36-cd12-435d-9aa6-3526ed56575c" LastKnownName="Schaakstuk" />
-            </type_NamedElement>
-          </property>
-          <property Id="0f273cc5-18ed-461a-8e57-5691d4c43cfe" name="_tegenSpeler" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="5cdbcf00-8303-459c-8e08-82e92ef1fd56" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="81e17197-dd0a-438d-a29e-6382b54547f8" LastKnownName="Mens" />
-            </type_NamedElement>
-          </property>
-          <property Id="84112bf7-f37a-457b-8864-f187fba31684" name="_spel" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="9486de1a-36fe-44a7-8429-4d5c8586bf73" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
             </type_NamedElement>
           </property>
           <property Id="253f7d5c-90f4-4ac3-aae6-aa1b5ddcf353" name="_nietVerplaatstLijst" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -2466,10 +2624,10 @@ buurzuidwest</body>
               <referencedTypeMoniker Id="a2f57161-4a11-479c-81f8-dd97e95bdb2d" LastKnownName="List&lt;Vakje&gt;" />
             </type_NamedElement>
           </property>
-          <property Id="365c83f8-1414-4899-8668-49541fef6ac5" name="_positieZuid" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="365c83f8-1414-4899-8668-49541fef6ac5" name="_positieZuid" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="ab0cdda6-8bed-43a0-b3fb-4a8e2a925c7d" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="69ff60e7-3de0-480e-9200-cba0f0fd65d6" LastKnownName="string" />
+              <referencedTypeMoniker Id="79aebf07-08d7-4f69-ac18-38fb5501159a" LastKnownName="int" />
             </type_NamedElement>
           </property>
           <property Id="e8c95e82-5d52-460e-be5c-928de9f4aadb" name="_positieWest" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -2830,11 +2988,6 @@ buurzuidwest</body>
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="69ff60e7-3de0-480e-9200-cba0f0fd65d6" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
-        <elementDefinition Id="9ae72030-5b19-4f74-b8af-7fbbca35c802" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="1f04c0ac-6646-4f67-8676-55446c3168fb" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
         <elementDefinition Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f" />
       </referencedType>
@@ -2842,6 +2995,50 @@ buurzuidwest</body>
     <logicalClassDesignerModelHasTypes>
       <class Id="b020ba46-0330-4818-b3bb-a82a5712f189" name="Algoritme" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="df1ab9c3-b190-4d2e-8ef0-7d402bc3886d" />
+        <targetEnds>
+          <association Id="56dc128d-6bcd-407d-962e-95854c109893" isDerived="false" sourceEndRoleName="Algoritme" targetEndRoleName="Vakje" isLeaf="false" isAbstract="false">
+            <classMoniker Id="3049ff15-194f-420a-acc7-84426536a346" LastKnownName="Vakje" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="51941e7c-953f-419d-8aa2-ee2ad3b6267e" name="Algoritme" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="92cc474d-f704-4a65-8d62-3d30b2a129c4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2ec488a2-856a-46dd-8d50-58b409f816ea" name="Vakje" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="fb19ced4-a6cd-4ffe-803a-fa71ad5e6a53" name="Lower" value="*">
+                      <elementDefinition Id="e3c3c5c3-3ad4-4e7e-aa33-cf52871f81df" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="639bffcf-e6d5-43c1-9925-5205a0d4d994" name="Upper" value="*">
+                      <elementDefinition Id="d53463ab-557e-459c-b589-edb642753ee0" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="7676562a-f6a5-4b55-aab1-c2b2562180c1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fe5c55a7-403c-437a-93df-5d0454e379aa" />
+          </association>
+          <association Id="ed428c96-1208-48e9-903f-9c4245609364" isDerived="false" sourceEndRoleName="Algoritme" targetEndRoleName="Schaakstuk" isLeaf="false" isAbstract="false">
+            <classMoniker Id="f45ba02b-44ef-4c06-b616-eb9a70d05827" LastKnownName="Schaakstuk" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="12ba8f39-a791-4d15-9f2b-4dfe89842952" name="Algoritme" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="66f90b5a-3a12-465e-b057-97821bf92d6e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="11494c2f-a034-4b87-8ea6-ade3c5a32349" name="Schaakstuk" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="04cd684b-e5b8-4724-9c7b-1ad8d4214b98" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0a75cc64-d789-4cda-9d91-81a1972f062b" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="37f9f4fe-d4cb-4355-bbba-a81c0823eaaa" name="_slaanmogelijkhedenVanaf" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="867f3ae6-1a39-4655-a26e-8f92eba8d6e5" />
@@ -2999,11 +3196,6 @@ buurzuidwest</body>
     <packageHasNamedElement>
       <referencedType Id="ec1df4ff-e07c-4404-95d6-833465b35472" name="Color" isAbstract="false" isLeaf="false" cachedFullName="Color">
         <elementDefinition Id="8447702a-94be-413e-8fb0-396f6da26750" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="81e17197-dd0a-438d-a29e-6382b54547f8" name="Mens" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Mens">
-        <elementDefinition Id="cc73c737-077a-466e-b963-71e8f50e75d4" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -3191,6 +3383,24 @@ buurzuidwest</body>
             <elementDefinition Id="639f2fb2-e40c-48b8-98a8-cafac12aefaa" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association Id="5f7fe5e4-ce74-4f92-a0b8-d557b176838d" isDerived="false" sourceEndRoleName="PromoveerForm" targetEndRoleName="Pion" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0f9387a3-bdc6-4970-bbca-10886943c3cd" LastKnownName="Pion" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c1ff0008-af90-4225-8d52-d5bfddf520e9" name="PromoveerForm" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="22dfd705-2d31-43ac-9e27-16c261cf10e1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f3aeb595-afe8-47c2-b798-ffc56ab94031" name="Pion" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="be34e4d3-9fd4-44ed-9489-92754515ca4a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="28eb8faa-7f6f-412e-ae7d-c18a93825219" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="93f202c0-49c3-415a-83c1-2002c65cd6b5" name="_pion" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="3e18347c-ce2a-4791-94d3-1c76b27e9326" />
@@ -3210,6 +3420,24 @@ buurzuidwest</body>
             <elementDefinition Id="f1306332-7d39-48bd-89bb-b15920b2eb56" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association Id="16167f7e-2063-46f1-8c5d-716da7ac5069" isDerived="false" sourceEndRoleName="Rokerenmelding" targetEndRoleName="Koning" isLeaf="false" isAbstract="false">
+            <classMoniker Id="2356085b-d0d4-4e21-a8b6-688c9ad57da1" LastKnownName="Koning" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="873a98fc-39fd-4b62-98fc-2cd31c9ff38d" name="Rokerenmelding" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8b8c31c5-7176-43f1-9483-d582b6c70401" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c6a1501e-da07-4398-b555-96a2273bcfdb" name="Koning" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b42a8d86-ef86-4b63-8dd7-780d2adac783" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9e0ace6d-e4b1-4042-9fab-e12586f78631" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="af4d7cc2-eabf-4ee2-a654-9bde89f75c48" name="_koning" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="b25f058d-95ff-4e63-b849-b8cb7c998e66" />
@@ -3234,6 +3462,24 @@ buurzuidwest</body>
             <elementDefinition Id="21746b43-1b49-4fdf-81b7-724638aec253" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association Id="56936b4d-1fe8-46b5-b1cc-19cb8b5d1c7e" isDerived="false" sourceEndRoleName="RemiseMelding" targetEndRoleName="Spel" isLeaf="false" isAbstract="false">
+            <classMoniker Id="3cd200af-8073-42a4-89e3-2a0a11819561" LastKnownName="Spel" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="601ce3c2-6bcc-4685-9636-b4609266d963" name="RemiseMelding" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0ed6f6cb-848d-4375-9eec-c850d1550d14" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9eef4de8-6307-46c2-9bd7-001714768330" name="Spel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4c56d736-272f-4637-b227-bfc511a3d923" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="75737d04-7ef6-4425-b409-bb4347052eca" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="7a9d491d-ea02-46ee-95c8-b8fc9f9df577" name="_spel" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="0451a68f-d935-41ae-a32a-db36b1d3e248" />
@@ -3253,6 +3499,24 @@ buurzuidwest</body>
             <elementDefinition Id="c371300b-ae66-4bd2-936f-d602e569d1a4" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association Id="3aae3f6c-1731-420a-9b43-23fe4dd1faec" isDerived="false" sourceEndRoleName="SchaakMat" targetEndRoleName="Spel" isLeaf="false" isAbstract="false">
+            <classMoniker Id="3cd200af-8073-42a4-89e3-2a0a11819561" LastKnownName="Spel" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1bb2d553-afcf-411c-aa70-97a90e1de1d5" name="SchaakMat" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a5778b42-797b-40e2-873e-0b553375c0da" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0b63c658-048e-4f8b-8fc6-dbc1c790ff3e" name="Spel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7834597f-ce11-4977-8f53-7897258a9e29" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3c111ae2-c9f6-467e-80af-52be4f5e387b" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="4353a85e-ef3c-44a6-9caa-685681450abd" name="_spel" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="947d3b19-2cc6-4b88-8460-c90551c0caf6" />
@@ -3263,6 +3527,11 @@ buurzuidwest</body>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="79aebf07-08d7-4f69-ac18-38fb5501159a" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="27bf647c-b259-4212-9525-4a079cf968d1" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="b1492d3f-3f34-46c2-94ce-5dad21715151" name="ModelingProject1">
     <elementDefinition Id="de569ad7-15f5-468e-875f-a53a5601e060" />

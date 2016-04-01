@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Schaakproject
 {
@@ -108,6 +105,8 @@ namespace Schaakproject
 
         public override void Verplaats(Vakje nieuwVakje, Vakje selected, Spel spel)
         {
+            //Kijk of het schaakstuk het geselecteerde vakje kan vinden,
+            //door alle vakjes waar heen bewogen mag worden te vergelijken met het geselecteerde vakje
 
             bool gevonden = false;
             if (selected.BuurNoord == nieuwVakje)
@@ -145,6 +144,11 @@ namespace Schaakproject
 
             if (gevonden == true)
             {
+                //Als het schaakstuk het vakje kan bereiken, wordt het schaakstuk verplaatst.
+                //Hierna wordt gekeken of de koning schaak staat.
+                //Als de koning schaak staat, dan wordt het schaakstuk weer terug geplaatst waar die stond.
+                //Staat de koning niet schaak, dan is de zet definitief en is de andere speler aan de beurt.
+
                 Schaakstuk temp = nieuwVakje.schaakstuk;
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
@@ -185,13 +189,14 @@ namespace Schaakproject
             {
                 _wilRokeren = false;
                 bool magrokeren = true;
-                if (vakjeToren.BuurOost == null)
+                if (vakjeToren.BuurOost == null) // Als het gaat om de rechter toren.
                 {
-                    //check of rokeren mogelijk is
+                    //check of rokeren mogelijk is door te kijken of alle vakjes leeg zijn, en de koning en toren nog geen zet gedaan hebben.
                     if (_eersteZet == false && (vakjeToren.schaakstuk as Toren)._eersteZet == false && vakjeToren.BuurWest.schaakstuk == null && vakjeToren.BuurWest.BuurWest.schaakstuk == null)
                     {
                         while (vorige != null)
                         {
+                            //voor elk vakje van de koning tot en met de toren moet gekeken worden dat dit vakje niet geraakt kan worden.
                             checkschaak = spel.schaakbord.CheckSchaak(vorige, speler.koning.Kleur);
                             if (checkschaak == true)
                             {
@@ -238,12 +243,14 @@ namespace Schaakproject
 
                 }
 
-                else if (vakjeToren.BuurWest == null)
+                else if (vakjeToren.BuurWest == null) //Als het gaat om de linker toren.
                 {
+                    //check of rokeren mogelijk is door te kijken of alle vakjes leeg zijn, en de koning en toren nog geen zet gedaan hebben.
                     if (_eersteZet == false && (vakjeToren.schaakstuk as Toren)._eersteZet == false && vakjeToren.BuurOost.schaakstuk == null && vakjeToren.BuurOost.BuurOost.schaakstuk == null && vakjeToren.BuurOost.BuurOost.BuurOost.schaakstuk == null)
                     {
                         while (vorige != null)
                         {
+                            //voor elk vakje van de koning tot en met de toren moet gekeken worden dat dit vakje niet geraakt kan worden.
                             checkschaak = spel.schaakbord.CheckSchaak(vorige, speler.koning.Kleur);
                             if (checkschaak == true)
                             {
