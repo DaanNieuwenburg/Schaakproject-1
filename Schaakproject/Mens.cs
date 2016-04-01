@@ -11,7 +11,6 @@ namespace Schaakproject
         public Vakje Selected { get; set; }
         public int ResterendeStukken { get; set; }
         private Color _selectColor { get; set; }
-
         public Mens(string naam, string kleur, Spel _spel, Color select)
         {
             _selectColor = select;
@@ -102,7 +101,7 @@ namespace Schaakproject
                     if (spel.SpelMode == "Singleplayer")
                     {
                         Console.WriteLine("SPELERRONDE");
-                        spel.ComputerSpeler.Zet(clicked, spel);  // laat de computer op de mens reageren
+                        spel.ComputerSpeler.Zet(clicked);  // laat de computer op de mens reageren
                         spel.VeranderSpeler();
                     }
 

@@ -40,7 +40,7 @@ namespace Schaakproject
 
             if (SpelMode == "Singleplayer")
             {
-                Computer computerSpeler = new Computer(NaamSpeler2, "zwart", SelectColor);
+                Computer computerSpeler = new Computer(NaamSpeler2, "zwart", SelectColor, this);
                 this.ComputerSpeler = computerSpeler;
             }
 
@@ -139,7 +139,6 @@ namespace Schaakproject
                 _witAanzet = true;
                 if (SpelMode == "Singleplayer")
                 {
-                    //Console.WriteLine("Check schaak1");
                     SpelerAanZet = ComputerSpeler;
                     schaak = schaakbord.CheckSchaak(ComputerSpeler.koning.Vakje, ComputerSpeler.koning.Kleur);
                 }
@@ -150,7 +149,6 @@ namespace Schaakproject
                 }
                 if (schaak == true)
                 {
-                   // Console.WriteLine("schaak is " + schaak);
                     if (SpelMode == "Singleplayer")
                     {
                         mat = schaakbord.CheckMat(ComputerSpeler.koning);
@@ -253,14 +251,14 @@ namespace Schaakproject
             if (speler.Kleur == "wit")
             {
                 Speler1.ResterendeStukken = Speler1.ResterendeStukken - 1;
-                speelbord.lblaantal2.Text = Convert.ToString(Speler1.ResterendeStukken); //onlogisch, speler1 = label 2
+                speelbord.lblaantal1.Text = Convert.ToString(Speler1.ResterendeStukken);
             }
             else
             {
                 if (SpelMode != "Singleplayer")
                 {
                     Speler2.ResterendeStukken = Speler2.ResterendeStukken - 1;
-                    speelbord.lblaantal1.Text = Convert.ToString(Speler2.ResterendeStukken); //onlogisch, speler2 = label 1
+                    speelbord.lblaantal2.Text = Convert.ToString(Speler2.ResterendeStukken);
                 }
             }
         }

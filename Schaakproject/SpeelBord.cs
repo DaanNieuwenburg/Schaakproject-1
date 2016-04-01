@@ -15,8 +15,8 @@ namespace Schaakproject
         private Spel _spel { get; set; }                    //Een spel
         private int _clicks { get; set; }                    //voor het laten zien van de uitleg
         public string Variant { get; set; }                //string voor spelvariant
-        private Color _borderColor { get; set; }
-        private int _optie { get; set; }
+        private Color _borderColor { get; set; } 
+        private int _optie { get; set; }                   //int die bijhoud welk menu van regels je zit
         public SpeelBord(Spel spel, Schaakbord schaakbord, string Variant, Color border)
         {
             _spel = spel;
@@ -35,10 +35,10 @@ namespace Schaakproject
 
             lblbeurt.Text = _spel.Speler1.Naam + " is aan zet";
             this.CenterToScreen();
-            lblaantal1.Text = Convert.ToString(_spel.Speler1.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
+            lblaantal2.Text = Convert.ToString(_spel.Speler1.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
             if (spel.SpelMode != "Singleplayer")
             {
-                lblaantal2.Text = Convert.ToString(_spel.Speler2.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
+                lblaantal1.Text = Convert.ToString(_spel.Speler2.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
             }
             for (int x = 0; x < 8; x++)
             {
@@ -171,6 +171,7 @@ namespace Schaakproject
         private void SpeelBord_Load(object sender, EventArgs e)
         {
             btHerstart.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //transparent bordercolor (Color.Transparent is unsupported)
+           
             //hierdoor zijn de plaatjes ook zichtbaar zonder er eerst overheen te hoveren met je muis
             btnregels.BackgroundImage = Properties.Resources.button_regels_2;
             btnterug.BackgroundImage = Properties.Resources.button_terug_2;
@@ -346,6 +347,7 @@ namespace Schaakproject
             }
             else if (_clicks == 2 && _optie == 2)
             {
+                //paard uitleg
                 _clicks++;
                 lbluitleg.Visible = true;
                 lbluitleg.Text = ("Paard\nHet paard maakt een beweging die een \ncombinatie is van 1 vlakje horizontaal of \nvertikaal, en 1 vlakje diagonaal.\nHet paard is het enige stuk dat kan \nspringen over andere stukken,\nd.w.z.het paard mag over andere \nstukken bewegen om van het ene \nnaar het andere vlakje te komen.\nDe stukken waar het paard tijdens \nzijn zet overheen springt worden \nniet beïnvloed.");
@@ -393,6 +395,7 @@ namespace Schaakproject
             }
             else if (_clicks == 1)
             {
+                
                 _clicks--;
                 this.btndame.Visible = false;
                 this.btnkoning.Visible = false;
@@ -478,6 +481,7 @@ namespace Schaakproject
 
         private void btnkoning_Click(object sender, EventArgs e)
         {
+            //Koning uitleg
             _clicks++;
             lbluitleg.Text = ("Koning\nDe Koning mag vertikaal, horizontaal en \ndiagonaal bewegen op dezelfde manier \nals de Dame, maar slechts met 1 stapje tegelijk.\nDe Koning mag nooit een vlakje \nbetreden wat een (mogelijk) eindpunt zou \nkunnen zijn van een stuk van de tegenstander. In \nandere woorden, je kunt de Koning nooit op \neen vlakje zetten waar hij direct daarop geslagen zou \nkunnen worden door de tegenstander.");
             lbluitleg.Visible = true;
@@ -496,6 +500,7 @@ namespace Schaakproject
 
         private void btndame_Click(object sender, EventArgs e)
         {
+            // Dame uitleg
             pbuitleg.Visible = true;
             _clicks++;
             lbluitleg.Text = ("Dame\nDe dame combineert de zetten\nvan de Toren en de Loper en is\ndaarmee het stuk met de grootste \nbewegingsvrijheid.De Dame mag \nhorizontaal, vertikaal en diagonaal \nbewegen in een rechte lijn en mag \nhierbij niet over andere stukken springen.");
@@ -516,6 +521,7 @@ namespace Schaakproject
         {
             if (_clicks == 1)
             {
+                // Menu zetten 
                 _optie = 3;
                 _clicks++;
                 btnpaard.BackgroundImage = Properties.Resources.button_regels_rokeren;
@@ -551,6 +557,7 @@ namespace Schaakproject
             }
             else if (_clicks == 2 && _optie == 2)
             {
+                // Toren uitleg
                 _clicks++;
                 lbluitleg.Text = ("Toren\nDe toren beweegt vertikaal of horizontaal\nin een rechte lijn. De toren mag niet over\nandere stukken springen, alle vlakken\ntussen het begin en eindpunt van een\nzet dienen leeg te zijn.");
                 lbluitleg.Visible = true;
@@ -589,6 +596,7 @@ namespace Schaakproject
         {
             if(_optie == 1)
             {
+                // Remise uitleg
                 _clicks++;
                 lbluitleg.Text = ("Remise\nDit schaakspel kent 2 vormen van remise:\n- Schaak pat: Bij pat staan de stukken zo opgesteld\ndat de koning niet schaak staat, maar ook niet\nkan bewegen zonder schaak te komen staan.\nVerder zijn er geen stukken die je kan verplaatsen.\n- Te weinig stukken: Bij deze vorm van remise\nhebben beide spelers nog te weinig stukken om\nde ander schaakmat te zetten. Hierbij eindigt\nhet ook met gelijkspel.");
                 lbluitleg.Visible = true;
@@ -606,6 +614,7 @@ namespace Schaakproject
             }
             else
             {
+                // Loper uitleg
                 _clicks++;
                 lbluitleg.Text = ("Loper\nDe loper beweegt diagonaal over\nhet bord. Net als de toren mag de\nloper niet over andere stukken springen.");
                 lbluitleg.Visible = true;
@@ -626,6 +635,7 @@ namespace Schaakproject
 
         private void btnpion_Click(object sender, EventArgs e)
         {
+            // Pion uitleg
             _clicks++;
             lbluitleg.Visible = true;
             lbluitleg.Text = ("Pion\nDe pion mag in princiepe alleen vooruit lopen.\nPer beurt mag de pion 1 vakje verplaatsen, \ntenzij de pion nog nooit is verplaatst dan mag \ndie 2 vakjes verplaatsen. Verder mag de pion alleen \nschuin slaan. Als de pion aan de andere kant van het\nbord is gekomen mag die promoveren tot\neen ander schaakstuk naar keuze.");
@@ -641,6 +651,8 @@ namespace Schaakproject
             this.btnterug.Visible = true;
             this.btnregels.Visible = false;
         }
+        
+        // ↓↓↓ Vanaf hier komen de MouseEnter en MouseLeave events voor de knoppen in het regel menu ↓↓↓
 
         private void btnvariant_MouseEnter(object sender, EventArgs e)
         {
@@ -856,9 +868,5 @@ namespace Schaakproject
             btnregels.BackgroundImage = Properties.Resources.button_regels_2_click;
         }
 
-        private void lblResterend2_Click(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
