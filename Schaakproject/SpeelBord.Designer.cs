@@ -34,8 +34,8 @@
             this.btHerstart = new System.Windows.Forms.Button();
             this.lblResterend1 = new System.Windows.Forms.Label();
             this.lblResterend2 = new System.Windows.Forms.Label();
-            this.lblaantal2 = new System.Windows.Forms.Label();
             this.lblaantal1 = new System.Windows.Forms.Label();
+            this.lblaantal2 = new System.Windows.Forms.Label();
             this.lblaanzet = new System.Windows.Forms.Label();
             this.lbluitleg = new System.Windows.Forms.Label();
             this.btnregels = new System.Windows.Forms.Button();
@@ -116,18 +116,6 @@
             this.lblResterend2.Size = new System.Drawing.Size(146, 18);
             this.lblResterend2.TabIndex = 4;
             this.lblResterend2.Text = "Resterende Stukken:";
-            this.lblResterend2.Click += new System.EventHandler(this.lblResterend2_Click);
-            // 
-            // lblaantal2
-            // 
-            this.lblaantal2.AutoSize = true;
-            this.lblaantal2.BackColor = System.Drawing.Color.Transparent;
-            this.lblaantal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblaantal2.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblaantal2.Location = new System.Drawing.Point(407, 9);
-            this.lblaantal2.Name = "lblaantal2";
-            this.lblaantal2.Size = new System.Drawing.Size(0, 18);
-            this.lblaantal2.TabIndex = 5;
             // 
             // lblaantal1
             // 
@@ -135,10 +123,21 @@
             this.lblaantal1.BackColor = System.Drawing.Color.Transparent;
             this.lblaantal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblaantal1.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblaantal1.Location = new System.Drawing.Point(406, 504);
+            this.lblaantal1.Location = new System.Drawing.Point(407, 9);
             this.lblaantal1.Name = "lblaantal1";
             this.lblaantal1.Size = new System.Drawing.Size(0, 18);
-            this.lblaantal1.TabIndex = 6;
+            this.lblaantal1.TabIndex = 5;
+            // 
+            // lblaantal2
+            // 
+            this.lblaantal2.AutoSize = true;
+            this.lblaantal2.BackColor = System.Drawing.Color.Transparent;
+            this.lblaantal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblaantal2.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblaantal2.Location = new System.Drawing.Point(406, 504);
+            this.lblaantal2.Name = "lblaantal2";
+            this.lblaantal2.Size = new System.Drawing.Size(0, 18);
+            this.lblaantal2.TabIndex = 6;
             // 
             // lblaanzet
             // 
@@ -362,8 +361,8 @@
             this.Controls.Add(this.btnregels);
             this.Controls.Add(this.lbluitleg);
             this.Controls.Add(this.lblaanzet);
-            this.Controls.Add(this.lblaantal1);
             this.Controls.Add(this.lblaantal2);
+            this.Controls.Add(this.lblaantal1);
             this.Controls.Add(this.lblResterend2);
             this.Controls.Add(this.lblResterend1);
             this.Controls.Add(this.btHerstart);
@@ -403,8 +402,8 @@
         private System.Windows.Forms.PictureBox pbuitleg;
         private System.Windows.Forms.Button btnregels;
         public System.Windows.Forms.Label lblbeurt;
-        public System.Windows.Forms.Label lblaantal2;
         public System.Windows.Forms.Label lblaantal1;
+        public System.Windows.Forms.Label lblaantal2;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

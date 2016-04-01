@@ -26,12 +26,10 @@ namespace Schaakproject
             if (Kleur == false)
             {
                 this.Kleur = _color1;
-                //kleur = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             }
             else
             {
                 this.Kleur = _color2;
-                //kleur = Color.SaddleBrown;
             }
         }
     }

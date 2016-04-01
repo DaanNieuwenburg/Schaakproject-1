@@ -46,10 +46,10 @@ namespace Schaakproject
             _computerSpeler = computerSpeler;
             _spel = spel;
             this.CenterToScreen();
-            lblaantal1.Text = Convert.ToString(_speler1.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
+            lblaantal2.Text = Convert.ToString(_speler1.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
             if (spel.SpelMode != "Singleplayer")
             {
-                lblaantal2.Text = Convert.ToString(_speler2.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
+                lblaantal1.Text = Convert.ToString(_speler2.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
             }
             for (int x = 0; x < 8; x++)
             {
@@ -867,9 +867,5 @@ namespace Schaakproject
             btnregels.BackgroundImage = Properties.Resources.button_regels_2_click;
         }
 
-        private void lblResterend2_Click(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
