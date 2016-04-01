@@ -617,22 +617,25 @@ namespace Schaakproject
                 Console.WriteLine("Slaanrichting = " + _slaanRichting);
                 if (_koning.Vakje.BuurNoord != null && _koning.Vakje.BuurNoord.schaakstuk == null && _slaanRichting != "Noord" && _slaanRichting != "Zuid")
                 {
+                    _koningVerplaats = true;
                     Console.WriteLine("noord");
                     _geselecteerdStuk = _koning.Vakje;             // geselecteerd stuk
                     _geselecteerdVakje = _koning.Vakje.BuurNoord;    // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                     _koning.Vakje.Pbox.BackColor = System.Drawing.Color.Yellow;
                 }
-                else if (_koning.Vakje.BuurNoordoost != null && _koning.Vakje.BuurNoordoost.schaakstuk == null && _slaanRichting != "Noordwest")
+                else if (_koning.Vakje.BuurNoordoost != null && _koning.Vakje.BuurNoordoost.schaakstuk == null && _slaanRichting != "Noordoost" && _slaanRichting != "Zuidwest")
                 {
+                    _koningVerplaats = true;
                     Console.WriteLine("noordoost");
                     _geselecteerdStuk = _koning.Vakje;             // geselecteerd stuk
                     _geselecteerdVakje = _koning.Vakje.BuurNoordoost;    // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                     _koning.Vakje.Pbox.BackColor = System.Drawing.Color.Yellow;
                 }
-                else if (_koning.Vakje.BuurNoordWest != null && _koning.Vakje.BuurNoordWest.schaakstuk == null && _slaanRichting != "Noordoost")
+                else if (_koning.Vakje.BuurNoordWest != null && _koning.Vakje.BuurNoordWest.schaakstuk == null && _slaanRichting != "Noordwest" && _slaanRichting != "Zuidoost")
                 {
+                    _koningVerplaats = true;
                     Console.WriteLine("noordwest");
                     _geselecteerdStuk = _koning.Vakje;             // geselecteerd stuk
                     _geselecteerdVakje = _koning.Vakje.BuurNoordWest;    // geselecteerd vak
@@ -641,6 +644,7 @@ namespace Schaakproject
                 }
                 else if (_koning.Vakje.BuurWest != null && _koning.Vakje.BuurWest.schaakstuk == null && _slaanRichting != "West" && _slaanRichting != "Oost")
                 {
+                    _koningVerplaats = true;
                     Console.WriteLine("west");
                     _geselecteerdStuk = _koning.Vakje;             // geselecteerd stuk
                     _geselecteerdVakje = _koning.Vakje.BuurWest;    // geselecteerd vak
@@ -649,54 +653,408 @@ namespace Schaakproject
                 }
                 else if (_koning.Vakje.BuurOost != null && _koning.Vakje.BuurOost.schaakstuk == null && _slaanRichting != "Oost" && _slaanRichting != "West")
                 {
+                    _koningVerplaats = true;
                     Console.WriteLine("oost");
                     _geselecteerdStuk = _koning.Vakje;             // geselecteerd stuk
                     _geselecteerdVakje = _koning.Vakje.BuurOost;    // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                     _koning.Vakje.Pbox.BackColor = System.Drawing.Color.Yellow;
                 }
-                else if (_koning.Vakje.BuurZuid != null && _koning.Vakje.BuurZuid.schaakstuk == null && _slaanRichting != "Zuid" &&  _slaanRichting != "Noord")
+                else if (_koning.Vakje.BuurZuid != null && _koning.Vakje.BuurZuid.schaakstuk == null && _slaanRichting != "Zuid" && _slaanRichting != "Noord")
                 {
+                    _koningVerplaats = true;
                     Console.WriteLine("zuid");
                     _geselecteerdStuk = _koning.Vakje;             // geselecteerd stuk
                     _geselecteerdVakje = _koning.Vakje.BuurZuid;    // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                     _koning.Vakje.Pbox.BackColor = System.Drawing.Color.Yellow;
                 }
-                else if (_koning.Vakje.BuurZuidOost != null && _koning.Vakje.BuurZuidOost.schaakstuk == null && _slaanRichting != "Zuidwest")
+                else if (_koning.Vakje.BuurZuidOost != null && _koning.Vakje.BuurZuidOost.schaakstuk == null && _slaanRichting != "Zuidoost" && _slaanRichting != "Noordwest")
                 {
+                    _koningVerplaats = true;
                     Console.WriteLine("zuidoost");
                     _geselecteerdStuk = _koning.Vakje;             // geselecteerd stuk
                     _geselecteerdVakje = _koning.Vakje.BuurZuidOost;    // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                     _koning.Vakje.Pbox.BackColor = System.Drawing.Color.Yellow;
                 }
-                else if (_koning.Vakje.BuurZuidWest != null && _koning.Vakje.BuurZuidWest.schaakstuk == null && _slaanRichting != "Zuidoost")
+                else if (_koning.Vakje.BuurZuidWest != null && _koning.Vakje.BuurZuidWest.schaakstuk == null && _slaanRichting != "Zuidwest" && _slaanRichting != "Noordoost")
                 {
+                    _koningVerplaats = true;
                     Console.WriteLine("zuidwest");
                     _geselecteerdStuk = _koning.Vakje;             // geselecteerd stuk
                     _geselecteerdVakje = _koning.Vakje.BuurZuidWest;    // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                     _koning.Vakje.Pbox.BackColor = System.Drawing.Color.Yellow;
                 }
-                _koningVerplaats = true;
+                else
+                {
+                    Console.WriteLine("Kan koning niet verplaatsen");
+                    controleerBurenSchaak(_slaanRichting, waarVanDaan);
+                }
             }
             else
             {
                 Console.WriteLine("Kan koning niet verplaatsen");
-                ietscools("noord", waarVanDaan);
+                controleerBurenSchaak(_slaanRichting, waarVanDaan);
             }
         }
 
-        private void ietscools(string richting, Vakje waarVanDaan)
+        private void controleerBurenSchaak(string richting, Vakje waarVanDaan)
         {
+            Console.WriteLine("ControleerBurenSchaak");
             string slaRichting = richting;
-            Vakje burenVakje = waarVanDaan;
-            bool buurnull = false;
-            if(slaRichting == "noord")
+            Vakje volgendVakje = waarVanDaan;
+            bool mogelijkloop = false;
+            if (richting == "noord")
             {
-                burenVakje = burenVakje.BuurNoord;
+
+                volgendVakje = waarVanDaan.BuurNoord;
             }
+            else if (richting == "Noordoost")
+            {
+                Console.WriteLine("RNO");
+                volgendVakje = waarVanDaan.BuurNoordoost;
+            }
+            else if (richting == "Noordwest")
+            {
+                Console.WriteLine("RNW");
+                volgendVakje = waarVanDaan.BuurNoordWest;
+            }
+            else if (richting == "West")
+            {
+                Console.WriteLine("RW");
+                volgendVakje = waarVanDaan.BuurWest;
+            }
+            else if (richting == "Zuid")
+            {
+                Console.WriteLine("Z");
+                volgendVakje = waarVanDaan.BuurZuid;
+            }
+            else if (richting == "Zuidoost")
+            {
+                Console.WriteLine("RZO");
+                volgendVakje = waarVanDaan.BuurZuidOost;
+            }
+            else if (richting == "Zuidwest")
+            {
+                Console.WriteLine("RZO");
+                volgendVakje = waarVanDaan.BuurZuidWest;
+            }
+            else
+            {
+                Console.WriteLine("RO");
+                volgendVakje = waarVanDaan.BuurOost;
+            }
+            while (mogelijkloop == false)
+            {
+                Console.WriteLine("Mogelijkloop");
+                if (volgendVakje == null)
+                {
+                    Console.WriteLine("VOLGEND VAKJE IS NULL");
+                    mogelijkloop = true;
+                }
+                else
+                {
+                    if (volgendVakje != null && volgendVakje.schaakstuk != null && volgendVakje.schaakstuk is Koning && volgendVakje.schaakstuk.Kleur == "zwart")
+                    {
+                        Console.WriteLine("Niets gevonden");
+                        mogelijkloop = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("VERDER DE LOOP IN");
+                        if (volgendVakje.BuurNoord != null && volgendVakje.BuurNoord.schaakstuk != null && volgendVakje.BuurNoord.schaakstuk is Pion || volgendVakje.BuurNoord.schaakstuk is Dame || volgendVakje.BuurNoord.schaakstuk is Toren)
+                        {
+                            if (volgendVakje.BuurNoord.schaakstuk is Pion)
+                            {
+                                Console.WriteLine("N-P");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurNoord, volgendVakje);
+                                volgendVakje.BuurNoord.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else if (volgendVakje.BuurNoord.schaakstuk is Dame)
+                            {
+                                Console.WriteLine("N-D");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurNoord, volgendVakje);
+                                volgendVakje.BuurNoord.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else if (volgendVakje.BuurNoord.schaakstuk is Toren)
+                            {
+                                Console.WriteLine("N-T");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurNoord, volgendVakje);
+                                volgendVakje.BuurNoord.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else
+                            {
+                                Console.WriteLine("N+");
+                            }
+                        }
+                        else if (volgendVakje.BuurWest != null && volgendVakje.BuurWest.schaakstuk != null && volgendVakje.BuurWest.schaakstuk is Toren || volgendVakje.BuurWest.schaakstuk is Dame)
+                        {
+                            if (volgendVakje.BuurWest.schaakstuk is Toren)
+                            {
+                                Console.WriteLine("W-T");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurWest, volgendVakje);
+                                volgendVakje.BuurWest.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else if (volgendVakje.BuurWest.schaakstuk is Dame)
+                            {
+                                Console.WriteLine("W-D");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurWest, volgendVakje);
+                                volgendVakje.BuurWest.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else
+                            {
+                                Console.WriteLine("W+");
+                            }
+                        }
+                        else if (volgendVakje.BuurZuid != null && volgendVakje.BuurZuid.schaakstuk != null && volgendVakje.BuurZuid.schaakstuk is Toren || volgendVakje.BuurZuid.schaakstuk is Dame)
+                        {
+                            if (volgendVakje.BuurZuid.schaakstuk is Toren)
+                            {
+                                Console.WriteLine("Z-T");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurZuid, volgendVakje);
+                                volgendVakje.BuurZuid.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else if (volgendVakje.BuurZuid.schaakstuk is Dame)
+                            {
+                                Console.WriteLine("Z-D");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurZuid, volgendVakje);
+                                volgendVakje.BuurZuid.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Z+");
+                            }
+                        }
+                        else if (volgendVakje.BuurOost != null && volgendVakje.BuurOost.schaakstuk != null && volgendVakje.BuurOost.schaakstuk is Toren || volgendVakje.BuurOost.schaakstuk is Dame)
+                        {
+                            if (volgendVakje.BuurOost.schaakstuk is Toren)
+                            {
+                                Console.WriteLine("O-T");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurOost, volgendVakje);
+                                volgendVakje.BuurOost.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else if (volgendVakje.BuurOost.schaakstuk is Dame)
+                            {
+                                Console.WriteLine("O-D");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurOost, volgendVakje);
+                                volgendVakje.BuurOost.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else
+                            {
+                                Console.WriteLine("O+");
+                            }
+                        }
+                        else if (volgendVakje.BuurNoordoost != null && volgendVakje.BuurNoordoost.schaakstuk != null && volgendVakje.BuurNoordoost.schaakstuk is Loper || volgendVakje.BuurNoordoost.schaakstuk is Dame)
+                        {
+                            if (volgendVakje.BuurNoordoost.schaakstuk is Loper)
+                            {
+                                Console.WriteLine("NO-L");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurNoordoost, volgendVakje);
+                                volgendVakje.BuurNoordoost.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else if (volgendVakje.BuurNoordoost.schaakstuk is Dame)
+                            {
+                                Console.WriteLine("NO-D");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurNoordoost, volgendVakje);
+                                volgendVakje.BuurNoordoost.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else
+                            {
+                                Console.WriteLine("NO+");
+                            }
+                        }
+                        else if (volgendVakje.BuurNoordWest != null && volgendVakje.BuurNoordWest.schaakstuk != null && volgendVakje.BuurNoordWest.schaakstuk is Loper || volgendVakje.BuurNoordWest.schaakstuk is Dame)
+                        {
+                            if (volgendVakje.BuurNoordWest.schaakstuk is Loper)
+                            {
+                                Console.WriteLine("NW-L");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurNoordWest, volgendVakje);
+                                volgendVakje.BuurNoordWest.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else if (volgendVakje.BuurNoordWest.schaakstuk is Dame)
+                            {
+                                Console.WriteLine("NW-D");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurNoordWest, volgendVakje);
+                                volgendVakje.BuurNoordWest.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else
+                            {
+                                Console.WriteLine("NW+");
+                            }
+                        }
+                        else if (volgendVakje.BuurZuidWest != null && volgendVakje.BuurZuidWest.schaakstuk != null && volgendVakje.BuurZuidWest.schaakstuk is Loper || volgendVakje.BuurZuidWest.schaakstuk is Dame)
+                        {
+                            if (volgendVakje.BuurZuidWest.schaakstuk is Loper)
+                            {
+                                Console.WriteLine("ZW-L");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurZuidWest, volgendVakje);
+                                volgendVakje.BuurZuidWest.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else if (volgendVakje.BuurZuidWest.schaakstuk is Dame)
+                            {
+                                Console.WriteLine("ZW-D");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurZuidWest, volgendVakje);
+                                volgendVakje.BuurZuidWest.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else
+                            {
+                                Console.WriteLine("ZW+");
+                            }
+                        }
+                        else if (volgendVakje.BuurZuidOost != null && volgendVakje.BuurZuidOost.schaakstuk != null && volgendVakje.BuurZuidOost.schaakstuk is Loper || volgendVakje.BuurZuidOost.schaakstuk is Dame)
+                        {
+                            if (volgendVakje.BuurZuidOost.schaakstuk is Loper)
+                            {
+                                Console.WriteLine("ZO-L");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurZuidOost, volgendVakje);
+                                volgendVakje.BuurZuidOost.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else if (volgendVakje.BuurZuidOost.schaakstuk is Dame)
+                            {
+                                Console.WriteLine("ZO-D");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurZuidOost, volgendVakje);
+                                volgendVakje.BuurZuidOost.Pbox.BackColor = System.Drawing.Color.DarkCyan;
+                            }
+                            else
+                            {
+                                Console.WriteLine("ZO+");
+                            }
+                        }
+
+                        // Voor de paarden
+                        else if (volgendVakje.BuurZuid.BuurZuidOost != null && volgendVakje.BuurZuid.BuurZuidOost.schaakstuk != null)
+                        {
+                            if (volgendVakje.BuurZuid.BuurZuidOost.schaakstuk is Paard)
+                            {
+                                Console.WriteLine("ZZO-P");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurZuid.BuurZuidOost, volgendVakje);
+                            }
+                        }
+                        else if (volgendVakje.BuurZuid.BuurZuidWest != null && volgendVakje.BuurZuid.BuurZuidWest.schaakstuk != null)
+                        {
+                            if (volgendVakje.BuurZuid.BuurZuidWest.schaakstuk is Paard)
+                            {
+                                Console.WriteLine("ZZW-P");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurZuid.BuurZuidWest, volgendVakje);
+                            }
+                        }
+                        else if (volgendVakje.BuurNoord.BuurNoordWest != null && volgendVakje.BuurNoord.BuurNoordWest.schaakstuk != null)
+                        {
+                            if (volgendVakje.BuurNoord.BuurNoordWest.schaakstuk is Paard)
+                            {
+                                Console.WriteLine("NNW-P");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurNoord.BuurNoordWest, volgendVakje);
+                            }
+                        }
+                        else if (volgendVakje.BuurNoord.BuurNoordoost != null && volgendVakje.BuurNoord.BuurNoordoost.schaakstuk != null)
+                        {
+                            if (volgendVakje.BuurNoord.BuurNoordoost.schaakstuk is Paard)
+                            {
+                                Console.WriteLine("NNO-P");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurNoord.BuurNoordoost, volgendVakje);
+                            }
+                        }
+                        else if (volgendVakje.BuurWest.BuurNoord != null && volgendVakje.BuurWest.BuurNoord.schaakstuk != null)
+                        {
+                            if (volgendVakje.BuurWest.BuurNoord.schaakstuk is Paard)
+                            {
+                                Console.WriteLine("WNO-P");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurWest.BuurNoord, volgendVakje);
+                            }
+                        }
+                        else if (volgendVakje.BuurWest.BuurZuid != null && volgendVakje.BuurWest.BuurZuid.schaakstuk != null)
+                        {
+                            if (volgendVakje.BuurWest.BuurZuid.schaakstuk is Paard)
+                            {
+                                Console.WriteLine("WZO-P");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurWest.BuurZuid, volgendVakje);
+                            }
+                        }
+                        else if (volgendVakje.BuurOost.BuurNoord != null && volgendVakje.BuurOost.BuurNoord.schaakstuk != null)
+                        {
+                            if (volgendVakje.BuurOost.BuurNoord.schaakstuk is Paard)
+                            {
+                                Console.WriteLine("ONO-P");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurOost.BuurNoord, volgendVakje);
+                            }
+                        }
+                        else if (volgendVakje.BuurOost.BuurZuid != null && volgendVakje.BuurOost.BuurZuid.schaakstuk != null)
+                        {
+                            if (volgendVakje.BuurOost.BuurZuid.schaakstuk is Paard)
+                            {
+                                Console.WriteLine("OZO-P");
+                                mogelijkloop = true;
+                                _computer.voerZetUit(volgendVakje.BuurOost.BuurZuid, volgendVakje);
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("LOOPT");
+                            // verder in de richting
+                            if(richting == "noord")
+                            {
+                                volgendVakje = volgendVakje.BuurNoord;
+                            }
+                            else if (richting == "noordoost")
+                            {
+                                volgendVakje = volgendVakje.BuurNoordoost;
+                            }
+                            else if (richting == "noordwest")
+                            {
+                                volgendVakje = volgendVakje.BuurNoordWest;
+                            }
+                            else if (richting == "west")
+                            {
+                                volgendVakje = volgendVakje.BuurWest;
+                            }
+                            else if (richting == "zuid")
+                            {
+                                volgendVakje = volgendVakje.BuurZuid;
+                            }
+                            else if (richting == "zuidoost")
+                            {
+                                volgendVakje = volgendVakje.BuurZuidOost;
+                            }
+                            else if (richting == "zuidoost")
+                            {
+                                volgendVakje = volgendVakje.BuurZuidWest;
+                            }
+                            else if (richting == "oost")
+                            {
+                                volgendVakje = volgendVakje.BuurOost;
+                            }
+                            volgendVakje.Pbox.BackColor = System.Drawing.Color.DarkSeaGreen;
+                        }
+                    }
+                }
+            }
+            _koningVerplaats = true;
         }
     }
 }
