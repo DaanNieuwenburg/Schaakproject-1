@@ -580,119 +580,6 @@ buurzuidwest</body>
             </type_NamedElement>
           </property>
           <property
-            Id="77c4ddca-5280-4154-893c-9b16c447ae85"
-            name="Kleur"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="8447702a-94be-413e-8fb0-396f6da26750"
-                LastKnownName="Color"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="408bb774-d505-4954-984c-cd97bc428b04"
-            name="_aantal1"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="27bf647c-b259-4212-9525-4a079cf968d1"
-                LastKnownName="int"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="8fd71663-905c-4610-8da2-0059659ae240"
-            name="_aantal2"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="27bf647c-b259-4212-9525-4a079cf968d1"
-                LastKnownName="int"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="47173eb6-e3c6-428f-859a-ac1c94a3b57d"
-            name="_staatSchaak"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
-                LastKnownName="bool"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="100e2193-30c7-49ef-acdd-54129eb92694"
-            name="_kleurStuk"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="9ae72030-5b19-4f74-b8af-7fbbca35c802"
-                LastKnownName="string"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="a3821c01-bd41-4e24-a45c-05a483fda3d1"
-            name="_variant"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="9ae72030-5b19-4f74-b8af-7fbbca35c802"
-                LastKnownName="string"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="6ec25cfa-6a2c-4988-8bb0-70b6653efd6c"
             name="_schaakGezet"
             visibility="Private"
@@ -749,12 +636,23 @@ buurzuidwest</body>
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="6d61e8e9-6c29-47ef-a818-3bf9a53c1536"
+            name="_stukVoorKomen"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="a0f04208-282e-44ef-ae0d-bf0241e8cfab"
             name="CheckRemise"
-            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -814,7 +712,6 @@ buurzuidwest</body>
           <operation
             Id="311baeec-c5f9-4edb-a64f-090df47671cc"
             name="CheckSchaak"
-            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -874,7 +771,6 @@ buurzuidwest</body>
           <operation
             Id="40220d9a-1217-44d2-acef-3519841880d3"
             name="CheckMat"
-            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"

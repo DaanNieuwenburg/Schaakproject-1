@@ -361,42 +361,6 @@ buurzuidwest</body>
               <referencedTypeMoniker Id="fe593683-0e87-4489-8091-d268dd404360" LastKnownName="Vakje" />
             </type_NamedElement>
           </property>
-          <property Id="01b1bc66-5eb3-4b27-a70c-92ce3ae22969" name="Kleur" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="77c4ddca-5280-4154-893c-9b16c447ae85" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="1700c837-14d8-43e6-891d-ef2bdea39c3d" LastKnownName="Color" />
-            </type_NamedElement>
-          </property>
-          <property Id="9f796f0f-1892-4e71-906e-1792ee138464" name="_aantal1" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="408bb774-d505-4954-984c-cd97bc428b04" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="de617352-fe2e-483d-9835-0f9eeec7c6d7" LastKnownName="int" />
-            </type_NamedElement>
-          </property>
-          <property Id="067cc7a3-f2c9-48d3-ae35-decac1c1a4b7" name="_aantal2" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="8fd71663-905c-4610-8da2-0059659ae240" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="65a7faf0-5cb9-4831-994e-4fb668140242" LastKnownName="int" />
-            </type_NamedElement>
-          </property>
-          <property Id="92362669-4d4f-45e9-912f-9d749567e24c" name="_staatSchaak" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="47173eb6-e3c6-428f-859a-ac1c94a3b57d" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="2b39d79f-fbe5-49ae-9951-3e8a6f74d2f4" LastKnownName="bool" />
-            </type_NamedElement>
-          </property>
-          <property Id="6b8a3409-0554-4c63-b60b-d8586c11da59" name="_kleurStuk" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="100e2193-30c7-49ef-acdd-54129eb92694" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="4926ce4b-ec9a-4f07-a397-0ee86a1b1942" LastKnownName="string" />
-            </type_NamedElement>
-          </property>
-          <property Id="82a3c176-c4e2-4957-8fe9-a0caf8427bbe" name="_variant" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="a3821c01-bd41-4e24-a45c-05a483fda3d1" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="d7b93e8a-867c-458e-aefd-169c8ca5372f" LastKnownName="string" />
-            </type_NamedElement>
-          </property>
           <property Id="14195a78-905b-4c52-8865-b871b2bd06e3" name="_schaakGezet" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="6ec25cfa-6a2c-4988-8bb0-70b6653efd6c" />
             <type_NamedElement>
@@ -415,9 +379,12 @@ buurzuidwest</body>
               <referencedTypeMoniker Id="72bdd51a-5c22-4f0c-899c-0308dd585651" LastKnownName="bool" />
             </type_NamedElement>
           </property>
+          <property Id="5a209eee-2f61-4865-9a5e-4d2015a60433" name="_stukVoorKomen" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6d61e8e9-6c29-47ef-a818-3bf9a53c1536" />
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="62ccb5a1-0289-4754-ad98-98f4f26983bb" name="CheckRemise" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="62ccb5a1-0289-4754-ad98-98f4f26983bb" name="CheckRemise" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="03c474ee-eda8-4620-b7d1-b3853a923a74" name="method" profile="CSharpProfile">
                 <elementDefinition Id="8c348985-4f3a-473f-a230-45668c5638a3" />
@@ -463,7 +430,7 @@ buurzuidwest</body>
             </appliedStereotypesInternal>
             <elementDefinition Id="a0f04208-282e-44ef-ae0d-bf0241e8cfab" />
           </operation>
-          <operation Id="676ca84b-b00d-4285-b5d1-331add473348" name="CheckSchaak" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="676ca84b-b00d-4285-b5d1-331add473348" name="CheckSchaak" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="7fde3357-80ee-4123-b370-f8cd7cec2798" name="method" profile="CSharpProfile">
                 <elementDefinition Id="095dd4f6-de73-41b2-98cd-4fd7634db43e" />
@@ -509,7 +476,7 @@ buurzuidwest</body>
             </appliedStereotypesInternal>
             <elementDefinition Id="311baeec-c5f9-4edb-a64f-090df47671cc" />
           </operation>
-          <operation Id="905cccd3-1770-4e69-b830-20a374f46db3" name="CheckMat" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="905cccd3-1770-4e69-b830-20a374f46db3" name="CheckMat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="1821d52c-2364-4f8e-a87d-fc7e903b155f" name="method" profile="CSharpProfile">
                 <elementDefinition Id="947e136e-be5e-438d-8e6c-351bbde426b8" />
@@ -3176,28 +3143,8 @@ buurzuidwest</body>
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="1700c837-14d8-43e6-891d-ef2bdea39c3d" name="Color" isAbstract="false" isLeaf="false" cachedFullName="Color">
-        <elementDefinition Id="8447702a-94be-413e-8fb0-396f6da26750" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="fe593683-0e87-4489-8091-d268dd404360" name="Vakje" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Vakje">
         <elementDefinition Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="de617352-fe2e-483d-9835-0f9eeec7c6d7" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
-        <elementDefinition Id="27bf647c-b259-4212-9525-4a079cf968d1" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="65a7faf0-5cb9-4831-994e-4fb668140242" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
-        <elementDefinition Id="27bf647c-b259-4212-9525-4a079cf968d1" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="d7b93e8a-867c-458e-aefd-169c8ca5372f" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
-        <elementDefinition Id="9ae72030-5b19-4f74-b8af-7fbbca35c802" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -3207,16 +3154,6 @@ buurzuidwest</body>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="72bdd51a-5c22-4f0c-899c-0308dd585651" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
-        <elementDefinition Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="4926ce4b-ec9a-4f07-a397-0ee86a1b1942" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
-        <elementDefinition Id="9ae72030-5b19-4f74-b8af-7fbbca35c802" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="2b39d79f-fbe5-49ae-9951-3e8a6f74d2f4" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
         <elementDefinition Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f" />
       </referencedType>
     </packageHasNamedElement>
