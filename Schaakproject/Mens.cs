@@ -11,6 +11,7 @@ namespace Schaakproject
         public Vakje Selected { get; set; }
         public int ResterendeStukken { get; set; }
         private Color _selectColor { get; set; }
+
         public Mens(string naam, string kleur, Spel _spel, Color select)
         {
             _selectColor = select;

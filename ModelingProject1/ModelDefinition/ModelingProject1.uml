@@ -1104,6 +1104,14 @@ buurzuidwest</body>
             isAbstract="true"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="2ace90af-26fd-49f6-ba65-a941c5ecfbb8"
+            name="Slaan"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -2763,8 +2771,7 @@ buurzuidwest</body>
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
@@ -2776,7 +2783,20 @@ buurzuidwest</body>
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="ae04fa96-6467-4b08-bfe9-4a0360a74e2e"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="3ad6eb8e-3857-4311-8c23-1446aac1b4fd"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -2802,8 +2822,7 @@ buurzuidwest</body>
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
@@ -2815,7 +2834,20 @@ buurzuidwest</body>
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="858b03fe-ab4e-4028-b5ce-3d20b55f69ca"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="761944be-5f21-4b1b-9c60-4645902c3d79"
+                      name="Upper"
+                      value="2" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -3402,7 +3434,7 @@ buurzuidwest</body>
         <ownedAttributesInternal>
           <property
             Id="0002d84b-eb4c-4c26-bc8e-1df71d6924c9"
-            name="selectColor"
+            name="_selectColor"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -3460,7 +3492,6 @@ buurzuidwest</body>
           <operation
             Id="6380b5b5-3eb5-46eb-a277-36b078532866"
             name="SelecteerStuk"
-            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -3520,7 +3551,6 @@ buurzuidwest</body>
           <operation
             Id="894beefa-f5f2-4a60-b892-2a1d66ed1fe3"
             name="DeselecteerStuk"
-            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -3580,7 +3610,6 @@ buurzuidwest</body>
           <operation
             Id="678f780e-f669-4d16-bba9-aa834a3c2dc0"
             name="SelecteerVakje"
-            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"

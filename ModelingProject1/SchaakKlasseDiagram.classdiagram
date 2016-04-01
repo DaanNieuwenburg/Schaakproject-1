@@ -699,6 +699,9 @@ buurzuidwest</body>
           <operation Id="7f7b14ba-9ccc-4a2c-8ab4-7337f62abe95" name="kanStukSlaan" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="e108de7d-d6bd-46ea-a891-fbcb2efbda74" />
           </operation>
+          <operation Id="1c9dc67f-0aee-4994-bd28-be64a547b505" name="Slaan" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2ace90af-26fd-49f6-ba65-a941c5ecfbb8" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -1788,12 +1791,22 @@ buurzuidwest</body>
             <classMoniker Id="759d33fd-a6c9-42da-896e-943493e6b8e3" LastKnownName="Computer" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="5fea6230-2830-4701-b77a-40ffa423dde9" name="Spel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="5fea6230-2830-4701-b77a-40ffa423dde9" name="Spel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="35132ca8-031a-4880-8914-b9863003c4e1" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd Id="48bdbbb7-39f6-4a1d-857f-4be0630491d4" name="Computer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="85d1dab2-06ed-4aca-b8f6-87b2d73c2d01" name="Lower" value="0">
+                      <elementDefinition Id="ae04fa96-6467-4b08-bfe9-4a0360a74e2e" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="faa09758-3fb7-41a1-a264-6355110cc0ac" name="Upper" value="1">
+                      <elementDefinition Id="3ad6eb8e-3857-4311-8c23-1446aac1b4fd" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="3b36a44e-f51e-4122-aab1-8e05309b7522" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -1804,12 +1817,22 @@ buurzuidwest</body>
             <classMoniker Id="0b7a218b-1fe1-4adc-928d-a4595fc28eee" LastKnownName="Mens" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="deb5b317-6c10-40f9-8bb3-c0b4502b731e" name="Spel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="deb5b317-6c10-40f9-8bb3-c0b4502b731e" name="Spel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="c4b67317-dc70-4df2-afbc-c114b7ef4b8d" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd Id="a1252ad9-1b35-46e1-bc2b-7718c50dec0e" name="Mens" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="1c538e89-1833-4f10-9d4e-99457590b21d" name="Lower" value="1">
+                      <elementDefinition Id="858b03fe-ab4e-4028-b5ce-3d20b55f69ca" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="42815d45-17c9-487a-a679-fd826fd31c77" name="Upper" value="2">
+                      <elementDefinition Id="761944be-5f21-4b1b-9c60-4645902c3d79" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="9747eb3c-29c9-466b-8cf7-8aa3e3c2edfc" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -2147,10 +2170,10 @@ buurzuidwest</body>
           </generalization>
         </generalsInternal>
         <ownedAttributesInternal>
-          <property Id="c97c7f45-dcf5-4611-b6c0-7b51d065188e" name="selectColor" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="c97c7f45-dcf5-4611-b6c0-7b51d065188e" name="_selectColor" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="0002d84b-eb4c-4c26-bc8e-1df71d6924c9" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="e7345e3f-2ded-466b-b075-47fd6afa62aa" LastKnownName="Color" />
+              <referencedTypeMoniker Id="fcf70e7f-4d1c-4c08-879c-9901b6c0315a" LastKnownName="Color" />
             </type_NamedElement>
           </property>
           <property Id="b04d50b9-fe0e-4a4e-999f-e11d453ee1bc" name="Selected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -2167,7 +2190,7 @@ buurzuidwest</body>
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="fb20b341-8dde-4398-8dfe-459e212af638" name="SelecteerStuk" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="fb20b341-8dde-4398-8dfe-459e212af638" name="SelecteerStuk" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="1fc6a480-84dc-42b2-add1-7d9d910fe6f4" name="method" profile="CSharpProfile">
                 <elementDefinition Id="4fd171db-8981-49c8-9da0-4341a00cfd5a" />
@@ -2213,7 +2236,7 @@ buurzuidwest</body>
             </appliedStereotypesInternal>
             <elementDefinition Id="6380b5b5-3eb5-46eb-a277-36b078532866" />
           </operation>
-          <operation Id="4b28b897-2deb-4b0c-9038-6ce0b29f0653" name="DeselecteerStuk" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="4b28b897-2deb-4b0c-9038-6ce0b29f0653" name="DeselecteerStuk" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="f2e3117a-5d79-4b57-964b-d298ccdc7298" name="method" profile="CSharpProfile">
                 <elementDefinition Id="b3639ddc-88cf-4e3f-b8e8-ebaa7443efe7" />
@@ -2259,7 +2282,7 @@ buurzuidwest</body>
             </appliedStereotypesInternal>
             <elementDefinition Id="894beefa-f5f2-4a60-b892-2a1d66ed1fe3" />
           </operation>
-          <operation Id="51e75456-ac08-4393-884e-cd45e71e428f" name="SelecteerVakje" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="51e75456-ac08-4393-884e-cd45e71e428f" name="SelecteerVakje" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="0799dd73-c1d6-4741-9c6e-bcdf6f42665c" name="method" profile="CSharpProfile">
                 <elementDefinition Id="ae849400-4014-40d3-a86b-3834eb033f7c" />
@@ -2942,11 +2965,6 @@ buurzuidwest</body>
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="e7345e3f-2ded-466b-b075-47fd6afa62aa" name="Color" isAbstract="false" isLeaf="false" cachedFullName="Color">
-        <elementDefinition Id="8447702a-94be-413e-8fb0-396f6da26750" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="6dafb255-6ca7-4e8a-b6c1-e678a9058d36" name="SpecialPB" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::SpecialPB">
         <elementDefinition Id="024322af-78d3-4585-b41a-c447535ff75d" />
       </referencedType>
@@ -3160,6 +3178,11 @@ buurzuidwest</body>
     <packageHasNamedElement>
       <referencedType Id="22923643-32f0-41f2-892c-a88615e7d4ed" name="List" isAbstract="false" isLeaf="false" cachedFullName="List">
         <elementDefinition Id="0487e777-feaf-4ea7-a4dc-ef2cad1868ea" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fcf70e7f-4d1c-4c08-879c-9901b6c0315a" name="Color" isAbstract="false" isLeaf="false" cachedFullName="Color">
+        <elementDefinition Id="8447702a-94be-413e-8fb0-396f6da26750" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
