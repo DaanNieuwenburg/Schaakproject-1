@@ -361,8 +361,6 @@ namespace Schaakproject
                                 alVerplaatst = true;
                                 _geselecteerdVakje = _computer.VerplaatsingsLijst[i].BuurZuid;       // geselecteerd vak
                                 _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
-                                _geselecteerdStuk.Pbox.BackColor = System.Drawing.Color.Brown;
-                                _geselecteerdVakje.Pbox.BackColor = System.Drawing.Color.Red;
                             }
                         }
                     }
@@ -426,12 +424,6 @@ namespace Schaakproject
 
         public void reageerOpSchaak(Vakje geselecteerd)
         {
-            geselecteerd.Pbox.BackColor = System.Drawing.Color.White;
-
-
-
-
-
             Console.WriteLine("Reageer op schaak");
             Vakje waarVanDaan = geselecteerd;
             Vakje volgendVakje;
@@ -671,7 +663,6 @@ namespace Schaakproject
             // verplaats schaakstuk naar een leeg vak wanneer mogelijk
             if (reactie == false)
             {
-                _koning.Vakje.Pbox.BackColor = System.Drawing.Color.Yellow;
                 Console.WriteLine("Reageer op schaak in algoritme");
                 Console.WriteLine("Slaanrichting = " + _slaanRichting);
                 if (_koning.Vakje.BuurNoord != null && _koning.Vakje.BuurNoord.schaakstuk == null && _slaanRichting != "Noord" && _slaanRichting != "Zuid")
@@ -853,21 +844,18 @@ namespace Schaakproject
                                 Console.WriteLine("N-P");
                                 mogelijkloop = true;
                                 _computer.voerZetUit(volgendVakje.BuurNoord, volgendVakje);
-                                volgendVakje.BuurNoord.Pbox.BackColor = System.Drawing.Color.DarkCyan;
                             }
                             else if (volgendVakje.BuurNoord.schaakstuk is Dame)
                             {
                                 Console.WriteLine("N-D");
                                 mogelijkloop = true;
                                 _computer.voerZetUit(volgendVakje.BuurNoord, volgendVakje);
-                                volgendVakje.BuurNoord.Pbox.BackColor = System.Drawing.Color.DarkCyan;
                             }
                             else if (volgendVakje.BuurNoord.schaakstuk is Toren)
                             {
                                 Console.WriteLine("N-T");
                                 mogelijkloop = true;
                                 _computer.voerZetUit(volgendVakje.BuurNoord, volgendVakje);
-                                volgendVakje.BuurNoord.Pbox.BackColor = System.Drawing.Color.DarkCyan;
                             }
                             else
                             {
@@ -881,14 +869,12 @@ namespace Schaakproject
                                 Console.WriteLine("W-T");
                                 mogelijkloop = true;
                                 _computer.voerZetUit(volgendVakje.BuurWest, volgendVakje);
-                                volgendVakje.BuurWest.Pbox.BackColor = System.Drawing.Color.DarkCyan;
                             }
                             else if (volgendVakje.BuurWest.schaakstuk is Dame)
                             {
                                 Console.WriteLine("W-D");
                                 mogelijkloop = true;
                                 _computer.voerZetUit(volgendVakje.BuurWest, volgendVakje);
-                                volgendVakje.BuurWest.Pbox.BackColor = System.Drawing.Color.DarkCyan;
                             }
                             else
                             {
@@ -902,14 +888,12 @@ namespace Schaakproject
                                 Console.WriteLine("O-T");
                                 mogelijkloop = true;
                                 _computer.voerZetUit(volgendVakje.BuurOost, volgendVakje);
-                                volgendVakje.BuurOost.Pbox.BackColor = System.Drawing.Color.DarkCyan;
                             }
                             else if (volgendVakje.BuurOost.schaakstuk is Dame)
                             {
                                 Console.WriteLine("O-D");
                                 mogelijkloop = true;
                                 _computer.voerZetUit(volgendVakje.BuurOost, volgendVakje);
-                                volgendVakje.BuurOost.Pbox.BackColor = System.Drawing.Color.DarkCyan;
                             }
                             else
                             {
@@ -923,14 +907,12 @@ namespace Schaakproject
                                 Console.WriteLine("NO-L");
                                 mogelijkloop = true;
                                 _computer.voerZetUit(volgendVakje.BuurNoordoost, volgendVakje);
-                                volgendVakje.BuurNoordoost.Pbox.BackColor = System.Drawing.Color.DarkCyan;
                             }
                             else if (volgendVakje.BuurNoordoost.schaakstuk is Dame)
                             {
                                 Console.WriteLine("NO-D");
                                 mogelijkloop = true;
                                 _computer.voerZetUit(volgendVakje.BuurNoordoost, volgendVakje);
-                                volgendVakje.BuurNoordoost.Pbox.BackColor = System.Drawing.Color.DarkCyan;
                             }
                             else
                             {
@@ -944,14 +926,12 @@ namespace Schaakproject
                                 Console.WriteLine("NW-L");
                                 mogelijkloop = true;
                                 _computer.voerZetUit(volgendVakje.BuurNoordWest, volgendVakje);
-                                volgendVakje.BuurNoordWest.Pbox.BackColor = System.Drawing.Color.DarkCyan;
                             }
                             else if (volgendVakje.BuurNoordWest.schaakstuk is Dame)
                             {
                                 Console.WriteLine("NW-D");
                                 mogelijkloop = true;
                                 _computer.voerZetUit(volgendVakje.BuurNoordWest, volgendVakje);
-                                volgendVakje.BuurNoordWest.Pbox.BackColor = System.Drawing.Color.DarkCyan;
                             }
                             else
                             {
@@ -965,14 +945,12 @@ namespace Schaakproject
                                 Console.WriteLine("ZW-L");
                                 mogelijkloop = true;
                                 _computer.voerZetUit(volgendVakje.BuurZuidWest, volgendVakje);
-                                volgendVakje.BuurZuidWest.Pbox.BackColor = System.Drawing.Color.DarkCyan;
                             }
                             else if (volgendVakje.BuurZuidWest.schaakstuk is Dame)
                             {
                                 Console.WriteLine("ZW-D");
                                 mogelijkloop = true;
                                 _computer.voerZetUit(volgendVakje.BuurZuidWest, volgendVakje);
-                                volgendVakje.BuurZuidWest.Pbox.BackColor = System.Drawing.Color.DarkCyan;
                             }
                             else
                             {
@@ -986,14 +964,12 @@ namespace Schaakproject
                                 Console.WriteLine("ZO-L");
                                 mogelijkloop = true;
                                 _computer.voerZetUit(volgendVakje.BuurZuidOost, volgendVakje);
-                                volgendVakje.BuurZuidOost.Pbox.BackColor = System.Drawing.Color.DarkCyan;
                             }
                             else if (volgendVakje.BuurZuidOost.schaakstuk is Dame)
                             {
                                 Console.WriteLine("ZO-D");
                                 mogelijkloop = true;
                                 _computer.voerZetUit(volgendVakje.BuurZuidOost, volgendVakje);
-                                volgendVakje.BuurZuidOost.Pbox.BackColor = System.Drawing.Color.DarkCyan;
                             }
                             else
                             {

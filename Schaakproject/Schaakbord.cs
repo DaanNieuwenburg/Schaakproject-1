@@ -185,6 +185,7 @@ namespace Schaakproject
                                 //Speler2.pionnen[y] = schaakarray[x, y].schaakstuk as Pion;
                                 if (Spel.SpelMode == "Singleplayer")
                                 {
+                                    Spel.ComputerSpeler.Pionnen[y] = SchaakArray[x, y].schaakstuk as Pion;
                                     Spel.ComputerSpeler.NietVerplaatstLijst.Add(SchaakArray[x, y].schaakstuk.Vakje);
                                 }
                                 else

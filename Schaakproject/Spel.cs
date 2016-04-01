@@ -114,6 +114,7 @@ namespace Schaakproject
             }
             else
             {
+                Console.WriteLine("Check remise SP");
                 if (Speler1.AantalStukken[5] < 3 && ComputerSpeler.AantalStukken[5] < 3)
                 {
                     bool checkweingstukken = schaakbord.CheckWeinigStukken(Speler1, ComputerSpeler);
