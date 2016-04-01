@@ -12,10 +12,11 @@ namespace Schaakproject
 {
     public partial class Rokerenmelding : Form
     {
-        public Koning koning { get; set; }
-        public Rokerenmelding(Koning _koning)
+        private Koning _koning { get; set; }
+
+        public Rokerenmelding(Koning koning)
         {
-            koning = _koning;
+            _koning = koning;
             InitializeComponent();
         }
 
@@ -27,7 +28,7 @@ namespace Schaakproject
 
         private void btnYes_Click(object sender, EventArgs e)
         {
-            koning.Wilrokeren();
+            _koning.Wilrokeren();
             DialogResult = DialogResult.Yes;
 
         }

@@ -12,26 +12,26 @@ namespace Schaakproject
 {
     public partial class RemiseMelding : Form
     {
-        public Spel spel { get; set; }
+        private Spel _spel { get; set; }
 
         public RemiseMelding(Spel spel)
         {
-            this.spel = spel;
+            _spel = spel;
             InitializeComponent();
         }
 
         private void btn_ja_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Yes;
-            spel.Herstart(spel.SpelMode, spel.Speler1.Naam, spel.Speler2.Naam);
+            _spel.Herstart(_spel.SpelMode, _spel.Speler1.Naam, _spel.Speler2.Naam);
         }
 
         private void btn_nee_Click(object sender, EventArgs e)
         {
             Hide();
             DialogResult = DialogResult.Yes;
-            spel.speelbord.Hide();
-            NaamInvoer menu = new NaamInvoer(spel.BorderColor, spel.SelectColor, spel.ColorVakje1, spel.ColorVakje2);
+            _spel.speelbord.Hide();
+            NaamInvoer menu = new NaamInvoer(_spel.BorderColor, _spel.SelectColor, _spel.ColorVakje1, _spel.ColorVakje2);
             menu.ShowDialog();
         }
     }
