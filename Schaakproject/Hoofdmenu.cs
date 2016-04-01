@@ -35,6 +35,7 @@ namespace Schaakproject
 
         private void Hoofdmenu_Load(object sender, EventArgs e)
         {
+            btnafsluiten.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //transparent bordercolor (Color.Transparent is unsupported)
             BackgroundImageLayout = ImageLayout.Stretch;
             startButton.BackgroundImageLayout = ImageLayout.Stretch;
         }
