@@ -202,19 +202,19 @@ namespace Schaakproject
             if (randomgetal == 1)
             {
                 int randomstuk = rnd.Next(1, 4);
-                if (randomstuk == 1 && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.schaakstuk != null)
+                if (randomstuk == 1 && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid != null && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.schaakstuk != null)
                 {
                     _geselecteerdStuk = _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid;                // geselecteerd stuk
                     _geselecteerdVakje = _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid;      // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (randomstuk == 2 && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid.schaakstuk != null)
+                else if (randomstuk == 2 && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid != null && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid.schaakstuk != null)
                 {
                     _geselecteerdStuk = _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid;                // geselecteerd stuk
                     _geselecteerdVakje = _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid;      // geselecteerd vak
                     _computer.voerZetUit(_geselecteerdStuk, _geselecteerdVakje);
                 }
-                else if (randomstuk == 3 && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurWest.BuurWest.BuurWest.schaakstuk != null)
+                else if (randomstuk == 3 && _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid.schaakstuk == null && _koning.Vakje.BuurWest.BuurWest.BuurWest != null && _koning.Vakje.BuurWest.BuurWest.BuurWest.schaakstuk != null)
                 {
                     _geselecteerdStuk = _koning.Vakje.BuurWest.BuurWest.BuurWest;                                   // geselecteerd stuk
                     _geselecteerdVakje = _koning.Vakje.BuurWest.BuurWest.BuurWest.BuurWest.BuurZuid.BuurZuid;      // geselecteerd vak
@@ -619,6 +619,7 @@ namespace Schaakproject
             // sla tegenstanders schaakstuk wanneer mogelijk
             if (reactie == false)
             {
+                Console.WriteLine("Reageert");
                 if (_koning.Vakje.BuurNoord != null && _koning.Vakje.BuurNoord.schaakstuk == geselecteerd.schaakstuk)
                 {
                     _computer.voerZetUit(_koning.Vakje, _koning.Vakje.BuurNoord);
@@ -819,7 +820,7 @@ namespace Schaakproject
                 Console.WriteLine("RO");
                 volgendVakje = waarVanDaan.BuurOost;
             }
-            while (mogelijkloop == false)
+            /*while (mogelijkloop == false)
             {
                 Console.WriteLine("Mogelijkloop");
                 if (volgendVakje == null)
@@ -900,7 +901,7 @@ namespace Schaakproject
                                 Console.WriteLine("O+");
                             }
                         }
-                        else if (volgendVakje.BuurNoordoost != null && volgendVakje.BuurNoordoost.schaakstuk != null && volgendVakje.BuurNoordoost.schaakstuk.Kleur == "zwart" && volgendVakje.BuurNoordoost.schaakstuk is Loper || volgendVakje.BuurNoordoost.schaakstuk is Dame)
+                        else if (volgendVakje.BuurNoordoost != null && volgendVakje.BuurNoordoost.schaakstuk != null && volgendVakje.BuurNoordoost.schaakstuk.Kleur == "zwart" && volgendVakje.BuurNoordoost.schaakstuk is Loper)
                         {
                             if (volgendVakje.BuurNoordoost.schaakstuk is Loper)
                             {
@@ -1061,7 +1062,7 @@ namespace Schaakproject
                         }
                     }
                 }
-            }
+            }*/
             _koningVerplaats = true;
         }
     }
