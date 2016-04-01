@@ -231,7 +231,7 @@ namespace Schaakproject
 
                         if (spel.SpelMode == "Singleplayer")
                         {
-                            spel.ComputerSpeler.Zet(tempToren.Vakje, spel);  // laat de computer op de mens reageren
+                            spel.ComputerSpeler.Zet(tempToren.Vakje);  // laat de computer op de mens reageren
                             spel.VeranderSpeler();
                         }
                     }
