@@ -647,7 +647,14 @@ buurzuidwest</body>
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="0487e777-feaf-4ea7-a4dc-ef2cad1868ea"
+                LastKnownName="List"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -5184,25 +5191,6 @@ buurzuidwest</body>
         </generalsInternal>
         <ownedAttributesInternal>
           <property
-            Id="4848a679-bd24-434b-94a7-089f8497d685"
-            name="_SpelMode"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="9ae72030-5b19-4f74-b8af-7fbbca35c802"
-                LastKnownName="string"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="df9d5a5b-2563-42d1-9163-fd6feb83f5ce"
             name="_schaakbord"
             visibility="Private"
@@ -5218,63 +5206,6 @@ buurzuidwest</body>
               <classMoniker
                 Id="b8e9c20a-28d5-451e-b9a2-31a75299b217"
                 LastKnownName="Schaakbord"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="82d0b952-d596-4924-a865-8903248058a4"
-            name="_speler1"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="cc73c737-077a-466e-b963-71e8f50e75d4"
-                LastKnownName="Mens"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="e6884f26-1689-44e2-887b-8c4869e7ba96"
-            name="_speler2"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="cc73c737-077a-466e-b963-71e8f50e75d4"
-                LastKnownName="Mens"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="0393a848-d248-4a88-97bb-77c989880f8e"
-            name="_computerSpeler"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="19f9934e-f970-46f6-998b-13a15ad234f5"
-                LastKnownName="Computer"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -5331,25 +5262,6 @@ buurzuidwest</body>
               <undefinedTypeMoniker
                 Id="9ae72030-5b19-4f74-b8af-7fbbca35c802"
                 LastKnownName="string"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="cebf7d3a-390a-4684-812f-8379b6e5b252"
-            name="_witaanzet"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
-                LastKnownName="bool"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -6210,6 +6122,29 @@ buurzuidwest</body>
       <undefinedType
         Id="3b0fe785-233d-42fa-86d8-291e5ffbb322"
         name="Pion[]" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5574d013-38ec-4bb4-819c-bf53d6ca002f"
+        name="Program"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="3e52a4cc-e679-487e-88ef-ba89f86ce191">
+            <classMoniker
+              Id="a4a87c7c-590c-446b-a9be-a8dbcf265510"
+              LastKnownName="Hoofdmenu"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="0487e777-feaf-4ea7-a4dc-ef2cad1868ea"
+        name="List" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

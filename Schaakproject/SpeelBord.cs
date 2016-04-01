@@ -12,44 +12,33 @@ namespace Schaakproject
 {
     public partial class SpeelBord : Form
     {
-        private string _spelMode { get; set; }              //Singleplayer of multiplayer
-        private Schaakbord _schaakbord { get; set; }        //Een schaakbord
-        private Mens _speler1 { get; set; }                 //Speler1
-        private Mens _speler2 { get; set; }                 //Speler2
-        private Computer _computerSpeler { get; set; }      //Computer
         private Spel _spel { get; set; }                    //Een spel
         private int _clicks { get; set; }                    //voor het laten zien van de uitleg
         public string Variant { get; set; }                //string voor spelvariant
-        private bool _witAanzet { get; set; }
         private Color _borderColor { get; set; }
         private int _optie { get; set; }
-        public SpeelBord(Spel spel, Schaakbord schaakbord, string SpelMode, Mens Speler1, Mens Speler2, Computer computerSpeler, string Variant, Color border)
+        public SpeelBord(Spel spel, Schaakbord schaakbord, string Variant, Color border)
         {
+            _spel = spel;
             _clicks = 0;
-            _spelMode = SpelMode;
             this.Variant = Variant;
             InitializeComponent();
             _borderColor = border;
-            _speler1 = Speler1;
-            _speler2 = Speler2;
-            if (_speler1.Naam == "")
+            if (_spel.Speler1.Naam == "")
             {
-                _speler1.Naam = "Wit";
+                _spel.Speler1.Naam = "Wit";
             }
-            if (_speler2 != null && _speler2.Naam == "")
+            if (_spel.Speler2 != null && _spel.Speler2.Naam == "")
             {
-                _speler2.Naam = "Zwart";
+                _spel.Speler2.Naam = "Zwart";
             }
 
-            lblbeurt.Text = _speler1.Naam + " is aan zet";
-
-            _computerSpeler = computerSpeler;
-            _spel = spel;
+            lblbeurt.Text = _spel.Speler1.Naam + " is aan zet";
             this.CenterToScreen();
-            lblaantal1.Text = Convert.ToString(_speler1.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
+            lblaantal1.Text = Convert.ToString(_spel.Speler1.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
             if (spel.SpelMode != "Singleplayer")
             {
-                lblaantal2.Text = Convert.ToString(_speler2.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
+                lblaantal2.Text = Convert.ToString(_spel.Speler2.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
             }
             for (int x = 0; x < 8; x++)
             {
@@ -86,94 +75,94 @@ namespace Schaakproject
             this.Controls.Add(pictureBox1);
 
             // Het spel is singleplayer of multiplayer
-            if (_spelMode.Equals("Singleplayer"))
+            if (_spel.SpelMode.Equals("Singleplayer"))
             {
-                lblPlayer1.Text = _speler1.Naam;
+                lblPlayer1.Text = _spel.Speler1.Naam;
                 lblPlayer2.Text = "COMP";
             }
-            else if (_spelMode.Equals("Multiplayer"))
+            else if (_spel.SpelMode.Equals("Multiplayer"))
             {
-                Console.WriteLine("tlest " + _speler1.Naam);
-                lblPlayer1.Text = "P1: " + _speler1.Naam;
-                lblPlayer2.Text = "P2: " + _speler2.Naam;
+                Console.WriteLine("tlest " + _spel.Speler1.Naam);
+                lblPlayer1.Text = "P1: " + _spel.Speler1.Naam;
+                lblPlayer2.Text = "P2: " + _spel.Speler2.Naam;
             }
-            else if (_spelMode.Equals("Online"))
+            else if (_spel.SpelMode.Equals("Online"))
             {
-                Console.WriteLine("tlest " + _speler1.Naam);
-                lblPlayer1.Text = "P1: " + Speler1.Naam;
+                Console.WriteLine("tlest " + _spel.Speler1.Naam);
+                lblPlayer1.Text = "P1: " + _spel.Speler1.Naam;
             }
         }
 
         private void select(SpecialPB pictureBox) //click event voor alle pictureboxes
         {
-            if (_spelMode == "Singleplayer")
+            if (_spel.SpelMode == "Singleplayer")
             {
-                if (_spel.SpelerAanZet == _speler1)
+                if (_spel.SpelerAanZet == _spel.Speler1)
                 {
-                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.Kleur == _speler1.Kleur)
+                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.Kleur == _spel.Speler1.Kleur)
                     {
                         Console.WriteLine("Speler selecteert stuk");
-                        _speler1.SelecteerStuk(pictureBox.vakje, _spel);
+                        _spel.Speler1.SelecteerStuk(pictureBox.vakje, _spel);
                     }
                     else
                     {
-                        _speler1.SelecteerVakje(pictureBox.vakje, _spel);                
+                        _spel.Speler1.SelecteerVakje(pictureBox.vakje, _spel);                
                     }
                 }
             }
 
-            else if (_spelMode == "Multiplayer")
+            else if (_spel.SpelMode == "Multiplayer")
             {
-                if (_spel.SpelerAanZet == _speler1)
+                if (_spel.SpelerAanZet == _spel.Speler1)
                 {
                     //_spel.controleerOpSchaak();
                     //als de picturebox waarop gedrukt is wel een schaakstuk heeft en dit schaakstuk de kleur heeft van de speler
-                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.Kleur == _speler1.Kleur)
+                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.Kleur == _spel.Speler1.Kleur)
                     {
-                        _speler1.SelecteerStuk(pictureBox.vakje, _spel);
+                        _spel.Speler1.SelecteerStuk(pictureBox.vakje, _spel);
                     }
                     else
                     {
-                        _speler1.SelecteerVakje(pictureBox.vakje, _spel);
+                        _spel.Speler1.SelecteerVakje(pictureBox.vakje, _spel);
                     }
                 }
                 else
                 {
                     //_spel.controleerOpSchaak();
-                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.Kleur == _speler2.Kleur)
+                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.Kleur == _spel.Speler2.Kleur)
                     {
-                        _speler2.SelecteerStuk(pictureBox.vakje, _spel);
+                        _spel.Speler2.SelecteerStuk(pictureBox.vakje, _spel);
                     }
                     else
                     {
-                        _speler2.SelecteerVakje(pictureBox.vakje, _spel);
+                        _spel.Speler2.SelecteerVakje(pictureBox.vakje, _spel);
                     }
                 }
             }
-            else if (_spelMode == "Online")
+            else if (_spel.SpelMode == "Online")
             {
 
-                if (_spel.SpelerAanZet == _speler1)
+                if (_spel.SpelerAanZet == _spel.Speler1)
                 {
                     //als de picturebox waarop gedrukt is wel een schaakstuk heeft en dit schaakstuk de kleur heeft van de speler
-                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.Kleur == _speler1.Kleur)
+                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.Kleur == _spel.Speler1.Kleur)
                     {
-                        _speler1.SelecteerStuk(pictureBox.vakje, _spel);
+                        _spel.Speler1.SelecteerStuk(pictureBox.vakje, _spel);
                     }
                     else
                     {
-                        _speler1.SelecteerVakje(pictureBox.vakje, _spel);
+                        _spel.Speler1.SelecteerVakje(pictureBox.vakje, _spel);
                     }
                 }
                 else
                 {
-                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.Kleur == _speler2.Kleur)
+                    if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.Kleur == _spel.Speler2.Kleur)
                     {
-                        _speler2.SelecteerStuk(pictureBox.vakje, _spel);
+                        _spel.Speler2.SelecteerStuk(pictureBox.vakje, _spel);
                     }
                     else
                     {
-                        _speler2.SelecteerVakje(pictureBox.vakje, _spel);
+                        _spel.Speler2.SelecteerVakje(pictureBox.vakje, _spel);
                     }
                 }
             }
@@ -207,12 +196,12 @@ namespace Schaakproject
             Console.WriteLine("HERSTART");
             HerstartMelding Warning = new HerstartMelding();
             Warning.ShowDialog();
-            if (_spelMode == "Singleplayer")
+            if (_spel.SpelMode == "Singleplayer")
             {
                 if (Warning.Sure == true)
                 {
                     this.Hide();
-                    _spel.Herstart(_spelMode, _speler1.Naam, "COMP");
+                    _spel.Herstart(_spel.SpelMode, _spel.Speler1.Naam, "COMP");
                 }
             }
             else
@@ -220,7 +209,7 @@ namespace Schaakproject
                 if (Warning.Sure == true)
                 {
                     this.Hide();
-                    _spel.Herstart(_spelMode, _speler1.Naam, _speler2.Naam);
+                    _spel.Herstart(_spel.SpelMode, _spel.Speler1.Naam, _spel.Speler2.Naam);
                 }
             }
         }
