@@ -1780,7 +1780,7 @@ buurzuidwest</body>
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="56fa76fb-97fd-454b-8e13-381f959c0047" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="56fa76fb-97fd-454b-8e13-381f959c0047" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="0cc89c40-f064-4a32-9fae-81e85388b3c2" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -2700,11 +2700,11 @@ buurzuidwest</body>
           </generalization>
         </generalsInternal>
         <targetEnds>
-          <association Id="bdfbddd8-9db4-4099-ab9a-0e7027d5fd1a" isDerived="false" sourceEndRoleName="SpecialPB" targetEndRoleName="SpeelBord" isLeaf="false" isAbstract="false">
+          <association Id="bdfbddd8-9db4-4099-ab9a-0e7027d5fd1a" isDerived="false" sourceEndRoleName="Speelbord" targetEndRoleName="SpeelBord" isLeaf="false" isAbstract="false">
             <classMoniker Id="e8bbaa92-33dc-4905-9b8d-29760f45a334" LastKnownName="SpeelBord" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="8c627297-69e8-40e2-a38a-912c9731789c" name="SpecialPB" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="8c627297-69e8-40e2-a38a-912c9731789c" name="Speelbord" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <lowerValueInternal>
                     <literalString Id="19e8697b-5c18-49f9-8d87-1fd1623220b8" name="Lower" value="64">
                       <elementDefinition Id="5cdf0a2b-dca2-4e92-b693-5c1260df7a78" />
@@ -2719,7 +2719,7 @@ buurzuidwest</body>
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="b6ba63b6-e572-4706-acb6-4e97d9df6894" name="SpeelBord" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <memberEnd Id="b6ba63b6-e572-4706-acb6-4e97d9df6894" name="SpeelBord" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
                   <elementDefinition Id="26b3a4d4-dc14-441a-83d1-54304ceea7bb" />
                 </memberEnd>
               </associationHasOwnedEnds>
