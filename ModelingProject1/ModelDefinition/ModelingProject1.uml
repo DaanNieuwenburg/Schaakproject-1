@@ -6552,6 +6552,24 @@ buurzuidwest</body>
         Id="3b0fe785-233d-42fa-86d8-291e5ffbb322"
         name="Pion[]" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5574d013-38ec-4bb4-819c-bf53d6ca002f"
+        name="Program"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="3e52a4cc-e679-487e-88ef-ba89f86ce191">
+            <classMoniker
+              Id="a4a87c7c-590c-446b-a9be-a8dbcf265510"
+              LastKnownName="Hoofdmenu"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

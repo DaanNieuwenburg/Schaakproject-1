@@ -3341,6 +3341,17 @@ buurzuidwest</body>
         <elementDefinition Id="5707d178-3d72-4f4a-9f04-b079d5842eb3" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e4ff887b-760e-4b60-8aef-e501af46167f" name="Program" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5574d013-38ec-4bb4-819c-bf53d6ca002f" />
+        <suppliersInternal>
+          <dependency Id="fb073eea-4392-4458-b88c-d8e13a154ebc">
+            <classMoniker Id="db30f26a-1951-424b-9a99-a9e05b14b63a" LastKnownName="Hoofdmenu" />
+            <elementDefinition Id="3e52a4cc-e679-487e-88ef-ba89f86ce191" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="b1492d3f-3f34-46c2-94ce-5dad21715151" name="ModelingProject1">
     <elementDefinition Id="de569ad7-15f5-468e-875f-a53a5601e060" />

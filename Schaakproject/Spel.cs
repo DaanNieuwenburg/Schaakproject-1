@@ -58,7 +58,7 @@ namespace Schaakproject
             this.schaakbord = schaakbord;
 
             //Hij maakt een nieuw speelbord (een window)
-            SpeelBord speelbord = new SpeelBord(this, schaakbord, SpelMode, Speler1, Speler2, ComputerSpeler, Variant, BorderColor);
+            SpeelBord speelbord = new SpeelBord(this, schaakbord, SpelMode, Variant, BorderColor);
             this.speelbord = speelbord;
             speelbord.Show();
         }
