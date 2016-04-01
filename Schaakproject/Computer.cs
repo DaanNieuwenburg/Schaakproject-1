@@ -11,6 +11,7 @@ namespace Schaakproject
         private Vakje _vorigVakje { get; set; }
         private Schaakstuk _vorigSchaakstuk { get; set; }
         public Algoritme algoritme { get; set; }
+        public bool zojuistSchaak { get; set; }
         private Color _selectedColor { get; set; }
         private List<Vakje> _nietVerplaatstLijst = new List<Vakje>();
         public List<Vakje> NietVerplaatstLijst

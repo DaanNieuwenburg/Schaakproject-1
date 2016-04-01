@@ -111,7 +111,6 @@ namespace Schaakproject
             }
             else
             {
-                Console.WriteLine("Check remise SP");
                 if (Speler1.AantalStukken[5] < 3 && ComputerSpeler.AantalStukken[5] < 3)
                 {
                     bool checkweingstukken = schaakbord.CheckWeinigStukken(Speler1, ComputerSpeler);
@@ -152,8 +151,6 @@ namespace Schaakproject
                         mat = schaakbord.CheckMat(ComputerSpeler.koning);
                         if (mat == true)
                         {
-                            Console.WriteLine("HUIDIGE SPELER  = " + ComputerSpeler.Kleur);
-                            Console.WriteLine("MAT IS TRUE");
                             ComputerSpeler.koning.Vakje.Pbox.Image = Properties.Resources.ZwartMat1;
                             SchaakMat _SchaakMat = new SchaakMat(Speler1.Naam, this);
                             _SchaakMat.ShowDialog();
@@ -162,9 +159,8 @@ namespace Schaakproject
                         else
                         {
                             // computer reageert op schaak
-                            ComputerSpeler.algoritme.zojuistSchaak = true;
-                            Console.WriteLine("REAGEER OP SCHAAK " + SpelerAanZet.Kleur);
                             ComputerSpeler.algoritme.StaatSchaak = true;
+                            VeranderSpeler();
                             ComputerSpeler.algoritme.reageerOpSchaak(Selected);
                         }
                     }
