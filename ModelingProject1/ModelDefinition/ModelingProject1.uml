@@ -2744,8 +2744,7 @@ buurzuidwest</body>
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -5391,7 +5390,7 @@ buurzuidwest</body>
           <association
             Id="6b6f989a-9873-4126-adb3-3fd2f6cdf5fc"
             isDerived="false"
-            sourceEndRoleName="SpecialPB"
+            sourceEndRoleName="Speelbord"
             targetEndRoleName="SpeelBord"
             isLeaf="false"
             isAbstract="false">
@@ -5403,15 +5402,14 @@ buurzuidwest</body>
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="4fba0def-6980-4241-bf0e-584494a96f92"
-                  name="SpecialPB"
+                  name="Speelbord"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false">
+                  isComposite="false">
                   <lowerValueInternal>
                     <literalString
                       Id="5cdf0a2b-dca2-4e92-b693-5c1260df7a78"
@@ -5436,7 +5434,8 @@ buurzuidwest</body>
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false"
+                  isNavigableOwned="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
