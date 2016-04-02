@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RemiseMelding));
             this.lbl_remise = new System.Windows.Forms.Label();
             this.btn_ja = new System.Windows.Forms.Button();
             this.btn_nee = new System.Windows.Forms.Button();
@@ -72,6 +73,7 @@
             this.Controls.Add(this.btn_ja);
             this.Controls.Add(this.lbl_remise);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RemiseMelding";

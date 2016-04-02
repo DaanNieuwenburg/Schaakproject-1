@@ -869,9 +869,7 @@ namespace Schaakproject
                                 _torenOud.Pbox.update();
                                 _Randoost.BuurWest.schaakstuk = Tempkoning;
                                 _Randoost.BuurWest.Pbox.update();
-                                //_Randwest.buurOost.buurOost.pbox.BackColor = System.Drawing.Color.Red;
                                 _Randoost.BuurWest.BuurWest.schaakstuk = tempToren;
-                                //_Randwest.buurOost.buurOost.buurOost.pbox.BackColor = System.Drawing.Color.Blue;
                                 _Randoost.BuurWest.BuurWest.Pbox.update();
                                 _eersteZet = true;
                             }
@@ -893,9 +891,7 @@ namespace Schaakproject
                                 _torenOud.Pbox.update();
                                 _randWest.BuurOost.BuurOost.schaakstuk = Tempkoning;
                                 _randWest.BuurOost.BuurOost.Pbox.update();
-                                //_Randwest.buurOost.buurOost.pbox.BackColor = System.Drawing.Color.Red;
                                 _randWest.BuurOost.BuurOost.BuurOost.schaakstuk = tempToren;
-                                //_Randwest.buurOost.buurOost.buurOost.pbox.BackColor = System.Drawing.Color.Blue;
                                 _randWest.BuurOost.BuurOost.BuurOost.Pbox.update();
                                 _eersteZet = true;
                             }
