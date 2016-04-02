@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Schaakproject
@@ -38,6 +32,10 @@ namespace Schaakproject
             if (spel.SpelMode != "Singleplayer")
             {
                 lblaantal1.Text = Convert.ToString(_spel.Speler2.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
+            }
+            else
+            {
+                lblaantal1.Text = Convert.ToString(_spel.ComputerSpeler.ResterendeStukken); //hier moet de variabele komen voor het aantal van wit
             }
             for (int x = 0; x < 8; x++)
             {

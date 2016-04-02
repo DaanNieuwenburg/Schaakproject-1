@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Schaakproject
+﻿namespace Schaakproject
 {
     public class Loper : Schaakstuk
     {
@@ -129,6 +124,9 @@ namespace Schaakproject
 
         public override void Verplaats(Vakje nieuwVakje, Vakje selected, Spel spel)
         {
+            //Kijk of het schaakstuk het geselecteerde vakje kan vinden,
+            //door alle vakjes waar heen bewogen mag worden te vergelijken met het geselecteerde vakje
+
             if (spel.SpelerAanZet == spel.Speler1)
             {
                 Speler = spel.Speler1;
@@ -216,6 +214,11 @@ namespace Schaakproject
             }
             if (mogelijk == true)
             {
+                //Als het schaakstuk het vakje kan bereiken, wordt het schaakstuk verplaatst.
+                //Hierna wordt gekeken of de koning schaak staat.
+                //Als de koning schaak staat, dan wordt het schaakstuk weer terug geplaatst waar die stond.
+                //Staat de koning niet schaak, dan is de zet definitief en is de andere speler aan de beurt.
+
                 Schaakstuk temp = nieuwVakje.schaakstuk;
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;

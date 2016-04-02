@@ -183,6 +183,99 @@ buurzuidwest</body>
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="39dac9dd-4bac-471e-b9d2-525c1d427ebe"
+            isDerived="false"
+            sourceEndRoleName="Speler"
+            targetEndRoleName="Pion"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="cb86e7b4-7294-4ba3-b736-a8fe06520d6e"
+              LastKnownName="Pion"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1a053ad7-a5e2-420a-b0a8-131b04f6ec8f"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0639d0e0-1617-4009-b6d3-dc23da92e359"
+                  name="Pion"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="ecbdfdcc-168c-4cb5-be20-6bdac1ac31bd"
+                      name="Lower"
+                      value="8" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="4ae18a60-5a6d-4243-b23f-33dbec4fa8e3"
+                      name="Upper"
+                      value="8" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a56aea90-7257-4353-ad71-6109baf89cf0"
+            isDerived="false"
+            sourceEndRoleName="Speler"
+            targetEndRoleName="Koning"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="bf50c40b-7eff-4bae-bf79-01cca456b99e"
+              LastKnownName="Koning"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="56a3d684-92fc-494c-8aa3-34b1b38d71ac"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8e4708cb-84b2-4d4d-a69e-33169a9c0e25"
+                  name="Koning"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="1be35b3b-1f11-4f02-a0fb-f8aba731c1a6"
@@ -563,6 +656,45 @@ buurzuidwest</body>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="0ee21215-ceba-49bf-9318-180c37d6de21"
+            isDerived="false"
+            sourceEndRoleName="Schaakbord"
+            targetEndRoleName="Schaakstuk"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5707d178-3d72-4f4a-9f04-b079d5842eb3"
+              LastKnownName="Schaakstuk"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="aff0747d-42f2-45cd-a4d3-f4cead1eff7e"
+                  name="Schaakbord"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="db0e2600-ed89-4817-bfd1-7a09a4ed2705"
+                  name="Schaakstuk"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -903,6 +1035,47 @@ buurzuidwest</body>
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="f74a4cd3-63be-4316-8ec6-c12a09afd089"
+            isDerived="false"
+            sourceEndRoleName="Schaakstuk"
+            targetEndRoleName="Speler"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="1930fb1b-c192-4fac-821b-775cf2dbbb42"
+              LastKnownName="Speler"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1dba13df-02ef-4cb5-a064-2a5b99161a78"
+                  name="Schaakstuk"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4907709f-3ff2-41c8-bca2-76b438f1deea"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="1743bfe8-11c1-4513-a13a-35075ac0020d"
@@ -1259,7 +1432,7 @@ buurzuidwest</body>
                     <literalString
                       Id="b9e5352c-5877-481b-a58f-d8703214a453"
                       name="Lower"
-                      value="0" />
+                      value="1" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
@@ -2884,6 +3057,45 @@ buurzuidwest</body>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="a8527493-b6f4-4fcd-8af2-bae9225965ad"
+            isDerived="false"
+            sourceEndRoleName="Spel"
+            targetEndRoleName="Vakje"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
+              LastKnownName="Vakje"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="646b5fd7-af95-4b5b-9393-048ad769925d"
+                  name="Spel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="37569b71-25b8-4c02-b982-9fd5da14dc70"
+                  name="Vakje"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -3464,6 +3676,47 @@ buurzuidwest</body>
               LastKnownLocation="ModelingProject1.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="be3b1423-68ca-46c1-a323-c4272a2ae43a"
+            isDerived="false"
+            sourceEndRoleName="Mens"
+            targetEndRoleName="SpecialPB"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="024322af-78d3-4585-b41a-c447535ff75d"
+              LastKnownName="SpecialPB"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="192e0ce5-cbd7-48ad-a8a3-bdc8b9530ded"
+                  name="Mens"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a0daf6ee-9f66-470d-96de-78714a90e750"
+                  name="SpecialPB"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="0002d84b-eb4c-4c26-bc8e-1df71d6924c9"
@@ -3804,6 +4057,136 @@ buurzuidwest</body>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="768ec011-5578-4682-9503-e34c19985701"
+            isDerived="false"
+            sourceEndRoleName="Computer"
+            targetEndRoleName="Vakje"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
+              LastKnownName="Vakje"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f249e0d0-431a-4804-b806-46f7ec9b7999"
+                  name="Computer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="171ccf3b-7d0b-4fc2-9563-ae930f261412"
+                  name="Vakje"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="7238e65c-78c0-488b-8bf6-35e5dcefd9d7"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="5ad4afb2-3ac0-4b9b-a225-e47f7a53bce4"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="0ce1b68a-94b0-400c-87cf-5782d17508fe"
+            isDerived="false"
+            sourceEndRoleName="Computer"
+            targetEndRoleName="Mens"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="cc73c737-077a-466e-b963-71e8f50e75d4"
+              LastKnownName="Mens"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="34c94884-1a57-4a1d-9904-f4408f6cbfc6"
+                  name="Computer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ba5a433b-de2c-4ade-be2c-1dd4ddf5c68c"
+                  name="Mens"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="fa3b9ffe-b02e-4d30-88b8-8f3a651b4ff5"
+            isDerived="false"
+            sourceEndRoleName="Computer"
+            targetEndRoleName="Schaakstuk"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5707d178-3d72-4f4a-9f04-b079d5842eb3"
+              LastKnownName="Schaakstuk"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b8b2dcd3-ca63-4c7d-b1a0-346f900f27b8"
+                  name="Computer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="67b67a99-5753-471a-be77-468e8dd6ccfe"
+                  name="Schaakstuk"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -3841,44 +4224,6 @@ buurzuidwest</body>
               <classMoniker
                 Id="5707d178-3d72-4f4a-9f04-b079d5842eb3"
                 LastKnownName="Schaakstuk"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="5cdbcf00-8303-459c-8e08-82e92ef1fd56"
-            name="_tegenSpeler"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="cc73c737-077a-466e-b963-71e8f50e75d4"
-                LastKnownName="Mens"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="9486de1a-36fe-44a7-8429-4d5c8586bf73"
-            name="_spel"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="640d89f1-83bc-4809-a5e9-83abdc7fec33"
-                LastKnownName="Spel"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -3963,14 +4308,15 @@ buurzuidwest</body>
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
+            isUnique="false"
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="9ae72030-5b19-4f74-b8af-7fbbca35c802"
-                LastKnownName="string"
+                Id="27bf647c-b259-4212-9525-4a079cf968d1"
+                LastKnownName="int"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -4027,6 +4373,60 @@ buurzuidwest</body>
               <undefinedTypeMoniker
                 Id="8447702a-94be-413e-8fb0-396f6da26750"
                 LastKnownName="Color"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ce42e298-3e3e-4f22-9a7a-aa5390c7774f"
+            name="ResterendeStukken"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="27bf647c-b259-4212-9525-4a079cf968d1"
+                LastKnownName="int"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="da2f212c-bda7-4d9f-9c70-9571b12529db"
+            name="ZojuistSchaak"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
+                LastKnownName="bool"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a62be9d9-0349-4f64-8fa0-13d1373a2730"
+            name="KoningVerplaats"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
+                LastKnownName="bool"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -5934,6 +6334,99 @@ buurzuidwest</body>
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="fe5c55a7-403c-437a-93df-5d0454e379aa"
+            isDerived="false"
+            sourceEndRoleName="Algoritme"
+            targetEndRoleName="Vakje"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
+              LastKnownName="Vakje"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="92cc474d-f704-4a65-8d62-3d30b2a129c4"
+                  name="Algoritme"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7676562a-f6a5-4b55-aab1-c2b2562180c1"
+                  name="Vakje"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e3c3c5c3-3ad4-4e7e-aa33-cf52871f81df"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="d53463ab-557e-459c-b589-edb642753ee0"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="0a75cc64-d789-4cda-9d91-81a1972f062b"
+            isDerived="false"
+            sourceEndRoleName="Algoritme"
+            targetEndRoleName="Schaakstuk"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5707d178-3d72-4f4a-9f04-b079d5842eb3"
+              LastKnownName="Schaakstuk"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="66f90b5a-3a12-465e-b057-97821bf92d6e"
+                  name="Algoritme"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="04cd684b-e5b8-4724-9c7b-1ad8d4214b98"
+                  name="Schaakstuk"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="867f3ae6-1a39-4655-a26e-8f92eba8d6e5"
@@ -6085,6 +6578,62 @@ buurzuidwest</body>
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="e9616f27-8879-4250-ba09-34a9bf4fd87a"
+            name="_recursieTeller"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="27bf647c-b259-4212-9525-4a079cf968d1"
+                LastKnownName="int"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d37a7d3a-a865-4095-a576-9913fb3a10c0"
+            name="_slaanRichting"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="9ae72030-5b19-4f74-b8af-7fbbca35c802"
+                LastKnownName="string"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="03b8ee28-a2ff-4ec2-8a9f-9b8d899b3c94"
+            name="StaatSchaak"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
+                LastKnownName="bool"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -6126,6 +6675,24 @@ buurzuidwest</body>
           <operation
             Id="d84ef97e-9d9e-4977-8cb5-33a9d65628f1"
             name="reageerOpSchaak"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="97fe9dd8-4bdd-4beb-bf17-0230058719f2"
+            name="voorkomStackOverflow"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="1fa30caf-4b4b-4ffe-b247-0d11de5645db"
+            name="controleerBurenSchaak"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -6184,6 +6751,47 @@ buurzuidwest</body>
               LastKnownLocation="ModelingProject1.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="28eb8faa-7f6f-412e-ae7d-c18a93825219"
+            isDerived="false"
+            sourceEndRoleName="PromoveerForm"
+            targetEndRoleName="Pion"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="cb86e7b4-7294-4ba3-b736-a8fe06520d6e"
+              LastKnownName="Pion"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="22dfd705-2d31-43ac-9e27-16c261cf10e1"
+                  name="PromoveerForm"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="be34e4d3-9fd4-44ed-9489-92754515ca4a"
+                  name="Pion"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="3e18347c-ce2a-4791-94d3-1c76b27e9326"
@@ -6224,6 +6832,47 @@ buurzuidwest</body>
               LastKnownLocation="ModelingProject1.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="9e0ace6d-e4b1-4042-9fab-e12586f78631"
+            isDerived="false"
+            sourceEndRoleName="Rokerenmelding"
+            targetEndRoleName="Koning"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="bf50c40b-7eff-4bae-bf79-01cca456b99e"
+              LastKnownName="Koning"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8b8c31c5-7176-43f1-9483-d582b6c70401"
+                  name="Rokerenmelding"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b42a8d86-ef86-4b63-8dd7-780d2adac783"
+                  name="Koning"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="b25f058d-95ff-4e63-b849-b8cb7c998e66"
@@ -6264,6 +6913,47 @@ buurzuidwest</body>
               LastKnownLocation="ModelingProject1.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="75737d04-7ef6-4425-b409-bb4347052eca"
+            isDerived="false"
+            sourceEndRoleName="RemiseMelding"
+            targetEndRoleName="Spel"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="19a2a857-8390-44ff-bf9d-e52d0150a5eb"
+              LastKnownName="Spel"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0ed6f6cb-848d-4375-9eec-c850d1550d14"
+                  name="RemiseMelding"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4c56d736-272f-4637-b227-bfc511a3d923"
+                  name="Spel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="0451a68f-d935-41ae-a32a-db36b1d3e248"
@@ -6304,6 +6994,47 @@ buurzuidwest</body>
               LastKnownLocation="ModelingProject1.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="3c111ae2-c9f6-467e-80af-52be4f5e387b"
+            isDerived="false"
+            sourceEndRoleName="SchaakMat"
+            targetEndRoleName="Spel"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="19a2a857-8390-44ff-bf9d-e52d0150a5eb"
+              LastKnownName="Spel"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a5778b42-797b-40e2-873e-0b553375c0da"
+                  name="SchaakMat"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7834597f-ce11-4977-8f53-7897258a9e29"
+                  name="Spel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="947d3b19-2cc6-4b88-8460-c90551c0caf6"

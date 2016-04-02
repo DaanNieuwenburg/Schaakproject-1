@@ -36,8 +36,8 @@
             this.lblSpeler2Naam = new System.Windows.Forms.Label();
             this.btModeMultiplayer = new System.Windows.Forms.Button();
             this.btModeComputer = new System.Windows.Forms.Button();
-            this.lbTitel = new System.Windows.Forms.Label();
-            this.btTerug = new System.Windows.Forms.Button();
+            this.lblTitel = new System.Windows.Forms.Label();
+            this.btnTerug = new System.Windows.Forms.Button();
             this.btnKlassiek = new System.Windows.Forms.Button();
             this.btnChess960 = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
@@ -144,35 +144,35 @@
             this.btModeComputer.MouseEnter += new System.EventHandler(this.btModeComputer_MouseEnter);
             this.btModeComputer.MouseLeave += new System.EventHandler(this.btModeComputer_MouseLeave);
             // 
-            // lbTitel
+            // lblTitel
             // 
-            this.lbTitel.BackColor = System.Drawing.Color.Transparent;
-            this.lbTitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitel.ForeColor = System.Drawing.Color.White;
-            this.lbTitel.Location = new System.Drawing.Point(12, 9);
-            this.lbTitel.Name = "lbTitel";
-            this.lbTitel.Size = new System.Drawing.Size(490, 20);
-            this.lbTitel.TabIndex = 8;
-            this.lbTitel.Text = "Selecteer een schaakmode";
-            this.lbTitel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblTitel.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitel.ForeColor = System.Drawing.Color.White;
+            this.lblTitel.Location = new System.Drawing.Point(12, 9);
+            this.lblTitel.Name = "lblTitel";
+            this.lblTitel.Size = new System.Drawing.Size(490, 20);
+            this.lblTitel.TabIndex = 8;
+            this.lblTitel.Text = "Selecteer een schaakmode";
+            this.lblTitel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btTerug
+            // btnTerug
             // 
-            this.btTerug.BackColor = System.Drawing.Color.Transparent;
-            this.btTerug.BackgroundImage = global::Schaakproject.Properties.Resources.backIcon;
-            this.btTerug.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btTerug.FlatAppearance.BorderSize = 0;
-            this.btTerug.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btTerug.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btTerug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btTerug.Location = new System.Drawing.Point(94, 9);
-            this.btTerug.Name = "btTerug";
-            this.btTerug.Size = new System.Drawing.Size(41, 32);
-            this.btTerug.TabIndex = 12;
-            this.btTerug.UseVisualStyleBackColor = false;
-            this.btTerug.Click += new System.EventHandler(this.btTerug_Click);
-            this.btTerug.MouseEnter += new System.EventHandler(this.btTerug_MouseEnter);
-            this.btTerug.MouseLeave += new System.EventHandler(this.btTerug_MouseLeave);
+            this.btnTerug.BackColor = System.Drawing.Color.Transparent;
+            this.btnTerug.BackgroundImage = global::Schaakproject.Properties.Resources.backIcon;
+            this.btnTerug.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnTerug.FlatAppearance.BorderSize = 0;
+            this.btnTerug.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnTerug.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnTerug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTerug.Location = new System.Drawing.Point(94, 9);
+            this.btnTerug.Name = "btnTerug";
+            this.btnTerug.Size = new System.Drawing.Size(41, 32);
+            this.btnTerug.TabIndex = 12;
+            this.btnTerug.UseVisualStyleBackColor = false;
+            this.btnTerug.Click += new System.EventHandler(this.btnTerug_Click);
+            this.btnTerug.MouseEnter += new System.EventHandler(this.btTerug_MouseEnter);
+            this.btnTerug.MouseLeave += new System.EventHandler(this.btTerug_MouseLeave);
             // 
             // btnKlassiek
             // 
@@ -321,7 +321,7 @@
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnChess960);
             this.Controls.Add(this.btnKlassiek);
-            this.Controls.Add(this.btTerug);
+            this.Controls.Add(this.btnTerug);
             this.Controls.Add(this.txtSpeler1Naam);
             this.Controls.Add(this.btModeComputer);
             this.Controls.Add(this.btModeMultiplayer);
@@ -329,7 +329,7 @@
             this.Controls.Add(this.txtSpeler2Naam);
             this.Controls.Add(this.btnBegin);
             this.Controls.Add(this.lblSpeler1Naam);
-            this.Controls.Add(this.lbTitel);
+            this.Controls.Add(this.lblTitel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "NaamInvoer";
@@ -348,8 +348,8 @@
         public System.Windows.Forms.TextBox txtSpeler2Naam;
         private System.Windows.Forms.Button btModeMultiplayer;
         private System.Windows.Forms.Button btModeComputer;
-        private System.Windows.Forms.Label lbTitel;
-        private System.Windows.Forms.Button btTerug;
+        private System.Windows.Forms.Label lblTitel;
+        private System.Windows.Forms.Button btnTerug;
         private System.Windows.Forms.Button btnKlassiek;
         private System.Windows.Forms.Button btnChess960;
         private System.Windows.Forms.Button btnSettings;

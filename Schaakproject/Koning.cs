@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Schaakproject
 {
@@ -108,6 +105,8 @@ namespace Schaakproject
 
         public override void Verplaats(Vakje nieuwVakje, Vakje selected, Spel spel)
         {
+            //Kijk of het schaakstuk het geselecteerde vakje kan vinden,
+            //door alle vakjes waar heen bewogen mag worden te vergelijken met het geselecteerde vakje
 
             bool gevonden = false;
             if (selected.BuurNoord == nieuwVakje)
@@ -145,6 +144,11 @@ namespace Schaakproject
 
             if (gevonden == true)
             {
+                //Als het schaakstuk het vakje kan bereiken, wordt het schaakstuk verplaatst.
+                //Hierna wordt gekeken of de koning schaak staat.
+                //Als de koning schaak staat, dan wordt het schaakstuk weer terug geplaatst waar die stond.
+                //Staat de koning niet schaak, dan is de zet definitief en is de andere speler aan de beurt.
+
                 Schaakstuk temp = nieuwVakje.schaakstuk;
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
@@ -178,20 +182,20 @@ namespace Schaakproject
             Vakje _Randoost;
             Vakje vorige = vakjeKoning;
             bool checkschaak = false;
-            Console.WriteLine("MAG ROKEREN = " + _eersteZet);
 
             // Rokeren voor klassieke schaakvariant
             if (spel.Variant == "Klassiek")
             {
                 _wilRokeren = false;
                 bool magrokeren = true;
-                if (vakjeToren.BuurOost == null)
+                if (vakjeToren.BuurOost == null) // Als het gaat om de rechter toren.
                 {
-                    //check of rokeren mogelijk is
+                    //check of rokeren mogelijk is door te kijken of alle vakjes leeg zijn, en de koning en toren nog geen zet gedaan hebben.
                     if (_eersteZet == false && (vakjeToren.schaakstuk as Toren)._eersteZet == false && vakjeToren.BuurWest.schaakstuk == null && vakjeToren.BuurWest.BuurWest.schaakstuk == null)
                     {
                         while (vorige != null)
                         {
+                            //voor elk vakje van de koning tot en met de toren moet gekeken worden dat dit vakje niet geraakt kan worden.
                             checkschaak = spel.schaakbord.CheckSchaak(vorige, speler.koning.Kleur);
                             if (checkschaak == true)
                             {
@@ -202,8 +206,6 @@ namespace Schaakproject
 
                         if (magrokeren == true)
                         {
-                            Console.WriteLine("Rokeert");
-
                             // popup voor rokeren
                             Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
                             _Rokerenmelding.ShowDialog();
@@ -238,12 +240,14 @@ namespace Schaakproject
 
                 }
 
-                else if (vakjeToren.BuurWest == null)
+                else if (vakjeToren.BuurWest == null) //Als het gaat om de linker toren.
                 {
+                    //check of rokeren mogelijk is door te kijken of alle vakjes leeg zijn, en de koning en toren nog geen zet gedaan hebben.
                     if (_eersteZet == false && (vakjeToren.schaakstuk as Toren)._eersteZet == false && vakjeToren.BuurOost.schaakstuk == null && vakjeToren.BuurOost.BuurOost.schaakstuk == null && vakjeToren.BuurOost.BuurOost.BuurOost.schaakstuk == null)
                     {
                         while (vorige != null)
                         {
+                            //voor elk vakje van de koning tot en met de toren moet gekeken worden dat dit vakje niet geraakt kan worden.
                             checkschaak = spel.schaakbord.CheckSchaak(vorige, speler.koning.Kleur);
                             if (checkschaak == true)
                             {
@@ -254,8 +258,6 @@ namespace Schaakproject
 
                         if (magrokeren == true)
                         {
-                            Console.WriteLine("Rokeert");
-    
                             // popup voor rokeren
                             Rokerenmelding _Rokerenmelding = new Rokerenmelding(this);
                             _Rokerenmelding.ShowDialog();
@@ -325,8 +327,6 @@ namespace Schaakproject
                     Vakje torennieuw_W = _randWest.BuurOost.BuurOost.BuurOost;
                     Vakje koningnieuw_O = _Randoost.BuurWest;
                     Vakje torennieuw_O = _Randoost.BuurWest.BuurWest;
-                    Console.WriteLine("west: " + west);
-                    Console.WriteLine("aantal " + aantalplaatsenwest);
                     // voor west
 
                     vakjesleeg = true;

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Drawing;
 
 namespace Schaakproject
@@ -95,7 +92,6 @@ namespace Schaakproject
 
         public void VeranderSpeler()
         {
-            Console.WriteLine("VeranderSPELER");
             //Iedere keer dat een legale zet gedaan is, wordt de speler gewisseld
 
             //Bekijk of het spel remise is doordat er te weinig stukken zijn
@@ -114,7 +110,6 @@ namespace Schaakproject
             }
             else
             {
-                Console.WriteLine("Check remise SP");
                 if (Speler1.AantalStukken[5] < 3 && ComputerSpeler.AantalStukken[5] < 3)
                 {
                     bool checkweingstukken = schaakbord.CheckWeinigStukken(Speler1, ComputerSpeler);
@@ -136,7 +131,6 @@ namespace Schaakproject
 
             if (SpelerAanZet == Speler1)
             {
-                Console.WriteLine("Speleraanzet == speler1");
                 _witAanzet = true;
                 if (SpelMode == "Singleplayer")
                 {
@@ -155,8 +149,6 @@ namespace Schaakproject
                         mat = schaakbord.CheckMat(ComputerSpeler.koning);
                         if (mat == true)
                         {
-                            Console.WriteLine("HUIDIGE SPELER  = " + ComputerSpeler.Kleur);
-                            Console.WriteLine("MAT IS TRUE");
                             ComputerSpeler.koning.Vakje.Pbox.Image = Properties.Resources.ZwartMat1;
                             SchaakMat _SchaakMat = new SchaakMat(Speler1.Naam, this);
                             _SchaakMat.ShowDialog();
@@ -165,10 +157,8 @@ namespace Schaakproject
                         else
                         {
                             // computer reageert op schaak
-                            ComputerSpeler.algoritme.zojuistSchaak = true;
-                            Console.WriteLine("REAGEER OP SCHAAK " + SpelerAanZet.Kleur);
-                            Selected.Pbox.BackColor = Color.Blue;
                             ComputerSpeler.algoritme.StaatSchaak = true;
+                            VeranderSpeler();
                             ComputerSpeler.algoritme.reageerOpSchaak(Selected);
                         }
                     }
@@ -187,17 +177,8 @@ namespace Schaakproject
                 }
                 else
                 {
-                    if (SpelMode == "Singleplayer")
+                    if (SpelMode != "Singleplayer")
                     {
-                        //pat = schaakbord.CheckPat(computerSpeler.Koning);
-                        //if (pat == true)
-                        //{
-                        //    Speler2.Koning.vakje.pbox.BackColor = System.Drawing.Color.Purple;
-                        // }
-                    }
-                    else
-                    {
-
                         pat = schaakbord.CheckPat(Speler2.koning);
                         if (pat == true)
                         {
@@ -218,7 +199,7 @@ namespace Schaakproject
                     mat = schaakbord.CheckMat(Speler1.koning);
                     if (mat == true)
                     {
-                        if(SpelMode == "Singleplayer")
+                        if (SpelMode == "Singleplayer")
                         {
                             Speler1.koning.Vakje.Pbox.Image = Properties.Resources.WitMat1;
                             SchaakMat _SchaakMat = new SchaakMat("De computer ", this);
@@ -251,6 +232,7 @@ namespace Schaakproject
         {
             if (speler.Kleur == "wit")
             {
+                Console.WriteLine("KOMT HIER NIET");
                 Speler1.ResterendeStukken = Speler1.ResterendeStukken - 1;
                 speelbord.lblaantal1.Text = Convert.ToString(Speler1.ResterendeStukken);
             }
@@ -260,6 +242,11 @@ namespace Schaakproject
                 {
                     Speler2.ResterendeStukken = Speler2.ResterendeStukken - 1;
                     speelbord.lblaantal2.Text = Convert.ToString(Speler2.ResterendeStukken);
+                }
+                else
+                {
+                    ComputerSpeler.ResterendeStukken = ComputerSpeler.ResterendeStukken - 1;
+                    speelbord.lblaantal2.Text = Convert.ToString(ComputerSpeler.ResterendeStukken);
                 }
             }
         }
