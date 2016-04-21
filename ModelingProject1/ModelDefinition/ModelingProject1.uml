@@ -317,81 +317,6 @@
         </targetEnds>
         <ownedAttributesInternal>
           <property
-            Id="1be35b3b-1f11-4f02-a0fb-f8aba731c1a6"
-            name="spel"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="6486030c-cbaa-4f4c-be7b-6129893ae1c2"
-                name="property"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="adec2db5-d6fe-4d55-886f-701c65574ae9">
-                    <propertyInstance
-                      Id="3248cf8e-e19d-4f46-9440-2e0875e55a31"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="fec00e9a-6421-424c-8538-7bd295a60d53">
-                    <propertyInstance
-                      Id="a1aa38a6-1f11-4873-a426-4e9d8c14d8eb"
-                      name="Get"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="f1825b3e-a75e-4583-afac-b2feb968bb92">
-                    <propertyInstance
-                      Id="36acb95f-8a1c-4d29-ab7f-1f2a8c68a76d"
-                      name="HasBody"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="8a5f667f-4d09-4db2-af76-cc5c8cdd2d72">
-                    <propertyInstance
-                      Id="231817ab-0bc9-4b37-ac58-6a94e439b6c2"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="c3ddde82-86cd-40a1-a1a7-b03602e44679">
-                    <propertyInstance
-                      Id="26c0e6e6-c477-4412-b19a-b5f927f72b29"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="ee253526-fb73-48b1-b650-afb4007c054b">
-                    <propertyInstance
-                      Id="aad96e24-aa16-4f3e-944c-439397d30c3c"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="1299634c-cf5d-4c9e-b33c-fd948887f142">
-                    <propertyInstance
-                      Id="7f52b2c2-5339-46f1-bcae-9dd69bf3970c"
-                      name="Set"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <type_NamedElement>
-              <classMoniker
-                Id="640d89f1-83bc-4809-a5e9-83abdc7fec33"
-                LastKnownName="Spel"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="34175e14-9b85-4c22-902c-79ef867048bb"
             name="Kleur"
             isLeaf="false"
@@ -485,42 +410,6 @@
             </type_NamedElement>
           </property>
           <property
-            Id="93effd5f-3795-4120-9b9b-07469bc55180"
-            name="EnPassantPion"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="cb86e7b4-7294-4ba3-b736-a8fe06520d6e"
-                LastKnownName="Pion"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="694d6987-2de7-4902-8ebf-5d89d2a2256e"
-            name="koning"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="bf50c40b-7eff-4bae-bf79-01cca456b99e"
-                LastKnownName="Koning"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="289b0dd9-f434-41fb-98b6-a730a87f30af"
             name="ValideZet"
             isLeaf="false"
@@ -553,24 +442,6 @@
               <undefinedTypeMoniker
                 Id="65222ed8-1538-40ce-9336-4272e33f9956"
                 LastKnownName="int[]"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="25b482b6-4ec0-4e06-8b44-f8cc7eb03175"
-            name="Pionnen"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="3b0fe785-233d-42fa-86d8-291e5ffbb322"
-                LastKnownName="Pion[]"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -737,55 +608,6 @@
         </targetEnds>
         <ownedAttributesInternal>
           <property
-            Id="4c66e6aa-4cf6-4981-a230-8fcf5561619d"
-            name="SchaakArray"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <lowerValueInternal>
-              <literalString
-                Id="dc0ad6e2-a9cf-4e65-8814-7f3ab3a5d2ce"
-                name="Lower"
-                value="," />
-            </lowerValueInternal>
-            <upperValueInternal>
-              <literalString
-                Id="56a2b965-7588-4dca-a002-fb6a25c0b888"
-                name="Upper"
-                value="," />
-            </upperValueInternal>
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="6ec25cfa-6a2c-4988-8bb0-70b6653efd6c"
-            name="_schaakGezet"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="5707d178-3d72-4f4a-9f04-b079d5842eb3"
-                LastKnownName="Schaakstuk"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="4f1b22f3-5b51-4e26-b965-e0290647b5c1"
             name="_richting"
             visibility="Private"
@@ -820,25 +642,6 @@
               <undefinedTypeMoniker
                 Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f"
                 LastKnownName="bool"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="6d61e8e9-6c29-47ef-a818-3bf9a53c1536"
-            name="_stukVoorKomen"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="0487e777-feaf-4ea7-a4dc-ef2cad1868ea"
-                LastKnownName="List"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -1255,42 +1058,6 @@
             </type_NamedElement>
           </property>
           <property
-            Id="29b89274-0868-4c74-b4d9-e0ffa47682ce"
-            name="Vakje"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="049d4693-e605-4346-898e-da71ba4ae9c2"
-            name="Speler"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="1930fb1b-c192-4fac-821b-775cf2dbbb42"
-                LastKnownName="Speler"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="3255920a-2919-4028-8b2f-9d399bf7fa84"
             name="Geslagen"
             isLeaf="false"
@@ -1701,60 +1468,6 @@
               <undefinedTypeMoniker
                 Id="8447702a-94be-413e-8fb0-396f6da26750"
                 LastKnownName="Color"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="977dbdb2-59b1-40db-925d-a0ba7da1eba4"
-            name="schaakstuk"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="5707d178-3d72-4f4a-9f04-b079d5842eb3"
-                LastKnownName="Schaakstuk"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="51b81a10-4416-4e96-86c5-c4a92d3f7fe1"
-            name="Pbox"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="024322af-78d3-4585-b41a-c447535ff75d"
-                LastKnownName="SpecialPB"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="7a1b0a69-d09d-4243-b9cf-f151aab11b83"
-            name="Buren"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="de8879c3-b36c-4910-8cc0-f3576e6a77c0"
-                LastKnownName="Vakje[]"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -3745,42 +3458,6 @@
             </type_NamedElement>
           </property>
           <property
-            Id="03dbce1c-f0ef-4322-85a5-5156b8437e9f"
-            name="Speler1"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="cc73c737-077a-466e-b963-71e8f50e75d4"
-                LastKnownName="Mens"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="3d12405f-ce1c-4806-a506-93c393c0a394"
-            name="Speler2"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="cc73c737-077a-466e-b963-71e8f50e75d4"
-                LastKnownName="Mens"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="ff46d95e-db84-427f-b591-82f1b95632e4"
             name="_witAanZet"
             visibility="Private"
@@ -3800,42 +3477,6 @@
             </type_NamedElement>
           </property>
           <property
-            Id="78bd29e9-6c81-4a55-93ff-e07f94b07883"
-            name="ComputerSpeler"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="19f9934e-f970-46f6-998b-13a15ad234f5"
-                LastKnownName="Computer"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="de4bdf7f-ee76-414a-8d3e-0179ae867dce"
-            name="Selected"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="b1286240-120f-467d-aab6-cec0a295999a"
             name="Variant"
             isLeaf="false"
@@ -3850,42 +3491,6 @@
               <undefinedTypeMoniker
                 Id="9ae72030-5b19-4f74-b8af-7fbbca35c802"
                 LastKnownName="string"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="45db8cb9-e66f-415c-b2dd-529163c0e927"
-            name="schaakbord"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="b8e9c20a-28d5-451e-b9a2-31a75299b217"
-                LastKnownName="Schaakbord"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="54aaf4b7-4e8d-4585-a669-6d66aafff325"
-            name="speelbord"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="c1de82da-15d9-450b-8222-c45d91a84440"
-                LastKnownName="Speelbord"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -4361,24 +3966,6 @@
               <undefinedTypeMoniker
                 Id="8447702a-94be-413e-8fb0-396f6da26750"
                 LastKnownName="Color"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="c491a7e3-fe2f-4231-8a84-61e45a80cb80"
-            name="Selected"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="024322af-78d3-4585-b41a-c447535ff75d"
-                LastKnownName="SpecialPB"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -4874,118 +4461,6 @@
         </targetEnds>
         <ownedAttributesInternal>
           <property
-            Id="2b4a9907-858a-40a7-8bd2-90c46ecace9a"
-            name="_vorigVakje"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="4f81a5c6-dbc7-4543-86a3-cc456c8b34ce"
-            name="_vorigSchaakstuk"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="5707d178-3d72-4f4a-9f04-b079d5842eb3"
-                LastKnownName="Schaakstuk"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="4cb0d859-be67-4264-a4a8-57d81cfd13d8"
-            name="_nietVerplaatstLijst"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="ac8ee45f-ebb1-4449-8218-1f03b9cd78eb"
-                LastKnownName="List&lt;Vakje&gt;"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="d53b3707-c228-4c91-a92b-af8a923fe348"
-            name="NietVerplaatstLijst"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="ac8ee45f-ebb1-4449-8218-1f03b9cd78eb"
-                LastKnownName="List&lt;Vakje&gt;"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="eae508bf-72ce-4c57-a3b8-e1631df49a4b"
-            name="_verplaatsingsLijst"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="ac8ee45f-ebb1-4449-8218-1f03b9cd78eb"
-                LastKnownName="List&lt;Vakje&gt;"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="4e092962-9f4d-46b2-8c65-a3fd78426722"
-            name="VerplaatsingsLijst"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="ac8ee45f-ebb1-4449-8218-1f03b9cd78eb"
-                LastKnownName="List&lt;Vakje&gt;"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="ab0cdda6-8bed-43a0-b3fb-4a8e2a925c7d"
             name="_positieZuid"
             visibility="Private"
@@ -5020,24 +4495,6 @@
               <undefinedTypeMoniker
                 Id="27bf647c-b259-4212-9525-4a079cf968d1"
                 LastKnownName="int"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="cfbf1c5e-d812-4c22-811b-38dff5f07d88"
-            name="algoritme"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="df1ab9c3-b190-4d2e-8ef0-7d402bc3886d"
-                LastKnownName="Algoritme"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -6386,25 +5843,6 @@
         </generalsInternal>
         <ownedAttributesInternal>
           <property
-            Id="33ce525f-47e0-457a-afd0-47d9e20f3b4f"
-            name="_spel"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="640d89f1-83bc-4809-a5e9-83abdc7fec33"
-                LastKnownName="Spel"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="531ee03e-d188-4617-b0a7-6edec95ded1e"
             name="_clicks"
             visibility="Private"
@@ -6521,7 +5959,7 @@
           <association
             Id="6b6f989a-9873-4126-adb3-3fd2f6cdf5fc"
             isDerived="false"
-            sourceEndRoleName="Speelbord"
+            sourceEndRoleName=""
             targetEndRoleName="SpeelBord"
             isLeaf="false"
             isAbstract="false">
@@ -6533,7 +5971,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="4fba0def-6980-4241-bf0e-584494a96f92"
-                  name="Speelbord"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -6609,26 +6046,6 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
-        <ownedAttributesInternal>
-          <property
-            Id="5fc6cda5-d7fb-42b7-ae64-36b5c980fe9d"
-            name="vakje"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="7c48b5ec-c6bc-416a-ae6b-8b7d9f87d48c"
@@ -7183,156 +6600,6 @@
         </targetEnds>
         <ownedAttributesInternal>
           <property
-            Id="867f3ae6-1a39-4655-a26e-8f92eba8d6e5"
-            name="_slaanmogelijkhedenVanaf"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="ac8ee45f-ebb1-4449-8218-1f03b9cd78eb"
-                LastKnownName="List&lt;Vakje&gt;"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="56dc9af0-4177-4d43-8b39-b28dd48a2311"
-            name="slaanmogelijkhedenVanaf"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="ac8ee45f-ebb1-4449-8218-1f03b9cd78eb"
-                LastKnownName="List&lt;Vakje&gt;"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="3200698d-a418-4155-8450-073e8c3f2475"
-            name="slaanmogelijkheden"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="ac8ee45f-ebb1-4449-8218-1f03b9cd78eb"
-                LastKnownName="List&lt;Vakje&gt;"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="60c3bed7-b26c-4036-a646-36a54210686d"
-            name="_slaanmogelijkheden"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="ac8ee45f-ebb1-4449-8218-1f03b9cd78eb"
-                LastKnownName="List&lt;Vakje&gt;"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="80ab3189-9144-47c9-a988-cfaa91737d9d"
-            name="_computer"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="19f9934e-f970-46f6-998b-13a15ad234f5"
-                LastKnownName="Computer"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="e08ff7c7-23f8-4d91-b3e5-bacccd2af45d"
-            name="_koning"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="5707d178-3d72-4f4a-9f04-b079d5842eb3"
-                LastKnownName="Schaakstuk"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="87078287-b42d-48a3-8c56-87fc97396b52"
-            name="_geselecteerdStuk"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="6ac859db-30b3-40a3-9455-1fa84d313d44"
-            name="_geselecteerdVakje"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="e9616f27-8879-4250-ba09-34a9bf4fd87a"
             name="_recursieTeller"
             visibility="Private"
@@ -7593,27 +6860,6 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
-        <ownedAttributesInternal>
-          <property
-            Id="3e18347c-ce2a-4791-94d3-1c76b27e9326"
-            name="_pion"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="cb86e7b4-7294-4ba3-b736-a8fe06520d6e"
-                LastKnownName="Pion"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -7674,27 +6920,6 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
-        <ownedAttributesInternal>
-          <property
-            Id="b25f058d-95ff-4e63-b849-b8cb7c998e66"
-            name="_koning"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="bf50c40b-7eff-4bae-bf79-01cca456b99e"
-                LastKnownName="Koning"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -7755,27 +6980,6 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
-        <ownedAttributesInternal>
-          <property
-            Id="0451a68f-d935-41ae-a32a-db36b1d3e248"
-            name="_spel"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="640d89f1-83bc-4809-a5e9-83abdc7fec33"
-                LastKnownName="Spel"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -7836,27 +7040,6 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
-        <ownedAttributesInternal>
-          <property
-            Id="947d3b19-2cc6-4b88-8460-c90551c0caf6"
-            name="_spel"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="640d89f1-83bc-4809-a5e9-83abdc7fec33"
-                LastKnownName="Spel"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
