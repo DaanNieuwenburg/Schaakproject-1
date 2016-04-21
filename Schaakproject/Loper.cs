@@ -18,6 +18,7 @@
         }
         public override void kanStukSlaan(Algoritme algoritme, Vakje geselecteerdStuk)
         {
+            // Deze methode kijkt vanuit de computer of er een loper geslagen kan worden.
             if (geselecteerdStuk.schaakstuk.Kleur == "zwart")
             {
                 // Kijkt of er noordwest geslagen kan worden

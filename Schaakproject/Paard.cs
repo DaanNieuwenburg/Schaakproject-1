@@ -18,6 +18,7 @@
         }
         public override void kanStukSlaan(Algoritme algoritme, Vakje geselecteerdStuk)
         {
+            // Deze methode kijkt vanuit de computer of er een paard geslagen kan worden.
             Vakje geselecteerdVak = geselecteerdStuk;
             if (geselecteerdStuk.schaakstuk.Kleur == "zwart" && geselecteerdStuk.schaakstuk != null)
             {
