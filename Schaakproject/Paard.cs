@@ -21,65 +21,65 @@
             Vakje geselecteerdVak = geselecteerdStuk;
             if (geselecteerdStuk.schaakstuk.Kleur == "zwart" && geselecteerdStuk.schaakstuk != null)
             {
-                if (geselecteerdVak.BuurNoord != null && geselecteerdVak.BuurNoord.BuurNoordoost != null && geselecteerdVak.BuurNoord.BuurNoordWest != null)
+                if (geselecteerdVak.Buren[0] != null && geselecteerdVak.Buren[0].Buren[4] != null && geselecteerdVak.Buren[0].Buren[7] != null)
                 {
-                    if (geselecteerdVak.BuurNoord.BuurNoordoost.schaakstuk != null && geselecteerdVak.BuurNoord.BuurNoordoost.schaakstuk != null  && geselecteerdVak.BuurNoord.BuurNoordoost.schaakstuk.Kleur == "wit")
+                    if (geselecteerdVak.Buren[0].Buren[4].schaakstuk != null && geselecteerdVak.Buren[0].Buren[4].schaakstuk != null && geselecteerdVak.Buren[0].Buren[4].schaakstuk.Kleur == "wit")
                     {
-                        geselecteerdVak.BuurNoord.BuurNoordoost.Pbox.BackColor = System.Drawing.Color.Red;
-                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurNoord.BuurNoordoost);
+                        geselecteerdVak.Buren[0].Buren[4].Pbox.BackColor = System.Drawing.Color.Red;
+                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[0].Buren[4]);
                         algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
-                    else if (geselecteerdVak.BuurNoord.BuurNoordWest != null && geselecteerdVak.BuurNoord.BuurNoordWest.schaakstuk != null && geselecteerdVak.BuurNoord.BuurNoordWest.schaakstuk.Kleur == "wit")
+                    else if (geselecteerdVak.Buren[0].Buren[7] != null && geselecteerdVak.Buren[0].Buren[7].schaakstuk != null && geselecteerdVak.Buren[0].Buren[7].schaakstuk.Kleur == "wit")
                     {
-                        geselecteerdVak.BuurNoord.BuurNoordWest.Pbox.BackColor = System.Drawing.Color.Red;
-                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurNoord.BuurNoordWest);
+                        geselecteerdVak.Buren[0].Buren[7].Pbox.BackColor = System.Drawing.Color.Red;
+                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[0].Buren[7]);
                         algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
                 }
 
-                if (geselecteerdVak.BuurZuid != null && geselecteerdStuk.schaakstuk != null)
+                if (geselecteerdVak.Buren[2] != null && geselecteerdStuk.schaakstuk != null)
                 {
-                    if (geselecteerdVak.BuurZuid.BuurZuidWest != null && geselecteerdVak.BuurZuid.BuurZuidWest.schaakstuk != null && geselecteerdVak.BuurZuid.BuurZuidWest.schaakstuk.Kleur == "wit")
+                    if (geselecteerdVak.Buren[2].Buren[6] != null && geselecteerdVak.Buren[2].Buren[6].schaakstuk != null && geselecteerdVak.Buren[2].Buren[6].schaakstuk.Kleur == "wit")
                     {
-                        geselecteerdVak.BuurZuid.BuurZuidWest.Pbox.BackColor = System.Drawing.Color.Red;
-                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurZuid.BuurZuidWest);
+                        geselecteerdVak.Buren[2].Buren[6].Pbox.BackColor = System.Drawing.Color.Red;
+                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[2].Buren[6]);
                         algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
-                    else if (geselecteerdVak.BuurZuid.BuurZuidOost != null && geselecteerdVak.BuurZuid.BuurZuidOost.schaakstuk != null && geselecteerdVak.BuurZuid.BuurZuidOost.schaakstuk.Kleur == "wit")
+                    else if (geselecteerdVak.Buren[2].Buren[5] != null && geselecteerdVak.Buren[2].Buren[5].schaakstuk != null && geselecteerdVak.Buren[2].Buren[5].schaakstuk.Kleur == "wit")
                     {
-                        geselecteerdVak.BuurZuid.BuurZuidOost.Pbox.BackColor = System.Drawing.Color.Red;
-                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurZuid.BuurZuidOost);
+                        geselecteerdVak.Buren[2].Buren[5].Pbox.BackColor = System.Drawing.Color.Red;
+                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[2].Buren[5]);
                         algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
                 }
 
-                if (geselecteerdVak.BuurWest != null && geselecteerdStuk.schaakstuk != null)
+                if (geselecteerdVak.Buren[3] != null && geselecteerdStuk.schaakstuk != null)
                 {
-                    if (geselecteerdVak.BuurWest.BuurNoordWest != null && geselecteerdVak.BuurWest.BuurNoordWest.schaakstuk != null && geselecteerdVak.BuurWest.BuurNoordWest.schaakstuk.Kleur == "wit")
+                    if (geselecteerdVak.Buren[3].Buren[7] != null && geselecteerdVak.Buren[3].Buren[7].schaakstuk != null && geselecteerdVak.Buren[3].Buren[7].schaakstuk.Kleur == "wit")
                     {
-                        geselecteerdVak.BuurWest.BuurNoordWest.Pbox.BackColor = System.Drawing.Color.Red;
-                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurWest.BuurNoordWest);
+                        geselecteerdVak.Buren[3].Buren[7].Pbox.BackColor = System.Drawing.Color.Red;
+                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[3].Buren[7]);
                         algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
-                    else if (geselecteerdVak.BuurWest.BuurZuidWest != null && geselecteerdVak.BuurWest.BuurZuidWest.schaakstuk != null && geselecteerdVak.BuurWest.BuurZuidWest.schaakstuk.Kleur == "wit")
+                    else if (geselecteerdVak.Buren[3].Buren[6] != null && geselecteerdVak.Buren[3].Buren[6].schaakstuk != null && geselecteerdVak.Buren[3].Buren[6].schaakstuk.Kleur == "wit")
                     {
-                        geselecteerdVak.BuurWest.BuurZuidWest.Pbox.BackColor = System.Drawing.Color.Red;
-                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurWest.BuurZuidWest);
+                        geselecteerdVak.Buren[3].Buren[6].Pbox.BackColor = System.Drawing.Color.Red;
+                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[3].Buren[6]);
                         algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
                 }
-                if (geselecteerdVak.BuurOost != null)
+                if (geselecteerdVak.Buren[1] != null)
                 {
-                    if (geselecteerdVak.BuurOost.BuurNoordWest != null && geselecteerdVak.BuurOost.BuurNoordWest.schaakstuk != null && geselecteerdVak.BuurOost.BuurNoordWest.schaakstuk.Kleur == "wit")
+                    if (geselecteerdVak.Buren[1].Buren[7] != null && geselecteerdVak.Buren[1].Buren[7].schaakstuk != null && geselecteerdVak.Buren[1].Buren[7].schaakstuk.Kleur == "wit")
                     {
-                        geselecteerdVak.BuurOost.BuurNoordWest.Pbox.BackColor = System.Drawing.Color.Red;
-                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurOost.BuurNoordWest);
+                        geselecteerdVak.Buren[1].Buren[7].Pbox.BackColor = System.Drawing.Color.Red;
+                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[1].Buren[7]);
                         algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
-                    else if (geselecteerdVak.BuurOost.BuurZuidWest != null && geselecteerdVak.BuurOost.BuurZuidWest.schaakstuk != null && geselecteerdVak.BuurOost.BuurZuidWest.schaakstuk.Kleur == "wit")
+                    else if (geselecteerdVak.Buren[1].Buren[6] != null && geselecteerdVak.Buren[1].Buren[6].schaakstuk != null && geselecteerdVak.Buren[1].Buren[6].schaakstuk.Kleur == "wit")
                     {
-                        geselecteerdVak.BuurOost.BuurZuidWest.Pbox.BackColor = System.Drawing.Color.Red;
-                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurOost.BuurZuidWest);
+                        geselecteerdVak.Buren[1].Buren[6].Pbox.BackColor = System.Drawing.Color.Red;
+                        algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[1].Buren[6]);
                         algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                     }
                 }
@@ -108,47 +108,47 @@
             //door alle vakjes waar heen bewogen mag worden te vergelijken met het geselecteerde vakje
 
             bool gevonden = false;
-            if (selected.BuurNoord != null)
+            if (selected.Buren[0] != null)
             {
-                if (selected.BuurNoord.BuurNoordoost == nieuwVakje)
-                {                    
-                    gevonden = true;
-                }
-                else if (selected.BuurNoord.BuurNoordWest == nieuwVakje)
-                {                    
-                    gevonden = true;
-                }
-            }
-            if (selected.BuurOost != null)
-            {
-                if (selected.BuurOost.BuurNoordoost == nieuwVakje)
+                if (selected.Buren[0].Buren[4] == nieuwVakje)
                 {
                     gevonden = true;
                 }
-                else if (selected.BuurOost.BuurZuidOost == nieuwVakje)
+                else if (selected.Buren[0].Buren[7] == nieuwVakje)
                 {
                     gevonden = true;
                 }
             }
-            if (selected.BuurZuid != null)
+            if (selected.Buren[1] != null)
             {
-                if (selected.BuurZuid.BuurZuidOost == nieuwVakje)
+                if (selected.Buren[1].Buren[4] == nieuwVakje)
                 {
                     gevonden = true;
                 }
-                else if (selected.BuurZuid.BuurZuidWest == nieuwVakje)
+                else if (selected.Buren[1].Buren[5] == nieuwVakje)
                 {
                     gevonden = true;
                 }
             }
-            if (selected.BuurWest != null)
+            if (selected.Buren[2] != null)
             {
-                if (selected.BuurWest.BuurZuidWest == nieuwVakje)
+                if (selected.Buren[2].Buren[5] == nieuwVakje)
+                {
+                    gevonden = true;
+                }
+                else if (selected.Buren[2].Buren[6] == nieuwVakje)
+                {
+                    gevonden = true;
+                }
+            }
+            if (selected.Buren[3] != null)
+            {
+                if (selected.Buren[3].Buren[6] == nieuwVakje)
                 {
                     gevonden = true;
                 }
 
-                else if (selected.BuurWest.BuurNoordWest == nieuwVakje)
+                else if (selected.Buren[3].Buren[7] == nieuwVakje)
                 {
                     gevonden = true;
                 }
