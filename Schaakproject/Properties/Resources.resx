@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -144,9 +144,6 @@
   </data>
   <data name="button1KladClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button 1 klad click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button herstart click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button herstart click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button regels 2 click" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button regels 2 click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
