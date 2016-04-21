@@ -26,6 +26,7 @@ namespace Schaakproject
 
         public override void kanStukSlaan(Algoritme algoritme, Vakje geselecteerdStuk)
         {
+            // Deze methode kijkt vanuit de computer of er een koning geslagen kan worden.
             if (geselecteerdStuk.schaakstuk.Kleur == "zwart")
             {
                 Vakje geselecteerdVak = geselecteerdStuk;

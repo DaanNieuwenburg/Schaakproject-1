@@ -22,6 +22,7 @@
 
         public override void kanStukSlaan(Algoritme algoritme, Vakje geselecteerdStuk)
         {
+            // Deze methode kijkt vanuit de computer of er een toren geslagen kan worden.
             if (geselecteerdStuk.schaakstuk.Kleur == "zwart")
             {
                 // Kijkt of er noord geslagen kan worden
