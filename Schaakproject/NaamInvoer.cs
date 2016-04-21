@@ -179,6 +179,7 @@ namespace Schaakproject
 
         private void btnborder_Click(object sender, EventArgs e)
         {
+            //Hiermee verschijnt een Color Dialog waarmee de kleur van de border verandert kan worden
             ColorDialog colorDialog = new ColorDialog();
             DialogResult result = colorDialog.ShowDialog();
 
@@ -220,6 +221,7 @@ namespace Schaakproject
 
         private void btnselect_Click(object sender, EventArgs e)
         {
+            //Hiermee verschijnt een Color Dialog waarmee de kleur van het selectievakje verandert kan worden
             ColorDialog colorDialog = new ColorDialog();
             DialogResult result = colorDialog.ShowDialog();
 
@@ -242,6 +244,7 @@ namespace Schaakproject
 
         private void btnvakje1_Click(object sender, EventArgs e)
         {
+            //Hiermee verschijnt een Color Dialog waarmee de kleur van de even vakjes verandert kan worden
             ColorDialog colorDialog = new ColorDialog();
             DialogResult result = colorDialog.ShowDialog();
 
@@ -255,6 +258,7 @@ namespace Schaakproject
 
         private void btnvakje2_Click(object sender, EventArgs e)
         {
+            //Hiermee verschijnt een Color Dialog waarmee de kleur van de oneven vakjes verandert kan worden
             ColorDialog colorDialog = new ColorDialog();
             DialogResult result = colorDialog.ShowDialog();
 
