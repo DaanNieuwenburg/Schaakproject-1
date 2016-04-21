@@ -56,7 +56,7 @@ namespace Schaakproject
             {
                 if (buurzuid == false && _vorigVakje != null)
                 {
-                    _vorigVakje = _vorigVakje.BuurZuid;
+                    _vorigVakje = _vorigVakje.Buren[2];
                     zuidteller++;
                 }
                 else
@@ -73,7 +73,7 @@ namespace Schaakproject
             {
                 if (buurwest == false && _vorigVakje != null)
                 {
-                    _vorigVakje = _vorigVakje.BuurWest;
+                    _vorigVakje = _vorigVakje.Buren[3];
                     westteller++;
                 }
                 else

@@ -26,14 +26,14 @@ namespace Schaakproject
             if (geselecteerdStuk.schaakstuk.Kleur == "zwart")
             {
                 Vakje geselecteerdVak = geselecteerdStuk;
-                if (geselecteerdVak.BuurZuidOost != null && geselecteerdVak.BuurZuidOost.schaakstuk != null && geselecteerdVak.BuurZuidOost.schaakstuk.Kleur == "wit")
+                if (geselecteerdVak.Buren[5] != null && geselecteerdVak.Buren[5].schaakstuk != null && geselecteerdVak.Buren[5].schaakstuk.Kleur == "wit")
                 {
-                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurZuidOost);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[5]);
                     algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
-                else if (geselecteerdVak.BuurZuidWest != null && geselecteerdVak.BuurZuidWest.schaakstuk != null && geselecteerdVak.BuurZuidWest.schaakstuk.Kleur == "wit")
+                else if (geselecteerdVak.Buren[6] != null && geselecteerdVak.Buren[6].schaakstuk != null && geselecteerdVak.Buren[6].schaakstuk.Kleur == "wit")
                 {
-                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurZuidWest);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[6]);
                     algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
                 else
@@ -66,71 +66,71 @@ namespace Schaakproject
             if (Kleur == "wit")
             {
                 // Witte pion een stapje naar voren
-                if (selected.BuurNoord == nieuwVakje && nieuwVakje.schaakstuk == null)
+                if (selected.Buren[0] == nieuwVakje && nieuwVakje.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
 
                 // Slaan naar noordoost voor een witte pion
-                else if (selected.BuurNoordoost == nieuwVakje && nieuwVakje.schaakstuk != null)
+                else if (selected.Buren[4] == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
                     mogelijk = true;
                 }
 
                 // Slaan naar noordwest voor een witte pion
-                else if (selected.BuurNoordWest == nieuwVakje && nieuwVakje.schaakstuk != null)
+                else if (selected.Buren[7] == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
                     mogelijk = true;
                 }
 
                 // Twee stappen vooruit voor een witte pion
-                else if (eersteZet == false && selected.BuurNoord.BuurNoord == nieuwVakje && selected.BuurNoord.BuurNoord.schaakstuk == null && selected.BuurNoord.schaakstuk == null)
+                else if (eersteZet == false && selected.Buren[0].Buren[0] == nieuwVakje && selected.Buren[0].Buren[0].schaakstuk == null && selected.Buren[0].schaakstuk == null)
                 {
                     mogelijk = true;
 
                     // Zodat de tegenstander mag en-passant slaan
-                    if (nieuwVakje.BuurOost != null)
+                    if (nieuwVakje.Buren[1] != null)
                     {
-                        if (nieuwVakje.BuurOost.schaakstuk is Pion)
+                        if (nieuwVakje.Buren[1].schaakstuk is Pion)
                         {
                             // Als er oost een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
-                            (nieuwVakje.BuurOost.schaakstuk as Pion).Speler.EnPassantPion = this;
+                            (nieuwVakje.Buren[1].schaakstuk as Pion).Speler.EnPassantPion = this;
                         }
                     }
-                    if (nieuwVakje.BuurWest != null)
+                    if (nieuwVakje.Buren[3] != null)
                     {
-                        if (nieuwVakje.BuurWest.schaakstuk is Pion)
+                        if (nieuwVakje.Buren[3].schaakstuk is Pion)
                         {
                             // Als er west een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
-                            (nieuwVakje.BuurWest.schaakstuk as Pion).Speler.EnPassantPion = this;
+                            (nieuwVakje.Buren[3].schaakstuk as Pion).Speler.EnPassantPion = this;
                         }
                     }
                 }
-                else if (selected.BuurOost != null)
+                else if (selected.Buren[1] != null)
                 {
                     //en-passant slaan naar noordoost
-                    if (selected.BuurNoordoost == nieuwVakje && base.Speler.EnPassantPion == selected.BuurOost.schaakstuk && base.Speler.EnPassantPion != null)
+                    if (selected.Buren[4] == nieuwVakje && base.Speler.EnPassantPion == selected.Buren[1].schaakstuk && base.Speler.EnPassantPion != null)
                     {
                         spel.updateAantalStukken(spel.SpelerAanZet);
-                        tempPion = selected.BuurOost.schaakstuk;
+                        tempPion = selected.Buren[1].schaakstuk;
                         locatie = false;
-                        selected.BuurOost.schaakstuk.Slaan();
-                        selected.BuurOost.schaakstuk = null; //De andere pion verdwijnt
-                        selected.BuurOost.Pbox.update(); // update deze pbox zodat je de pion niet meer ziet
+                        selected.Buren[1].schaakstuk.Slaan();
+                        selected.Buren[1].schaakstuk = null; //De andere pion verdwijnt
+                        selected.Buren[1].Pbox.update(); // update deze pbox zodat je de pion niet meer ziet
                         mogelijk = true;
                     }
                 }
-                if (selected.BuurWest != null)
+                if (selected.Buren[3] != null)
                 {
                     //en-passant slaan naar noordwest
-                    if (selected.BuurNoordWest == nieuwVakje && base.Speler.EnPassantPion == selected.BuurWest.schaakstuk && base.Speler.EnPassantPion != null)
+                    if (selected.Buren[7] == nieuwVakje && base.Speler.EnPassantPion == selected.Buren[3].schaakstuk && base.Speler.EnPassantPion != null)
                     {
                         spel.updateAantalStukken(spel.SpelerAanZet);
-                        tempPion = selected.BuurWest.schaakstuk;
+                        tempPion = selected.Buren[3].schaakstuk;
                         locatie = true;
-                        selected.BuurWest.schaakstuk.Slaan();
-                        selected.BuurWest.schaakstuk = null; //De andere pion verdwijnt
-                        selected.BuurWest.Pbox.update(); //update deze pbox zodat je de pion niet meer ziet
+                        selected.Buren[3].schaakstuk.Slaan();
+                        selected.Buren[3].schaakstuk = null; //De andere pion verdwijnt
+                        selected.Buren[3].Pbox.update(); //update deze pbox zodat je de pion niet meer ziet
                         mogelijk = true;
                     }
                 }
@@ -140,76 +140,76 @@ namespace Schaakproject
             else if (Kleur == "zwart")
             {
                 // Zwarte pion een stapje naar voren
-                if (selected.BuurZuid == nieuwVakje && nieuwVakje.schaakstuk == null)
+                if (selected.Buren[2] == nieuwVakje && nieuwVakje.schaakstuk == null)
                 {
                     mogelijk = true;
                 }
 
                 // Slaan naar zuidoost voor een zwarte pion
-                else if (selected.BuurZuidOost == nieuwVakje && Kleur == "zwart" && nieuwVakje.schaakstuk != null)
-                {                    
+                else if (selected.Buren[5] == nieuwVakje && Kleur == "zwart" && nieuwVakje.schaakstuk != null)
+                {
                     mogelijk = true;
                 }
 
                 // Slaan naar zuidwest voor een zwarte pion
-                else if (selected.BuurZuidWest == nieuwVakje && nieuwVakje.schaakstuk != null)
+                else if (selected.Buren[6] == nieuwVakje && nieuwVakje.schaakstuk != null)
                 {
                     mogelijk = true;
                 }
 
                 // Twee stappen vooruit voor een zwarte pion
-                else if (eersteZet == false && selected.BuurZuid.BuurZuid == nieuwVakje && selected.BuurZuid.BuurZuid.schaakstuk == null && selected.BuurZuid.schaakstuk == null)
+                else if (eersteZet == false && selected.Buren[2].Buren[2] == nieuwVakje && selected.Buren[2].Buren[2].schaakstuk == null && selected.Buren[2].schaakstuk == null)
                 {
                     mogelijk = true;
 
                     // Zodat de tegenstander mag en-passant slaan
-                    if (nieuwVakje.BuurOost != null)
+                    if (nieuwVakje.Buren[1] != null)
                     {
-                        if (nieuwVakje.BuurOost.schaakstuk is Pion)
+                        if (nieuwVakje.Buren[1].schaakstuk is Pion)
                         {
                             // Als er oost een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
-                            (nieuwVakje.BuurOost.schaakstuk as Pion).Speler.EnPassantPion = this;
+                            (nieuwVakje.Buren[1].schaakstuk as Pion).Speler.EnPassantPion = this;
 
                         }
                     }
-                    if (nieuwVakje.BuurWest != null)
+                    if (nieuwVakje.Buren[3] != null)
                     {
-                        if (nieuwVakje.BuurWest.schaakstuk is Pion)
+                        if (nieuwVakje.Buren[3].schaakstuk is Pion)
                         {
                             // Als er west een pion staat dan onthoudt de tegenstander dat hij deze pion en-passant mag slaan
-                            (nieuwVakje.BuurWest.schaakstuk as Pion).Speler.EnPassantPion = this;
+                            (nieuwVakje.Buren[3].schaakstuk as Pion).Speler.EnPassantPion = this;
 
                         }
                     }
                 }
-                else if (selected.BuurOost != null)
+                else if (selected.Buren[1] != null)
                 {
                     //en-passant slaan naar zuidoost
-                    if (selected.BuurZuidOost == nieuwVakje && base.Speler.EnPassantPion == selected.BuurOost.schaakstuk && base.Speler.EnPassantPion != null)
+                    if (selected.Buren[5] == nieuwVakje && base.Speler.EnPassantPion == selected.Buren[1].schaakstuk && base.Speler.EnPassantPion != null)
                     {
                         spel.updateAantalStukken(spel.SpelerAanZet);
                         locatie = false;
-                        tempPion = selected.BuurOost.schaakstuk;
-                        selected.BuurOost.schaakstuk.Slaan();
-                        selected.BuurOost.schaakstuk = null; //De andere pion verdwijnt
-                        selected.BuurOost.Pbox.update(); // update deze pbox zodat je de pion niet meer ziet
+                        tempPion = selected.Buren[1].schaakstuk;
+                        selected.Buren[1].schaakstuk.Slaan();
+                        selected.Buren[1].schaakstuk = null; //De andere pion verdwijnt
+                        selected.Buren[1].Pbox.update(); // update deze pbox zodat je de pion niet meer ziet
                         mogelijk = true;
                     }
                 }
-                
+
                 if (spel.SpelMode == "Multiplayer")
                 {
-                    if (selected.BuurWest != null)
+                    if (selected.Buren[3] != null)
                     {
                         //en-passant slaan naar zuidwest
-                        if (selected.BuurZuidWest == nieuwVakje && base.Speler.EnPassantPion == selected.BuurWest.schaakstuk && base.Speler.EnPassantPion != null)
+                        if (selected.Buren[6] == nieuwVakje && base.Speler.EnPassantPion == selected.Buren[3].schaakstuk && base.Speler.EnPassantPion != null)
                         {
                             spel.updateAantalStukken(spel.SpelerAanZet);
                             locatie = true;
-                            tempPion = selected.BuurWest.schaakstuk;
-                            selected.BuurWest.schaakstuk.Slaan();
-                            selected.BuurWest.schaakstuk = null; //De andere pion verdwijnt
-                            selected.BuurWest.Pbox.update(); // update deze pbox zodat je de pion niet meer ziet
+                            tempPion = selected.Buren[3].schaakstuk;
+                            selected.Buren[3].schaakstuk.Slaan();
+                            selected.Buren[3].schaakstuk = null; //De andere pion verdwijnt
+                            selected.Buren[3].Pbox.update(); // update deze pbox zodat je de pion niet meer ziet
                             mogelijk = true;
                         }
                     }
@@ -242,13 +242,13 @@ namespace Schaakproject
                     {
                         if (locatie == false)
                         {
-                            selected.BuurOost.schaakstuk = tempPion;
-                            selected.BuurOost.Pbox.update();
+                            selected.Buren[1].schaakstuk = tempPion;
+                            selected.Buren[1].Pbox.update();
                         }
                         else
                         {
-                            selected.BuurWest.schaakstuk = tempPion;
-                            selected.BuurWest.Pbox.update();
+                            selected.Buren[3].schaakstuk = tempPion;
+                            selected.Buren[3].Pbox.update();
                         }
                     }
                 }
@@ -266,7 +266,7 @@ namespace Schaakproject
             }
 
             //De pion wil promoveren wanneer hij op de eerste of laatste rij komt te staan
-            if (Vakje.BuurNoord == null || Vakje.BuurZuid == null)
+            if (Vakje.Buren[0] == null || Vakje.Buren[2] == null)
             {
                 if (spel.SpelMode != "Singleplayer")
                 {

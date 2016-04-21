@@ -22,7 +22,7 @@
             {
                 // Kijkt of er noordwest geslagen kan worden
                 bool mogelijkloop = false;
-                Vakje volgendVakje = geselecteerdStuk.BuurNoordWest;
+                Vakje volgendVakje = geselecteerdStuk.Buren[7];
                 while (mogelijkloop == false)
                 {
                     if (volgendVakje == null)
@@ -41,13 +41,13 @@
                         {
                             mogelijkloop = true;
                         }
-                        volgendVakje = volgendVakje.BuurNoordWest;
+                        volgendVakje = volgendVakje.Buren[7];
                     }
                 }
 
                 // Kijkt of er noordoost geslagen kan worden
                 mogelijkloop = false;
-                volgendVakje = geselecteerdStuk.BuurNoordoost;
+                volgendVakje = geselecteerdStuk.Buren[4];
                 while (mogelijkloop == false)
                 {
                     if (volgendVakje == null)
@@ -66,13 +66,13 @@
                         {
                             mogelijkloop = true;
                         }
-                        volgendVakje = volgendVakje.BuurNoordoost;
+                        volgendVakje = volgendVakje.Buren[4];
                     }
                 }
 
                 // Kijkt of er Zuidwest geslagen kan worden
                 mogelijkloop = false;
-                volgendVakje = geselecteerdStuk.BuurZuidWest;
+                volgendVakje = geselecteerdStuk.Buren[6];
                 while (mogelijkloop == false)
                 {
                     if (volgendVakje == null)
@@ -91,13 +91,13 @@
                         {
                             mogelijkloop = true;
                         }
-                        volgendVakje = volgendVakje.BuurZuidWest;
+                        volgendVakje = volgendVakje.Buren[6];
                     }
                 }
 
                 // Kijkt of er Zuidoost geslagen kan worden
                 mogelijkloop = false;
-                volgendVakje = geselecteerdStuk.BuurZuidOost;
+                volgendVakje = geselecteerdStuk.Buren[5];
                 while (mogelijkloop == false)
                 {
                     if (volgendVakje == null)
@@ -116,7 +116,7 @@
                         {
                             mogelijkloop = true;
                         }
-                        volgendVakje = volgendVakje.BuurZuidOost;
+                        volgendVakje = volgendVakje.Buren[5];
                     }
                 }
             }
@@ -145,16 +145,16 @@
             Vakje vorige = selected;
             while (mogelijkloop == false)
             {
-                if (vorige.BuurNoordoost == nieuwVakje)
-                {                    
+                if (vorige.Buren[4] == nieuwVakje)
+                {
                     mogelijk = true;
                     mogelijkloop = true;
                 }
-                else if (vorige.BuurNoordoost == null || vorige.BuurNoordoost.schaakstuk != null)
+                else if (vorige.Buren[4] == null || vorige.Buren[4].schaakstuk != null)
                 {
                     mogelijkloop = true;
                 }
-                vorige = vorige.BuurNoordoost;
+                vorige = vorige.Buren[4];
             }
             mogelijkloop = false;
             vorige = selected;
@@ -162,16 +162,16 @@
             {
                 while (mogelijkloop == false)
                 {
-                    if (vorige.BuurNoordWest == nieuwVakje)
-                    {                        
+                    if (vorige.Buren[7] == nieuwVakje)
+                    {
                         mogelijk = true;
                         mogelijkloop = true;
                     }
-                    else if (vorige.BuurNoordWest == null || vorige.BuurNoordWest.schaakstuk != null)
+                    else if (vorige.Buren[7] == null || vorige.Buren[7].schaakstuk != null)
                     {
                         mogelijkloop = true;
                     }
-                    vorige = vorige.BuurNoordWest;
+                    vorige = vorige.Buren[7];
                 }
             }
             mogelijkloop = false;
@@ -180,17 +180,17 @@
             {
                 while (mogelijkloop == false)
                 {
-                    if (vorige.BuurZuidOost == nieuwVakje)
+                    if (vorige.Buren[5] == nieuwVakje)
                     {
                         mogelijk = true;
                         mogelijkloop = true;
 
                     }
-                    else if (vorige.BuurZuidOost == null || vorige.BuurZuidOost.schaakstuk != null)
+                    else if (vorige.Buren[5] == null || vorige.Buren[5].schaakstuk != null)
                     {
                         mogelijkloop = true;
                     }
-                    vorige = vorige.BuurZuidOost;
+                    vorige = vorige.Buren[5];
                 }
             }
             mogelijkloop = false;
@@ -199,16 +199,16 @@
             {
                 while (mogelijkloop == false)
                 {
-                    if (vorige.BuurZuidWest == nieuwVakje)
+                    if (vorige.Buren[6] == nieuwVakje)
                     {
                         mogelijk = true;
                         mogelijkloop = true;
                     }
-                    else if (vorige.BuurZuidWest == null || vorige.BuurZuidWest.schaakstuk != null)
+                    else if (vorige.Buren[6] == null || vorige.Buren[6].schaakstuk != null)
                     {
                         mogelijkloop = true;
                     }
-                    vorige = vorige.BuurZuidWest;
+                    vorige = vorige.Buren[6];
 
                 }
             }
@@ -243,4 +243,3 @@
         }
     }
 }
-

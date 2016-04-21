@@ -31,70 +31,70 @@ namespace Schaakproject
                 Vakje geselecteerdVak = geselecteerdStuk;
 
                 // noord
-                if (geselecteerdVak.BuurNoordWest != null && geselecteerdVak.BuurNoordWest.schaakstuk != null && geselecteerdVak.BuurNoordWest.schaakstuk.Kleur == "wit")
+                if (geselecteerdVak.Buren[7] != null && geselecteerdVak.Buren[7].schaakstuk != null && geselecteerdVak.Buren[7].schaakstuk.Kleur == "wit")
                 {
-                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurNoordWest);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[7]);
                     algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
-                else if (geselecteerdVak.BuurNoord != null && geselecteerdVak.BuurNoord.schaakstuk != null && geselecteerdVak.BuurNoord.schaakstuk.Kleur == "wit")
+                else if (geselecteerdVak.Buren[0] != null && geselecteerdVak.Buren[0].schaakstuk != null && geselecteerdVak.Buren[0].schaakstuk.Kleur == "wit")
                 {
-                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurNoord);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[0]);
                     algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
-                else if (geselecteerdVak.BuurNoordoost != null && geselecteerdVak.BuurNoordoost.schaakstuk != null && geselecteerdVak.BuurNoordoost.schaakstuk.Kleur == "wit")
+                else if (geselecteerdVak.Buren[4] != null && geselecteerdVak.Buren[4].schaakstuk != null && geselecteerdVak.Buren[4].schaakstuk.Kleur == "wit")
                 {
-                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurNoordoost);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[4]);
                     algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
 
                 // west
-                else if (geselecteerdVak.BuurWest.BuurNoord != null && geselecteerdVak.BuurWest.BuurNoord.schaakstuk != null && geselecteerdVak.BuurWest.BuurNoord.schaakstuk.Kleur == "wit")
+                else if (geselecteerdVak.Buren[3].Buren[0] != null && geselecteerdVak.Buren[3].Buren[0].schaakstuk != null && geselecteerdVak.Buren[3].Buren[0].schaakstuk.Kleur == "wit")
                 {
-                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurWest.BuurNoord);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[3].Buren[0]);
                     algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
-                else if (geselecteerdVak.BuurWest != null && geselecteerdVak.BuurWest.schaakstuk != null && geselecteerdVak.BuurWest.schaakstuk.Kleur == "wit")
+                else if (geselecteerdVak.Buren[3] != null && geselecteerdVak.Buren[3].schaakstuk != null && geselecteerdVak.Buren[3].schaakstuk.Kleur == "wit")
                 {
-                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurWest);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[3]);
                     algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
-                else if (geselecteerdVak.BuurWest.BuurZuid != null && geselecteerdVak.BuurWest.BuurZuid.schaakstuk != null && geselecteerdVak.BuurWest.BuurZuid.schaakstuk.Kleur == "wit")
+                else if (geselecteerdVak.Buren[3].Buren[2] != null && geselecteerdVak.Buren[3].Buren[2].schaakstuk != null && geselecteerdVak.Buren[3].Buren[2].schaakstuk.Kleur == "wit")
                 {
-                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurWest.BuurZuid);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[3].Buren[2]);
                     algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
 
                 // zuid
-                else if (geselecteerdVak.BuurZuidWest != null && geselecteerdVak.BuurZuidWest.schaakstuk != null && geselecteerdVak.BuurZuidWest.schaakstuk.Kleur == "wit")
+                else if (geselecteerdVak.Buren[6] != null && geselecteerdVak.Buren[6].schaakstuk != null && geselecteerdVak.Buren[6].schaakstuk.Kleur == "wit")
                 {
-                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurZuidWest);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[6]);
                     algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
-                else if (geselecteerdVak.BuurZuid != null && geselecteerdVak.BuurZuid.schaakstuk != null && geselecteerdVak.BuurZuid.schaakstuk.Kleur == "wit")
+                else if (geselecteerdVak.Buren[2] != null && geselecteerdVak.Buren[2].schaakstuk != null && geselecteerdVak.Buren[2].schaakstuk.Kleur == "wit")
                 {
-                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurZuid);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[2]);
                     algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
-                else if (geselecteerdVak.BuurZuidOost != null && geselecteerdVak.BuurZuidOost.schaakstuk != null && geselecteerdVak.BuurZuidOost.schaakstuk.Kleur == "wit")
+                else if (geselecteerdVak.Buren[5] != null && geselecteerdVak.Buren[5].schaakstuk != null && geselecteerdVak.Buren[5].schaakstuk.Kleur == "wit")
                 {
-                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurZuidOost);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[5]);
                     algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
 
                 // oost
-                else if (geselecteerdVak.BuurOost.BuurNoord != null && geselecteerdVak.BuurOost.BuurNoord.schaakstuk != null && geselecteerdVak.BuurOost.BuurNoord.schaakstuk.Kleur == "wit")
+                else if (geselecteerdVak.Buren[1].Buren[0] != null && geselecteerdVak.Buren[1].Buren[0].schaakstuk != null && geselecteerdVak.Buren[1].Buren[0].schaakstuk.Kleur == "wit")
                 {
-                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurOost.BuurNoord);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[1].Buren[0]);
                     algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
-                else if (geselecteerdVak.BuurOost != null && geselecteerdVak.BuurOost.schaakstuk != null && geselecteerdVak.BuurOost.schaakstuk.Kleur == "wit")
+                else if (geselecteerdVak.Buren[1] != null && geselecteerdVak.Buren[1].schaakstuk != null && geselecteerdVak.Buren[1].schaakstuk.Kleur == "wit")
                 {
-                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurOost);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[1]);
                     algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
-                else if (geselecteerdVak.BuurOost.BuurZuid != null && geselecteerdVak.BuurOost.BuurZuid.schaakstuk != null && geselecteerdVak.BuurOost.BuurZuid.schaakstuk.Kleur == "wit")
+                else if (geselecteerdVak.Buren[1].Buren[2] != null && geselecteerdVak.Buren[1].Buren[2].schaakstuk != null && geselecteerdVak.Buren[1].Buren[2].schaakstuk.Kleur == "wit")
                 {
-                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.BuurOost.BuurZuid);
+                    algoritme.slaanmogelijkheden.Add(geselecteerdVak.Buren[1].Buren[2]);
                     algoritme.slaanmogelijkhedenVanaf.Add(geselecteerdStuk);
                 }
                 else
@@ -109,35 +109,35 @@ namespace Schaakproject
             //door alle vakjes waar heen bewogen mag worden te vergelijken met het geselecteerde vakje
 
             bool gevonden = false;
-            if (selected.BuurNoord == nieuwVakje)
+            if (selected.Buren[0] == nieuwVakje)
             {
                 gevonden = true;
             }
-            else if (selected.BuurOost == nieuwVakje)
+            else if (selected.Buren[1] == nieuwVakje)
             {
                 gevonden = true;
             }
-            else if (selected.BuurZuid == nieuwVakje)
+            else if (selected.Buren[2] == nieuwVakje)
             {
                 gevonden = true;
             }
-            else if (selected.BuurWest == nieuwVakje)
+            else if (selected.Buren[3] == nieuwVakje)
             {
                 gevonden = true;
             }
-            else if (selected.BuurNoordoost == nieuwVakje)
+            else if (selected.Buren[4] == nieuwVakje)
             {
                 gevonden = true;
             }
-            else if (selected.BuurNoordWest == nieuwVakje)
+            else if (selected.Buren[7] == nieuwVakje)
             {
                 gevonden = true;
             }
-            else if (selected.BuurZuidOost == nieuwVakje)
+            else if (selected.Buren[5] == nieuwVakje)
             {
                 gevonden = true;
             }
-            else if (selected.BuurZuidWest == nieuwVakje)
+            else if (selected.Buren[6] == nieuwVakje)
             {
                 gevonden = true;
             }
@@ -188,10 +188,10 @@ namespace Schaakproject
             {
                 _wilRokeren = false;
                 bool magrokeren = true;
-                if (vakjeToren.BuurOost == null) // Als het gaat om de rechter toren.
+                if (vakjeToren.Buren[1] == null) // Als het gaat om de rechter toren.
                 {
                     //check of rokeren mogelijk is door te kijken of alle vakjes leeg zijn, en de koning en toren nog geen zet gedaan hebben.
-                    if (_eersteZet == false && (vakjeToren.schaakstuk as Toren)._eersteZet == false && vakjeToren.BuurWest.schaakstuk == null && vakjeToren.BuurWest.BuurWest.schaakstuk == null)
+                    if (_eersteZet == false && (vakjeToren.schaakstuk as Toren)._eersteZet == false && vakjeToren.Buren[3].schaakstuk == null && vakjeToren.Buren[3].Buren[3].schaakstuk == null)
                     {
                         while (vorige != null)
                         {
@@ -201,7 +201,7 @@ namespace Schaakproject
                             {
                                 magrokeren = false;
                             }
-                            vorige = vorige.BuurOost;
+                            vorige = vorige.Buren[1];
                         }
 
                         if (magrokeren == true)
@@ -214,19 +214,19 @@ namespace Schaakproject
 
                     if (_wilRokeren == true)
                     {
-                        this.Vakje = vakjeKoning.BuurOost.BuurOost;
-                        vakjeKoning.BuurOost.BuurOost.schaakstuk = this;
+                        this.Vakje = vakjeKoning.Buren[1].Buren[1];
+                        vakjeKoning.Buren[1].Buren[1].schaakstuk = this;
 
-                        tempToren.Vakje = vakjeKoning.BuurOost;
-                        vakjeKoning.BuurOost.schaakstuk = tempToren;
+                        tempToren.Vakje = vakjeKoning.Buren[1];
+                        vakjeKoning.Buren[1].schaakstuk = tempToren;
 
                         vakjeKoning.schaakstuk = null;
                         vakjeToren.schaakstuk = null;
 
                         this.Vakje.Pbox.update();
-                        this.Vakje.BuurWest.BuurWest.Pbox.update();
-                        this.Vakje.BuurWest.Pbox.update();
-                        this.Vakje.BuurOost.Pbox.update();
+                        this.Vakje.Buren[3].Buren[3].Pbox.update();
+                        this.Vakje.Buren[3].Pbox.update();
+                        this.Vakje.Buren[1].Pbox.update();
 
                         speler.ValideZet = true;
                         _eersteZet = true;
@@ -240,10 +240,10 @@ namespace Schaakproject
 
                 }
 
-                else if (vakjeToren.BuurWest == null) //Als het gaat om de linker toren.
+                else if (vakjeToren.Buren[3] == null) //Als het gaat om de linker toren.
                 {
                     //check of rokeren mogelijk is door te kijken of alle vakjes leeg zijn, en de koning en toren nog geen zet gedaan hebben.
-                    if (_eersteZet == false && (vakjeToren.schaakstuk as Toren)._eersteZet == false && vakjeToren.BuurOost.schaakstuk == null && vakjeToren.BuurOost.BuurOost.schaakstuk == null && vakjeToren.BuurOost.BuurOost.BuurOost.schaakstuk == null)
+                    if (_eersteZet == false && (vakjeToren.schaakstuk as Toren)._eersteZet == false && vakjeToren.Buren[1].schaakstuk == null && vakjeToren.Buren[1].Buren[1].schaakstuk == null && vakjeToren.Buren[1].Buren[1].Buren[1].schaakstuk == null)
                     {
                         while (vorige != null)
                         {
@@ -253,7 +253,7 @@ namespace Schaakproject
                             {
                                 magrokeren = false;
                             }
-                            vorige = vorige.BuurWest;
+                            vorige = vorige.Buren[3];
                         }
 
                         if (magrokeren == true)
@@ -267,21 +267,21 @@ namespace Schaakproject
                     }
                     if (_wilRokeren == true)
                     {
-                        this.Vakje = vakjeKoning.BuurWest.BuurWest;
-                        vakjeKoning.BuurWest.BuurWest.schaakstuk = this;
+                        this.Vakje = vakjeKoning.Buren[3].Buren[3];
+                        vakjeKoning.Buren[3].Buren[3].schaakstuk = this;
 
-                        tempToren.Vakje = vakjeKoning.BuurWest;
-                        vakjeKoning.BuurWest.schaakstuk = tempToren;
+                        tempToren.Vakje = vakjeKoning.Buren[3];
+                        vakjeKoning.Buren[3].schaakstuk = tempToren;
 
-                        vakjeToren.BuurOost.schaakstuk = null;
+                        vakjeToren.Buren[1].schaakstuk = null;
                         vakjeKoning.schaakstuk = null;
                         vakjeToren.schaakstuk = null;
 
                         this.Vakje.Pbox.update();
-                        this.Vakje.BuurWest.BuurWest.Pbox.update();
-                        this.Vakje.BuurWest.Pbox.update();
-                        this.Vakje.BuurOost.Pbox.update();
-                        this.Vakje.BuurOost.BuurOost.Pbox.update();
+                        this.Vakje.Buren[3].Buren[3].Pbox.update();
+                        this.Vakje.Buren[3].Pbox.update();
+                        this.Vakje.Buren[1].Pbox.update();
+                        this.Vakje.Buren[1].Buren[1].Pbox.update();
 
                         speler.ValideZet = true;
                         _eersteZet = true;
@@ -300,8 +300,8 @@ namespace Schaakproject
                     int aantalplaatsenoost = 0;                     // aantal plaatsen tussen koning en rechter toren
                     int i = 0;
                     int west = 0;
-                    Vakje _vorigWest = vakjeKoning.BuurWest;
-                    Vakje _vorigVakje = vakjeKoning.BuurWest;
+                    Vakje _vorigWest = vakjeKoning.Buren[3];
+                    Vakje _vorigVakje = vakjeKoning.Buren[3];
 
                     while (_vorigWest != null)                      //bepaald locatie van de koning a.d.v. het aantal buren links
                     {
@@ -310,9 +310,9 @@ namespace Schaakproject
                         {
                             aantalplaatsenwest = west;
                         }
-                        if (_vorigWest.BuurWest != null)
+                        if (_vorigWest.Buren[3] != null)
                         {
-                            _vorigWest = _vorigWest.BuurWest;
+                            _vorigWest = _vorigWest.Buren[3];
                         }
                         else
                         {
@@ -322,18 +322,18 @@ namespace Schaakproject
                     }
                     Vakje _randWest = _vorigWest;
                     Vakje _vorigOost = _randWest;
-                    _Randoost = _randWest.BuurOost.BuurOost.BuurOost.BuurOost.BuurOost.BuurOost.BuurOost;
-                    Vakje koningnieuw_W = _randWest.BuurOost.BuurOost;
-                    Vakje torennieuw_W = _randWest.BuurOost.BuurOost.BuurOost;
-                    Vakje koningnieuw_O = _Randoost.BuurWest;
-                    Vakje torennieuw_O = _Randoost.BuurWest.BuurWest;
+                    _Randoost = _randWest.Buren[1].Buren[1].Buren[1].Buren[1].Buren[1].Buren[1].Buren[1];
+                    Vakje koningnieuw_W = _randWest.Buren[1].Buren[1];
+                    Vakje torennieuw_W = _randWest.Buren[1].Buren[1].Buren[1];
+                    Vakje koningnieuw_O = _Randoost.Buren[3];
+                    Vakje torennieuw_O = _Randoost.Buren[3].Buren[3];
                     // voor west
 
                     vakjesleeg = true;
 
-                    if (vakjeKoning.BuurWest.schaakstuk is Toren)
+                    if (vakjeKoning.Buren[3].schaakstuk is Toren)
                     {
-                        if (vakjeKoning.BuurWest == vakjeToren)
+                        if (vakjeKoning.Buren[3] == vakjeToren)
                         {
                             aantalplaatsenwest = 1;
                             rokeerwest = true;
@@ -342,7 +342,7 @@ namespace Schaakproject
                             {
                                 if (_vorigVakje.schaakstuk == null || _vorigVakje.schaakstuk is Toren)
                                 {
-                                    _vorigVakje = _vorigVakje.BuurWest;
+                                    _vorigVakje = _vorigVakje.Buren[3];
                                     if (koningnieuw_W.schaakstuk == null || koningnieuw_W == vakjeKoning || koningnieuw_W == vakjeToren)
                                     {
                                         if (torennieuw_W.schaakstuk == null || torennieuw_W == vakjeKoning || torennieuw_W == vakjeToren)
@@ -369,9 +369,9 @@ namespace Schaakproject
                             _magRokeren = true;
                         }
                     }
-                    else if (vakjeKoning.BuurWest.BuurWest.schaakstuk is Toren)
+                    else if (vakjeKoning.Buren[3].Buren[3].schaakstuk is Toren)
                     {
-                        if (vakjeKoning.BuurWest.BuurWest == vakjeToren)
+                        if (vakjeKoning.Buren[3].Buren[3] == vakjeToren)
                         {
                             aantalplaatsenwest = 2;
                             rokeerwest = true;
@@ -379,7 +379,7 @@ namespace Schaakproject
                             {
                                 if (_vorigVakje.schaakstuk == null || _vorigVakje.schaakstuk is Toren)
                                 {
-                                    _vorigVakje = _vorigVakje.BuurWest;
+                                    _vorigVakje = _vorigVakje.Buren[3];
                                     if (koningnieuw_W.schaakstuk == null || koningnieuw_W == vakjeKoning || koningnieuw_W == vakjeToren)
                                     {
                                         if (torennieuw_W.schaakstuk == null || torennieuw_W == vakjeKoning || torennieuw_W == vakjeToren)
@@ -405,9 +405,9 @@ namespace Schaakproject
                             _magRokeren = true;
                         }
                     }
-                    else if (vakjeKoning.BuurWest.BuurWest.BuurWest.schaakstuk is Toren)
+                    else if (vakjeKoning.Buren[3].Buren[3].Buren[3].schaakstuk is Toren)
                     {
-                        if (vakjeKoning.BuurWest.BuurWest.BuurWest == vakjeToren)
+                        if (vakjeKoning.Buren[3].Buren[3].Buren[3] == vakjeToren)
                         {
                             rokeerwest = true;
                             aantalplaatsenwest = 3;
@@ -415,7 +415,7 @@ namespace Schaakproject
                             {
                                 if (_vorigVakje.schaakstuk == null || _vorigVakje.schaakstuk is Toren)
                                 {
-                                    _vorigVakje = _vorigVakje.BuurWest;
+                                    _vorigVakje = _vorigVakje.Buren[3];
                                     if (koningnieuw_W.schaakstuk == null || koningnieuw_W == vakjeKoning || koningnieuw_W == vakjeToren)
                                     {
                                         if (torennieuw_W.schaakstuk == null || torennieuw_W == vakjeKoning || torennieuw_W == vakjeToren)
@@ -442,9 +442,9 @@ namespace Schaakproject
                         }
 
                     }
-                    else if (vakjeKoning.BuurWest.BuurWest.BuurWest.BuurWest.schaakstuk is Toren)
+                    else if (vakjeKoning.Buren[3].Buren[3].Buren[3].Buren[3].schaakstuk is Toren)
                     {
-                        if (vakjeKoning.BuurWest.BuurWest.BuurWest.BuurWest == vakjeToren)
+                        if (vakjeKoning.Buren[3].Buren[3].Buren[3].Buren[3] == vakjeToren)
                         {
                             rokeerwest = true;
                             aantalplaatsenwest = 4;
@@ -452,7 +452,7 @@ namespace Schaakproject
                             {
                                 if (_vorigVakje.schaakstuk == null || _vorigVakje.schaakstuk is Toren)
                                 {
-                                    _vorigVakje = _vorigVakje.BuurWest;
+                                    _vorigVakje = _vorigVakje.Buren[3];
                                     if (koningnieuw_W.schaakstuk == null || koningnieuw_W == vakjeKoning || koningnieuw_W == vakjeToren)
                                     {
                                         if (torennieuw_W.schaakstuk == null || torennieuw_W == vakjeKoning || torennieuw_W == vakjeToren)
@@ -479,9 +479,9 @@ namespace Schaakproject
                         }
 
                     }
-                    else if (vakjeKoning.BuurWest.BuurWest.BuurWest.BuurWest.BuurWest.schaakstuk is Toren)
+                    else if (vakjeKoning.Buren[3].Buren[3].Buren[3].Buren[3].Buren[3].schaakstuk is Toren)
                     {
-                        if (vakjeKoning.BuurWest.BuurWest.BuurWest.BuurWest.BuurWest == vakjeToren)
+                        if (vakjeKoning.Buren[3].Buren[3].Buren[3].Buren[3].Buren[3] == vakjeToren)
                         {
                             rokeerwest = true;
                             aantalplaatsenwest = 5;
@@ -489,7 +489,7 @@ namespace Schaakproject
                             {
                                 if (_vorigVakje.schaakstuk == null || _vorigVakje.schaakstuk is Toren)
                                 {
-                                    _vorigVakje = _vorigVakje.BuurWest;
+                                    _vorigVakje = _vorigVakje.Buren[3];
                                     if (koningnieuw_W.schaakstuk == null || koningnieuw_W == vakjeKoning || koningnieuw_W == vakjeToren)
                                     {
                                         if (torennieuw_W.schaakstuk == null || torennieuw_W == vakjeKoning || torennieuw_W == vakjeToren)
@@ -516,9 +516,9 @@ namespace Schaakproject
                         }
 
                     }
-                    else if (vakjeKoning.BuurWest.BuurWest.BuurWest.BuurWest.BuurWest.BuurWest.schaakstuk is Toren)
+                    else if (vakjeKoning.Buren[3].Buren[3].Buren[3].Buren[3].Buren[3].Buren[3].schaakstuk is Toren)
                     {
-                        if (vakjeKoning.BuurWest.BuurWest.BuurWest.BuurWest.BuurWest.BuurWest == vakjeToren)
+                        if (vakjeKoning.Buren[3].Buren[3].Buren[3].Buren[3].Buren[3].Buren[3] == vakjeToren)
                         {
                             rokeerwest = true;
                             aantalplaatsenwest = 6;
@@ -526,7 +526,7 @@ namespace Schaakproject
                             {
                                 if (_vorigVakje.schaakstuk == null || _vorigVakje.schaakstuk is Toren)
                                 {
-                                    _vorigVakje = _vorigVakje.BuurWest;
+                                    _vorigVakje = _vorigVakje.Buren[3];
                                     if (koningnieuw_W.schaakstuk == null || koningnieuw_W == vakjeKoning || koningnieuw_W == vakjeToren)
                                     {
                                         if (torennieuw_W.schaakstuk == null || torennieuw_W == vakjeKoning || torennieuw_W == vakjeToren)
@@ -553,9 +553,9 @@ namespace Schaakproject
                         }
 
                     }
-                    else if (vakjeKoning.BuurWest.BuurWest.BuurWest.BuurWest.BuurWest.BuurWest.BuurWest.schaakstuk is Toren)
+                    else if (vakjeKoning.Buren[3].Buren[3].Buren[3].Buren[3].Buren[3].Buren[3].Buren[3].schaakstuk is Toren)
                     {
-                        if (vakjeKoning.BuurWest.BuurWest.BuurWest.BuurWest.BuurWest.BuurWest.BuurWest == vakjeToren)
+                        if (vakjeKoning.Buren[3].Buren[3].Buren[3].Buren[3].Buren[3].Buren[3].Buren[3] == vakjeToren)
                         {
                             rokeerwest = true;
                             aantalplaatsenwest = 7;
@@ -563,7 +563,7 @@ namespace Schaakproject
                             {
                                 if (_vorigVakje.schaakstuk == null || _vorigVakje.schaakstuk is Toren)
                                 {
-                                    _vorigVakje = _vorigVakje.BuurWest;
+                                    _vorigVakje = _vorigVakje.Buren[3];
                                     if (koningnieuw_W.schaakstuk == null || koningnieuw_W == vakjeKoning || koningnieuw_W == vakjeToren)
                                     {
                                         if (torennieuw_W.schaakstuk == null || torennieuw_W == vakjeKoning || torennieuw_W == vakjeToren)
@@ -593,10 +593,10 @@ namespace Schaakproject
 
                     if (rokeerwest == false)
                     {
-                        _vorigVakje = vakjeKoning.BuurOost;
+                        _vorigVakje = vakjeKoning.Buren[1];
                         // voor oost
                         vakjesleeg = true;
-                        if (vakjeKoning.BuurOost == vakjeToren)
+                        if (vakjeKoning.Buren[1] == vakjeToren)
                         {
                             rokeerwest = false;
                             _magRokeren = true;
@@ -604,7 +604,7 @@ namespace Schaakproject
                             {
                                 if (_vorigVakje.schaakstuk == null || _vorigVakje.schaakstuk is Toren)
                                 {
-                                    _vorigVakje = _vorigVakje.BuurOost;
+                                    _vorigVakje = _vorigVakje.Buren[1];
                                     if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O == vakjeToren)
                                     {
                                         if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O == vakjeToren)
@@ -630,7 +630,7 @@ namespace Schaakproject
                             }
                             _magRokeren = true;
                         }
-                        else if (vakjeKoning.BuurOost.BuurOost == vakjeToren)
+                        else if (vakjeKoning.Buren[1].Buren[1] == vakjeToren)
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 2;
@@ -638,7 +638,7 @@ namespace Schaakproject
                             {
                                 if (_vorigVakje.schaakstuk == null || _vorigVakje.schaakstuk is Toren)
                                 {
-                                    _vorigVakje = _vorigVakje.BuurOost;
+                                    _vorigVakje = _vorigVakje.Buren[1];
                                     if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O == vakjeToren)
                                     {
                                         if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O == vakjeToren)
@@ -664,7 +664,7 @@ namespace Schaakproject
                             }
                             _magRokeren = true;
                         }
-                        else if (vakjeKoning.BuurOost.BuurOost.BuurOost == vakjeToren)
+                        else if (vakjeKoning.Buren[1].Buren[1].Buren[1] == vakjeToren)
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 3;
@@ -672,7 +672,7 @@ namespace Schaakproject
                             {
                                 if (_vorigVakje.schaakstuk == null || _vorigVakje.schaakstuk is Toren)
                                 {
-                                    _vorigVakje = _vorigVakje.BuurOost;
+                                    _vorigVakje = _vorigVakje.Buren[1];
                                     if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O == vakjeToren)
                                     {
                                         if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O == vakjeToren)
@@ -699,7 +699,7 @@ namespace Schaakproject
 
                             _magRokeren = true;
                         }
-                        else if (vakjeKoning.BuurOost.BuurOost.BuurOost.BuurOost == vakjeToren)
+                        else if (vakjeKoning.Buren[1].Buren[1].Buren[1].Buren[1] == vakjeToren)
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 4;
@@ -707,7 +707,7 @@ namespace Schaakproject
                             {
                                 if (_vorigVakje.schaakstuk == null || _vorigVakje.schaakstuk is Toren)
                                 {
-                                    _vorigVakje = _vorigVakje.BuurOost;
+                                    _vorigVakje = _vorigVakje.Buren[1];
                                     if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O == vakjeToren)
                                     {
                                         if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O == vakjeToren)
@@ -733,7 +733,7 @@ namespace Schaakproject
                             }
                             _magRokeren = true;
                         }
-                        else if (vakjeKoning.BuurOost.BuurOost.BuurOost.BuurOost.BuurOost == vakjeToren)
+                        else if (vakjeKoning.Buren[1].Buren[1].Buren[1].Buren[1].Buren[1] == vakjeToren)
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 5;
@@ -741,7 +741,7 @@ namespace Schaakproject
                             {
                                 if (_vorigVakje.schaakstuk == null || _vorigVakje.schaakstuk is Toren)
                                 {
-                                    _vorigVakje = _vorigVakje.BuurOost;
+                                    _vorigVakje = _vorigVakje.Buren[1];
                                     if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O == vakjeToren)
                                     {
                                         if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O == vakjeToren)
@@ -767,7 +767,7 @@ namespace Schaakproject
                             }
                             _magRokeren = true;
                         }
-                        else if (vakjeKoning.BuurOost.BuurOost.BuurOost.BuurOost.BuurOost.BuurOost == vakjeToren)
+                        else if (vakjeKoning.Buren[1].Buren[1].Buren[1].Buren[1].Buren[1].Buren[1] == vakjeToren)
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 6;
@@ -775,7 +775,7 @@ namespace Schaakproject
                             {
                                 if (_vorigVakje.schaakstuk == null || _vorigVakje.schaakstuk is Toren)
                                 {
-                                    _vorigVakje = _vorigVakje.BuurOost;
+                                    _vorigVakje = _vorigVakje.Buren[1];
                                     if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O == vakjeToren)
                                     {
                                         if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O == vakjeToren)
@@ -801,7 +801,7 @@ namespace Schaakproject
                             }
                             _magRokeren = true;
                         }
-                        else if (vakjeKoning.BuurOost.BuurOost.BuurOost.BuurOost.BuurOost.BuurOost.BuurOost == vakjeToren)
+                        else if (vakjeKoning.Buren[1].Buren[1].Buren[1].Buren[1].Buren[1].Buren[1].Buren[1] == vakjeToren)
                         {
                             rokeerwest = false;
                             aantalplaatsenoost = 7;
@@ -809,7 +809,7 @@ namespace Schaakproject
                             {
                                 if (_vorigVakje.schaakstuk == null || _vorigVakje.schaakstuk is Toren)
                                 {
-                                    _vorigVakje = _vorigVakje.BuurOost;
+                                    _vorigVakje = _vorigVakje.Buren[1];
                                     if (koningnieuw_O.schaakstuk == null || koningnieuw_O.schaakstuk is Koning || koningnieuw_O == vakjeToren)
                                     {
                                         if (torennieuw_O.schaakstuk == null || torennieuw_O.schaakstuk is Koning || torennieuw_O == vakjeToren)
@@ -857,20 +857,20 @@ namespace Schaakproject
                                 Vakje _torenOud = vakjeToren;
                                 Vakje _koningOud = vakjeKoning;
                                 Schaakstuk Tempkoning = vakjeKoning.schaakstuk;
-                                _Randoost.BuurWest.BuurWest.schaakstuk = tempToren;
-                                _Randoost.BuurWest.schaakstuk = Tempkoning;
-                                _Randoost.BuurWest.Pbox.update();
-                                _Randoost.BuurWest.Pbox.update();
+                                _Randoost.Buren[3].Buren[3].schaakstuk = tempToren;
+                                _Randoost.Buren[3].schaakstuk = Tempkoning;
+                                _Randoost.Buren[3].Pbox.update();
+                                _Randoost.Buren[3].Pbox.update();
                                 _koningOud.schaakstuk = null;
                                 _torenOud.schaakstuk = null;
                                 vakjeToren.schaakstuk = null;
                                 this.Vakje.Pbox.update();
                                 vakjeToren.Pbox.update();
                                 _torenOud.Pbox.update();
-                                _Randoost.BuurWest.schaakstuk = Tempkoning;
-                                _Randoost.BuurWest.Pbox.update();
-                                _Randoost.BuurWest.BuurWest.schaakstuk = tempToren;
-                                _Randoost.BuurWest.BuurWest.Pbox.update();
+                                _Randoost.Buren[3].schaakstuk = Tempkoning;
+                                _Randoost.Buren[3].Pbox.update();
+                                _Randoost.Buren[3].Buren[3].schaakstuk = tempToren;
+                                _Randoost.Buren[3].Buren[3].Pbox.update();
                                 _eersteZet = true;
                             }
                             else // ROKEREN NAAR WEST KANT
@@ -878,21 +878,21 @@ namespace Schaakproject
                                 Vakje _torenOud = vakjeToren;
                                 Vakje _koningOud = vakjeKoning;
                                 Schaakstuk Tempkoning = vakjeKoning.schaakstuk;
-                                _randWest.BuurOost.BuurOost.BuurOost.schaakstuk = tempToren;
-                                _randWest.BuurOost.BuurOost.schaakstuk = Tempkoning;
-                                _randWest.BuurOost.Pbox.update();
-                                _randWest.BuurOost.BuurOost.schaakstuk = null;
-                                _randWest.BuurOost.BuurOost.Pbox.update();
+                                _randWest.Buren[1].Buren[1].Buren[1].schaakstuk = tempToren;
+                                _randWest.Buren[1].Buren[1].schaakstuk = Tempkoning;
+                                _randWest.Buren[1].Pbox.update();
+                                _randWest.Buren[1].Buren[1].schaakstuk = null;
+                                _randWest.Buren[1].Buren[1].Pbox.update();
                                 _koningOud.schaakstuk = null;
                                 _torenOud.schaakstuk = null;
                                 vakjeToren.schaakstuk = null;
                                 this.Vakje.Pbox.update();
                                 vakjeToren.Pbox.update();
                                 _torenOud.Pbox.update();
-                                _randWest.BuurOost.BuurOost.schaakstuk = Tempkoning;
-                                _randWest.BuurOost.BuurOost.Pbox.update();
-                                _randWest.BuurOost.BuurOost.BuurOost.schaakstuk = tempToren;
-                                _randWest.BuurOost.BuurOost.BuurOost.Pbox.update();
+                                _randWest.Buren[1].Buren[1].schaakstuk = Tempkoning;
+                                _randWest.Buren[1].Buren[1].Pbox.update();
+                                _randWest.Buren[1].Buren[1].Buren[1].schaakstuk = tempToren;
+                                _randWest.Buren[1].Buren[1].Buren[1].Pbox.update();
                                 _eersteZet = true;
                             }
                         }
