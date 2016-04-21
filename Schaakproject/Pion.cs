@@ -300,6 +300,7 @@ namespace Schaakproject
 
         public void Promoveert(string keuze)
         {
+            // Hiermee promoveer je een pion naar een gekozen schaakstuk
             if (keuze.Equals("paard"))
             {
                 Vakje.schaakstuk = new Paard(Kleur, Vakje, Speler);
