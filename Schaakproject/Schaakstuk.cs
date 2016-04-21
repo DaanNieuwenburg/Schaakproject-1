@@ -13,6 +13,9 @@ namespace Schaakproject
         public abstract void kanStukSlaan(Algoritme algoritme, Vakje geselecteerdStuk);
         public void Slaan()
         {
+            //Wanneer een stuk een ander stuk slaat, wordt deze code gebruikt
+            //Het nut van deze code is om bij te houden hoeveel van elk soort stuk nog bestaat, om zo te zien of het remise is.
+
             if (Speler != null)
             {
                 // Zodra er een stuk geslagen word gaat er 1 van het totaal aantal stukken af
