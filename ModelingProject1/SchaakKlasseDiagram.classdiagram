@@ -502,6 +502,24 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="311baeec-c5f9-4edb-a64f-090df47671cc" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0045ab49-6d1b-4935-9779-18201ff3ee86" name="ditvakje" direction="In">
+                  <elementDefinition Id="9db95497-5a5e-4dde-90d6-7e7768b86930" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="da715618-718b-4da9-8352-78e463313fc9" name="kleur" direction="In">
+                  <elementDefinition Id="173e4095-c5de-424a-931e-972eb852327b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="905cccd3-1770-4e69-b830-20a374f46db3" name="CheckMat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
@@ -561,9 +579,37 @@ buurzuidwest</body>
           </operation>
           <operation Id="54fd585d-fc42-4cfc-977a-90fc2623e5e9" name="CheckWeinigStukken" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="472b1131-3724-452d-a096-c98cd037567a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="37fcd896-c619-48b5-8b22-a10435441d38" name="speler1" direction="In">
+                  <elementDefinition Id="6290043f-ae0b-4370-adb3-573b8b4e7ffb" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a35d6f22-f9f4-49bf-8493-19ec1e86175d" LastKnownName="Speler" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ab874152-83cb-415c-89c1-d3ed9ef253e5" name="speler2" direction="In">
+                  <elementDefinition Id="5866ce7a-5f3e-4b1a-b08c-d6a2c7cd8f10" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a35d6f22-f9f4-49bf-8493-19ec1e86175d" LastKnownName="Speler" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="f7f44e0a-b07b-4183-ac31-c08cc3f1597d" name="CheckPat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="d3913149-5e74-417e-aca1-f613a470375d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8ba2f399-ac36-436d-9bf0-9db227c15c86" name="koning" direction="In">
+                  <elementDefinition Id="f3900c20-8a0b-4d3b-8e37-15b6224cf538" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="384fe42b-4cf0-4775-9a3a-1d29c0f4a709" LastKnownName="Koning" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
