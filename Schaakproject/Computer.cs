@@ -41,8 +41,9 @@ namespace Schaakproject
 
         public void Zet(Vakje _pictures)
         {
+            // Deze methode wordt aangeroepen door de mens nadat hij een zet heeft gedaan, de computer begint met deze methode aan zijn zet.
             _vorigVakje = spel.Selected;                   // slaat het door de speler geselecteerde vakje op
-            _vorigSchaakstuk = spel.Selected.schaakstuk;   // slaat het door de speler geselecteerde schaakstuk op     -- dit moet ook vanuit vorigvakje kunnen, scheelt code?
+            _vorigSchaakstuk = spel.Selected.schaakstuk;   // slaat het door de speler geselecteerde schaakstuk op
             bepaalMensPositie();
         }
 

@@ -1,18 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="59986595-ab6f-432c-b6ad-b93a9a30056e" name="SchaakKlasseDiagram" linkedPackageId="b1492d3f-3f34-46c2-94ce-5dad21715151" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <ownedCommentsInternal>
-    <comment Id="445f19fe-40fa-4a04-a085-eb8b0dcde9d4">
-      <elementDefinition Id="a8a9d0ed-beef-475e-8d25-97a4f6ad6a47" />
-      <body>Buurnoord
-Buurnoordoost
-buurnoordwest
-buuroost
-buurwest
-buurzuid
-buurzuidoost
-buurzuidwest</body>
-    </comment>
-  </ownedCommentsInternal>
   <appliedStereotypesInternal>
     <stereotypeInstance Id="0e47286b-506a-466d-9996-b72b74750277" name="namespace" profile="CSharpProfile">
       <elementDefinition Id="dc5a29c7-9d7d-4d56-8303-f2da8848217f" />
@@ -979,52 +966,10 @@ buurzuidwest</body>
               <referencedTypeMoniker Id="73a383b3-ff15-415a-9395-4245680b27f4" LastKnownName="SpecialPB" />
             </type_NamedElement>
           </property>
-          <property Id="9a17abca-29ae-4c92-b331-7f5ce5f22b0b" name="BuurNoord" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="6142ea8d-6a60-4c98-aa10-77d90c8b0ba7" />
+          <property Id="a5797161-3d14-4bf5-9591-9aed964aa823" name="Buren" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7a1b0a69-d09d-4243-b9cf-f151aab11b83" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="3d95b688-b357-4c25-beab-cfea39c323b1" LastKnownName="Vakje" />
-            </type_NamedElement>
-          </property>
-          <property Id="3b7291ec-de7c-478c-a0e2-58caae60296f" name="BuurZuid" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="5148a9bd-b6e3-4961-9457-72c040676855" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="1b4ba3d8-4a4c-48b6-bd85-42b45fde2d6f" LastKnownName="Vakje" />
-            </type_NamedElement>
-          </property>
-          <property Id="5582f964-0640-4291-99c4-4a662a8ea13e" name="BuurOost" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="c1436902-48e3-4186-b6af-ee655ac42aa5" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="da92b332-bf73-4f64-88ce-12ef0def7e3c" LastKnownName="Vakje" />
-            </type_NamedElement>
-          </property>
-          <property Id="e2cf5ec4-80d2-41f7-bf0c-fe111d0f5a3d" name="BuurWest" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="43e04127-7e13-4d4e-ad2a-81b1cddda5c4" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="ff52b2dc-6ac0-4665-bc65-be213c16e5f3" LastKnownName="Vakje" />
-            </type_NamedElement>
-          </property>
-          <property Id="1d8a5742-bf45-40bc-b30d-6470fc31fb87" name="BuurNoordOost" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="16f075bd-596e-4b32-9f57-2f612163da63" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="3ae41c7a-555f-4b71-a0a9-15e45db5f601" LastKnownName="Vakje" />
-            </type_NamedElement>
-          </property>
-          <property Id="b94109e8-ab47-4a2a-8aa2-9b8b54e0e8a8" name="BuurZuidOost" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="58f498cd-e376-413f-95c8-213fa838e105" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="ac06e79e-b5d7-4087-9aab-568270622eba" LastKnownName="Vakje" />
-            </type_NamedElement>
-          </property>
-          <property Id="f23efa2b-8037-4cbd-a7b7-ca42e736fe79" name="BuurNoordWest" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="10212bd7-ccfe-4431-920f-5185a1edb048" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="5dabb05f-50ea-4207-a29c-5b0715e1af19" LastKnownName="Vakje" />
-            </type_NamedElement>
-          </property>
-          <property Id="43b90227-1a8b-4922-9e51-87f6991d7bbc" name="BuurZuidWest" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="00a4d10c-60dd-4a3a-95b0-aab3a30c7549" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="4f42ec61-13e5-475a-85b2-9411be488998" LastKnownName="Vakje" />
+              <referencedTypeMoniker Id="e574d8ef-14e0-400d-8114-853dd52d4526" LastKnownName="Vakje[]" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -3789,46 +3734,6 @@ buurzuidwest</body>
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="5dabb05f-50ea-4207-a29c-5b0715e1af19" name="Vakje" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Vakje">
-        <elementDefinition Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="3ae41c7a-555f-4b71-a0a9-15e45db5f601" name="Vakje" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Vakje">
-        <elementDefinition Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="3d95b688-b357-4c25-beab-cfea39c323b1" name="Vakje" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Vakje">
-        <elementDefinition Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="da92b332-bf73-4f64-88ce-12ef0def7e3c" name="Vakje" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Vakje">
-        <elementDefinition Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="ff52b2dc-6ac0-4665-bc65-be213c16e5f3" name="Vakje" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Vakje">
-        <elementDefinition Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="1b4ba3d8-4a4c-48b6-bd85-42b45fde2d6f" name="Vakje" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Vakje">
-        <elementDefinition Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="ac06e79e-b5d7-4087-9aab-568270622eba" name="Vakje" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Vakje">
-        <elementDefinition Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="4f42ec61-13e5-475a-85b2-9411be488998" name="Vakje" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Vakje">
-        <elementDefinition Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="62f61ac0-9028-438d-80f9-d1ceaa36deb8" name="color" isAbstract="false" isLeaf="false" cachedFullName="color">
         <elementDefinition Id="b7e72923-43d7-4d43-9feb-801dafb5a682" />
       </referencedType>
@@ -4055,6 +3960,11 @@ buurzuidwest</body>
     <packageHasNamedElement>
       <referencedType Id="ef43dd66-687f-45d5-917b-71994f60ed5f" name="Vakje" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Vakje">
         <elementDefinition Id="a0fb7aad-892e-4922-82fe-950cc33ff527" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e574d8ef-14e0-400d-8114-853dd52d4526" name="Vakje[]" isAbstract="false" isLeaf="false" cachedFullName="Vakje[]">
+        <elementDefinition Id="de8879c3-b36c-4910-8cc0-f3576e6a77c0" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
