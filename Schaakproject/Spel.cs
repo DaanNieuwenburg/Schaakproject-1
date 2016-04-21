@@ -30,7 +30,6 @@ namespace Schaakproject
             BorderColor = borderColor;
             SpelMode = Mode;
             this.Variant = Variant;
-
             Mens speler1 = new Mens(NaamSpeler1, "wit", this, SelectColor);
             Speler1 = speler1;
             SpelerAanZet = Speler1;

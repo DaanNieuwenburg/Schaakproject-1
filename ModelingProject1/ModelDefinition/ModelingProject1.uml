@@ -3,19 +3,6 @@
   dslVersion="1.0.0.0"
   Id="de569ad7-15f5-468e-875f-a53a5601e060"
   name="ModelingProject1" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
-  <ownedCommentsInternal>
-    <comment
-      Id="a8a9d0ed-beef-475e-8d25-97a4f6ad6a47">
-      <body>Buurnoord
-Buurnoordoost
-buurnoordwest
-buuroost
-buurwest
-buurzuid
-buurzuidoost
-buurzuidwest</body>
-    </comment>
-  </ownedCommentsInternal>
   <appliedStereotypesInternal>
     <stereotypeInstance
       Id="dc5a29c7-9d7d-4d56-8303-f2da8848217f"
@@ -1702,8 +1689,8 @@ buurzuidwest</body>
             </type_NamedElement>
           </property>
           <property
-            Id="6142ea8d-6a60-4c98-aa10-77d90c8b0ba7"
-            name="BuurNoord"
+            Id="7a1b0a69-d09d-4243-b9cf-f151aab11b83"
+            name="Buren"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1713,135 +1700,9 @@ buurzuidwest</body>
             aggregation="None"
             isComposite="false">
             <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="5148a9bd-b6e3-4961-9457-72c040676855"
-            name="BuurZuid"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="c1436902-48e3-4186-b6af-ee655ac42aa5"
-            name="BuurOost"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="43e04127-7e13-4d4e-ad2a-81b1cddda5c4"
-            name="BuurWest"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="16f075bd-596e-4b32-9f57-2f612163da63"
-            name="BuurNoordOost"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="58f498cd-e376-413f-95c8-213fa838e105"
-            name="BuurZuidOost"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="10212bd7-ccfe-4431-920f-5185a1edb048"
-            name="BuurNoordWest"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="00a4d10c-60dd-4a3a-95b0-aab3a30c7549"
-            name="BuurZuidWest"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
-                LastKnownName="Vakje"
+              <undefinedTypeMoniker
+                Id="de8879c3-b36c-4910-8cc0-f3576e6a77c0"
+                LastKnownName="Vakje[]"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -7950,6 +7811,11 @@ buurzuidwest</body>
       <undefinedType
         Id="e9563ec1-7b7e-45b6-aec4-46dea5adbd0d"
         name="SpecialB" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="de8879c3-b36c-4910-8cc0-f3576e6a77c0"
+        name="Vakje[]" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
