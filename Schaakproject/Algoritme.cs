@@ -130,7 +130,6 @@ namespace Schaakproject
         private void slaEenStuk()
         {
             // Slaat een stuk die in de methode controleerOpSlaan in de lijst slaanmogelijkheden lijst gezet is
-            Console.WriteLine("Sla een Stuk");
             bool alGeslagen = false;
             for (int i = 0; i < slaanmogelijkheden.Count; i++)
             {

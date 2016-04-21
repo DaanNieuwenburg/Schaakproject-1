@@ -850,6 +850,34 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9db95497-5a5e-4dde-90d6-7e7768b86930"
+                  name="ditvakje"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="da48c9bb-342c-41b4-9c23-f1ff7a2d2cf7"
+                      LastKnownName="Vakje"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="173e4095-c5de-424a-931e-972eb852327b"
+                  name="kleur"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9ae72030-5b19-4f74-b8af-7fbbca35c802"
+                      LastKnownName="string"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation
             Id="40220d9a-1217-44d2-acef-3519841880d3"
@@ -932,7 +960,36 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6290043f-ae0b-4370-adb3-573b8b4e7ffb"
+                  name="speler1"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1930fb1b-c192-4fac-821b-775cf2dbbb42"
+                      LastKnownName="Speler"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5866ce7a-5f3e-4b1a-b08c-d6a2c7cd8f10"
+                  name="speler2"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1930fb1b-c192-4fac-821b-775cf2dbbb42"
+                      LastKnownName="Speler"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="d3913149-5e74-417e-aca1-f613a470375d"
             name="CheckPat"
@@ -940,7 +997,23 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f3900c20-8a0b-4d3b-8e37-15b6224cf538"
+                  name="koning"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="bf50c40b-7eff-4bae-bf79-01cca456b99e"
+                      LastKnownName="Koning"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>

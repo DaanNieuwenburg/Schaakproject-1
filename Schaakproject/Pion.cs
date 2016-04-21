@@ -227,11 +227,8 @@ namespace Schaakproject
                 nieuwVakje.schaakstuk = this;
                 selected.schaakstuk = null;
                 this.Vakje = nieuwVakje;
-                Console.WriteLine("Check schaak1");
                 bool checkSchaak;
                 checkSchaak = spel.schaakbord.CheckSchaak(spel.SpelerAanZet.koning.Vakje, spel.SpelerAanZet.koning.Kleur);
-
-                Console.WriteLine("Schaak is " + checkSchaak);
 
                 if (checkSchaak == true)
                 {
@@ -270,7 +267,6 @@ namespace Schaakproject
             {
                 if (spel.SpelMode != "Singleplayer")
                 {
-                    Console.WriteLine("Hoort te promoveren");
                     nieuwVakje.Pbox.update();
                     selected.Pbox.update();
                     Vakje.schaakstuk = new Dame(Kleur, Vakje, base.Speler);
