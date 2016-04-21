@@ -91,6 +91,8 @@ namespace Schaakproject
 
         public void voerZetUit(Vakje geselecteerdStuk, Vakje geselecteerdVakje)
         {
+            // Vanuit algoritme wordt deze methode aangeroepen en wordt er een zet uitgevoerd
+
             VerplaatsingsLijst.Add(geselecteerdVakje);       // slaat de positie van de computerszet in lijst op 
 
             geselecteerdStuk.schaakstuk.Verplaats(geselecteerdVakje, geselecteerdStuk, spel);

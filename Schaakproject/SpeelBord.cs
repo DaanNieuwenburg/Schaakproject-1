@@ -79,13 +79,11 @@ namespace Schaakproject
             }
             else if (_spel.SpelMode.Equals("Multiplayer"))
             {
-                Console.WriteLine("tlest " + _spel.Speler1.Naam);
                 lblPlayer1.Text = "P1: " + _spel.Speler1.Naam;
                 lblPlayer2.Text = "P2: " + _spel.Speler2.Naam;
             }
             else if (_spel.SpelMode.Equals("Online"))
             {
-                Console.WriteLine("tlest " + _spel.Speler1.Naam);
                 lblPlayer1.Text = "P1: " + _spel.Speler1.Naam;
             }
         }
@@ -98,7 +96,6 @@ namespace Schaakproject
                 {
                     if (pictureBox.vakje.schaakstuk != null && pictureBox.vakje.schaakstuk.Kleur == _spel.Speler1.Kleur)
                     {
-                        Console.WriteLine("Speler selecteert stuk");
                         _spel.Speler1.SelecteerStuk(pictureBox.vakje, _spel);
                     }
                     else
@@ -191,7 +188,6 @@ namespace Schaakproject
         private void btHerstart_Click(object sender, EventArgs e)
         {
             btHerstart.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //transparent bordercolor (Color.Transparent is unsupported)
-            Console.WriteLine("HERSTART");
             HerstartMelding Warning = new HerstartMelding();
             Warning.ShowDialog();
             if (_spel.SpelMode == "Singleplayer")
