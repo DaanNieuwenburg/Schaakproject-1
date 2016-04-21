@@ -232,7 +232,6 @@ namespace Schaakproject
         {
             if (speler.Kleur == "wit")
             {
-                Console.WriteLine("KOMT HIER NIET");
                 Speler1.ResterendeStukken = Speler1.ResterendeStukken - 1;
                 speelbord.lblaantal1.Text = Convert.ToString(Speler1.ResterendeStukken);
             }
