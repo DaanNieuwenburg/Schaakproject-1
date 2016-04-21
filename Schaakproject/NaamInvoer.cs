@@ -66,214 +66,8 @@ namespace Schaakproject
             btnBegin.Visible = true;
             _variant = "Klassiek";
             _mode = "Singleplayer"; // Hierdoor krijgt het speelbord te weten dat het singleplayer is.
-        }  
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            _variant = "Klassiek";
-            this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek_click);
-            this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960);
-            _buttonClick2 = false;
-            _buttonClick = true;
-            btnBegin.Visible = true;
         }
 
-        private void btnChess960_Click(object sender, EventArgs e)
-        {
-            _variant = "Chess960";
-            this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek);
-            this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960_click);
-            _buttonClick = false;
-            _buttonClick2 = true;
-            btnBegin.Visible = true;
-        }      
-
-        private void btnborder_Click(object sender, EventArgs e)
-        {
-            //Hiermee verschijnt een Color Dialog waarmee de kleur van de border verandert kan worden
-            ColorDialog colorDialog = new ColorDialog();
-            DialogResult result = colorDialog.ShowDialog();
-
-            // Kijk of gebruiker op OK drukt
-            if (result == DialogResult.OK)
-            {
-                _borderColor = colorDialog.Color;
-            }
-        }
-
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            lblTitel.Text = "Settings";
-            btModeComputer.Visible = false;
-            btModeMultiplayer.Visible = false;
-            btnSettings.Visible = false;
-            lblSpeler1Naam.Visible = false;
-            lblSpeler2Naam.Visible = false;
-            txtSpeler1Naam.Visible = false;
-            txtSpeler2Naam.Visible = false;
-            btnBegin.Visible = false;
-            btnvakje1.Visible = true;
-            btnvakje2.Visible = true;
-            btnKlassiek.Visible = false;
-            btnChess960.Visible = false;
-            btnborder.Visible = true;
-            btnselect.Visible = true;
-        }
-
-        private void btnselect_Click(object sender, EventArgs e)
-        {
-            //Hiermee verschijnt een Color Dialog waarmee de kleur van het selectievakje verandert kan worden
-            ColorDialog colorDialog = new ColorDialog();
-            DialogResult result = colorDialog.ShowDialog();
-
-            // Kijk of gebruiker op OK drukt
-            if (result == DialogResult.OK)
-            {
-                _selectColor = colorDialog.Color;
-            }
-        }
-
-        
-        private void btnvakje1_Click(object sender, EventArgs e)
-        {
-            //Hiermee verschijnt een Color Dialog waarmee de kleur van de even vakjes verandert kan worden
-            ColorDialog colorDialog = new ColorDialog();
-            DialogResult result = colorDialog.ShowDialog();
-
-            // Kijk of gebruiker op OK drukt
-            if (result == DialogResult.OK)
-            {
-                _vakje1Color = colorDialog.Color;
-            }
-        }
-
-        private void btnvakje2_Click(object sender, EventArgs e)
-        {
-            //Hiermee verschijnt een Color Dialog waarmee de kleur van de oneven vakjes verandert kan worden
-            ColorDialog colorDialog = new ColorDialog();
-            DialogResult result = colorDialog.ShowDialog();
-
-            // Kijk of gebruiker op OK drukt
-            if (result == DialogResult.OK)
-            {
-                _vakje2Color = colorDialog.Color;
-            }
-        }
-
-        private void btnTerug_Click(object sender, EventArgs e)
-        {
-            if (lblTitel.Text == "Selecteer een schaakmode")
-            {
-                this.Hide();
-                Hoofdmenu hoofdmenu = new Hoofdmenu(_borderColor, _selectColor, _vakje1Color, _vakje2Color);
-                hoofdmenu.Show();
-            }
-            else
-            {
-                // Maak mode buttons niet zichtbaar
-                btModeComputer.Visible = true;
-                btModeMultiplayer.Visible = true;
-                btnSettings.Visible = true;
-                lblTitel.Text = "Selecteer een schaakmode";
-                btnborder.Visible = false;
-                btnvakje1.Visible = false;
-                btnvakje2.Visible = false;
-                btnselect.Visible = false;
-                lblSpeler1Naam.Visible = false;
-                lblSpeler2Naam.Visible = false;
-                txtSpeler1Naam.Visible = false;
-                txtSpeler2Naam.Visible = false;
-                btnBegin.Visible = false;
-                btnKlassiek.Visible = false;
-                btnChess960.Visible = false;
-            }
-        }
-        
-        
-        /*
-        HIER ONDER KOMEN ALLE MOUSELEAVE EN MOUSEENTER EVENTS VOOR DE KNOPPEN
-        de knoppen veranderen hierdoor van kleur zodra je erop staat met je muis
-        */
-        private void btnvakje1_MouseEnter(object sender, EventArgs e)
-        {
-            btnvakje1.BackgroundImage = Properties.Resources.button_vakje1color_click;
-        }
-
-        private void btnvakje1_MouseLeave(object sender, EventArgs e)
-        {
-            btnvakje1.BackgroundImage = Properties.Resources.button_vakje1color;
-        }
-
-        private void btnvakje2_MouseEnter(object sender, EventArgs e)
-        {
-            btnvakje2.BackgroundImage = Properties.Resources.button_vakje2color_click;
-        }
-
-        private void btnvakje2_MouseLeave(object sender, EventArgs e)
-        {
-            btnvakje2.BackgroundImage = Properties.Resources.button_vakje2color;
-        }
-        private void btnselect_MouseEnter(object sender, EventArgs e)
-        {
-            btnselect.BackgroundImage = Properties.Resources.button_selectedcolor_click;
-        }
-
-        private void btnselect_MouseLeave(object sender, EventArgs e)
-        {
-            btnselect.BackgroundImage = Properties.Resources.button_selectedcolor;
-        }
-        private void btnborder_MouseEnter(object sender, EventArgs e)
-        {
-            btnborder.BackgroundImage = Properties.Resources.button_bordercolor_click;
-        }
-
-        private void btnborder_MouseLeave(object sender, EventArgs e)
-        {
-            btnborder.BackgroundImage = Properties.Resources.button_bordercolor;
-        }
-        private void btnKlassiek_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek_click);
-        }
-
-        private void btnKlassiek_MouseLeave(object sender, EventArgs e)
-        {
-            if (_buttonClick == true)
-            {
-                this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek_click);
-            }
-            else
-            {
-                this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek);
-            }
-        }
-
-        private void btnChess960_MouseLeave(object sender, EventArgs e)
-        {
-            if (_buttonClick2 == true)
-            {
-                this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960_click);
-            }
-            else
-            {
-                this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960);
-            }
-        }
-
-        private void btnChess960_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960_click);
-        }
-
-        private void btnSettings_MouseEnter(object sender, EventArgs e)
-        {
-            btnSettings.BackgroundImage = Properties.Resources.button_settings_click;
-        }
-
-        private void btnSettings_MouseLeave(object sender, EventArgs e)
-        {
-            btnSettings.BackgroundImage = Properties.Resources.button_settings;
-        }
         private void btModeComputer_MouseEnter(object sender, EventArgs e)
         {
             this.btModeComputer.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button2KladClick);
@@ -317,6 +111,207 @@ namespace Schaakproject
         private void btTerug_MouseLeave(object sender, EventArgs e)
         {
             this.btnTerug.BackgroundImage = (System.Drawing.Image)(Properties.Resources.backIcon);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            _variant = "Klassiek";
+            this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek_click);
+            this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960);
+            _buttonClick2 = false;
+            _buttonClick = true;
+            btnBegin.Visible = true;
+        }
+
+        private void btnChess960_Click(object sender, EventArgs e)
+        {
+            _variant = "Chess960";
+            this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek);
+            this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960_click);
+            _buttonClick = false;
+            _buttonClick2 = true;
+            btnBegin.Visible = true;
+        }
+
+        private void btnKlassiek_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek_click);
+        }
+
+        private void btnKlassiek_MouseLeave(object sender, EventArgs e)
+        {
+            if (_buttonClick == true)
+            {
+                this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek_click);
+            }
+            else
+            {
+                this.btnKlassiek.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_klassiek);
+            }
+        }
+
+        private void btnChess960_MouseLeave(object sender, EventArgs e)
+        {
+            if (_buttonClick2 == true)
+            {
+                this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960_click);
+            }
+            else
+            {
+                this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960);
+            }
+        }
+
+        private void btnChess960_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnChess960.BackgroundImage = (System.Drawing.Image)(Properties.Resources.button_960_click);
+        }
+
+        private void btnSettings_MouseEnter(object sender, EventArgs e)
+        {
+            btnSettings.BackgroundImage = Properties.Resources.button_settings_click;
+        }
+
+        private void btnSettings_MouseLeave(object sender, EventArgs e)
+        {
+            btnSettings.BackgroundImage = Properties.Resources.button_settings;
+        }
+
+        private void btnborder_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            DialogResult result = colorDialog.ShowDialog();
+
+            // Kijk of gebruiker op OK drukt
+            if (result == DialogResult.OK)
+            {
+                _borderColor = colorDialog.Color;
+            }
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            lblTitel.Text = "Settings";
+            btModeComputer.Visible = false;
+            btModeMultiplayer.Visible = false;
+            btnSettings.Visible = false;
+            lblSpeler1Naam.Visible = false;
+            lblSpeler2Naam.Visible = false;
+            txtSpeler1Naam.Visible = false;
+            txtSpeler2Naam.Visible = false;
+            btnBegin.Visible = false;
+            btnvakje1.Visible = true;
+            btnvakje2.Visible = true;
+            btnKlassiek.Visible = false;
+            btnChess960.Visible = false;
+            btnborder.Visible = true;
+            btnselect.Visible = true;
+        }
+
+        private void btnborder_MouseEnter(object sender, EventArgs e)
+        {
+            btnborder.BackgroundImage = Properties.Resources.button_bordercolor_click;
+        }
+
+        private void btnborder_MouseLeave(object sender, EventArgs e)
+        {
+            btnborder.BackgroundImage = Properties.Resources.button_bordercolor;
+        }
+
+        private void btnselect_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            DialogResult result = colorDialog.ShowDialog();
+
+            // Kijk of gebruiker op OK drukt
+            if (result == DialogResult.OK)
+            {
+                _selectColor = colorDialog.Color;
+            }
+        }
+
+        private void btnselect_MouseEnter(object sender, EventArgs e)
+        {
+            btnselect.BackgroundImage = Properties.Resources.button_selectedcolor_click;
+        }
+
+        private void btnselect_MouseLeave(object sender, EventArgs e)
+        {
+            btnselect.BackgroundImage = Properties.Resources.button_selectedcolor;
+        }
+
+        private void btnvakje1_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            DialogResult result = colorDialog.ShowDialog();
+
+            // Kijk of gebruiker op OK drukt
+            if (result == DialogResult.OK)
+            {
+                _vakje1Color = colorDialog.Color;
+            }
+        }
+
+
+        private void btnvakje2_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            DialogResult result = colorDialog.ShowDialog();
+
+            // Kijk of gebruiker op OK drukt
+            if (result == DialogResult.OK)
+            {
+                _vakje2Color = colorDialog.Color;
+            }
+        }
+
+        private void btnvakje1_MouseEnter(object sender, EventArgs e)
+        {
+            btnvakje1.BackgroundImage = Properties.Resources.button_vakje1color_click;
+        }
+
+        private void btnvakje1_MouseLeave(object sender, EventArgs e)
+        {
+            btnvakje1.BackgroundImage = Properties.Resources.button_vakje1color;
+        }
+
+        private void btnvakje2_MouseEnter(object sender, EventArgs e)
+        {
+            btnvakje2.BackgroundImage = Properties.Resources.button_vakje2color_click;
+        }
+
+        private void btnvakje2_MouseLeave(object sender, EventArgs e)
+        {
+            btnvakje2.BackgroundImage = Properties.Resources.button_vakje2color;
+        }
+
+        private void btnTerug_Click(object sender, EventArgs e)
+        {
+            if (lblTitel.Text == "Selecteer een schaakmode")
+            {
+                this.Hide();
+                Hoofdmenu hoofdmenu = new Hoofdmenu(_borderColor, _selectColor, _vakje1Color, _vakje2Color);
+                hoofdmenu.Show();
+            }
+            else
+            {
+                // Maak mode buttons niet zichtbaar
+                btModeComputer.Visible = true;
+                btModeMultiplayer.Visible = true;
+                btnSettings.Visible = true;
+                lblTitel.Text = "Selecteer een schaakmode";
+                btnborder.Visible = false;
+                btnvakje1.Visible = false;
+                btnvakje2.Visible = false;
+                btnselect.Visible = false;
+                lblSpeler1Naam.Visible = false;
+                lblSpeler2Naam.Visible = false;
+                txtSpeler1Naam.Visible = false;
+                txtSpeler2Naam.Visible = false;
+                btnBegin.Visible = false;
+                btnKlassiek.Visible = false;
+                btnChess960.Visible = false;
+            }
         }
     }
 }

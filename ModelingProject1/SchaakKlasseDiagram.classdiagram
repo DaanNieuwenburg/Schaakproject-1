@@ -548,6 +548,16 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="40220d9a-1217-44d2-acef-3519841880d3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="598e69a0-92dd-4622-8444-2a7e1c083e15" name="koning" direction="In">
+                  <elementDefinition Id="11a94064-e401-4c29-9395-b029c70a7827" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="384fe42b-4cf0-4775-9a3a-1d29c0f4a709" LastKnownName="Koning" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="54fd585d-fc42-4cfc-977a-90fc2623e5e9" name="CheckWeinigStukken" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="472b1131-3724-452d-a096-c98cd037567a" />
@@ -743,9 +753,53 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="54a33b79-badb-414d-8200-ebf13ea62345" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="42d51612-b913-48a8-9114-9f4bef901b96" name="nieuwVakje" direction="In" isUnique="false">
+                  <elementDefinition Id="10737996-901d-4b7a-a092-2273671635e3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="69a5684d-909e-45a3-b1ca-a720a67e4e7e" name="selected" direction="In" isUnique="false">
+                  <elementDefinition Id="658e0d9a-5799-4d79-aca5-366720070939" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7995d6c4-131a-4928-9ee6-7abd873cd26d" name="spel" direction="In" isUnique="false">
+                  <elementDefinition Id="ef83212a-a86b-45ce-8743-da6e4816cb1a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="7f7b14ba-9ccc-4a2c-8ab4-7337f62abe95" name="kanStukSlaan" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="e108de7d-d6bd-46ea-a891-fbcb2efbda74" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b7d14e37-ffc3-4f4d-84a3-0fed879292f2" name="algoritme" direction="In" isUnique="false">
+                  <elementDefinition Id="01633235-8034-4c9a-a6b6-26ff69bb5ea9" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c028cc51-cf79-48d0-a238-7cf58235347b" LastKnownName="Algoritme" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0034080f-39dd-488f-a81d-6159575be0d6" name="geselecteerdStuk" direction="In" isUnique="false">
+                  <elementDefinition Id="fc29fd1e-70c6-44c0-b93d-525fb6e30291" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="1c9dc67f-0aee-4994-bd28-be64a547b505" name="Slaan" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="2ace90af-26fd-49f6-ba65-a941c5ecfbb8" />
@@ -1082,12 +1136,66 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="4cf82b97-43f0-44bb-bec8-1bbc3f1657a4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="656a39fc-af8f-41c7-b1be-36bb0b63799d" name="nieuwVakje" direction="In" isUnique="false">
+                  <elementDefinition Id="6068be90-f4e7-45a3-ae25-fe5390ae041b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="89f4e74c-e32f-4915-ac86-55f1921ef103" name="selected" direction="In" isUnique="false">
+                  <elementDefinition Id="b325793b-1738-4a15-8d77-4eb7deeee9b0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="79ff9afc-f3ce-4ba1-b5d4-1b52c30b9e99" name="spel" direction="In" isUnique="false">
+                  <elementDefinition Id="1a18c0a1-9e23-42f5-a8bf-60b69a77eb2a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="800c4636-7713-42ec-8313-460581ebe0d8" name="Promoveert" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="1a96baf1-7fc5-452f-a939-6214bc4b009d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5c9b85ad-6995-4421-8ec4-062736873c19" name="keuze" direction="In">
+                  <elementDefinition Id="8bc37405-2ca6-49e0-963b-9cb7fc43c103" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="09f8b24f-c252-402f-8976-094d5ceb1a7e" name="kanStukSlaan" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="ce118457-b4ec-472a-8305-9960799af54e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="54b0025d-4201-4ebe-a325-615beba2f32d" name="algoritme" direction="In" isUnique="false">
+                  <elementDefinition Id="bddff273-4335-4ea2-b330-2cae47798014" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c028cc51-cf79-48d0-a238-7cf58235347b" LastKnownName="Algoritme" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0216d373-20da-44ed-9e25-a3cbdaf56762" name="geselecteerdStuk" direction="In" isUnique="false">
+                  <elementDefinition Id="da6096f8-6d42-4a41-88c6-c1e30e986e5e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -1241,9 +1349,53 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="67f88aa2-caa2-4303-8386-b4ee0c95aa46" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="751ae98e-5803-4a57-8d7f-808091239a8b" name="nieuwVakje" direction="In" isUnique="false">
+                  <elementDefinition Id="cab30589-a143-47ce-892a-1cc36c0e5c1c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="34200799-79a1-4fc6-b559-d221ee640eb7" name="selected" direction="In" isUnique="false">
+                  <elementDefinition Id="53ac249d-4723-4045-b53d-2a8692095b36" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ab4e2741-80b4-4366-af3e-ba4aaf54c550" name="spel" direction="In" isUnique="false">
+                  <elementDefinition Id="3a8e3ecd-3e02-4958-8a45-17e613353b95" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="2b38fc46-796c-4197-b471-65acf8819887" name="kanStukSlaan" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="6519acec-f579-439f-aa66-c204f805bd77" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ac9e8c5d-f19f-44d3-a492-448548cc663d" name="algoritme" direction="In" isUnique="false">
+                  <elementDefinition Id="8e93b003-7e6f-4087-a957-63d615b3edb3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c028cc51-cf79-48d0-a238-7cf58235347b" LastKnownName="Algoritme" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="223ca7bb-ab5a-4082-8dc8-bc257cbe2cbd" name="geselecteerdStuk" direction="In" isUnique="false">
+                  <elementDefinition Id="800ae2a4-61bc-441b-a586-31a9ca08c256" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -1340,9 +1492,53 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="138cab79-7e47-429a-b9fe-62054b915317" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="860af25f-a566-4f3f-9b8c-fa751bd78867" name="nieuwVakje" direction="In" isUnique="false">
+                  <elementDefinition Id="0070f239-22cf-4cf2-96b9-2d8f48c4c0fa" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8c002f43-0e3e-44e5-a500-16d48ff68dad" name="selected" direction="In" isUnique="false">
+                  <elementDefinition Id="52f8c3f0-5a19-4e50-8046-4ec5caef1f31" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="18981d9a-98c4-4be3-8799-e85895377c94" name="spel" direction="In" isUnique="false">
+                  <elementDefinition Id="ef488fdc-93d2-4aa4-bc45-982222d296b0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="6eac3464-1802-40ba-aef2-b4b6c3ae9c11" name="kanStukSlaan" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="a18f3b04-e5e6-4642-a8fc-07b1d1264872" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="59e53c97-bf3c-40ad-ad61-093ee6f97ee9" name="algoritme" direction="In" isUnique="false">
+                  <elementDefinition Id="921c0f3e-f9a0-4f0e-8d91-b1a9c4d5b96f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c028cc51-cf79-48d0-a238-7cf58235347b" LastKnownName="Algoritme" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a55f9975-52f1-4a04-83cb-4c37097baaeb" name="geselecteerdStuk" direction="In" isUnique="false">
+                  <elementDefinition Id="38b2eb89-c286-40a3-8098-8155909fae7c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -1439,9 +1635,53 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="c44e7936-326b-4502-a81c-ba47f187f36f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="77b8de55-8fe2-4a0f-96ee-0c7cac13bd55" name="nieuwVakje" direction="In" isUnique="false">
+                  <elementDefinition Id="179a658d-57aa-46c5-916b-e6d7c8761f90" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3f0f68d3-366d-4c9c-8047-5a9f338d2ada" name="selected" direction="In" isUnique="false">
+                  <elementDefinition Id="19c639e7-399c-44c4-8606-36e29060332b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ac84c2f1-ecab-472f-b5ee-092d5817c138" name="spel" direction="In" isUnique="false">
+                  <elementDefinition Id="a018e3e8-4be9-4403-9565-c94dc658bde0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="02ae0d9b-53b0-4e70-a403-f72388866ce4" name="kanStukSlaan" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="e8f85adf-8255-4306-abff-9f8436d7d2a8" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3fb53e00-80fb-482d-aafd-45b3f41a5332" name="algoritme" direction="In" isUnique="false">
+                  <elementDefinition Id="bdc3d075-a076-4e24-a21e-fd6fc45664ac" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c028cc51-cf79-48d0-a238-7cf58235347b" LastKnownName="Algoritme" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fa786192-71ee-4c56-ab56-7e83984372ae" name="geselecteerdStuk" direction="In" isUnique="false">
+                  <elementDefinition Id="478764b2-9cbd-4cc3-b564-d0f134379218" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -1538,9 +1778,53 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="32dbe91a-1ad7-4b88-894c-7c10ce5febb5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="12dbd3e7-3734-486c-bff6-c157cb2ae7f9" name="nieuwVakje" direction="In" isUnique="false">
+                  <elementDefinition Id="d99f69f4-f2db-4c20-a1e1-d7efd12e7ce0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="24bc2538-7276-44e3-9d67-efa23e67959c" name="selected" direction="In" isUnique="false">
+                  <elementDefinition Id="92aec744-9618-4984-a581-0fcd9bddba14" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7a0d3071-8894-43db-bc33-f05ea5008d39" name="spel" direction="In" isUnique="false">
+                  <elementDefinition Id="ccaea39e-f570-4f3e-ae43-2500fe33debd" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="39832318-78d7-4edd-9d09-b6d5be165c2f" name="kanStukSlaan" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="e8b1db8f-2551-4d48-a4a8-8f39a597a129" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="05d5e714-782e-427f-a30a-e3f03145c3bc" name="algoritme" direction="In" isUnique="false">
+                  <elementDefinition Id="be301782-e167-4f33-91b1-1affa330f8fb" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c028cc51-cf79-48d0-a238-7cf58235347b" LastKnownName="Algoritme" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="de42c44e-d145-4f6d-8736-ca9920d13d8d" name="geselecteerdStuk" direction="In" isUnique="false">
+                  <elementDefinition Id="aea9a67b-afca-4c23-9c93-b66f81d1ae43" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -1712,6 +1996,32 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="aa10744b-1c47-4c92-94dd-9ab728286f15" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ce0486c1-cca6-4fbd-86e5-361b1450e6de" name="nieuwVakje" direction="In" isUnique="false">
+                  <elementDefinition Id="c2a0cddc-f40d-447e-87f2-e4b81cda9b5d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bd83f323-e376-4ee0-89e1-c004b2f1d17c" name="selected" direction="In" isUnique="false">
+                  <elementDefinition Id="b698b421-0d37-4fde-8888-80e22b67d977" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d14a23d0-0e93-4e91-b8b3-5b977a344da4" name="spel" direction="In" isUnique="false">
+                  <elementDefinition Id="a25d43a6-cdae-404d-8fc1-94f8c68d641f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="c1166dae-25a8-4cfc-bc3a-3a2dca85e700" name="Rokeren" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
@@ -1758,9 +2068,61 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="4a3e57eb-75b0-4061-933a-b779ffea13fd" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ee055169-40f5-4efa-9c15-1f4ecb0d8608" name="vakjeToren" direction="In">
+                  <elementDefinition Id="60360562-c009-40f8-bc49-2eeec3c0c1f5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="38c928c2-9bb9-49f6-b516-71f85e3324cd" name="vakjeKoning" direction="In">
+                  <elementDefinition Id="f15f2c89-a595-4dbc-8419-713c7cc9531d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c1844d3b-c840-49b0-8b62-36fbc88e0f57" name="mens" direction="In">
+                  <elementDefinition Id="c3f5fd08-2ddb-45f4-814a-5da7a643f764" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a35d6f22-f9f4-49bf-8493-19ec1e86175d" LastKnownName="Speler" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="13853ad1-7e83-43ae-8f1a-df5aff5b3061" name="spel" direction="In">
+                  <elementDefinition Id="c04d9957-4982-4020-ba2d-e546a8b29fcd" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="31023dc2-d28a-4198-b2d9-736b624fe31f" name="kanStukSlaan" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="d8d5e7ad-0674-4c05-a5ec-e195972a676f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4328e6a8-1045-4f0d-89d0-4ae17b4946a3" name="algoritme" direction="In" isUnique="false">
+                  <elementDefinition Id="28b7d04e-d713-4978-87bc-cb858fa04535" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c028cc51-cf79-48d0-a238-7cf58235347b" LastKnownName="Algoritme" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="eecc57a5-2ea2-49c3-891a-72773397cdaf" name="geselecteerdStuk" direction="In" isUnique="false">
+                  <elementDefinition Id="4920c33a-9497-46c2-9ff1-fcce17e3891f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ef43dd66-687f-45d5-917b-71994f60ed5f" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="43f8f6bc-7aa5-47d3-91e1-6486929ffc41" name="Wilrokeren" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="62267847-483a-4954-9508-6bb5b83d6655" />
@@ -2097,8 +2459,18 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="be559f79-e6b6-4b25-9d8c-43b37a70a029" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7ae4262e-3190-47dd-a5ef-0a42af0af80d" name="BorderColor" direction="In" isUnique="false">
+                  <elementDefinition Id="b5296f2f-f172-47da-bd90-184c8339f163" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2dcf1583-ea17-4b2f-bd3d-95a251069199" LastKnownName="Color" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
-          <operation Id="ba8b130f-cb10-446f-99e3-c77523761b18" name="Herstarten" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="ba8b130f-cb10-446f-99e3-c77523761b18" name="Herstart" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="0459f5d3-b8e0-4500-9451-fe6d83c495cb" name="method" profile="CSharpProfile">
                 <elementDefinition Id="01d99bfa-35e3-4799-ac96-a58299ece0ed" />
@@ -2143,6 +2515,32 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="a1d6adf8-051c-4065-b8a4-13ebcc11e88f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="557f653d-54dd-40d0-9f8f-0edcfd9711ba" name="spelMode" direction="In">
+                  <elementDefinition Id="291582e8-55d6-4388-85e3-f4a890d2a5c0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d3ee0d61-5e0a-4526-a8d2-46bcc7fe5dff" name="speler1Naam" direction="In">
+                  <elementDefinition Id="c26c1cb8-5a9a-4c80-831a-1f2e20b52d7f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="66a8c37d-7011-40dd-87b7-7cf38fdef9b6" name="speler2Naam" direction="In">
+                  <elementDefinition Id="052282b8-9095-48b8-9f7c-7ce4d2f6968a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="d115a627-f101-45df-bfb7-6bb1171bf1a0" name="VeranderSpeler" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
@@ -2192,6 +2590,16 @@ buurzuidwest</body>
           </operation>
           <operation Id="311169a9-a686-4cc3-9190-43dd92278ddc" name="updateAantalStukken" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="43f13f24-716a-430c-b99c-b39ae3b72890" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8186d59a-b566-419c-aa0d-f19e918b940f" name="speler" direction="In" isUnique="false">
+                  <elementDefinition Id="ea728ba0-422a-440e-bca7-56c1167f3559" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a35d6f22-f9f4-49bf-8493-19ec1e86175d" LastKnownName="Speler" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="953af91e-76ab-49ce-9bf4-4d85b9430051" name="veranderlbltext" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="71314c3e-bddf-4dbe-b4aa-d5a4c03e6f43" />
@@ -2329,8 +2737,26 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="6380b5b5-3eb5-46eb-a277-36b078532866" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="03a5c545-8166-4f7d-947d-3246fede439c" name="clicked" direction="In">
+                  <elementDefinition Id="ee0c8ea9-bac8-41c3-b3ce-f0ed2829b8ce" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2e0e6c32-dea6-4a0b-ad3c-25ac3c09b6b0" name="spel" direction="In">
+                  <elementDefinition Id="4cb03112-69bb-4a52-93b1-48d1f84cdf51" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
-          <operation Id="4b28b897-2deb-4b0c-9038-6ce0b29f0653" name="DeselecteerStuk" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="4b28b897-2deb-4b0c-9038-6ce0b29f0653" name="DeselecteerStuk" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="f2e3117a-5d79-4b57-964b-d298ccdc7298" name="method" profile="CSharpProfile">
                 <elementDefinition Id="b3639ddc-88cf-4e3f-b8e8-ebaa7443efe7" />
@@ -2421,6 +2847,24 @@ buurzuidwest</body>
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="678f780e-f669-4d16-bba9-aa834a3c2dc0" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="25e04b41-5e0f-40f6-8cd1-4caa1e9ec003" name="nieuwVakje" direction="In">
+                  <elementDefinition Id="65632405-e7eb-4b8f-b7dd-2745eadbce44" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7e2af48e-ea29-4ac0-ac3e-a366553bf9e5" name="spel" direction="In">
+                  <elementDefinition Id="ea24c9c7-40f6-4373-b2f3-959f569654cd" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b73e0bb5-5157-49a8-82fb-0b9a170d9c8a" LastKnownName="Spel" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -2633,6 +3077,37 @@ buurzuidwest</body>
           </operation>
           <operation Id="1f86cfc8-5e9c-4238-bcea-4c79d05eb56c" name="voerZetUit" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="260a63bd-70b5-46ad-9147-3158e265ae63" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="27943720-fdb8-45d0-a408-22b21f71036c" name="geselecteerdStuk" direction="In">
+                  <elementDefinition Id="4da65c6c-c763-43a1-a3bc-7651c8270036" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5dd2693c-0c14-4914-be9f-dd381a6b7e19" name="geselecteerdVakje" direction="In">
+                  <elementDefinition Id="cd47bab5-393e-4e1b-9abb-10426e2c6718" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0da0b984-9247-438e-a451-1b11cdab4395" name="Zet" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="62a6d423-20b8-49ee-955f-07865cf46b17" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="05ae97ac-fea3-4f5d-8dc3-f3ebaf64f647" name="_pictures" direction="In">
+                  <elementDefinition Id="6c90dc40-dd58-482f-820f-cb3733659ddb" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -2819,6 +3294,16 @@ buurzuidwest</body>
         <ownedOperationsInternal>
           <operation Id="6d4c7899-acdf-4f2f-b2d7-ff454526cf1c" name="select" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="112cb932-bf1f-4e1f-8c44-822c0f9faf24" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c8d5a0e8-6efc-4fa1-a308-9dc234454e2e" name="PictureBox" direction="In" isUnique="false">
+                  <elementDefinition Id="7d45391c-35f1-4fe0-adc2-529ee306bd6d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6dafb255-6ca7-4e8a-b6c1-e678a9058d36" LastKnownName="SpecialPB" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -3100,12 +3585,40 @@ buurzuidwest</body>
           </operation>
           <operation Id="5897f0ab-44ce-4ba8-b9a1-0c2c863471cd" name="reageerOpSchaak" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="d84ef97e-9d9e-4977-8cb5-33a9d65628f1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6e956a8c-8ea6-4778-896d-76e45c30ac06" name="geselecteerd" direction="In">
+                  <elementDefinition Id="abe3998a-48a5-40c4-8d9b-5647ec77458d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="c3dcb29b-079c-4225-91c0-fab8a5c042ca" name="voorkomStackOverflow" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="97fe9dd8-4bdd-4beb-bf17-0230058719f2" />
           </operation>
           <operation Id="8dace206-e0e5-4b8c-9979-6c6808a9874a" name="controleerBurenSchaak" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="1fa30caf-4b4b-4ffe-b247-0d11de5645db" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1e8192d8-a50b-466f-a44d-379cfdd47de8" name="richting" direction="In" isUnique="false">
+                  <elementDefinition Id="c0179da3-7b00-4fe5-b163-74dcc53a7510" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d06018f6-0083-4f3f-9cda-f93f4718f359" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ab769acc-ad7c-4ae2-bcef-a990ccc47568" name="waarVanDaan" direction="In" isUnique="false">
+                  <elementDefinition Id="5c6d9cf2-1388-4985-bd73-afc8f3b7e925" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="adf22df7-3c8a-4446-83ec-28669b329b97" LastKnownName="Vakje" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -3537,6 +4050,11 @@ buurzuidwest</body>
     <packageHasNamedElement>
       <referencedType Id="2a015f45-f155-47c3-9d37-d34651f5d50f" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
         <elementDefinition Id="dd9efac3-bc92-41e4-bd97-6c759a0c167f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ef43dd66-687f-45d5-917b-71994f60ed5f" name="Vakje" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Vakje">
+        <elementDefinition Id="a0fb7aad-892e-4922-82fe-950cc33ff527" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

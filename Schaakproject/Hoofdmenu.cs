@@ -32,24 +32,6 @@ namespace Schaakproject
             BackgroundImageLayout = ImageLayout.Stretch;
             startButton.BackgroundImageLayout = ImageLayout.Stretch;
         }
-        
-
-        private void btnafsluiten_Click(object sender, EventArgs e)
-        {
-            btnafsluiten.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //transparent bordercolor (Color.Transparent is unsupported)
-            Console.WriteLine("AFSLUITEN");
-            AfsluitMelding _afsluiten = new AfsluitMelding();
-            _afsluiten.ShowDialog();
-            if (_afsluiten.Sure == true)
-            {
-                Application.Exit();
-            }
-        }
-
-        /*
-        HIER ONDER KOMEN ALLE MOUSELEAVE EN MOUSEENTER EVENTS VOOR DE KNOPPEN
-        de knoppen veranderen hierdoor van kleur zodra je erop staat met je muis
-        */
         private void startButton_MouseLeave(object sender, EventArgs e)
         {
             this.startButton.BackgroundImage = (System.Drawing.Image)(Properties.Resources.start_klad_2_);
@@ -68,6 +50,18 @@ namespace Schaakproject
         private void btnafsluiten_MouseLeave(object sender, EventArgs e)
         {
             this.btnafsluiten.BackgroundImage = (Image)(Properties.Resources.afsluiten);
+        }
+
+        private void btnafsluiten_Click(object sender, EventArgs e)
+        {
+            btnafsluiten.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //transparent bordercolor (Color.Transparent is unsupported)
+            Console.WriteLine("AFSLUITEN");
+            AfsluitMelding _afsluiten = new AfsluitMelding();
+            _afsluiten.ShowDialog();
+            if (_afsluiten.Sure == true)
+            {
+                Application.Exit();
+            }
         }
     }
 }

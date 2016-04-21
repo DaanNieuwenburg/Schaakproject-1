@@ -64,7 +64,6 @@ namespace Schaakproject
 
         public void Herstart(string spelMode, string speler1Naam, string speler2Naam)
         {
-            // Als de spelmode Multiplayer is moeten er 2 namen onthouden worden bij herstart. Anders maar 1
             if (spelMode == "Multiplayer")
             {
                 Spel spel = new Spel(spelMode, speler1Naam, speler2Naam, Variant, BorderColor, SelectColor, ColorVakje1, ColorVakje2);
