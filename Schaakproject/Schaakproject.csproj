@@ -391,9 +391,6 @@
     <None Include="Resources\button regels chess960 click.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\button herstart click.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\button herstart.png" />
   </ItemGroup>
   <ItemGroup>
