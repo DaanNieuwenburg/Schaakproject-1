@@ -397,9 +397,6 @@
     <None Include="Resources\button regels click.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\button regels.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\button terug click.png" />
   </ItemGroup>
   <ItemGroup>
