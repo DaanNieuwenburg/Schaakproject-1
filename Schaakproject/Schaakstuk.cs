@@ -14,7 +14,7 @@ namespace Schaakproject
         public void Slaan()
         {
             //Wanneer een stuk een ander stuk slaat, wordt deze code gebruikt
-            //Het nut van deze code is om bij te houden hoeveel van elk soort stuk nog bestaat, om zo te zien of het remise is.
+            //Het nut van deze code is om bij te houden hoeveel van elk soort stuk nog bestaat, om later te kunnen zien of het remise is.
 
             if (Speler != null)
             {
