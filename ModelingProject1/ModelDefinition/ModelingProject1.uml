@@ -262,6 +262,58 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="5f3b52cc-d046-4dfe-bf30-78d6a755f9eb"
+            isDerived="false"
+            sourceEndRoleName="Speler"
+            targetEndRoleName="Spel"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="19a2a857-8390-44ff-bf9d-e52d0150a5eb"
+              LastKnownName="Spel"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="103ac9a4-838c-473f-8f62-be529b2639f7"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c1d0845a-1d42-4f4b-bc98-059a25446645"
+                      name="Lower"
+                      value="2" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="6bd4fcac-7ae1-4fc6-9022-9df26d1af003"
+                      name="Upper"
+                      value="2" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5e63a20e-724e-4589-96c5-cd7533eb9445"
+                  name="Spel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property

@@ -156,6 +156,32 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="a56aea90-7257-4353-ad71-6109baf89cf0" />
           </association>
+          <association Id="db89bf30-6b0c-4607-8d89-e3ceac5ce248" isDerived="false" sourceEndRoleName="Speler" targetEndRoleName="Spel" isLeaf="false" isAbstract="false">
+            <classMoniker Id="3cd200af-8073-42a4-89e3-2a0a11819561" LastKnownName="Spel" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6f8bb3a8-af97-41f9-ac08-c891da832987" name="Speler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="de8513cb-461d-4085-b796-a264fbed23b5" name="Lower" value="2">
+                      <elementDefinition Id="c1d0845a-1d42-4f4b-bc98-059a25446645" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="031a512a-9e7f-481e-8f29-a85176677e7a" name="Upper" value="2">
+                      <elementDefinition Id="6bd4fcac-7ae1-4fc6-9022-9df26d1af003" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="103ac9a4-838c-473f-8f62-be529b2639f7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8ef36dc0-4528-4c83-9e1e-758a80fce438" name="Spel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5e63a20e-724e-4589-96c5-cd7533eb9445" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5f3b52cc-d046-4dfe-bf30-78d6a755f9eb" />
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property Id="ac7f2225-0a48-4803-8661-7944f69b6204" name="spel" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
