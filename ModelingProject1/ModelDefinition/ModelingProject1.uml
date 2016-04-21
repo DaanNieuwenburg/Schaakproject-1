@@ -806,65 +806,6 @@ buurzuidwest</body>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="a0f04208-282e-44ef-ae0d-bf0241e8cfab"
-            name="CheckRemise"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="8c348985-4f3a-473f-a230-45668c5638a3"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="e184400f-f715-4d28-affb-6f94beaf2222">
-                    <propertyInstance
-                      Id="23ff0676-7097-4a43-975b-ebbc8f0ebcef"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="54109620-3167-456f-868e-2b6a23af1bca">
-                    <propertyInstance
-                      Id="c5fef896-be0d-4372-92e4-9bd34e8e2108"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="9c38d726-3f82-441d-ae1e-342fc317a50e">
-                    <propertyInstance
-                      Id="83dd8265-4802-4cb5-a91f-2238f459e9f4"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="03a35689-3367-414b-b278-03be5bbe97aa">
-                    <propertyInstance
-                      Id="080251fd-b492-4fb8-9a15-7cf0cb940349"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="090cb871-efb8-422c-a9f2-472a7366f795">
-                    <propertyInstance
-                      Id="12d614b0-d4cc-4a77-a016-28560ecf75d2"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="9aef381c-ba17-4974-b624-a234ba73e17d">
-                    <propertyInstance
-                      Id="1cb16aa4-2e76-4e03-985e-d6a1b36c3641"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-          </operation>
-          <operation
             Id="311baeec-c5f9-4edb-a64f-090df47671cc"
             name="CheckSchaak"
             isLeaf="false"
@@ -997,6 +938,22 @@ buurzuidwest</body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="472b1131-3724-452d-a096-c98cd037567a"
+            name="CheckWeinigStukken"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="d3913149-5e74-417e-aca1-f613a470375d"
+            name="CheckPat"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>

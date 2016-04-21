@@ -457,52 +457,6 @@ buurzuidwest</body>
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="62ccb5a1-0289-4754-ad98-98f4f26983bb" name="CheckRemise" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance Id="03c474ee-eda8-4620-b7d1-b3853a923a74" name="method" profile="CSharpProfile">
-                <elementDefinition Id="8c348985-4f3a-473f-a230-45668c5638a3" />
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="88aaaef8-300c-438b-9ebe-f7da5bdcc28b">
-                    <propertyInstance Id="abc84e41-f285-43f3-b843-0daffb293c01" name="ClrAttributes">
-                      <elementDefinition Id="23ff0676-7097-4a43-975b-ebbc8f0ebcef" />
-                    </propertyInstance>
-                    <elementDefinition Id="e184400f-f715-4d28-affb-6f94beaf2222" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="fa2b0901-bf1d-4137-87cd-cfefea1b6934">
-                    <propertyInstance Id="1ec0648e-e249-4b02-a86b-d399bc90ab3d" name="IsPartial" value="false">
-                      <elementDefinition Id="c5fef896-be0d-4372-92e4-9bd34e8e2108" />
-                    </propertyInstance>
-                    <elementDefinition Id="54109620-3167-456f-868e-2b6a23af1bca" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="2d1528a6-4eba-4f2d-9dee-f187dca6d1a7">
-                    <propertyInstance Id="05a45c37-1c6d-4f5c-9068-c1161433d547" name="IsUnsafe" value="false">
-                      <elementDefinition Id="83dd8265-4802-4cb5-a91f-2238f459e9f4" />
-                    </propertyInstance>
-                    <elementDefinition Id="9c38d726-3f82-441d-ae1e-342fc317a50e" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="2f51aac4-b37d-463b-8482-5b94a730f931">
-                    <propertyInstance Id="604007f2-f5b8-4ff6-a25a-dce4b33cf5c3" name="Inheritance" value="none">
-                      <elementDefinition Id="080251fd-b492-4fb8-9a15-7cf0cb940349" />
-                    </propertyInstance>
-                    <elementDefinition Id="03a35689-3367-414b-b278-03be5bbe97aa" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="60bfcc9e-b2ca-4a3c-9f63-28a72f89d11e">
-                    <propertyInstance Id="50ed698f-e8f3-49d3-a8bd-3616de9f7701" name="PackageVisibility" value="internal">
-                      <elementDefinition Id="12d614b0-d4cc-4a77-a016-28560ecf75d2" />
-                    </propertyInstance>
-                    <elementDefinition Id="090cb871-efb8-422c-a9f2-472a7366f795" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="7ad1fa7e-9cce-4cdb-b9d5-8c7010692d24">
-                    <propertyInstance Id="f0b7148e-fbfa-4398-a594-cc561a556995" name="params" value="false">
-                      <elementDefinition Id="1cb16aa4-2e76-4e03-985e-d6a1b36c3641" />
-                    </propertyInstance>
-                    <elementDefinition Id="9aef381c-ba17-4974-b624-a234ba73e17d" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <elementDefinition Id="a0f04208-282e-44ef-ae0d-bf0241e8cfab" />
-          </operation>
           <operation Id="676ca84b-b00d-4285-b5d1-331add473348" name="CheckSchaak" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="7fde3357-80ee-4123-b370-f8cd7cec2798" name="method" profile="CSharpProfile">
@@ -604,6 +558,12 @@ buurzuidwest</body>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
+          </operation>
+          <operation Id="54fd585d-fc42-4cfc-977a-90fc2623e5e9" name="CheckWeinigStukken" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="472b1131-3724-452d-a096-c98cd037567a" />
+          </operation>
+          <operation Id="f7f44e0a-b07b-4183-ac31-c08cc3f1597d" name="CheckPat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d3913149-5e74-417e-aca1-f613a470375d" />
           </operation>
         </ownedOperationsInternal>
       </class>
